@@ -1,0 +1,17 @@
+com.googlecode.wickedcharts
+com.googlecode.wickedcharts.highcharts
+com.googlecode.wickedcharts.highcharts.jackson
+com.googlecode.wickedcharts.highcharts.json
+com.googlecode.wickedcharts.highcharts.options
+com.googlecode.wickedcharts.highcharts.options.color
+com.googlecode.wickedcharts.highcharts.options.drilldown
+com.googlecode.wickedcharts.highcharts.options.functions
+com.googlecode.wickedcharts.highcharts.options.livedata
+com.googlecode.wickedcharts.highcharts.options.processing
+com.googlecode.wickedcharts.highcharts.options.series
+com.googlecode.wickedcharts.highcharts.options.util
+com.googlecode.wickedcharts.highcharts.theme
+com.googlecode.wickedcharts.showcase
+com.googlecode.wickedcharts.showcase.jsf.bean
+com.googlecode.wickedcharts.showcase.links
+com.googlecode.wickedcharts.showcase.options
