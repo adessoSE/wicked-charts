@@ -15,7 +15,7 @@
 	<parent>
 		<groupId>com.googlecode.wicked-charts</groupId>
 		<artifactId>wicked-charts-parent</artifactId>
-		<relativePath>../</relativePath>
+		<relativePath>../wicked-charts-parent</relativePath>
 		<version>1.3.0-SNAPSHOT</version>
 	</parent>
 
