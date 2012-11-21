@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>wicked-charts-jsf21</artifactId>
+	<name>Wicked Charts for JSF 2.1</name>
+	<packaging>jar</packaging>
+
+	<description>
+		Charting library for JSF 2.1.
+	</description>
+
+	<parent>
+		<groupId>com.googlecode.wicked-charts</groupId>
+		<artifactId>wicked-charts-parent</artifactId>
+		<relativePath>../</relativePath>
+		<version>1.3.0-SNAPSHOT</version>
+	</parent>
+
+	<url>http://code.google.com/p/wicked-charts/</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://wicked-charts.googlecode.com/svn</url>
+		<connection>https://wicked-charts.googlecode.com/svn</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Tom Hombergs</name>
+			<email>tom.hombergs@gmail.com</email>
+		</developer>
+		<developer>
+			<name>Matthias Balke</name>
+			<email>matthias.balke@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<shortname>wickedcharts</shortname>
+		<myFaces.version>2.1.8</myFaces.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-resources-plugin
+										</artifactId>
+										<versionRange>
+											[2.5,)
+										</versionRange>
+										<goals>
+											<goal>resources</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.mycila.maven-license-plugin</groupId>
+					<artifactId>maven-license-plugin</artifactId>
+					<configuration>
+						<header>src/main/resources/NOTICE</header>
+						<includes>
+							<include>src/main/java/**/*.java</include>
+						</includes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+  <dependencyManagement>
+    <dependencies>
+    <!-- 
+      <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-servlet_2.5_spec</artifactId>
+          <version>1.2</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-jsp_2.1_spec</artifactId>
+          <version>1.0.1</version>
+          <scope>provided</scope>
+      </dependency>      
+
+      <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-el_2.2_spec</artifactId>
+          <version>1.0.2</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-annotation_1.0_spec</artifactId>
+          <version>1.1.1</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.myfaces.buildtools</groupId>
+        <artifactId>myfaces-builder-annotations</artifactId> 
+        <version>1.0.9</version>
+        <scope>provided</scope>
+      </dependency>
+      -->
+      <dependency>
+        <groupId>org.apache.myfaces.core</groupId>
+        <artifactId>myfaces-api</artifactId>
+        <version>${myFaces.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.myfaces.core</groupId>
+        <artifactId>myfaces-impl</artifactId>
+        <version>${myFaces.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.10</version>
+        <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.apache.myfaces.test</groupId>
+        <artifactId>myfaces-test20</artifactId>
+        <version>1.0.4</version>
+        <scope>test</scope>
+      </dependency>
+      
+    </dependencies>
+  </dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.wicked-charts</groupId>
+			<artifactId>wicked-charts-highcharts</artifactId>
+		</dependency>
+
+		<!-- compile -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- provided dependencies -->
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<scope>provided</scope>
+		</dependency>
+<!-- 
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_2.5_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jsp_2.1_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-el_2.2_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.myfaces.buildtools</groupId>
+			<artifactId>myfaces-builder-annotations</artifactId>
+			<scope>provided</scope>
+		</dependency>-->
+
+		<!-- test dependencies -->
+		<!-- <dependency>
+			<groupId>org.apache.myfaces.test</groupId>
+			<artifactId>myfaces-test20</artifactId>
+			<scope>test</scope>
+		</dependency>-->
+	</dependencies>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+<!-- 
+			<plugin>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.3</version>
+			</plugin>-->
+		</plugins>
+	</reporting>
+<!-- 
+	<profiles>
+		<profile>
+			<id>generate-site</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>net.sourceforge.maven-taglib</groupId>
+						<artifactId>maven-taglib-plugin</artifactId>
+						<version>2.4</version>
+						<configuration>
+							<taglib.src.dir>${basedir}/target/classes/META-INF</taglib.src.dir>
+							<tldDocDir>${basedir}/target/site/tlddoc</tldDocDir>
+						</configuration>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<profile>
+			<id>generate-assembly</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.8</version>
+						<executions>
+							<execution>
+								<id>attach-javadoc</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>net.sourceforge.maven-taglib</groupId>
+						<artifactId>maven-taglib-plugin</artifactId>
+						<version>2.4</version>
+						<configuration>
+							<taglib.src.dir>${basedir}/target/classes/META-INF</taglib.src.dir>
+							<tldDocDir>${basedir}/target/site/tlddoc</tldDocDir>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadoc</id>
+								<goals>
+									<goal>taglibdocjar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles> -->
+</project>

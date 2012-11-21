@@ -1,0 +1,78 @@
+package com.googlecode.wickedcharts.showcase.options;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+import com.googlecode.wickedcharts.highcharts.options.Axis;
+import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
+import com.googlecode.wickedcharts.highcharts.options.CreditOptions;
+import com.googlecode.wickedcharts.highcharts.options.Function;
+import com.googlecode.wickedcharts.highcharts.options.HorizontalAlignment;
+import com.googlecode.wickedcharts.highcharts.options.Legend;
+import com.googlecode.wickedcharts.highcharts.options.LegendLayout;
+import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.PlotBand;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
+import com.googlecode.wickedcharts.highcharts.options.SeriesType;
+import com.googlecode.wickedcharts.highcharts.options.Title;
+import com.googlecode.wickedcharts.highcharts.options.Tooltip;
+import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
+import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
+import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
+import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+
+public class AreaSplineOptions extends Options {
+
+  private static final long serialVersionUID = 1L;
+
+  public AreaSplineOptions() {
+
+    setChart(new ChartOptions()
+        .setType(SeriesType.AREASPLINE));
+
+    setTitle(new Title("Average fruit consumption during one week"));
+
+    setLegend(new Legend()
+        .setLayout(LegendLayout.VERTICAL)
+        .setAlign(HorizontalAlignment.LEFT)
+        .setVerticalAlign(VerticalAlignment.TOP)
+        .setX(150)
+        .setY(100)
+        .setFloating(Boolean.TRUE)
+        .setBorderWidth(1)
+        .setBackgroundColor(new HexColor("#FFFFFF")));
+
+    setxAxis(new Axis()
+        .setCategories(
+            Arrays
+                .asList(new String[] { "Monday", "Tuesday", "Wednesday",
+                    "Thursday", "Friday", "Saturday", "Sunday" }))
+        .setPlotBands(Collections.singletonList(new PlotBand()
+            .setFrom(4.5f)
+            .setTo(6.5f)
+            .setColor(new RgbaColor(68, 170, 213, .2f)))));
+
+    setyAxis(new Axis()
+        .setTitle(new Title("Fruit units")));
+
+    setTooltip(new Tooltip()
+        .setFormatter(new Function(" return ''+this.x +': '+ this.y +' units';")));
+
+    setCredits(new CreditOptions()
+        .setEnabled(Boolean.FALSE));
+
+    setPlotOptions(new PlotOptionsChoice()
+        .setAreaspline(new PlotOptions()
+            .setFillOpacity(0.5f)));
+
+    addSeries(new SimpleSeries()
+        .setName("John")
+        .setData(Arrays.asList(new Number[] { 3, 4, 3, 5, 4, 10, 12 })));
+
+    addSeries(new SimpleSeries()
+        .setName("Jane")
+        .setData(Arrays.asList(new Number[] { 1, 3, 4, 3, 3, 5, 4 })));
+  }
+
+}
