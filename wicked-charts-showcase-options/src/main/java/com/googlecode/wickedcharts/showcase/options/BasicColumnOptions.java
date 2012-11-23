@@ -30,7 +30,7 @@ import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class BasicColumnOptions extends Options {
+public class BasicColumnOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -145,5 +145,10 @@ public class BasicColumnOptions extends Options {
             46.8,
             51.1));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Basic column";
   }
 }

@@ -38,7 +38,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class BubbleChartOptions extends Options {
+public class BubbleChartOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -116,5 +116,10 @@ public class BubbleChartOptions extends Options {
   private Marker radiusMarker(Integer radius) {
     return new Marker()
         .setRadius(radius);
+  }
+
+  @Override
+  public String getLabel() {
+    return "Bubble chart";
   }
 }

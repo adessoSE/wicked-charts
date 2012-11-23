@@ -42,7 +42,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class DonutOptions extends Options {
+public class DonutOptions extends ShowcaseOptions {
 
   /**
    * Helper data structure to store usage data of a browser.
@@ -150,8 +150,8 @@ public class DonutOptions extends Options {
     setTooltip(new Tooltip());
 
     DataLabels browserDataLabels = new DataLabels();
-//    browserDataLabels
-//        .setFormatter(new Function());
+    // browserDataLabels
+    // .setFormatter(new Function());
     browserDataLabels
         .setColor(new HexColor("#ffffff"));
     browserDataLabels
@@ -168,8 +168,8 @@ public class DonutOptions extends Options {
         .setDataLabels(browserDataLabels);
 
     DataLabels versionDataLabels = new DataLabels();
-//    versionDataLabels
-//        .setFormatter(new Function());
+    // versionDataLabels
+    // .setFormatter(new Function());
 
     PointSeries versionSeries = toVersionSeries(browserData);
     versionSeries
@@ -428,6 +428,11 @@ public class DonutOptions extends Options {
       }
     }
     return versionSeries;
+  }
+
+  @Override
+  public String getLabel() {
+    return "Donut chart";
   }
 
 }

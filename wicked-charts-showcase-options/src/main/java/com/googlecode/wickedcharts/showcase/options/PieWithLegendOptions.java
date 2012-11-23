@@ -27,7 +27,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
 
-public class PieWithLegendOptions extends Options {
+public class PieWithLegendOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -64,5 +64,10 @@ public class PieWithLegendOptions extends Options {
         .addPoint(new Point("Opera", 6.2))
         .addPoint(new Point("Others", 0.7)));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Pie with legend";
   }
 }

@@ -29,7 +29,7 @@ import com.googlecode.wickedcharts.highcharts.options.Stacking;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class BarWithNegativeStackOptions extends Options {
+public class BarWithNegativeStackOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -136,5 +136,10 @@ public class BarWithNegativeStackOptions extends Options {
             330870,
             130632,
             21208));
+  }
+
+  @Override
+  public String getLabel() {
+    return "Bar with negative stack";
   }
 }

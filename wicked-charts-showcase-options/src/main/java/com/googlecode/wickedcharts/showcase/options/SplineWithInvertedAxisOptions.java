@@ -37,7 +37,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.CoordinatesSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SplineWithInvertedAxisOptions extends Options {
+public class SplineWithInvertedAxisOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -50,10 +50,13 @@ public class SplineWithInvertedAxisOptions extends Options {
         .setInverted(Boolean.TRUE);
     chartOptions
         .setStyle(new CssStyle());
-    this.setChartOptions(chartOptions);
+    this
+        .setChartOptions(chartOptions);
 
-    this.setTitle(new Title("Atmosphere Temperature by Altitude"));
-    this.setSubtitle(new Title("According to the Standard Atmosphere Model"));
+    this
+        .setTitle(new Title("Atmosphere Temperature by Altitude"));
+    this
+        .setSubtitle(new Title("According to the Standard Atmosphere Model"));
 
     Title AxisTitle = new Title("Altitude");
     AxisTitle
@@ -71,7 +74,8 @@ public class SplineWithInvertedAxisOptions extends Options {
         .setMaxPadding(0.05f);
     xAxis
         .setShowLastLabel(Boolean.TRUE);
-    this.setyAxis(xAxis);
+    this
+        .setyAxis(xAxis);
 
     Axis yAxis = new Axis();
     yAxis
@@ -81,20 +85,24 @@ public class SplineWithInvertedAxisOptions extends Options {
             .setStyle(new CssStyle()));
     yAxis
         .setLineWidth(2);
-    this.setyAxis(yAxis);
+    this
+        .setyAxis(yAxis);
 
-    this.setLegend(new Legend(Boolean.TRUE));
+    this
+        .setLegend(new Legend(Boolean.TRUE));
 
-    this.setTooltip(new Tooltip()
-        .setFormatter(new Function()
-            .setFunction("return '' + this.x +' km: '+ this.y +'C';")));
+    this
+        .setTooltip(new Tooltip()
+            .setFormatter(new Function()
+                .setFunction("return '' + this.x +' km: '+ this.y +'C';")));
 
     PlotOptions splineOptions = new PlotOptions();
     splineOptions
         .setMarker(new Marker(Boolean.TRUE));
 
-    this.setPlotOptions(new PlotOptionsChoice()
-        .setSpline(splineOptions));
+    this
+        .setPlotOptions(new PlotOptionsChoice()
+            .setSpline(splineOptions));
     CoordinatesSeries series = new CoordinatesSeries();
     series
         .addPoint(0, 15)
@@ -106,7 +114,13 @@ public class SplineWithInvertedAxisOptions extends Options {
         .addPoint(60, -27.7)
         .addPoint(70, -55.7)
         .addPoint(80, -76.5);
-    this.addSeries(series);
+    this
+        .addSeries(series);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Spline with inverted axis";
   }
 }

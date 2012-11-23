@@ -37,7 +37,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class PolarOptions extends Options {
+public class PolarOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -85,5 +85,10 @@ public class PolarOptions extends Options {
         .setType(SeriesType.AREA)
         .setName("Area"));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Polar chart";
   }
 }

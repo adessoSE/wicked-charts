@@ -40,7 +40,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class StackedAndGroupedColumnOptions extends Options {
+public class StackedAndGroupedColumnOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -49,17 +49,20 @@ public class StackedAndGroupedColumnOptions extends Options {
     ChartOptions chartOptions = new ChartOptions();
     chartOptions
         .setType(SeriesType.COLUMN);
-    this.setChartOptions(chartOptions);
+    this
+        .setChartOptions(chartOptions);
 
     Title title = new Title("Total fruit consumption, grouped by gender");
-    this.setTitle(title);
+    this
+        .setTitle(title);
 
     Axis xAxis = new Axis();
     xAxis
         .setCategories(Arrays
             .asList(new String[] { "Apples", "Oranges", "Pears", "Grapes",
                 "Bananas" }));
-    this.setxAxis(xAxis);
+    this
+        .setxAxis(xAxis);
 
     Axis yAxis = new Axis();
     yAxis
@@ -68,9 +71,11 @@ public class StackedAndGroupedColumnOptions extends Options {
         .setMin(0);
     yAxis
         .setTitle(new Title("Number of fruits"));
-    this.setyAxis(yAxis);
+    this
+        .setyAxis(yAxis);
 
-    this.setTooltip(new Tooltip());
+    this
+        .setTooltip(new Tooltip());
 
     PlotOptions plotOptions = new PlotOptions();
     plotOptions
@@ -78,7 +83,8 @@ public class StackedAndGroupedColumnOptions extends Options {
     PlotOptionsChoice choice = new PlotOptionsChoice();
     choice
         .setColumn(plotOptions);
-    this.setPlotOptions(choice);
+    this
+        .setPlotOptions(choice);
 
     // create data
     Random r = new Random();
@@ -115,7 +121,8 @@ public class StackedAndGroupedColumnOptions extends Options {
         .setStack("male");
     series1
         .setName("John");
-    this.addSeries(series1);
+    this
+        .addSeries(series1);
 
     Series<Number> series2 = new SimpleSeries();
     series2
@@ -124,7 +131,8 @@ public class StackedAndGroupedColumnOptions extends Options {
         .setStack("male");
     series2
         .setName("Joe");
-    this.addSeries(series2);
+    this
+        .addSeries(series2);
 
     Series<Number> series3 = new SimpleSeries();
     series3
@@ -133,7 +141,8 @@ public class StackedAndGroupedColumnOptions extends Options {
         .setStack("female");
     series3
         .setName("Jane");
-    this.addSeries(series3);
+    this
+        .addSeries(series3);
 
     Series<Number> series4 = new SimpleSeries();
     series4
@@ -142,7 +151,13 @@ public class StackedAndGroupedColumnOptions extends Options {
         .setStack("female");
     series4
         .setName("Janet");
-    this.addSeries(series4);
+    this
+        .addSeries(series4);
+  }
+
+  @Override
+  public String getLabel() {
+    return "Stacked and grouped column";
   }
 
 }

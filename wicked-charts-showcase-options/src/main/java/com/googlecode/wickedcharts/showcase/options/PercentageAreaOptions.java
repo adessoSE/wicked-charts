@@ -31,7 +31,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class PercentageAreaOptions extends Options {
+public class PercentageAreaOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -95,5 +95,10 @@ public class PercentageAreaOptions extends Options {
     addSeries(new SimpleSeries()
         .setName("Oceania")
         .setData(Arrays.asList(new Number[] { 2, 2, 2, 6, 13, 30, 46 })));
+  }
+
+  @Override
+  public String getLabel() {
+    return "Percentage area";
   }
 }

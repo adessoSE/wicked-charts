@@ -36,7 +36,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Matthias Balke <matthias.balke@gmail.com>
  * 
  */
-public class AreaWithNegativeValuesOptions extends Options {
+public class AreaWithNegativeValuesOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -96,6 +96,11 @@ public class AreaWithNegativeValuesOptions extends Options {
             .asList(new Number[] { 3, 4, 4, -2, 5 }));
     addSeries(series3);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Area with negative values";
   }
 
 }

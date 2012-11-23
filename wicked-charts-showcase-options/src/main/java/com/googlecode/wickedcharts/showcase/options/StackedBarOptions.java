@@ -28,7 +28,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class StackedBarOptions extends Options {
+public class StackedBarOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -70,5 +70,10 @@ public class StackedBarOptions extends Options {
         .setName("Joe")
         .setData(3, 4, 4, 2, 5));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Stacked bar";
   }
 }

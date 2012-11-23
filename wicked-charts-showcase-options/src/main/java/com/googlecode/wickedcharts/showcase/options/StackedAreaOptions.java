@@ -32,7 +32,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class StackedAreaOptions extends Options {
+public class StackedAreaOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -98,5 +98,10 @@ public class StackedAreaOptions extends Options {
     addSeries(new SimpleSeries()
         .setName("Oceania")
         .setData(Arrays.asList(new Number[] { 2, 2, 2, 6, 13, 30, 46 })));
+  }
+
+  @Override
+  public String getLabel() {
+    return "Stacked area";
   }
 }

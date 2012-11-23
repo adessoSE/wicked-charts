@@ -18,8 +18,10 @@ import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
+import com.googlecode.wickedcharts.showcase.ie.SimplePage;
 
 /**
  * Application object for your web application. If you want to run this
@@ -41,14 +43,18 @@ public class ShowcaseApplication extends WebApplication {
 	 */
 	@Override
 	public void init() {
-		super
-		    .init();
-		JavaScriptResourceRegistry
-		    .getInstance()
-		    .setJQueryReference("js/jquery-1.8.1.min.js");
+		super.init();
+		JavaScriptResourceRegistry.getInstance().setJQueryReference(
+				new JavaScriptResourceReference(ShowcaseApplication.class,
+						"jquery-1.8.3.min-IEfix.js"));
 
 		mountPage("/start", Homepage.class);
 		mountPage("/start/${theme}", Homepage.class);
+		mountPage("/simple", SimplePage.class);
+
+		getJavaScriptLibrarySettings().setJQueryReference(
+				new JavaScriptResourceReference(ShowcaseApplication.class,
+						"jquery-1.8.3.min-IEfix.js"));
 	}
 
 	@Override

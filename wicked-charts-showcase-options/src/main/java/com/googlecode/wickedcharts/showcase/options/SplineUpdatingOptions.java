@@ -35,7 +35,7 @@ import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 
-public class SplineUpdatingOptions extends Options {
+public class SplineUpdatingOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -96,6 +96,11 @@ public class SplineUpdatingOptions extends Options {
       time += 1000;
     }
     return result;
+  }
+
+  @Override
+  public String getLabel() {
+    return "Spline updating each second";
   }
 
 }

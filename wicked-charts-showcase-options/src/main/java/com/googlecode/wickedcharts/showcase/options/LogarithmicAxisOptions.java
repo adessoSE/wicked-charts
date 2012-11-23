@@ -35,7 +35,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Matthias Balke <matthias.balke@gmail.com>
  * 
  */
-public class LogarithmicAxisOptions extends Options {
+public class LogarithmicAxisOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -84,6 +84,11 @@ public class LogarithmicAxisOptions extends Options {
         .setPointStart(1);
     addSeries(series1);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Line with logarithmic axis";
   }
 
 }

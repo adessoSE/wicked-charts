@@ -32,7 +32,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
 
-public class ColumnWithDrilldownOptions extends Options {
+public class ColumnWithDrilldownOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -278,5 +278,10 @@ public class ColumnWithDrilldownOptions extends Options {
                   .setY(1.65f))
           .setColor(new HighchartsColor(4)));
     }
+  }
+
+  @Override
+  public String getLabel() {
+    return "Column with drilldown";
   }
 }

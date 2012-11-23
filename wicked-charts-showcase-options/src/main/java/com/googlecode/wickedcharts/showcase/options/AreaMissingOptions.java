@@ -34,7 +34,7 @@ import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class AreaMissingOptions extends Options {
+public class AreaMissingOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -91,5 +91,10 @@ public class AreaMissingOptions extends Options {
         .setName("Jane")
         .setData(Arrays.asList(new Number[] { 1, 0, 3, null, 3, 1, 2, 1 })));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Area with missing points";
   }
 }

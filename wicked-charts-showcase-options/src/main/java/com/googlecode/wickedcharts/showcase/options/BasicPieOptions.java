@@ -29,7 +29,7 @@ import com.googlecode.wickedcharts.highcharts.options.functions.PercentageFormat
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
 
-public class BasicPieOptions extends Options {
+public class BasicPieOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -68,5 +68,10 @@ public class BasicPieOptions extends Options {
         .addPoint(new Point("Opera", 6.2))
         .addPoint(new Point("Others", 0.7)));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Basic pie";
   }
 }

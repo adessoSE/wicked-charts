@@ -33,7 +33,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class AreaInvertedAxisOptions extends Options {
+public class AreaInvertedAxisOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -87,6 +87,11 @@ public class AreaInvertedAxisOptions extends Options {
         .setName("Jane")
         .setData(Arrays.asList(new Number[] { 1, 3, 4, 3, 3, 5, 4 })));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Area with inverted axis";
   }
 
 }

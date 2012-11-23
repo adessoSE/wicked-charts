@@ -33,7 +33,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.functions.StackTotalFormatter;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class StackedColumnOptions extends Options {
+public class StackedColumnOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -89,5 +89,10 @@ public class StackedColumnOptions extends Options {
         .setName("Joe")
         .setData(3, 4, 4, 2, 5));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Stacked column";
   }
 }

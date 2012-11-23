@@ -42,7 +42,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SplineWithSymbolsOptions extends Options {
+public class SplineWithSymbolsOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -146,6 +146,11 @@ public class SplineWithSymbolsOptions extends Options {
                 10.3, 6.6, 4.8 }));
     addSeries(series2);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Spline with symbols";
   }
 
 }

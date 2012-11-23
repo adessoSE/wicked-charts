@@ -26,7 +26,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.functions.PercentageAndValueFormatter;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class StackedPercentageOptions extends Options {
+public class StackedPercentageOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -63,5 +63,10 @@ public class StackedPercentageOptions extends Options {
         .setName("Joe")
         .setData(3, 4, 4, 2, 5));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Stacked percentage";
   }
 }

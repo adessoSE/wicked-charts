@@ -37,7 +37,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class LineWithDataLabelsOptions extends Options {
+public class LineWithDataLabelsOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -104,6 +104,11 @@ public class LineWithDataLabelsOptions extends Options {
                 14.2, 10.3, 6.6, 4.8 }));
     addSeries(series2);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Line with data labels";
   }
 
 }

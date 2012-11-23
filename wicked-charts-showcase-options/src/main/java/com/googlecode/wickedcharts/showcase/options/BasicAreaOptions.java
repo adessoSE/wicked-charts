@@ -43,7 +43,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class BasicAreaOptions extends Options {
+public class BasicAreaOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -133,6 +133,11 @@ public class BasicAreaOptions extends Options {
                 17000, 16000 }));
     addSeries(series2);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Basic area";
   }
 
 }

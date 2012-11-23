@@ -31,7 +31,7 @@ import com.googlecode.wickedcharts.highcharts.options.functions.PercentageFormat
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
 
-public class PieWithGradientOptions extends Options {
+public class PieWithGradientOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -106,6 +106,11 @@ public class PieWithGradientOptions extends Options {
             .addStop(1, new HighchartsColor(5)
                 .brighten(-0.3f)))));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Pie with gradient";
   }
 
 }

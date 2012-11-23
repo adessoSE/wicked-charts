@@ -36,7 +36,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class AreaSplineOptions extends Options {
+public class AreaSplineOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -87,6 +87,11 @@ public class AreaSplineOptions extends Options {
     addSeries(new SimpleSeries()
         .setName("Jane")
         .setData(Arrays.asList(new Number[] { 1, 3, 4, 3, 3, 5, 4 })));
+  }
+
+  @Override
+  public String getLabel() {
+    return "Area spline";
   }
 
 }

@@ -42,26 +42,31 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class ComboOptions extends Options {
+public class ComboOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
   public ComboOptions() {
     ChartOptions chartOptions = new ChartOptions();
-    this.setChartOptions(chartOptions);
-    this.setTitle(new Title("Combination chart"));
+    this
+        .setChartOptions(chartOptions);
+    this
+        .setTitle(new Title("Combination chart"));
 
     Axis xAxis = new Axis();
     xAxis
         .setCategories(Arrays
             .asList(new String[] { "Apples", "Oranges", "Pears", "Bananas",
                 "Plums" }));
-    this.setxAxis(xAxis);
+    this
+        .setxAxis(xAxis);
 
-    this.setTooltip(new Tooltip());
+    this
+        .setTooltip(new Tooltip());
 
-    this.setLabels(new Labels()
-        .setStyle(new CssStyle()));
+    this
+        .setLabels(new Labels()
+            .setStyle(new CssStyle()));
 
     Series<Number> series1 = new SimpleSeries();
     series1
@@ -71,7 +76,8 @@ public class ComboOptions extends Options {
     series1
         .setData(Arrays
             .asList(new Number[] { 3, 2, 1, 3, 4 }));
-    this.addSeries(series1);
+    this
+        .addSeries(series1);
 
     Series<Number> series2 = new SimpleSeries();
     series2
@@ -81,7 +87,8 @@ public class ComboOptions extends Options {
     series2
         .setData(Arrays
             .asList(new Number[] { 2, 3, 5, 7, 6 }));
-    this.addSeries(series2);
+    this
+        .addSeries(series2);
 
     Series<Number> series3 = new SimpleSeries();
     series3
@@ -91,7 +98,8 @@ public class ComboOptions extends Options {
     series3
         .setData(Arrays
             .asList(new Number[] { 4, 3, 3, 9, 0 }));
-    this.addSeries(series3);
+    this
+        .addSeries(series3);
 
     Marker series4Marker = new Marker();
     series4Marker
@@ -111,7 +119,8 @@ public class ComboOptions extends Options {
             .asList(new Number[] { 3, 2.67, 3, 6.33, 3.33 }));
     series4
         .setMarker(series4Marker);
-    this.addSeries(series4);
+    this
+        .addSeries(series4);
 
     PointSeries series5 = new PointSeries();
     series5
@@ -132,8 +141,14 @@ public class ComboOptions extends Options {
         .setShowInLegend(Boolean.FALSE);
     series5
         .setDataLabels(new DataLabels(Boolean.TRUE));
-    this.addSeries(series5);
+    this
+        .addSeries(series5);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Column, line and pie";
   }
 
 }

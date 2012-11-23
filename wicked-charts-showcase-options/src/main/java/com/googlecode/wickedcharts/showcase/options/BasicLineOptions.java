@@ -40,7 +40,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class BasicLineOptions extends Options {
+public class BasicLineOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -138,6 +138,11 @@ public class BasicLineOptions extends Options {
                 14.2, 10.3, 6.6, 4.8 }));
     addSeries(series4);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Basic line";
   }
 
 }

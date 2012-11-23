@@ -39,7 +39,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient.GradientDirection;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class ZoomableTimeSeriesOptions extends Options {
+public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -80,8 +80,7 @@ public class ZoomableTimeSeriesOptions extends Options {
 
     setLegend(new Legend(Boolean.TRUE));
 
-    Gradient fillColor = new LinearGradient(
-        GradientDirection.HORIZONTAL);
+    Gradient fillColor = new LinearGradient(GradientDirection.HORIZONTAL);
     fillColor
         .addStop(0, new HighchartsColor(0));
     fillColor
@@ -292,6 +291,11 @@ public class ZoomableTimeSeriesOptions extends Options {
             0.7795, 0.7758, 0.7717, 0.761, 0.7497, 0.7471, 0.7473, 0.7407,
             0.7288, 0.7074, 0.6927, 0.7083, 0.7191, 0.719, 0.7153, 0.7156,
             0.7158, 0.714, 0.7119, 0.7129, 0.7129, 0.7049, 0.7095 });
+  }
+
+  @Override
+  public String getLabel() {
+    return "Zoomable time series";
   }
 
 }

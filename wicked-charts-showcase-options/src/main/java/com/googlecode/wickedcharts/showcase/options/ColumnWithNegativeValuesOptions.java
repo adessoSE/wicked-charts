@@ -24,7 +24,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.functions.DefaultFormatter;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class ColumnWithNegativeValuesOptions extends Options {
+public class ColumnWithNegativeValuesOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -56,5 +56,10 @@ public class ColumnWithNegativeValuesOptions extends Options {
         .setName("Joe")
         .setData(3, 4, 4, -2, 5));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Column with negative values";
   }
 }

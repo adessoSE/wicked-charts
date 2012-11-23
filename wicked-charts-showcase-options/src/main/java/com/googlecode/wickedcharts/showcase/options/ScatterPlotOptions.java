@@ -49,7 +49,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.CoordinatesSeries;
  * @author Matthias Balke <matthias.balke@gmail.com>
  * 
  */
-public class ScatterPlotOptions extends Options {
+public class ScatterPlotOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -207,5 +207,10 @@ public class ScatterPlotOptions extends Options {
             .fromJSON(ScatterPlotOptions.MALE_DATA));
     addSeries(series2);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Scatter plot";
   }
 }

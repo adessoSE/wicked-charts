@@ -39,7 +39,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.CustomCoordinatesSe
  * @author Matthias Balke <matthias.balke@gmail.com>
  * 
  */
-public class TimeDataWithIrregularIntervalsOptions extends Options {
+public class TimeDataWithIrregularIntervalsOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -236,5 +236,10 @@ public class TimeDataWithIrregularIntervalsOptions extends Options {
         .setData(seriesData3);
     addSeries(series3);
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Time data with irregular intervals";
   }
 }

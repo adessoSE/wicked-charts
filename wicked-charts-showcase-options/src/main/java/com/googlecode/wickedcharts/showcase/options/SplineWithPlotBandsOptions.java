@@ -49,7 +49,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SplineWithPlotBandsOptions extends Options {
+public class SplineWithPlotBandsOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -194,6 +194,11 @@ public class SplineWithPlotBandsOptions extends Options {
     }
 
     return plotBand;
+  }
+
+  @Override
+  public String getLabel() {
+    return "Spline with plot bands";
   }
 
 }

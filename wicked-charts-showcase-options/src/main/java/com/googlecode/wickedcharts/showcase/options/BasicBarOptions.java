@@ -34,7 +34,7 @@ import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 
-public class BasicBarOptions extends Options {
+public class BasicBarOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -92,5 +92,10 @@ public class BasicBarOptions extends Options {
         .setName("Year 2008")
         .setData(973, 914, 4054, 732, 34));
 
+  }
+
+  @Override
+  public String getLabel() {
+    return "Basic bar";
   }
 }
