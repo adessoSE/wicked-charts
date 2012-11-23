@@ -29,6 +29,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Options for a bubble chart by using the scatter chart type (this is not a

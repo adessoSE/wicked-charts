@@ -34,6 +34,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class SplineUpdatingOptions extends ShowcaseOptions {
 

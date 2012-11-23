@@ -28,6 +28,7 @@ import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.Stacking;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class BarWithNegativeStackOptions extends ShowcaseOptions {
 

@@ -40,6 +40,7 @@ import com.googlecode.wickedcharts.highcharts.options.StatesChoice.StateType;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same chart displayed in the Highcharts Demo at <a href=

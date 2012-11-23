@@ -5,8 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
+import org.apache.wicket.ajax.form.AjaxFormSubmitBehavior;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
@@ -39,7 +41,6 @@ import com.googlecode.wickedcharts.showcase.options.PieWithGradientOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithLegendOptions;
 import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
-import com.googlecode.wickedcharts.showcase.options.ShowcaseOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
@@ -51,6 +52,7 @@ import com.googlecode.wickedcharts.showcase.options.StackedColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedPercentageOptions;
 import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * This page has been build to show all Options in a basic design without jquery
@@ -61,7 +63,7 @@ import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
  */
 public class SimplePage extends WebPage {
 
-	private Options currentOptions;
+	private Options selectedOptions;
 
 	private static List<ShowcaseOptions> choices = Arrays.asList(
 			new AreaInvertedAxisOptions(), new AreaMissingOptions(),
@@ -96,28 +98,26 @@ public class SimplePage extends WebPage {
 
 	}
 
-	public SimplePage(PageParameters params) {
-		Options options = new BasicLineOptions();
+	public SimplePage() {
+		this(new BasicLineOptions());
+	}
+
+	public SimplePage(Options options) {
 		final Chart chart = new Chart("chart", options);
 		this.add(chart);
 
-		Form<Void> form = new Form<Void>("form");
+		Form<Void> form = new Form<Void>("form") {
+			@Override
+			protected void onSubmit() {
+				setResponsePage(new SimplePage(selectedOptions));
+			}
+		};
 		this.add(form);
 
 		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>(
 				"chartSelect", new PropertyModel<ShowcaseOptions>(this,
-						"currentOptions"), choices);
+						"selectedOptions"), choices);
 		form.add(dropdown);
-
-		dropdown.add(new AjaxFormComponentUpdatingBehavior("change") {
-
-			@Override
-			protected void onUpdate(AjaxRequestTarget target) {
-				chart.setOptions(dropdown.getModelObject());
-				target.add(chart);
-			}
-
-		});
 
 		dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {
 

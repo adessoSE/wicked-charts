@@ -33,6 +33,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same donut chart displayed in the Highcharts Demo at <a href=

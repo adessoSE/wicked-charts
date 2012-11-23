@@ -28,6 +28,7 @@ import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.series.CoordinatesSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same chart displayed in the Highcharts Demo at <a href=

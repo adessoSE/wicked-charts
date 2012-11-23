@@ -38,6 +38,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient.GradientDirection;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 

@@ -40,6 +40,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.CoordinatesSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same basic scatter plot chart displayed in the Highcharts Demo at

@@ -30,6 +30,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.RadialGradient;
 import com.googlecode.wickedcharts.highcharts.options.functions.PercentageFormatter;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class PieWithGradientOptions extends ShowcaseOptions {
 

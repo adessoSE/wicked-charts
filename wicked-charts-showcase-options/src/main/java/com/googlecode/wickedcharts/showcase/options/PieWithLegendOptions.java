@@ -26,6 +26,7 @@ import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class PieWithLegendOptions extends ShowcaseOptions {
 

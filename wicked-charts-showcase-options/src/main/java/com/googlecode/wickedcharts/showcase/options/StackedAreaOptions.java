@@ -31,6 +31,7 @@ import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class StackedAreaOptions extends ShowcaseOptions {
 

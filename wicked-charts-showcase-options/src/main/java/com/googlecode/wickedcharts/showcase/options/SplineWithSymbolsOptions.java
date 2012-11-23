@@ -32,6 +32,7 @@ import com.googlecode.wickedcharts.highcharts.options.Symbol.PredefinedSymbol;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same spline chart with symbols as in the Highcharts demo at <a

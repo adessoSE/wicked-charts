@@ -1,4 +1,4 @@
-package com.googlecode.wickedcharts.showcase.options;
+package com.googlecode.wickedcharts.showcase.options.base;
 
 import com.googlecode.wickedcharts.highcharts.options.Options;
 

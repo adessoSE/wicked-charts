@@ -31,6 +31,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class ColumnWithDrilldownOptions extends ShowcaseOptions {
 
