@@ -4,11 +4,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode.wicked-charts</groupId>
-	<artifactId>wicked-charts-parent</artifactId>
+	<artifactId>wicked-charts-showcase-parent</artifactId>
 	<version>1.4.0-SNAPSHOT</version>
-	<name>Wicked Charts parent</name>
+	<name>Wicked Charts Showcase parent</name>
 	<packaging>pom</packaging>
-	<description>Parent POM for wicked-charts</description>
+	<description>Parent POM for wicked-charts Showcases</description>
 
 	<url>http://code.google.com/p/wicked-charts/</url>
 
@@ -41,10 +41,10 @@
 	</developers>
 
 	<modules>
-		<module>../wicked-charts-highcharts</module>
-		<module>../wicked-charts-wicket15</module>
-		<module>../wicked-charts-wicket6</module>
-		<module>../wicked-charts-jsf21</module>
+		<module>../wicked-charts-showcase-options</module>
+		<module>../wicked-charts-showcase-wicket15</module>
+		<module>../wicked-charts-showcase-wicket6</module>
+		<module>../wicked-charts-showcase-jsf21</module>
 	</modules>
 
 	<dependencyManagement>
