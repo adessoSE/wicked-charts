@@ -104,6 +104,12 @@ public class SimplePage extends WebPage {
 
 	public SimplePage(Options options) {
 		selectedOptions = options;
+
+		// create fresh instance of SplineUpdatingOptions for correct time ticks
+		if (selectedOptions instanceof SplineUpdatingOptions) {
+			((SplineUpdatingOptions) selectedOptions).refresh();
+		}
+
 		final Chart chart = new Chart("chart", selectedOptions);
 		this.add(chart);
 
