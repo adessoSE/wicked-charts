@@ -29,6 +29,7 @@ import com.googlecode.wickedcharts.highcharts.theme.SkiesTheme;
 import com.googlecode.wickedcharts.highcharts.theme.Theme;
 import com.googlecode.wickedcharts.showcase.links.SplineUpdatingChartLink;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
+import com.googlecode.wickedcharts.showcase.options.AngularGaugeOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaMissingOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaSplineOptions;
@@ -149,6 +150,8 @@ public class Homepage extends WebPage {
 				codeContainer, new SplineUpdatingOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer,
 				new BubbleChartOptions()));
+		this.add(new UpdateChartLink("angularGauge", chart, codeContainer,
+				new AngularGaugeOptions()));
 	}
 
 	private Label addCodeContainer() {

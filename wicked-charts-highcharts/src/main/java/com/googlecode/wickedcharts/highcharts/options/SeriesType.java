@@ -41,6 +41,8 @@ public enum SeriesType implements LowercaseEnum {
 
 	SCATTER,
 
-	SPLINE
+	SPLINE,
+	
+	GAUGE;
 
 }

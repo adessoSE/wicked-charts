@@ -26,6 +26,7 @@ import com.googlecode.wickedcharts.highcharts.options.Marker;
 import com.googlecode.wickedcharts.highcharts.options.PixelOrPercent;
 import com.googlecode.wickedcharts.highcharts.options.PointPlacement;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
+import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -40,217 +41,228 @@ import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
  */
 public abstract class Series<D> implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private String name;
+  private String name;
 
-	private SeriesType type;
+  private SeriesType type;
 
-	private List<D> data;
+  private List<D> data;
 
-	private Integer legendIndex;
+  private Integer legendIndex;
 
-	private String stack;
+  private String stack;
 
-	private Integer xAxis;
+  private Integer xAxis;
 
-	private Integer yAxis;
+  private Integer yAxis;
 
-	private Marker marker;
+  private Marker marker;
 
-	private PixelOrPercent size;
+  private PixelOrPercent size;
 
-	private Boolean showInLegend;
+  private Boolean showInLegend;
 
-	private DataLabels dataLabels;
+  private DataLabels dataLabels;
 
-	private ColorReference color;
+  private ColorReference color;
 
-	private Center center;
+  private Center center;
 
-	private PixelOrPercent innerSize;
+  private PixelOrPercent innerSize;
 
-	private Number pointInterval;
+  private Number pointInterval;
 
-	private Number pointStart;
+  private Number pointStart;
 
-	private PointPlacement pointPlacement;
+  private PointPlacement pointPlacement;
 
-	/**
-	 * Adds a point to this series.
-	 * 
-	 * @param point
-	 *          the point to add.
-	 */
-	public Series<D> addPoint(final D point) {
-		if (this.data == null) {
-			this.data = new ArrayList<D>();
-		}
-		this.data.add(point);
-		return this;
-	}
+  private Tooltip tooltip;
 
-	public Center getCenter() {
-		return this.center;
-	}
+  /**
+   * Adds a point to this series.
+   * 
+   * @param point
+   *          the point to add.
+   */
+  public Series<D> addPoint(final D point) {
+    if (this.data == null) {
+      this.data = new ArrayList<D>();
+    }
+    this.data.add(point);
+    return this;
+  }
 
-	public ColorReference getColor() {
-		return this.color;
-	}
+  public Center getCenter() {
+    return this.center;
+  }
 
-	public List<D> getData() {
-		return this.data;
-	}
+  public ColorReference getColor() {
+    return this.color;
+  }
 
-	public DataLabels getDataLabels() {
-		return this.dataLabels;
-	}
+  public List<D> getData() {
+    return this.data;
+  }
 
-	public PixelOrPercent getInnerSize() {
-		return this.innerSize;
-	}
+  public DataLabels getDataLabels() {
+    return this.dataLabels;
+  }
 
-	public Integer getLegendIndex() {
-		return this.legendIndex;
-	}
+  public PixelOrPercent getInnerSize() {
+    return this.innerSize;
+  }
 
-	public Marker getMarker() {
-		return this.marker;
-	}
+  public Integer getLegendIndex() {
+    return this.legendIndex;
+  }
 
-	public String getName() {
-		return this.name;
-	}
+  public Marker getMarker() {
+    return this.marker;
+  }
 
-	public Number getPointInterval() {
-		return this.pointInterval;
-	}
+  public String getName() {
+    return this.name;
+  }
 
-	public PointPlacement getPointPlacement() {
-		return this.pointPlacement;
-	}
+  public Number getPointInterval() {
+    return this.pointInterval;
+  }
 
-	public Number getPointStart() {
-		return this.pointStart;
-	}
+  public PointPlacement getPointPlacement() {
+    return this.pointPlacement;
+  }
 
-	public Boolean getShowInLegend() {
-		return this.showInLegend;
-	}
+  public Number getPointStart() {
+    return this.pointStart;
+  }
 
-	public PixelOrPercent getSize() {
-		return this.size;
-	}
+  public Boolean getShowInLegend() {
+    return this.showInLegend;
+  }
 
-	public String getStack() {
-		return this.stack;
-	}
+  public PixelOrPercent getSize() {
+    return this.size;
+  }
 
-	public SeriesType getType() {
-		return this.type;
-	}
+  public String getStack() {
+    return this.stack;
+  }
 
-	public Integer getxAxis() {
-		return this.xAxis;
-	}
+  public SeriesType getType() {
+    return this.type;
+  }
 
-	public Integer getyAxis() {
-		return this.yAxis;
-	}
+  public Integer getxAxis() {
+    return this.xAxis;
+  }
 
-	public Series<D> setCenter(final Center center) {
-		this.center = center;
-		return this;
-	}
+  public Integer getyAxis() {
+    return this.yAxis;
+  }
 
-	public Series<D> setColor(final Color color) {
-		this.color = new SimpleColor(color);
-		return this;
-	}
+  public Series<D> setCenter(final Center center) {
+    this.center = center;
+    return this;
+  }
 
-	public Series<D> setColor(final ColorReference color) {
-		this.color = color;
-		return this;
-	}
+  public Series<D> setColor(final Color color) {
+    this.color = new SimpleColor(color);
+    return this;
+  }
 
-	public Series<D> setData(final D... data) {
-		this.data = Arrays.asList(data);
-		return this;
-	}
+  public Series<D> setColor(final ColorReference color) {
+    this.color = color;
+    return this;
+  }
 
-	public Series<D> setData(final List<D> data) {
-		this.data = data;
-		return this;
-	}
+  public Series<D> setData(final D... data) {
+    this.data = Arrays.asList(data);
+    return this;
+  }
 
-	public Series<D> setDataLabels(final DataLabels dataLabels) {
-		this.dataLabels = dataLabels;
-		return this;
-	}
+  public Series<D> setData(final List<D> data) {
+    this.data = data;
+    return this;
+  }
 
-	public Series<D> setInnerSize(final PixelOrPercent innerSize) {
-		this.innerSize = innerSize;
-		return this;
-	}
+  public Series<D> setDataLabels(final DataLabels dataLabels) {
+    this.dataLabels = dataLabels;
+    return this;
+  }
 
-	public Series<D> setLegendIndex(final Integer legendIndex) {
-		this.legendIndex = legendIndex;
-		return this;
-	}
+  public Series<D> setInnerSize(final PixelOrPercent innerSize) {
+    this.innerSize = innerSize;
+    return this;
+  }
 
-	public Series<D> setMarker(final Marker marker) {
-		this.marker = marker;
-		return this;
-	}
+  public Series<D> setLegendIndex(final Integer legendIndex) {
+    this.legendIndex = legendIndex;
+    return this;
+  }
 
-	public Series<D> setName(final String name) {
-		this.name = name;
-		return this;
-	}
+  public Series<D> setMarker(final Marker marker) {
+    this.marker = marker;
+    return this;
+  }
 
-	public Series<D> setPointInterval(final Number pointInterval) {
-		this.pointInterval = pointInterval;
-		return this;
-	}
+  public Series<D> setName(final String name) {
+    this.name = name;
+    return this;
+  }
 
-	public Series<D> setPointPlacement(final PointPlacement pointPlacement) {
-		this.pointPlacement = pointPlacement;
-		return this;
-	}
+  public Series<D> setPointInterval(final Number pointInterval) {
+    this.pointInterval = pointInterval;
+    return this;
+  }
 
-	public Series<D> setPointStart(final Number pointStart) {
-		this.pointStart = pointStart;
-		return this;
-	}
+  public Series<D> setPointPlacement(final PointPlacement pointPlacement) {
+    this.pointPlacement = pointPlacement;
+    return this;
+  }
 
-	public Series<D> setShowInLegend(final Boolean showInLegend) {
-		this.showInLegend = showInLegend;
-		return this;
-	}
+  public Series<D> setPointStart(final Number pointStart) {
+    this.pointStart = pointStart;
+    return this;
+  }
 
-	public Series<D> setSize(final PixelOrPercent size) {
-		this.size = size;
-		return this;
-	}
+  public Series<D> setShowInLegend(final Boolean showInLegend) {
+    this.showInLegend = showInLegend;
+    return this;
+  }
 
-	public Series<D> setStack(final String stack) {
-		this.stack = stack;
-		return this;
-	}
+  public Series<D> setSize(final PixelOrPercent size) {
+    this.size = size;
+    return this;
+  }
 
-	public Series<D> setType(final SeriesType type) {
-		this.type = type;
-		return this;
-	}
+  public Series<D> setStack(final String stack) {
+    this.stack = stack;
+    return this;
+  }
 
-	public Series<D> setxAxis(final Integer xAxis) {
-		this.xAxis = xAxis;
-		return this;
-	}
+  public Series<D> setType(final SeriesType type) {
+    this.type = type;
+    return this;
+  }
 
-	public Series<D> setyAxis(final Integer yAxis) {
-		this.yAxis = yAxis;
-		return this;
-	}
+  public Series<D> setxAxis(final Integer xAxis) {
+    this.xAxis = xAxis;
+    return this;
+  }
+
+  public Series<D> setyAxis(final Integer yAxis) {
+    this.yAxis = yAxis;
+    return this;
+  }
+
+  public Series<D> setTooltip(Tooltip tooltip) {
+    this.tooltip = tooltip;
+    return this;
+  }
+
+  public Tooltip getTooltip() {
+    return tooltip;
+  }
 
 }

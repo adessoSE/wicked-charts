@@ -28,61 +28,85 @@ import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
  */
 public class Background implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private ColorReference backgroundColor;
+  private ColorReference backgroundColor;
 
-	private Integer innerWidth;
+  private Integer innerWidth;
 
-	private Integer outerWidth;
+  private Integer outerWidth;
 
-	private Integer borderWidth;
+  private Integer borderWidth;
 
-	private ColorReference borderColor;
+  private ColorReference borderColor;
 
-	public ColorReference getBackgroundColor() {
-		return this.backgroundColor;
-	}
+  private PixelOrPercent outerRadius;
 
-	public ColorReference getBorderColor() {
-		return this.borderColor;
-	}
+  private PixelOrPercent innerRadius;
 
-	public Integer getBorderWidth() {
-		return this.borderWidth;
-	}
+  public final static Background DEFAULT_BACKGROUND = new Background();
 
-	public Integer getInnerWidth() {
-		return this.innerWidth;
-	}
+  public ColorReference getBackgroundColor() {
+    return this.backgroundColor;
+  }
 
-	public Integer getOuterWidth() {
-		return this.outerWidth;
-	}
+  public ColorReference getBorderColor() {
+    return this.borderColor;
+  }
 
-	public Background setBackgroundColor(final ColorReference backgroundColor) {
-		this.backgroundColor = backgroundColor;
-		return this;
-	}
+  public Integer getBorderWidth() {
+    return this.borderWidth;
+  }
 
-	public Background setBorderColor(final ColorReference borderColor) {
-		this.borderColor = borderColor;
-		return this;
-	}
+  public Integer getInnerWidth() {
+    return this.innerWidth;
+  }
 
-	public Background setBorderWidth(final Integer borderWidth) {
-		this.borderWidth = borderWidth;
-		return this;
-	}
+  public Integer getOuterWidth() {
+    return this.outerWidth;
+  }
 
-	public Background setInnerWidth(final Integer innerWidth) {
-		this.innerWidth = innerWidth;
-		return this;
-	}
+  public Background setBackgroundColor(final ColorReference backgroundColor) {
+    this.backgroundColor = backgroundColor;
+    return this;
+  }
 
-	public Background setOuterWidth(final Integer outerWidth) {
-		this.outerWidth = outerWidth;
-		return this;
-	}
+  public Background setBorderColor(final ColorReference borderColor) {
+    this.borderColor = borderColor;
+    return this;
+  }
+
+  public Background setBorderWidth(final Integer borderWidth) {
+    this.borderWidth = borderWidth;
+    return this;
+  }
+
+  public Background setInnerWidth(final Integer innerWidth) {
+    this.innerWidth = innerWidth;
+    return this;
+  }
+
+  public Background setOuterWidth(final Integer outerWidth) {
+    this.outerWidth = outerWidth;
+    return this;
+  }
+
+  public Background setOuterRadius(PixelOrPercent outerRadius) {
+    this.outerRadius = outerRadius;
+    return this;
+  }
+
+  public PixelOrPercent getOuterRadius() {
+    return outerRadius;
+  }
+
+  public Background setInnerRadius(PixelOrPercent innerRadius) {
+    this.innerRadius = innerRadius;
+    return this;
+  }
+
+  public PixelOrPercent getInnerRadius() {
+    return innerRadius;
+  }
 
 }
