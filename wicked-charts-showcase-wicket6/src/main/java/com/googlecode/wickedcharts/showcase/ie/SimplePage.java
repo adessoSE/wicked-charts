@@ -99,11 +99,12 @@ public class SimplePage extends WebPage {
 	}
 
 	public SimplePage() {
-		this(new BasicLineOptions());
+		this(choices.get(0));
 	}
 
 	public SimplePage(Options options) {
-		final Chart chart = new Chart("chart", options);
+		selectedOptions = options;
+		final Chart chart = new Chart("chart", selectedOptions);
 		this.add(chart);
 
 		Form<Void> form = new Form<Void>("form") {

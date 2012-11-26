@@ -21,8 +21,8 @@ import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
 
-public class SplineUpdatingChartLink extends UpdateChartLink{
-	
+public class SplineUpdatingChartLink extends UpdateChartLink {
+
 	public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
 			Options options) {
 		super(id, chart, codeContainer, options);
@@ -30,6 +30,10 @@ public class SplineUpdatingChartLink extends UpdateChartLink{
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Always return a fresh {@link Options} object, so that the date ticks are
+	 * current.
+	 */
 	@Override
 	public Options getOptions() {
 		return new SplineUpdatingOptions();
