@@ -18,6 +18,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.showcase.options.AngularGaugeOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaMissingOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaSplineOptions;
@@ -84,7 +85,7 @@ public class SimplePage extends WebPage {
 			new StackedBarOptions(), new StackedColumnOptions(),
 			new StackedPercentageOptions(),
 			new TimeDataWithIrregularIntervalsOptions(),
-			new ZoomableTimeSeriesOptions());
+			new ZoomableTimeSeriesOptions(), new AngularGaugeOptions());
 
 	static {
 
