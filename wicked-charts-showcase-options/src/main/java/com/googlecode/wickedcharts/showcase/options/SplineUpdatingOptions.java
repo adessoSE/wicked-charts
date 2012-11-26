@@ -40,6 +40,8 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
+  private LiveDataSeries series;
+
   public SplineUpdatingOptions() {
 
     setChartOptions(new ChartOptions()
@@ -70,7 +72,7 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
     setExporting(new ExportingOptions()
         .setEnabled(Boolean.FALSE));
 
-    addSeries(new LiveDataSeries(this, 1000) {
+    series = new LiveDataSeries(this, 1000) {
 
       @Override
       public Coordinate<Number, Number> update() {
@@ -78,10 +80,20 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
             Math
                 .random());
       }
-    }
+    };
+    series
         .setData(randomData(20))
-        .setName("Random data"));
+        .setName("Random data");
+    addSeries(series);
 
+  }
+
+  /**
+   * Refreshes the series data so that it starts at the current date.
+   */
+  public void refresh() {
+    series
+        .setData(randomData(20));
   }
 
   private List<Point> randomData(int size) {
