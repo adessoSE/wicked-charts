@@ -34,7 +34,7 @@ public class Wicket6LiveDataFunction extends Function {
     String interval = String.valueOf(behavior.getSeries().getUpdateIntervalMs());
     String intervalVarName = behavior.getIntervalJavaScriptVarName();
     String functionBody = "var series = this.series[0];\n";
-    functionBody += MessageFormat.format("if(!(typeof {0} === 'undefined'))'{'clearInterval({0});'}'", intervalVarName);
+    functionBody += MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'clearInterval({0});'}'", intervalVarName);
     functionBody += intervalVarName + " = setInterval(function(series){\n";
     functionBody += behavior.getCallbackScript();
     functionBody += "}, " + interval + ");";

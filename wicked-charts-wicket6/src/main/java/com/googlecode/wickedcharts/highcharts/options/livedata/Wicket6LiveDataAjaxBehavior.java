@@ -75,7 +75,9 @@ public class Wicket6LiveDataAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
   private HeaderItem getClearIntervalHeaderItem() {
     String varName = getIntervalJavaScriptVarName();
-    String javaScript = MessageFormat.format("if(!(typeof {0} === 'undefined'))'{'clearInterval({0});'}'", varName);
+    String javaScript = MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'\n" +
+    		"clearInterval({0});\n" +
+    		"'}'", varName);
     return OnDomReadyHeaderItem.forScript(javaScript);
   }
 
