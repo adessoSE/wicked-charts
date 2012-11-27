@@ -5,21 +5,21 @@ import com.googlecode.wickedcharts.highcharts.options.Background;
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.Labels;
 import com.googlecode.wickedcharts.highcharts.options.MinorTickInterval;
-import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.Pane;
 import com.googlecode.wickedcharts.highcharts.options.PixelOrPercent;
-import com.googlecode.wickedcharts.highcharts.options.PlotBand;
-import com.googlecode.wickedcharts.highcharts.options.TickPosition;
 import com.googlecode.wickedcharts.highcharts.options.PixelOrPercent.Unit;
+import com.googlecode.wickedcharts.highcharts.options.PlotBand;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
+import com.googlecode.wickedcharts.highcharts.options.TickPosition;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
+import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
-public class AngularGaugeOptions extends Options {
+public class AngularGaugeOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
@@ -87,5 +87,10 @@ public class AngularGaugeOptions extends Options {
         .addPoint(80)
         .setName("Speed")
         .setTooltip(new Tooltip().setValueSuffix(" km/h")));
+  }
+
+  @Override
+  public String getLabel() {
+    return "Angular Gauge";
   }
 }
