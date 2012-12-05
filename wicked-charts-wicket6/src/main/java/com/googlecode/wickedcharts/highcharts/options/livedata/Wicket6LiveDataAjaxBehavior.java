@@ -63,8 +63,6 @@ public class Wicket6LiveDataAjaxBehavior extends AbstractDefaultAjaxBehavior {
     super.renderHead(component, response);
     response.render(JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(LiveDataSeries.class,
         "livedata.js")));
-    response.render(JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(
-        Wicket6LiveDataAjaxBehavior.class, "Wicket6LiveDataAjaxBehavior.js")));
     if (firstRendering) {
       response.render(getIntervalDeclarationHeaderItem());
       firstRendering = false;

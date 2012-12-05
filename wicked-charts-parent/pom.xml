@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode.wicked-charts</groupId>
 	<artifactId>wicked-charts-parent</artifactId>
-	<version>1.4.0-SNAPSHOT</version>
+	<version>1.3.1</version>
 	<name>Wicked Charts parent</name>
 	<packaging>pom</packaging>
 	<description>Parent POM for wicked-charts</description>
@@ -93,6 +93,20 @@
 	</dependencyManagement>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.js</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

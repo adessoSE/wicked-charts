@@ -11,7 +11,3 @@ com.googlecode.wickedcharts.highcharts.options.processing
 com.googlecode.wickedcharts.highcharts.options.series
 com.googlecode.wickedcharts.highcharts.options.util
 com.googlecode.wickedcharts.highcharts.theme
-com.googlecode.wickedcharts.showcase
-com.googlecode.wickedcharts.showcase.jsf.bean
-com.googlecode.wickedcharts.showcase.links
-com.googlecode.wickedcharts.showcase.options
