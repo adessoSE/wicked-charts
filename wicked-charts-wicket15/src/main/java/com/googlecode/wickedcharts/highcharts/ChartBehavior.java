@@ -47,19 +47,20 @@ public class ChartBehavior extends Behavior {
 	 * Constructor.
 	 * 
 	 * @param options
-	 *          the options for the chart. The {@link Option} class is very
-	 *          similar in structure to the Highcharts API reference, see
-	 *          http://www.highcharts.com/ref/.
+	 *            the options for the chart. The {@link Option} class is very
+	 *            similar in structure to the Highcharts API reference, see
+	 *            http://www.highcharts.com/ref/.
 	 */
 	public ChartBehavior(final Chart container) {
 		this.chart = container;
 	}
 
-	private void addTheme(final IHeaderResponse response, final JsonRenderer renderer) {
+	private void addTheme(final IHeaderResponse response,
+			final JsonRenderer renderer) {
 		if (this.chart.getTheme() != null) {
 			response.renderOnDomReadyJavaScript(MessageFormat.format(
-			    "Highcharts.setOptions({0});",
-			    renderer.toJson(this.chart.getTheme())));
+					"Highcharts.setOptions({0});",
+					renderer.toJson(this.chart.getTheme())));
 		} else if (this.chart.getThemeUrl() != null) {
 			response.renderJavaScriptReference(this.chart.getThemeUrl());
 		} else if (this.chart.getThemeReference() != null) {
@@ -68,59 +69,48 @@ public class ChartBehavior extends Behavior {
 	}
 
 	/**
-	 * Includes the javascript that calls the Highcharts library to visualize the
-	 * chart.
+	 * Includes the javascript that calls the Highcharts library to visualize
+	 * the chart.
 	 * 
 	 * @param response
-	 *          the Wicket HeaderResponse
+	 *            the Wicket HeaderResponse
 	 * @param options
-	 *          the options containing the data to display
+	 *            the options containing the data to display
 	 * @param renderer
-	 *          the JsonRenderer responsible for rendering the options
+	 *            the JsonRenderer responsible for rendering the options
 	 * @param markupId
-	 *          the DOM ID of the chart component.
+	 *            the DOM ID of the chart component.
 	 */
 	protected void includeChartJavascript(final IHeaderResponse response,
-	    final Options options, final JsonRenderer renderer, final String markupId) {
+			final Options options, final JsonRenderer renderer,
+			final String markupId) {
 		String chartVarname = markupId;
 		String optionsVarname = markupId + "Options";
 		response.renderOnDomReadyJavaScript(MessageFormat.format(
-		    "var {0} = {1};var {2} = new Highcharts.Chart({0});",
-		    optionsVarname, renderer.toJson(options), chartVarname));
+				"var {0} = {1};var {2} = new Highcharts.Chart({0});",
+				optionsVarname, renderer.toJson(options), chartVarname));
 	}
 
 	private void includeJavascriptDependencies(final IHeaderResponse response,
-	    final Options options) {
+			final Options options) {
 		JavaScriptResourceRegistry.getInstance().getJQueryEntry()
-		    .addToHeaderResponse(response);
+				.addToHeaderResponse(response);
 		JavaScriptResourceRegistry.getInstance().getHighchartsEntry()
-		    .addToHeaderResponse(response);
-		if (needsExporting(options)) {
+				.addToHeaderResponse(response);
+		if (OptionsUtil.needsExportingJs(options)) {
 			JavaScriptResourceRegistry.getInstance()
-			    .getHighchartsExportingEntry()
-			    .addToHeaderResponse(response);
+					.getHighchartsExportingEntry()
+					.addToHeaderResponse(response);
 		}
-		if (needsMore(options)) {
+		if (OptionsUtil.needsHighchartsMoreJs(options)) {
 			JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry()
-			    .addToHeaderResponse(response);
+					.addToHeaderResponse(response);
 		}
-	}
-
-	private boolean needsExporting(final Options options) {
-		return options.getExporting() == null
-		    || (options.getExporting().getEnabled() != null && options
-		        .getExporting().getEnabled());
-	}
-
-	private boolean needsMore(final Options options) {
-		return options.getChartOptions() != null
-		    && options.getChartOptions().getPolar() != null
-		    && options.getChartOptions().getPolar();
 	}
 
 	@Override
 	public void renderHead(final Component component,
-	    final IHeaderResponse response) {
+			final IHeaderResponse response) {
 
 		component.setOutputMarkupId(true);
 		Options options = this.chart.getOptions();
@@ -128,13 +118,13 @@ public class ChartBehavior extends Behavior {
 		OptionsUtil.getInstance().setRenderTo(options, id);
 
 		JsonRenderer renderer = Wicket15JsonRendererFactory.getInstance()
-		    .getRenderer();
+				.getRenderer();
 		includeJavascriptDependencies(response, options);
 		addTheme(response, renderer);
 
 		OptionsProcessorContext context = new OptionsProcessorContext();
 		Wicket15DrilldownProcessor drilldownProcessor = new Wicket15DrilldownProcessor(
-		    component, response);
+				component, response);
 		drilldownProcessor.processOptions(options, context);
 
 		includeChartJavascript(response, options, renderer, id);

@@ -95,23 +95,14 @@ public class ChartBehavior extends Behavior {
   private void includeJavascriptDependencies(final IHeaderResponse response, final Options options) {
     JavaScriptResourceRegistry.getInstance().getJQueryEntry().addToHeaderResponse(response);
     JavaScriptResourceRegistry.getInstance().getHighchartsEntry().addToHeaderResponse(response);
-    if (needsExporting(options)) {
+    if (OptionsUtil.needsExportingJs(options)) {
       JavaScriptResourceRegistry.getInstance().getHighchartsExportingEntry().addToHeaderResponse(response);
     }
-    if (needsMore(options)) {
+    if (OptionsUtil.needsHighchartsMoreJs(options)) {
       JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry().addToHeaderResponse(response);
     }
   }
 
-  private boolean needsExporting(final Options options) {
-    return options.getExporting() == null
-        || (options.getExporting().getEnabled() != null && options.getExporting().getEnabled());
-  }
-
-  private boolean needsMore(final Options options) {
-    return options.getChartOptions() != null && options.getChartOptions().getPolar() != null
-        && options.getChartOptions().getPolar();
-  }
 
   @Override
   public void onConfigure(Component component) {

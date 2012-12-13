@@ -18,6 +18,7 @@ import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Function;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 
 public class OptionsUtil {
 
@@ -64,4 +65,45 @@ public class OptionsUtil {
     }
   }
 
+  /**
+   * Checks if the specified Options object needs the javascript file
+   * "highcharts-more.js" to work properly. This method can be called by GUI
+   * components to determine whether the javascript file has to be included in
+   * the page or not.
+   * 
+   * @param options
+   *          the {@link Options} object to analyze
+   * @return true, if "highcharts-more.js" is needed to render the options,
+   *         false if not
+   */
+  public static boolean needsHighchartsMoreJs(Options options) {
+    return hasPolar(options) || hasGauge(options);
+  }
+
+  /**
+   * Checks if the specified Options object needs the javascript file
+   * "exporting.js" to work properly. This method can be called by GUI
+   * components to determine whether the javascript file has to be included in
+   * the page or not.
+   * 
+   * @param options
+   *          the {@link Options} object to analyze
+   * @return true, if "exporting.js" is needed to render the options, false if
+   *         not
+   */
+  public static boolean needsExportingJs(Options options) {
+    // when no ExportingOptions are set, they are enabled by default, hence
+    // return true when they are null
+    return options.getExporting() == null
+        || (options.getExporting().getEnabled() != null && options.getExporting().getEnabled());
+  }
+
+  private static boolean hasPolar(Options options) {
+    return options.getChartOptions() != null && options.getChartOptions().getPolar() != null
+        && options.getChartOptions().getPolar();
+  }
+
+  private static boolean hasGauge(Options options) {
+    return options.getChartOptions() != null && options.getChartOptions().getType() == SeriesType.GAUGE;
+  }
 }
