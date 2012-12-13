@@ -68,10 +68,24 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
 
   @Override
   public void processOptions(Options options, OptionsProcessorContext context) {
-    collectDrilldownOptions(options, context);
-    modifyDrilldownOptions(options, context);
-    addDrilldownOptionsArray(context);
-    addJavascriptDependencies(response);
+    if (!getDrilldownPoints(options).isEmpty()) {
+      collectDrilldownOptions(options, context);
+      modifyDrilldownOptions(options, context);
+      addDrilldownOptionsArray(context);
+      addJavascriptDependencies(response);
+    }
+  }
+
+  /**
+   * Gets all the {@link DrilldownPoint}s in the given {@link Options} object.
+   * 
+   * @param options
+   *          the options to search
+   * @return list of {@link DrilldownPoint} contained in the {@link Options}
+   *         object.
+   */
+  private List<IProcessableOption> getDrilldownPoints(Options options) {
+    return options.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
   }
 
   private void modifyDrilldownOptions(Options options, OptionsProcessorContext context) {
@@ -87,7 +101,7 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
    */
   @SuppressWarnings("unchecked")
   private void collectDrilldownOptions(Options options, OptionsProcessorContext context) {
-    List<? extends IProcessableOption> drilldownPoints = options.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
+    List<? extends IProcessableOption> drilldownPoints = getDrilldownPoints(options);
     for (DrilldownPoint drilldownPoint : (List<DrilldownPoint>) drilldownPoints) {
       Options drilldownOptions = drilldownPoint.getDrilldownOptions();
       if (!context.getDrilldownOptions().contains(drilldownOptions)) {
@@ -103,7 +117,8 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
    */
   private void addDrilldownOptionsArray(OptionsProcessorContext context) {
     JsonRenderer renderer = Wicket6JsonRendererFactory.getInstance().getRenderer();
-    response.render(JavaScriptHeaderItem.forScript(MessageFormat.format("var {0};", JS_DRILLDOWN_ARRAY_NAME),
+    response.render(JavaScriptHeaderItem.forScript(
+        MessageFormat.format("var {0};\n var {1};", JS_DRILLDOWN_ARRAY_NAME, getDrilldownArrayName(component)),
         JS_DRILLDOWN_ARRAY_NAME + "-init"));
     response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format("{0} = {1};", getDrilldownArrayName(component),
         renderer.toJson(context.getDrilldownOptions()))));

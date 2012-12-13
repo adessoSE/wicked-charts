@@ -22,6 +22,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
 import com.googlecode.wickedcharts.showcase.ie.SimplePage;
+import com.googlecode.wickedcharts.showcase.modalwindow.ModalWindowPage;
 
 /**
  * Application object for your web application. If you want to run this
@@ -51,6 +52,7 @@ public class ShowcaseApplication extends WebApplication {
 		mountPage("/start", Homepage.class);
 		mountPage("/start/${theme}", Homepage.class);
 		mountPage("/simple", SimplePage.class);
+		mountPage("/modal", ModalWindowPage.class);
 
 		getJavaScriptLibrarySettings().setJQueryReference(
 				new JavaScriptResourceReference(ShowcaseApplication.class,
