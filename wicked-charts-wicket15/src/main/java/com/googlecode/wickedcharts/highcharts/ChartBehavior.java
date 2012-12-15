@@ -26,6 +26,7 @@ import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.drilldown.Wicket15DrilldownProcessor;
+import com.googlecode.wickedcharts.highcharts.options.global.Wicket15GlobalProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 
@@ -122,10 +123,15 @@ public class ChartBehavior extends Behavior {
 		includeJavascriptDependencies(response, options);
 		addTheme(response, renderer);
 
-		OptionsProcessorContext context = new OptionsProcessorContext();
+		OptionsProcessorContext context = new OptionsProcessorContext(options);
+
 		Wicket15DrilldownProcessor drilldownProcessor = new Wicket15DrilldownProcessor(
 				component, response);
 		drilldownProcessor.processOptions(options, context);
+
+		Wicket15GlobalProcessor globalProcessor = new Wicket15GlobalProcessor(
+				response);
+		globalProcessor.processOptions(options, context);
 
 		includeChartJavascript(response, options, renderer, id);
 	}

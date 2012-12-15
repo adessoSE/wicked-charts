@@ -18,7 +18,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.googlecode.wickedcharts.highcharts.options.Global;
+import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 
 /**
@@ -38,6 +41,38 @@ public class OptionsProcessorContext implements Serializable {
 
   private final List<LiveDataSeries> liveDataSeries = new ArrayList<LiveDataSeries>();
 
+  private final Global global;
+
+  public OptionsProcessorContext(Options options) {
+    collectDrilldownOptions(options);
+    collectLiveDataSeries(options);
+    this.global = options.getGlobal();
+    
+  }
+  
+  @SuppressWarnings("unchecked")
+  private void collectLiveDataSeries(Options options) {
+    List<? extends IProcessableOption> series = options.getMarkedForProcessing(LiveDataSeries.PROCESSING_KEY);
+    this.liveDataSeries.addAll((List<LiveDataSeries>) series);
+  }
+
+  /**
+   * Iterates recursively through all {@link DrilldownPoint}s and their
+   * drilldownOptions in the given {@link Options} and adds them to the context.
+   */
+  @SuppressWarnings("unchecked")
+  private void collectDrilldownOptions(Options options) {
+    List<? extends IProcessableOption> drilldownPoints = options.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
+    for (DrilldownPoint drilldownPoint : (List<DrilldownPoint>) drilldownPoints) {
+      Options drilldownOptions = drilldownPoint.getDrilldownOptions();
+      if (!getDrilldownOptions().contains(drilldownOptions)) {
+        getDrilldownOptions().add(drilldownOptions);
+        collectDrilldownOptions(drilldownOptions);
+      }
+      drilldownPoint.setDrilldownOptionsIndex(getDrilldownOptions().indexOf(drilldownOptions));
+    }
+  }
+
   /**
    * Gets the list of {@link Options} that are the target of a drill down.
    * 
@@ -54,6 +89,15 @@ public class OptionsProcessorContext implements Serializable {
    */
   public List<LiveDataSeries> getLiveDataSeries() {
     return liveDataSeries;
+  }
+
+  /**
+   * Gets the {@link Global} object that is part of the {@link Options}.
+   * 
+   * @return the {@link Global} object.
+   */
+  public Global getGlobal() {
+    return global;
   }
 
 }

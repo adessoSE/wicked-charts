@@ -28,54 +28,59 @@ import com.googlecode.wickedcharts.highcharts.options.series.Point;
  */
 public class DrilldownPoint extends Point implements IProcessableOption {
 
-	/**
-	 * The key under which {@link DrilldownPoint}s are registered in the parent
-	 * options. See {@link Options#markForProcessing(IProcessableOption)} .
-	 */
-	protected static final String PROCESSING_KEY = "DRILLDOWN";
+  /**
+   * The key under which {@link DrilldownPoint}s are registered in the parent
+   * options. See {@link Options#markForProcessing(IProcessableOption)} .
+   */
+  public static final String PROCESSING_KEY = "DRILLDOWN";
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@JsonIgnore
-	private final Options drilldownOptions;
+  @JsonIgnore
+  private final Options drilldownOptions;
 
-	private Integer drilldownOptionsIndex;
+  private Integer drilldownOptionsIndex;
 
-	/**
-	 * Constructs a {@link DrilldownPoint}.
-	 * 
-	 * @param parentOptions
-	 *          the {@link Options} object this {@link DrilldownPoint} is attached
-	 *          to.
-	 * @param drilldownOptions
-	 *          the chart configuration that is to be displayed when clicking the
-	 *          Point.
-	 */
-	public DrilldownPoint(Options parentOptions, Options drilldownOptions) {
-		if (drilldownOptions == null) {
-			throw new IllegalArgumentException("parameter drilldownOptions must not be null!");
-		}
-		this.drilldownOptions = drilldownOptions;
-		parentOptions.markForProcessing(this);
-	}
+  /**
+   * Constructs a {@link DrilldownPoint}.
+   * 
+   * @param parentOptions
+   *          the {@link Options} object this {@link DrilldownPoint} is attached
+   *          to.
+   * @param drilldownOptions
+   *          the chart configuration that is to be displayed when clicking the
+   *          Point.
+   */
+  public DrilldownPoint(Options parentOptions, Options drilldownOptions) {
+    if (drilldownOptions == null) {
+      throw new IllegalArgumentException("parameter drilldownOptions must not be null!");
+    }
+    this.drilldownOptions = drilldownOptions;
+    parentOptions.markForProcessing(this);
+  }
 
-	public Options getDrilldownOptions() {
-		return drilldownOptions;
-	}
+  public Options getDrilldownOptions() {
+    return drilldownOptions;
+  }
 
-	public Integer getDrilldownOptionsIndex() {
-		return drilldownOptionsIndex;
-	}
+  public Integer getDrilldownOptionsIndex() {
+    return drilldownOptionsIndex;
+  }
 
-	protected Point setDrilldownOptionsIndex(Integer drilldownOptionsIndex) {
-		this.drilldownOptionsIndex = drilldownOptionsIndex;
-		return this;
-	}
+  /**
+   * All drilldown options are stored in a javascript array. This method sets
+   * the index of the options a click on the {@link DrilldownPoint} should show.
+   * This method is NOT part of the public API!
+   */
+  public Point setDrilldownOptionsIndex(Integer drilldownOptionsIndex) {
+    this.drilldownOptionsIndex = drilldownOptionsIndex;
+    return this;
+  }
 
-	@Override
-	@JsonIgnore
-	public String getProcessingKey() {
-		return PROCESSING_KEY;
-	}
+  @Override
+  @JsonIgnore
+  public String getProcessingKey() {
+    return PROCESSING_KEY;
+  }
 
 }

@@ -19,6 +19,7 @@ import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.CreditOptions;
 import com.googlecode.wickedcharts.highcharts.options.DataLabels;
 import com.googlecode.wickedcharts.highcharts.options.Function;
+import com.googlecode.wickedcharts.highcharts.options.Global;
 import com.googlecode.wickedcharts.highcharts.options.HorizontalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.Labels;
 import com.googlecode.wickedcharts.highcharts.options.Legend;
@@ -42,6 +43,9 @@ public class BasicBarOptions extends ShowcaseOptions {
 
     setChartOptions(new ChartOptions()
         .setType(SeriesType.BAR));
+
+    setGlobal(new Global()
+        .setUseUTC(Boolean.TRUE));
 
     setTitle(new Title("Historic World Population by Region"));
 

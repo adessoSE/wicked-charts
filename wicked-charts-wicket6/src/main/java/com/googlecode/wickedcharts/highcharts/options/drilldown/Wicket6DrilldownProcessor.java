@@ -15,7 +15,6 @@
 package com.googlecode.wickedcharts.highcharts.options.drilldown;
 
 import java.text.MessageFormat;
-import java.util.List;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -23,9 +22,9 @@ import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
+import com.googlecode.wickedcharts.highcharts.Wicket6JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Events;
-import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
@@ -35,7 +34,6 @@ import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcess
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
-import com.googlecode.wickedcharts.highcharts.Wicket6JsonRendererFactory;
 
 /**
  * This processor adds drilldown functionality to a chart. It searches the given
@@ -68,47 +66,17 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
 
   @Override
   public void processOptions(Options options, OptionsProcessorContext context) {
-    if (!getDrilldownPoints(options).isEmpty()) {
-      collectDrilldownOptions(options, context);
+    if (!context.getDrilldownOptions().isEmpty()) {
       modifyDrilldownOptions(options, context);
       addDrilldownOptionsArray(context);
       addJavascriptDependencies(response);
     }
   }
 
-  /**
-   * Gets all the {@link DrilldownPoint}s in the given {@link Options} object.
-   * 
-   * @param options
-   *          the options to search
-   * @return list of {@link DrilldownPoint} contained in the {@link Options}
-   *         object.
-   */
-  private List<IProcessableOption> getDrilldownPoints(Options options) {
-    return options.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
-  }
-
   private void modifyDrilldownOptions(Options options, OptionsProcessorContext context) {
     for (Options drilldownOptions : context.getDrilldownOptions()) {
       OptionsUtil.getInstance().copyRenderTo(options, drilldownOptions);
       addDrilldownFunction(drilldownOptions, context);
-    }
-  }
-
-  /**
-   * Iterates recursively through all {@link DrilldownPoint}s and their
-   * drilldownOptions in the given {@link Options} and adds them to the context.
-   */
-  @SuppressWarnings("unchecked")
-  private void collectDrilldownOptions(Options options, OptionsProcessorContext context) {
-    List<? extends IProcessableOption> drilldownPoints = getDrilldownPoints(options);
-    for (DrilldownPoint drilldownPoint : (List<DrilldownPoint>) drilldownPoints) {
-      Options drilldownOptions = drilldownPoint.getDrilldownOptions();
-      if (!context.getDrilldownOptions().contains(drilldownOptions)) {
-        context.getDrilldownOptions().add(drilldownOptions);
-        collectDrilldownOptions(drilldownOptions, context);
-      }
-      drilldownPoint.setDrilldownOptionsIndex(context.getDrilldownOptions().indexOf(drilldownOptions));
     }
   }
 

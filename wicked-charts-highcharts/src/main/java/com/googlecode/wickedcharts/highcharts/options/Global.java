@@ -16,6 +16,8 @@ package com.googlecode.wickedcharts.highcharts.options;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Defines the "globals" option.
  * 
@@ -24,30 +26,52 @@ import java.io.Serializable;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Global implements Serializable {
+public class Global implements IProcessableOption, Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private String canvasToolsURL;
+  /**
+   * The key under which {@link Global}s are registered in the parent options.
+   * See {@link Options#markForProcessing(IProcessableOption)} .
+   */
+  public static final String PROCESSING_KEY = "GLOBAL";
 
-	private Boolean useUTC;
+  private String canvasToolsURL;
 
-	public String getCanvasToolsURL() {
-		return this.canvasToolsURL;
-	}
+  private Boolean useUTC;
 
-	public Boolean getUseUTC() {
-		return this.useUTC;
-	}
+  private String VMLRadialGradientURL;
 
-	public Global setCanvasToolsURL(final String canvasToolsURL) {
-		this.canvasToolsURL = canvasToolsURL;
-		return this;
-	}
+  public String getCanvasToolsURL() {
+    return this.canvasToolsURL;
+  }
 
-	public Global setUseUTC(final Boolean useUTC) {
-		this.useUTC = useUTC;
-		return this;
-	}
+  public Boolean getUseUTC() {
+    return this.useUTC;
+  }
 
+  public Global setCanvasToolsURL(final String canvasToolsURL) {
+    this.canvasToolsURL = canvasToolsURL;
+    return this;
+  }
+
+  public Global setUseUTC(final Boolean useUTC) {
+    this.useUTC = useUTC;
+    return this;
+  }
+
+  public Global setVMLRadialGradientURL(String vMLRadialGradientURL) {
+    VMLRadialGradientURL = vMLRadialGradientURL;
+    return this;
+  }
+
+  public String getVMLRadialGradientURL() {
+    return VMLRadialGradientURL;
+  }
+
+  @Override
+  @JsonIgnore
+  public String getProcessingKey() {
+    return PROCESSING_KEY;
+  }
 }

@@ -30,7 +30,11 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 
   private static final long serialVersionUID = 1L;
 
-  protected static final String PROCESSING_KEY = "LIVEUPDATE";
+  /**
+   * The key under which {@link LiveDataSeries} are registered in the parent
+   * options. See {@link Options#markForProcessing(IProcessableOption)} .
+   */
+  public static final String PROCESSING_KEY = "LIVEUPDATE";
 
   @JsonIgnore
   private final Options parentOptions;

@@ -15,7 +15,6 @@
 package com.googlecode.wickedcharts.highcharts.options.drilldown;
 
 import java.text.MessageFormat;
-import java.util.List;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.IHeaderResponse;
@@ -24,14 +23,11 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import com.googlecode.wickedcharts.highcharts.Wicket15JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Events;
-import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
 import com.googlecode.wickedcharts.highcharts.options.PointOptions;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownFunction;
-import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
@@ -69,10 +65,11 @@ public class Wicket15DrilldownProcessor implements IOptionsProcessor {
 
 	@Override
 	public void processOptions(Options options, OptionsProcessorContext context) {
-		collectDrilldownOptions(options, context);
-		modifyDrilldownOptions(options, context);
-		addDrilldownOptionsArray(context);
-		addJavascriptDependencies(response);
+		if (!context.getDrilldownOptions().isEmpty()) {
+			modifyDrilldownOptions(options, context);
+			addDrilldownOptionsArray(context);
+			addJavascriptDependencies(response);
+		}
 	}
 
 	private void modifyDrilldownOptions(Options options,
@@ -80,27 +77,6 @@ public class Wicket15DrilldownProcessor implements IOptionsProcessor {
 		for (Options drilldownOptions : context.getDrilldownOptions()) {
 			OptionsUtil.getInstance().copyRenderTo(options, drilldownOptions);
 			addDrilldownFunction(drilldownOptions, context);
-		}
-	}
-
-	/**
-	 * Iterates recursively through all {@link DrilldownPoint}s and their
-	 * drilldownOptions in the given {@link Options} and adds them to the
-	 * context.
-	 */
-	@SuppressWarnings("unchecked")
-	private void collectDrilldownOptions(Options options,
-			OptionsProcessorContext context) {
-		List<? extends IProcessableOption> drilldownPoints = options
-				.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
-		for (DrilldownPoint drilldownPoint : (List<DrilldownPoint>) drilldownPoints) {
-			Options drilldownOptions = drilldownPoint.getDrilldownOptions();
-			if (!context.getDrilldownOptions().contains(drilldownOptions)) {
-				context.getDrilldownOptions().add(drilldownOptions);
-				collectDrilldownOptions(drilldownOptions, context);
-			}
-			drilldownPoint.setDrilldownOptionsIndex(context
-					.getDrilldownOptions().indexOf(drilldownOptions));
 		}
 	}
 

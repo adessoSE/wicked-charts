@@ -28,6 +28,7 @@ import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.drilldown.Wicket6DrilldownProcessor;
+import com.googlecode.wickedcharts.highcharts.options.global.Wicket6GlobalProcessor;
 import com.googlecode.wickedcharts.highcharts.options.livedata.Wicket6LiveDataProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
@@ -103,12 +104,11 @@ public class ChartBehavior extends Behavior {
     }
   }
 
-
   @Override
   public void onConfigure(Component component) {
     super.onConfigure(component);
     Wicket6LiveDataProcessor liveDataProcessor = new Wicket6LiveDataProcessor(component);
-    liveDataProcessor.processOptions(this.chart.getOptions(), new OptionsProcessorContext());
+    liveDataProcessor.processOptions(this.chart.getOptions(), new OptionsProcessorContext(this.chart.getOptions()));
   }
 
   @Override
@@ -123,9 +123,12 @@ public class ChartBehavior extends Behavior {
     includeJavascriptDependencies(response, options);
     addTheme(response, renderer);
 
-    OptionsProcessorContext context = new OptionsProcessorContext();
+    OptionsProcessorContext context = new OptionsProcessorContext(options);
     Wicket6DrilldownProcessor drilldownProcessor = new Wicket6DrilldownProcessor(component, response);
     drilldownProcessor.processOptions(options, context);
+
+    Wicket6GlobalProcessor globalProcessor = new Wicket6GlobalProcessor(response);
+    globalProcessor.processOptions(options, context);
 
     includeChartJavascript(response, options, renderer, id);
   }
