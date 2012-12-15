@@ -50,12 +50,14 @@ public class Wicket6LiveDataAjaxBehavior extends AbstractDefaultAjaxBehavior {
   @Override
   protected void respond(AjaxRequestTarget target) {
     final Coordinate<Number, Number> coordinates = series.update();
-    String javaScript = "var chartVarName = " + ((Chart) getComponent()).getJavaScriptVarName() + ";\n";
-    javaScript += "var seriesIndex = 0;\n";
-    javaScript += "var x = " + coordinates.getX() + ";\n";
-    javaScript += "var y = " + coordinates.getY() + ";\n";
-    javaScript += "eval(chartVarName).series[seriesIndex].addPoint([x,y], true, true);\n";
-    target.appendJavaScript(javaScript);
+    if (coordinates != null) {
+      String javaScript = "var chartVarName = " + ((Chart) getComponent()).getJavaScriptVarName() + ";\n";
+      javaScript += "var seriesIndex = 0;\n";
+      javaScript += "var x = " + coordinates.getX() + ";\n";
+      javaScript += "var y = " + coordinates.getY() + ";\n";
+      javaScript += "eval(chartVarName).series[seriesIndex].addPoint([x,y], true, true);\n";
+      target.appendJavaScript(javaScript);
+    }
   }
 
   @Override
@@ -73,9 +75,8 @@ public class Wicket6LiveDataAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
   private HeaderItem getClearIntervalHeaderItem() {
     String varName = getIntervalJavaScriptVarName();
-    String javaScript = MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'\n" +
-    		"clearInterval({0});\n" +
-    		"'}'", varName);
+    String javaScript = MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'\n" + "clearInterval({0});\n"
+        + "'}'", varName);
     return OnDomReadyHeaderItem.forScript(javaScript);
   }
 

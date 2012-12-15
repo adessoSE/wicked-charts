@@ -77,6 +77,8 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
   /**
    * This method is called for each update interval. It must return a coordinate
    * which is then added to the series on the fly.
+   * <p/>
+   * May return null. In that case, the chart is simply not updated.
    * 
    * @return the new {@link Coordinate} to add to the series.
    */
