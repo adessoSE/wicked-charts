@@ -44,63 +44,35 @@ import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
+// CHECKSTYLE:OFF
 public class GrayTheme extends Theme {
 
   private static final long serialVersionUID = 1L;
 
   public GrayTheme() {
-    setColors(HexColor
-        .fromStrings(
-            "#DDDF0D",
-            "#7798BF",
-            "#55BF3B",
-            "#DF5353",
-            "#aaeeee",
-            "#ff0066",
-            "#eeaaee",
-            "#55BF3B",
-            "#DF5353",
-            "#7798BF",
-            "#aaeeee"));
+    setColors(HexColor.fromStrings("#DDDF0D", "#7798BF", "#55BF3B", "#DF5353", "#aaeeee", "#ff0066", "#eeaaee",
+        "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"));
 
     setChartOptions(new ChartOptions()
-        .setBackgroundColor(new LinearGradient(0, 0, 0, 400)
-            .addStop(0, new RgbaColor(96, 96, 96))
-            .addStop(1, new RgbaColor(16, 16, 16)))
-        .setBorderWidth(0)
-        .setBorderRadius(15)
-        .setPlotBackgroundColor(new NullColor())
-        .setPlotShadow(Boolean.FALSE)
-        .setPlotBorderWidth(0));
+        .setBackgroundColor(
+            new LinearGradient(0, 0, 0, 400).addStop(0, new RgbaColor(96, 96, 96))
+                .addStop(1, new RgbaColor(16, 16, 16))).setBorderWidth(0).setBorderRadius(15)
+        .setPlotBackgroundColor(new NullColor()).setPlotShadow(Boolean.FALSE).setPlotBorderWidth(0));
 
-    setTitle(new Title()
-        .setStyle(new CssStyle()
-            .setProperty("color", "#FFF")
-            .setProperty(
-                "font",
-                "16px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif")));
+    setTitle(new Title().setStyle(new CssStyle().setProperty("color", "#FFF").setProperty("font",
+        "16px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif")));
 
-    setSubtitle(new Title()
-        .setStyle(new CssStyle()
-            .setProperty("color", "#DDD")
-            .setProperty(
-                "font",
-                "12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif")));
+    setSubtitle(new Title().setStyle(new CssStyle().setProperty("color", "#DDD").setProperty("font",
+        "12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif")));
 
     setxAxis(new Axis()
         .setGridLineWidth(0)
         .setLineColor(HexColor.fromString("#999999"))
         .setTickColor(HexColor.fromString("#999999"))
-        .setLabels(new Labels().setStyle(new CssStyle()
-            .setProperty("color", "#DDD")
-            .setProperty("fontWeight", "bold")))
+        .setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#DDD").setProperty("fontWeight", "bold")))
         .setTitle(
-            new Title()
-                .setStyle(new CssStyle()
-                    .setProperty("color", "#999")
-                    .setProperty(
-                        "font",
-                        "bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif"))));
+            new Title().setStyle(new CssStyle().setProperty("color", "#999").setProperty("font",
+                "bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif"))));
 
     setyAxis(new Axis()
         .setAlternateGridColor(new NullColor())
@@ -108,72 +80,42 @@ public class GrayTheme extends Theme {
         .setGridLineColor(new RgbaColor(255, 255, 255, .1f))
         .setLineWidth(0)
         .setTickWidth(0)
-        .setLabels(new Labels().setStyle(new CssStyle()
-            .setProperty("color", "#DDD")
-            .setProperty("fontWeight", "bold")))
+        .setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#DDD").setProperty("fontWeight", "bold")))
         .setTitle(
-            new Title()
-                .setStyle(new CssStyle()
-                    .setProperty("color", "#999")
-                    .setProperty(
-                        "font",
-                        "bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif"))));
+            new Title().setStyle(new CssStyle().setProperty("color", "#999").setProperty("font",
+                "bold 12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif"))));
 
-    setLegend(new Legend()
-        .setItemStyle(new CssStyle().setProperty("color", "#CCC"))
+    setLegend(new Legend().setItemStyle(new CssStyle().setProperty("color", "#CCC"))
         .setItemHoverStyle(new CssStyle().setProperty("color", "#FFF"))
         .setItemHiddenStyle(new CssStyle().setProperty("color", "#333")));
 
-    setLabels(new Labels()
-        .setStyle(new CssStyle()
-            .setProperty("color", "#CCC")));
+    setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#CCC")));
 
     setTooltip(new Tooltip()
-        .setBackgroundColor(new LinearGradient(0, 0, 0, 50)
-            .addStop(0, new RgbaColor(96, 96, 96, .8f))
-            .addStop(1, new RgbaColor(16, 16, 16, .8f)))
-        .setBorderWidth(0)
+        .setBackgroundColor(
+            new LinearGradient(0, 0, 0, 50).addStop(0, new RgbaColor(96, 96, 96, .8f)).addStop(1,
+                new RgbaColor(16, 16, 16, .8f))).setBorderWidth(0)
         .setStyle(new CssStyle().setProperty("color", "#FFF")));
 
     setPlotOptions(new PlotOptionsChoice()
-        .setLine(new PlotOptions()
-            .setDataLabels(new DataLabels().setColor(HexColor
-                .fromString("#cccccc")))
-            .setMarker(new Marker().setLineColor(HexColor
-                .fromString("#333333"))))
-        .setSpline(new PlotOptions().setMarker(new Marker()
-            .setLineColor(HexColor
-                .fromString("#333333"))))
-        .setScatter(new PlotOptions().setMarker(new Marker()
-            .setLineColor(HexColor
-                .fromString("#333333"))))
-        .setCandleStick(new PlotOptions().setLineColor(HexColor
-            .fromString("#ffffff"))));
+        .setLine(
+            new PlotOptions().setDataLabels(new DataLabels().setColor(HexColor.fromString("#cccccc"))).setMarker(
+                new Marker().setLineColor(HexColor.fromString("#333333"))))
+        .setSpline(new PlotOptions().setMarker(new Marker().setLineColor(HexColor.fromString("#333333"))))
+        .setScatter(new PlotOptions().setMarker(new Marker().setLineColor(HexColor.fromString("#333333"))))
+        .setCandleStick(new PlotOptions().setLineColor(HexColor.fromString("#ffffff"))));
 
     setToolbar(new DummyOption());
 
-    setNavigation(new Navigation()
-        .setButtonOptions(new ButtonOptions()
-            .setBackgroundColor(new LinearGradient(0, 0, 0, 20)
-                .addStop(0.4f, HexColor
-                    .fromString("#606060"))
-                .addStop(0.6f, HexColor
-                    .fromString("#333333")))
-            .setBorderColor(HexColor
-                .fromString("#000000"))
-            .setSymbolStroke(HexColor
-                .fromString("#c0c0c0"))
-            .setHoverSymbolStroke(HexColor
-                .fromString("#ffffff"))));
+    setNavigation(new Navigation().setButtonOptions(new ButtonOptions()
+        .setBackgroundColor(
+            new LinearGradient(0, 0, 0, 20).addStop(0.4f, HexColor.fromString("#606060")).addStop(0.6f,
+                HexColor.fromString("#333333"))).setBorderColor(HexColor.fromString("#000000"))
+        .setSymbolStroke(HexColor.fromString("#c0c0c0")).setHoverSymbolStroke(HexColor.fromString("#ffffff"))));
 
-    setExporting(new ExportingOptions()
-        .setButtons(new ExportingButtons()
-            .setExportButton(new ButtonOptions()
-                .setSymbolFill(HexColor
-                    .fromString("#55be3b")))
-            .setPrintButton(new ButtonOptions()
-                .setSymbolFill(HexColor
-                    .fromString("#7797be")))));
+    setExporting(new ExportingOptions().setButtons(new ExportingButtons().setExportButton(
+        new ButtonOptions().setSymbolFill(HexColor.fromString("#55be3b"))).setPrintButton(
+        new ButtonOptions().setSymbolFill(HexColor.fromString("#7797be")))));
 
     setRangeSelector(new DummyOption());
 
@@ -183,10 +125,8 @@ public class GrayTheme extends Theme {
 
     setLegendBackgroundColor(new RgbaColor(48, 48, 48, .8f));
     setLegendBackgroundColorSolid(new RgbaColor(70, 70, 70));
-    setDataLabelsColor(HexColor
-        .fromString("#444444"));
-    setTextColor(HexColor
-        .fromString("#e0e0e0"));
+    setDataLabelsColor(HexColor.fromString("#444444"));
+    setTextColor(HexColor.fromString("#e0e0e0"));
     setMaskColor(new RgbaColor(255, 255, 255, 0f));
 
   }

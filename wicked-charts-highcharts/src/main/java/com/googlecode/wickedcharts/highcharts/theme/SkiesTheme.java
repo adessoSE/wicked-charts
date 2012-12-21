@@ -32,6 +32,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
+// CHECKSTYLE:OFF
 public class SkiesTheme extends Theme {
 
   private static final long serialVersionUID = 1L;
@@ -52,43 +53,29 @@ public class SkiesTheme extends Theme {
         .setPlotShadow(Boolean.TRUE)
         .setPlotBackgroundImage("/img/skies.jpg")
         .setPlotBackgroundColor(
-            new LinearGradient(0, 0, 250, 500)
-                .addStop(0, new RgbaColor(255, 255, 255, 1f))
-                .addStop(1, new RgbaColor(255, 255, 255, 0f)))
-        .setPlotBorderWidth(1);
+            new LinearGradient(0, 0, 250, 500).addStop(0, new RgbaColor(255, 255, 255, 1f)).addStop(1,
+                new RgbaColor(255, 255, 255, 0f))).setPlotBorderWidth(1);
     setChartOptions(chartOptions);
 
-    setTitle(new Title()
-        .setStyle(new CssStyle()));
+    setTitle(new Title().setStyle(new CssStyle()));
 
-    setSubtitle(new Title()
-        .setStyle(new CssStyle()));
+    setSubtitle(new Title().setStyle(new CssStyle()));
 
-    Axis xAxis = new Axis()
-        .setGridLineWidth(0)
-        .setLineColor(new HexColor("#C0D0E0"))
-        .setTickColor(new HexColor("#C0D0E0"))
-        .setLabels(new Labels().setStyle(new CssStyle()))
+    Axis xAxis = new Axis().setGridLineWidth(0).setLineColor(new HexColor("#C0D0E0"))
+        .setTickColor(new HexColor("#C0D0E0")).setLabels(new Labels().setStyle(new CssStyle()))
         .setTitle(new Title().setStyle(new CssStyle()));
     setxAxis(xAxis);
 
-    Axis yAxis = new Axis()
-        .setAlternateGridColor(new RgbaColor(255, 255, 255, .5f))
-        .setLineColor(new HexColor("#C0D0E0"))
-        .setTickColor(new HexColor("#C0D0E0"))
-        .setTickWidth(1)
-        .setLabels(new Labels().setStyle(new CssStyle()))
-        .setTitle(new Title().setStyle(new CssStyle()));
+    Axis yAxis = new Axis().setAlternateGridColor(new RgbaColor(255, 255, 255, .5f))
+        .setLineColor(new HexColor("#C0D0E0")).setTickColor(new HexColor("#C0D0E0")).setTickWidth(1)
+        .setLabels(new Labels().setStyle(new CssStyle())).setTitle(new Title().setStyle(new CssStyle()));
     setyAxis(yAxis);
 
-    Legend legend = new Legend()
-        .setItemStyle(new CssStyle())
-        .setItemHoverStyle(new CssStyle())
+    Legend legend = new Legend().setItemStyle(new CssStyle()).setItemHoverStyle(new CssStyle())
         .setItemHiddenStyle(new CssStyle());
     setLegend(legend);
 
-    setLabels(new Labels()
-        .setStyle(new CssStyle()));
+    setLabels(new Labels().setStyle(new CssStyle()));
   }
 
 }
