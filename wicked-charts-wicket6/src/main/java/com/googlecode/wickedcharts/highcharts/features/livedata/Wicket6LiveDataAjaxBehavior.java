@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.options.livedata;
+package com.googlecode.wickedcharts.highcharts.features.livedata;
 
 import java.text.MessageFormat;
 
@@ -26,6 +26,7 @@ import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 import com.googlecode.wickedcharts.highcharts.Chart;
+import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 
 /**

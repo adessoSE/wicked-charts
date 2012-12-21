@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.options.livedata;
+package com.googlecode.wickedcharts.highcharts.features.livedata;
 
 import java.util.List;
 
@@ -20,6 +20,7 @@ import org.apache.wicket.Component;
 
 import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;

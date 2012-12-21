@@ -1,4 +1,4 @@
-package com.googlecode.wickedcharts.highcharts.options.global;
+package com.googlecode.wickedcharts.highcharts.features.global;
 
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;

@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.options.drilldown;
+package com.googlecode.wickedcharts.highcharts.features.drilldown;
 
 import java.text.MessageFormat;
 
@@ -28,6 +28,8 @@ import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
 import com.googlecode.wickedcharts.highcharts.options.PointOptions;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
+import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownFunction;
+import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;

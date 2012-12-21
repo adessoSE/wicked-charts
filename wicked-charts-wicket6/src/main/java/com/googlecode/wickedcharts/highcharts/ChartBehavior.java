@@ -25,11 +25,11 @@ import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
 import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
+import com.googlecode.wickedcharts.highcharts.features.drilldown.Wicket6DrilldownProcessor;
+import com.googlecode.wickedcharts.highcharts.features.global.Wicket6GlobalProcessor;
+import com.googlecode.wickedcharts.highcharts.features.livedata.Wicket6LiveDataProcessor;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.drilldown.Wicket6DrilldownProcessor;
-import com.googlecode.wickedcharts.highcharts.options.global.Wicket6GlobalProcessor;
-import com.googlecode.wickedcharts.highcharts.options.livedata.Wicket6LiveDataProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 
