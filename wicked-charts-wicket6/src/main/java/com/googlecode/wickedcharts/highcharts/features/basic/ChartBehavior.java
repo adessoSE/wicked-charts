@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts;
+package com.googlecode.wickedcharts.highcharts.features.basic;
 
 import java.text.MessageFormat;
 
@@ -25,6 +25,8 @@ import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
 import com.googlecode.wickedcharts.JavaScriptResourceRegistry;
+import com.googlecode.wickedcharts.highcharts.Chart;
+import com.googlecode.wickedcharts.highcharts.Wicket6JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.features.drilldown.Wicket6DrilldownProcessor;
 import com.googlecode.wickedcharts.highcharts.features.global.Wicket6GlobalProcessor;
 import com.googlecode.wickedcharts.highcharts.features.livedata.Wicket6LiveDataProcessor;

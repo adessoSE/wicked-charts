@@ -18,8 +18,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.googlecode.wickedcharts.highcharts.options.util.CssPropertyNameSanitizer;
-
 /**
  * Option to allow CSS styles in a chart.
  * 
@@ -30,48 +28,70 @@ import com.googlecode.wickedcharts.highcharts.options.util.CssPropertyNameSaniti
  */
 public class CssStyle implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	private Map<String, String> properties;
+  private Map<String, String> properties;
 
-	public CssStyle() {
-	}
+  public CssStyle() {
+  }
 
-	public Map<String, String> getProperties() {
-		if (this.properties == null) {
-			return new HashMap<String, String>();
-		} else {
-			return this.properties;
-		}
-	}
+  public Map<String, String> getProperties() {
+    if (this.properties == null) {
+      return new HashMap<String, String>();
+    } else {
+      return this.properties;
+    }
+  }
 
-	public String getProperty(final String key) {
-		if (this.properties == null) {
-			return null;
-		} else {
-			return this.properties.get(key);
-		}
-	}
+  public String getProperty(final String key) {
+    if (this.properties == null) {
+      return null;
+    } else {
+      return this.properties.get(key);
+    }
+  }
 
-	/**
-	 * Sets a CSS property.
-	 * 
-	 * @param key
-	 *          the name of the property. Note that hyphen notation ("-") is
-	 *          automatically converted into camel case notation since the
-	 *          property name is used as key in a JSON object. Highcharts will
-	 *          evaluate it as if it were hyphen notation.
-	 * @param value
-	 *          the value of the CSS property.
-	 * @return this for chaining.
-	 */
-	public CssStyle setProperty(final String key, final String value) {
-		if (this.properties == null) {
-			this.properties = new HashMap<String, String>();
-		}
-		CssPropertyNameSanitizer sanitizer = CssPropertyNameSanitizer.getInstance();
-		this.properties.put(sanitizer.sanitizeCssPropertyName(key), value);
-		return this;
-	}
+  /**
+   * Sets a CSS property.
+   * 
+   * @param key
+   *          the name of the property. Note that hyphen notation ("-") is
+   *          automatically converted into camel case notation since the
+   *          property name is used as key in a JSON object. Highcharts will
+   *          evaluate it as if it were hyphen notation.
+   * @param value
+   *          the value of the CSS property.
+   * @return this for chaining.
+   */
+  public CssStyle setProperty(final String key, final String value) {
+    if (this.properties == null) {
+      this.properties = new HashMap<String, String>();
+    }
+    this.properties.put(sanitizeCssPropertyName(key), value);
+    return this;
+  }
+
+  /**
+   * Replaces hyphen notation with camel case notation.
+   * 
+   * @param propertyName
+   *          the name of the CSS property to sanitize
+   * @return the sanitized CSS property name
+   */
+  private String sanitizeCssPropertyName(final String propertyName) {
+    if (!propertyName.contains("-")) {
+      return propertyName;
+    } else {
+      String sanitized = propertyName;
+      int index = sanitized.indexOf('-');
+      while (index != -1) {
+        String charToBeReplaced = sanitized.substring(index + 1, index + 2);
+        String replacement = charToBeReplaced.toUpperCase();
+        sanitized = sanitized.replaceAll("-" + charToBeReplaced, replacement);
+        index = sanitized.indexOf('-');
+      }
+      return sanitized;
+    }
+  }
 
 }

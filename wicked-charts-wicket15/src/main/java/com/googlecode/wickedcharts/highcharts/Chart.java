@@ -17,6 +17,7 @@ package com.googlecode.wickedcharts.highcharts;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
+import com.googlecode.wickedcharts.highcharts.features.basic.ChartBehavior;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.theme.Theme;
 
