@@ -27,7 +27,7 @@ public class Wicket15JsonRendererFactory {
 
 	private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
 
-	private static JsonRenderer RENDERER;
+	private static JsonRenderer RENDERER = new JsonRenderer();
 
 	public static Wicket15JsonRendererFactory getInstance() {
 		return INSTANCE;
@@ -44,20 +44,7 @@ public class Wicket15JsonRendererFactory {
 	 * @return the singleton {@link JsonRenderer}
 	 */
 	public JsonRenderer getRenderer() {
-		if (RENDERER == null) {
-			RENDERER = createWicket15JsonRenderer();
-		}
 		return RENDERER;
-	}
-
-	/**
-	 * This method creates a {@link JsonRenderer} that is configured for Wicket
-	 * 1.5.x.
-	 * 
-	 * @return
-	 */
-	private JsonRenderer createWicket15JsonRenderer() {
-		return new JsonRenderer();
 	}
 
 }

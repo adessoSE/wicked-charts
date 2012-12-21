@@ -39,7 +39,7 @@ import com.googlecode.wickedcharts.highcharts.theme.Theme;
  * Please note that due to a bug in the Highcharts javascript library,
  * <strong>it is currently not possible to change the theme of a chart via
  * AJAX</strong>. If you do this, only the configuration options defined in the
- * new theme are overridden. Any configuration options defined in the old theme
+ * new theme are overridden. Any configuration options defined in the old theme 
  * and not in the new theme will stay active.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)

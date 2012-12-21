@@ -28,7 +28,7 @@ public class JSF21JsonRendererFactory {
 
 	private static final JSF21JsonRendererFactory INSTANCE = new JSF21JsonRendererFactory();
 
-	private static JsonRenderer RENDERER;
+	private static JsonRenderer RENDERER = new JsonRenderer();
 
 	public static JSF21JsonRendererFactory getInstance() {
 		return JSF21JsonRendererFactory.INSTANCE;
@@ -45,19 +45,7 @@ public class JSF21JsonRendererFactory {
 	 * @return the singleton {@link JsonRenderer}
 	 */
 	public JsonRenderer getRenderer() {
-		if (JSF21JsonRendererFactory.RENDERER == null) {
-			JSF21JsonRendererFactory.RENDERER = this.createJSF21JsonRenderer();
-		}
 		return JSF21JsonRendererFactory.RENDERER;
-	}
-
-	/**
-	 * This method creates a {@link JsonRenderer} that is configured for JSF 2.1.
-	 * 
-	 * @return
-	 */
-	private JsonRenderer createJSF21JsonRenderer() {
-		return new JsonRenderer();
 	}
 
 }
