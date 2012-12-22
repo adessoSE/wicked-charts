@@ -15,6 +15,8 @@
 package com.googlecode.wickedcharts.highcharts.options;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -27,6 +29,8 @@ public class Function implements Serializable {
 
 	private String function;
 
+	private final List<String> parameters = new ArrayList<String>();
+
 	public Function() {
 	}
 
@@ -35,16 +39,48 @@ public class Function implements Serializable {
 	}
 
 	public String getFunction() {
-		if (this.function == null) {
-			return "function() {  }";
-		} else {
-			return "function() { " + this.function + " }";
+		String result = getSignature();
+		result += "{";
+		if (this.function != null) {
+			result += this.function;
 		}
+		result += "}";
+		return result;
 	}
 
 	public Function setFunction(final String functionBody) {
 		this.function = functionBody;
 		return this;
+	}
+
+	/**
+	 * With this function, you can add parameters to the signature of the
+	 * javascript function. All parameters added with this method will be included
+	 * as parameters in the rendered function call.
+	 * 
+	 * @param parameter
+	 *          the name of the parameter.
+	 */
+	protected void addParameter(String parameter) {
+		this.parameters.add(parameter);
+	}
+
+	private String getSignature() {
+		if (this.parameters.isEmpty()) {
+			return "function()";
+		} else {
+			String signature = "function(";
+			boolean first = true;
+			for (String param : this.parameters) {
+				if (!first) {
+					signature += ",";
+				}
+				signature += param;
+				first = false;
+			}
+			signature += ")";
+			return signature;
+		}
 	}
 
 }

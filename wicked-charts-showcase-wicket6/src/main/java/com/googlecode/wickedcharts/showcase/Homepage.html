@@ -135,25 +135,25 @@
 
               <li class="nav-header">Dynamic charts</li>
               <li><a href="#" wicket:id="splineUpdating">Spline updating each second</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Click to add a point</a></li>
+              <li><a wicket:id="clicktoadd" href="#">Click to add a point</a></li>
               <li class="disabled"><a href="#" onclick="return false">Master-detail chart</a></li>
 
               <li class="nav-header">Combinations</li>
               <li><a href="#" wicket:id="combo">Column, Line and Pie</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Dual axes, line and column</a></li>
+              <li><a wicket:id="dualAxes" href="#">Dual axes, line and column</a></li>
               <li class="disabled"><a href="#" onclick="return false">Multiple axes</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Scatter with regression line</a></li>
+              <li><a wicket:id="scatterWithRegression" href="#" >Scatter with regression line</a></li>
 
               <li class="nav-header">More chart types</li>
               <li><a href="#" wicket:id="angularGauge">Angular gauge</a></li>
               <li class="disabled"><a href="#" onclick="return false">Clock</a></li>
               <li class="disabled"><a href="#" onclick="return false">Gauge with dual axes</a></li>
               <li class="disabled"><a href="#" onclick="return false">VU meter</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Area range</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Column range</a></li>
+              <li><a wicket:id="arearange" href="#">Area range</a></li>
+              <li><a wicket:id="columnrange" href="#">Column range</a></li>
               <li><a href="#" wicket:id="polar">Polar chart</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Spiderweb</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Wind rose</a></li>
+              <li><a wicket:id="spiderweb" href="#" >Spiderweb</a></li>
+              <li><a wicket:id="windrose" href="#">Wind rose</a></li>
               <li><a href="#" wicket:id="bubble">Bubble Chart</a></li>
             </ul>
           </div><!--/.well -->
@@ -232,11 +232,6 @@ add(new Chart("chart", options));
 	<script src="js/syntaxhighlighter/shCore.js"></script>
 	<script src="js/syntaxhighlighter/shBrushJava.js"></script>
 	<script src="js/syntaxhighlighter/shBrushXml.js"></script>
-	<script src="js/wickedcharts.js"></script>
-	
-	<script src="http://code.highcharts.com/2.3.2/highcharts.js"></script>
-	<script src="http://code.highcharts.com/2.3.2/highcharts-more.js"></script>
-	<script src="http://code.highcharts.com/2.3.2/modules/exporting.js"></script>
 		
   </body>
 </html>

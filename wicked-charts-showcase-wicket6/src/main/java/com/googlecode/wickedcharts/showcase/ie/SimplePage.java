@@ -5,22 +5,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.wicket.ajax.AjaxEventBehavior;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
-import org.apache.wicket.ajax.form.AjaxFormSubmitBehavior;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.showcase.options.AngularGaugeOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaMissingOptions;
+import com.googlecode.wickedcharts.showcase.options.AreaRangeOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaSplineOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaWithNegativeValuesOptions;
 import com.googlecode.wickedcharts.showcase.options.BarWithNegativeStackOptions;
@@ -30,6 +26,8 @@ import com.googlecode.wickedcharts.showcase.options.BasicColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.BasicLineOptions;
 import com.googlecode.wickedcharts.showcase.options.BasicPieOptions;
 import com.googlecode.wickedcharts.showcase.options.BubbleChartOptions;
+import com.googlecode.wickedcharts.showcase.options.ClickToAddAPointOptions;
+import com.googlecode.wickedcharts.showcase.options.ColumnRangeOptions;
 import com.googlecode.wickedcharts.showcase.options.ColumnWithDrilldownOptions;
 import com.googlecode.wickedcharts.showcase.options.ColumnWithNegativeValuesOptions;
 import com.googlecode.wickedcharts.showcase.options.ColumnWithRotatedLabelsOptions;
@@ -42,6 +40,8 @@ import com.googlecode.wickedcharts.showcase.options.PieWithGradientOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithLegendOptions;
 import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
+import com.googlecode.wickedcharts.showcase.options.ScatterWithRegressionLineOptions;
+import com.googlecode.wickedcharts.showcase.options.SpiderwebOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
@@ -52,6 +52,7 @@ import com.googlecode.wickedcharts.showcase.options.StackedBarOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedPercentageOptions;
 import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
+import com.googlecode.wickedcharts.showcase.options.WindroseOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
@@ -66,26 +67,20 @@ public class SimplePage extends WebPage {
 
 	private Options selectedOptions;
 
-	private static List<ShowcaseOptions> choices = Arrays.asList(
-			new AreaInvertedAxisOptions(), new AreaMissingOptions(),
-			new AreaSplineOptions(), new AreaWithNegativeValuesOptions(),
-			new BarWithNegativeStackOptions(), new BasicAreaOptions(),
-			new BasicBarOptions(), new BasicColumnOptions(),
-			new BasicLineOptions(), new BasicPieOptions(),
-			new BubbleChartOptions(), new ColumnWithDrilldownOptions(),
-			new ColumnWithNegativeValuesOptions(),
-			new ColumnWithRotatedLabelsOptions(), new ComboOptions(),
-			new DonutOptions(), new LineWithDataLabelsOptions(),
-			new LogarithmicAxisOptions(), new PercentageAreaOptions(),
-			new PieWithGradientOptions(), new PieWithLegendOptions(),
-			new PolarOptions(), new ScatterPlotOptions(),
-			new SplineUpdatingOptions(), new SplineWithInvertedAxisOptions(),
-			new SplineWithPlotBandsOptions(), new SplineWithSymbolsOptions(),
-			new StackedAndGroupedColumnOptions(), new StackedAreaOptions(),
-			new StackedBarOptions(), new StackedColumnOptions(),
-			new StackedPercentageOptions(),
-			new TimeDataWithIrregularIntervalsOptions(),
-			new ZoomableTimeSeriesOptions(), new AngularGaugeOptions());
+	private static List<ShowcaseOptions> choices = Arrays.asList(new AreaInvertedAxisOptions(),
+			new AreaMissingOptions(), new AreaSplineOptions(), new AreaWithNegativeValuesOptions(),
+			new BarWithNegativeStackOptions(), new BasicAreaOptions(), new BasicBarOptions(), new BasicColumnOptions(),
+			new BasicLineOptions(), new BasicPieOptions(), new BubbleChartOptions(), new ColumnWithDrilldownOptions(),
+			new ColumnWithNegativeValuesOptions(), new ColumnWithRotatedLabelsOptions(), new ComboOptions(),
+			new DonutOptions(), new LineWithDataLabelsOptions(), new LogarithmicAxisOptions(),
+			new PercentageAreaOptions(), new PieWithGradientOptions(), new PieWithLegendOptions(), new PolarOptions(),
+			new ScatterPlotOptions(), new SplineUpdatingOptions(), new SplineWithInvertedAxisOptions(),
+			new SplineWithPlotBandsOptions(), new SplineWithSymbolsOptions(), new StackedAndGroupedColumnOptions(),
+			new StackedAreaOptions(), new StackedBarOptions(), new StackedColumnOptions(),
+			new StackedPercentageOptions(), new TimeDataWithIrregularIntervalsOptions(),
+			new ZoomableTimeSeriesOptions(), new AngularGaugeOptions(), new SpiderwebOptions(), new WindroseOptions(),
+			new ScatterWithRegressionLineOptions(), new ColumnRangeOptions(), new AreaRangeOptions(),
+			new ClickToAddAPointOptions());
 
 	static {
 
@@ -122,9 +117,8 @@ public class SimplePage extends WebPage {
 		};
 		this.add(form);
 
-		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>(
-				"chartSelect", new PropertyModel<ShowcaseOptions>(this,
-						"selectedOptions"), choices);
+		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>("chartSelect",
+				new PropertyModel<ShowcaseOptions>(this, "selectedOptions"), choices);
 		form.add(dropdown);
 
 		dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {

@@ -16,41 +16,22 @@ package com.googlecode.wickedcharts.highcharts.jackson;
 
 import org.junit.Test;
 
-import com.googlecode.wickedcharts.highcharts.options.Function;
+import com.googlecode.wickedcharts.highcharts.options.series.RangeCoordinate;
 
-/**
- * 
- * @author Matthias Balke <matthias.balke@gmail.com>
- * 
- */
-public class FunctionSerializerTest extends AbstractSerializerTest {
+public class RangeCoordinateSerializerTest extends AbstractSerializerTest {
 
 	@Test
-	public void testNotNull() {
+	public void test() {
+
 		// given
-		Function function = new Function();
-		function.setFunction("");
+		RangeCoordinate<Number, Number, Number> coordinate = new RangeCoordinate<Number, Number, Number>(1, 2, 3);
 		JsonRenderer renderer = new JsonRenderer();
 
 		// when
-		String json = renderer.toJson(function);
+		String json = renderer.toJson(coordinate);
 
 		// then
-		assertIgnoreWhitespaces("function() {  }", json);
+		assertIgnoreWhitespaces("[1, 2, 3]", json);
 	}
 
-	@Test
-	public void testNotNullWithFunction() {
-		// given
-		Function function = new Function();
-		String functionBody = "return 4;";
-		function.setFunction(functionBody);
-		JsonRenderer renderer = new JsonRenderer();
-
-		// when
-		String json = renderer.toJson(function);
-
-		// then
-		assertIgnoreWhitespaces("function() { return 4; }", json);
-	}
 }

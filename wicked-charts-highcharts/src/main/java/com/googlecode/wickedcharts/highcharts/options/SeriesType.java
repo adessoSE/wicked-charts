@@ -42,7 +42,11 @@ public enum SeriesType implements LowercaseEnum {
 	SCATTER,
 
 	SPLINE,
-	
-	GAUGE;
+
+	GAUGE,
+
+	COLUMNRANGE,
+
+	AREARANGE;
 
 }

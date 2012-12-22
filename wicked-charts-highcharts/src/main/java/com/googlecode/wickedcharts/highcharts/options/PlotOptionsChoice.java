@@ -48,6 +48,10 @@ public class PlotOptionsChoice implements Serializable {
 
 	private PlotOptions candleStick;
 
+	private PlotOptions gauge;
+
+	private PlotOptions columnrange;
+
 	public PlotOptionsChoice() {
 
 	}
@@ -142,6 +146,24 @@ public class PlotOptionsChoice implements Serializable {
 		return this;
 	}
 
+	public PlotOptionsChoice setColumnrange(PlotOptions columnrange) {
+		this.columnrange = columnrange;
+		return this;
+	}
+
+	public PlotOptions getColumnrange() {
+		return columnrange;
+	}
+
+	public PlotOptionsChoice setGauge(PlotOptions gauge) {
+		this.gauge = gauge;
+		return this;
+	}
+
+	public PlotOptions getGauge() {
+		return gauge;
+	}
+
 	public PlotOptions getPlotOptions(SeriesType type) {
 		switch (type) {
 			case AREA:
@@ -160,6 +182,10 @@ public class PlotOptionsChoice implements Serializable {
 				return this.scatter;
 			case SPLINE:
 				return this.spline;
+			case COLUMNRANGE:
+				return this.columnrange;
+			case GAUGE:
+				return this.gauge;
 			default:
 				throw new IllegalArgumentException("Invalid SeriesType: " + type);
 		}
@@ -191,9 +217,16 @@ public class PlotOptionsChoice implements Serializable {
 			case SPLINE:
 				this.spline = plotOptions;
 				break;
+			case COLUMNRANGE:
+				this.columnrange = plotOptions;
+				break;
+			case GAUGE:
+				this.gauge = plotOptions;
+				break;
 			default:
 				throw new IllegalArgumentException("Invalid SeriesType: " + type);
 		}
 		return this;
 	}
+
 }

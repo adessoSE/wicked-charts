@@ -14,96 +14,116 @@
  */
 package com.googlecode.wickedcharts.highcharts.options.util;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Function;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
+import com.googlecode.wickedcharts.highcharts.options.series.Series;
 
 public class OptionsUtil {
 
-  private static OptionsUtil INSTANCE = new OptionsUtil();
+	private static OptionsUtil INSTANCE = new OptionsUtil();
 
-  public static OptionsUtil getInstance() {
-    return INSTANCE;
-  }
+	/**
+	 * List of chart types that need inclusion of the higharts_more.js file.
+	 */
+	private static final List<SeriesType> CHART_TYPES_NEEDING_MORE = Arrays.asList(SeriesType.AREARANGE,
+	    SeriesType.COLUMNRANGE, SeriesType.GAUGE);
 
-  private OptionsUtil() {
+	public static OptionsUtil getInstance() {
+		return INSTANCE;
+	}
 
-  }
+	private OptionsUtil() {
 
-  /**
-   * Copies the renderTo configuration from one {@link Options} object to
-   * another. Null-safe.
-   */
-  public void copyRenderTo(Options from, Options to) {
-    if (to.getChartOptions() == null) {
-      to.setChartOptions(new ChartOptions());
-    }
-    to.getChartOptions().setRenderTo(from.getChartOptions().getRenderTo());
-  }
+	}
 
-  /**
-   * Null-safe setter for the renderTo configuration.
-   */
-  public void setRenderTo(Options options, String renderTo) {
-    if (options.getChartOptions() == null) {
-      options.setChartOptions(new ChartOptions());
-    }
-    options.getChartOptions().setRenderTo(renderTo);
-  }
+	/**
+	 * Copies the renderTo configuration from one {@link Options} object to
+	 * another. Null-safe.
+	 */
+	public void copyRenderTo(Options from, Options to) {
+		if (to.getChartOptions() == null) {
+			to.setChartOptions(new ChartOptions());
+		}
+		to.getChartOptions().setRenderTo(from.getChartOptions().getRenderTo());
+	}
 
-  /**
-   * Null-safe setter for the chart.events.load configuration.
-   */
-  public void setChartEventsLoad(Options options, Function function) {
-    if (options.getChartOptions().getEvents() == null) {
-      options.getChartOptions().setEvents(new Events());
-    }
-    if (options.getChartOptions().getEvents().getLoad() == null) {
-      options.getChartOptions().getEvents().setLoad(function);
-    }
-  }
+	/**
+	 * Null-safe setter for the renderTo configuration.
+	 */
+	public void setRenderTo(Options options, String renderTo) {
+		if (options.getChartOptions() == null) {
+			options.setChartOptions(new ChartOptions());
+		}
+		options.getChartOptions().setRenderTo(renderTo);
+	}
 
-  /**
-   * Checks if the specified Options object needs the javascript file
-   * "highcharts-more.js" to work properly. This method can be called by GUI
-   * components to determine whether the javascript file has to be included in
-   * the page or not.
-   * 
-   * @param options
-   *          the {@link Options} object to analyze
-   * @return true, if "highcharts-more.js" is needed to render the options,
-   *         false if not
-   */
-  public static boolean needsHighchartsMoreJs(Options options) {
-    return hasPolar(options) || hasGauge(options);
-  }
+	/**
+	 * Null-safe setter for the chart.events.load configuration.
+	 */
+	public void setChartEventsLoad(Options options, Function function) {
+		if (options.getChartOptions().getEvents() == null) {
+			options.getChartOptions().setEvents(new Events());
+		}
+		if (options.getChartOptions().getEvents().getLoad() == null) {
+			options.getChartOptions().getEvents().setLoad(function);
+		}
+	}
 
-  /**
-   * Checks if the specified Options object needs the javascript file
-   * "exporting.js" to work properly. This method can be called by GUI
-   * components to determine whether the javascript file has to be included in
-   * the page or not.
-   * 
-   * @param options
-   *          the {@link Options} object to analyze
-   * @return true, if "exporting.js" is needed to render the options, false if
-   *         not
-   */
-  public static boolean needsExportingJs(Options options) {
-    // when no ExportingOptions are set, they are enabled by default, hence
-    // return true when they are null
-    return options.getExporting() == null
-        || (options.getExporting().getEnabled() != null && options.getExporting().getEnabled());
-  }
+	/**
+	 * Checks if the specified Options object needs the javascript file
+	 * "highcharts-more.js" to work properly. This method can be called by GUI
+	 * components to determine whether the javascript file has to be included in
+	 * the page or not.
+	 * 
+	 * @param options
+	 *          the {@link Options} object to analyze
+	 * @return true, if "highcharts-more.js" is needed to render the options,
+	 *         false if not
+	 */
+	public static boolean needsHighchartsMoreJs(Options options) {
+		return hasPolar(options) || hasChartTypeNeedingMoreJs(options);
+	}
 
-  private static boolean hasPolar(Options options) {
-    return options.getChartOptions() != null && options.getChartOptions().getPolar() != null
-        && options.getChartOptions().getPolar();
-  }
+	/**
+	 * Checks if the specified Options object needs the javascript file
+	 * "exporting.js" to work properly. This method can be called by GUI
+	 * components to determine whether the javascript file has to be included in
+	 * the page or not.
+	 * 
+	 * @param options
+	 *          the {@link Options} object to analyze
+	 * @return true, if "exporting.js" is needed to render the options, false if
+	 *         not
+	 */
+	public static boolean needsExportingJs(Options options) {
+		// when no ExportingOptions are set, they are enabled by default, hence
+		// return true when they are null
+		return options.getExporting() == null
+		    || (options.getExporting().getEnabled() != null && options.getExporting().getEnabled());
+	}
 
-  private static boolean hasGauge(Options options) {
-    return options.getChartOptions() != null && options.getChartOptions().getType() == SeriesType.GAUGE;
-  }
+	private static boolean hasPolar(Options options) {
+		return options.getChartOptions() != null && options.getChartOptions().getPolar() != null
+		    && options.getChartOptions().getPolar();
+	}
+
+	private static boolean hasChartTypeNeedingMoreJs(Options options) {
+		if (options.getChartOptions() != null && CHART_TYPES_NEEDING_MORE.contains(options.getChartOptions().getType())) {
+			return true;
+		}
+		if (options.getSeries() != null) {
+			for (Series<?> series : options.getSeries()) {
+				if (CHART_TYPES_NEEDING_MORE.contains(series.getType())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }

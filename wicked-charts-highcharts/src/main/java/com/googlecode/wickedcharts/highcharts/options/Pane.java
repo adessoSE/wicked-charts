@@ -37,6 +37,8 @@ public class Pane implements Serializable {
 
 	private List<Background> background;
 
+	private PixelOrPercent size;
+
 	public Pane() {
 
 	}
@@ -83,6 +85,15 @@ public class Pane implements Serializable {
 	public Pane setStartAngle(final Integer startAngle) {
 		this.startAngle = startAngle;
 		return this;
+	}
+
+	public Pane setSize(PixelOrPercent size) {
+		this.size = size;
+		return this;
+	}
+
+	public PixelOrPercent getSize() {
+		return size;
 	}
 
 }
