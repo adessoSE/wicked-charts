@@ -1,5 +1,3 @@
-com.googlecode.wickedcharts
-com.googlecode.wickedcharts.highcharts
 com.googlecode.wickedcharts.highcharts.jackson
 com.googlecode.wickedcharts.highcharts.json
 com.googlecode.wickedcharts.highcharts.options
@@ -11,3 +9,16 @@ com.googlecode.wickedcharts.highcharts.options.processing
 com.googlecode.wickedcharts.highcharts.options.series
 com.googlecode.wickedcharts.highcharts.options.util
 com.googlecode.wickedcharts.highcharts.theme
+com.googlecode.wickedcharts.jsf21
+com.googlecode.wickedcharts.jsf21.highcharts
+com.googlecode.wickedcharts.wicket15
+com.googlecode.wickedcharts.wicket15.highcharts
+com.googlecode.wickedcharts.wicket15.highcharts.features.basic
+com.googlecode.wickedcharts.wicket15.highcharts.features.drilldown
+com.googlecode.wickedcharts.wicket15.highcharts.features.global
+com.googlecode.wickedcharts.wicket6
+com.googlecode.wickedcharts.wicket6.highcharts
+com.googlecode.wickedcharts.wicket6.highcharts.features.basic
+com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown
+com.googlecode.wickedcharts.wicket6.highcharts.features.global
+com.googlecode.wickedcharts.wicket6.highcharts.features.livedata
