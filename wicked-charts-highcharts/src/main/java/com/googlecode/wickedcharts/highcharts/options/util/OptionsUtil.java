@@ -14,25 +14,16 @@
  */
 package com.googlecode.wickedcharts.highcharts.options.util;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
+import com.googlecode.wickedcharts.highcharts.options.ChartType;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Function;
 import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.series.Series;
 
 public class OptionsUtil {
 
 	private static OptionsUtil INSTANCE = new OptionsUtil();
-
-	/**
-	 * List of chart types that need inclusion of the higharts_more.js file.
-	 */
-	private static final List<SeriesType> CHART_TYPES_NEEDING_MORE = Arrays.asList(SeriesType.AREARANGE,
-	    SeriesType.COLUMNRANGE, SeriesType.GAUGE);
 
 	public static OptionsUtil getInstance() {
 		return INSTANCE;
@@ -114,12 +105,13 @@ public class OptionsUtil {
 	}
 
 	private static boolean hasChartTypeNeedingMoreJs(Options options) {
-		if (options.getChartOptions() != null && CHART_TYPES_NEEDING_MORE.contains(options.getChartOptions().getType())) {
+		if (options.getChartOptions() != null && options.getChartOptions().getType() != null
+		    && options.getChartOptions().getType().getChartType() == ChartType.ADVANCED) {
 			return true;
 		}
 		if (options.getSeries() != null) {
 			for (Series<?> series : options.getSeries()) {
-				if (CHART_TYPES_NEEDING_MORE.contains(series.getType())) {
+				if (series.getType() != null && series.getType().getChartType() == ChartType.ADVANCED) {
 					return true;
 				}
 			}

@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts;
+package com.googlecode.wickedcharts.wicket6.highcharts;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 

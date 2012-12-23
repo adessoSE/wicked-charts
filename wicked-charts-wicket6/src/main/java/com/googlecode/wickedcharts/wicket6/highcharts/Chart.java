@@ -12,14 +12,14 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts;
+package com.googlecode.wickedcharts.wicket6.highcharts;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import com.googlecode.wickedcharts.highcharts.features.basic.ChartBehavior;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.theme.Theme;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.basic.ChartBehavior;
 
 /**
  * A simple markup container to display a chart. A chart can be provided with

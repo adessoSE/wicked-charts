@@ -11,7 +11,6 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.PropertyModel;
 
-import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.showcase.options.AngularGaugeOptions;
 import com.googlecode.wickedcharts.showcase.options.AreaInvertedAxisOptions;
@@ -55,6 +54,7 @@ import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularInterva
 import com.googlecode.wickedcharts.showcase.options.WindroseOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
+import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
 /**
  * This page has been build to show all Options in a basic design without jquery

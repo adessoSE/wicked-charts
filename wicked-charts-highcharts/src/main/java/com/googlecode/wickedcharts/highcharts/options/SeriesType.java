@@ -27,26 +27,40 @@ import com.googlecode.wickedcharts.highcharts.json.LowercaseEnum;
  */
 public enum SeriesType implements LowercaseEnum {
 
-	AREA,
+	AREA(ChartType.BASIC),
 
-	AREASPLINE,
+	AREASPLINE(ChartType.BASIC),
 
-	BAR,
+	BAR(ChartType.BASIC),
 
-	COLUMN,
+	COLUMN(ChartType.BASIC),
 
-	LINE,
+	LINE(ChartType.BASIC),
 
-	PIE,
+	PIE(ChartType.BASIC),
 
-	SCATTER,
+	SCATTER(ChartType.BASIC),
 
-	SPLINE,
+	SPLINE(ChartType.BASIC),
 
-	GAUGE,
+	GAUGE(ChartType.ADVANCED),
 
-	COLUMNRANGE,
+	COLUMNRANGE(ChartType.ADVANCED),
 
-	AREARANGE;
+	AREARANGE(ChartType.ADVANCED);
+
+	private ChartType chartType;
+
+	private SeriesType(ChartType chartType) {
+		this.setChartType(chartType);
+	}
+
+	public void setChartType(ChartType chartType) {
+	  this.chartType = chartType;
+  }
+
+	public ChartType getChartType() {
+	  return chartType;
+  }
 
 }

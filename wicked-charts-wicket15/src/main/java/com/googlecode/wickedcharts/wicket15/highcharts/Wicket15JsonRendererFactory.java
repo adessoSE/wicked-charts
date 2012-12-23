@@ -12,40 +12,39 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts;
+package com.googlecode.wickedcharts.wicket15.highcharts;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 
 /**
  * Factory class responsible for creating a {@link JsonRenderer} instance that
- * matches the needs of wicked-charts-jsf21.
+ * matches the needs of wicked-charts-wicket15.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
-public class JSF21JsonRendererFactory {
+public class Wicket15JsonRendererFactory {
 
-	private static final JSF21JsonRendererFactory INSTANCE = new JSF21JsonRendererFactory();
+	private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
 
 	private static JsonRenderer RENDERER = new JsonRenderer();
 
-	public static JSF21JsonRendererFactory getInstance() {
-		return JSF21JsonRendererFactory.INSTANCE;
+	public static Wicket15JsonRendererFactory getInstance() {
+		return INSTANCE;
 	}
 
-	private JSF21JsonRendererFactory() {
+	private Wicket15JsonRendererFactory() {
 
 	}
 
 	/**
 	 * Returns the singleton instance of the {@link JsonRenderer} that is
-	 * configured for JSF 2.1.
+	 * configured for Wicket 1.5.x.
 	 * 
 	 * @return the singleton {@link JsonRenderer}
 	 */
 	public JsonRenderer getRenderer() {
-		return JSF21JsonRendererFactory.RENDERER;
+		return RENDERER;
 	}
 
 }

@@ -1,14 +1,14 @@
-package com.googlecode.wickedcharts.highcharts.features.global;
+package com.googlecode.wickedcharts.wicket6.highcharts.features.global;
 
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 
-import com.googlecode.wickedcharts.highcharts.Wicket6JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Global;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
+import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory;
 
 /**
  * This processor reads the global options from an {@link Options} object and

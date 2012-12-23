@@ -12,10 +12,9 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts;
+package com.googlecode.wickedcharts.wicket15;
 
-import org.apache.wicket.markup.head.IHeaderResponse;
-import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
+import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.request.resource.ResourceReference;
 
 /**
@@ -45,11 +44,12 @@ public class JavaScriptResourceRegistry {
 
 		public void addToHeaderResponse(final IHeaderResponse response) {
 			if (this.url != null) {
-				response.render(JavaScriptReferenceHeaderItem.forUrl(this.url));
+				response.renderJavaScriptReference(this.url);
 			} else if (this.reference != null) {
-				response.render(JavaScriptReferenceHeaderItem.forReference(this.reference));
+				response.renderJavaScriptReference(this.reference);
 			} else {
-				throw new IllegalStateException("A RegistryEntry must have at least a non-null url or a non-null reference!");
+				throw new IllegalStateException(
+						"A RegistryEntry must have at least a non-null url or a non-null reference!");
 			}
 		}
 
@@ -101,9 +101,9 @@ public class JavaScriptResourceRegistry {
 	}
 
 	/**
-	 * Sets the {@link ResourceReference} to use to load the Highcharts exporting
-	 * javascript library (exporting.js). Use this method if you want to include
-	 * the javascript file in your web application.
+	 * Sets the {@link ResourceReference} to use to load the Highcharts
+	 * exporting javascript library (exporting.js). Use this method if you want
+	 * to include the javascript file in your web application.
 	 */
 	public void setHighchartsExportingReference(final ResourceReference reference) {
 		this.highchartsExportingEntry = new RegistryEntry(reference);
@@ -137,9 +137,9 @@ public class JavaScriptResourceRegistry {
 	}
 
 	/**
-	 * Sets the {@link ResourceReference} to use to load the Highcharts javascript
-	 * library (highcharts.js). Use this method if you want to include the
-	 * javascript file in your web application.
+	 * Sets the {@link ResourceReference} to use to load the Highcharts
+	 * javascript library (highcharts.js). Use this method if you want to
+	 * include the javascript file in your web application.
 	 */
 	public void setHighchartsReference(final ResourceReference reference) {
 		this.highchartsEntry = new RegistryEntry(reference);
@@ -164,8 +164,8 @@ public class JavaScriptResourceRegistry {
 	}
 
 	/**
-	 * Sets the URL to use to load JQuery (jquery.js). Use this method if you want
-	 * to load the javascript file from an external URL.
+	 * Sets the URL to use to load JQuery (jquery.js). Use this method if you
+	 * want to load the javascript file from an external URL.
 	 */
 	public void setJQueryReference(final String url) {
 		this.jqueryEntry = new RegistryEntry(url);

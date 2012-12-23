@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts;
+package com.googlecode.wickedcharts.jsf21;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -22,10 +22,10 @@ import javax.faces.component.UIOutput;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-import com.googlecode.wickedcharts.highcharts.JSF21JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.theme.Theme;
+import com.googlecode.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
 
 /**
  * 

@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.features.livedata;
+package com.googlecode.wickedcharts.wicket6.highcharts.features.livedata;
 
 import java.util.List;
 

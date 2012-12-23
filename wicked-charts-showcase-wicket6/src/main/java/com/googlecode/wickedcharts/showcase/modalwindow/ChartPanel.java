@@ -2,8 +2,8 @@ package com.googlecode.wickedcharts.showcase.modalwindow;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
-import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.showcase.options.BasicBarOptions;
+import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
 public class ChartPanel extends Panel {
 

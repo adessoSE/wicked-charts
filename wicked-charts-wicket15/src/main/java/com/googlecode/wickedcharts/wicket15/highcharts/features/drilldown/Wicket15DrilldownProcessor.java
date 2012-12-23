@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.features.drilldown;
+package com.googlecode.wickedcharts.wicket15.highcharts.features.drilldown;
 
 import java.text.MessageFormat;
 
@@ -20,7 +20,6 @@ import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import com.googlecode.wickedcharts.highcharts.Wicket15JsonRendererFactory;
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Options;
@@ -34,6 +33,7 @@ import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcess
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
+import com.googlecode.wickedcharts.wicket15.highcharts.Wicket15JsonRendererFactory;
 
 /**
  * This processor adds drilldown functionality to a chart. It searches the given

@@ -19,7 +19,6 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.theme.DarkBlueTheme;
 import com.googlecode.wickedcharts.highcharts.theme.GrayTheme;
@@ -61,6 +60,7 @@ import com.googlecode.wickedcharts.showcase.options.StackedColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedPercentageOptions;
 import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
+import com.googlecode.wickedcharts.wicket15.highcharts.Chart;
 
 public class Homepage extends WebPage {
 

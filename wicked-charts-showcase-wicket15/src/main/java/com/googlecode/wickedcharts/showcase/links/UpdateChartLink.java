@@ -18,10 +18,10 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.basic.Label;
 
-import com.googlecode.wickedcharts.highcharts.Chart;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.showcase.ShowcaseSession;
 import com.googlecode.wickedcharts.showcase.StringFromResourceModel;
+import com.googlecode.wickedcharts.wicket15.highcharts.Chart;
 
 public class UpdateChartLink extends AjaxLink<Void> {
 
