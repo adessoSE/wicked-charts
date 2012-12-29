@@ -37,12 +37,12 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
-  private static BaseOptions BASE_OPTIONS;
+  private static final BaseOptions BASE_OPTIONS = new BaseOptions();
 
   public ColumnWithDrilldownOptions() {
-    BASE_OPTIONS = new BaseOptions();
-    copyFrom(BASE_OPTIONS);
-    addSeries(new PointSeries()
+
+    this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
+    this.addSeries(new PointSeries()
         .setName("Browser Brands")
         .setColor(new HexColor("#ffffff"))
         .addPoint(new DrilldownPoint(this, new MSIEDrilldownOptions())
@@ -62,27 +62,27 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
             .setColor(new HighchartsColor(4))));
   }
 
-  private class BaseOptions extends Options {
+  private static class BaseOptions extends Options {
 
     private static final long serialVersionUID = 1L;
 
     public BaseOptions() {
 
-      setChartOptions(new ChartOptions()
+      this.setChartOptions(new ChartOptions()
           .setType(SeriesType.COLUMN));
 
-      setTitle(new Title("Browser market share, April, 2011"));
+      this.setTitle(new Title("Browser market share, April, 2011"));
 
-      setSubtitle(new Title(
+      this.setSubtitle(new Title(
           "Click the columns to view versions. Click again to view brands."));
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories("MSIE", "Firefox", "Chrome", "Safari", "Opera"));
 
-      setyAxis(new Axis()
+      this.setyAxis(new Axis()
           .setTitle(new Title("Total percent market share")));
 
-      setPlotOptions(new PlotOptionsChoice()
+      this.setPlotOptions(new PlotOptionsChoice()
           .setColumn(new PlotOptions()
               .setCursor(Cursor.POINTER)
               .setDataLabels(new DataLabels()
@@ -92,11 +92,11 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
                       .setProperty("font-weight", "bold"))
                   .setFormatter(new Function("return this.y +\"%\";")))));
 
-      setTooltip(new Tooltip()
+      this.setTooltip(new Tooltip()
           .setFormatter(new Function()
               .setFunction("return this.x +\":<b>\"+ this.y +\"% market share</b><br/>Click to view \"+ this.point.category +\" versions\"")));
 
-      setExporting(new ExportingOptions()
+      this.setExporting(new ExportingOptions()
           .setEnabled(Boolean.FALSE));
     }
   }
@@ -106,12 +106,12 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
     private static final long serialVersionUID = 1L;
 
     public MSIEDrilldownOptions() {
-      copyFrom(BASE_OPTIONS);
+      this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories("MSIE 6.0", "MSIE 7.0", "MSIE 8.0", "MSIE 9.0"));
 
-      addSeries(new PointSeries()
+      this.addSeries(new PointSeries()
           .setName("MSIE Versions")
           .addPoint(
               new DrilldownPoint(this, ColumnWithDrilldownOptions.this)
@@ -134,16 +134,16 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
     private static final long serialVersionUID = 1L;
 
     public FirefoxDrilldownOptions() {
-      copyFrom(BASE_OPTIONS);
+      this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories(
               "Firefox 2.0",
               "Firefox 3.0",
               "Firefox 3.5",
               "Firefox 3.6"));
 
-      addSeries(new PointSeries()
+      this.addSeries(new PointSeries()
           .setName("Firefox Versions")
           .addPoint(
               new DrilldownPoint(this, ColumnWithDrilldownOptions.this)
@@ -169,9 +169,9 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
     private static final long serialVersionUID = 1L;
 
     public ChromeDrilldownOptions() {
-      copyFrom(BASE_OPTIONS);
+      this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories(
               "Chrome 5.0",
               "Chrome 6.0",
@@ -182,7 +182,7 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
               "Chrome 11.0",
               "Chrome 12.0"));
 
-      addSeries(new PointSeries()
+      this.addSeries(new PointSeries()
           .setName("Chrome Versions")
           .addPoint(
               new DrilldownPoint(this, ColumnWithDrilldownOptions.this)
@@ -217,9 +217,9 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
     private static final long serialVersionUID = 1L;
 
     public SafariDrilldownOptions() {
-      copyFrom(BASE_OPTIONS);
+      this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories(
               "Safari 5.0",
               "Safari 4.0",
@@ -229,7 +229,7 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
               "Safari 3.1",
               "Safari 4.1"));
 
-      addSeries(new PointSeries()
+      this.addSeries(new PointSeries()
           .setName("Safari Versions")
           .addPoint(
               new DrilldownPoint(this, ColumnWithDrilldownOptions.this)
@@ -261,12 +261,12 @@ public class ColumnWithDrilldownOptions extends ShowcaseOptions {
     private static final long serialVersionUID = 1L;
 
     public OperaDrilldownOptions() {
-      copyFrom(BASE_OPTIONS);
+      this.copyFrom(ColumnWithDrilldownOptions.BASE_OPTIONS);
 
-      setxAxis(new Axis()
+      this.setxAxis(new Axis()
           .setCategories("Opera 9.x", "Opera 10.x", "Opera 11.x"));
 
-      addSeries(new PointSeries()
+      this.addSeries(new PointSeries()
           .setName("Opera Versions")
           .addPoint(
               new DrilldownPoint(this, ColumnWithDrilldownOptions.this)

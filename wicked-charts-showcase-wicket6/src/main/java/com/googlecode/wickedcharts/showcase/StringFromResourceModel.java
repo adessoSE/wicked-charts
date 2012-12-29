@@ -29,8 +29,9 @@ public class StringFromResourceModel implements IModel<String> {
 	private String modelObject;
 
 	public StringFromResourceModel(Class<?> scope, String resourceName) {
+		InputStream in = null;
 		try {
-			InputStream in = scope.getResourceAsStream(resourceName);
+			in = scope.getResourceAsStream(resourceName);
 			BufferedReader reader = new BufferedReader(
 					new InputStreamReader(in));
 			StringBuffer stringBuffer = new StringBuffer();
@@ -40,11 +41,12 @@ public class StringFromResourceModel implements IModel<String> {
 				stringBuffer.append("\n");
 			}
 			this.modelObject = stringBuffer.toString();
-			IOUtils.closeQuietly(in);
 		} catch (IOException e) {
 			throw new RuntimeException("Error reading resource '"
 					+ resourceName + "' from class '" + scope.getName() + "'.",
 					e);
+		} finally {
+			IOUtils.closeQuietly(in);
 		}
 	}
 
