@@ -15,30 +15,32 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class AreaRangeOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+  
   public AreaRangeOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setType(SeriesType.AREARANGE)
         .setZoomType(ZoomType.X));
 
-    setTitle(new Title("Temperature variation by day"));
+    this.setTitle(new Title("Temperature variation by day"));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setType(AxisType.DATETIME));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setTitle(new Title()
             .setText(null)));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setXCrosshair(new Crosshair())
         .setShared(Boolean.TRUE)
         .setValueSuffix("°C"));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setEnabled(Boolean.FALSE));
 
-    addSeries(new RangeSeries()
+    this.addSeries(new RangeSeries()
         .addPoint(
             new RangeCoordinate<Number, Number, Number>(1230771600000l, -5.8,
                 0.1))

@@ -15,17 +15,19 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class ColumnRangeOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public ColumnRangeOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setType(SeriesType.COLUMNRANGE)
         .setInverted(Boolean.TRUE));
 
-    setTitle(new Title("Temperature variation by month"));
+    this.setTitle(new Title("Temperature variation by month"));
 
-    setSubtitle(new Title("Observed in Vik i Sogn, Norway, 2009"));
+    this.setSubtitle(new Title("Observed in Vik i Sogn, Norway, 2009"));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setCategories(
             "Jan",
             "Feb",
@@ -40,22 +42,22 @@ public class ColumnRangeOptions extends ShowcaseOptions {
             "Nov",
             "Dec"));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setTitle(new Title("Temperature (°C)")));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setValueSuffix("°C"));
 
-    setPlotOptions(new PlotOptionsChoice()
+    this.setPlotOptions(new PlotOptionsChoice()
         .setColumnrange(new PlotOptions()
             .setDataLabels(new DataLabels()
                 .setEnabled(Boolean.TRUE)
                 .setFormatter(new Function("return this.y + '°C';"))
                 .setY(0))));
 
-    setLegend(new Legend(Boolean.FALSE));
+    this.setLegend(new Legend(Boolean.FALSE));
 
-    addSeries(new CoordinatesSeries()
+    this.addSeries(new CoordinatesSeries()
         .addPoint(-9.7, 9.4)
         .addPoint(-8.7, 6.5)
         .addPoint(-3.5, 9.4)

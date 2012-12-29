@@ -19,16 +19,18 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class DualAxesOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public DualAxesOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setZoomType(ZoomType.XY));
 
-    setTitle(new Title("Average Monthly Temperature and Rainfall in Tokyo"));
+    this.setTitle(new Title("Average Monthly Temperature and Rainfall in Tokyo"));
 
-    setSubtitle(new Title("Source: WorldClimate.com"));
+    this.setSubtitle(new Title("Source: WorldClimate.com"));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setCategories(
             "Jan",
             "Feb",
@@ -43,14 +45,14 @@ public class DualAxesOptions extends ShowcaseOptions {
             "Nov",
             "Dec"));
 
-    addyAxis(new Axis()
+    this.addyAxis(new Axis()
         .setLabels(new Labels()
             .setFormatter(new Function("return this.value + '°C';"))
             .setStyle(new CssStyle().setProperty("color", "#89A54E")))
         .setTitle(new Title("Temperature").setStyle(new CssStyle()
             .setProperty("color", "#89A54E"))));
 
-    addyAxis(new Axis()
+    this.addyAxis(new Axis()
         .setLabels(new Labels()
             .setFormatter(new Function("return this.value + ' mm';"))
             .setStyle(new CssStyle().setProperty("color", "#4572A7")))
@@ -58,11 +60,11 @@ public class DualAxesOptions extends ShowcaseOptions {
             .setProperty("color", "#4572A7")))
         .setOpposite(Boolean.TRUE));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setFormatter(new Function(
             "return ''+ this.x +': '+ this.y + (this.series.name == 'Rainfall' ? ' mm' : '°C');")));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setLayout(LegendLayout.VERTICAL)
         .setAlign(HorizontalAlignment.LEFT)
         .setX(120)
@@ -71,7 +73,7 @@ public class DualAxesOptions extends ShowcaseOptions {
         .setFloating(Boolean.TRUE)
         .setBackgroundColor(HexColor.fromString("#FFFFFF")));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Rainfall")
         .setColor(HexColor.fromString("#4572A7"))
         .setType(SeriesType.COLUMN)
@@ -90,7 +92,7 @@ public class DualAxesOptions extends ShowcaseOptions {
             95.6,
             54.4));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Temperature")
         .setColor(HexColor.fromString("#89A54E"))
         .setType(SeriesType.SPLINE)

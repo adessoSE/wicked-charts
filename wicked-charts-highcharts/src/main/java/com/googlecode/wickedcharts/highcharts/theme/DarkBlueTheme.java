@@ -43,23 +43,23 @@ public class DarkBlueTheme extends Theme {
   // @formatter:off
   public DarkBlueTheme() {
 
-    setColors(HexColor.fromStrings("#DDDF0D", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+    this.setColors(HexColor.fromStrings("#DDDF0D", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
         "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"));
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setBackgroundColor(
             new LinearGradient(0, 0, 250, 500).addStop(0, new RgbaColor(48, 48, 96)).addStop(1, new RgbaColor(0, 0, 0)))
         .setBorderColor(new HexColor("#000000")).setBorderWidth(2).setClassName("dark-container")
         .setPlotBackgroundColor(new RgbaColor(255, 255, 255, .1f)).setBorderColor(new HexColor("#CCCCCC"))
         .setPlotBorderWidth(1));
 
-    setTitle(new Title().setStyle(new CssStyle().setProperty("color", "#C0C0C0").setProperty("font",
+    this.setTitle(new Title().setStyle(new CssStyle().setProperty("color", "#C0C0C0").setProperty("font",
         "bold 16px \"Trebuchet MS\", Verdana, sans-serif")));
 
-    setSubtitle(new Title().setStyle(new CssStyle().setProperty("color", "#c0c0c0").setProperty("font",
+    this.setSubtitle(new Title().setStyle(new CssStyle().setProperty("color", "#c0c0c0").setProperty("font",
         "bold 12px \"Trebuchet MS\", Verdana, sans-serif")));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setGridLineColor(new HexColor("#333333"))
         .setGridLineWidth(1)
         .setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#a0a0a0")))
@@ -69,7 +69,7 @@ public class DarkBlueTheme extends Theme {
             new Title().setStyle(new CssStyle().setProperty("color", "#cccccc").setProperty("fontWeight", "bold")
                 .setProperty("fontSize", "12px").setProperty("fontFamily", "Trebuchet MS, Verdana, sans-serif"))));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setGridLineColor(new HexColor("#333333"))
         .setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#a0a0a0")))
         .setLineColor(new HexColor("#a0a0a0"))
@@ -80,12 +80,12 @@ public class DarkBlueTheme extends Theme {
             new Title().setStyle(new CssStyle().setProperty("color", "#cccccc").setProperty("fontWeight", "bold")
                 .setProperty("fontSize", "12px").setProperty("fontFamily", "Trebuchet MS, Verdana, sans-serif"))));
 
-    setTooltip(new Tooltip().setBackgroundColor(new RgbaColor(0, 0, 0, 0.75f)).setStyle(
+    this.setTooltip(new Tooltip().setBackgroundColor(new RgbaColor(0, 0, 0, 0.75f)).setStyle(
         new CssStyle().setProperty("color", "#f0f0f0")));
 
-    setToolbar(new DummyOption());
+    this.setToolbar(new DummyOption());
 
-    setPlotOptions(new PlotOptionsChoice()
+    this.setPlotOptions(new PlotOptionsChoice()
         .setLine(
             new PlotOptions().setDataLabels(new DataLabels().setColor(new HexColor("#cccccc"))).setMarker(
                 new Marker().setLineColor(new HexColor("#333333"))))
@@ -93,37 +93,37 @@ public class DarkBlueTheme extends Theme {
         .setScatter(new PlotOptions().setMarker(new Marker().setLineColor(new HexColor("#333333"))))
         .setCandleStick(new PlotOptions().setLineColor(new HexColor("#ffffff"))));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setItemStyle(
             new CssStyle().setProperty("font", "9pt Trebuchet MS, Verdana, sans-serif").setProperty("color", "#a0a0a0"))
         .setItemHoverStyle(new CssStyle().setProperty("color", "#ffffff"))
         .setItemHiddenStyle(new CssStyle().setProperty("color", "#444444")));
 
-    setCreditOptions(new CreditOptions().setStyle(new CssStyle().setProperty("color", "#666666")));
+    this.setCreditOptions(new CreditOptions().setStyle(new CssStyle().setProperty("color", "#666666")));
 
-    setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#cccccc")));
+    this.setLabels(new Labels().setStyle(new CssStyle().setProperty("color", "#cccccc")));
 
-    setNavigation(new Navigation().setButtonOptions(new ButtonOptions()
+    this.setNavigation(new Navigation().setButtonOptions(new ButtonOptions()
         .setBackgroundColor(
             new LinearGradient(0, 0, 0, 20).addStop(0.4f, new HexColor("#606060")).addStop(0.6f,
                 new HexColor("#333333"))).setBorderColor(new HexColor("#000000"))
         .setSymbolStroke(new HexColor("#c0c0c0")).setHoverSymbolStroke(new HexColor("#ffffff"))));
 
-    setExporting(new ExportingOptions().setButtons(new ExportingButtons().setExportButton(
+    this.setExporting(new ExportingOptions().setButtons(new ExportingButtons().setExportButton(
         new ButtonOptions().setSymbolFill(new HexColor("#55be3b"))).setPrintButton(
         new ButtonOptions().setSymbolFill(new HexColor("#7797be")))));
 
-    setRangeSelector(new DummyOption());
+    this.setRangeSelector(new DummyOption());
 
-    setNavigator(new DummyOption());
+    this.setNavigator(new DummyOption());
 
-    setScrollbar(new DummyOption());
+    this.setScrollbar(new DummyOption());
 
-    setLegendBackgroundColor(new RgbaColor(0, 0, 0, 0.5f));
-    setLegendBackgroundColorSolid(new RgbaColor(35, 35, 70));
-    setDataLabelsColor(new HexColor("#444444"));
-    setTextColor(new HexColor("#c0c0c0"));
-    setMaskColor(new RgbaColor(255, 255, 255, 0.3f));
+    this.setLegendBackgroundColor(new RgbaColor(0, 0, 0, 0.5f));
+    this.setLegendBackgroundColorSolid(new RgbaColor(35, 35, 70));
+    this.setDataLabelsColor(new HexColor("#444444"));
+    this.setTextColor(new HexColor("#c0c0c0"));
+    this.setMaskColor(new RgbaColor(255, 255, 255, 0.3f));
 
   }
   // @formatter:on

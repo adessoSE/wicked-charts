@@ -3,7 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.googlecode.wicked-charts</groupId>
 	<artifactId>wicked-charts-showcase-wicket6</artifactId>
 	<packaging>war</packaging>
 	<name>Wicked Charts showcase for Wicket 6.x</name>

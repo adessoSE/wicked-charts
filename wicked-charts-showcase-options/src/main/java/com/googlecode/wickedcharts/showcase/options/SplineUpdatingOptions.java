@@ -43,35 +43,37 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
 
   public SplineUpdatingOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setType(SeriesType.SPLINE)
         .setMarginRight(10));
 
-    setTitle(new Title("Live random data"));
+    this.setTitle(new Title("Live random data"));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setType(AxisType.DATETIME)
         .setTickPixelInterval(150));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setTitle(new Title("Value"))
         .setPlotLines(Collections.singletonList(new PlotLine()
             .setValue(0f)
             .setWidth(1)
             .setColor(new HexColor("#808080")))));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setFormatter(new Function()
             .setFunction("return '<b>'+ this.series.name +'</b><br/>'+"
                 + "Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+"
                 + "Highcharts.numberFormat(this.y, 2);")));
 
-    setLegend(new Legend(Boolean.FALSE));
+    this.setLegend(new Legend(Boolean.FALSE));
 
-    setExporting(new ExportingOptions()
+    this.setExporting(new ExportingOptions()
         .setEnabled(Boolean.FALSE));
 
-    series = new LiveDataSeries(this, 1000) {
+    this.series = new LiveDataSeries(this, 1000) {
+
+      private static final long serialVersionUID = 1L;
 
       @Override
       public Coordinate<Number, Number> update() {
@@ -80,10 +82,10 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
                 .random());
       }
     };
-    series
-        .setData(randomData(20))
+    this.series
+        .setData(this.randomData(20))
         .setName("Random data");
-    addSeries(series);
+    this.addSeries(this.series);
 
   }
 
@@ -91,8 +93,8 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
    * Refreshes the series data so that it starts at the current date.
    */
   public void refresh() {
-    series
-        .setData(randomData(20));
+    this.series
+        .setData(this.randomData(20));
   }
 
   private List<Point> randomData(int size) {

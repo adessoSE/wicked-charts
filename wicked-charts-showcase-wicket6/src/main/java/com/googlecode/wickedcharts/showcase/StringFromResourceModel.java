@@ -30,9 +30,10 @@ public class StringFromResourceModel implements IModel<String> {
 
 	public StringFromResourceModel(Class<?> scope, String resourceName) {
 		InputStream in = null;
+		BufferedReader reader = null;
 		try {
 			in = scope.getResourceAsStream(resourceName);
-			BufferedReader reader = new BufferedReader(
+			reader = new BufferedReader(
 					new InputStreamReader(in));
 			StringBuffer stringBuffer = new StringBuffer();
 			String line;
@@ -47,6 +48,7 @@ public class StringFromResourceModel implements IModel<String> {
 					e);
 		} finally {
 			IOUtils.closeQuietly(in);
+			IOUtils.closeQuietly(reader);
 		}
 	}
 

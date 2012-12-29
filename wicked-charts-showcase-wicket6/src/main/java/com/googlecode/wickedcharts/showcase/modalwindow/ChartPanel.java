@@ -7,9 +7,11 @@ import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
 public class ChartPanel extends Panel {
 
+	private static final long serialVersionUID = 1L;
+
 	public ChartPanel(String id) {
 		super(id);
-		add(new Chart("chart", new BasicBarOptions()));
+		this.add(new Chart("chart", new BasicBarOptions()));
 	}
 
 }

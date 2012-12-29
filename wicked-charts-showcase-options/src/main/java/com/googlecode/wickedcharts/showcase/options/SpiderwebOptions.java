@@ -20,19 +20,21 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class SpiderwebOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public SpiderwebOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setPolar(Boolean.TRUE)
         .setType(SeriesType.LINE));
 
-    setTitle(new Title("Budget vs spending")
+    this.setTitle(new Title("Budget vs spending")
         .setX(-80));
 
-    setPane(new Pane()
+    this.setPane(new Pane()
         .setSize(new PixelOrPercent(80, Unit.PERCENT)));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setCategories(
             "Sales",
             "Marketing",
@@ -43,26 +45,26 @@ public class SpiderwebOptions extends ShowcaseOptions {
         .setTickmarkPlacement(TickmarkPlacement.ON)
         .setLineWidth(0));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setGridLineInterpolation(GridlineInterpolation.POLYGON)
         .setLineWidth(0)
         .setMin(0));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setShared(Boolean.TRUE)
         .setValuePrefix("$"));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setAlign(HorizontalAlignment.RIGHT)
         .setVerticalAlign(VerticalAlignment.TOP)
         .setLayout(LegendLayout.VERTICAL));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Allocated Budget")
         .setData(43000, 19000, 60000, 35000, 17000, 10000)
         .setPointPlacement(PointPlacement.ON));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Actual Spending")
         .setData(50000, 39000, 42000, 31000, 26000, 14000)
         .setPointPlacement(PointPlacement.ON));

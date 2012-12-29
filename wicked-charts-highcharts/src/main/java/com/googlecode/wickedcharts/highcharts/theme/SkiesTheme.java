@@ -38,14 +38,14 @@ public class SkiesTheme extends Theme {
   private static final long serialVersionUID = 1L;
 
   public SkiesTheme() {
-    addColor(new HexColor("#514F78"));
-    addColor(new HexColor("#42A07B"));
-    addColor(new HexColor("#9B5E4A"));
-    addColor(new HexColor("#72727F"));
-    addColor(new HexColor("#1F949A"));
-    addColor(new HexColor("#82914E"));
-    addColor(new HexColor("#86777F"));
-    addColor(new HexColor("#42A07B"));
+    this.addColor(new HexColor("#514F78"));
+    this.addColor(new HexColor("#42A07B"));
+    this.addColor(new HexColor("#9B5E4A"));
+    this.addColor(new HexColor("#72727F"));
+    this.addColor(new HexColor("#1F949A"));
+    this.addColor(new HexColor("#82914E"));
+    this.addColor(new HexColor("#86777F"));
+    this.addColor(new HexColor("#42A07B"));
 
     ChartOptions chartOptions = new ChartOptions()
         .setClassName("skies")
@@ -55,27 +55,27 @@ public class SkiesTheme extends Theme {
         .setPlotBackgroundColor(
             new LinearGradient(0, 0, 250, 500).addStop(0, new RgbaColor(255, 255, 255, 1f)).addStop(1,
                 new RgbaColor(255, 255, 255, 0f))).setPlotBorderWidth(1);
-    setChartOptions(chartOptions);
+    this.setChartOptions(chartOptions);
 
-    setTitle(new Title().setStyle(new CssStyle()));
+    this.setTitle(new Title().setStyle(new CssStyle()));
 
-    setSubtitle(new Title().setStyle(new CssStyle()));
+    this.setSubtitle(new Title().setStyle(new CssStyle()));
 
     Axis xAxis = new Axis().setGridLineWidth(0).setLineColor(new HexColor("#C0D0E0"))
         .setTickColor(new HexColor("#C0D0E0")).setLabels(new Labels().setStyle(new CssStyle()))
         .setTitle(new Title().setStyle(new CssStyle()));
-    setxAxis(xAxis);
+    this.setxAxis(xAxis);
 
     Axis yAxis = new Axis().setAlternateGridColor(new RgbaColor(255, 255, 255, .5f))
         .setLineColor(new HexColor("#C0D0E0")).setTickColor(new HexColor("#C0D0E0")).setTickWidth(1)
         .setLabels(new Labels().setStyle(new CssStyle())).setTitle(new Title().setStyle(new CssStyle()));
-    setyAxis(yAxis);
+    this.setyAxis(yAxis);
 
     Legend legend = new Legend().setItemStyle(new CssStyle()).setItemHoverStyle(new CssStyle())
         .setItemHiddenStyle(new CssStyle());
-    setLegend(legend);
+    this.setLegend(legend);
 
-    setLabels(new Labels().setStyle(new CssStyle()));
+    this.setLabels(new Labels().setStyle(new CssStyle()));
   }
 
 }

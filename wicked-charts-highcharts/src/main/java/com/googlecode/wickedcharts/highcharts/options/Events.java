@@ -26,6 +26,8 @@ import java.io.Serializable;
  */
 public class Events implements Serializable {
 
+  private static final long serialVersionUID = 1L;
+
 	private Function click;
 
 	private Function addSeries;
@@ -49,7 +51,7 @@ public class Events implements Serializable {
 	private Function remove;
 
 	public Function getMouseOut() {
-		return mouseOut;
+		return this.mouseOut;
 	}
 
 	public Events setMouseOut(Function mouseOut) {
@@ -58,7 +60,7 @@ public class Events implements Serializable {
 	}
 
 	public Function getMouseOver() {
-		return mouseOver;
+		return this.mouseOver;
 	}
 
 	public Events setMouseOver(Function mouseOver) {
@@ -67,7 +69,7 @@ public class Events implements Serializable {
 	}
 
 	public Function getSelect() {
-		return select;
+		return this.select;
 	}
 
 	public Events setSelect(Function select) {
@@ -76,7 +78,7 @@ public class Events implements Serializable {
 	}
 
 	public Function getUnselect() {
-		return unselect;
+		return this.unselect;
 	}
 
 	public Events setUnselect(Function unselect) {
@@ -85,7 +87,7 @@ public class Events implements Serializable {
 	}
 
 	public Function getUpdate() {
-		return update;
+		return this.update;
 	}
 
 	public Events setUpdate(Function update) {
@@ -94,7 +96,7 @@ public class Events implements Serializable {
 	}
 
 	public Function getRemove() {
-		return remove;
+		return this.remove;
 	}
 
 	public Events setRemove(Function remove) {

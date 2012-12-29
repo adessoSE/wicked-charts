@@ -21,16 +21,18 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class MultipleAxesOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public MultipleAxesOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setZoomType(ZoomType.XY));
 
-    setTitle(new Title("Average Monthly Weather Data for Tokyo"));
+    this.setTitle(new Title("Average Monthly Weather Data for Tokyo"));
 
-    setSubtitle(new Title("Source: WorldClimate.com"));
+    this.setSubtitle(new Title("Source: WorldClimate.com"));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setCategories(
             "Jan",
             "Feb",
@@ -45,7 +47,7 @@ public class MultipleAxesOptions extends ShowcaseOptions {
             "Nov",
             "Dec"));
 
-    addyAxis(new Axis()
+    this.addyAxis(new Axis()
         .setLabels(new Labels()
             .setFormatter(new Function("return this.value + '°C';"))
             .setStyle(new CssStyle().setProperty("color", "#89A54E")))
@@ -53,14 +55,14 @@ public class MultipleAxesOptions extends ShowcaseOptions {
             .setProperty("color", "#89A54E")))
         .setOpposite(Boolean.TRUE));
 
-    addyAxis(new Axis()
+    this.addyAxis(new Axis()
         .setLabels(new Labels()
             .setFormatter(new Function("return this.value + ' mm';"))
             .setStyle(new CssStyle().setProperty("color", "#4572A7")))
         .setTitle(new Title("Rainfall").setStyle(new CssStyle()
             .setProperty("color", "#4572A7"))));
 
-    addyAxis(new Axis()
+    this.addyAxis(new Axis()
         .setLabels(new Labels()
             .setFormatter(new Function("return this.value + ' mb';"))
             .setStyle(new CssStyle().setProperty("color", "#AA4643")))
@@ -68,13 +70,13 @@ public class MultipleAxesOptions extends ShowcaseOptions {
             .setProperty("color", "#AA4643")))
         .setOpposite(Boolean.TRUE));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setFormatter(new Function("var unit = {" + "'Rainfall': 'mm',"
             + "'Temperature': '°C'," + "'Sea-Level Pressure': 'mb'"
             + "}[this.series.name];" + "return ''+"
             + "   this.x +': '+ this.y +' '+ unit;")));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setLayout(LegendLayout.VERTICAL)
         .setAlign(HorizontalAlignment.LEFT)
         .setX(120)
@@ -83,7 +85,7 @@ public class MultipleAxesOptions extends ShowcaseOptions {
         .setFloating(Boolean.TRUE)
         .setBackgroundColor(HexColor.fromString("#FFFFFF")));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Rainfall")
         .setColor(HexColor.fromString("#4572A7"))
         .setType(SeriesType.COLUMN)
@@ -102,7 +104,7 @@ public class MultipleAxesOptions extends ShowcaseOptions {
             95.6,
             54.4));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setxAxis(2)
         .setName("Sea-Level Pressure")
         .setColor(HexColor.fromString("#AA4643"))
@@ -123,7 +125,7 @@ public class MultipleAxesOptions extends ShowcaseOptions {
             1018.2,
             1016.7));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("Temperature")
         .setColor(HexColor.fromString("#89A54E"))
         .setType(SeriesType.SPLINE)

@@ -26,6 +26,8 @@ import java.io.Serializable;
  */
 public class ExportingButtons implements Serializable {
 
+  private static final long serialVersionUID = 1L;
+
 	private ButtonOptions exportButton;
 
 	private ButtonOptions printButton;

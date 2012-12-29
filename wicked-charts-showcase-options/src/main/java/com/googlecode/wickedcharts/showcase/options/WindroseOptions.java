@@ -24,27 +24,29 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class WindroseOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public WindroseOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setPolar(Boolean.TRUE)
         .setType(SeriesType.COLUMN));
 
-    setTitle(new Title("Wind rose for South Shore Met Station, Oregon"));
+    this.setTitle(new Title("Wind rose for South Shore Met Station, Oregon"));
 
-    setSubtitle(new Title("Source: or.water.usgs.gov"));
+    this.setSubtitle(new Title("Source: or.water.usgs.gov"));
 
-    setPane(new Pane()
+    this.setPane(new Pane()
         .setSize(new PixelOrPercent(85, Unit.PERCENT)));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setReversed(Boolean.TRUE)
         .setAlign(HorizontalAlignment.RIGHT)
         .setVerticalAlign(VerticalAlignment.TOP)
         .setY(100)
         .setLayout(LegendLayout.VERTICAL));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setTickmarkPlacement(TickmarkPlacement.ON)
         .setCategories(
             "N",
@@ -64,7 +66,7 @@ public class WindroseOptions extends ShowcaseOptions {
             "NW",
             "NNW"));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setMin(0)
         .setEndOnTick(Boolean.FALSE)
         .setShowLastLabel(Boolean.TRUE)
@@ -73,17 +75,17 @@ public class WindroseOptions extends ShowcaseOptions {
             new Labels()
                 .setFormatter(new Function("return this.value + '%';"))));
 
-    setTooltip(new Tooltip()
+    this.setTooltip(new Tooltip()
         .setValueSuffix("%"));
 
-    setPlotOptions(new PlotOptionsChoice()
+    this.setPlotOptions(new PlotOptionsChoice()
         .setSeries(new PlotOptions()
             .setStacking(Stacking.NORMAL)
             .setShadow(Boolean.FALSE)
             .setGroupPadding(0f)
             .setPointPlacement(PointPlacement.ON)));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName(">10 m/s")
         .setData(
             0.00,
@@ -103,7 +105,7 @@ public class WindroseOptions extends ShowcaseOptions {
             0.03,
             0.07));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("8-10 m/s")
         .setData(
             0.00,
@@ -123,7 +125,7 @@ public class WindroseOptions extends ShowcaseOptions {
             0.69,
             0.13));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("6-8 m/s")
         .setData(
             0.00,
@@ -143,7 +145,7 @@ public class WindroseOptions extends ShowcaseOptions {
             0.66,
             0.23));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("4-6 m/s")
         .setData(
             0.00,
@@ -163,7 +165,7 @@ public class WindroseOptions extends ShowcaseOptions {
             0.76,
             0.13));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("2-4 m/s")
         .setData(
             0.16,
@@ -183,7 +185,7 @@ public class WindroseOptions extends ShowcaseOptions {
             1.28,
             1.32));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("0.5-2 m/s")
         .setData(
             1.78,
@@ -203,7 +205,7 @@ public class WindroseOptions extends ShowcaseOptions {
             4.28,
             5.00));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setName("<0.5 m/s")
         .setData(
             1.81,

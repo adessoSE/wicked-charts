@@ -40,47 +40,47 @@ public class GridTheme extends Theme {
 
   public GridTheme() {
 
-    addColor(new HexColor("#058DC7"));
-    addColor(new HexColor("#50B432"));
-    addColor(new HexColor("#ED561B"));
-    addColor(new HexColor("#DDDF00"));
-    addColor(new HexColor("#24CBE5"));
-    addColor(new HexColor("#64E572"));
-    addColor(new HexColor("#FF9655"));
-    addColor(new HexColor("#FFF263"));
-    addColor(new HexColor("#6AF9C4"));
+    this.addColor(new HexColor("#058DC7"));
+    this.addColor(new HexColor("#50B432"));
+    this.addColor(new HexColor("#ED561B"));
+    this.addColor(new HexColor("#DDDF00"));
+    this.addColor(new HexColor("#24CBE5"));
+    this.addColor(new HexColor("#64E572"));
+    this.addColor(new HexColor("#FF9655"));
+    this.addColor(new HexColor("#FFF263"));
+    this.addColor(new HexColor("#6AF9C4"));
 
     ChartOptions chartOptions = new ChartOptions()
         .setBackgroundColor(
             new LinearGradient(0, 0, 500, 500).addStop(0, new RgbaColor(255, 255, 255)).addStop(1,
                 new RgbaColor(240, 240, 255))).setBorderWidth(2)
         .setPlotBackgroundColor(new RgbaColor(255, 255, 255, .9f)).setPlotShadow(Boolean.TRUE).setPlotBorderWidth(1);
-    setChartOptions(chartOptions);
+    this.setChartOptions(chartOptions);
 
     Title title = new Title();
     title.setStyle(new CssStyle());
-    setTitle(title);
+    this.setTitle(title);
 
     Title subTitle = new Title();
     subTitle.setStyle(new CssStyle());
-    setSubtitle(subTitle);
+    this.setSubtitle(subTitle);
 
     Axis xAxis = new Axis().setGridLineWidth(1).setLineColor(new HexColor("#000000"))
         .setTickColor(new HexColor("#000000")).setLabels(new Labels().setStyle(new CssStyle()))
         .setTitle(new Title().setStyle(new CssStyle()));
-    setxAxis(xAxis);
+    this.setxAxis(xAxis);
 
     Axis yAxis = new Axis().setMinorTickInterval(new MinorTickInterval().setAuto(true))
         .setLineColor(new HexColor("#000000")).setLineWidth(1).setTickWidth(1).setTickColor(new HexColor("#000000"))
         .setLabels(new Labels().setStyle(new CssStyle())).setTitle(new Title().setStyle(new CssStyle()));
-    setyAxis(yAxis);
+    this.setyAxis(yAxis);
 
     Legend legend = new Legend().setItemStyle(new CssStyle()).setItemHoverStyle(new CssStyle())
         .setItemHiddenStyle(new CssStyle());
-    setLegend(legend);
+    this.setLegend(legend);
 
     Labels labels = new Labels().setStyle(new CssStyle());
-    setLabels(labels);
+    this.setLabels(labels);
 
   }
 }

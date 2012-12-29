@@ -26,12 +26,14 @@ import com.googlecode.wickedcharts.highcharts.options.Function;
  */
 public class AddPointFunction extends Function {
 
+  private static final long serialVersionUID = 1L;
+
 	//@formatter:off
 	public AddPointFunction(){
 		
-		addParameter("e");
+		this.addParameter("e");
 		
-		setFunction("   var x = e.xAxis[0].value,"
+		this.setFunction("   var x = e.xAxis[0].value,"
 				+ "         y = e.yAxis[0].value,"
 				+ "     series = this.series[0];"
 				+ "     series.addPoint([x, y]);");

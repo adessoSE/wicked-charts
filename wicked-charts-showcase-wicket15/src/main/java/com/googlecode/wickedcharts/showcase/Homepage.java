@@ -49,7 +49,6 @@ import com.googlecode.wickedcharts.showcase.options.PieWithGradientOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithLegendOptions;
 import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
-import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithSymbolsOptions;

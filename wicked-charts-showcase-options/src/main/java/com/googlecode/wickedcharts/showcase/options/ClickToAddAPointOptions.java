@@ -21,24 +21,26 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class ClickToAddAPointOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+  
   public ClickToAddAPointOptions() {
 
-    setChartOptions(new ChartOptions()
+    this.setChartOptions(new ChartOptions()
         .setType(SeriesType.SCATTER)
         .setMargin(Arrays.asList(70, 50, 60, 80))
         .setEvents(new Events().setClick(new AddPointFunction())));
 
-    setTitle(new Title("User supplied data"));
+    this.setTitle(new Title("User supplied data"));
 
-    setSubtitle(new Title(
+    this.setSubtitle(new Title(
         "Click the plot area to add a point. Click a point to remove it."));
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setMinPadding(0.2f)
         .setMaxPadding(0.2f)
         .setMaxZoom(60));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setTitle(new Title("Value"))
         .setMinPadding(0.2f)
         .setMaxPadding(0.2f)
@@ -48,20 +50,20 @@ public class ClickToAddAPointOptions extends ShowcaseOptions {
             .setWidth(1)
             .setColor(HexColor.fromString("#808080"))));
 
-    setLegend(new Legend()
+    this.setLegend(new Legend()
         .setEnabled(Boolean.FALSE));
 
-    setExporting(new ExportingOptions()
+    this.setExporting(new ExportingOptions()
         .setEnabled(Boolean.FALSE));
 
-    setPlotOptions(new PlotOptionsChoice()
+    this.setPlotOptions(new PlotOptionsChoice()
         .setSeries(new PlotOptions()
             .setLineWidth(1)
             .setPoint(new PointOptions()
                 .setEvents(new Events()
                     .setClick(new RemovePointFunction())))));
 
-    addSeries(new CoordinatesSeries()
+    this.addSeries(new CoordinatesSeries()
         .addPoint(20, 20)
         .addPoint(80, 80));
 

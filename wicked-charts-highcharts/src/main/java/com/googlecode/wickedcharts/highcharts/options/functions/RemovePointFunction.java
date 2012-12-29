@@ -26,8 +26,10 @@ import com.googlecode.wickedcharts.highcharts.options.PointOptions;
  */
 public class RemovePointFunction extends Function {
 
+  private static final long serialVersionUID = 1L;
+
 	public RemovePointFunction() {
-		setFunction("if (this.series.data.length > 1) this.remove();");
+		this.setFunction("if (this.series.data.length > 1) this.remove();");
 	}
 
 }

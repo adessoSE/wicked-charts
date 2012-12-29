@@ -65,6 +65,8 @@ import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
  */
 public class SimplePage extends WebPage {
 
+	private static final long serialVersionUID = 1L;
+
 	private Options selectedOptions;
 
 	private static List<ShowcaseOptions> choices = Arrays.asList(new AreaInvertedAxisOptions(),
@@ -84,7 +86,7 @@ public class SimplePage extends WebPage {
 
 	static {
 
-		Collections.sort(choices, new Comparator<ShowcaseOptions>() {
+		Collections.sort(SimplePage.choices, new Comparator<ShowcaseOptions>() {
 
 			@Override
 			public int compare(ShowcaseOptions o1, ShowcaseOptions o2) {
@@ -95,33 +97,37 @@ public class SimplePage extends WebPage {
 	}
 
 	public SimplePage() {
-		this(choices.get(0));
+		this(SimplePage.choices.get(0));
 	}
 
 	public SimplePage(Options options) {
-		selectedOptions = options;
+		this.selectedOptions = options;
 
 		// create fresh instance of SplineUpdatingOptions for correct time ticks
-		if (selectedOptions instanceof SplineUpdatingOptions) {
-			((SplineUpdatingOptions) selectedOptions).refresh();
+		if (this.selectedOptions instanceof SplineUpdatingOptions) {
+			((SplineUpdatingOptions) this.selectedOptions).refresh();
 		}
 
-		final Chart chart = new Chart("chart", selectedOptions);
+		final Chart chart = new Chart("chart", this.selectedOptions);
 		this.add(chart);
 
 		Form<Void> form = new Form<Void>("form") {
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			protected void onSubmit() {
-				setResponsePage(new SimplePage(selectedOptions));
+				this.setResponsePage(new SimplePage(SimplePage.this.selectedOptions));
 			}
 		};
 		this.add(form);
 
 		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>("chartSelect",
-				new PropertyModel<ShowcaseOptions>(this, "selectedOptions"), choices);
+				new PropertyModel<ShowcaseOptions>(this, "selectedOptions"), SimplePage.choices);
 		form.add(dropdown);
 
 		dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {
+
+			private static final long serialVersionUID = 1L;
 
 			@Override
 			public Object getDisplayValue(ShowcaseOptions object) {

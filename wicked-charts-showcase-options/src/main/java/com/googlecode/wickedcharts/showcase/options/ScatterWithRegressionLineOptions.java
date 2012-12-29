@@ -12,18 +12,20 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 public class ScatterWithRegressionLineOptions extends ShowcaseOptions {
 
+  private static final long serialVersionUID = 1L;
+
   public ScatterWithRegressionLineOptions() {
 
-    setxAxis(new Axis()
+    this.setxAxis(new Axis()
         .setMin(-0.5)
         .setMax(5.5));
 
-    setyAxis(new Axis()
+    this.setyAxis(new Axis()
         .setMin(0));
 
-    setTitle(new Title("Scatter plot with regression line"));
+    this.setTitle(new Title("Scatter plot with regression line"));
 
-    addSeries(new CoordinatesSeries()
+    this.addSeries(new CoordinatesSeries()
         .addPoint(0, 1.11)
         .addPoint(5, 4.51)
         .setName("Regression Line")
@@ -32,7 +34,7 @@ public class ScatterWithRegressionLineOptions extends ShowcaseOptions {
         .setStates(new StatesChoice().setHover(new State()
             .setLineWidth(0))));
 
-    addSeries(new SimpleSeries()
+    this.addSeries(new SimpleSeries()
         .setType(SeriesType.SCATTER)
         .setName("Observations")
         .addPoint(1)
