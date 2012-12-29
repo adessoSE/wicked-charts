@@ -3,7 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.googlecode.wicked-charts</groupId>
 	<artifactId>wicked-charts-showcase-wicket15</artifactId>
 	<packaging>war</packaging>
 	<name>Wicked Charts showcase for Wicket 1.5.x</name>
@@ -17,7 +16,7 @@
 	</parent>
 
 	<properties>
-		<wicket.version>1.5.8</wicket.version>
+		<wicket.version>1.5.9</wicket.version>
 		<jetty.version>7.5.0.v20110901</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
