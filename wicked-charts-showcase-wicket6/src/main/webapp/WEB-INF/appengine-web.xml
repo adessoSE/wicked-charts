@@ -4,7 +4,7 @@
 
 	<!-- Version must only contain lowercase letters, hyphens ("-") and numbers! Otherwise, 
 		a HTTP 500 will occur on update -->
-	<version>1-3-2-snapshot</version>
+	<version>1-4-0</version>
 
 	<threadsafe>false</threadsafe>
 

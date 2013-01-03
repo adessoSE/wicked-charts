@@ -51,6 +51,7 @@ import com.googlecode.wickedcharts.showcase.options.DonutOptions;
 import com.googlecode.wickedcharts.showcase.options.DualAxesOptions;
 import com.googlecode.wickedcharts.showcase.options.LineWithDataLabelsOptions;
 import com.googlecode.wickedcharts.showcase.options.LogarithmicAxisOptions;
+import com.googlecode.wickedcharts.showcase.options.MultipleAxesOptions;
 import com.googlecode.wickedcharts.showcase.options.PercentageAreaOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithGradientOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithLegendOptions;
@@ -136,9 +137,7 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("dualAxes", chart, codeContainer, new DualAxesOptions()));
 		this.add(new UpdateChartLink("scatterWithRegression", chart, codeContainer,
 				new ScatterWithRegressionLineOptions()));
-		// TODO: doesn't work currently due to javascript error in highcharts.js
-		// this.add(new UpdateChartLink("multipleAxes", chart, codeContainer,
-		// new MultipleAxesOptions()));
+		this.add(new UpdateChartLink("multipleAxes", chart, codeContainer, new MultipleAxesOptions()));
 	}
 
 	private Label addCodeContainer() {
