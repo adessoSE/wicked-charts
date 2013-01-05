@@ -65,8 +65,13 @@ import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
 @SessionScoped
 public class Showcase {
 
-	private Options options = new BasicLineOptions();
+	private Options options = null;
 	private Theme theme = null;
+	
+	public Showcase() {
+		this.selectBasicLineOptions();
+		this.selectDefaultTheme();
+	}
 
 	public String getOptionsValue() {
 		return "#{myBean.options}";
