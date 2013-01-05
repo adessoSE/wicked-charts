@@ -7,9 +7,7 @@
 	<name>Wicked Charts for JSF 2.1</name>
 	<packaging>jar</packaging>
 
-	<description>
-		Charting library for JSF 2.1.
-	</description>
+	<description>Charting library for JSF 2.1.</description>
 
 	<parent>
 		<groupId>com.googlecode.wicked-charts</groupId>
@@ -46,9 +44,24 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<shortname>wickedcharts</shortname>
-		<myFaces.version>2.1.8</myFaces.version>
+		<mojarra.version>2.1.16</mojarra.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.wicked-charts</groupId>
+			<artifactId>wicked-charts-highcharts</artifactId>
+		</dependency>
+
+		<!-- compile agains JSF API; Implementation is choosen at runtime -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>${mojarra.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<resources>
@@ -111,6 +124,7 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+
 				<plugin>
 					<groupId>com.mycila.maven-license-plugin</groupId>
 					<artifactId>maven-license-plugin</artifactId>
@@ -126,108 +140,13 @@
 
 	</build>
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- <dependency> <groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-servlet_2.5_spec</artifactId> 
-				<version>1.2</version> <scope>provided</scope> </dependency> <dependency> 
-				<groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-jsp_2.1_spec</artifactId> 
-				<version>1.0.1</version> <scope>provided</scope> </dependency> <dependency> 
-				<groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-el_2.2_spec</artifactId> 
-				<version>1.0.2</version> <scope>provided</scope> </dependency> <dependency> 
-				<groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-annotation_1.0_spec</artifactId> 
-				<version>1.1.1</version> <scope>provided</scope> </dependency> <dependency> 
-				<groupId>org.apache.myfaces.buildtools</groupId> <artifactId>myfaces-builder-annotations</artifactId> 
-				<version>1.0.9</version> <scope>provided</scope> </dependency> -->
-			<dependency>
-				<groupId>org.apache.myfaces.core</groupId>
-				<artifactId>myfaces-api</artifactId>
-				<version>${myFaces.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.myfaces.core</groupId>
-				<artifactId>myfaces-impl</artifactId>
-				<version>${myFaces.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.10</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.myfaces.test</groupId>
-				<artifactId>myfaces-test20</artifactId>
-				<version>1.0.4</version>
-				<scope>test</scope>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>com.googlecode.wicked-charts</groupId>
-			<artifactId>wicked-charts-highcharts</artifactId>
-		</dependency>
-
-		<!-- compile -->
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- provided dependencies -->
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-impl</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<!-- <dependency> <groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-servlet_2.5_spec</artifactId> 
-			<scope>provided</scope> </dependency> <dependency> <groupId>org.apache.geronimo.specs</groupId> 
-			<artifactId>geronimo-jsp_2.1_spec</artifactId> <scope>provided</scope> </dependency> 
-			<dependency> <groupId>org.apache.geronimo.specs</groupId> <artifactId>geronimo-el_2.2_spec</artifactId> 
-			<scope>provided</scope> </dependency> <dependency> <groupId>org.apache.myfaces.buildtools</groupId> 
-			<artifactId>myfaces-builder-annotations</artifactId> <scope>provided</scope> 
-			</dependency> -->
-
-		<!-- test dependencies -->
-		<!-- <dependency> <groupId>org.apache.myfaces.test</groupId> <artifactId>myfaces-test20</artifactId> 
-			<scope>test</scope> </dependency> -->
-	</dependencies>
-
 	<reporting>
 		<plugins>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.8</version>
 			</plugin>
-			<!-- <plugin> <artifactId>maven-jxr-plugin</artifactId> <version>2.3</version> 
-				</plugin> -->
 		</plugins>
 	</reporting>
-	<!-- <profiles> <profile> <id>generate-site</id> <reporting> <plugins> <plugin> 
-		<groupId>net.sourceforge.maven-taglib</groupId> <artifactId>maven-taglib-plugin</artifactId> 
-		<version>2.4</version> <configuration> <taglib.src.dir>${basedir}/target/classes/META-INF</taglib.src.dir> 
-		<tldDocDir>${basedir}/target/site/tlddoc</tldDocDir> </configuration> </plugin> 
-		</plugins> </reporting> </profile> <profile> <id>generate-assembly</id> <activation> 
-		<property> <name>performRelease</name> <value>true</value> </property> </activation> 
-		<build> <plugins> <plugin> <artifactId>maven-javadoc-plugin</artifactId> 
-		<version>2.8</version> <executions> <execution> <id>attach-javadoc</id> <goals> 
-		<goal>jar</goal> </goals> </execution> </executions> </plugin> <plugin> <groupId>net.sourceforge.maven-taglib</groupId> 
-		<artifactId>maven-taglib-plugin</artifactId> <version>2.4</version> <configuration> 
-		<taglib.src.dir>${basedir}/target/classes/META-INF</taglib.src.dir> <tldDocDir>${basedir}/target/site/tlddoc</tldDocDir> 
-		</configuration> <executions> <execution> <id>attach-javadoc</id> <goals> 
-		<goal>taglibdocjar</goal> </goals> </execution> </executions> </plugin> </plugins> 
-		</build> </profile> </profiles> -->
+
 </project>

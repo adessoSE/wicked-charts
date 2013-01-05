@@ -16,9 +16,11 @@
 	</parent>
 
 	<properties>
-		<jetty.version>7.5.0.v20110901</jetty.version><!-- 8.1.7.v20120910-->
+		<jetty.version>8.1.7.v20120910</jetty.version><!-- 7.5.0.v20110901 8.1.7.v20120910 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-				<myFaces.version>2.1.8</myFaces.version>
+		<myfaces.version>2.1.10</myfaces.version>
+		<mojarra.version>2.1.16</mojarra.version>
+		<jsf-implementation>mojarra</jsf-implementation>
 	</properties>
 
 	<licenses>
@@ -30,52 +32,10 @@
 	</licenses>
 
 	<dependencies>
-		<!-- myFaces dependencies -->
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-api</artifactId>
-			<version>${myFaces.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-impl</artifactId>
-			<version>${myFaces.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.myfaces.tomahawk</groupId>
-			<artifactId>tomahawk</artifactId>
-			<version>1.1.6</version>
-			<scope>runtime</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>jstl</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>jstl</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.facelets</groupId>
-			<artifactId>jsf-facelets</artifactId>
-			<version>1.1.11</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
 			<artifactId>wicked-charts-jsf21</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
 			<artifactId>wicked-charts-showcase-options</artifactId>
@@ -94,26 +54,12 @@
 			<version>1.2.16</version>
 		</dependency>
 
-		<!-- JUNIT DEPENDENCY FOR TESTING -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- JETTY DEPENDENCIES FOR TESTING -->
 		<dependency>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
 			<artifactId>jetty-all-server</artifactId>
 			<version>${jetty.version}</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
 		</dependency>
 	</dependencies>
 
@@ -131,16 +77,6 @@
 			<testResource>
 				<directory>src/test/resources</directory>
 			</testResource>
-
-			<testResource>
-				<directory>src/test/java</directory>
-				<includes>
-					<include>**</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</testResource>
 		</testResources>
 
 		<plugins>
@@ -149,6 +85,10 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
 				<configuration>
+					<webAppConfig>
+						<contextPath>/</contextPath>
+						<overrideDescriptor>${override-web-xml}</overrideDescriptor>
+					</webAppConfig>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
 							<port>8080</port>
@@ -166,18 +106,7 @@
 				<dependencies>
 					<!-- Tld scanning only works when JSF is included as container dependency. 
 						Add other jsf libraries here, so jetty:run goal can find and process them -->
-					<dependency>
-						<groupId>org.apache.myfaces.core</groupId>
-						<artifactId>myfaces-api</artifactId>
-						<version>${myFaces.version}</version>
-						<scope>compile</scope>
-					</dependency>
-					<dependency>
-						<groupId>org.apache.myfaces.core</groupId>
-						<artifactId>myfaces-impl</artifactId>
-						<version>${myFaces.version}</version>
-						<scope>runtime</scope>
-					</dependency>
+						
 				</dependencies>
 			</plugin>
 
@@ -201,4 +130,56 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>myfaces</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.myfaces.core</groupId>
+					<artifactId>myfaces-api</artifactId>
+					<version>${myfaces.version}</version>
+					<scope>compile</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.myfaces.core</groupId>
+					<artifactId>myfaces-impl</artifactId>
+					<version>${myfaces.version}</version>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+			<properties>
+				<override-web-xml>src/main/jetty/override-myfaces-web.xml</override-web-xml>
+				<jsf-implementation>myFaces</jsf-implementation>
+			</properties>
+		</profile>
+		<profile>
+			<id>mojarra</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.sun.faces</groupId>
+					<artifactId>jsf-api</artifactId>
+					<version>${mojarra.version}</version>
+					<scope>compile</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.sun.faces</groupId>
+					<artifactId>jsf-impl</artifactId>
+					<version>${mojarra.version}</version>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>
+			<properties>
+				<override-web-xml>src/main/jetty/override-mojarra-web.xml</override-web-xml>
+				<jsf-implementation>mojarra</jsf-implementation>
+			</properties>
+		</profile>
+	</profiles>
+
 </project>

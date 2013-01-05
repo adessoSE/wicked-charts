@@ -32,11 +32,15 @@ import javax.faces.bean.ManagedBean;
 public class PropertiesLoader {
 
 	private final String projectVersion;
-	private final String myFacesVersion;
+	private final String jsfImplementation;
+	private final String mojarraVersion;
+	private final String myfacesVersion;
 
 	public PropertiesLoader() {
 		this.projectVersion = this.loadProperty("project.version");
-		this.myFacesVersion = this.loadProperty("myFaces.version");
+		this.jsfImplementation = this.loadProperty("jsf-implementation");
+		this.mojarraVersion = this.loadProperty("mojarra.version");
+		this.myfacesVersion = this.loadProperty("myfaces.version");
 	}
 
 	public String loadProperty(String propertyName) {
@@ -60,7 +64,19 @@ public class PropertiesLoader {
 		return this.projectVersion;
 	}
 
-	public String getMyFacesVersion() {
-		return this.myFacesVersion;
+	public String getJsfImplementation() {
+		return this.jsfImplementation;
+	}
+
+	public String getJsfImplementationVersion() {
+		if ("myfaces".equalsIgnoreCase(this.getJsfImplementation())) {
+			return this.myfacesVersion;
+		} else {
+			if ("mojarra".equalsIgnoreCase(this.getJsfImplementation())) {
+				return this.mojarraVersion;
+			} else {
+				return "unknown";
+			}
+		}
 	}
 }
