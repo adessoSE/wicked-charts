@@ -22,7 +22,7 @@ import com.googlecode.wickedcharts.highcharts.options.Global;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
-import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory;
+import com.googlecode.wickedcharts.wicket6.highcharts.JsonRendererFactory;
 
 /**
  * This processor reads the global options from an {@link Options} object and
@@ -35,11 +35,11 @@ import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Wicket6GlobalProcessor implements IOptionsProcessor {
+public class GlobalProcessor implements IOptionsProcessor {
 
   private IHeaderResponse response;
 
-  public Wicket6GlobalProcessor(IHeaderResponse response) {
+  public GlobalProcessor(IHeaderResponse response) {
     this.response = response;
   }
 
@@ -47,7 +47,7 @@ public class Wicket6GlobalProcessor implements IOptionsProcessor {
   public void processOptions(Options options, OptionsProcessorContext context) {
     Global global = context.getGlobal();
     if (global != null) {
-      JsonRenderer renderer = Wicket6JsonRendererFactory.getInstance().getRenderer();
+      JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
       String globalJson = renderer.toJson(global);
       response.render(JavaScriptHeaderItem.forScript("Highcharts.setOptions({global: " + globalJson + "});",
           "highcharts-global"));

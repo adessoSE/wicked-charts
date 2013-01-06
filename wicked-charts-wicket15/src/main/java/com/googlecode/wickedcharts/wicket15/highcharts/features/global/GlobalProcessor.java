@@ -21,7 +21,7 @@ import com.googlecode.wickedcharts.highcharts.options.Global;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
-import com.googlecode.wickedcharts.wicket15.highcharts.Wicket15JsonRendererFactory;
+import com.googlecode.wickedcharts.wicket15.highcharts.JsonRendererFactory;
 
 /**
  * This processor reads the global options from an {@link Options} object and
@@ -34,11 +34,11 @@ import com.googlecode.wickedcharts.wicket15.highcharts.Wicket15JsonRendererFacto
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Wicket15GlobalProcessor implements IOptionsProcessor {
+public class GlobalProcessor implements IOptionsProcessor {
 
 	private IHeaderResponse response;
 
-	public Wicket15GlobalProcessor(IHeaderResponse response) {
+	public GlobalProcessor(IHeaderResponse response) {
 		this.response = response;
 	}
 
@@ -46,7 +46,7 @@ public class Wicket15GlobalProcessor implements IOptionsProcessor {
 	public void processOptions(Options options, OptionsProcessorContext context) {
 		Global global = context.getGlobal();
 		if (global != null) {
-			JsonRenderer renderer = Wicket15JsonRendererFactory.getInstance()
+			JsonRenderer renderer = JsonRendererFactory.getInstance()
 					.getRenderer();
 			String globalJson = renderer.toJson(global);
 			response.renderJavaScript("Highcharts.setOptions({global: "

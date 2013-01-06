@@ -19,14 +19,19 @@ import java.util.Collections;
 
 import com.googlecode.wickedcharts.highcharts.options.Axis;
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
+import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.HorizontalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.Legend;
 import com.googlecode.wickedcharts.highcharts.options.LegendLayout;
 import com.googlecode.wickedcharts.highcharts.options.PlotLine;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
+import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionEvent;
+import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionFunction;
 import com.googlecode.wickedcharts.highcharts.options.series.Series;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
@@ -137,6 +142,19 @@ public class BasicLineOptions extends ShowcaseOptions {
             .asList(new Number[] { 3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6,
                 14.2, 10.3, 6.6, 4.8 }));
     addSeries(series4);
+
+    setPlotOptions(new PlotOptionsChoice()
+        .setLine(new PlotOptions()
+            .setEvents(new Events()
+                .setClick(new InteractionFunction(this) {
+
+                  @Override
+                  public void onInteraction(InteractionEvent event) {
+                    System.out
+                        .println("A Series has been clicked");
+
+                  }
+                }))));
 
   }
 

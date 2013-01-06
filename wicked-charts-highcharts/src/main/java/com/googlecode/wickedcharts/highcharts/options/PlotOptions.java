@@ -17,7 +17,6 @@ package com.googlecode.wickedcharts.highcharts.options;
 import java.awt.Color;
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -55,8 +54,7 @@ public class PlotOptions implements Serializable {
 
 	private Boolean enableMouseTracking;
 
-	@JsonIgnore
-	private DummyOption events;
+	private Events events;
 
 	private Float groupPadding;
 
@@ -182,7 +180,7 @@ public class PlotOptions implements Serializable {
 		return this.enableMouseTracking;
 	}
 
-	public DummyOption getEvents() {
+	public Events getEvents() {
 		return this.events;
 	}
 
@@ -390,7 +388,7 @@ public class PlotOptions implements Serializable {
 		return this;
 	}
 
-	public PlotOptions setEvents(final DummyOption events) {
+	public PlotOptions setEvents(final Events events) {
 		this.events = events;
 		return this;
 	}

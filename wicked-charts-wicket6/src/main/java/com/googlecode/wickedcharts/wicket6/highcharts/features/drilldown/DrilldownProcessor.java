@@ -35,7 +35,7 @@ import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcess
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
-import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory;
+import com.googlecode.wickedcharts.wicket6.highcharts.JsonRendererFactory;
 
 /**
  * This processor adds drilldown functionality to a chart. It searches the given
@@ -50,7 +50,7 @@ import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Wicket6DrilldownProcessor implements IOptionsProcessor {
+public class DrilldownProcessor implements IOptionsProcessor {
 
   /**
    * Name of the javascript array containing all drilldown options.
@@ -61,7 +61,7 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
 
   private final IHeaderResponse response;
 
-  public Wicket6DrilldownProcessor(Component component, IHeaderResponse response) {
+  public DrilldownProcessor(Component component, IHeaderResponse response) {
     this.component = component;
     this.response = response;
   }
@@ -86,7 +86,7 @@ public class Wicket6DrilldownProcessor implements IOptionsProcessor {
    * Adds the drilldown options stored in the context to a javascript array.
    */
   private void addDrilldownOptionsArray(OptionsProcessorContext context) {
-    JsonRenderer renderer = Wicket6JsonRendererFactory.getInstance().getRenderer();
+    JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
     response.render(JavaScriptHeaderItem.forScript(
         MessageFormat.format("var {0};\n var {1};", JS_DRILLDOWN_ARRAY_NAME, getDrilldownArrayName(component)),
         JS_DRILLDOWN_ARRAY_NAME + "-init"));

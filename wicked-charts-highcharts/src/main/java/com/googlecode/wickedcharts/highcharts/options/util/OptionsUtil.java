@@ -19,6 +19,7 @@ import com.googlecode.wickedcharts.highcharts.options.ChartType;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Function;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.Series;
 
 public class OptionsUtil {
@@ -118,4 +119,40 @@ public class OptionsUtil {
 		}
 		return false;
 	}
+
+	/**
+	 * Retrieves the {@link Series} object with the given wickedChartsId from the
+	 * given {@link Options} object. Returns null if a Series with the given ID
+	 * does not exist.
+	 */
+	public static Series<?> getSeriesWithWickedChartsId(Options options, int wickedChartsId) {
+		for (Series<?> series : options.getSeries()) {
+			if (series.getWickedChartsId() == wickedChartsId) {
+				return series;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Retrieves the {@link Point} object with the given wickedChartsId from the
+	 * given {@link Options} object. Returns null if a Point with the given ID
+	 * does not exist.
+	 */
+	public static Point getPointWithWickedChartsId(Options options, int wickedChartsId) {
+		for (Series<?> series : options.getSeries()) {
+			for (Object object : series.getData()) {
+				if (!(object instanceof Point)) {
+					break;
+				} else {
+					Point point = (Point) object;
+					if (point.getWickedChartsId() == wickedChartsId) {
+						return point;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
 }

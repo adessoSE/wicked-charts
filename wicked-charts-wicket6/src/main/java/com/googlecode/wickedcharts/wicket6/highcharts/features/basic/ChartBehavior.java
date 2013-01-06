@@ -30,10 +30,11 @@ import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcesso
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 import com.googlecode.wickedcharts.wicket6.JavaScriptResourceRegistry;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
-import com.googlecode.wickedcharts.wicket6.highcharts.Wicket6JsonRendererFactory;
-import com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown.Wicket6DrilldownProcessor;
-import com.googlecode.wickedcharts.wicket6.highcharts.features.global.Wicket6GlobalProcessor;
-import com.googlecode.wickedcharts.wicket6.highcharts.features.livedata.Wicket6LiveDataProcessor;
+import com.googlecode.wickedcharts.wicket6.highcharts.JsonRendererFactory;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown.DrilldownProcessor;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.global.GlobalProcessor;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.interaction.InteractionProcessor;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.livedata.LiveDataProcessor;
 
 /**
  * This behavior takes in an {@link Options} object containing the configuration
@@ -45,94 +46,99 @@ import com.googlecode.wickedcharts.wicket6.highcharts.features.livedata.Wicket6L
  */
 public class ChartBehavior extends Behavior {
 
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  private final Chart chart;
+	private final Chart chart;
 
-  /**
-   * Constructor.
-   * 
-   * @param options
-   *          the options for the chart. The {@link Option} class is very
-   *          similar in structure to the Highcharts API reference, see
-   *          http://www.highcharts.com/ref/.
-   */
-  public ChartBehavior(final Chart container) {
-    this.chart = container;
-  }
+	/**
+	 * Constructor.
+	 * 
+	 * @param options
+	 *          the options for the chart. The {@link Option} class is very
+	 *          similar in structure to the Highcharts API reference, see
+	 *          http://www.highcharts.com/ref/.
+	 */
+	public ChartBehavior(final Chart container) {
+		this.chart = container;
+	}
 
-  private void addTheme(final IHeaderResponse response, final JsonRenderer renderer) {
-    if (this.chart.getTheme() != null) {
-      response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format("Highcharts.setOptions({0});",
-          renderer.toJson(this.chart.getTheme()))));
-    } else if (this.chart.getThemeUrl() != null) {
-      response.render(JavaScriptReferenceHeaderItem.forUrl(this.chart.getThemeUrl()));
-    } else if (this.chart.getThemeReference() != null) {
-      response.render(JavaScriptReferenceHeaderItem.forReference(this.chart.getThemeReference()));
-    }
-  }
+	private void addTheme(final IHeaderResponse response, final JsonRenderer renderer) {
+		if (this.chart.getTheme() != null) {
+			response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format("Highcharts.setOptions({0});",
+			    renderer.toJson(this.chart.getTheme()))));
+		} else if (this.chart.getThemeUrl() != null) {
+			response.render(JavaScriptReferenceHeaderItem.forUrl(this.chart.getThemeUrl()));
+		} else if (this.chart.getThemeReference() != null) {
+			response.render(JavaScriptReferenceHeaderItem.forReference(this.chart.getThemeReference()));
+		}
+	}
 
-  /**
-   * Includes the javascript that calls the Highcharts library to visualize the
-   * chart.
-   * 
-   * @param response
-   *          the Wicket HeaderResponse
-   * @param options
-   *          the options containing the data to display
-   * @param renderer
-   *          the JsonRenderer responsible for rendering the options
-   * @param markupId
-   *          the DOM ID of the chart component.
-   */
-  protected void includeChartJavascript(final IHeaderResponse response, final Options options,
-      final JsonRenderer renderer, final String markupId) {
-    String chartVarname = chart.getJavaScriptVarName();
-    String optionsVarname = markupId + "Options";
-    response
-        .render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
-            "var {0} = {1};window.{2} = new Highcharts.Chart({0});", optionsVarname, renderer.toJson(options),
-            chartVarname)));
-  }
+	/**
+	 * Includes the javascript that calls the Highcharts library to visualize the
+	 * chart.
+	 * 
+	 * @param response
+	 *          the Wicket HeaderResponse
+	 * @param options
+	 *          the options containing the data to display
+	 * @param renderer
+	 *          the JsonRenderer responsible for rendering the options
+	 * @param markupId
+	 *          the DOM ID of the chart component.
+	 */
+	protected void includeChartJavascript(final IHeaderResponse response, final Options options,
+	    final JsonRenderer renderer, final String markupId) {
+		String chartVarname = chart.getJavaScriptVarName();
+		String optionsVarname = markupId + "Options";
+		response
+		    .render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
+		        "var {0} = {1};window.{2} = new Highcharts.Chart({0});", optionsVarname, renderer.toJson(options),
+		        chartVarname)));
+	}
 
-  private void includeJavascriptDependencies(final IHeaderResponse response, final Options options) {
-    JavaScriptResourceRegistry.getInstance().getJQueryEntry().addToHeaderResponse(response);
-    JavaScriptResourceRegistry.getInstance().getHighchartsEntry().addToHeaderResponse(response);
-    if (OptionsUtil.needsExportingJs(options)) {
-      JavaScriptResourceRegistry.getInstance().getHighchartsExportingEntry().addToHeaderResponse(response);
-    }
-    if (OptionsUtil.needsHighchartsMoreJs(options)) {
-      JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry().addToHeaderResponse(response);
-    }
-  }
+	private void includeJavascriptDependencies(final IHeaderResponse response, final Options options) {
+		JavaScriptResourceRegistry.getInstance().getJQueryEntry().addToHeaderResponse(response);
+		JavaScriptResourceRegistry.getInstance().getHighchartsEntry().addToHeaderResponse(response);
+		if (OptionsUtil.needsExportingJs(options)) {
+			JavaScriptResourceRegistry.getInstance().getHighchartsExportingEntry().addToHeaderResponse(response);
+		}
+		if (OptionsUtil.needsHighchartsMoreJs(options)) {
+			JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry().addToHeaderResponse(response);
+		}
+	}
 
-  @Override
-  public void onConfigure(Component component) {
-    super.onConfigure(component);
-    Wicket6LiveDataProcessor liveDataProcessor = new Wicket6LiveDataProcessor(component);
-    liveDataProcessor.processOptions(this.chart.getOptions(), new OptionsProcessorContext(this.chart.getOptions()));
-  }
+	@Override
+	public void onConfigure(Component component) {
+		super.onConfigure(component);
+		OptionsProcessorContext context = new OptionsProcessorContext(this.chart.getOptions());
 
-  @Override
-  public void renderHead(final Component component, final IHeaderResponse response) {
+		LiveDataProcessor liveDataProcessor = new LiveDataProcessor(component);
+		liveDataProcessor.processOptions(this.chart.getOptions(), context);
 
-    component.setOutputMarkupId(true);
-    Options options = this.chart.getOptions();
-    final String id = component.getMarkupId();
-    OptionsUtil.getInstance().setRenderTo(options, id);
+		InteractionProcessor interactionProcessor = new InteractionProcessor(chart);
+		interactionProcessor.processOptions(this.chart.getOptions(), context);
+	}
 
-    JsonRenderer renderer = Wicket6JsonRendererFactory.getInstance().getRenderer();
-    includeJavascriptDependencies(response, options);
-    addTheme(response, renderer);
+	@Override
+	public void renderHead(final Component component, final IHeaderResponse response) {
 
-    OptionsProcessorContext context = new OptionsProcessorContext(options);
-    Wicket6DrilldownProcessor drilldownProcessor = new Wicket6DrilldownProcessor(component, response);
-    drilldownProcessor.processOptions(options, context);
+		component.setOutputMarkupId(true);
+		Options options = this.chart.getOptions();
+		final String id = component.getMarkupId();
+		OptionsUtil.getInstance().setRenderTo(options, id);
 
-    Wicket6GlobalProcessor globalProcessor = new Wicket6GlobalProcessor(response);
-    globalProcessor.processOptions(options, context);
+		JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
+		includeJavascriptDependencies(response, options);
+		addTheme(response, renderer);
 
-    includeChartJavascript(response, options, renderer, id);
-  }
+		OptionsProcessorContext context = new OptionsProcessorContext(options);
+		DrilldownProcessor drilldownProcessor = new DrilldownProcessor(component, response);
+		drilldownProcessor.processOptions(options, context);
+
+		GlobalProcessor globalProcessor = new GlobalProcessor(response);
+		globalProcessor.processOptions(options, context);
+
+		includeChartJavascript(response, options, renderer, id);
+	}
 
 }

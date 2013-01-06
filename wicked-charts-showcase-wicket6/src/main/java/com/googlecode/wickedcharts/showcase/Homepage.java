@@ -49,6 +49,7 @@ import com.googlecode.wickedcharts.showcase.options.ColumnWithRotatedLabelsOptio
 import com.googlecode.wickedcharts.showcase.options.ComboOptions;
 import com.googlecode.wickedcharts.showcase.options.DonutOptions;
 import com.googlecode.wickedcharts.showcase.options.DualAxesOptions;
+import com.googlecode.wickedcharts.showcase.options.InteractionOptions;
 import com.googlecode.wickedcharts.showcase.options.LineWithDataLabelsOptions;
 import com.googlecode.wickedcharts.showcase.options.LogarithmicAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.MultipleAxesOptions;
@@ -128,6 +129,7 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("pieWithLegend", chart, codeContainer, new PieWithLegendOptions()));
 		this.add(new SplineUpdatingChartLink("splineUpdating", chart, codeContainer, new SplineUpdatingOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer, new BubbleChartOptions()));
+		this.add(new UpdateChartLink("interactive", chart, codeContainer, new InteractionOptions()));
 		this.add(new UpdateChartLink("angularGauge", chart, codeContainer, new AngularGaugeOptions()));
 		this.add(new UpdateChartLink("spiderweb", chart, codeContainer, new SpiderwebOptions()));
 		this.add(new UpdateChartLink("windrose", chart, codeContainer, new WindroseOptions()));

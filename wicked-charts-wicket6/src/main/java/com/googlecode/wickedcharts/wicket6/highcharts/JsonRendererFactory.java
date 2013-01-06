@@ -12,39 +12,39 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.wicket15.highcharts;
+package com.googlecode.wickedcharts.wicket6.highcharts;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 
 /**
  * Factory class responsible for creating a {@link JsonRenderer} instance that
- * matches the needs of wicked-charts-wicket15.
+ * matches the needs of wicked-charts-wicket6.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Wicket15JsonRendererFactory {
+public class JsonRendererFactory {
 
-	private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
+  private static final JsonRendererFactory INSTANCE = new JsonRendererFactory();
 
-	private static JsonRenderer RENDERER = new JsonRenderer();
+  private static JsonRenderer RENDERER = new JsonRenderer();
 
-	public static Wicket15JsonRendererFactory getInstance() {
-		return INSTANCE;
-	}
+  public static JsonRendererFactory getInstance() {
+    return INSTANCE;
+  }
 
-	private Wicket15JsonRendererFactory() {
+  private JsonRendererFactory() {
 
-	}
+  }
 
-	/**
-	 * Returns the singleton instance of the {@link JsonRenderer} that is
-	 * configured for Wicket 1.5.x.
-	 * 
-	 * @return the singleton {@link JsonRenderer}
-	 */
-	public JsonRenderer getRenderer() {
-		return RENDERER;
-	}
+  /**
+   * Returns the singleton instance of the {@link JsonRenderer} that is
+   * configured for Wicket 6.x.
+   * 
+   * @return the singleton {@link JsonRenderer}
+   */
+  public JsonRenderer getRenderer() {
+    return RENDERER;
+  }
 
 }

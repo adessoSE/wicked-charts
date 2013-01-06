@@ -87,6 +87,22 @@ public abstract class Series<D> implements Serializable {
 
 	private Boolean enableMouseTracking;
 
+	private int wickedChartsId;
+
+	/**
+	 * Sets the Wicked Charts specific ID for this Point.
+	 */
+	public void setWickedChartsId(int wickedChartsId) {
+		this.wickedChartsId = wickedChartsId;
+	}
+
+	/**
+	 * Retrieves the Wicked Charts specific ID for this Point.
+	 */
+	public int getWickedChartsId() {
+		return wickedChartsId;
+	}
+
 	/**
 	 * Adds a point to this series.
 	 * 

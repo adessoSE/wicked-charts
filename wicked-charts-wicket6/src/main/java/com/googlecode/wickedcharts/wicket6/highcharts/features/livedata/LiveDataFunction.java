@@ -26,11 +26,11 @@ import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class Wicket6LiveDataFunction extends Function {
+public class LiveDataFunction extends Function {
 
   private static final long serialVersionUID = 1L;
 
-  public Wicket6LiveDataFunction(Wicket6LiveDataAjaxBehavior behavior) {
+  public LiveDataFunction(LiveDataAjaxBehavior behavior) {
     String interval = String.valueOf(behavior.getSeries().getUpdateIntervalMs());
     String intervalVarName = behavior.getIntervalJavaScriptVarName();
     String functionBody = "var series = this.series[0];\n";
