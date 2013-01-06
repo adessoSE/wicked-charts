@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode.wicked-charts</groupId>
 	<artifactId>wicked-charts-parent</artifactId>
-	<version>1.4.1-SNAPSHOT</version>
+	<version>1.4.1</version>
 	<name>Wicked Charts parent</name>
 	<packaging>pom</packaging>
 	<description>Parent POM for wicked-charts</description>

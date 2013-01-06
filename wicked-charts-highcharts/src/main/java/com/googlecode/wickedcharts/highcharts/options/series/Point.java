@@ -57,7 +57,7 @@ public class Point implements Serializable {
 
 	private Number x;
 
-	private int wickedChartsId;
+	private Integer wickedChartsId;
 
 	public Point() {
 
@@ -205,7 +205,7 @@ public class Point implements Serializable {
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
 	 */
-	public Point setWickedChartsId(int wickedChartsId) {
+	public Point setWickedChartsId(Integer wickedChartsId) {
 		this.wickedChartsId = wickedChartsId;
 		return this;
 	}
@@ -213,7 +213,7 @@ public class Point implements Serializable {
 	/**
 	 * Retrieves the Wicked Charts specific ID for this Point.
 	 */
-	public int getWickedChartsId() {
+	public Integer getWickedChartsId() {
 		return wickedChartsId;
 	}
 
