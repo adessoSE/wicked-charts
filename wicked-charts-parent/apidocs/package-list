@@ -4,6 +4,7 @@ com.googlecode.wickedcharts.highcharts.options
 com.googlecode.wickedcharts.highcharts.options.color
 com.googlecode.wickedcharts.highcharts.options.drilldown
 com.googlecode.wickedcharts.highcharts.options.functions
+com.googlecode.wickedcharts.highcharts.options.interaction
 com.googlecode.wickedcharts.highcharts.options.livedata
 com.googlecode.wickedcharts.highcharts.options.processing
 com.googlecode.wickedcharts.highcharts.options.series
@@ -21,4 +22,5 @@ com.googlecode.wickedcharts.wicket6.highcharts
 com.googlecode.wickedcharts.wicket6.highcharts.features.basic
 com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown
 com.googlecode.wickedcharts.wicket6.highcharts.features.global
+com.googlecode.wickedcharts.wicket6.highcharts.features.interaction
 com.googlecode.wickedcharts.wicket6.highcharts.features.livedata
