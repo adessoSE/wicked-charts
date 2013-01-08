@@ -275,25 +275,6 @@
           </div><!--/.well -->
         </div><!--/span-->
 
-        <div class="span9 corner-usage">
-			<p>To add a chart to your JSF page, include the following HTML fragments into your code:</p>
-<h3>Markup:</h3>
-<blockquote>
-<pre class="brush: xml">
-&lt;!-- page.xhtml --&gt;
-&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:wc="http://googlecode.com/wickedcharts"&gt;
-	&lt;body&gt;
-		&lt;wc:chart id="chart1" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" theme="<h:outputText value="#{showcase.themeValue}" escape="false" />" /&gt;
-		&lt;wc:chart id="chart2" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="<h:outputText value="#{showcase.themeUrlRefValue}" escape="false" />" /&gt;
-		&lt;wc:chart id="chart3" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="js/myTheme.js" /&gt;
-		&lt;wc:chart id="chart4" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="http://js.mySite.com/myTheme.js" /&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</blockquote>
-        </div>
-
 		<div id="themes" class="span9 corner-theme">
           <h:form>
           	<ul class="nav nav-pills">
@@ -327,6 +308,26 @@
             </div>
           </div>
         </div><!--/span-->
+
+		<div class="span9 corner-usage">
+			<p>To add a chart to your JSF page, include the following HTML fragments into your code:</p>
+<h3>Markup:</h3>
+<blockquote>
+<pre class="brush: xml">
+&lt;!-- page.xhtml --&gt;
+&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wc="http://googlecode.com/wickedcharts"&gt;
+	&lt;body&gt;
+		&lt;wc:chart id="chart1" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" theme="<h:outputText value="#{showcase.themeValue}" escape="false" />" /&gt;
+		&lt;wc:chart id="chart2" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="<h:outputText value="#{showcase.themeUrlRefValue}" escape="false" />" /&gt;
+		&lt;wc:chart id="chart3" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="js/myTheme.js" /&gt;
+		&lt;wc:chart id="chart4" options="<h:outputText value="#{showcase.optionsValue}" escape="false" />" themeUrlRef="http://js.mySite.com/myTheme.js" /&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</blockquote>
+      </div>
+
       </div><!--/row-->
       
       <hr />
