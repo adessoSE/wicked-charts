@@ -159,6 +159,23 @@
           </div><!--/.well -->
         </div><!--/span-->
 
+		<div id="themes" class="span9 corner-theme">
+          <ul class="nav nav-pills">
+            <li class="active"><a href="/start/default" data-target="#chart">Default</a></li>
+            <li><a href="/start/grid" data-target="#chart">Grid</a></li>
+            <li><a href="/start/skies" data-target="#chart">Skies</a></li>
+            <li><a href="/start/gray" data-target="#chart">Gray</a></li>
+            <li><a href="/start/darkblue" data-target="#chart">Dark Blue</a></li>
+            <li class="disabled"><a href="/start/darkgreen" onclick="return false">Dark Green</a></li>
+          </ul>
+        </div><!--/span-->
+
+        <div class="span9 corner-chart">
+          <div wicket:id="chart" id="chart" style="width: 100%">CHART</div>
+          <br>
+          <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#"  data-toggle="modal" data-target="#codeDialog">Show Java code &raquo;</a></p>
+        </div><!--/span-->
+
         <div class="span9 corner-usage">
 			<p>To add a chart to your Wicket page, include the following HTML
 				and Java fragments into your code:</p>
@@ -182,22 +199,6 @@ add(new Chart("chart", options));
 </blockquote>
         </div>
 
-		<div id="themes" class="span9 corner-theme">
-          <ul class="nav nav-pills">
-            <li class="active"><a href="/start/default" data-target="#chart">Default</a></li>
-            <li><a href="/start/grid" data-target="#chart">Grid</a></li>
-            <li><a href="/start/skies" data-target="#chart">Skies</a></li>
-            <li><a href="/start/gray" data-target="#chart">Gray</a></li>
-            <li><a href="/start/darkblue" data-target="#chart">Dark Blue</a></li>
-            <li class="disabled"><a href="/start/darkgreen" onclick="return false">Dark Green</a></li>
-          </ul>
-        </div><!--/span-->
-
-        <div class="span9 corner-chart">
-          <div wicket:id="chart" id="chart" style="width: 100%">CHART</div>
-          <br>
-          <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#"  data-toggle="modal" data-target="#codeDialog">Show Java code &raquo;</a></p>
-        </div><!--/span-->
 
         <div class="span9">
           <div id="codeDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="codeDialogHeader" aria-hidden="true">
