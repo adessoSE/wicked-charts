@@ -40,8 +40,8 @@ public abstract class InteractionFunction extends Function implements IProcessab
 	/**
 	 * Constructor.
 	 * 
-	 * @param behavior
 	 * @param parentOptions
+	 *          the Options object that contain this function.
 	 */
 	public InteractionFunction(Options parentOptions) {
 		parentOptions.markForProcessing(this);
