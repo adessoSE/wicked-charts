@@ -38,6 +38,8 @@ public class State implements Serializable {
 
 	private ColorReference lineColor;
 
+	private ColorReference color;
+
 	private Integer lineWidth;
 
 	private Integer radius;
@@ -106,6 +108,15 @@ public class State implements Serializable {
 	public State setSymbol(final Symbol symbol) {
 		this.symbol = symbol;
 		return this;
+	}
+
+	public State setColor(ColorReference color) {
+		this.color = color;
+		return this;
+	}
+
+	public ColorReference getColor() {
+		return color;
 	}
 
 }
