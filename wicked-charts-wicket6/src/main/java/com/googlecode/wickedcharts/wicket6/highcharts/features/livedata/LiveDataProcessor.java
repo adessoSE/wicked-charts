@@ -34,41 +34,42 @@ import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
  */
 public class LiveDataProcessor implements IOptionsProcessor {
 
-  private final Component component;
+	private final Component component;
 
-  public LiveDataProcessor(Component component) {
-    this.component = component;
-  }
+	public LiveDataProcessor(Component component) {
+		this.component = component;
+	}
 
-  @Override
-  public void processOptions(Options options, OptionsProcessorContext context) {
-    List<IProcessableOption> processables = options.getMarkedForProcessing(LiveDataSeries.PROCESSING_KEY);
-    for (IProcessableOption processable : processables) {
-      LiveDataSeries series = (LiveDataSeries) processable;
+	@Override
+	public void processOptions(Options options, OptionsProcessorContext context) {
+		List<IProcessableOption> processables = options.getMarkedForProcessing(LiveDataSeries.PROCESSING_KEY);
+		for (IProcessableOption processable : processables) {
+			LiveDataSeries series = (LiveDataSeries) processable;
 
-      LiveDataAjaxBehavior behavior = getBehaviorFromComponent(component);
-      if (behavior == null) {
-        behavior = new LiveDataAjaxBehavior(series);
-        component.add(behavior);
-      }
+			LiveDataAjaxBehavior behavior = getBehaviorFromComponent(component);
+			if (behavior == null) {
+				behavior = new LiveDataAjaxBehavior(series);
+				component.add(behavior);
+			}
+			behavior.addJavaScriptValues(series.getJavaScriptParameters());
 
-      LiveDataFunction function = new LiveDataFunction(behavior);
-      OptionsUtil.getInstance().setChartEventsLoad(options, function);
-    }
-  }
+			LiveDataFunction function = new LiveDataFunction(behavior);
+			OptionsUtil.getInstance().setChartEventsLoad(options, function);
+		}
+	}
 
-  private LiveDataAjaxBehavior getBehaviorFromComponent(Component component) {
-    List<LiveDataAjaxBehavior> behaviors = component.getBehaviors(LiveDataAjaxBehavior.class);
-    if (behaviors.size() > 1) {
-      // TODO: allow multiple Behaviors but only one per series.
-      throw new IllegalStateException("Only one " + LiveDataAjaxBehavior.class.getSimpleName()
-          + " can be active per component!");
-    } else if (behaviors.size() == 1) {
-      behaviors.get(0).reset();
-      return behaviors.get(0);
-    } else {
-      return null;
-    }
-  }
+	private LiveDataAjaxBehavior getBehaviorFromComponent(Component component) {
+		List<LiveDataAjaxBehavior> behaviors = component.getBehaviors(LiveDataAjaxBehavior.class);
+		if (behaviors.size() > 1) {
+			// TODO: allow multiple Behaviors but only one per series.
+			throw new IllegalStateException("Only one " + LiveDataAjaxBehavior.class.getSimpleName()
+			    + " can be active per component!");
+		} else if (behaviors.size() == 1) {
+			behaviors.get(0).reset();
+			return behaviors.get(0);
+		} else {
+			return null;
+		}
+	}
 
 }

@@ -14,6 +14,9 @@
  */
 package com.googlecode.wickedcharts.highcharts.options.livedata;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
@@ -28,60 +31,109 @@ import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
  */
 public abstract class LiveDataSeries extends PointSeries implements IProcessableOption {
 
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  /**
-   * The key under which {@link LiveDataSeries} are registered in the parent
-   * options. See {@link Options#markForProcessing(IProcessableOption)} .
-   */
-  public static final String PROCESSING_KEY = "LIVEUPDATE";
+	private final Map<String, String> javascriptParameters = new HashMap<String, String>();
 
-  @JsonIgnore
-  private final Options parentOptions;
+	/**
+	 * The key under which {@link LiveDataSeries} are registered in the parent
+	 * options. See {@link Options#markForProcessing(IProcessableOption)} .
+	 */
+	public static final String PROCESSING_KEY = "LIVEUPDATE";
 
-  @JsonIgnore
-  private int updateIntervalMs;
+	@JsonIgnore
+	private final Options parentOptions;
 
-  /**
-   * Constructs a new {@link LiveDataSeries}.
-   * 
-   * @param parentOptions
-   *          the {@link Options} to which this series are added.
-   * @param updateIntervalMs
-   *          the interval in which to update the series in milliseconds.
-   */
-  public LiveDataSeries(Options parentOptions, int updateIntervalMs) {
-    this.parentOptions = parentOptions;
-    this.setUpdateIntervalMs(updateIntervalMs);
-    parentOptions.markForProcessing(this);
-  }
+	@JsonIgnore
+	private int updateIntervalMs;
 
-  public Options getParentOptions() {
-    return parentOptions;
-  }
+	/**
+	 * Constructs a new {@link LiveDataSeries}.
+	 * 
+	 * @param parentOptions
+	 *          the {@link Options} to which this series are added.
+	 * @param updateIntervalMs
+	 *          the interval in which to update the series in milliseconds.
+	 */
+	public LiveDataSeries(Options parentOptions, int updateIntervalMs) {
+		this.parentOptions = parentOptions;
+		this.setUpdateIntervalMs(updateIntervalMs);
+		parentOptions.markForProcessing(this);
+	}
 
-  public void setUpdateIntervalMs(int updateIntervalMs) {
-    this.updateIntervalMs = updateIntervalMs;
-  }
+	public Options getParentOptions() {
+		return parentOptions;
+	}
 
-  public int getUpdateIntervalMs() {
-    return updateIntervalMs;
-  }
+	public LiveDataSeries setUpdateIntervalMs(int updateIntervalMs) {
+		this.updateIntervalMs = updateIntervalMs;
+		return this;
+	}
 
-  @Override
-  @JsonIgnore
-  public String getProcessingKey() {
-    return PROCESSING_KEY;
-  };
+	/**
+	 * Adds a javascript parameter that will be passed into the
+	 * {@link #update(JavaScriptParameters)} method.
+	 * 
+	 * @param parameterName
+	 *          the name of the parameter
+	 * @param javascriptExpression
+	 *          a javascript expression. The value this expression evaluates to
+	 *          will be transmitted to the server via AJAX and will be passed into
+	 *          {@link #update(JavaScriptParameters)}.
+	 * @return this object for chaining
+	 */
+	public LiveDataSeries addJavaScriptParameter(String parameterName, String javascriptExpression) {
+		this.javascriptParameters.put(parameterName, javascriptExpression);
+		return this;
+	}
 
-  /**
-   * This method is called for each update interval. It must return a coordinate
-   * which is then added to the series on the fly.
-   * <p/>
-   * May return null. In that case, the chart is simply not updated.
-   * 
-   * @return the new {@link Coordinate} to add to the series.
-   */
-  public abstract Coordinate<Number, Number> update();
+	public Map<String, String> getJavaScriptParameters() {
+		return this.javascriptParameters;
+	}
+
+	public int getUpdateIntervalMs() {
+		return updateIntervalMs;
+	}
+
+	@Override
+	@JsonIgnore
+	public String getProcessingKey() {
+		return PROCESSING_KEY;
+	};
+
+	/**
+	 * This method is called for each update interval. It must return a coordinate
+	 * which is then added to the series on the fly.
+	 * <p/>
+	 * May return null. In that case, the chart is simply not updated.
+	 * 
+	 * @param parameters
+	 *          parameters that have been passed from javascript.
+	 * 
+	 * @return the new {@link Coordinate} to add to the series.
+	 */
+	public abstract Coordinate<Number, Number> update(JavaScriptParameters parameters);
+
+	/**
+	 * Container class for passing javascript parameters to
+	 * {@link LiveDataSeries#update(JavaScriptParameters)}.
+	 * 
+	 * @author Tom Hombergs (tom.hombergs@gmail.com)
+	 * 
+	 */
+	public interface JavaScriptParameters {
+
+		/**
+		 * Returns the value of the given parameter or null.
+		 * 
+		 * @param parameterName
+		 *          the name of the parameter. This name was specified when calling
+		 *          {@link LiveDataSeries#addJavaScriptParameter(String, String)}.
+		 * @return the value of the given parameter or null if the parameter does
+		 *         not exist.
+		 */
+		String getParameterValue(String parameterName);
+
+	}
 
 }

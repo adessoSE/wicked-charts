@@ -63,9 +63,7 @@ public class InteractionProcessor implements IOptionsProcessor, Serializable {
 			chart.add(interactionBehavior);
 
 			// add client side javascript to trigger an AJAX call
-			String functionBody = "var selectedSeries = WickedCharts.Interaction.getSelectedSeries(this);\n";
-			functionBody += "var selectedPoint = WickedCharts.Interaction.getSelectedPoint(this);\n";
-			functionBody += interactionBehavior.getCallbackScript();
+			String functionBody = interactionBehavior.getCallbackScript().toString();
 			function.setFunction(functionBody);
 		}
 	}
