@@ -40,7 +40,7 @@ public class DataLabels implements Serializable {
 
 	private Integer borderRadius;
 
-	private Integer vorderWidth;
+	private Integer borderWidth;
 
 	private ColorReference color;
 
@@ -136,8 +136,8 @@ public class DataLabels implements Serializable {
 		return this.style;
 	}
 
-	public Integer getVorderWidth() {
-		return this.vorderWidth;
+	public Integer getBorderWidth() {
+		return this.borderWidth;
 	}
 
 	public Integer getX() {
@@ -233,8 +233,8 @@ public class DataLabels implements Serializable {
 		return this;
 	}
 
-	public DataLabels setVorderWidth(final Integer vorderWidth) {
-		this.vorderWidth = vorderWidth;
+	public DataLabels setBorderWidth(final Integer vorderWidth) {
+		this.borderWidth = vorderWidth;
 		return this;
 	}
 
