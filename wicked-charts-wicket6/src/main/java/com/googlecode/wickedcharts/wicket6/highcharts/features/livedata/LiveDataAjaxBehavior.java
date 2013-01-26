@@ -23,11 +23,13 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
+import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries.JavaScriptParameters;
-import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
+import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.wicket6.JavaScriptExpressionSendingAjaxBehavior;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
+import com.googlecode.wickedcharts.wicket6.highcharts.JsonRendererFactory;
 
 /**
  * This Behavior adds javascript functionality to a chart that allows live
@@ -44,29 +46,29 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 
 	private boolean firstRendering = true;
 
-	public LiveDataAjaxBehavior(LiveDataSeries series) {
+	public LiveDataAjaxBehavior(final LiveDataSeries series) {
 		this.series = series;
 	}
 
 	@Override
-	protected void respond(AjaxRequestTarget target) {
-		final Coordinate<Number, Number> coordinates = series.update(createJavascriptParameters());
-		if (coordinates != null) {
+	protected void respond(final AjaxRequestTarget target) {
+		final Point point = this.series.update(createJavascriptParameters());
+		if (point != null) {
+			JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
+			String jsonPoint = renderer.toJson(point);
 			String javaScript = "var chartVarName = " + ((Chart) getComponent()).getJavaScriptVarName() + ";\n";
 			javaScript += "var seriesIndex = 0;\n";
-			javaScript += "var x = " + coordinates.getX() + ";\n";
-			javaScript += "var y = " + coordinates.getY() + ";\n";
-			javaScript += "eval(chartVarName).series[seriesIndex].addPoint([x,y], true, true);\n";
+			javaScript += "eval(chartVarName).series[seriesIndex].addPoint(" + jsonPoint + ", true, true);\n";
 			target.appendJavaScript(javaScript);
 		}
 	}
 
 	@Override
-	public void renderHead(Component component, IHeaderResponse response) {
+	public void renderHead(final Component component, final IHeaderResponse response) {
 		super.renderHead(component, response);
-		if (firstRendering) {
+		if (this.firstRendering) {
 			response.render(getIntervalDeclarationHeaderItem());
-			firstRendering = false;
+			this.firstRendering = false;
 		} else {
 			response.render(getClearIntervalHeaderItem());
 		}
@@ -90,11 +92,11 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 	}
 
 	protected void reset() {
-		firstRendering = true;
+		this.firstRendering = true;
 	}
 
 	public LiveDataSeries getSeries() {
-		return series;
+		return this.series;
 	}
 
 	@Override
@@ -109,7 +111,7 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 	private JavaScriptParameters createJavascriptParameters() {
 		return new JavaScriptParameters() {
 			@Override
-			public String getParameterValue(String parameterName) {
+			public String getParameterValue(final String parameterName) {
 				return LiveDataAjaxBehavior.this.getVariableValue(parameterName).toString();
 			}
 		};

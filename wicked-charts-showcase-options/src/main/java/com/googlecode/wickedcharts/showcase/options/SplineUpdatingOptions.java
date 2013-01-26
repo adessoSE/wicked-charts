@@ -25,13 +25,13 @@ import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.ExportingOptions;
 import com.googlecode.wickedcharts.highcharts.options.Function;
 import com.googlecode.wickedcharts.highcharts.options.Legend;
+import com.googlecode.wickedcharts.highcharts.options.Marker;
 import com.googlecode.wickedcharts.highcharts.options.PlotLine;
 import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
-import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
@@ -84,13 +84,23 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
       private static final long serialVersionUID = 1L;
 
       @Override
-      public Coordinate<Number, Number> update(JavaScriptParameters params) {
+      public Point update(final JavaScriptParameters params) {
         System.out
             .println(params
                 .getParameterValue("currentTime"));
-        return new Coordinate<Number, Number>(new Date().getTime(),
-            Math
+
+        Point point = new Point();
+        point
+            .setX(new Date()
+                .getTime());
+        point
+            .setY(Math
                 .random());
+        point
+            .setMarker(new Marker()
+                .setFillColor(HexColor
+                    .fromString("#FF0000")));
+        return point;
       }
     }
         .addJavaScriptParameter("currentTime", "new Date()");
@@ -111,7 +121,7 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
             .randomData(20));
   }
 
-  private List<Point> randomData(int size) {
+  private List<Point> randomData(final int size) {
     long time = new Date()
         .getTime() - 20000;
     List<Point> result = new ArrayList<Point>();

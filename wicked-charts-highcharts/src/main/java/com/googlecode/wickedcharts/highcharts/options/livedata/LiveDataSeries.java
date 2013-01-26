@@ -20,7 +20,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
+import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
 
 /**
@@ -55,17 +55,17 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 * @param updateIntervalMs
 	 *          the interval in which to update the series in milliseconds.
 	 */
-	public LiveDataSeries(Options parentOptions, int updateIntervalMs) {
+	public LiveDataSeries(final Options parentOptions, final int updateIntervalMs) {
 		this.parentOptions = parentOptions;
 		this.setUpdateIntervalMs(updateIntervalMs);
 		parentOptions.markForProcessing(this);
 	}
 
 	public Options getParentOptions() {
-		return parentOptions;
+		return this.parentOptions;
 	}
 
-	public LiveDataSeries setUpdateIntervalMs(int updateIntervalMs) {
+	public LiveDataSeries setUpdateIntervalMs(final int updateIntervalMs) {
 		this.updateIntervalMs = updateIntervalMs;
 		return this;
 	}
@@ -84,7 +84,7 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 *          you have to surround the string with quotes.
 	 * @return this object for chaining
 	 */
-	public LiveDataSeries addJavaScriptParameter(String parameterName, String javascriptExpression) {
+	public LiveDataSeries addJavaScriptParameter(final String parameterName, final String javascriptExpression) {
 		this.javascriptParameters.put(parameterName, javascriptExpression);
 		return this;
 	}
@@ -94,7 +94,7 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	}
 
 	public int getUpdateIntervalMs() {
-		return updateIntervalMs;
+		return this.updateIntervalMs;
 	}
 
 	@Override
@@ -104,7 +104,7 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	};
 
 	/**
-	 * This method is called for each update interval. It must return a coordinate
+	 * This method is called for each update interval. It must return a point
 	 * which is then added to the series on the fly.
 	 * <p/>
 	 * May return null. In that case, the chart is simply not updated.
@@ -112,9 +112,13 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 * @param parameters
 	 *          parameters that have been passed from javascript.
 	 * 
-	 * @return the new {@link Coordinate} to add to the series.
+	 * @return the new point to add to the series. This point is added by calling
+	 *         Highcharts' addPoint() function. Please note that Highcharts does
+	 *         not evaluate all attributes of this point. Also not that to define
+	 *         the color of the point you have to add a Marker with the fillColor
+	 *         attribute defined!
 	 */
-	public abstract Coordinate<Number, Number> update(JavaScriptParameters parameters);
+	public abstract Point update(final JavaScriptParameters parameters);
 
 	/**
 	 * Container class for passing javascript parameters to
@@ -134,7 +138,7 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 		 * @return the value of the given parameter or null if the parameter does
 		 *         not exist.
 		 */
-		String getParameterValue(String parameterName);
+		String getParameterValue(final String parameterName);
 
 	}
 
