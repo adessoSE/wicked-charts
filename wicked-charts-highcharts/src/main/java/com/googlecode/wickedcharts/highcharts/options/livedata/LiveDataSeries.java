@@ -110,7 +110,9 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 * May return null. In that case, the chart is simply not updated.
 	 * 
 	 * @param parameters
-	 *          parameters that have been passed from javascript.
+	 *          parameters that have been passed from javascript. You can define
+	 *          parameters to be transmitted from client side javascript to the
+	 *          server by calling {@link #addJavaScriptParameter(String, String)}.
 	 * 
 	 * @return the new point to add to the series. This point is added by calling
 	 *         Highcharts' addPoint() function. Please note that Highcharts does
