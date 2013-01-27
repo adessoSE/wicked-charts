@@ -24,3 +24,4 @@ com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown
 com.googlecode.wickedcharts.wicket6.highcharts.features.global
 com.googlecode.wickedcharts.wicket6.highcharts.features.interaction
 com.googlecode.wickedcharts.wicket6.highcharts.features.livedata
+com.googlecode.wickedcharts.wicket6.highcharts.features.selection
