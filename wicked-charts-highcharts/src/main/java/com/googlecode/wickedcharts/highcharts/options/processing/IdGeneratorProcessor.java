@@ -37,25 +37,34 @@ public class IdGeneratorProcessor implements IOptionsProcessor {
 
 	@Override
 	public void processOptions(final Options options, final OptionsProcessorContext context) {
-		for (Series<?> series : options.getSeries()) {
-			series.setWickedChartsId(++this.currentId);
+		if (options.getSeries() != null) {
+			for (Series<?> series : options.getSeries()) {
+				series.setWickedChartsId(++this.currentId);
 
-			for (Object object : series.getData()) {
-				if (!(object instanceof Point)) {
-					break;
-				} else {
-					Point point = (Point) object;
-					point.setWickedChartsId(++this.currentId);
+				if (series.getData() != null) {
+					for (Object object : series.getData()) {
+						if (!(object instanceof Point)) {
+							break;
+						} else {
+							Point point = (Point) object;
+							point.setWickedChartsId(++this.currentId);
+						}
+					}
 				}
+			}
+
+		}
+
+		if (options.getxAxis() != null) {
+			for (Axis axis : options.getxAxis()) {
+				axis.setWickedChartsId(++this.currentId);
 			}
 		}
 
-		for (Axis axis : options.getxAxis()) {
-			axis.setWickedChartsId(++this.currentId);
-		}
-
-		for (Axis axis : options.getyAxis()) {
-			axis.setWickedChartsId(++this.currentId);
+		if (options.getyAxis() != null) {
+			for (Axis axis : options.getyAxis()) {
+				axis.setWickedChartsId(++this.currentId);
+			}
 		}
 	}
 
