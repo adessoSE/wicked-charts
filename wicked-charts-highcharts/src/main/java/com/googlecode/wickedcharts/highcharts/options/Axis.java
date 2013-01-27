@@ -136,6 +136,8 @@ public class Axis implements Serializable {
 
 	private GridlineInterpolation gridLineInterpolation;
 
+	private Integer wickedChartsId;
+
 	public Axis() {
 
 	}
@@ -602,16 +604,16 @@ public class Axis implements Serializable {
 		return this;
 	}
 
-	public Axis setMinorTickPosition(TickPosition minorTickPosition) {
+	public Axis setMinorTickPosition(final TickPosition minorTickPosition) {
 		this.minorTickPosition = minorTickPosition;
 		return this;
 	}
 
 	public TickPosition getMinorTickPosition() {
-		return minorTickPosition;
+		return this.minorTickPosition;
 	}
 
-	public Axis addPlotBand(PlotBand plotBand) {
+	public Axis addPlotBand(final PlotBand plotBand) {
 		if (this.plotBands == null) {
 			this.plotBands = new ArrayList<PlotBand>();
 		}
@@ -619,7 +621,7 @@ public class Axis implements Serializable {
 		return this;
 	}
 
-	public Axis addPlotLine(PlotLine plotLine) {
+	public Axis addPlotLine(final PlotLine plotLine) {
 		if (this.plotLines == null) {
 			this.plotLines = new ArrayList<PlotLine>();
 		}
@@ -627,13 +629,21 @@ public class Axis implements Serializable {
 		return this;
 	}
 
-	public Axis setGridLineInterpolation(GridlineInterpolation gridLineInterpolation) {
+	public Axis setGridLineInterpolation(final GridlineInterpolation gridLineInterpolation) {
 		this.gridLineInterpolation = gridLineInterpolation;
 		return this;
 	}
 
 	public GridlineInterpolation getGridLineInterpolation() {
-		return gridLineInterpolation;
+		return this.gridLineInterpolation;
+	}
+
+	public void setWickedChartsId(final Integer wickedChartsId) {
+		this.wickedChartsId = wickedChartsId;
+	}
+
+	public Integer getWickedChartsId() {
+		return this.wickedChartsId;
 	}
 
 }

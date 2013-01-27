@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.wicket6.highcharts.features.interaction;
+package com.googlecode.wickedcharts.wicket6.highcharts.features.selection;
 
 import java.io.Serializable;
 import java.util.List;
@@ -20,45 +20,38 @@ import java.util.List;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionEvent;
-import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionFunction;
+import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionEvent;
+import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
-/**
- * {@link IOptionsProcessor} enabling the Client/Server Interaction for Wicket
- * 6.
- * 
- * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
- */
-public class InteractionProcessor implements IOptionsProcessor, Serializable {
+public class SelectionProcessor implements IOptionsProcessor, Serializable {
 
 	private final Chart chart;
 
-	public InteractionProcessor(final Chart chart) {
+	public SelectionProcessor(final Chart chart) {
 		this.chart = chart;
 	}
 
 	@Override
 	public void processOptions(final Options options, final OptionsProcessorContext context) {
 
-		List<InteractionFunction> functions = context.getInteractionFunctions();
-		for (final InteractionFunction function : functions) {
+		List<SelectionFunction> functions = context.getSelectionFunctions();
+		for (final SelectionFunction function : functions) {
 
 			// add server side AJAX event
-			InteractionBehavior interactionBehavior = new InteractionBehavior() {
+			SelectionBehavior selectionBehavior = new SelectionBehavior() {
 				@Override
-				public void onEvent(final InteractionEvent event, final AjaxRequestTarget target) {
-					WicketInteractionEvent wicketEvent = new WicketInteractionEvent(target, event);
-					function.onInteraction(wicketEvent);
+				public void onSelection(final SelectionEvent event, final AjaxRequestTarget target) {
+					WicketSelectionEvent wicketEvent = new WicketSelectionEvent(target, event);
+					function.onSelect(wicketEvent);
 				}
 			};
-			this.chart.add(interactionBehavior);
+			this.chart.add(selectionBehavior);
 
 			// add client side javascript to trigger an AJAX call
-			String functionBody = interactionBehavior.getCallbackScript().toString();
+			String functionBody = selectionBehavior.getCallbackScript().toString();
 			function.setFunction(functionBody);
 		}
 	}

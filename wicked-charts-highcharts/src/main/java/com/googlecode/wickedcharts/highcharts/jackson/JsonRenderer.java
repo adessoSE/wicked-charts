@@ -116,4 +116,13 @@ public class JsonRenderer {
 			    + " into JSON!", e);
 		}
 	}
+
+	public <T> T fromJson(final String json, final Class<T> targetClazz) {
+		try {
+			return this.jacksonMapper.readValue(json, targetClazz);
+		} catch (Exception e) {
+			throw new RuntimeException("Error trying to deserialize object of type " + targetClazz.getName() + " into JSON!",
+			    e);
+		}
+	}
 }

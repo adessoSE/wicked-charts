@@ -26,6 +26,8 @@ import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
+import com.googlecode.wickedcharts.highcharts.options.processing.IdGeneratorProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 import com.googlecode.wickedcharts.wicket6.JavaScriptResourceRegistry;
@@ -35,6 +37,7 @@ import com.googlecode.wickedcharts.wicket6.highcharts.features.drilldown.Drilldo
 import com.googlecode.wickedcharts.wicket6.highcharts.features.global.GlobalProcessor;
 import com.googlecode.wickedcharts.wicket6.highcharts.features.interaction.InteractionProcessor;
 import com.googlecode.wickedcharts.wicket6.highcharts.features.livedata.LiveDataProcessor;
+import com.googlecode.wickedcharts.wicket6.highcharts.features.selection.SelectionProcessor;
 
 /**
  * This behavior takes in an {@link Options} object containing the configuration
@@ -88,7 +91,7 @@ public class ChartBehavior extends Behavior {
 	 */
 	protected void includeChartJavascript(final IHeaderResponse response, final Options options,
 	    final JsonRenderer renderer, final String markupId) {
-		String chartVarname = chart.getJavaScriptVarName();
+		String chartVarname = this.chart.getJavaScriptVarName();
 		String optionsVarname = markupId + "Options";
 		response
 		    .render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
@@ -108,15 +111,21 @@ public class ChartBehavior extends Behavior {
 	}
 
 	@Override
-	public void onConfigure(Component component) {
+	public void onConfigure(final Component component) {
 		super.onConfigure(component);
 		OptionsProcessorContext context = new OptionsProcessorContext(this.chart.getOptions());
+
+		IOptionsProcessor idProcessor = new IdGeneratorProcessor();
+		idProcessor.processOptions(this.chart.getOptions(), context);
 
 		LiveDataProcessor liveDataProcessor = new LiveDataProcessor(component);
 		liveDataProcessor.processOptions(this.chart.getOptions(), context);
 
-		InteractionProcessor interactionProcessor = new InteractionProcessor(chart);
+		InteractionProcessor interactionProcessor = new InteractionProcessor(this.chart);
 		interactionProcessor.processOptions(this.chart.getOptions(), context);
+
+		SelectionProcessor selectionProcessor = new SelectionProcessor(this.chart);
+		selectionProcessor.processOptions(this.chart.getOptions(), context);
 	}
 
 	@Override
@@ -132,6 +141,7 @@ public class ChartBehavior extends Behavior {
 		addTheme(response, renderer);
 
 		OptionsProcessorContext context = new OptionsProcessorContext(options);
+
 		DrilldownProcessor drilldownProcessor = new DrilldownProcessor(component, response);
 		drilldownProcessor.processOptions(options, context);
 

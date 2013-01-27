@@ -14,6 +14,10 @@
  */
 package com.googlecode.wickedcharts.highcharts.options.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.googlecode.wickedcharts.highcharts.options.Axis;
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
 import com.googlecode.wickedcharts.highcharts.options.ChartType;
 import com.googlecode.wickedcharts.highcharts.options.Events;
@@ -38,7 +42,7 @@ public class OptionsUtil {
 	 * Copies the renderTo configuration from one {@link Options} object to
 	 * another. Null-safe.
 	 */
-	public void copyRenderTo(Options from, Options to) {
+	public void copyRenderTo(final Options from, final Options to) {
 		if (to.getChartOptions() == null) {
 			to.setChartOptions(new ChartOptions());
 		}
@@ -48,7 +52,7 @@ public class OptionsUtil {
 	/**
 	 * Null-safe setter for the renderTo configuration.
 	 */
-	public void setRenderTo(Options options, String renderTo) {
+	public void setRenderTo(final Options options, final String renderTo) {
 		if (options.getChartOptions() == null) {
 			options.setChartOptions(new ChartOptions());
 		}
@@ -58,7 +62,7 @@ public class OptionsUtil {
 	/**
 	 * Null-safe setter for the chart.events.load configuration.
 	 */
-	public void setChartEventsLoad(Options options, Function function) {
+	public void setChartEventsLoad(final Options options, final Function function) {
 		if (options.getChartOptions().getEvents() == null) {
 			options.getChartOptions().setEvents(new Events());
 		}
@@ -78,7 +82,7 @@ public class OptionsUtil {
 	 * @return true, if "highcharts-more.js" is needed to render the options,
 	 *         false if not
 	 */
-	public static boolean needsHighchartsMoreJs(Options options) {
+	public static boolean needsHighchartsMoreJs(final Options options) {
 		return hasPolar(options) || hasChartTypeNeedingMoreJs(options);
 	}
 
@@ -93,19 +97,19 @@ public class OptionsUtil {
 	 * @return true, if "exporting.js" is needed to render the options, false if
 	 *         not
 	 */
-	public static boolean needsExportingJs(Options options) {
+	public static boolean needsExportingJs(final Options options) {
 		// when no ExportingOptions are set, they are enabled by default, hence
 		// return true when they are null
 		return options.getExporting() == null
 		    || (options.getExporting().getEnabled() != null && options.getExporting().getEnabled());
 	}
 
-	private static boolean hasPolar(Options options) {
+	private static boolean hasPolar(final Options options) {
 		return options.getChartOptions() != null && options.getChartOptions().getPolar() != null
 		    && options.getChartOptions().getPolar();
 	}
 
-	private static boolean hasChartTypeNeedingMoreJs(Options options) {
+	private static boolean hasChartTypeNeedingMoreJs(final Options options) {
 		if (options.getChartOptions() != null && options.getChartOptions().getType() != null
 		    && options.getChartOptions().getType().getChartType() == ChartType.ADVANCED) {
 			return true;
@@ -125,7 +129,7 @@ public class OptionsUtil {
 	 * given {@link Options} object. Returns null if a Series with the given ID
 	 * does not exist.
 	 */
-	public static Series<?> getSeriesWithWickedChartsId(Options options, int wickedChartsId) {
+	public static Series<?> getSeriesWithWickedChartsId(final Options options, final int wickedChartsId) {
 		for (Series<?> series : options.getSeries()) {
 			if (series.getWickedChartsId() == wickedChartsId) {
 				return series;
@@ -139,7 +143,7 @@ public class OptionsUtil {
 	 * given {@link Options} object. Returns null if a Point with the given ID
 	 * does not exist.
 	 */
-	public static Point getPointWithWickedChartsId(Options options, int wickedChartsId) {
+	public static Point getPointWithWickedChartsId(final Options options, final int wickedChartsId) {
 		for (Series<?> series : options.getSeries()) {
 			for (Object object : series.getData()) {
 				if (!(object instanceof Point)) {
@@ -155,4 +159,16 @@ public class OptionsUtil {
 		return null;
 	}
 
+	public static Axis getAxisWithWickedChartsId(final Options options, final int wickedChartsId) {
+		List<Axis> allAxes = new ArrayList<Axis>();
+		allAxes.addAll(options.getxAxis());
+		allAxes.addAll(options.getyAxis());
+
+		for (Axis axis : allAxes) {
+			if (axis.getWickedChartsId() == wickedChartsId) {
+				return axis;
+			}
+		}
+		return null;
+	}
 }

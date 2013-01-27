@@ -21,6 +21,7 @@ import java.util.List;
 import com.googlecode.wickedcharts.highcharts.options.Axis;
 import com.googlecode.wickedcharts.highcharts.options.AxisType;
 import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
+import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Legend;
 import com.googlecode.wickedcharts.highcharts.options.Marker;
 import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
@@ -36,6 +37,8 @@ import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient.GradientDirection;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
+import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionEvent;
+import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
@@ -51,6 +54,26 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
     chartOptions
         .setSpacingRight(20);
     setChart(chartOptions);
+
+    chartOptions
+        .setEvents(new Events()
+            .setSelection(new SelectionFunction(this) {
+
+              @Override
+              public void onSelect(final SelectionEvent event) {
+                System.out
+                    .println("Current Min Value of X-Axis: " + event
+                        .getxAxes()
+                        .get(0)
+                        .getMin());
+                System.out
+                    .println("Current Max Value of X-Axis: " + event
+                        .getxAxes()
+                        .get(0)
+                        .getMax());
+
+              }
+            }));
 
     setTitle(new Title("USD to EUR exchange rate from 2006 through 2008"));
 

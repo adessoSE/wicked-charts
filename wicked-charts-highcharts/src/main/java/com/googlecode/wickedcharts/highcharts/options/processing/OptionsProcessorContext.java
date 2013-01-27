@@ -23,6 +23,7 @@ import com.googlecode.wickedcharts.highcharts.options.IProcessableOption;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionFunction;
+import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 
 /**
@@ -46,24 +47,33 @@ public class OptionsProcessorContext implements Serializable {
 
 	private final List<InteractionFunction> interactionFunctions = new ArrayList<InteractionFunction>();
 
-	public OptionsProcessorContext(Options options) {
+	private final List<SelectionFunction> selectionFunctions = new ArrayList<SelectionFunction>();
+
+	public OptionsProcessorContext(final Options options) {
 		collectDrilldownOptions(options);
 		collectLiveDataSeries(options);
 		collectInteractionFunctions(options);
+		collectSelectionFunctions(options);
 		this.global = options.getGlobal();
 
 	}
 
 	@SuppressWarnings("unchecked")
-	private void collectLiveDataSeries(Options options) {
+	private void collectLiveDataSeries(final Options options) {
 		List<? extends IProcessableOption> series = options.getMarkedForProcessing(LiveDataSeries.PROCESSING_KEY);
 		this.liveDataSeries.addAll((List<LiveDataSeries>) series);
 	}
 
 	@SuppressWarnings("unchecked")
-	private void collectInteractionFunctions(Options options) {
+	private void collectInteractionFunctions(final Options options) {
 		List<? extends IProcessableOption> functions = options.getMarkedForProcessing(InteractionFunction.PROCESSING_KEY);
 		this.interactionFunctions.addAll((List<InteractionFunction>) functions);
+	}
+
+	@SuppressWarnings("unchecked")
+	private void collectSelectionFunctions(final Options options) {
+		List<? extends IProcessableOption> functions = options.getMarkedForProcessing(SelectionFunction.PROCESSING_KEY);
+		this.selectionFunctions.addAll((List<SelectionFunction>) functions);
 	}
 
 	/**
@@ -71,7 +81,7 @@ public class OptionsProcessorContext implements Serializable {
 	 * drilldownOptions in the given {@link Options} and adds them to the context.
 	 */
 	@SuppressWarnings("unchecked")
-	private void collectDrilldownOptions(Options options) {
+	private void collectDrilldownOptions(final Options options) {
 		List<? extends IProcessableOption> drilldownPoints = options.getMarkedForProcessing(DrilldownPoint.PROCESSING_KEY);
 		for (DrilldownPoint drilldownPoint : (List<DrilldownPoint>) drilldownPoints) {
 			Options drilldownOptions = drilldownPoint.getDrilldownOptions();
@@ -89,7 +99,7 @@ public class OptionsProcessorContext implements Serializable {
 	 * @return the drilldown options used by the current chart.
 	 */
 	public List<Options> getDrilldownOptions() {
-		return drilldownOptions;
+		return this.drilldownOptions;
 	}
 
 	/**
@@ -98,7 +108,7 @@ public class OptionsProcessorContext implements Serializable {
 	 * @return the {@link LiveDataSeries} used by the current chart.
 	 */
 	public List<LiveDataSeries> getLiveDataSeries() {
-		return liveDataSeries;
+		return this.liveDataSeries;
 	}
 
 	/**
@@ -107,11 +117,15 @@ public class OptionsProcessorContext implements Serializable {
 	 * @return the {@link Global} object.
 	 */
 	public Global getGlobal() {
-		return global;
+		return this.global;
 	}
 
 	public List<InteractionFunction> getInteractionFunctions() {
-		return interactionFunctions;
+		return this.interactionFunctions;
+	}
+
+	public List<SelectionFunction> getSelectionFunctions() {
+		return this.selectionFunctions;
 	}
 
 }
