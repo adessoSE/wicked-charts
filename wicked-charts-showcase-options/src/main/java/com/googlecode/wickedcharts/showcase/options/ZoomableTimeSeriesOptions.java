@@ -77,7 +77,8 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 
     setTitle(new Title("USD to EUR exchange rate from 2006 through 2008"));
 
-    setSubtitle(new Title("Click and drag in the plot area to zoom in"));
+    setSubtitle(new Title(
+        "Click and drag in the plot area to zoom in. An Ajax Event will then be sent to the server."));
 
     Axis xAxis = new Axis();
     xAxis
