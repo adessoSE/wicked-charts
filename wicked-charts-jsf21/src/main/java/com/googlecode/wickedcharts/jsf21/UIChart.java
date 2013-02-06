@@ -40,7 +40,7 @@ public class UIChart extends UIOutput {
 	private Theme theme;
 	private String themeUrlRef;
 
-	private final static String PRE_JS = "\n<script type=\"text/javascript\">\n/*<![CDATA[*/\ndocument.addEventListener(\"DOMContentLoaded\", function onDom(event) {\n";
+	private final static String PRE_JS = "\n<script type=\"text/javascript\">\n/*<![CDATA[*/\n$(function() {\n";
 	private final static String POST_JS = "\n;});\n/*]]>*/\n</script>";
 
 	@Override
