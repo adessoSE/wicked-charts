@@ -14,6 +14,8 @@
  */
 package com.googlecode.wickedcharts.highcharts.jackson;
 
+import java.util.Locale;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -95,6 +97,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(RangeCoordinate.class, new RangeCoordinateSerializer());
 
 		ObjectMapper mapper = createDefaultObjectMapper();
+		mapper.setLocale(Locale.ENGLISH);
 		mapper.registerModule(this.jacksonModule);
 		return mapper;
 	}
