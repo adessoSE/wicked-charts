@@ -18,6 +18,7 @@ import java.awt.Color;
 import java.io.Serializable;
 import java.util.List;
 
+import com.googlecode.wickedcharts.highcharts.options.button.Button;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -103,6 +104,8 @@ public class ChartOptions implements Serializable {
 	private CssStyle style;
 
 	private Events events;
+
+	private Button resetZoomButton;
 
 	public ChartOptions() {
 
@@ -438,13 +441,22 @@ public class ChartOptions implements Serializable {
 		return this;
 	}
 
-	public ChartOptions setEvents(Events events) {
+	public ChartOptions setEvents(final Events events) {
 		this.events = events;
 		return this;
 	}
 
 	public Events getEvents() {
-		return events;
+		return this.events;
+	}
+
+	public ChartOptions setResetZoomButton(final Button resetZoomButton) {
+		this.resetZoomButton = resetZoomButton;
+		return this;
+	}
+
+	public Button getResetZoomButton() {
+		return this.resetZoomButton;
 	}
 
 }

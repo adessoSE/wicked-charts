@@ -32,7 +32,11 @@ import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.ZoomType;
+import com.googlecode.wickedcharts.highcharts.options.button.Button;
+import com.googlecode.wickedcharts.highcharts.options.button.ButtonTheme;
+import com.googlecode.wickedcharts.highcharts.options.button.Position;
 import com.googlecode.wickedcharts.highcharts.options.color.Gradient;
+import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient;
 import com.googlecode.wickedcharts.highcharts.options.color.LinearGradient.GradientDirection;
@@ -56,24 +60,30 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
     setChart(chartOptions);
 
     chartOptions
-        .setEvents(new Events()
-            .setSelection(new SelectionFunction(this) {
+        .setEvents(new Events().setSelection(new SelectionFunction(this) {
 
-              @Override
-              public void onSelect(final SelectionEvent event) {
-                System.out
-                    .println("Current Min Value of X-Axis: " + event
-                        .getxAxes()
-                        .get(0)
-                        .getMin());
-                System.out
-                    .println("Current Max Value of X-Axis: " + event
-                        .getxAxes()
-                        .get(0)
-                        .getMax());
+          @Override
+          public void onSelect(final SelectionEvent event) {
+            System.out
+                .println("Current Min Value of X-Axis: " + event
+                    .getxAxes()
+                    .get(0)
+                    .getMin());
+            System.out
+                .println("Current Max Value of X-Axis: " + event
+                    .getxAxes()
+                    .get(0)
+                    .getMax());
 
-              }
-            }));
+          }
+        }))
+        .setResetZoomButton(new Button()
+            .setPosition(new Position()
+                .setX(0)
+                .setY(-10))
+            .setTheme(new ButtonTheme()
+                .setFill(HexColor.fromString("#999999"))
+                .setR(5)));
 
     setTitle(new Title("USD to EUR exchange rate from 2006 through 2008"));
 
