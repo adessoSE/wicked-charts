@@ -17,6 +17,7 @@ package com.googlecode.wickedcharts.wicket6;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.request.resource.ResourceReference;
+import org.apache.wicket.resource.JQueryResourceReference;
 
 /**
  * A registry for the JavaScript dependencies used by wicked-charts. By default,
@@ -55,11 +56,9 @@ public class JavaScriptResourceRegistry {
 
 	}
 
-	public static final String DEFAULT_JQUERY_URL = "https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js";
-
 	public static final String DEFAULT_HIGHCHARTS_URL = "http://code.highcharts.com/2.3.5/highcharts.js";
 
-	public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/highcharts-more.js";
+	public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/2.3.5/highcharts-more.js";
 
 	public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/2.3.5/modules/exporting.js";
 
@@ -70,7 +69,7 @@ public class JavaScriptResourceRegistry {
 		return INSTANCE;
 	}
 
-	private RegistryEntry jqueryEntry = new RegistryEntry(DEFAULT_JQUERY_URL);
+	private RegistryEntry jqueryEntry = new RegistryEntry(JQueryResourceReference.get());
 
 	private RegistryEntry highchartsEntry = new RegistryEntry(DEFAULT_HIGHCHARTS_URL);
 
