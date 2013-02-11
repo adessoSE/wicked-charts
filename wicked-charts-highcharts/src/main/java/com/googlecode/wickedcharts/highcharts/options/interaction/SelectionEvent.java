@@ -25,7 +25,7 @@ import java.util.List;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SelectionEvent {
+public class SelectionEvent extends BaseEvent {
 
 	private final List<Selection> xAxes = new ArrayList<Selection>();
 

@@ -109,10 +109,8 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 * <p/>
 	 * May return null. In that case, the chart is simply not updated.
 	 * 
-	 * @param parameters
-	 *          parameters that have been passed from javascript. You can define
-	 *          parameters to be transmitted from client side javascript to the
-	 *          server by calling {@link #addJavaScriptParameter(String, String)}.
+	 * @param event
+	 *          the {@link LiveDataUpdateEvent}
 	 * 
 	 * @return the new point to add to the series. This point is added by calling
 	 *         Highcharts' addPoint() function. Please note that Highcharts does
@@ -120,28 +118,6 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 *         the color of the point you have to add a Marker with the fillColor
 	 *         attribute defined!
 	 */
-	public abstract Point update(final JavaScriptParameters parameters);
-
-	/**
-	 * Container class for passing javascript parameters to
-	 * {@link LiveDataSeries#update(JavaScriptParameters)}.
-	 * 
-	 * @author Tom Hombergs (tom.hombergs@gmail.com)
-	 * 
-	 */
-	public interface JavaScriptParameters {
-
-		/**
-		 * Returns the value of the given parameter or null.
-		 * 
-		 * @param parameterName
-		 *          the name of the parameter. This name was specified when calling
-		 *          {@link LiveDataSeries#addJavaScriptParameter(String, String)}.
-		 * @return the value of the given parameter or null if the parameter does
-		 *         not exist.
-		 */
-		String getParameterValue(final String parameterName);
-
-	}
+	public abstract Point update(final LiveDataUpdateEvent event);
 
 }

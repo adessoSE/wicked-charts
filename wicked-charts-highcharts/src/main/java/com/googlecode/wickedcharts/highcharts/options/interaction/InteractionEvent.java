@@ -25,7 +25,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.Series;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class InteractionEvent {
+public class InteractionEvent extends BaseEvent {
 
 	private Options selectedChart;
 
@@ -39,10 +39,10 @@ public class InteractionEvent {
 	 * @return the chart the user interacted with. This value must never be null.
 	 */
 	public Options getSelectedChart() {
-		return selectedChart;
+		return this.selectedChart;
 	}
 
-	public void setSelectedChart(Options selectedChart) {
+	public void setSelectedChart(final Options selectedChart) {
 		this.selectedChart = selectedChart;
 	}
 
@@ -53,10 +53,10 @@ public class InteractionEvent {
 	 *         be null.
 	 */
 	public Series<?> getSelectedSeries() {
-		return selectedSeries;
+		return this.selectedSeries;
 	}
 
-	public void setSelectedSeries(Series<?> selectedSeries) {
+	public void setSelectedSeries(final Series<?> selectedSeries) {
 		this.selectedSeries = selectedSeries;
 	}
 
@@ -68,10 +68,10 @@ public class InteractionEvent {
 	 *         a {@link Point}.
 	 */
 	public Point getSelectedPoint() {
-		return selectedPoint;
+		return this.selectedPoint;
 	}
 
-	public void setSelectedPoint(Point selectedPoint) {
+	public void setSelectedPoint(final Point selectedPoint) {
 		this.selectedPoint = selectedPoint;
 	}
 
