@@ -12,28 +12,26 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.wicket6.highcharts.features.interaction;
+package com.googlecode.wickedcharts.wicket6.highcharts.features.livedata;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.interaction.InteractionEvent;
-import com.googlecode.wickedcharts.highcharts.options.series.Point;
-import com.googlecode.wickedcharts.highcharts.options.series.Series;
+import com.googlecode.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
+import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 
 /**
- * Wicket-specific extension of {@link InteractionEvent}.
+ * Wicket-specific extension of {@link LiveDataUpdateEvent}.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class WicketInteractionEvent extends InteractionEvent {
+public class WicketLiveDataUpdateEvent extends LiveDataUpdateEvent {
 
 	private AjaxRequestTarget ajaxRequestTarget;
 
-	private final InteractionEvent wrappedEvent;
+	private final LiveDataUpdateEvent wrappedEvent;
 
-	WicketInteractionEvent(final AjaxRequestTarget ajaxRequestTarget, final InteractionEvent wrappedEvent) {
+	public WicketLiveDataUpdateEvent(final AjaxRequestTarget ajaxRequestTarget, final LiveDataUpdateEvent wrappedEvent) {
 		this.wrappedEvent = wrappedEvent;
 		this.setAjaxRequestTarget(ajaxRequestTarget);
 	}
@@ -53,33 +51,13 @@ public class WicketInteractionEvent extends InteractionEvent {
 	}
 
 	@Override
-	public Options getSelectedChart() {
-		return this.wrappedEvent.getSelectedChart();
+	public void setParameters(final JavaScriptParameters parameters) {
+		this.wrappedEvent.setParameters(parameters);
 	}
 
 	@Override
-	public Point getSelectedPoint() {
-		return this.wrappedEvent.getSelectedPoint();
-	}
-
-	@Override
-	public Series<?> getSelectedSeries() {
-		return this.wrappedEvent.getSelectedSeries();
-	}
-
-	@Override
-	public void setSelectedChart(final Options selectedChart) {
-		this.wrappedEvent.setSelectedChart(selectedChart);
-	}
-
-	@Override
-	public void setSelectedPoint(final Point selectedPoint) {
-		this.wrappedEvent.setSelectedPoint(selectedPoint);
-	};
-
-	@Override
-	public void setSelectedSeries(final Series<?> selectedSeries) {
-		this.wrappedEvent.setSelectedSeries(selectedSeries);
+	public JavaScriptParameters getParameters() {
+		return this.wrappedEvent.getParameters();
 	}
 
 	@Override

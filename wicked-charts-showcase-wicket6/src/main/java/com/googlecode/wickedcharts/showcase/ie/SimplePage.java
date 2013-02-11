@@ -41,7 +41,7 @@ import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterWithRegressionLineOptions;
 import com.googlecode.wickedcharts.showcase.options.SpiderwebOptions;
-import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
+import com.googlecode.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithSymbolsOptions;
@@ -76,7 +76,7 @@ public class SimplePage extends WebPage {
 			new ColumnWithNegativeValuesOptions(), new ColumnWithRotatedLabelsOptions(), new ComboOptions(),
 			new DonutOptions(), new LineWithDataLabelsOptions(), new LogarithmicAxisOptions(),
 			new PercentageAreaOptions(), new PieWithGradientOptions(), new PieWithLegendOptions(), new PolarOptions(),
-			new ScatterPlotOptions(), new SplineUpdatingOptions(), new SplineWithInvertedAxisOptions(),
+			new ScatterPlotOptions(), new WicketSplineUpdatingOptions(), new SplineWithInvertedAxisOptions(),
 			new SplineWithPlotBandsOptions(), new SplineWithSymbolsOptions(), new StackedAndGroupedColumnOptions(),
 			new StackedAreaOptions(), new StackedBarOptions(), new StackedColumnOptions(),
 			new StackedPercentageOptions(), new TimeDataWithIrregularIntervalsOptions(),
@@ -104,8 +104,8 @@ public class SimplePage extends WebPage {
 		this.selectedOptions = options;
 
 		// create fresh instance of SplineUpdatingOptions for correct time ticks
-		if (this.selectedOptions instanceof SplineUpdatingOptions) {
-			((SplineUpdatingOptions) this.selectedOptions).refresh();
+		if (this.selectedOptions instanceof WicketSplineUpdatingOptions) {
+			((WicketSplineUpdatingOptions) this.selectedOptions).refresh();
 		}
 
 		final Chart chart = new Chart("chart", this.selectedOptions);

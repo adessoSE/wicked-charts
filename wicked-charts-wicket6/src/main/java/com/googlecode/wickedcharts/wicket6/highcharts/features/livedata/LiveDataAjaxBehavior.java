@@ -24,8 +24,9 @@ import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
+import com.googlecode.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
-import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries.JavaScriptParameters;
+import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.wicket6.JavaScriptExpressionSendingAjaxBehavior;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
@@ -52,7 +53,12 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 
 	@Override
 	protected void respond(final AjaxRequestTarget target) {
-		final Point point = this.series.update(createJavascriptParameters());
+		Chart chart = (Chart) getComponent();
+		LiveDataUpdateEvent event = new LiveDataUpdateEvent();
+		event.setJavascriptChartName(chart.getJavaScriptVarName());
+		event.setParameters(createJavascriptParameters());
+		WicketLiveDataUpdateEvent wicketEvent = new WicketLiveDataUpdateEvent(target, event);
+		final Point point = this.series.update(wicketEvent);
 		if (point != null) {
 			JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
 			String jsonPoint = renderer.toJson(point);

@@ -42,11 +42,12 @@ public abstract class InteractionBehavior extends JavaScriptExpressionSendingAja
 	}
 
 	@Override
-	protected void respond(AjaxRequestTarget target) {
+	protected void respond(final AjaxRequestTarget target) {
 		Chart chart = (Chart) getComponent();
 		Options options = chart.getOptions();
 
 		InteractionEvent event = new InteractionEvent();
+		event.setJavascriptChartName(chart.getJavaScriptVarName());
 
 		StringValue selectedPointValue = getVariableValue(SELECTED_POINT);
 		if (selectedPointValue != null && !"".equals(selectedPointValue.toString())) {
@@ -67,7 +68,7 @@ public abstract class InteractionBehavior extends JavaScriptExpressionSendingAja
 		onEvent(event, target);
 	}
 
-	public abstract void onEvent(InteractionEvent event, AjaxRequestTarget target);
+	public abstract void onEvent(final InteractionEvent event, final AjaxRequestTarget target);
 
 	@Override
 	protected void onBind() {
@@ -79,7 +80,7 @@ public abstract class InteractionBehavior extends JavaScriptExpressionSendingAja
 	}
 
 	@Override
-	public void renderHead(Component component, IHeaderResponse response) {
+	public void renderHead(final Component component, final IHeaderResponse response) {
 		super.renderHead(component, response);
 		response.render(JavaScriptHeaderItem.forReference(new JavaScriptResourceReference(InteractionBehavior.class,
 		    "InteractionBehavior.js")));

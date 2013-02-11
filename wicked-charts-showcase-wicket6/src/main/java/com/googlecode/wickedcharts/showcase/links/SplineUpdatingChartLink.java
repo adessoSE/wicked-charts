@@ -17,7 +17,7 @@ package com.googlecode.wickedcharts.showcase.links;
 import org.apache.wicket.markup.html.basic.Label;
 
 import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
+import com.googlecode.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
@@ -36,7 +36,7 @@ public class SplineUpdatingChartLink extends UpdateChartLink {
 	 */
 	@Override
 	public Options getOptions() {
-		return new SplineUpdatingOptions();
+		return new WicketSplineUpdatingOptions();
 	}
 
 }

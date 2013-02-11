@@ -62,4 +62,9 @@ public class WicketSelectionEvent extends SelectionEvent {
 		return this.wrappedEvent.getxAxes();
 	}
 
+	@Override
+	public String getJavascriptChartName() {
+		return this.wrappedEvent.getJavascriptChartName();
+	}
+
 }

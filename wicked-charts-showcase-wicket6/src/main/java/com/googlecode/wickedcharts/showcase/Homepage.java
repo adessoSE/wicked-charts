@@ -60,7 +60,6 @@ import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterWithRegressionLineOptions;
 import com.googlecode.wickedcharts.showcase.options.SpiderwebOptions;
-import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithSymbolsOptions;
@@ -70,6 +69,7 @@ import com.googlecode.wickedcharts.showcase.options.StackedBarOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedPercentageOptions;
 import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
+import com.googlecode.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.WindroseOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
@@ -91,16 +91,16 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("line", chart, codeContainer, new BasicLineOptions()));
 		this.add(new UpdateChartLink("splineWithSymbols", chart, codeContainer, new SplineWithSymbolsOptions()));
 		this.add(new UpdateChartLink("irregularIntervals", chart, codeContainer,
-				new TimeDataWithIrregularIntervalsOptions()));
+		    new TimeDataWithIrregularIntervalsOptions()));
 		this.add(new UpdateChartLink("logarithmicAxis", chart, codeContainer, new LogarithmicAxisOptions()));
 		this.add(new UpdateChartLink("scatter", chart, codeContainer, new ScatterPlotOptions()));
 
 		this.add(new UpdateChartLink("area", chart, codeContainer, new BasicAreaOptions()));
 		this.add(new UpdateChartLink("areaWithNegativeValues", chart, codeContainer,
-				new AreaWithNegativeValuesOptions()));
+		    new AreaWithNegativeValuesOptions()));
 
 		this.add(new UpdateChartLink("stackedAndGroupedColumn", chart, codeContainer,
-				new StackedAndGroupedColumnOptions()));
+		    new StackedAndGroupedColumnOptions()));
 		this.add(new UpdateChartLink("combo", chart, codeContainer, new ComboOptions()));
 		this.add(new UpdateChartLink("donut", chart, codeContainer, new DonutOptions()));
 		this.add(new UpdateChartLink("withDataLabels", chart, codeContainer, new LineWithDataLabelsOptions()));
@@ -121,13 +121,13 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("barNegativeStack", chart, codeContainer, new BarWithNegativeStackOptions()));
 		this.add(new UpdateChartLink("basicColumn", chart, codeContainer, new BasicColumnOptions()));
 		this.add(new UpdateChartLink("columnWithNegativeValues", chart, codeContainer,
-				new ColumnWithNegativeValuesOptions()));
+		    new ColumnWithNegativeValuesOptions()));
 		this.add(new UpdateChartLink("stackedColumn", chart, codeContainer, new StackedColumnOptions()));
 		this.add(new UpdateChartLink("stackedPercentage", chart, codeContainer, new StackedPercentageOptions()));
 		this.add(new UpdateChartLink("basicPie", chart, codeContainer, new BasicPieOptions()));
 		this.add(new UpdateChartLink("pieWithGradient", chart, codeContainer, new PieWithGradientOptions()));
 		this.add(new UpdateChartLink("pieWithLegend", chart, codeContainer, new PieWithLegendOptions()));
-		this.add(new SplineUpdatingChartLink("splineUpdating", chart, codeContainer, new SplineUpdatingOptions()));
+		this.add(new SplineUpdatingChartLink("splineUpdating", chart, codeContainer, new WicketSplineUpdatingOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer, new BubbleChartOptions()));
 		this.add(new UpdateChartLink("interactive", chart, codeContainer, new InteractionOptions()));
 		this.add(new UpdateChartLink("angularGauge", chart, codeContainer, new AngularGaugeOptions()));
@@ -138,13 +138,13 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("clicktoadd", chart, codeContainer, new ClickToAddAPointOptions()));
 		this.add(new UpdateChartLink("dualAxes", chart, codeContainer, new DualAxesOptions()));
 		this.add(new UpdateChartLink("scatterWithRegression", chart, codeContainer,
-				new ScatterWithRegressionLineOptions()));
+		    new ScatterWithRegressionLineOptions()));
 		this.add(new UpdateChartLink("multipleAxes", chart, codeContainer, new MultipleAxesOptions()));
 	}
 
 	private Label addCodeContainer() {
 		Label codeContainer = new Label("code", new StringFromResourceModel(BasicLineOptions.class,
-				BasicLineOptions.class.getSimpleName() + ".java"));
+		    BasicLineOptions.class.getSimpleName() + ".java"));
 		codeContainer.setOutputMarkupId(true);
 		this.add(codeContainer);
 		return codeContainer;

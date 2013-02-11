@@ -31,7 +31,9 @@ import com.googlecode.wickedcharts.highcharts.options.SeriesType;
 import com.googlecode.wickedcharts.highcharts.options.Title;
 import com.googlecode.wickedcharts.highcharts.options.Tooltip;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
+import com.googlecode.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
+import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
@@ -39,7 +41,7 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
-  private LiveDataSeries series;
+  protected LiveDataSeries series;
 
   public SplineUpdatingOptions() {
 
@@ -84,7 +86,9 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
       private static final long serialVersionUID = 1L;
 
       @Override
-      public Point update(final JavaScriptParameters params) {
+      public Point update(final LiveDataUpdateEvent event) {
+        JavaScriptParameters params = event
+            .getParameters();
         System.out
             .println(params
                 .getParameterValue("currentTime"));
@@ -121,7 +125,7 @@ public class SplineUpdatingOptions extends ShowcaseOptions {
             .randomData(20));
   }
 
-  private List<Point> randomData(final int size) {
+  protected List<Point> randomData(final int size) {
     long time = new Date()
         .getTime() - 20000;
     List<Point> result = new ArrayList<Point>();

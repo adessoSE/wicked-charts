@@ -45,6 +45,7 @@ public abstract class SelectionBehavior extends JavaScriptExpressionSendingAjaxB
 		Options options = chart.getOptions();
 
 		SelectionEvent event = new SelectionEvent();
+		event.setJavascriptChartName(chart.getJavaScriptVarName());
 
 		StringValue selectionEventJson = getVariableValue(SELECTION_EVENT);
 		if (selectionEventJson != null && !"".equals(selectionEventJson.toString())) {
