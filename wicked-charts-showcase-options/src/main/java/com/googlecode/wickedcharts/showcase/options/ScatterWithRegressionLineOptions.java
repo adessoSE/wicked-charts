@@ -1,11 +1,6 @@
 package com.googlecode.wickedcharts.showcase.options;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.State;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
-import com.googlecode.wickedcharts.highcharts.options.Title;
+import com.googlecode.wickedcharts.highcharts.options.*;
 import com.googlecode.wickedcharts.highcharts.options.series.CoordinatesSeries;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
@@ -15,6 +10,8 @@ public class ScatterWithRegressionLineOptions extends ShowcaseOptions {
   private static final long serialVersionUID = 1L;
 
   public ScatterWithRegressionLineOptions() {
+
+    this.setChartOptions(new ChartOptions());
 
     this.setxAxis(new Axis()
         .setMin(-0.5)

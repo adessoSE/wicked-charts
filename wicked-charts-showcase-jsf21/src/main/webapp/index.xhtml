@@ -54,11 +54,11 @@
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="ico/favicon.ico" />
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min-IEfix.js"></script>
     
-	<script type="text/javascript" src="http://code.highcharts.com/2.3.2/highcharts.js"></script>
-	<script type="text/javascript" src="http://code.highcharts.com/2.3.2/highcharts-more.js"></script>
-	<script type="text/javascript" src="http://code.highcharts.com/2.3.2/modules/exporting.js"></script>
+	<script type="text/javascript" src="http://code.highcharts.com/2.3.5/highcharts.js"></script>
+	<script type="text/javascript" src="http://code.highcharts.com/2.3.5/highcharts-more.js"></script>
+	<script type="text/javascript" src="http://code.highcharts.com/2.3.5/modules/exporting.js"></script>
 	<script type="text/javascript">
 	/*<![CDATA[*/
     $(function() {
@@ -251,25 +251,27 @@
 
               <li class="nav-header">Dynamic charts</li>
               <li class="disabled"><a href="#" onclick="return false">Spline updating each second</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Click to add a point</a></li>
+              <li ><h:commandLink action="#{showcase.selectClickToAddPointOptions}" value="Click to add a point" /></li>
               <li class="disabled"><a href="#" onclick="return false">Master-detail chart</a></li>
 
               <li class="nav-header">Combinations</li>
               <li><h:commandLink action="#{showcase.selectComboOptions}" value="Column, Line and Pie" /></li>
-              <li class="disabled"><a href="#" onclick="return false">Dual axes, line and column</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Multiple axes</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Scatter with regression line</a></li>
+              <li><h:commandLink action="#{showcase.selectDualAxesLineColumnOptions}" value="Dual axes, line and column" /></li>
+              <li><h:commandLink action="#{showcase.selectMultipleAxesOptions}" value="Multiple axes" /></li>
+              <li><h:commandLink action="#{showcase.selectScatterWithRegressionLineOptions}" value="Scatter with regression line" /></li>
 
               <li class="nav-header">More chart types</li>
-              <li class="disabled"><a href="#" onclick="return false">Angular gauge</a></li>
+              <li><h:commandLink action="#{showcase.selectAngularGaugeOptions}" value="Angular gauge" /></li>
               <li class="disabled"><a href="#" onclick="return false">Clock</a></li>
               <li class="disabled"><a href="#" onclick="return false">Gauge with dual axes</a></li>
               <li class="disabled"><a href="#" onclick="return false">VU meter</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Area range</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Column range</a></li>
+              <li><h:commandLink action="#{showcase.selectAreaRangeOptions}" value="Area range" /></li>
+              <li><h:commandLink action="#{showcase.selectColumnRangeOptions}" value="Column range" /></li>
               <li><h:commandLink action="#{showcase.selectPolarOptions}" value="Polar chart" /></li>
-              <li class="disabled"><a href="#" onclick="return false">Spiderweb</a></li>
-              <li class="disabled"><a href="#" onclick="return false">Wind rose</a></li>
+              <li><h:commandLink action="#{showcase.selectSpiderwebOptions}" value="Spiderweb" /></li>
+              <li><h:commandLink action="#{showcase.selectWindroseOptions}" value="Wind rose" /></li>
+              <li><h:commandLink action="#{showcase.selectBubbleChart}" value="Bubble Chart" /></li>
+              <li class="disabled"><a href="#" onclick="return false">Client/Server interaction Chart</a></li>
             </ul>
             </h:form>
           </div><!--/.well -->
