@@ -2,7 +2,7 @@
 .settings
 .project
 .idea
-.iml
+*.iml
 target
 bin
 settings.xml
