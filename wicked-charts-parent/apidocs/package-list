@@ -1,6 +1,7 @@
 com.googlecode.wickedcharts.highcharts.jackson
 com.googlecode.wickedcharts.highcharts.json
 com.googlecode.wickedcharts.highcharts.options
+com.googlecode.wickedcharts.highcharts.options.button
 com.googlecode.wickedcharts.highcharts.options.color
 com.googlecode.wickedcharts.highcharts.options.drilldown
 com.googlecode.wickedcharts.highcharts.options.functions
