@@ -171,4 +171,26 @@ public class OptionsUtil {
 		}
 		return null;
 	}
+
+	/**
+	 * Returns the (0-based) index of the series with the given wickedChartsId or
+	 * null.
+	 * 
+	 * @param options
+	 *          the options in which to search
+	 * @param wickedChartsId
+	 *          the wickedChartsId of the series
+	 * @return the index of the series with the given id. Returns 0 if no series
+	 *         was found.
+	 */
+	public static int getSeriesIndex(final Options options, final int wickedChartsId) {
+		int index = 0;
+		for (Series<?> series : options.getSeries()) {
+			if (series.getWickedChartsId() == wickedChartsId) {
+				return index;
+			}
+			index++;
+		}
+		return 0;
+	}
 }

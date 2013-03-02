@@ -47,6 +47,8 @@ public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 
 	protected LiveDataSeries series;
 
+	protected LiveDataSeries series2;
+
 	public WicketSplineUpdatingOptions() {
 
 		this
@@ -58,7 +60,7 @@ public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 		    .setTitle(new Title("Live random data"))
 		    .setSubtitle(
 		        new Title(
-		            "The Y values are calculated on the server. Depending on the value, the server created javascript to change the color."));
+		            "The Y values are calculated on the server. Depending on the value, the server creates javascript to change the color."));
 
 		this
 		    .setxAxis(new Axis()
@@ -88,7 +90,15 @@ public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 		    .setExporting(new ExportingOptions()
 		        .setEnabled(Boolean.FALSE));
 
-		this.series = new LiveDataSeries(this, 1000) {
+		this.series = createSeries(this.randomData(20));
+		// this.series2 = createSeries(this.randomData(20));
+		this.addSeries(this.series);
+		// this.addSeries(this.series2);
+
+	}
+
+	private LiveDataSeries createSeries(final List<Point> data) {
+		LiveDataSeries series = new LiveDataSeries(this, 1000) {
 
 			private static final long serialVersionUID = 1L;
 
@@ -129,14 +139,11 @@ public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 
 				return point;
 			}
-		}
-		    .addJavaScriptParameter("currentTime", "new Date()");
-		this.series
-		    .setData(this.randomData(20))
-		    .setName("Random data");
-		this
-		    .addSeries(this.series);
-
+		};
+		series.addJavaScriptParameter("currentTime", "new Date()");
+		series.setData(data);
+		series.setName("Random Data");
+		return series;
 	}
 
 	/**
@@ -144,6 +151,9 @@ public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 	 */
 	public void refresh() {
 		this.series
+		    .setData(this
+		        .randomData(20));
+		this.series2
 		    .setData(this
 		        .randomData(20));
 	}

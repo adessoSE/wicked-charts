@@ -36,40 +36,42 @@ public class LiveDataProcessor implements IOptionsProcessor {
 
 	private final Component component;
 
-	public LiveDataProcessor(Component component) {
+	public LiveDataProcessor(final Component component) {
 		this.component = component;
 	}
 
 	@Override
-	public void processOptions(Options options, OptionsProcessorContext context) {
+	public void processOptions(final Options options, final OptionsProcessorContext context) {
 		List<IProcessableOption> processables = options.getMarkedForProcessing(LiveDataSeries.PROCESSING_KEY);
+		LiveDataFunction function = new LiveDataFunction();
+		if (processables.size() > 1) {
+			throw new RuntimeException("Only one LiveDataSeries per chart allowed!");
+		}
 		for (IProcessableOption processable : processables) {
 			LiveDataSeries series = (LiveDataSeries) processable;
 
-			LiveDataAjaxBehavior behavior = getBehaviorFromComponent(component);
+			LiveDataAjaxBehavior behavior = getBehaviorFromComponent(this.component, series);
 			if (behavior == null) {
 				behavior = new LiveDataAjaxBehavior(series);
-				component.add(behavior);
+				this.component.add(behavior);
 			}
 			behavior.addJavaScriptValues(series.getJavaScriptParameters());
-
-			LiveDataFunction function = new LiveDataFunction(behavior);
-			OptionsUtil.getInstance().setChartEventsLoad(options, function);
+			function.addLiveDataSeries(options, behavior);
 		}
+		OptionsUtil.getInstance().setChartEventsLoad(options, function);
 	}
 
-	private LiveDataAjaxBehavior getBehaviorFromComponent(Component component) {
+	private LiveDataAjaxBehavior getBehaviorFromComponent(final Component component, final LiveDataSeries series) {
 		List<LiveDataAjaxBehavior> behaviors = component.getBehaviors(LiveDataAjaxBehavior.class);
-		if (behaviors.size() > 1) {
-			// TODO: allow multiple Behaviors but only one per series.
-			throw new IllegalStateException("Only one " + LiveDataAjaxBehavior.class.getSimpleName()
-			    + " can be active per component!");
-		} else if (behaviors.size() == 1) {
-			behaviors.get(0).reset();
-			return behaviors.get(0);
-		} else {
-			return null;
+
+		for (LiveDataAjaxBehavior behavior : behaviors) {
+			if (behavior.getSeries().getWickedChartsId().equals(series.getWickedChartsId())) {
+				behavior.reset();
+				return behavior;
+			}
 		}
+
+		return null;
 	}
 
 }

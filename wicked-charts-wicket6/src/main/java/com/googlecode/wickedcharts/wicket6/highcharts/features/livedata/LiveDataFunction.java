@@ -17,7 +17,9 @@ package com.googlecode.wickedcharts.wicket6.highcharts.features.livedata;
 import java.text.MessageFormat;
 
 import com.googlecode.wickedcharts.highcharts.options.Function;
+import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
+import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 
 /**
  * This javascript function starts a javascript timer to update a
@@ -28,17 +30,24 @@ import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
  */
 public class LiveDataFunction extends Function {
 
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  public LiveDataFunction(LiveDataAjaxBehavior behavior) {
-    String interval = String.valueOf(behavior.getSeries().getUpdateIntervalMs());
-    String intervalVarName = behavior.getIntervalJavaScriptVarName();
-    String functionBody = "var series = this.series[0];\n";
-    functionBody += MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'clearInterval({0});'}'", intervalVarName);
-    functionBody += intervalVarName + " = setInterval(function(series){\n";
-    functionBody += behavior.getCallbackScript();
-    functionBody += "}, " + interval + ");";
-    setFunction(functionBody);
-  }
+	private String createJavascript(final Options options, final LiveDataAjaxBehavior behavior) {
+		int seriesIndex = OptionsUtil.getSeriesIndex(options, behavior.getSeries().getWickedChartsId());
+		String interval = String.valueOf(behavior.getSeries().getUpdateIntervalMs());
+		String intervalVarName = behavior.getIntervalJavaScriptVarName();
+		String functionBody = "var series = this.series[" + seriesIndex + "];\n";
+		functionBody += MessageFormat.format("if(!(typeof {0} === \"undefined\"))'{'clearInterval({0});'}'",
+		    intervalVarName);
+		functionBody += intervalVarName + " = setInterval(function(series){\n";
+		functionBody += behavior.getCallbackScript();
+		functionBody += "}, " + interval + ");";
+		return functionBody;
+	}
+
+	public void addLiveDataSeries(final Options options, final LiveDataAjaxBehavior behavior) {
+		String javascript = createJavascript(options, behavior);
+		setFunction(getBody() + "\n\n" + javascript);
+	}
 
 }

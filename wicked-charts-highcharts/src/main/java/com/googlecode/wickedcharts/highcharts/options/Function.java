@@ -41,10 +41,16 @@ public class Function implements Serializable {
 	public String getFunction() {
 		String result = getSignature();
 		result += "{";
+		result += getBody();
+		result += "}";
+		return result;
+	}
+
+	public String getBody() {
+		String result = "";
 		if (this.function != null) {
 			result += this.function;
 		}
-		result += "}";
 		return result;
 	}
 
@@ -61,7 +67,7 @@ public class Function implements Serializable {
 	 * @param parameter
 	 *          the name of the parameter.
 	 */
-	protected void addParameter(String parameter) {
+	protected void addParameter(final String parameter) {
 		this.parameters.add(parameter);
 	}
 

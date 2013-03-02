@@ -28,6 +28,7 @@ import com.googlecode.wickedcharts.highcharts.options.livedata.JavaScriptParamet
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import com.googlecode.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 import com.googlecode.wickedcharts.highcharts.options.series.Point;
+import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 import com.googlecode.wickedcharts.wicket6.JavaScriptExpressionSendingAjaxBehavior;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 import com.googlecode.wickedcharts.wicket6.highcharts.JsonRendererFactory;
@@ -54,6 +55,7 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 	@Override
 	protected void respond(final AjaxRequestTarget target) {
 		Chart chart = (Chart) getComponent();
+		int seriesIndex = OptionsUtil.getSeriesIndex(chart.getOptions(), this.series.getWickedChartsId());
 		LiveDataUpdateEvent event = new LiveDataUpdateEvent();
 		event.setJavascriptChartName(chart.getJavaScriptVarName());
 		event.setParameters(createJavascriptParameters());
@@ -63,7 +65,7 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 			JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
 			String jsonPoint = renderer.toJson(point);
 			String javaScript = "var chartVarName = " + ((Chart) getComponent()).getJavaScriptVarName() + ";\n";
-			javaScript += "var seriesIndex = 0;\n";
+			javaScript += "var seriesIndex = " + seriesIndex + ";\n";
 			javaScript += "eval(chartVarName).series[seriesIndex].addPoint(" + jsonPoint + ", true, true);\n";
 			target.appendJavaScript(javaScript);
 		}
@@ -94,7 +96,9 @@ public class LiveDataAjaxBehavior extends JavaScriptExpressionSendingAjaxBehavio
 	}
 
 	protected String getIntervalJavaScriptVarName() {
-		return getComponent().getMarkupId() + "SeriesInterval";
+		Chart chart = (Chart) getComponent();
+		int seriesIndex = OptionsUtil.getSeriesIndex(chart.getOptions(), this.series.getWickedChartsId());
+		return getComponent().getMarkupId() + "SeriesInterval" + seriesIndex;
 	}
 
 	protected void reset() {
