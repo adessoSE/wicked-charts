@@ -63,6 +63,9 @@ public class OptionsUtil {
 	 * Null-safe setter for the chart.events.load configuration.
 	 */
 	public void setChartEventsLoad(final Options options, final Function function) {
+		if (options.getChartOptions() == null) {
+			options.setChartOptions(new ChartOptions());
+		}
 		if (options.getChartOptions().getEvents() == null) {
 			options.getChartOptions().setEvents(new Events());
 		}
