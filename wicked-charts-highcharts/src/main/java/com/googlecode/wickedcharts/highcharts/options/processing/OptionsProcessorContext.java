@@ -128,4 +128,29 @@ public class OptionsProcessorContext implements Serializable {
 		return this.selectionFunctions;
 	}
 
+	/**
+	 * Returns true if the {@link Options} attached to this context contains the
+	 * given feature.
+	 * 
+	 * @param feature
+	 *          the feature for which to look.
+	 * @return true if the context contains this feature, false if not.
+	 */
+	public boolean containsFeature(Feature feature) {
+		switch (feature) {
+			case DRILLDOWN:
+				return !getDrilldownOptions().isEmpty();
+			case GLOBAL:
+				return getGlobal() != null;
+			case INTERACTION:
+				return !getInteractionFunctions().isEmpty();
+			case LIVEDATA:
+				return !getLiveDataSeries().isEmpty();
+			case SELECTION:
+				return !getSelectionFunctions().isEmpty();
+			default:
+				throw new UnsupportedFeatureException(feature);
+		}
+	}
+
 }

@@ -26,6 +26,8 @@ import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.processing.Feature;
+import com.googlecode.wickedcharts.highcharts.options.processing.FeatureCheckingOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.IdGeneratorProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
@@ -52,6 +54,20 @@ public class ChartBehavior extends Behavior {
 	private static final long serialVersionUID = 1L;
 
 	private final Chart chart;
+
+	private static final Feature[] SUPPORTED_FEATURES = new Feature[] {
+
+	Feature.DRILLDOWN,
+
+	Feature.GLOBAL,
+
+	Feature.INTERACTION,
+
+	Feature.LIVEDATA,
+
+	Feature.SELECTION
+
+	};
 
 	/**
 	 * Constructor.
@@ -114,6 +130,9 @@ public class ChartBehavior extends Behavior {
 	public void onConfigure(final Component component) {
 		super.onConfigure(component);
 		OptionsProcessorContext context = new OptionsProcessorContext(this.chart.getOptions());
+
+		IOptionsProcessor featureProcessor = new FeatureCheckingOptionsProcessor(SUPPORTED_FEATURES);
+		featureProcessor.processOptions(this.chart.getOptions(), context);
 
 		IOptionsProcessor idProcessor = new IdGeneratorProcessor();
 		idProcessor.processOptions(this.chart.getOptions(), context);

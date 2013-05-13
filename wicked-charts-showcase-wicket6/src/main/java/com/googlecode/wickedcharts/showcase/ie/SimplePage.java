@@ -69,20 +69,30 @@ public class SimplePage extends WebPage {
 
 	private Options selectedOptions;
 
-	private static List<ShowcaseOptions> choices = Arrays.asList(new AreaInvertedAxisOptions(),
-			new AreaMissingOptions(), new AreaSplineOptions(), new AreaWithNegativeValuesOptions(),
-			new BarWithNegativeStackOptions(), new BasicAreaOptions(), new BasicBarOptions(), new BasicColumnOptions(),
-			new BasicLineOptions(), new BasicPieOptions(), new BubbleChartOptions(), new ColumnWithDrilldownOptions(),
-			new ColumnWithNegativeValuesOptions(), new ColumnWithRotatedLabelsOptions(), new ComboOptions(),
-			new DonutOptions(), new LineWithDataLabelsOptions(), new LogarithmicAxisOptions(),
-			new PercentageAreaOptions(), new PieWithGradientOptions(), new PieWithLegendOptions(), new PolarOptions(),
-			new ScatterPlotOptions(), new WicketSplineUpdatingOptions(), new SplineWithInvertedAxisOptions(),
-			new SplineWithPlotBandsOptions(), new SplineWithSymbolsOptions(), new StackedAndGroupedColumnOptions(),
-			new StackedAreaOptions(), new StackedBarOptions(), new StackedColumnOptions(),
-			new StackedPercentageOptions(), new TimeDataWithIrregularIntervalsOptions(),
-			new ZoomableTimeSeriesOptions(), new AngularGaugeOptions(), new SpiderwebOptions(), new WindroseOptions(),
-			new ScatterWithRegressionLineOptions(), new ColumnRangeOptions(), new AreaRangeOptions(),
-			new ClickToAddAPointOptions());
+	private static List<ShowcaseOptions> choices = Arrays.asList(
+			new AreaInvertedAxisOptions(), new AreaMissingOptions(),
+			new AreaSplineOptions(), new AreaWithNegativeValuesOptions(),
+			new BarWithNegativeStackOptions(), new BasicAreaOptions(),
+			new BasicBarOptions(), new BasicColumnOptions(),
+			new BasicLineOptions(), new BasicPieOptions(),
+			new BubbleChartOptions(), new ColumnWithDrilldownOptions(),
+			new ColumnWithNegativeValuesOptions(),
+			new ColumnWithRotatedLabelsOptions(), new ComboOptions(),
+			new DonutOptions(), new LineWithDataLabelsOptions(),
+			new LogarithmicAxisOptions(), new PercentageAreaOptions(),
+			new PieWithGradientOptions(), new PieWithLegendOptions(),
+			new PolarOptions(), new ScatterPlotOptions(),
+			new WicketSplineUpdatingOptions(),
+			new SplineWithInvertedAxisOptions(),
+			new SplineWithPlotBandsOptions(), new SplineWithSymbolsOptions(),
+			new StackedAndGroupedColumnOptions(), new StackedAreaOptions(),
+			new StackedBarOptions(), new StackedColumnOptions(),
+			new StackedPercentageOptions(),
+			new TimeDataWithIrregularIntervalsOptions(),
+			new ZoomableTimeSeriesOptions(true), new AngularGaugeOptions(),
+			new SpiderwebOptions(), new WindroseOptions(),
+			new ScatterWithRegressionLineOptions(), new ColumnRangeOptions(),
+			new AreaRangeOptions(), new ClickToAddAPointOptions());
 
 	static {
 
@@ -116,13 +126,15 @@ public class SimplePage extends WebPage {
 
 			@Override
 			protected void onSubmit() {
-				this.setResponsePage(new SimplePage(SimplePage.this.selectedOptions));
+				this.setResponsePage(new SimplePage(
+						SimplePage.this.selectedOptions));
 			}
 		};
 		this.add(form);
 
-		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>("chartSelect",
-				new PropertyModel<ShowcaseOptions>(this, "selectedOptions"), SimplePage.choices);
+		final DropDownChoice<ShowcaseOptions> dropdown = new DropDownChoice<ShowcaseOptions>(
+				"chartSelect", new PropertyModel<ShowcaseOptions>(this,
+						"selectedOptions"), SimplePage.choices);
 		form.add(dropdown);
 
 		dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {

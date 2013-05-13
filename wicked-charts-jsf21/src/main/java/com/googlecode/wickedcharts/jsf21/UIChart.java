@@ -24,6 +24,10 @@ import javax.faces.context.ResponseWriter;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.processing.Feature;
+import com.googlecode.wickedcharts.highcharts.options.processing.FeatureCheckingOptionsProcessor;
+import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
+import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.theme.Theme;
 import com.googlecode.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
 
@@ -43,9 +47,13 @@ public class UIChart extends UIOutput {
 	private final static String PRE_JS = "\n<script type=\"text/javascript\">\n/*<![CDATA[*/\n$(function() {\n";
 	private final static String POST_JS = "\n;});\n/*]]>*/\n</script>";
 
+	private static final Feature[] SUPPORTED_FEATURES = new Feature[] {
+
+	};
+
 	@Override
-	public void encodeEnd(FacesContext context) throws IOException {
-		ResponseWriter writer = context.getResponseWriter();
+	public void encodeEnd(FacesContext facesContext) throws IOException {
+		ResponseWriter writer = facesContext.getResponseWriter();
 		writer.startElement("div", this);
 		writer.writeAttribute("id", this.getId(), null);
 
@@ -62,6 +70,12 @@ public class UIChart extends UIOutput {
 		String optionsVarname = this.getId() + "Options";
 
 		Options options = this.getOptions();
+
+		OptionsProcessorContext context = new OptionsProcessorContext(options);
+		IOptionsProcessor featureProcessor = new FeatureCheckingOptionsProcessor(
+				SUPPORTED_FEATURES);
+		featureProcessor.processOptions(options, context);
+
 		options.getChart().setRenderTo(this.getId());
 
 		// include Theme JS

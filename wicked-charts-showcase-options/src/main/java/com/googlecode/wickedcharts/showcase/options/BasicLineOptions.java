@@ -143,19 +143,6 @@ public class BasicLineOptions extends ShowcaseOptions {
                 14.2, 10.3, 6.6, 4.8 }));
     addSeries(series4);
 
-    setPlotOptions(new PlotOptionsChoice()
-        .setLine(new PlotOptions()
-            .setEvents(new Events()
-                .setClick(new InteractionFunction(this) {
-
-                  @Override
-                  public void onInteraction(InteractionEvent event) {
-                    System.out
-                        .println("A Series has been clicked");
-
-                  }
-                }))));
-
   }
 
   @Override

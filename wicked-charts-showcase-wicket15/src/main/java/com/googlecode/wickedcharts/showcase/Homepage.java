@@ -49,6 +49,7 @@ import com.googlecode.wickedcharts.showcase.options.PieWithGradientOptions;
 import com.googlecode.wickedcharts.showcase.options.PieWithLegendOptions;
 import com.googlecode.wickedcharts.showcase.options.PolarOptions;
 import com.googlecode.wickedcharts.showcase.options.ScatterPlotOptions;
+import com.googlecode.wickedcharts.showcase.options.SplineUpdatingOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
 import com.googlecode.wickedcharts.showcase.options.SplineWithSymbolsOptions;
@@ -100,7 +101,7 @@ public class Homepage extends WebPage {
 		this.add(new UpdateChartLink("withDataLabels", chart, codeContainer,
 		    new LineWithDataLabelsOptions()));
 		this.add(new UpdateChartLink("zoomableTimeSeries", chart,
-		    codeContainer, new ZoomableTimeSeriesOptions()));
+		    codeContainer, new ZoomableTimeSeriesOptions(false)));
 		this.add(new UpdateChartLink("splineInverted", chart, codeContainer,
 		    new SplineWithInvertedAxisOptions()));
 		this.add(new UpdateChartLink("splineWithPlotBands", chart,
@@ -144,6 +145,8 @@ public class Homepage extends WebPage {
 		    new PieWithLegendOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer,
 		    new BubbleChartOptions()));
+		this.add(new UpdateChartLink("livedata", chart, codeContainer,
+				new SplineUpdatingOptions()));
 
 	}
 

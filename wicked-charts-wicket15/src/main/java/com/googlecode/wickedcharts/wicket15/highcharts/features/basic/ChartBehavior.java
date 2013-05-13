@@ -24,6 +24,9 @@ import org.apache.wicket.markup.html.IHeaderResponse;
 
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.options.processing.Feature;
+import com.googlecode.wickedcharts.highcharts.options.processing.FeatureCheckingOptionsProcessor;
+import com.googlecode.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import com.googlecode.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import com.googlecode.wickedcharts.highcharts.options.util.OptionsUtil;
 import com.googlecode.wickedcharts.wicket15.JavaScriptResourceRegistry;
@@ -45,6 +48,14 @@ public class ChartBehavior extends Behavior {
 	private static final long serialVersionUID = 1L;
 
 	private final Chart chart;
+	
+	private static final Feature[] SUPPORTED_FEATURES = new Feature[] {
+
+		Feature.DRILLDOWN,
+
+		Feature.GLOBAL,
+
+		};
 
 	/**
 	 * Constructor.
@@ -126,6 +137,9 @@ public class ChartBehavior extends Behavior {
 		addTheme(response, renderer);
 
 		OptionsProcessorContext context = new OptionsProcessorContext(options);
+		
+		IOptionsProcessor featureProcessor = new FeatureCheckingOptionsProcessor(SUPPORTED_FEATURES);
+		featureProcessor.processOptions(this.chart.getOptions(), context);
 
 		DrilldownProcessor drilldownProcessor = new DrilldownProcessor(
 				component, response);

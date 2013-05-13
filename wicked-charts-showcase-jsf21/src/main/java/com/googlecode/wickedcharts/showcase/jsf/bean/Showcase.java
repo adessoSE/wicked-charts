@@ -112,7 +112,7 @@ public class Showcase {
 	}
 
 	public void selectZoomableTimeSeriesOptions() {
-		this.setOptions(new ZoomableTimeSeriesOptions());
+		this.setOptions(new ZoomableTimeSeriesOptions(false));
 	}
 
 	public void selectSplineWithInvertedAxisOptions() {

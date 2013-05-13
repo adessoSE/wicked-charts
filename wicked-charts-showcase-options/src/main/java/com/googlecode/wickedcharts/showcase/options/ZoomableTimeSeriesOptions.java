@@ -50,7 +50,7 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
 
-  public ZoomableTimeSeriesOptions() {
+  public ZoomableTimeSeriesOptions(boolean useSelectionFunction) {
 
     ChartOptions chartOptions = new ChartOptions();
     chartOptions
@@ -59,30 +59,36 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
         .setSpacingRight(20);
     setChart(chartOptions);
 
+    if (useSelectionFunction) {
+      chartOptions
+          .setEvents(new Events()
+              .setSelection(new SelectionFunction(this) {
+
+                @Override
+                public void onSelect(final SelectionEvent event) {
+                  System.out
+                      .println("Current Min Value of X-Axis: " + event
+                          .getxAxes()
+                          .get(0)
+                          .getMin());
+                  System.out
+                      .println("Current Max Value of X-Axis: " + event
+                          .getxAxes()
+                          .get(0)
+                          .getMax());
+
+                }
+              }));
+    }
+
     chartOptions
-        .setEvents(new Events().setSelection(new SelectionFunction(this) {
-
-          @Override
-          public void onSelect(final SelectionEvent event) {
-            System.out
-                .println("Current Min Value of X-Axis: " + event
-                    .getxAxes()
-                    .get(0)
-                    .getMin());
-            System.out
-                .println("Current Max Value of X-Axis: " + event
-                    .getxAxes()
-                    .get(0)
-                    .getMax());
-
-          }
-        }))
         .setResetZoomButton(new Button()
             .setPosition(new Position()
                 .setX(0)
                 .setY(-10))
             .setTheme(new ButtonTheme()
-                .setFill(HexColor.fromString("#999999"))
+                .setFill(HexColor
+                    .fromString("#999999"))
                 .setR(5)));
 
     setTitle(new Title("USD to EUR exchange rate from 2006 through 2008"));
