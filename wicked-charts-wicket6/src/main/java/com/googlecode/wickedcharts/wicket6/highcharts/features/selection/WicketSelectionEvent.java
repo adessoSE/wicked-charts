@@ -14,11 +14,8 @@
  */
 package com.googlecode.wickedcharts.wicket6.highcharts.features.selection;
 
-import java.util.List;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.googlecode.wickedcharts.highcharts.options.interaction.Selection;
 import com.googlecode.wickedcharts.highcharts.options.interaction.SelectionEvent;
 
 /**
@@ -31,11 +28,10 @@ public class WicketSelectionEvent extends SelectionEvent {
 
 	private AjaxRequestTarget ajaxRequestTarget;
 
-	private final SelectionEvent wrappedEvent;
-
-	WicketSelectionEvent(final AjaxRequestTarget ajaxRequestTarget, final SelectionEvent wrappedEvent) {
-		this.wrappedEvent = wrappedEvent;
+	WicketSelectionEvent(final AjaxRequestTarget ajaxRequestTarget, final SelectionEvent sourceEvent) {
 		this.setAjaxRequestTarget(ajaxRequestTarget);
+		this.xAxes = sourceEvent.getxAxes();
+		this.yAxes = sourceEvent.getyAxes();
 	}
 
 	public void setAjaxRequestTarget(final AjaxRequestTarget ajaxRequestTarget) {
@@ -50,21 +46,6 @@ public class WicketSelectionEvent extends SelectionEvent {
 	 */
 	public AjaxRequestTarget getAjaxRequestTarget() {
 		return this.ajaxRequestTarget;
-	}
-
-	@Override
-	public List<Selection> getxAxes() {
-		return this.wrappedEvent.getxAxes();
-	}
-
-	@Override
-	public List<Selection> getyAxes() {
-		return this.wrappedEvent.getxAxes();
-	}
-
-	@Override
-	public String getJavascriptChartName() {
-		return this.wrappedEvent.getJavascriptChartName();
 	}
 
 }

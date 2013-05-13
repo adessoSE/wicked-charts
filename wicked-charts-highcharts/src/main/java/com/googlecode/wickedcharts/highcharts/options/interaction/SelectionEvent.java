@@ -27,9 +27,9 @@ import java.util.List;
  */
 public class SelectionEvent extends BaseEvent {
 
-	private final List<Selection> xAxes = new ArrayList<Selection>();
+	protected List<Selection> xAxes = new ArrayList<Selection>();
 
-	private final List<Selection> yAxes = new ArrayList<Selection>();
+	protected List<Selection> yAxes = new ArrayList<Selection>();
 
 	/**
 	 * Returns information about which portions of which x-axes the user has
@@ -47,4 +47,21 @@ public class SelectionEvent extends BaseEvent {
 		return this.yAxes;
 	}
 
+	/**
+	 * Returns true if the XAxis Zoom has been reset to the original zoom factor.
+	 * 
+	 * @return true if the zoom was reset to the original zoom factor.
+	 */
+	public boolean isXAxisZoomReset() {
+		return this.xAxes.isEmpty();
+	}
+
+	/**
+	 * Returns true if the YAxis Zoom has been reset to the original zoom factor.
+	 * 
+	 * @return true if the zoom was reset to the original zoom factor.
+	 */
+	public boolean isYAxisZoomReset() {
+		return this.yAxes.isEmpty();
+	}
 }

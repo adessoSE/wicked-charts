@@ -66,17 +66,22 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 
                 @Override
                 public void onSelect(final SelectionEvent event) {
-                  System.out
-                      .println("Current Min Value of X-Axis: " + event
-                          .getxAxes()
-                          .get(0)
-                          .getMin());
-                  System.out
-                      .println("Current Max Value of X-Axis: " + event
-                          .getxAxes()
-                          .get(0)
-                          .getMax());
-
+                  if (!event
+                      .isXAxisZoomReset()) {
+                    System.out
+                        .println("Current Min Value of X-Axis: " + event
+                            .getxAxes()
+                            .get(0)
+                            .getMin());
+                    System.out
+                        .println("Current Max Value of X-Axis: " + event
+                            .getxAxes()
+                            .get(0)
+                            .getMax());
+                  } else {
+                    System.out
+                        .println("Zoom was reset!");
+                  }
                 }
               }));
     }
