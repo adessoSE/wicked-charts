@@ -49,6 +49,10 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;
+  
+  public ZoomableTimeSeriesOptions(){
+    this(true);
+  }
 
   public ZoomableTimeSeriesOptions(boolean useSelectionFunction) {
 

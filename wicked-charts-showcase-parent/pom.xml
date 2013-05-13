@@ -42,6 +42,7 @@
 
 	<modules>
 		<module>../wicked-charts-showcase-options</module>
+		<module>../wicked-charts-showcase-wicket14</module>
 		<module>../wicked-charts-showcase-wicket15</module>
 		<module>../wicked-charts-showcase-wicket6</module>
 		<module>../wicked-charts-showcase-jsf21</module>
@@ -52,6 +53,11 @@
 			<dependency>
 				<groupId>com.googlecode.wicked-charts</groupId>
 				<artifactId>wicked-charts-showcase-options</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.wicked-charts</groupId>
+				<artifactId>wicked-charts-showcase-wicket14</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -67,6 +73,11 @@
 			<dependency>
 				<groupId>com.googlecode.wicked-charts</groupId>
 				<artifactId>wicked-charts-showcase-jsf21</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.wicked-charts</groupId>
+				<artifactId>wicked-charts-wicket14</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

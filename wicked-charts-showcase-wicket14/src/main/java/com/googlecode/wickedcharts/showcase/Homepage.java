@@ -14,10 +14,10 @@
  */
 package com.googlecode.wickedcharts.showcase;
 
-import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.markup.html.internal.HtmlHeaderContainer;
 
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.theme.DarkBlueTheme;
@@ -60,7 +60,7 @@ import com.googlecode.wickedcharts.showcase.options.StackedColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.StackedPercentageOptions;
 import com.googlecode.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import com.googlecode.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
-import com.googlecode.wickedcharts.wicket15.highcharts.Chart;
+import com.googlecode.wickedcharts.wicket14.highcharts.Chart;
 
 public class Homepage extends WebPage {
 
@@ -77,81 +77,81 @@ public class Homepage extends WebPage {
 
 	private void addChartLinks(final Chart chart, final Label codeContainer) {
 		this.add(new UpdateChartLink("line", chart, codeContainer,
-		    new BasicLineOptions()));
+				new BasicLineOptions()));
 		this.add(new UpdateChartLink("splineWithSymbols", chart, codeContainer,
-		    new SplineWithSymbolsOptions()));
+				new SplineWithSymbolsOptions()));
 		this.add(new UpdateChartLink("irregularIntervals", chart,
-		    codeContainer, new TimeDataWithIrregularIntervalsOptions()));
+				codeContainer, new TimeDataWithIrregularIntervalsOptions()));
 		this.add(new UpdateChartLink("logarithmicAxis", chart, codeContainer,
-		    new LogarithmicAxisOptions()));
+				new LogarithmicAxisOptions()));
 		this.add(new UpdateChartLink("scatter", chart, codeContainer,
-		    new ScatterPlotOptions()));
+				new ScatterPlotOptions()));
 
 		this.add(new UpdateChartLink("area", chart, codeContainer,
-		    new BasicAreaOptions()));
+				new BasicAreaOptions()));
 		this.add(new UpdateChartLink("areaWithNegativeValues", chart,
-		    codeContainer, new AreaWithNegativeValuesOptions()));
+				codeContainer, new AreaWithNegativeValuesOptions()));
 
 		this.add(new UpdateChartLink("stackedAndGroupedColumn", chart,
-		    codeContainer, new StackedAndGroupedColumnOptions()));
+				codeContainer, new StackedAndGroupedColumnOptions()));
 		this.add(new UpdateChartLink("combo", chart, codeContainer,
-		    new ComboOptions()));
+				new ComboOptions()));
 		this.add(new UpdateChartLink("donut", chart, codeContainer,
-		    new DonutOptions()));
+				new DonutOptions()));
 		this.add(new UpdateChartLink("withDataLabels", chart, codeContainer,
-		    new LineWithDataLabelsOptions()));
+				new LineWithDataLabelsOptions()));
 		this.add(new UpdateChartLink("zoomableTimeSeries", chart,
-		    codeContainer, new ZoomableTimeSeriesOptions(false)));
+				codeContainer, new ZoomableTimeSeriesOptions(false)));
 		this.add(new UpdateChartLink("splineInverted", chart, codeContainer,
-		    new SplineWithInvertedAxisOptions()));
+				new SplineWithInvertedAxisOptions()));
 		this.add(new UpdateChartLink("splineWithPlotBands", chart,
-		    codeContainer, new SplineWithPlotBandsOptions()));
+				codeContainer, new SplineWithPlotBandsOptions()));
 		this.add(new UpdateChartLink("polar", chart, codeContainer,
-		    new PolarOptions()));
+				new PolarOptions()));
 		this.add(new UpdateChartLink("stackedArea", chart, codeContainer,
-		    new StackedAreaOptions()));
+				new StackedAreaOptions()));
 		this.add(new UpdateChartLink("percentageArea", chart, codeContainer,
-		    new PercentageAreaOptions()));
+				new PercentageAreaOptions()));
 		this.add(new UpdateChartLink("areaMissing", chart, codeContainer,
-		    new AreaMissingOptions()));
+				new AreaMissingOptions()));
 		this.add(new UpdateChartLink("areaInverted", chart, codeContainer,
-		    new AreaInvertedAxisOptions()));
+				new AreaInvertedAxisOptions()));
 
 		this.add(new UpdateChartLink("areaSpline", chart, codeContainer,
-		    new AreaSplineOptions()));
+				new AreaSplineOptions()));
 		this.add(new UpdateChartLink("basicBar", chart, codeContainer,
-		    new BasicBarOptions()));
+				new BasicBarOptions()));
 		this.add(new UpdateChartLink("columnWithDrilldown", chart,
-		    codeContainer, new ColumnWithDrilldownOptions()));
+				codeContainer, new ColumnWithDrilldownOptions()));
 		this.add(new UpdateChartLink("columnRotated", chart, codeContainer,
-		    new ColumnWithRotatedLabelsOptions()));
+				new ColumnWithRotatedLabelsOptions()));
 		this.add(new UpdateChartLink("stackedBar", chart, codeContainer,
-		    new StackedBarOptions()));
+				new StackedBarOptions()));
 		this.add(new UpdateChartLink("barNegativeStack", chart, codeContainer,
-		    new BarWithNegativeStackOptions()));
+				new BarWithNegativeStackOptions()));
 		this.add(new UpdateChartLink("basicColumn", chart, codeContainer,
-		    new BasicColumnOptions()));
+				new BasicColumnOptions()));
 		this.add(new UpdateChartLink("columnWithNegativeValues", chart,
-		    codeContainer, new ColumnWithNegativeValuesOptions()));
+				codeContainer, new ColumnWithNegativeValuesOptions()));
 		this.add(new UpdateChartLink("stackedColumn", chart, codeContainer,
-		    new StackedColumnOptions()));
+				new StackedColumnOptions()));
 		this.add(new UpdateChartLink("stackedPercentage", chart, codeContainer,
-		    new StackedPercentageOptions()));
+				new StackedPercentageOptions()));
 		this.add(new UpdateChartLink("basicPie", chart, codeContainer,
-		    new BasicPieOptions()));
+				new BasicPieOptions()));
 		this.add(new UpdateChartLink("pieWithGradient", chart, codeContainer,
-		    new PieWithGradientOptions()));
+				new PieWithGradientOptions()));
 		this.add(new UpdateChartLink("pieWithLegend", chart, codeContainer,
-		    new PieWithLegendOptions()));
+				new PieWithLegendOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer,
-		    new BubbleChartOptions()));
+				new BubbleChartOptions()));
 
 	}
 
 	private Label addCodeContainer() {
 		Label codeContainer = new Label("code", new StringFromResourceModel(
-		    BasicLineOptions.class, BasicLineOptions.class.getSimpleName()
-		        + ".java"));
+				BasicLineOptions.class, BasicLineOptions.class.getSimpleName()
+						+ ".java"));
 		codeContainer.setOutputMarkupId(true);
 		this.add(codeContainer);
 		return codeContainer;
@@ -159,7 +159,7 @@ public class Homepage extends WebPage {
 
 	private Options getOptionsToDisplay() {
 		Options options = ((ShowcaseSession) this.getSession())
-		    .getCurrentChartOptions();
+				.getCurrentChartOptions();
 		if (options == null) {
 			options = new BasicLineOptions();
 		}
@@ -167,42 +167,56 @@ public class Homepage extends WebPage {
 	}
 
 	private int getSelectedTab() {
-		String theme = this.getPageParameters().get("theme").toString();
-		if ("grid".equals(theme)) {
-			return 1;
-		} else if ("skies".equals(theme)) {
-			return 2;
-		} else if ("gray".equals(theme)) {
-			return 3;
-		} else if ("darkblue".equals(theme)) {
-			return 4;
-		} else if ("darkgreen".equals(theme)) {
-			return 5;
-		} else {
+		if (this.getPageParameters() == null) {
 			return 0;
+		}
+		Object themeObject = this.getPageParameters().get("theme");
+		if (themeObject == null) {
+			return 0;
+		} else {
+			String theme = themeObject.toString();
+			if ("grid".equals(theme)) {
+				return 1;
+			} else if ("skies".equals(theme)) {
+				return 2;
+			} else if ("gray".equals(theme)) {
+				return 3;
+			} else if ("darkblue".equals(theme)) {
+				return 4;
+			} else if ("darkgreen".equals(theme)) {
+				return 5;
+			} else {
+				return 0;
+			}
 		}
 	}
 
 	private Theme getThemeFromParams(final PageParameters params) {
-		String themeString = params.get("theme").toString();
-		if ("grid".equals(themeString)) {
-			return new GridTheme();
-		} else if ("skies".equals(themeString)) {
-			return new SkiesTheme();
-		} else if ("gray".equals(themeString)) {
-			return new GrayTheme();
-		} else if ("darkblue".equals(themeString)) {
-			return new DarkBlueTheme();
-		} else {
-			// default theme
+		Object themeObject = params.get("theme");
+		if (themeObject == null) {
 			return null;
+		} else {
+			String themeString = themeObject.toString();
+			if ("grid".equals(themeString)) {
+				return new GridTheme();
+			} else if ("skies".equals(themeString)) {
+				return new SkiesTheme();
+			} else if ("gray".equals(themeString)) {
+				return new GrayTheme();
+			} else if ("darkblue".equals(themeString)) {
+				return new DarkBlueTheme();
+			} else {
+				// default theme
+				return null;
+			}
 		}
 	}
 
 	@Override
-	public void renderHead(final IHeaderResponse response) {
+	public void renderHead(HtmlHeaderContainer header) {
 		// select bootstrap tab for current theme selected
 		int selectedTab = this.getSelectedTab();
-		response.renderOnDomReadyJavaScript(("$('#themes li:eq(" + selectedTab + ") a').tab('show');"));
+		header.getHeaderResponse().renderOnDomReadyJavascript(
+				"$('#themes li:eq(" + selectedTab + ") a').tab('show');");
 	}
 }
