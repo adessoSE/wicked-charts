@@ -16,7 +16,7 @@
 	</parent>
 
 	<properties>
-		<wicket.version>1.5.9</wicket.version>
+		<wicket.version>1.5.10</wicket.version>
 		<jetty.version>7.5.0.v20110901</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -45,12 +45,6 @@
 			<groupId>com.googlecode.wicked-charts</groupId>
 			<artifactId>wicked-charts-showcase-options</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.wicketstuff</groupId>
-			<artifactId>wicketstuff-gae-initializer</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
