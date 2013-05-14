@@ -188,6 +188,9 @@ public class OptionsUtil {
 	 */
 	public static int getSeriesIndex(final Options options, final int wickedChartsId) {
 		int index = 0;
+		if (options.getSeries() == null) {
+			throw new IllegalStateException("The given Options object does not contain any series!");
+		}
 		for (Series<?> series : options.getSeries()) {
 			if (series.getWickedChartsId() == wickedChartsId) {
 				return index;

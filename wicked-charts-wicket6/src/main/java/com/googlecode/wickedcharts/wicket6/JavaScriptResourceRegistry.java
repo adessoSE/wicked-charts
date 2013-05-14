@@ -56,11 +56,11 @@ public class JavaScriptResourceRegistry {
 
 	}
 
-	public static final String DEFAULT_HIGHCHARTS_URL = "http://code.highcharts.com/2.3.5/highcharts.js";
+	public static final String DEFAULT_HIGHCHARTS_URL = "http://code.highcharts.com/3.0.1/highcharts.js";
 
-	public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/2.3.5/highcharts-more.js";
+	public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/3.0.1/highcharts-more.js";
 
-	public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/2.3.5/modules/exporting.js";
+	public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/3.0.1/modules/exporting.js";
 
 	public static JavaScriptResourceRegistry getInstance() {
 		if (INSTANCE == null) {

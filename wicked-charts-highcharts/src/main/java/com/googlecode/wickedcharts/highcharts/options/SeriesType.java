@@ -47,7 +47,9 @@ public enum SeriesType implements LowercaseEnum {
 
 	COLUMNRANGE(ChartType.ADVANCED),
 
-	AREARANGE(ChartType.ADVANCED);
+	AREARANGE(ChartType.ADVANCED),
+	
+	BUBBLE(ChartType.ADVANCED);
 
 	private ChartType chartType;
 

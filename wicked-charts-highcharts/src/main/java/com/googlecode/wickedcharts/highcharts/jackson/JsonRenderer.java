@@ -34,6 +34,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.HighchartsColor;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
+import com.googlecode.wickedcharts.highcharts.options.series.Bubble;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.RangeCoordinate;
 
@@ -95,6 +96,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(Coordinate.class, new CoordinateSerializer());
 		this.jacksonModule.addSerializer(Crosshair.class, new CrosshairSerializer());
 		this.jacksonModule.addSerializer(RangeCoordinate.class, new RangeCoordinateSerializer());
+		this.jacksonModule.addSerializer(Bubble.class, new BubbleSerializer());
 
 		ObjectMapper mapper = createDefaultObjectMapper();
 		mapper.setLocale(Locale.ENGLISH);
