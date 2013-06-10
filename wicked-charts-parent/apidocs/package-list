@@ -13,6 +13,11 @@ com.googlecode.wickedcharts.highcharts.options.util
 com.googlecode.wickedcharts.highcharts.theme
 com.googlecode.wickedcharts.jsf21
 com.googlecode.wickedcharts.jsf21.highcharts
+com.googlecode.wickedcharts.wicket14
+com.googlecode.wickedcharts.wicket14.highcharts
+com.googlecode.wickedcharts.wicket14.highcharts.features.basic
+com.googlecode.wickedcharts.wicket14.highcharts.features.drilldown
+com.googlecode.wickedcharts.wicket14.highcharts.features.global
 com.googlecode.wickedcharts.wicket15
 com.googlecode.wickedcharts.wicket15.highcharts
 com.googlecode.wickedcharts.wicket15.highcharts.features.basic

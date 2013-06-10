@@ -4,13 +4,13 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="wicked-charts-wicket14-1.4.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-wicket14/wicked-charts-wicket14">
+        <dependent-module archiveName="wicked-charts-wicket14-1.5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-wicket14/wicked-charts-wicket14">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="wicked-charts-highcharts-1.4.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-highcharts/wicked-charts-highcharts">
+        <dependent-module archiveName="wicked-charts-highcharts-1.5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-highcharts/wicked-charts-highcharts">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="wicked-charts-showcase-options-1.4.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-showcase-options/wicked-charts-showcase-options">
+        <dependent-module archiveName="wicked-charts-showcase-options-1.5.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wicked-charts-showcase-options/wicked-charts-showcase-options">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="wicked-charts-showcase"/>
