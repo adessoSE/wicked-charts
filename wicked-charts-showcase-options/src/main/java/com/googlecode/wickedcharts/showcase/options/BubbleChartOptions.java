@@ -21,14 +21,6 @@ import com.googlecode.wickedcharts.highcharts.options.ZoomType;
 import com.googlecode.wickedcharts.highcharts.options.series.BubbleSeries;
 import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
 
-/**
- * Options for a bubble chart by using the scatter chart type (this is not a
- * highcharts-native bubble chart, which will be supported in Highcharts 3.0).
- * 
- * @see http://jsfiddle.net/jlbriggs/yHWfX/5/
- * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
- */
 public class BubbleChartOptions extends ShowcaseOptions {
 
   private static final long serialVersionUID = 1L;

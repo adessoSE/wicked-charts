@@ -41,6 +41,7 @@ import com.googlecode.wickedcharts.showcase.options.BasicColumnOptions;
 import com.googlecode.wickedcharts.showcase.options.BasicLineOptions;
 import com.googlecode.wickedcharts.showcase.options.BasicPieOptions;
 import com.googlecode.wickedcharts.showcase.options.BubbleChartOptions;
+import com.googlecode.wickedcharts.showcase.options.BubbleChart3DOptions;
 import com.googlecode.wickedcharts.showcase.options.ClickToAddAPointOptions;
 import com.googlecode.wickedcharts.showcase.options.ColumnRangeOptions;
 import com.googlecode.wickedcharts.showcase.options.ColumnWithDrilldownOptions;
@@ -159,6 +160,8 @@ public class Homepage extends WebPage {
 				codeContainer, new WicketSplineUpdatingOptions()));
 		this.add(new UpdateChartLink("bubble", chart, codeContainer,
 				new BubbleChartOptions()));
+		this.add(new UpdateChartLink("3dbubble", chart, codeContainer,
+				new BubbleChart3DOptions()));
 		this.add(new UpdateChartLink("interactive", chart, codeContainer,
 				new InteractionOptions()));
 		this.add(new UpdateChartLink("angularGauge", chart, codeContainer,
