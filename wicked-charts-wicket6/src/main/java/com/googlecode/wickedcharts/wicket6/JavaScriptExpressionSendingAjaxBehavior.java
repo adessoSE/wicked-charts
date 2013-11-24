@@ -46,7 +46,7 @@ public abstract class JavaScriptExpressionSendingAjaxBehavior extends AbstractDe
 	protected StringValue getVariableValue(String parameterName) {
 		RequestCycle cycle = RequestCycle.get();
 		WebRequest webRequest = (WebRequest) cycle.getRequest();
-		StringValue value = webRequest.getQueryParameters().getParameterValue(parameterName);
+		StringValue value = webRequest.getRequestParameters().getParameterValue(parameterName);
 		return value;
 	}
 
