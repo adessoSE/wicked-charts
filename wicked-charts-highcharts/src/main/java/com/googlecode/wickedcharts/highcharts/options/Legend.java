@@ -71,6 +71,32 @@ public class Legend implements Serializable {
 	private CssStyle itemHoverStyle;
 
 	private CssStyle itemHiddenStyle;
+	
+	private Integer itemMarginBottom;
+	
+	private Integer itemMarginTop;
+	
+	private Integer itemWidth;
+	
+	private String labelFormat;
+	
+	private Function labelFormatter;
+	
+	private Integer maxHeight;
+	
+	private Integer padding;
+	
+	private CssStyle style;
+	
+	private Integer symbolPadding;
+	
+	private Integer symbolWidth;
+	
+	private LegendTitle title;
+	
+	private LegendNavigation navigation;
+	
+	private Boolean useHTML = false;
 
 	public Legend() {
 
@@ -267,6 +293,123 @@ public class Legend implements Serializable {
 
 	public Legend setY(final Integer y) {
 		this.y = y;
+		return this;
+	}
+	
+	public Integer getSymbolPadding() {
+		return symbolPadding;
+	}
+
+	public Legend setSymbolPadding(Integer symbolPadding) {
+		this.symbolPadding = symbolPadding;
+		return this;
+	}
+
+	public Integer getSymbolWidth() {
+		return symbolWidth;
+	}
+
+	public Legend setSymbolWidth(Integer symbolWidth) {
+		this.symbolWidth = symbolWidth;
+		return this;
+	}
+
+	public Integer getItemMarginBottom() {
+		return itemMarginBottom;
+	}
+
+	public Legend setItemMarginBottom(Integer itemMarginBottom) {
+		this.itemMarginBottom = itemMarginBottom;
+		return this;
+	}
+
+	public Integer getItemMarginTop() {
+		return itemMarginTop;
+	}
+
+	public Legend setItemMarginTop(Integer itemMarginTop) {
+		this.itemMarginTop = itemMarginTop;
+		return this;
+	}
+
+	public Integer getItemWidth() {
+		return itemWidth;
+	}
+
+	public Legend setItemWidth(Integer itemWidth) {
+		this.itemWidth = itemWidth;
+		return this;
+	}
+
+	public String getLabelFormat() {
+		return labelFormat;
+	}
+
+	public Legend setLabelFormat(String labelFormat) {
+		this.labelFormat = labelFormat;
+		return this;
+	}
+
+	public Function getLabelFormatter() {
+		return labelFormatter;
+	}
+
+	public Legend setLabelFormatter(Function labelFormatter) {
+		this.labelFormatter = labelFormatter;
+		return this;
+	}
+
+	public Integer getMaxHeight() {
+		return maxHeight;
+	}
+
+	public Legend setMaxHeight(Integer maxHeight) {
+		this.maxHeight = maxHeight;
+		return this;
+	}
+
+	public Integer getPadding() {
+		return padding;
+	}
+
+	public Legend setPadding(Integer padding) {
+		this.padding = padding;
+		return this;
+	}
+
+	public CssStyle getStyle() {
+		return style;
+	}
+
+	public Legend setStyle(CssStyle style) {
+		this.style = style;
+		return this;
+	}
+
+	public LegendTitle getTitle() {
+		return title;
+	}
+
+	public Legend setTitle(LegendTitle title) {
+		this.title = title;
+		return this;
+	}
+
+	public LegendNavigation getNavigation() {
+		return navigation;
+	}
+
+	public Legend setNavigation(LegendNavigation navigation) {
+		this.navigation = navigation;
+		return this;
+	}
+
+	public Boolean getUseHTML() {
+		return useHTML;
+	}
+
+	public Legend setUseHTML(Boolean useHTML) {
+		this.useHTML = useHTML;
 		return this;
 	}
 

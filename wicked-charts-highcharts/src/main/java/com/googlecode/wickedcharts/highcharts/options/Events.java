@@ -49,6 +49,18 @@ public class Events implements Serializable {
 	private Function update;
 
 	private Function remove;
+	
+	private Function legendItemClick;
+	
+	private Function checkboxClick;
+	
+	private Function hide;
+	
+	private Function show;
+	
+	private Function afterSetExtremes;
+	
+	private Function setExtremes;
 
 	public Function getMouseOut() {
 		return this.mouseOut;
@@ -148,5 +160,58 @@ public class Events implements Serializable {
 		this.selection = selection;
 		return this;
 	}
+	
+	public Function getLegendItemClick() {
+		return this.legendItemClick;
+	}
 
+	public Events setLegendItemClick(final Function legendItemClick) {
+		this.legendItemClick = legendItemClick;
+		return this;
+	}
+
+	public Function getCheckboxClick() {
+		return checkboxClick;
+	}
+
+	public Events setCheckboxClick(Function checkboxClick) {
+		this.checkboxClick = checkboxClick;
+		return this;
+	}
+
+	public Function getHide() {
+		return hide;
+	}
+
+	public Events setHide(Function hide) {
+		this.hide = hide;
+		return this;
+	}
+
+	public Function getShow() {
+		return show;
+	}
+
+	public Events setShow(Function show) {
+		this.show = show;
+		return this;
+	}
+
+	public Function getAfterSetExtremes() {
+		return afterSetExtremes;
+	}
+
+	public Events setAfterSetExtremes(Function afterSetExtremes) {
+		this.afterSetExtremes = afterSetExtremes;
+		return this;
+	}
+
+	public Function getSetExtremes() {
+		return setExtremes;
+	}
+
+	public Events setSetExtremes(Function setExtremes) {
+		this.setExtremes = setExtremes;
+		return this;
+	}
 }

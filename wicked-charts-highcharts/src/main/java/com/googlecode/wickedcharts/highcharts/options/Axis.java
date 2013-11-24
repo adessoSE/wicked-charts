@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -51,8 +50,7 @@ public class Axis implements Serializable {
 
 	private Boolean endOnTick;
 
-	@JsonIgnore
-	private DummyOption events;
+	private Events events;
 
 	private ColorReference gridLineColor;
 
@@ -166,7 +164,7 @@ public class Axis implements Serializable {
 		return this.endOnTick;
 	}
 
-	public DummyOption getEvents() {
+	public Events getEvents() {
 		return this.events;
 	}
 
@@ -369,7 +367,7 @@ public class Axis implements Serializable {
 		return this;
 	}
 
-	public Axis setEvents(final DummyOption events) {
+	public Axis setEvents(final Events events) {
 		this.events = events;
 		return this;
 	}
