@@ -164,8 +164,9 @@ public class Labels implements Serializable {
 		return enabled;
 	}
 
-	public void setEnabled(Boolean enabled) {
+	public Labels setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+		return this;
 	}
 
 }
