@@ -8,7 +8,7 @@ Making a release from eclipse
 	- right click on the single css file  -> Team -> Show Properties -> change svn:mime-type to "text/css"
 4. Check everything in and make a tag
 5. Sign pom.xml, javadoc.jar, sources.jar and binary jar of the following projects
-	- wicked-charts-highcharts
+	- highcharts-wrapper
 	- wicked-charts-wicket15
 	- wicked-charts-wicket6
 	- wicked-charts-jsf21

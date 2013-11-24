@@ -34,7 +34,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.wicket:wicket-request:1.5.10" level="project" />
     <orderEntry type="module" module-name="wicked-charts-wicket15" />
-    <orderEntry type="module" module-name="wicked-charts-highcharts" />
+    <orderEntry type="module" module-name="highcharts-wrapper" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.5" level="project" />

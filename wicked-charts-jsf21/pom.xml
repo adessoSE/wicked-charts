@@ -50,7 +50,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
-			<artifactId>wicked-charts-highcharts</artifactId>
+			<artifactId>highcharts-wrapper</artifactId>
 		</dependency>
 
 		<!-- compile agains JSF API; Implementation is choosen at runtime -->

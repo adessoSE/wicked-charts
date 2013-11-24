@@ -30,7 +30,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
-			<artifactId>wicked-charts-highcharts</artifactId>
+			<artifactId>highcharts-wrapper</artifactId>
 		</dependency>
 
 		<!-- JUNIT DEPENDENCY FOR TESTING -->

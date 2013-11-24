@@ -41,7 +41,7 @@
 	</developers>
 
 	<modules>
-		<module>../wicked-charts-highcharts</module>
+		<module>../highcharts-wrapper</module>
 		<module>../wicked-charts-wicket14</module>
 		<module>../wicked-charts-wicket15</module>
 		<module>../wicked-charts-wicket6</module>
@@ -92,7 +92,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.googlecode.wicked-charts</groupId>
-				<artifactId>wicked-charts-highcharts</artifactId>
+				<artifactId>highcharts-wrapper</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

@@ -1,0 +1,8 @@
+{
+	"stops": [
+	 [0, Highcharts.Color("#ff0000").brighten(0.50).get()],
+	 [0.5, Highcharts.Color(Highcharts.getOptions().colors[1]).brighten(0.50).get()],
+	 [1, Highcharts.Color("#ffffff").brighten(0.50).get()]
+  ],
+   "linearGradient": [0, 1, 0, 0]
+}
