@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>com.googlecode.wicked-charts</groupId>
 		<artifactId>wicked-charts-parent</artifactId>
-		<relativePath>../wicked-charts-parent</relativePath>
+		<relativePath>../..</relativePath>
 		<version>1.5.1-SNAPSHOT</version>
 	</parent>
 
