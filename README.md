@@ -1,18 +1,15 @@
-wicked-charts
+Wicked Charts
 =============
 Beautiful and interactive javascript charts for Java-based web applications.
-
-[![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
-
-Current Version: 1.5.0
-======================
 
  * Check out the [Changelog]
  * Check out a [Features Guide] to the Features
  * Browse the <a href="https://wicked-charts.googlecode.com/svn/trunk/wicked-charts-parent/apidocs/index.html">Javadoc</a>
- * Browse the <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6">Showcase Application</a>. Use <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6/simple">this link</a> for a css- and ajax-free version)
+ * Browse the <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6">Showcase Application</a> (use <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6/simple">this link</a> for a css- and ajax-free version that works better in IE)
  * Check out the [FAQ]
  * <a href="http://wicked-charts.2319560.n4.nabble.com/template/NamlServlet.jtp?macro=subscribe&node=1">Subscribe</a> to the <a href="http://wicked-charts.2319560.n4.nabble.com/">Mailing List</a>
+
+[![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
 
 What is Wicked Charts?
 ======================
@@ -20,7 +17,7 @@ Wicked Charts is a Java abstraction of the <a href="http://www.highcharts.com">H
 
 [https://wicked-charts.googlecode.com/files/chart.png]
 
-*Please note that while Wicked Charts is licensed under Apache 2.0 License, sadly Highcharts itself is only free for non-commercial use*. 
+**Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** 
 See here: [http://shop.highsoft.com/highcharts.html]
 
 How does it work?
@@ -41,48 +38,48 @@ Depending on what web framework you use, add one of the following dependencies t
 
 Wcket 6.x
 ---------
-´´´xml
+```xml
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket6</artifactId>
   <version>1.5.0</version>
 </dependency>
-´´´
+```
 Wicket 1.5.x
 ---------
-´´´xml
+```xml
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket15</artifactId>
   <version>1.5.0</version>
 </dependency>
-´´´
+```
 Wicket 1.4.x
 ---------
-´´´xml
+```xml
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket14</artifactId>
   <version>1.5.0</version>
 </dependency>
-´´´
+```
 JSF 2.1
 ---------
-´´´xml
+```xml
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-jsf21</artifactId>
   <version>1.5.0</version>
 </dependency>
-´´´
+```
 
 Java Wrapper
 ------------
 If you want to use the Java abstraction and JSON serializer of the Highcharts options (for example to add Highcharts to an application built with a different web framework than Wicket ot JSF), add the following dependency:
-´´´xml
+```xml
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-highcharts</artifactId>
   <version>1.5.0</version>
 </dependency>
-´´´
+```
