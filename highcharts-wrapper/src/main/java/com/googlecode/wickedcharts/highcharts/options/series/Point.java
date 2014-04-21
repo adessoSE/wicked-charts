@@ -17,6 +17,7 @@ package com.googlecode.wickedcharts.highcharts.options.series;
 import java.awt.Color;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.googlecode.wickedcharts.highcharts.options.DataLabels;
 import com.googlecode.wickedcharts.highcharts.options.Events;
 import com.googlecode.wickedcharts.highcharts.options.Marker;
@@ -39,6 +40,7 @@ public class Point implements Serializable {
 
 	private ColorReference color;
 
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 	private Number y;
 
 	private Events events;
