@@ -2,11 +2,11 @@ Wicked Charts
 =============
 Beautiful and interactive javascript charts for Java-based web applications.
 
- * Check out the [[Changelog]]
- * Check out the [[Feature Overview]] with coding examples
+ * Check out the [Changelog](https://github.com/thombergs/wicked-charts/wiki/Changelog)
+ * Check out the [Feature Overview](https://github.com/thombergs/wicked-charts/wiki/Feature-Overview) with coding examples
  * Browse the [Javadoc](http://thombergs.github.io/wicked-charts/apidocs)
  * Browse the [Showcase](http://wicked-charts.org/wicked-charts-showcase-wicket6) to get an impression (use [this link](http://wicked-charts.org/wicked-charts-showcase-wicket6/simple) for a css- and ajax-free version that works better in IE)
- * Check out the [[FAQ]]
+ * Check out the [FAQ](https://github.com/thombergs/wicked-charts/wiki/FAQ)
  * [Subscribe](http://wicked-charts.2319560.n4.nabble.com/template/NamlServlet.jtp?macro=subscribe&node=1) to the [Mailing List](http://wicked-charts.2319560.n4.nabble.com/)
 
 [![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
