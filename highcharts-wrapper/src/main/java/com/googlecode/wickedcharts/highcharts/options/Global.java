@@ -20,58 +20,67 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Defines the "globals" option.
- * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#global">http://api.highcharts.com/highcharts#global</a>
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
+ * @see <a
+ * href="http://api.highcharts.com/highcharts#global">http://api.highcharts.com/highcharts#global</a>
  */
 public class Global implements IProcessableOption, Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  /**
-   * The key under which {@link Global}s are registered in the parent options.
-   * See {@link Options#markForProcessing(IProcessableOption)} .
-   */
-  public static final String PROCESSING_KEY = "GLOBAL";
+    /**
+     * The key under which {@link Global}s are registered in the parent options.
+     * See {@link Options#markForProcessing(IProcessableOption)} .
+     */
+    public static final String PROCESSING_KEY = "GLOBAL";
 
-  private String canvasToolsURL;
+    private String canvasToolsURL;
 
-  private Boolean useUTC;
+    private Boolean useUTC;
 
-  private String VMLRadialGradientURL;
+    private String VMLRadialGradientURL;
 
-  public String getCanvasToolsURL() {
-    return this.canvasToolsURL;
-  }
+    private Integer timezoneOffset;
 
-  public Boolean getUseUTC() {
-    return this.useUTC;
-  }
+    public String getCanvasToolsURL() {
+        return this.canvasToolsURL;
+    }
 
-  public Global setCanvasToolsURL(final String canvasToolsURL) {
-    this.canvasToolsURL = canvasToolsURL;
-    return this;
-  }
+    public Boolean getUseUTC() {
+        return this.useUTC;
+    }
 
-  public Global setUseUTC(final Boolean useUTC) {
-    this.useUTC = useUTC;
-    return this;
-  }
+    public Global setCanvasToolsURL(final String canvasToolsURL) {
+        this.canvasToolsURL = canvasToolsURL;
+        return this;
+    }
 
-  public Global setVMLRadialGradientURL(String vMLRadialGradientURL) {
-    VMLRadialGradientURL = vMLRadialGradientURL;
-    return this;
-  }
+    public Global setUseUTC(final Boolean useUTC) {
+        this.useUTC = useUTC;
+        return this;
+    }
 
-  public String getVMLRadialGradientURL() {
-    return VMLRadialGradientURL;
-  }
+    public Global setVMLRadialGradientURL(String vMLRadialGradientURL) {
+        VMLRadialGradientURL = vMLRadialGradientURL;
+        return this;
+    }
 
-  @Override
-  @JsonIgnore
-  public String getProcessingKey() {
-    return PROCESSING_KEY;
-  }
+    public String getVMLRadialGradientURL() {
+        return VMLRadialGradientURL;
+    }
+
+    @Override
+    @JsonIgnore
+    public String getProcessingKey() {
+        return PROCESSING_KEY;
+    }
+
+    public Integer getTimezoneOffset() {
+        return timezoneOffset;
+    }
+
+    public void setTimezoneOffset(Integer timezoneOffset) {
+        this.timezoneOffset = timezoneOffset;
+    }
 }
