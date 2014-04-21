@@ -2,7 +2,7 @@ Wicked Charts
 =============
 Beautiful and interactive javascript charts for Java-based web applications.
 
- * Check out the [Changelog](Changelog)
+ * Check out the [[Changelog]]
  * Check out the [[Feature Overview]] with coding examples
  * Browse the [Javadoc](http://thombergs.github.io/wicked-charts/apidocs)
  * Browse the [Showcase](http://wicked-charts.org/wicked-charts-showcase-wicket6) to get an impression (use [this link](http://wicked-charts.org/wicked-charts-showcase-wicket6) for a css- and ajax-free version that works better in IE)
