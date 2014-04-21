@@ -3,21 +3,21 @@ Wicked Charts
 Beautiful and interactive javascript charts for Java-based web applications.
 
  * Check out the [Changelog](Changelog)
- * Check out a [Features Guide](Features) to the Features
- * Browse the <a href="https://wicked-charts.googlecode.com/svn/trunk/wicked-charts-parent/apidocs/index.html">Javadoc</a>
- * Browse the <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6">Showcase Application</a> (use <a href="http://wicked-charts.org/wicked-charts-showcase-wicket6/simple">this link</a> for a css- and ajax-free version that works better in IE)
- * Check out the [FAQ](FAQ)
- * <a href="http://wicked-charts.2319560.n4.nabble.com/template/NamlServlet.jtp?macro=subscribe&node=1">Subscribe</a> to the <a href="http://wicked-charts.2319560.n4.nabble.com/">Mailing List</a>
+ * Check out the [[Feature Overview]] with coding examples
+ * Browse the [Javadoc](http://thombergs.github.io/wicked-charts/apidocs)
+ * Browse the [Showcase](http://wicked-charts.org/wicked-charts-showcase-wicket6) to get an impression (use [this link](http://wicked-charts.org/wicked-charts-showcase-wicket6) for a css- and ajax-free version that works better in IE)
+ * Check out the [[FAQ]]
+ * [Subscribe](http://wicked-charts.2319560.n4.nabble.com/template/NamlServlet.jtp?macro=subscribe&node=1) to the [Mailing List](http://wicked-charts.2319560.n4.nabble.com/)
 
 [![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
 
 What is Wicked Charts?
 ======================
-Wicked Charts is a Java abstraction of the <a href="http://www.highcharts.com">Highcharts</a> javascript library. Highcharts provides eye-pleasing charts using HTML5 SVG technology (see http://www.highcharts.com/demo). With Wicked Charts, you can configure a chart in Java and display it in any web application based on Apache Wicket or JSF. Or you can use the Java abstraction to integrate it in web applications built with other java web frameworks.
+Wicked Charts is a Java abstraction of the [Highcharts](http://www.highcharts.com") javascript library. Highcharts provides eye-pleasing charts using HTML5 SVG technology (see http://www.highcharts.com/demo). With Wicked Charts, you can configure a chart in Java and display it in any web application based on Apache Wicket or JSF. Or you can use the Highcharts Java wrapper to integrate it in web applications built with other java web frameworks.
 
 [https://wicked-charts.googlecode.com/files/chart.png]
 
-**Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** 
+***Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** *
 See here: [http://shop.highsoft.com/highcharts.html]
 
 How does it work?
