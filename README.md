@@ -17,7 +17,7 @@ Wicked Charts is a Java abstraction of the [Highcharts](http://www.highcharts.co
 
 [https://wicked-charts.googlecode.com/files/chart.png]
 
-***Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** *
+**Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** 
 See here: [http://shop.highsoft.com/highcharts.html]
 
 How does it work?
