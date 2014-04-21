@@ -25,7 +25,7 @@ import com.googlecode.wickedcharts.highcharts.options.CssStyle;
  * @author Matthias Balke <matthias.balke@gmail.com>
  * 
  */
-public class CssStyleSerializerTest {
+public class CssStyleSerializerTest extends AbstractSerializerTest{
 
 	@Test
 	public void testOneProperty() {
@@ -38,7 +38,7 @@ public class CssStyleSerializerTest {
 		String json = renderer.toJson(style);
 
 		// then
-		Assert.assertEquals("{ fontSize: '1.3em' }", json);
+		assertIgnoreWhitespaces("{ \"fontSize\": \"1.3em\" }", json);
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class CssStyleSerializerTest {
 		String json = renderer.toJson(style);
 
 		// then
-		Assert.assertEquals("{ border: '1px solid #000000', fontSize: '1.3em' }", json);
+        assertIgnoreWhitespaces("{ \"border\": \"1px solid #000000\", \"fontSize\": \"1.3em\" }", json);
 	}
 
 	

@@ -38,7 +38,7 @@ public class CssStyleSerializer extends JsonSerializer<CssStyle> {
 		cssStyleBuilder.append("{");
 
 		for (Entry<String, String> property : value.getProperties().entrySet()) {
-			cssStyleBuilder.append(" " + property.getKey() + ": '" + property.getValue() + "',");
+			cssStyleBuilder.append("\"" + property.getKey() + "\": \"" + property.getValue() + "\",");
 		}
 
 		int lastCommaPosition = cssStyleBuilder.lastIndexOf(",");
