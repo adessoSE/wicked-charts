@@ -22,7 +22,7 @@ See here: [http://shop.highsoft.com/highcharts.html]
 
 How does it work?
 =================
-For a kick start on how to use Wicked Charts in your Wicket or JSF application, visit the [GettingStarted] page.
+For a kick start on how to use Wicked Charts in your Wicket or JSF application, visit the [Getting Started](https://github.com/thombergs/wicked-charts/wiki/Getting-Started) page.
 
 Your web framework is not supported?
 ================================
