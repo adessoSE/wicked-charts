@@ -115,7 +115,8 @@ public class JsonRenderer {
 
 	public String toJson(final Object object) {
 		try {
-			return this.jacksonMapper.writeValueAsString(object);
+            String result = this.jacksonMapper.writeValueAsString(object);
+            return convertTurkishChars(result);
 		} catch (Exception e) {
 			throw new RuntimeException("Error trying to serialize object of type " + object.getClass().getName()
 			    + " into JSON!", e);
@@ -130,4 +131,18 @@ public class JsonRenderer {
 			    e);
 		}
 	}
+
+    /**
+     * Converts special turkish characters to their latin-1 counterpart so that the JSON output will still be valid.
+     */
+    public String convertTurkishChars(String text) {
+        String[] olds = {"Ğ", "ğ", "Ü", "ü", "Ş", "ş", "İ", "ı", "Ö", "ö", "Ç", "ç"};
+        String[] news = {"G", "g", "U", "u", "S", "s", "I", "i", "O", "o", "C", "c"};
+
+        for (int i = 0; i < olds.length; i++) {
+            text = text.replace(olds[i], news[i]);
+        }
+
+        return text;
+    }
 }
