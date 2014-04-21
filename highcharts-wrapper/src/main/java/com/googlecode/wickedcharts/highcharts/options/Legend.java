@@ -64,6 +64,8 @@ public class Legend implements Serializable {
 
 	private Integer y;
 
+    private Integer itemDistance;
+
 	private LegendLayout layout;
 
 	private CssStyle itemStyle;
@@ -71,31 +73,31 @@ public class Legend implements Serializable {
 	private CssStyle itemHoverStyle;
 
 	private CssStyle itemHiddenStyle;
-	
+
 	private Integer itemMarginBottom;
-	
+
 	private Integer itemMarginTop;
-	
+
 	private Integer itemWidth;
-	
+
 	private String labelFormat;
-	
+
 	private Function labelFormatter;
-	
+
 	private Integer maxHeight;
-	
+
 	private Integer padding;
-	
+
 	private CssStyle style;
-	
+
 	private Integer symbolPadding;
-	
+
 	private Integer symbolWidth;
-	
+
 	private LegendTitle title;
-	
+
 	private LegendNavigation navigation;
-	
+
 	private Boolean useHTML = false;
 
 	public Legend() {
@@ -295,7 +297,7 @@ public class Legend implements Serializable {
 		this.y = y;
 		return this;
 	}
-	
+
 	public Integer getSymbolPadding() {
 		return symbolPadding;
 	}
@@ -412,5 +414,13 @@ public class Legend implements Serializable {
 		this.useHTML = useHTML;
 		return this;
 	}
+
+    public Integer getItemDistance() {
+        return itemDistance;
+    }
+
+    public void setItemDistance(Integer itemDistance) {
+        this.itemDistance = itemDistance;
+    }
 
 }
