@@ -18,155 +18,170 @@ import java.io.Serializable;
 
 /**
  * Defines some label in a chart.
- * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
- *      and others
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
+ * @see <a
+ * href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
+ * and others
  */
 public class Labels implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private HorizontalAlignment align;
+    private HorizontalAlignment align;
 
-	private Integer rotation;
+    private Integer rotation;
 
-	private CssStyle style;
+    private CssStyle style;
 
-	private Function formatter;
+    private Function formatter;
 
-	private HorizontalAlignment textAlign;
+    private HorizontalAlignment textAlign;
 
-	private VerticalAlignment verticalAlign;
+    private VerticalAlignment verticalAlign;
 
-	private Integer x;
+    private Integer x;
 
-	private Integer y;
+    private Integer y;
 
-	private String text;
+    private String text;
 
-	private Overflow overflow;
+    private Overflow overflow;
 
-	private Integer step;
+    private Integer step;
 
-	private Boolean enabled;
+    private Boolean enabled;
 
-	public Labels() {
+    private String format;
 
-	}
+    public Labels() {
 
-	public Labels(final String text) {
-		this.text = text;
-	}
+    }
 
-	public HorizontalAlignment getAlign() {
-		return this.align;
-	}
+    public Labels(final String text) {
+        this.text = text;
+    }
 
-	public Function getFormatter() {
-		return this.formatter;
-	}
+    public HorizontalAlignment getAlign() {
+        return this.align;
+    }
 
-	public Overflow getOverflow() {
-		return this.overflow;
-	}
+    public Function getFormatter() {
+        return this.formatter;
+    }
 
-	public Integer getRotation() {
-		return this.rotation;
-	}
+    public Overflow getOverflow() {
+        return this.overflow;
+    }
 
-	public CssStyle getStyle() {
-		return this.style;
-	}
+    public Integer getRotation() {
+        return this.rotation;
+    }
 
-	public String getText() {
-		return this.text;
-	}
+    public CssStyle getStyle() {
+        return this.style;
+    }
 
-	public HorizontalAlignment getTextAlign() {
-		return this.textAlign;
-	}
+    public String getText() {
+        return this.text;
+    }
 
-	public VerticalAlignment getVerticalAlign() {
-		return this.verticalAlign;
-	}
+    public HorizontalAlignment getTextAlign() {
+        return this.textAlign;
+    }
 
-	public Integer getX() {
-		return this.x;
-	}
+    public VerticalAlignment getVerticalAlign() {
+        return this.verticalAlign;
+    }
 
-	public Integer getY() {
-		return this.y;
-	}
+    public Integer getX() {
+        return this.x;
+    }
 
-	public Labels setAlign(final HorizontalAlignment align) {
-		this.align = align;
-		return this;
-	}
+    public Integer getY() {
+        return this.y;
+    }
 
-	public Labels setFormatter(final Function formatter) {
-		this.formatter = formatter;
-		return this;
-	}
+    public Labels setAlign(final HorizontalAlignment align) {
+        this.align = align;
+        return this;
+    }
 
-	public Labels setOverflow(final Overflow overflow) {
-		this.overflow = overflow;
-		return this;
-	}
+    public Labels setFormatter(final Function formatter) {
+        this.formatter = formatter;
+        return this;
+    }
 
-	public Labels setRotation(final Integer rotation) {
-		this.rotation = rotation;
-		return this;
-	}
+    public Labels setOverflow(final Overflow overflow) {
+        this.overflow = overflow;
+        return this;
+    }
 
-	public Labels setStyle(final CssStyle style) {
-		this.style = style;
-		return this;
-	}
+    public Labels setRotation(final Integer rotation) {
+        this.rotation = rotation;
+        return this;
+    }
 
-	public Labels setText(final String text) {
-		this.text = text;
-		return this;
-	}
+    public Labels setStyle(final CssStyle style) {
+        this.style = style;
+        return this;
+    }
 
-	public Labels setTextAlign(final HorizontalAlignment textAlign) {
-		this.textAlign = textAlign;
-		return this;
-	}
+    public Labels setText(final String text) {
+        this.text = text;
+        return this;
+    }
 
-	public Labels setVerticalAlign(final VerticalAlignment verticalAlign) {
-		this.verticalAlign = verticalAlign;
-		return this;
-	}
+    public Labels setTextAlign(final HorizontalAlignment textAlign) {
+        this.textAlign = textAlign;
+        return this;
+    }
 
-	public Labels setX(final Integer x) {
-		this.x = x;
-		return this;
-	}
+    public Labels setVerticalAlign(final VerticalAlignment verticalAlign) {
+        this.verticalAlign = verticalAlign;
+        return this;
+    }
 
-	public Labels setY(final Integer y) {
-		this.y = y;
-		return this;
-	}
+    public Labels setX(final Integer x) {
+        this.x = x;
+        return this;
+    }
 
-	public Labels setStep(Integer step) {
-		this.step = step;
-		return this;
-	}
+    public Labels setY(final Integer y) {
+        this.y = y;
+        return this;
+    }
 
-	public Integer getStep() {
-		return step;
-	}
+    public Labels setStep(Integer step) {
+        this.step = step;
+        return this;
+    }
 
-	public Boolean getEnabled() {
-		return enabled;
-	}
+    public Integer getStep() {
+        return step;
+    }
 
-	public Labels setEnabled(Boolean enabled) {
-		this.enabled = enabled;
-		return this;
-	}
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public Labels setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    /**
+     * Sets the format string for an axis label. Defaults to "{value}".
+     *
+     * @param format the new format string. Use "{value}" as a placeholder for the axis value.
+     * @see <a href="http://api.highcharts.com/highstock#xAxis.labels.format">http://api.highcharts.com/highstock#xAxis.labels.format</a>
+     */
+    public void setFormat(String format) {
+        this.format = format;
+    }
 
 }
