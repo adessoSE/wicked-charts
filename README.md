@@ -38,7 +38,7 @@ Depending on what web framework you use, add one of the following dependencies t
 
 Wcket 6.x
 ---------
-```xml
+```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket6</artifactId>
@@ -47,7 +47,7 @@ Wcket 6.x
 ```
 Wicket 1.5.x
 ---------
-```xml
+```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket15</artifactId>
@@ -56,7 +56,7 @@ Wicket 1.5.x
 ```
 Wicket 1.4.x
 ---------
-```xml
+```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket14</artifactId>
@@ -65,7 +65,7 @@ Wicket 1.4.x
 ```
 JSF 2.1
 ---------
-```xml
+```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-jsf21</artifactId>
@@ -76,7 +76,7 @@ JSF 2.1
 Java Wrapper
 ------------
 If you want to use the Java abstraction and JSON serializer of the Highcharts options (for example to add Highcharts to an application built with a different web framework than Wicket ot JSF), add the following dependency:
-```xml
+```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-highcharts</artifactId>
