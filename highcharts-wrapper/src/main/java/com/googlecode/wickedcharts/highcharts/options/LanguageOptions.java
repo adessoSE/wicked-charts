@@ -60,15 +60,19 @@ public class LanguageOptions implements Serializable {
 			options.setDownloadJPEG(bundle.getString("downloadJPEG"));
 			options.setDownloadPDF(bundle.getString("downloadPDF"));
 			options.setDownloadSVG(bundle.getString("downloadSVG"));
-			options.setExportButtonTitle(bundle.getString("exportButtonTitle"));
 			options.setLoading(bundle.getString("loading"));
 			options.setMonths(Arrays.asList(bundle.getString("months").split(",")));
 			options.setShortMonths(Arrays.asList(bundle.getString("shortMonths").split(",")));
-			options.setPrintButtonTitle(bundle.getString("printButtonTitle"));
 			options.setResetZoom(bundle.getString("resetZoom"));
 			options.setResetZoomTitle(bundle.getString("resetZoomTitle"));
 			options.setThousandsSep(bundle.getString("thousandsSep"));
 			options.setWeekdays(Arrays.asList(bundle.getString("weekdays").split(",")));
+            options.setContextButtonTitle(bundle.getString("contextButtonTitle"));
+            options.setNumericSymbols(Arrays.asList(bundle.getString("numericSymbols").split(",")));
+            options.setPrintChart(bundle.getString("printChart"));
+            options.setRangeSelectorFrom(bundle.getString("rangeSelectorFrom"));
+            options.setRangeSelectorTo(bundle.getString("rangeSelectorTo"));
+            options.setRangeSelectorZoom(bundle.getString("rangeSelectorZoom"));
 			return options;
 		} catch (MissingResourceException e) {
 			// empty LanguageOptions = english, since this is the default of
@@ -87,15 +91,11 @@ public class LanguageOptions implements Serializable {
 
 	private String downloadSVG;
 
-	private String exportButtonTitle;
-
 	private String loading;
 
 	private List<String> months;
 
 	private List<String> shortMonths;
-
-	private String printButtonTitle;
 
 	private String resetZoom;
 
@@ -104,6 +104,18 @@ public class LanguageOptions implements Serializable {
 	private String thousandsSep;
 
 	private List<String> weekdays;
+
+    private String contextButtonTitle;
+
+    private List<String> numericSymbols;
+
+    private String printChart;
+
+    private String rangeSelectorFrom;
+
+    private String rangeSelectorTo;
+
+    private String rangeSelectorZoom;
 
 	public String getDecimalPoint() {
 		return this.decimalPoint;
@@ -125,20 +137,12 @@ public class LanguageOptions implements Serializable {
 		return this.downloadSVG;
 	}
 
-	public String getExportButtonTitle() {
-		return this.exportButtonTitle;
-	}
-
 	public String getLoading() {
 		return this.loading;
 	}
 
 	public List<String> getMonths() {
 		return this.months;
-	}
-
-	public String getPrintButtonTitle() {
-		return this.printButtonTitle;
 	}
 
 	public String getResetZoom() {
@@ -186,11 +190,6 @@ public class LanguageOptions implements Serializable {
 		return this;
 	}
 
-	public LanguageOptions setExportButtonTitle(final String exportButtonTitle) {
-		this.exportButtonTitle = exportButtonTitle;
-		return this;
-	}
-
 	public LanguageOptions setLoading(final String loading) {
 		this.loading = loading;
 		return this;
@@ -198,11 +197,6 @@ public class LanguageOptions implements Serializable {
 
 	public LanguageOptions setMonths(final List<String> months) {
 		this.months = months;
-		return this;
-	}
-
-	public LanguageOptions setPrintButtonTitle(final String printButtonTitle) {
-		this.printButtonTitle = printButtonTitle;
 		return this;
 	}
 
@@ -230,5 +224,59 @@ public class LanguageOptions implements Serializable {
 		this.weekdays = weekdays;
 		return this;
 	}
+
+    public String getContextButtonTitle() {
+        return contextButtonTitle;
+    }
+
+    public LanguageOptions setContextButtonTitle(String contextButtonTitle) {
+        this.contextButtonTitle = contextButtonTitle;
+        return this;
+    }
+
+    public List<String> getNumericSymbols() {
+        return numericSymbols;
+    }
+
+    public LanguageOptions setNumericSymbols(List<String> numericSymbols) {
+        this.numericSymbols = numericSymbols;
+        return this;
+    }
+
+    public String getPrintChart() {
+        return printChart;
+    }
+
+    public LanguageOptions setPrintChart(String printChart) {
+        this.printChart = printChart;
+        return this;
+    }
+
+    public String getRangeSelectorFrom() {
+        return rangeSelectorFrom;
+    }
+
+    public LanguageOptions setRangeSelectorFrom(String rangeSelectorFrom) {
+        this.rangeSelectorFrom = rangeSelectorFrom;
+        return this;
+    }
+
+    public String getRangeSelectorTo() {
+        return rangeSelectorTo;
+    }
+
+    public LanguageOptions setRangeSelectorTo(String rangeSelectorTo) {
+        this.rangeSelectorTo = rangeSelectorTo;
+        return this;
+    }
+
+    public String getRangeSelectorZoom() {
+        return rangeSelectorZoom;
+    }
+
+    public LanguageOptions setRangeSelectorZoom(String rangeSelectorZoom) {
+        this.rangeSelectorZoom = rangeSelectorZoom;
+        return this;
+    }
 
 }
