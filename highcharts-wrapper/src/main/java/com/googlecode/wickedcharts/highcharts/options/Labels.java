@@ -56,6 +56,8 @@ public class Labels implements Serializable {
 
     private Integer staggerLines;
 
+    private Integer maxStaggerLines;
+
     public Labels() {
 
     }
@@ -182,6 +184,14 @@ public class Labels implements Serializable {
 
     public String getFormat() {
         return format;
+    }
+
+    public Integer getMaxStaggerLines() {
+        return maxStaggerLines;
+    }
+
+    public void setMaxStaggerLines(Integer maxStaggerLines) {
+        this.maxStaggerLines = maxStaggerLines;
     }
 
     /**
