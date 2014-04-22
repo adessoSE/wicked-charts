@@ -54,6 +54,8 @@ public class Labels implements Serializable {
 
     private String format;
 
+    private Integer staggerLines;
+
     public Labels() {
 
     }
@@ -168,6 +170,14 @@ public class Labels implements Serializable {
     public Labels setEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
+    }
+
+    public Integer getStaggerLines() {
+        return staggerLines;
+    }
+
+    public void setStaggerLines(Integer staggerLines) {
+        this.staggerLines = staggerLines;
     }
 
     public String getFormat() {
