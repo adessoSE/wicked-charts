@@ -16,6 +16,7 @@ package com.googlecode.wickedcharts.highcharts.options;
 
 import java.awt.Color;
 import java.io.Serializable;
+import java.util.List;
 
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
@@ -43,6 +44,8 @@ public class PlotOptions implements Serializable {
 	private Integer borderWidth;
 
 	private ColorReference color;
+
+    private List<ColorReference> colors;
 
 	private Boolean colorByPoint;
 
@@ -124,7 +127,15 @@ public class PlotOptions implements Serializable {
 
 	private PointPlacement pointPlacement;
 
-	public Boolean getAllowPointSelect() {
+    private Integer medianWidth;
+
+    private Integer whiskerWidth;
+
+    private Integer whiskerLength;
+
+    private Integer stemWidth;
+
+    public Boolean getAllowPointSelect() {
 		return this.allowPointSelect;
 	}
 
@@ -557,5 +568,50 @@ public class PlotOptions implements Serializable {
 		this.zIndex = zIndex;
 		return this;
 	}
+
+    public Integer getMedianWidth() {
+        return medianWidth;
+    }
+
+    public PlotOptions setMedianWidth(Integer medianWidth) {
+        this.medianWidth = medianWidth;
+        return this;
+    }
+
+    public Integer getWhiskerWidth() {
+        return whiskerWidth;
+    }
+
+    public PlotOptions setWhiskerWidth(Integer whiskerWidth) {
+        this.whiskerWidth = whiskerWidth;
+        return this;
+    }
+
+    public Integer getStemWidth() {
+        return stemWidth;
+    }
+
+    public PlotOptions setStemWidth(Integer stemWidth) {
+        this.stemWidth = stemWidth;
+        return this;
+    }
+
+    public List<ColorReference> getColors() {
+        return colors;
+    }
+
+    public PlotOptions setColors(List<ColorReference> colors) {
+        this.colors = colors;
+        return this;
+    }
+
+    public Integer getWhiskerLength() {
+        return whiskerLength;
+    }
+
+    public PlotOptions setWhiskerLength(Integer whiskerLength) {
+        this.whiskerLength = whiskerLength;
+        return this;
+    }
 
 }

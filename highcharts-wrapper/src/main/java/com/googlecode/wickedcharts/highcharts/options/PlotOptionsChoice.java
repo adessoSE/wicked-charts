@@ -52,6 +52,10 @@ public class PlotOptionsChoice implements Serializable {
 
 	private PlotOptions columnrange;
 
+    private PlotOptions boxplot;
+
+    private PlotOptions bubble;
+
 	public PlotOptionsChoice() {
 
 	}
@@ -191,6 +195,23 @@ public class PlotOptionsChoice implements Serializable {
 		}
 	}
 
+    public PlotOptions getBoxplot() {
+        return boxplot;
+    }
+
+    public PlotOptionsChoice setBoxplot(PlotOptions boxplot) {
+        this.boxplot = boxplot;
+        return this;
+    }
+
+    public PlotOptions getBubble() {
+        return bubble;
+    }
+
+    public void setBubble(PlotOptions bubble) {
+        this.bubble = bubble;
+    }
+
 	public PlotOptionsChoice setPlotOptions(PlotOptions plotOptions, SeriesType type) {
 		switch (type) {
 			case AREA:
@@ -223,6 +244,12 @@ public class PlotOptionsChoice implements Serializable {
 			case GAUGE:
 				this.gauge = plotOptions;
 				break;
+            case BUBBLE:
+                this.bubble = plotOptions;
+                break;
+            case BOXPLOT:
+                this.boxplot = plotOptions;
+                break;
 			default:
 				throw new IllegalArgumentException("Invalid SeriesType: " + type);
 		}
