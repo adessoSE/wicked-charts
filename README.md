@@ -15,7 +15,7 @@ What is Wicked Charts?
 ======================
 Wicked Charts is a Java wrapper of the [Highcharts](http://www.highcharts.com") javascript library. Highcharts provides eye-pleasing charts using HTML5 SVG technology (see http://www.highcharts.com/demo). With Wicked Charts, you can configure a chart in Java and display it in any web application based on Apache Wicket or JSF. Or you can use the Highcharts Java wrapper to integrate it in web applications built with other java web frameworks.
 
-[https://wicked-charts.googlecode.com/files/chart.png]
+![Example chart](https://wicked-charts.googlecode.com/files/chart.png)
 
 **Please note that while Wicked Charts is licensed under Apache 2.0 License, Highcharts itself is only free for non-commercial use.** 
 See here: [http://shop.highsoft.com/highcharts.html]
