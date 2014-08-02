@@ -81,7 +81,8 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	 *          will be transmitted to the server via AJAX and will be passed into
 	 *          {@link #update(LiveDataUpdateEvent)}. The javascript expression
 	 *          may be a function call or a literal. If it is a literal string,
-	 *          you have to surround the string with quotes.
+	 *          you have to surround the string with single quotes. Don't use
+     *          double quotes in an expression since they are not escaped correctly.
 	 * @return this object for chaining
 	 */
 	public LiveDataSeries addJavaScriptParameter(final String parameterName, final String javascriptExpression) {
@@ -101,7 +102,7 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	@JsonIgnore
 	public String getProcessingKey() {
 		return PROCESSING_KEY;
-	};
+	}
 
 	/**
 	 * This method is called for each update interval. It must return a point
