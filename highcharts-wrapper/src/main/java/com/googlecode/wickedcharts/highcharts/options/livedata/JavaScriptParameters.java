@@ -16,7 +16,7 @@ package com.googlecode.wickedcharts.highcharts.options.livedata;
 
 /**
  * Container class for passing javascript parameters to
- * {@link LiveDataSeries#update(JavaScriptParameters)}.
+ * {@link LiveDataSeries#update(LiveDataUpdateEvent)}.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 

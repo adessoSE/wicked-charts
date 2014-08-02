@@ -72,14 +72,14 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 
 	/**
 	 * Adds a javascript parameter that will be passed into the
-	 * {@link #update(JavaScriptParameters)} method.
+	 * {@link #update(LiveDataUpdateEvent))} method.
 	 * 
 	 * @param parameterName
 	 *          the name of the parameter
 	 * @param javascriptExpression
 	 *          a javascript expression. The value this expression evaluates to
 	 *          will be transmitted to the server via AJAX and will be passed into
-	 *          {@link #update(JavaScriptParameters)}. The javascript expression
+	 *          {@link #update(LiveDataUpdateEvent)}. The javascript expression
 	 *          may be a function call or a literal. If it is a literal string,
 	 *          you have to surround the string with quotes.
 	 * @return this object for chaining
