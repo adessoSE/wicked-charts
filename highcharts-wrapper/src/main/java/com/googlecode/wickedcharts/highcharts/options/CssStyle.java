@@ -23,7 +23,7 @@ import java.util.Map;
  * 
  * @see <a
  *      href="http://api.highcharts.com/highcharts#chart.style">http://api.highcharts.com/highcharts#chart.style</a>
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class CssStyle implements Serializable {

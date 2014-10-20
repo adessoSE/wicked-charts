@@ -24,7 +24,7 @@ import javax.faces.bean.ManagedBean;
 /**
  * Load maven properties from filtered maven resources file.
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 @ManagedBean

@@ -25,7 +25,7 @@ import com.googlecode.wickedcharts.highcharts.options.CssStyle;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class CssStyleSerializer extends JsonSerializer<CssStyle> {

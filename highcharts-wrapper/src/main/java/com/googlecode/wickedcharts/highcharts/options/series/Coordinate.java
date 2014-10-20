@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  * @param <T>
  *          Type of x coordinate

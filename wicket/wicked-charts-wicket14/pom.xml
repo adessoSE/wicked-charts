@@ -28,8 +28,8 @@
 	</licenses>
 
 	<scm>
-		<url>https://wicked-charts.googlecode.com/svn</url>
-		<connection>https://wicked-charts.googlecode.com/svn</connection>
+		<url>scm:git:https://github.com/thombergs/wicked-charts.git</url>
+		<connection>scm:git:https://github.com/thombergs/wicked-charts.git</connection>
 	</scm>
 
 	<developers>
