@@ -17,8 +17,8 @@
 	</properties>
 
 	<scm>
-		<url>scm:git:https://github.com/thombergs/wicked-charts.git</url>
-		<connection>https://github.com/thombergs/wicked-charts.git</connection>
+		<url>https://github.com/thombergs/wicked-charts.git</url>
+		<connection>scm:git:https://github.com/thombergs/wicked-charts.git</connection>
 	</scm>
 
 	<licenses>
