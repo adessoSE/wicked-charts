@@ -55,7 +55,7 @@ public class UIChart extends UIOutput {
 	public void encodeEnd(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		writer.startElement("div", this);
-		writer.writeAttribute("id", this.getId(), null);
+		writer.writeAttribute("id", this.getClientId(), null);
 
 		if (this.getStyle() != null && !this.getStyle().isEmpty()) {
 			writer.writeAttribute("style", this.getStyle(), null);
@@ -76,7 +76,7 @@ public class UIChart extends UIOutput {
 				SUPPORTED_FEATURES);
 		featureProcessor.processOptions(options, context);
 
-		options.getChart().setRenderTo(this.getId());
+		options.getChart().setRenderTo(this.getClientId());
 
 		// include Theme JS
 		this.addThemeJavaScript(writer, renderer);
