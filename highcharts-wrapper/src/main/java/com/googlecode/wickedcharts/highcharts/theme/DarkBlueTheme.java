@@ -54,10 +54,10 @@ public class DarkBlueTheme extends Theme {
         .setPlotBorderWidth(1));
 
     this.setTitle(new Title().setStyle(new CssStyle().setProperty("color", "#C0C0C0").setProperty("font",
-        "bold 16px \"Trebuchet MS\", Verdana, sans-serif")));
+        "bold 16px 'Trebuchet MS', Verdana, sans-serif")));
 
     this.setSubtitle(new Title().setStyle(new CssStyle().setProperty("color", "#c0c0c0").setProperty("font",
-        "bold 12px \"Trebuchet MS\", Verdana, sans-serif")));
+        "bold 12px 'Trebuchet MS', Verdana, sans-serif")));
 
     this.setxAxis(new Axis()
         .setGridLineColor(new HexColor("#333333"))
