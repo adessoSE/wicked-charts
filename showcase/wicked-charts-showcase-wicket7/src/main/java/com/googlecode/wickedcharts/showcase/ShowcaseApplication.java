@@ -14,15 +14,14 @@
  */
 package com.googlecode.wickedcharts.showcase;
 
+import com.googlecode.wickedcharts.showcase.ie.SimplePage;
+import com.googlecode.wickedcharts.showcase.modalwindow.ModalWindowPage;
+import com.googlecode.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-
-import com.googlecode.wickedcharts.showcase.ie.SimplePage;
-import com.googlecode.wickedcharts.showcase.modalwindow.ModalWindowPage;
-import com.googlecode.wickedcharts.wicket6.JavaScriptResourceRegistry;
 
 /**
  * Application object for your web application. If you want to run this

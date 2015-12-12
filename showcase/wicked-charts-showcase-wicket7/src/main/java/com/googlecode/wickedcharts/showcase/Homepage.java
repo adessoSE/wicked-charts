@@ -14,22 +14,17 @@
  */
 package com.googlecode.wickedcharts.showcase;
 
+import com.googlecode.wickedcharts.highcharts.options.Options;
+import com.googlecode.wickedcharts.highcharts.theme.*;
+import com.googlecode.wickedcharts.showcase.links.SplineUpdatingChartLink;
+import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
 import com.googlecode.wickedcharts.showcase.options.*;
+import com.googlecode.wickedcharts.wicket7.highcharts.Chart;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-
-import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.theme.DarkBlueTheme;
-import com.googlecode.wickedcharts.highcharts.theme.GrayTheme;
-import com.googlecode.wickedcharts.highcharts.theme.GridTheme;
-import com.googlecode.wickedcharts.highcharts.theme.SkiesTheme;
-import com.googlecode.wickedcharts.highcharts.theme.Theme;
-import com.googlecode.wickedcharts.showcase.links.SplineUpdatingChartLink;
-import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
-import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
 public class Homepage extends WebPage {
 
