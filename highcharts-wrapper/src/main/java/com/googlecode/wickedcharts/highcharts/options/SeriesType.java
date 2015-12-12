@@ -19,52 +19,53 @@ import com.googlecode.wickedcharts.highcharts.json.LowercaseEnum;
 /**
  * Enumeration of the possible types of charts. The data contained in a series
  * will be displayed as one of these types-
- * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#series.type">http://api.highcharts.com/highcharts#series.type</a>
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
+ * @see <a
+ * href="http://api.highcharts.com/highcharts#series.type">http://api.highcharts.com/highcharts#series.type</a>
  */
 public enum SeriesType implements LowercaseEnum {
 
-	AREA(ChartType.BASIC),
+    AREA(ChartType.BASIC),
 
-	AREASPLINE(ChartType.BASIC),
+    AREASPLINE(ChartType.BASIC),
 
-	BAR(ChartType.BASIC),
+    BAR(ChartType.BASIC),
 
-	COLUMN(ChartType.BASIC),
+    COLUMN(ChartType.BASIC),
 
-	LINE(ChartType.BASIC),
+    LINE(ChartType.BASIC),
 
-	PIE(ChartType.BASIC),
+    PIE(ChartType.BASIC),
 
-	SCATTER(ChartType.BASIC),
+    SCATTER(ChartType.BASIC),
 
-	SPLINE(ChartType.BASIC),
+    SPLINE(ChartType.BASIC),
 
-	GAUGE(ChartType.ADVANCED),
+    GAUGE(ChartType.ADVANCED),
 
-	COLUMNRANGE(ChartType.ADVANCED),
+    COLUMNRANGE(ChartType.ADVANCED),
 
-	AREARANGE(ChartType.ADVANCED),
-	
-	BUBBLE(ChartType.ADVANCED),
+    AREASPLINERANGE(ChartType.ADVANCED),
+
+    AREARANGE(ChartType.ADVANCED),
+
+    BUBBLE(ChartType.ADVANCED),
 
     BOXPLOT(ChartType.ADVANCED);
 
-	private ChartType chartType;
+    private ChartType chartType;
 
-	private SeriesType(ChartType chartType) {
-		this.setChartType(chartType);
-	}
+    private SeriesType(ChartType chartType) {
+        this.setChartType(chartType);
+    }
 
-	public void setChartType(ChartType chartType) {
-	  this.chartType = chartType;
-  }
+    public void setChartType(ChartType chartType) {
+        this.chartType = chartType;
+    }
 
-	public ChartType getChartType() {
-	  return chartType;
-  }
+    public ChartType getChartType() {
+        return chartType;
+    }
 
 }

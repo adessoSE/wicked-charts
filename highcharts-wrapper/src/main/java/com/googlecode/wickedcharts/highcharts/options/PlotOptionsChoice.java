@@ -18,182 +18,192 @@ import java.io.Serializable;
 
 /**
  * Defines a choice between on or more {@link PlotOptions}
- * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
+ * @see <a
+ * href="http://api.highcharts.com/highcharts#plotOptions">http://api.highcharts.com/highcharts#plotOptions</a>
  */
 public class PlotOptionsChoice implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private PlotOptions area;
+    private PlotOptions area;
 
-	private PlotOptions areaspline;
+    private PlotOptions areaspline;
 
-	private PlotOptions bar;
+    private PlotOptions areasplinerange;
 
-	private PlotOptions column;
+    private PlotOptions bar;
 
-	private PlotOptions line;
+    private PlotOptions column;
 
-	private PlotOptions pie;
+    private PlotOptions line;
 
-	private PlotOptions scatter;
+    private PlotOptions pie;
 
-	private PlotOptions series;
+    private PlotOptions scatter;
 
-	private PlotOptions spline;
+    private PlotOptions series;
 
-	private PlotOptions candleStick;
+    private PlotOptions spline;
 
-	private PlotOptions gauge;
+    private PlotOptions candleStick;
 
-	private PlotOptions columnrange;
+    private PlotOptions gauge;
+
+    private PlotOptions columnrange;
 
     private PlotOptions boxplot;
 
     private PlotOptions bubble;
 
-	public PlotOptionsChoice() {
+    public PlotOptionsChoice() {
 
-	}
+    }
 
-	public PlotOptions getArea() {
-		return this.area;
-	}
+    public PlotOptions getArea() {
+        return this.area;
+    }
 
-	public PlotOptions getAreaspline() {
-		return this.areaspline;
-	}
+    public PlotOptions getAreaspline() {
+        return this.areaspline;
+    }
 
-	public PlotOptions getBar() {
-		return this.bar;
-	}
+    public PlotOptions getAreasplinerange() {
+        return this.areasplinerange;
+    }
 
-	public PlotOptions getCandleStick() {
-		return this.candleStick;
-	}
+    public PlotOptions getBar() {
+        return this.bar;
+    }
 
-	public PlotOptions getColumn() {
-		return this.column;
-	}
+    public PlotOptions getCandleStick() {
+        return this.candleStick;
+    }
 
-	public PlotOptions getLine() {
-		return this.line;
-	}
+    public PlotOptions getColumn() {
+        return this.column;
+    }
 
-	public PlotOptions getPie() {
-		return this.pie;
-	}
+    public PlotOptions getLine() {
+        return this.line;
+    }
 
-	public PlotOptions getScatter() {
-		return this.scatter;
-	}
+    public PlotOptions getPie() {
+        return this.pie;
+    }
 
-	public PlotOptions getSeries() {
-		return this.series;
-	}
+    public PlotOptions getScatter() {
+        return this.scatter;
+    }
 
-	public PlotOptions getSpline() {
-		return this.spline;
-	}
+    public PlotOptions getSeries() {
+        return this.series;
+    }
 
-	public PlotOptionsChoice setArea(final PlotOptions area) {
-		this.area = area;
-		return this;
-	}
+    public PlotOptions getSpline() {
+        return this.spline;
+    }
 
-	public PlotOptionsChoice setAreaspline(final PlotOptions areaspline) {
-		this.areaspline = areaspline;
-		return this;
-	}
+    public PlotOptionsChoice setArea(final PlotOptions area) {
+        this.area = area;
+        return this;
+    }
 
-	public PlotOptionsChoice setBar(final PlotOptions bar) {
-		this.bar = bar;
-		return this;
-	}
+    public PlotOptionsChoice setAreaspline(final PlotOptions areaspline) {
+        this.areaspline = areaspline;
+        return this;
+    }
 
-	public PlotOptionsChoice setCandleStick(final PlotOptions candleStick) {
-		this.candleStick = candleStick;
-		return this;
-	}
+    public PlotOptionsChoice setAreaSplineRange(final PlotOptions areasplinerange) {
+        this.areasplinerange = areasplinerange;
+        return this;
+    }
 
-	public PlotOptionsChoice setColumn(final PlotOptions column) {
-		this.column = column;
-		return this;
-	}
+    public PlotOptionsChoice setBar(final PlotOptions bar) {
+        this.bar = bar;
+        return this;
+    }
 
-	public PlotOptionsChoice setLine(final PlotOptions line) {
-		this.line = line;
-		return this;
-	}
+    public PlotOptionsChoice setCandleStick(final PlotOptions candleStick) {
+        this.candleStick = candleStick;
+        return this;
+    }
 
-	public PlotOptionsChoice setPie(final PlotOptions pie) {
-		this.pie = pie;
-		return this;
-	}
+    public PlotOptionsChoice setColumn(final PlotOptions column) {
+        this.column = column;
+        return this;
+    }
 
-	public PlotOptionsChoice setScatter(final PlotOptions scatter) {
-		this.scatter = scatter;
-		return this;
-	}
+    public PlotOptionsChoice setLine(final PlotOptions line) {
+        this.line = line;
+        return this;
+    }
 
-	public PlotOptionsChoice setSeries(final PlotOptions series) {
-		this.series = series;
-		return this;
-	}
+    public PlotOptionsChoice setPie(final PlotOptions pie) {
+        this.pie = pie;
+        return this;
+    }
 
-	public PlotOptionsChoice setSpline(final PlotOptions spline) {
-		this.spline = spline;
-		return this;
-	}
+    public PlotOptionsChoice setScatter(final PlotOptions scatter) {
+        this.scatter = scatter;
+        return this;
+    }
 
-	public PlotOptionsChoice setColumnrange(PlotOptions columnrange) {
-		this.columnrange = columnrange;
-		return this;
-	}
+    public PlotOptionsChoice setSeries(final PlotOptions series) {
+        this.series = series;
+        return this;
+    }
 
-	public PlotOptions getColumnrange() {
-		return columnrange;
-	}
+    public PlotOptionsChoice setSpline(final PlotOptions spline) {
+        this.spline = spline;
+        return this;
+    }
 
-	public PlotOptionsChoice setGauge(PlotOptions gauge) {
-		this.gauge = gauge;
-		return this;
-	}
+    public PlotOptionsChoice setColumnrange(PlotOptions columnrange) {
+        this.columnrange = columnrange;
+        return this;
+    }
 
-	public PlotOptions getGauge() {
-		return gauge;
-	}
+    public PlotOptions getColumnrange() {
+        return columnrange;
+    }
 
-	public PlotOptions getPlotOptions(SeriesType type) {
-		switch (type) {
-			case AREA:
-				return this.area;
-			case AREASPLINE:
-				return this.areaspline;
-			case BAR:
-				return this.bar;
-			case COLUMN:
-				return this.column;
-			case LINE:
-				return this.line;
-			case PIE:
-				return this.pie;
-			case SCATTER:
-				return this.scatter;
-			case SPLINE:
-				return this.spline;
-			case COLUMNRANGE:
-				return this.columnrange;
-			case GAUGE:
-				return this.gauge;
-			default:
-				throw new IllegalArgumentException("Invalid SeriesType: " + type);
-		}
-	}
+    public PlotOptionsChoice setGauge(PlotOptions gauge) {
+        this.gauge = gauge;
+        return this;
+    }
+
+    public PlotOptions getGauge() {
+        return gauge;
+    }
+
+    public PlotOptions getPlotOptions(SeriesType type) {
+        switch (type) {
+            case AREA:
+                return this.area;
+            case AREASPLINE:
+                return this.areaspline;
+            case BAR:
+                return this.bar;
+            case COLUMN:
+                return this.column;
+            case LINE:
+                return this.line;
+            case PIE:
+                return this.pie;
+            case SCATTER:
+                return this.scatter;
+            case SPLINE:
+                return this.spline;
+            case COLUMNRANGE:
+                return this.columnrange;
+            case GAUGE:
+                return this.gauge;
+            default:
+                throw new IllegalArgumentException("Invalid SeriesType: " + type);
+        }
+    }
 
     public PlotOptions getBoxplot() {
         return boxplot;
@@ -212,48 +222,48 @@ public class PlotOptionsChoice implements Serializable {
         this.bubble = bubble;
     }
 
-	public PlotOptionsChoice setPlotOptions(PlotOptions plotOptions, SeriesType type) {
-		switch (type) {
-			case AREA:
-				this.area = plotOptions;
-				break;
-			case AREASPLINE:
-				this.areaspline = plotOptions;
-				break;
-			case BAR:
-				this.bar = plotOptions;
-				break;
-			case COLUMN:
-				this.column = plotOptions;
-				break;
-			case LINE:
-				this.line = plotOptions;
-				break;
-			case PIE:
-				this.pie = plotOptions;
-				break;
-			case SCATTER:
-				this.scatter = plotOptions;
-				break;
-			case SPLINE:
-				this.spline = plotOptions;
-				break;
-			case COLUMNRANGE:
-				this.columnrange = plotOptions;
-				break;
-			case GAUGE:
-				this.gauge = plotOptions;
-				break;
+    public PlotOptionsChoice setPlotOptions(PlotOptions plotOptions, SeriesType type) {
+        switch (type) {
+            case AREA:
+                this.area = plotOptions;
+                break;
+            case AREASPLINE:
+                this.areaspline = plotOptions;
+                break;
+            case BAR:
+                this.bar = plotOptions;
+                break;
+            case COLUMN:
+                this.column = plotOptions;
+                break;
+            case LINE:
+                this.line = plotOptions;
+                break;
+            case PIE:
+                this.pie = plotOptions;
+                break;
+            case SCATTER:
+                this.scatter = plotOptions;
+                break;
+            case SPLINE:
+                this.spline = plotOptions;
+                break;
+            case COLUMNRANGE:
+                this.columnrange = plotOptions;
+                break;
+            case GAUGE:
+                this.gauge = plotOptions;
+                break;
             case BUBBLE:
                 this.bubble = plotOptions;
                 break;
             case BOXPLOT:
                 this.boxplot = plotOptions;
                 break;
-			default:
-				throw new IllegalArgumentException("Invalid SeriesType: " + type);
-		}
-		return this;
-	}
+            default:
+                throw new IllegalArgumentException("Invalid SeriesType: " + type);
+        }
+        return this;
+    }
 
 }

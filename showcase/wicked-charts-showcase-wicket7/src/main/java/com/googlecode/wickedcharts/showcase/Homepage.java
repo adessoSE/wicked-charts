@@ -83,6 +83,8 @@ public class Homepage extends WebPage {
 
         this.add(new UpdateChartLink("areaSpline", chart, codeContainer,
                 new AreaSplineOptions()));
+        this.add(new UpdateChartLink("areaSplineRange", chart, codeContainer,
+                new AreaSplineRangeOptions()));
         this.add(new UpdateChartLink("basicBar", chart, codeContainer,
                 new BasicBarOptions()));
         this.add(new UpdateChartLink("columnWithDrilldown", chart,
