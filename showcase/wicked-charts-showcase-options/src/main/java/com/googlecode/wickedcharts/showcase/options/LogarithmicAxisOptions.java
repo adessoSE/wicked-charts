@@ -32,7 +32,7 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
  * "http://highcharts.com/demo/line-log-axis">http://highcharts.
  * com/demo/line-log-axis</a>.
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class LogarithmicAxisOptions extends ShowcaseOptions {

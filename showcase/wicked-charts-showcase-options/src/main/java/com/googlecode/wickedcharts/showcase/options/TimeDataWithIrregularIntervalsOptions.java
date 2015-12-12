@@ -36,7 +36,7 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
  * "http://highcharts.com/demo/spline-irregular-time"
  * >http://highcharts.com/demo/spline-irregular-time</a>.
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class TimeDataWithIrregularIntervalsOptions extends ShowcaseOptions {

@@ -33,7 +33,7 @@ import com.googlecode.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 @FacesComponent("com.googlecode.wickedcharts.Chart")
@@ -164,7 +164,7 @@ public class UIChart extends UIOutput {
 	 * 
 	 * @param themeUrlRef
 	 *            absolute or relative URL to the theme javascript file.
-	 * @see http://www.highcharts.com/documentation/how-to-use
+	 * @see <a href="http://www.highcharts.com/documentation/how-to-use">hot to use</a>
 	 */
 	public void setThemeUrlRef(String themeUrlRef) {
 		this.themeUrlRef = themeUrlRef;

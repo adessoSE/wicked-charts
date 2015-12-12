@@ -24,7 +24,7 @@ import com.googlecode.wickedcharts.highcharts.options.Function;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class FunctionSerializer extends JsonSerializer<Function> {
