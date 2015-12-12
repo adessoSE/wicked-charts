@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode.wicked-charts</groupId>
 	<artifactId>wicked-charts-parent</artifactId>
-	<version>1.6.0</version>
+	<version>1.7.0</version>
 	<name>Wicked Charts parent</name>
 	<packaging>pom</packaging>
 	<description>Parent POM for wicked-charts</description>
@@ -45,7 +45,9 @@
 		<module>wicket/wicked-charts-wicket14</module>
 		<module>wicket/wicked-charts-wicket15</module>
 		<module>wicket/wicked-charts-wicket6</module>
+		<module>wicket/wicked-charts-wicket7</module>
 		<module>jsf/wicked-charts-jsf21</module>
+		<module>showcase</module>
 	</modules>
 
 	<dependencyManagement>

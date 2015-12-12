@@ -36,7 +36,7 @@ Maven coordinates
 =================
 Depending on what web framework you use, add one of the following dependencies to your Maven build:
 
-Wcket 6.x
+Wicket 6.x
 ---------
 ```html
 <dependency>
