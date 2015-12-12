@@ -98,7 +98,12 @@
 				<artifactId>wicked-charts-wicket6</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<dependency>
+            <dependency>
+                <groupId>com.googlecode.wicked-charts</groupId>
+                <artifactId>wicked-charts-wicket7</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
 				<groupId>com.googlecode.wicked-charts</groupId>
 				<artifactId>wicked-charts-jsf21</artifactId>
 				<version>${project.version}</version>
