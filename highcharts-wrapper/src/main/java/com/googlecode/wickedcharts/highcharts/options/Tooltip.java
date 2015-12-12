@@ -24,7 +24,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
  * @see <a
  *      href="http://api.highcharts.com/highcharts#tooltip">http://api.highcharts.com/highcharts#tooltip</a>
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class Tooltip implements Serializable {

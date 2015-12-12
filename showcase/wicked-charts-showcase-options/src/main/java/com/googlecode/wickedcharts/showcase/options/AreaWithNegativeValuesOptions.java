@@ -33,7 +33,7 @@ import com.googlecode.wickedcharts.showcase.options.base.ShowcaseOptions;
  * "http://highcharts.com/demo/area-negative">http://highcharts.
  * com/demo/area-negative</a>.
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class AreaWithNegativeValuesOptions extends ShowcaseOptions {

@@ -22,7 +22,7 @@ import com.googlecode.wickedcharts.highcharts.options.series.CustomCoordinatesSe
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class CustomCoordinatesSeriesTest extends AbstractSerializerTest {

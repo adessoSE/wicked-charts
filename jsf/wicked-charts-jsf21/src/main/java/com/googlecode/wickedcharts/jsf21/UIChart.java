@@ -33,7 +33,7 @@ import com.googlecode.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 @FacesComponent("com.googlecode.wickedcharts.Chart")
@@ -55,7 +55,7 @@ public class UIChart extends UIOutput {
 	public void encodeEnd(FacesContext facesContext) throws IOException {
 		ResponseWriter writer = facesContext.getResponseWriter();
 		writer.startElement("div", this);
-		writer.writeAttribute("id", this.getId(), null);
+		writer.writeAttribute("id", this.getClientId(), null);
 
 		if (this.getStyle() != null && !this.getStyle().isEmpty()) {
 			writer.writeAttribute("style", this.getStyle(), null);
@@ -76,7 +76,7 @@ public class UIChart extends UIOutput {
 				SUPPORTED_FEATURES);
 		featureProcessor.processOptions(options, context);
 
-		options.getChart().setRenderTo(this.getId());
+		options.getChart().setRenderTo(this.getClientId());
 
 		// include Theme JS
 		this.addThemeJavaScript(writer, renderer);
@@ -164,7 +164,7 @@ public class UIChart extends UIOutput {
 	 * 
 	 * @param themeUrlRef
 	 *            absolute or relative URL to the theme javascript file.
-	 * @see http://www.highcharts.com/documentation/how-to-use
+	 * @see <a href="http://www.highcharts.com/documentation/how-to-use">hot to use</a>
 	 */
 	public void setThemeUrlRef(String themeUrlRef) {
 		this.themeUrlRef = themeUrlRef;

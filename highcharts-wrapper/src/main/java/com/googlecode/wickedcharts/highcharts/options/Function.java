@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class Function implements Serializable {

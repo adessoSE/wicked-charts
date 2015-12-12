@@ -23,7 +23,7 @@ import com.googlecode.wickedcharts.highcharts.options.DateTimeLabelFormat.DateTi
 
 /**
  * 
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
 public class DateTimeLabelFormatTest {

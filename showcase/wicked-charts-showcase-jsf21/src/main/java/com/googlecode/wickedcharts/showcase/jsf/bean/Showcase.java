@@ -27,7 +27,7 @@ import com.googlecode.wickedcharts.showcase.options.*;
 
 /**
  *
- * @author Matthias Balke <matthias.balke@gmail.com>
+ * @author Matthias Balke (matthias.balke@gmail.com)
  *
  */
 @ManagedBean

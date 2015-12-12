@@ -19,6 +19,7 @@ import java.io.Serializable;
 
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
+import com.googlecode.wickedcharts.highcharts.options.theme.Theme;
 
 /**
  * Defined options for the buttons of a chart.
@@ -75,6 +76,8 @@ public class ButtonOptions implements Serializable {
 	private DummyOption onclick;
 
 	private Symbol symbol;
+
+	private Theme theme;
 
 	public HorizontalAlignment getAlign() {
 		return this.align;
@@ -162,6 +165,10 @@ public class ButtonOptions implements Serializable {
 
 	public Integer getY() {
 		return this.y;
+	}
+
+	public Theme getTheme() {
+		return this.theme;
 	}
 
 	public ButtonOptions setAlign(final HorizontalAlignment align) {
@@ -306,6 +313,11 @@ public class ButtonOptions implements Serializable {
 
 	public ButtonOptions setY(final Integer y) {
 		this.y = y;
+		return this;
+	}
+
+	public ButtonOptions setTheme(final Theme theme) {
+		this.theme = theme;
 		return this;
 	}
 
