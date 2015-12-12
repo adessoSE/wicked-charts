@@ -39,7 +39,7 @@
 
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
-			<artifactId>wicked-charts-wicket6</artifactId>
+			<artifactId>wicked-charts-wicket7</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.wicked-charts</groupId>
