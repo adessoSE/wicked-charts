@@ -96,7 +96,8 @@ public class OptionsUtil {
     public static boolean needsFunnelJs(final Options options) {
         return
                 options.getChart() != null &&
-                        options.getChart().getType() == SeriesType.FUNNEL;
+                        (options.getChart().getType() == SeriesType.FUNNEL ||
+                                options.getChart().getType() == SeriesType.PYRAMID);
     }
 
     /**

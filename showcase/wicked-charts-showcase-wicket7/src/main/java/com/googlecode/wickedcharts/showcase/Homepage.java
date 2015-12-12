@@ -140,6 +140,8 @@ public class Homepage extends WebPage {
                 new ErrorBarOptions()));
         this.add(new UpdateChartLink("funnel", chart, codeContainer,
                 new FunnelOptions()));
+        this.add(new UpdateChartLink("pyramid", chart, codeContainer,
+                new PyramidOptions()));
     }
 
     private Label addCodeContainer() {

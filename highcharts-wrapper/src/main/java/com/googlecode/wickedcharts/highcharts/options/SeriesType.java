@@ -56,7 +56,9 @@ public enum SeriesType implements LowercaseEnum {
 
     ERRORBAR(ChartType.ADVANCED),
 
-    FUNNEL(ChartType.BASIC);
+    FUNNEL(ChartType.BASIC),
+
+    PYRAMID(ChartType.BASIC);
 
     private ChartType chartType;
 
