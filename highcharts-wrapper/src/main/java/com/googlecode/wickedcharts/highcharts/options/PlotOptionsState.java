@@ -28,7 +28,7 @@ import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class State implements Serializable {
+public class PlotOptionsState implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -70,47 +70,47 @@ public class State implements Serializable {
 		return this.symbol;
 	}
 
-	public State setEnabled(final Boolean enabled) {
+	public PlotOptionsState setEnabled(final Boolean enabled) {
 		this.enabled = enabled;
 		return this;
 	}
 
-	public State setFillColor(final Color color) {
+	public PlotOptionsState setFillColor(final Color color) {
 		this.fillColor = new SimpleColor(color);
 		return this;
 	}
 
-	public State setFillColor(final ColorReference fillColor) {
+	public PlotOptionsState setFillColor(final ColorReference fillColor) {
 		this.fillColor = fillColor;
 		return this;
 	}
 
-	public State setLineColor(final Color color) {
+	public PlotOptionsState setLineColor(final Color color) {
 		this.lineColor = new SimpleColor(color);
 		return this;
 	}
 
-	public State setLineColor(final ColorReference lineColor) {
+	public PlotOptionsState setLineColor(final ColorReference lineColor) {
 		this.lineColor = lineColor;
 		return this;
 	}
 
-	public State setLineWidth(final Integer lineWidth) {
+	public PlotOptionsState setLineWidth(final Integer lineWidth) {
 		this.lineWidth = lineWidth;
 		return this;
 	}
 
-	public State setRadius(final Integer radius) {
+	public PlotOptionsState setRadius(final Integer radius) {
 		this.radius = radius;
 		return this;
 	}
 
-	public State setSymbol(final Symbol symbol) {
+	public PlotOptionsState setSymbol(final Symbol symbol) {
 		this.symbol = symbol;
 		return this;
 	}
 
-	public State setColor(ColorReference color) {
+	public PlotOptionsState setColor(ColorReference color) {
 		this.color = color;
 		return this;
 	}

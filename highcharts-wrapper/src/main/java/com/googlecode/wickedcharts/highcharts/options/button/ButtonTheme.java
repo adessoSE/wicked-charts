@@ -16,7 +16,7 @@ package com.googlecode.wickedcharts.highcharts.options.button;
 
 import java.io.Serializable;
 
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsStateChoice;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 
 /**
@@ -33,14 +33,14 @@ public class ButtonTheme implements Serializable {
 
 	private Integer r;
 
-	private StatesChoice states;
+	private PlotOptionsStateChoice states;
 
-	public ButtonTheme setStates(final StatesChoice states) {
+	public ButtonTheme setStates(final PlotOptionsStateChoice states) {
 		this.states = states;
 		return this;
 	}
 
-	public StatesChoice getStates() {
+	public PlotOptionsStateChoice getStates() {
 		return this.states;
 	}
 

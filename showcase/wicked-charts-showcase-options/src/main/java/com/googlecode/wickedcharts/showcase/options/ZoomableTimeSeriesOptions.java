@@ -18,20 +18,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.AxisType;
-import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
-import com.googlecode.wickedcharts.highcharts.options.Events;
-import com.googlecode.wickedcharts.highcharts.options.Legend;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.State;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
-import com.googlecode.wickedcharts.highcharts.options.Title;
-import com.googlecode.wickedcharts.highcharts.options.Tooltip;
-import com.googlecode.wickedcharts.highcharts.options.ZoomType;
+import com.googlecode.wickedcharts.highcharts.options.*;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsState;
 import com.googlecode.wickedcharts.highcharts.options.button.Button;
 import com.googlecode.wickedcharts.highcharts.options.button.ButtonTheme;
 import com.googlecode.wickedcharts.highcharts.options.button.Position;
@@ -135,21 +123,21 @@ public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
     fillColor
         .addStop(1, new RgbaColor(2, 0, 0, 0f));
 
-    State plotHoverState = new State();
+    PlotOptionsState plotHoverState = new PlotOptionsState();
     plotHoverState
         .setLineWidth(1);
 
-    StatesChoice plotStates = new StatesChoice();
+    PlotOptionsStateChoice plotStates = new PlotOptionsStateChoice();
     plotStates
         .setHover(plotHoverState);
 
-    State markerHoverState = new State();
+    PlotOptionsState markerHoverState = new PlotOptionsState();
     markerHoverState
         .setEnabled(Boolean.TRUE);
     markerHoverState
         .setRadius(5);
 
-    StatesChoice markerStates = new StatesChoice();
+    PlotOptionsStateChoice markerStates = new PlotOptionsStateChoice();
     markerStates
         .setHover(markerHoverState);
 

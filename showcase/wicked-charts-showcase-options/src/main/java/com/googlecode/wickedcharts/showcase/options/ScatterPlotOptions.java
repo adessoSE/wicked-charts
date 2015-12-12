@@ -17,24 +17,8 @@ package com.googlecode.wickedcharts.showcase.options;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
-import com.googlecode.wickedcharts.highcharts.options.CssStyle;
-import com.googlecode.wickedcharts.highcharts.options.Function;
-import com.googlecode.wickedcharts.highcharts.options.HorizontalAlignment;
-import com.googlecode.wickedcharts.highcharts.options.Labels;
-import com.googlecode.wickedcharts.highcharts.options.Legend;
-import com.googlecode.wickedcharts.highcharts.options.LegendLayout;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.State;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
-import com.googlecode.wickedcharts.highcharts.options.Title;
-import com.googlecode.wickedcharts.highcharts.options.Tooltip;
-import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
-import com.googlecode.wickedcharts.highcharts.options.ZoomType;
+import com.googlecode.wickedcharts.highcharts.options.*;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsState;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
@@ -149,21 +133,21 @@ public class ScatterPlotOptions extends ShowcaseOptions {
     this
         .setLegend(legend);
 
-    State markerState = new State();
+    PlotOptionsState markerState = new PlotOptionsState();
     markerState
         .setEnabled(Boolean.TRUE);
 
-    StatesChoice markerStatesChoice = new StatesChoice();
+    PlotOptionsStateChoice markerStatesChoice = new PlotOptionsStateChoice();
     markerStatesChoice
         .setHover(markerState);
 
-    State hoverState = new State();
+    PlotOptionsState hoverState = new PlotOptionsState();
     hoverState
         .setEnabled(Boolean.TRUE);
     hoverState
         .setLineColor(new RgbaColor(100, 100, 100));
 
-    StatesChoice statesChoice = new StatesChoice();
+    PlotOptionsStateChoice statesChoice = new PlotOptionsStateChoice();
     statesChoice
         .setHover(hoverState);
 

@@ -24,7 +24,7 @@ import java.io.Serializable;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class StatesChoice implements Serializable {
+public class PlotOptionsStateChoice implements Serializable {
 
 	public enum StateType {
 		HOVER, SELECT;
@@ -32,15 +32,15 @@ public class StatesChoice implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private State hover;
+	private PlotOptionsState hover;
 
-	private State select;
+	private PlotOptionsState select;
 
-	public StatesChoice() {
+	public PlotOptionsStateChoice() {
 
 	}
 
-	public StatesChoice(final State state, final StateType type) {
+	public PlotOptionsStateChoice(final PlotOptionsState state, final StateType type) {
 		switch (type) {
 			case HOVER:
 				this.hover = state;
@@ -53,20 +53,20 @@ public class StatesChoice implements Serializable {
 		}
 	}
 
-	public State getHover() {
+	public PlotOptionsState getHover() {
 		return this.hover;
 	}
 
-	public State getSelect() {
+	public PlotOptionsState getSelect() {
 		return this.select;
 	}
 
-	public StatesChoice setHover(final State hover) {
+	public PlotOptionsStateChoice setHover(final PlotOptionsState hover) {
 		this.hover = hover;
 		return this;
 	}
 
-	public StatesChoice setSelect(final State select) {
+	public PlotOptionsStateChoice setSelect(final PlotOptionsState select) {
 		this.select = select;
 		return this;
 	}

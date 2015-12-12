@@ -42,7 +42,7 @@ public class Marker implements Serializable {
 
   private Integer radius;
 
-  private StatesChoice states;
+  private PlotOptionsStateChoice states;
 
   private Symbol symbol;
 
@@ -76,7 +76,7 @@ public class Marker implements Serializable {
     return this.radius;
   }
 
-  public StatesChoice getStates() {
+  public PlotOptionsStateChoice getStates() {
     return this.states;
   }
 
@@ -119,7 +119,7 @@ public class Marker implements Serializable {
     return this;
   }
 
-  public Marker setStates(final StatesChoice states) {
+  public Marker setStates(final PlotOptionsStateChoice states) {
     this.states = states;
     return this;
   }

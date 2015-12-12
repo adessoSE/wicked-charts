@@ -85,7 +85,7 @@ public class PlotOptions implements Serializable {
 
 	private Stacking stacking;
 
-	private StatesChoice states;
+	private PlotOptionsStateChoice states;
 
 	private Boolean stickyTracking;
 
@@ -283,7 +283,7 @@ public class PlotOptions implements Serializable {
 		return this.stacking;
 	}
 
-	public StatesChoice getStates() {
+	public PlotOptionsStateChoice getStates() {
 		return this.states;
 	}
 
@@ -524,7 +524,7 @@ public class PlotOptions implements Serializable {
 		return this;
 	}
 
-	public PlotOptions setStates(final StatesChoice states) {
+	public PlotOptions setStates(final PlotOptionsStateChoice states) {
 		this.states = states;
 		return this;
 	}

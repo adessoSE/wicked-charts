@@ -34,7 +34,7 @@ public class Theme implements Serializable {
 
 	private ColorReference fill;
 	
-	private States states;
+	private ThemeStates states;
 
 	public Long getStrokeWidth() {
 		return strokeWidth;
@@ -53,7 +53,7 @@ public class Theme implements Serializable {
 		return stroke;
 	}
 
-	public States getStates() {
+	public ThemeStates getStates() {
 		return states;
 	}
 	
@@ -68,7 +68,7 @@ public class Theme implements Serializable {
 		return this;
 	}
 	
-	public Theme setStates(States states) {
+	public Theme setStates(ThemeStates states) {
 		this.states = states;
 		return this;
 	}

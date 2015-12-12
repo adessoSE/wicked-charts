@@ -20,15 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.googlecode.wickedcharts.highcharts.options.Center;
-import com.googlecode.wickedcharts.highcharts.options.DataLabels;
-import com.googlecode.wickedcharts.highcharts.options.GridLineDashStyle;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.PixelOrPercent;
-import com.googlecode.wickedcharts.highcharts.options.PointPlacement;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
-import com.googlecode.wickedcharts.highcharts.options.Tooltip;
+import com.googlecode.wickedcharts.highcharts.options.*;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsStateChoice;
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
@@ -83,7 +76,7 @@ public abstract class Series<D> implements Serializable {
 
 	private GridLineDashStyle dashStyle;
 
-	private StatesChoice states;
+	private PlotOptionsStateChoice states;
 
 	private Boolean enableMouseTracking;
 
@@ -304,12 +297,12 @@ public abstract class Series<D> implements Serializable {
 		return dashStyle;
 	}
 
-	public Series<D> setStates(StatesChoice states) {
+	public Series<D> setStates(PlotOptionsStateChoice states) {
 		this.states = states;
 		return this;
 	}
 
-	public StatesChoice getStates() {
+	public PlotOptionsStateChoice getStates() {
 		return states;
 	}
 

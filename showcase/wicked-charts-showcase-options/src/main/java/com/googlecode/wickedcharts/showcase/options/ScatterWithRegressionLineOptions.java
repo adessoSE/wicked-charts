@@ -28,7 +28,7 @@ public class ScatterWithRegressionLineOptions extends ShowcaseOptions {
         .setName("Regression Line")
         .setType(SeriesType.LINE)
         .setMarker(new Marker(Boolean.TRUE))
-        .setStates(new StatesChoice().setHover(new State()
+        .setStates(new PlotOptionsStateChoice().setHover(new PlotOptionsState()
             .setLineWidth(0))));
 
     this.addSeries(new SimpleSeries()

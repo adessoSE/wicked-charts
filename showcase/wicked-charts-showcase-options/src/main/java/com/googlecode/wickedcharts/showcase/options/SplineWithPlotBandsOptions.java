@@ -19,23 +19,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.AxisType;
-import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
-import com.googlecode.wickedcharts.highcharts.options.CssStyle;
-import com.googlecode.wickedcharts.highcharts.options.Labels;
-import com.googlecode.wickedcharts.highcharts.options.Marker;
-import com.googlecode.wickedcharts.highcharts.options.Navigation;
-import com.googlecode.wickedcharts.highcharts.options.PlotBand;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptions;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptionsChoice;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.State;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice;
-import com.googlecode.wickedcharts.highcharts.options.StatesChoice.StateType;
-import com.googlecode.wickedcharts.highcharts.options.Symbol;
-import com.googlecode.wickedcharts.highcharts.options.Title;
-import com.googlecode.wickedcharts.highcharts.options.Tooltip;
+import com.googlecode.wickedcharts.highcharts.options.*;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsState;
+import com.googlecode.wickedcharts.highcharts.options.PlotOptionsStateChoice.StateType;
 import com.googlecode.wickedcharts.highcharts.options.color.NullColor;
 import com.googlecode.wickedcharts.highcharts.options.color.RgbaColor;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
@@ -96,13 +82,13 @@ public class SplineWithPlotBandsOptions extends ShowcaseOptions {
 
     setTooltip(new Tooltip());
 
-    State hoverState = new State();
+    PlotOptionsState hoverState = new PlotOptionsState();
     hoverState
         .setLineWidth(5);
 
-    StatesChoice states = new StatesChoice(hoverState, StateType.HOVER);
+    PlotOptionsStateChoice states = new PlotOptionsStateChoice(hoverState, StateType.HOVER);
 
-    State markerHoverState = new State();
+    PlotOptionsState markerHoverState = new PlotOptionsState();
     markerHoverState
         .setEnabled(Boolean.TRUE);
     markerHoverState
@@ -114,7 +100,7 @@ public class SplineWithPlotBandsOptions extends ShowcaseOptions {
 
     Marker marker = new Marker(Boolean.FALSE);
     marker
-        .setStates(new StatesChoice(markerHoverState, StateType.HOVER));
+        .setStates(new PlotOptionsStateChoice(markerHoverState, StateType.HOVER));
 
     Calendar cal = Calendar
         .getInstance();
