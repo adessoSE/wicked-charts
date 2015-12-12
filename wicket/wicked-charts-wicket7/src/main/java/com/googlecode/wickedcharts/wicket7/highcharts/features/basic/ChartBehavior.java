@@ -110,6 +110,9 @@ public class ChartBehavior extends Behavior {
         if (OptionsUtil.needsHighchartsMoreJs(options)) {
             resourceRegistry.getHighchartsMoreEntry().addToHeaderResponse(response);
         }
+        if (OptionsUtil.needsFunnelJs(options)) {
+            resourceRegistry.getFunnelEntry().addToHeaderResponse(response);
+        }
     }
 
     @Override

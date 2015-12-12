@@ -138,6 +138,8 @@ public class Homepage extends WebPage {
                 new MultipleAxesOptions()));
         this.add(new UpdateChartLink("errorBar", chart, codeContainer,
                 new ErrorBarOptions()));
+        this.add(new UpdateChartLink("funnel", chart, codeContainer,
+                new FunnelOptions()));
     }
 
     private Label addCodeContainer() {

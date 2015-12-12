@@ -14,238 +14,260 @@
  */
 package com.googlecode.wickedcharts.highcharts.options;
 
-import java.awt.Color;
-import java.io.Serializable;
-
 import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
 import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
+import java.awt.*;
+import java.io.Serializable;
+
 /**
  * Defines the configuration of the "dataLabels" option.
- * 
- * @see <a href=
- *      "http://api.highcharts.com/highcharts#plotOptions.column.dataLabels</a>
- *      and others
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
+ * @see <a href=
+ * "http://api.highcharts.com/highcharts#plotOptions.column.dataLabels</a>
+ * and others
  */
 public class DataLabels implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private HorizontalAlignment align;
+    private HorizontalAlignment align;
 
-	private ColorReference backgroundColor;
+    private ColorReference backgroundColor;
 
-	private ColorReference borderColor;
+    private ColorReference borderColor;
 
-	private Integer borderRadius;
+    private Integer borderRadius;
 
-	private Integer borderWidth;
+    private Integer borderWidth;
 
-	private ColorReference color;
+    private ColorReference color;
 
-	private Boolean enabled;
+    private Boolean enabled;
 
-	private Function formatter;
+    private Function formatter;
 
-	private Overflow overflow;
+    private String format;
 
-	private Integer padding;
+    private Overflow overflow;
 
-	private Integer rotation;
+    private Integer padding;
 
-	private Boolean shadow;
+    private Integer rotation;
 
-	private CssStyle style;
+    private Boolean shadow;
 
-	private Integer x;
+    private CssStyle style;
 
-	private Integer y;
+    private Integer x;
 
-	private Integer distance;
+    private Integer y;
 
-	private ColorReference connectorColor;
+    private Integer distance;
 
-	/**
-	 * Empty constructor.
-	 */
-	public DataLabels() {
+    private ColorReference connectorColor;
 
-	}
+    private Boolean softConnector;
 
-	/**
-	 * Convenience constructor.
-	 */
-	public DataLabels(final Boolean enabled) {
-		this.enabled = enabled;
-	}
+    /**
+     * Empty constructor.
+     */
+    public DataLabels() {
 
-	public HorizontalAlignment getAlign() {
-		return this.align;
-	}
+    }
 
-	public ColorReference getBackgroundColor() {
-		return this.backgroundColor;
-	}
+    /**
+     * Convenience constructor.
+     */
+    public DataLabels(final Boolean enabled) {
+        this.enabled = enabled;
+    }
 
-	public ColorReference getBorderColor() {
-		return this.borderColor;
-	}
+    public HorizontalAlignment getAlign() {
+        return this.align;
+    }
 
-	public Integer getBorderRadius() {
-		return this.borderRadius;
-	}
+    public ColorReference getBackgroundColor() {
+        return this.backgroundColor;
+    }
 
-	public ColorReference getColor() {
-		return this.color;
-	}
+    public ColorReference getBorderColor() {
+        return this.borderColor;
+    }
 
-	public ColorReference getConnectorColor() {
-		return this.connectorColor;
-	}
+    public Integer getBorderRadius() {
+        return this.borderRadius;
+    }
 
-	public Integer getDistance() {
-		return this.distance;
-	}
+    public ColorReference getColor() {
+        return this.color;
+    }
 
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
+    public ColorReference getConnectorColor() {
+        return this.connectorColor;
+    }
 
-	public Function getFormatter() {
-		return this.formatter;
-	}
+    public Integer getDistance() {
+        return this.distance;
+    }
 
-	public Overflow getOverflow() {
-		return this.overflow;
-	}
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
 
-	public Integer getPadding() {
-		return this.padding;
-	}
+    public Function getFormatter() {
+        return this.formatter;
+    }
 
-	public Integer getRotation() {
-		return this.rotation;
-	}
+    public String getFormat() {
+        return this.format;
+    }
 
-	public Boolean getShadow() {
-		return this.shadow;
-	}
+    public Overflow getOverflow() {
+        return this.overflow;
+    }
 
-	public CssStyle getStyle() {
-		return this.style;
-	}
+    public Integer getPadding() {
+        return this.padding;
+    }
 
-	public Integer getBorderWidth() {
-		return this.borderWidth;
-	}
+    public Integer getRotation() {
+        return this.rotation;
+    }
 
-	public Integer getX() {
-		return this.x;
-	}
+    public Boolean getShadow() {
+        return this.shadow;
+    }
 
-	public Integer getY() {
-		return this.y;
-	}
+    public CssStyle getStyle() {
+        return this.style;
+    }
 
-	public DataLabels setAlign(final HorizontalAlignment align) {
-		this.align = align;
-		return this;
-	}
+    public Integer getBorderWidth() {
+        return this.borderWidth;
+    }
 
-	public DataLabels setBackgroundColor(final Color color) {
-		this.backgroundColor = new SimpleColor(color);
-		return this;
-	}
+    public Integer getX() {
+        return this.x;
+    }
 
-	public DataLabels setBackgroundColor(final ColorReference backgroundColor) {
-		this.backgroundColor = backgroundColor;
-		return this;
-	}
+    public Integer getY() {
+        return this.y;
+    }
 
-	public DataLabels setBorderColor(final Color color) {
-		this.borderColor = new SimpleColor(color);
-		return this;
-	}
+    public Boolean getSoftConnector() {
+        return this.softConnector;
+    }
 
-	public DataLabels setBorderColor(final ColorReference borderColor) {
-		this.borderColor = borderColor;
-		return this;
-	}
+    public DataLabels setAlign(final HorizontalAlignment align) {
+        this.align = align;
+        return this;
+    }
 
-	public DataLabels setBorderRadius(final Integer borderRadius) {
-		this.borderRadius = borderRadius;
-		return this;
-	}
+    public DataLabels setBackgroundColor(final Color color) {
+        this.backgroundColor = new SimpleColor(color);
+        return this;
+    }
 
-	public DataLabels setColor(final Color color) {
-		this.color = new SimpleColor(color);
-		return this;
-	}
+    public DataLabels setBackgroundColor(final ColorReference backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        return this;
+    }
 
-	public DataLabels setColor(final ColorReference color) {
-		this.color = color;
-		return this;
-	}
+    public DataLabels setBorderColor(final Color color) {
+        this.borderColor = new SimpleColor(color);
+        return this;
+    }
 
-	public DataLabels setConnectorColor(final ColorReference connectorColor) {
-		this.connectorColor = connectorColor;
-		return this;
-	}
+    public DataLabels setBorderColor(final ColorReference borderColor) {
+        this.borderColor = borderColor;
+        return this;
+    }
 
-	public DataLabels setDistance(final Integer distance) {
-		this.distance = distance;
-		return this;
-	}
+    public DataLabels setBorderRadius(final Integer borderRadius) {
+        this.borderRadius = borderRadius;
+        return this;
+    }
 
-	public DataLabels setEnabled(final Boolean enabled) {
-		this.enabled = enabled;
-		return this;
-	}
+    public DataLabels setColor(final Color color) {
+        this.color = new SimpleColor(color);
+        return this;
+    }
 
-	public DataLabels setFormatter(final Function formatter) {
-		this.formatter = formatter;
-		return this;
-	}
+    public DataLabels setColor(final ColorReference color) {
+        this.color = color;
+        return this;
+    }
 
-	public DataLabels setOverflow(final Overflow overflow) {
-		this.overflow = overflow;
-		return this;
-	}
+    public DataLabels setConnectorColor(final ColorReference connectorColor) {
+        this.connectorColor = connectorColor;
+        return this;
+    }
 
-	public DataLabels setPadding(final Integer padding) {
-		this.padding = padding;
-		return this;
-	}
+    public DataLabels setDistance(final Integer distance) {
+        this.distance = distance;
+        return this;
+    }
 
-	public DataLabels setRotation(final Integer rotation) {
-		this.rotation = rotation;
-		return this;
-	}
+    public DataLabels setEnabled(final Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
 
-	public DataLabels setShadow(final Boolean shadow) {
-		this.shadow = shadow;
-		return this;
-	}
+    public DataLabels setFormatter(final Function formatter) {
+        this.formatter = formatter;
+        return this;
+    }
 
-	public DataLabels setStyle(final CssStyle style) {
-		this.style = style;
-		return this;
-	}
+    public DataLabels setFormat(final String format) {
+        this.format = format;
+        return this;
+    }
 
-	public DataLabels setBorderWidth(final Integer vorderWidth) {
-		this.borderWidth = vorderWidth;
-		return this;
-	}
+    public DataLabels setOverflow(final Overflow overflow) {
+        this.overflow = overflow;
+        return this;
+    }
 
-	public DataLabels setX(final Integer x) {
-		this.x = x;
-		return this;
-	}
+    public DataLabels setPadding(final Integer padding) {
+        this.padding = padding;
+        return this;
+    }
 
-	public DataLabels setY(final Integer y) {
-		this.y = y;
-		return this;
-	}
+    public DataLabels setRotation(final Integer rotation) {
+        this.rotation = rotation;
+        return this;
+    }
+
+    public DataLabels setShadow(final Boolean shadow) {
+        this.shadow = shadow;
+        return this;
+    }
+
+    public DataLabels setStyle(final CssStyle style) {
+        this.style = style;
+        return this;
+    }
+
+    public DataLabels setBorderWidth(final Integer vorderWidth) {
+        this.borderWidth = vorderWidth;
+        return this;
+    }
+
+    public DataLabels setX(final Integer x) {
+        this.x = x;
+        return this;
+    }
+
+    public DataLabels setY(final Integer y) {
+        this.y = y;
+        return this;
+    }
+
+    public DataLabels setSoftConnector(final Boolean value) {
+        this.softConnector = value;
+        return this;
+    }
 
 }

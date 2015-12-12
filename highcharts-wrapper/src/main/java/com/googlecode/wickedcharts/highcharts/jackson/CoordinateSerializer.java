@@ -14,13 +14,13 @@
  */
 package com.googlecode.wickedcharts.highcharts.jackson;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
+
+import java.io.IOException;
 
 /**
  * 
@@ -37,6 +37,16 @@ public class CoordinateSerializer<T, U> extends JsonSerializer<Coordinate<T, U>>
 	public void serialize(final Coordinate<T, U> value, final JsonGenerator jgen, final SerializerProvider provider)
 	    throws IOException, JsonProcessingException {
 
-		jgen.writeRawValue("[" + value.getX() + ", " + value.getY() + "]");
-	}
+        String xString = String.valueOf(value.getX());
+        if (value.isXLiteral()) {
+            xString = "'" + xString + "'";
+        }
+
+        String yString = String.valueOf(value.getY());
+        if (value.isYLiteral()) {
+            yString = "'" + yString + "'";
+        }
+
+        jgen.writeRawValue("[" + xString + ", " + yString + "]");
+    }
 }

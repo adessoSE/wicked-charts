@@ -17,43 +17,68 @@ package com.googlecode.wickedcharts.highcharts.options.series;
 import java.io.Serializable;
 
 /**
- * 
+ * @param <T> Type of x coordinate
+ * @param <U> Type of y coordinate
  * @author Matthias Balke (matthias.balke@gmail.com)
- * 
- * @param <T>
- *          Type of x coordinate
- * @param <U>
- *          Type of y coordinate
  */
 public class Coordinate<T, U> implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private T x;
+    private Boolean xLiteral = Boolean.FALSE;
 
-	private U y;
+    private Boolean yLiteral = Boolean.FALSE;
 
-	public Coordinate(final T x, final U y) {
-		this.x = x;
-		this.y = y;
-	}
+    private T x;
 
-	public T getX() {
-		return this.x;
-	}
+    private U y;
 
-	public U getY() {
-		return this.y;
-	}
+    public Coordinate(final T x, final U y) {
+        this.x = x;
+        this.y = y;
+    }
 
-	public Coordinate<T, U> setX(final T x) {
-		this.x = x;
-		return this;
-	}
+    public T getX() {
+        return this.x;
+    }
 
-	public Coordinate<T, U> setY(final U y) {
-		this.y = y;
-		return this;
-	}
+    public U getY() {
+        return this.y;
+    }
 
+    public Coordinate<T, U> setX(final T x) {
+        this.x = x;
+        return this;
+    }
+
+    public Coordinate<T, U> setY(final U y) {
+        this.y = y;
+        return this;
+    }
+
+    public Boolean isXLiteral() {
+        return xLiteral;
+    }
+
+    /**
+     * Defines it the x value is a javascript literal.
+     * If true, the x value will be put into quotes when serialized into javascript.
+     */
+    public Coordinate setXLiteral(Boolean xLiteral) {
+        this.xLiteral = xLiteral;
+        return this;
+    }
+
+    public Boolean isYLiteral() {
+        return yLiteral;
+    }
+
+    /**
+     * Defines it the y value is a javascript literal.
+     * If true, the y value will be put into quotes when serialized into javascript.
+     */
+    public Coordinate setYLiteral(Boolean yLiteral) {
+        this.yLiteral = yLiteral;
+        return this;
+    }
 }
