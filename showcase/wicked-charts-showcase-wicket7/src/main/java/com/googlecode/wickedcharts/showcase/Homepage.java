@@ -136,6 +136,8 @@ public class Homepage extends WebPage {
                 codeContainer, new ScatterWithRegressionLineOptions()));
         this.add(new UpdateChartLink("multipleAxes", chart, codeContainer,
                 new MultipleAxesOptions()));
+        this.add(new UpdateChartLink("errorBar", chart, codeContainer,
+                new ErrorBarOptions()));
     }
 
     private Label addCodeContainer() {

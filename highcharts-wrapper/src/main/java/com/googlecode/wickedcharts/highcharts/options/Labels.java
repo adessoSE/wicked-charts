@@ -178,8 +178,9 @@ public class Labels implements Serializable {
         return staggerLines;
     }
 
-    public void setStaggerLines(Integer staggerLines) {
+    public Labels setStaggerLines(Integer staggerLines) {
         this.staggerLines = staggerLines;
+        return this;
     }
 
     public String getFormat() {
@@ -190,8 +191,9 @@ public class Labels implements Serializable {
         return maxStaggerLines;
     }
 
-    public void setMaxStaggerLines(Integer maxStaggerLines) {
+    public Labels setMaxStaggerLines(Integer maxStaggerLines) {
         this.maxStaggerLines = maxStaggerLines;
+        return this;
     }
 
     /**
@@ -200,8 +202,9 @@ public class Labels implements Serializable {
      * @param format the new format string. Use "{value}" as a placeholder for the axis value.
      * @see <a href="http://api.highcharts.com/highstock#xAxis.labels.format">http://api.highcharts.com/highstock#xAxis.labels.format</a>
      */
-    public void setFormat(String format) {
+    public Labels setFormat(String format) {
         this.format = format;
+        return this;
     }
 
 }

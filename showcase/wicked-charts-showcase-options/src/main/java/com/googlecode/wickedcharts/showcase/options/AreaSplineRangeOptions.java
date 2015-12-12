@@ -66,7 +66,7 @@ public class AreaSplineRangeOptions extends ShowcaseOptions {
 
     @Override
     public String getLabel() {
-        return "Column range";
+        return "Area Spline Range";
     }
 
 }
