@@ -32,7 +32,6 @@ import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptReferenceHeaderItem;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 
-import javax.swing.text.html.Option;
 import java.text.MessageFormat;
 
 /**
@@ -65,9 +64,7 @@ public class ChartBehavior extends Behavior {
     /**
      * Constructor.
      *
-     * @param options the options for the chart. The {@link Option} class is very
-     *                similar in structure to the Highcharts API reference, see
-     *                http://www.highcharts.com/ref/.
+     * @param container the chart container to render the chart in.
      */
     public ChartBehavior(final Chart container) {
         this.chart = container;
@@ -111,6 +108,12 @@ public class ChartBehavior extends Behavior {
         }
         if (OptionsUtil.needsHighchartsMoreJs(options)) {
             JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry().addToHeaderResponse(response);
+        }
+        if (OptionsUtil.needsFunnelJs(options)) {
+            JavaScriptResourceRegistry.getInstance().getFunnelEntry().addToHeaderResponse(response);
+        }
+        if (OptionsUtil.needsHeatmapJs(options)) {
+            JavaScriptResourceRegistry.getInstance().getHeatmapEntry().addToHeaderResponse(response);
         }
     }
 

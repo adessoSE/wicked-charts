@@ -14,14 +14,6 @@
  */
 package com.googlecode.wickedcharts.wicket15.highcharts.features.basic;
 
-import java.text.MessageFormat;
-
-import javax.swing.text.html.Option;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.html.IHeaderResponse;
-
 import com.googlecode.wickedcharts.highcharts.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.highcharts.options.processing.Feature;
@@ -34,122 +26,125 @@ import com.googlecode.wickedcharts.wicket15.highcharts.Chart;
 import com.googlecode.wickedcharts.wicket15.highcharts.JsonRendererFactory;
 import com.googlecode.wickedcharts.wicket15.highcharts.features.drilldown.DrilldownProcessor;
 import com.googlecode.wickedcharts.wicket15.highcharts.features.global.GlobalProcessor;
+import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.markup.html.IHeaderResponse;
+
+import java.text.MessageFormat;
 
 /**
  * This behavior takes in an {@link Options} object containing the configuration
  * of a chart and calls the proper javascript to display the chart in the
  * component to which this behavior is added.
- * 
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * 
  */
 public class ChartBehavior extends Behavior {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private final Chart chart;
-	
-	private static final Feature[] SUPPORTED_FEATURES = new Feature[] {
+    private final Chart chart;
 
-		Feature.DRILLDOWN,
+    private static final Feature[] SUPPORTED_FEATURES = new Feature[]{
 
-		Feature.GLOBAL,
+            Feature.DRILLDOWN,
 
-		};
+            Feature.GLOBAL,
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param options
-	 *            the options for the chart. The {@link Option} class is very
-	 *            similar in structure to the Highcharts API reference, see
-	 *            http://www.highcharts.com/ref/.
-	 */
-	public ChartBehavior(final Chart container) {
-		this.chart = container;
-	}
+    };
 
-	private void addTheme(final IHeaderResponse response,
-			final JsonRenderer renderer) {
-		if (this.chart.getTheme() != null) {
-			response.renderOnDomReadyJavaScript(MessageFormat.format(
-					"Highcharts.setOptions({0});",
-					renderer.toJson(this.chart.getTheme())));
-		} else if (this.chart.getThemeUrl() != null) {
-			response.renderJavaScriptReference(this.chart.getThemeUrl());
-		} else if (this.chart.getThemeReference() != null) {
-			response.renderJavaScriptReference(this.chart.getThemeReference());
-		}
-	}
+    /**
+     * Constructor.
+     *
+     * @param container The chart container to render the chart in.
+     */
+    public ChartBehavior(final Chart container) {
+        this.chart = container;
+    }
 
-	/**
-	 * Includes the javascript that calls the Highcharts library to visualize
-	 * the chart.
-	 * 
-	 * @param response
-	 *            the Wicket HeaderResponse
-	 * @param options
-	 *            the options containing the data to display
-	 * @param renderer
-	 *            the JsonRenderer responsible for rendering the options
-	 * @param markupId
-	 *            the DOM ID of the chart component.
-	 */
-	protected void includeChartJavascript(final IHeaderResponse response,
-			final Options options, final JsonRenderer renderer,
-			final String markupId) {
-		String chartVarname = markupId;
-		String optionsVarname = markupId + "Options";
-		response.renderOnDomReadyJavaScript(MessageFormat.format(
-				"var {0} = {1};var {2} = new Highcharts.Chart({0});",
-				optionsVarname, renderer.toJson(options), chartVarname));
-	}
+    private void addTheme(final IHeaderResponse response,
+                          final JsonRenderer renderer) {
+        if (this.chart.getTheme() != null) {
+            response.renderOnDomReadyJavaScript(MessageFormat.format(
+                    "Highcharts.setOptions({0});",
+                    renderer.toJson(this.chart.getTheme())));
+        } else if (this.chart.getThemeUrl() != null) {
+            response.renderJavaScriptReference(this.chart.getThemeUrl());
+        } else if (this.chart.getThemeReference() != null) {
+            response.renderJavaScriptReference(this.chart.getThemeReference());
+        }
+    }
 
-	private void includeJavascriptDependencies(final IHeaderResponse response,
-			final Options options) {
-		JavaScriptResourceRegistry.getInstance().getJQueryEntry()
-				.addToHeaderResponse(response);
-		JavaScriptResourceRegistry.getInstance().getHighchartsEntry()
-				.addToHeaderResponse(response);
-		if (OptionsUtil.needsExportingJs(options)) {
-			JavaScriptResourceRegistry.getInstance()
-					.getHighchartsExportingEntry()
-					.addToHeaderResponse(response);
-		}
-		if (OptionsUtil.needsHighchartsMoreJs(options)) {
-			JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry()
-					.addToHeaderResponse(response);
-		}
-	}
+    /**
+     * Includes the javascript that calls the Highcharts library to visualize
+     * the chart.
+     *
+     * @param response the Wicket HeaderResponse
+     * @param options  the options containing the data to display
+     * @param renderer the JsonRenderer responsible for rendering the options
+     * @param markupId the DOM ID of the chart component.
+     */
+    protected void includeChartJavascript(final IHeaderResponse response,
+                                          final Options options, final JsonRenderer renderer,
+                                          final String markupId) {
+        String chartVarname = markupId;
+        String optionsVarname = markupId + "Options";
+        response.renderOnDomReadyJavaScript(MessageFormat.format(
+                "var {0} = {1};var {2} = new Highcharts.Chart({0});",
+                optionsVarname, renderer.toJson(options), chartVarname));
+    }
 
-	@Override
-	public void renderHead(final Component component,
-			final IHeaderResponse response) {
+    private void includeJavascriptDependencies(final IHeaderResponse response,
+                                               final Options options) {
+        JavaScriptResourceRegistry.getInstance().getJQueryEntry()
+                .addToHeaderResponse(response);
+        JavaScriptResourceRegistry.getInstance().getHighchartsEntry()
+                .addToHeaderResponse(response);
+        if (OptionsUtil.needsExportingJs(options)) {
+            JavaScriptResourceRegistry.getInstance()
+                    .getHighchartsExportingEntry()
+                    .addToHeaderResponse(response);
+        }
+        if (OptionsUtil.needsHighchartsMoreJs(options)) {
+            JavaScriptResourceRegistry.getInstance().getHighchartsMoreEntry()
+                    .addToHeaderResponse(response);
+        }
+        if (OptionsUtil.needsFunnelJs(options)) {
+            JavaScriptResourceRegistry.getInstance().getFunnelEntry().addToHeaderResponse(response);
+        }
+        if (OptionsUtil.needsHeatmapJs(options)) {
+            JavaScriptResourceRegistry.getInstance().getHeatmapEntry().addToHeaderResponse(response);
+        }
+    }
 
-		component.setOutputMarkupId(true);
-		Options options = this.chart.getOptions();
-		final String id = component.getMarkupId();
-		OptionsUtil.getInstance().setRenderTo(options, id);
+    @Override
+    public void renderHead(final Component component,
+                           final IHeaderResponse response) {
 
-		JsonRenderer renderer = JsonRendererFactory.getInstance()
-				.getRenderer();
-		includeJavascriptDependencies(response, options);
-		addTheme(response, renderer);
+        component.setOutputMarkupId(true);
+        Options options = this.chart.getOptions();
+        final String id = component.getMarkupId();
+        OptionsUtil.getInstance().setRenderTo(options, id);
 
-		OptionsProcessorContext context = new OptionsProcessorContext(options);
-		
-		IOptionsProcessor featureProcessor = new FeatureCheckingOptionsProcessor(SUPPORTED_FEATURES);
-		featureProcessor.processOptions(this.chart.getOptions(), context);
+        JsonRenderer renderer = JsonRendererFactory.getInstance()
+                .getRenderer();
+        includeJavascriptDependencies(response, options);
+        addTheme(response, renderer);
 
-		DrilldownProcessor drilldownProcessor = new DrilldownProcessor(
-				component, response);
-		drilldownProcessor.processOptions(options, context);
+        OptionsProcessorContext context = new OptionsProcessorContext(options);
 
-		GlobalProcessor globalProcessor = new GlobalProcessor(
-				response);
-		globalProcessor.processOptions(options, context);
+        IOptionsProcessor featureProcessor = new FeatureCheckingOptionsProcessor(SUPPORTED_FEATURES);
+        featureProcessor.processOptions(this.chart.getOptions(), context);
 
-		includeChartJavascript(response, options, renderer, id);
-	}
+        DrilldownProcessor drilldownProcessor = new DrilldownProcessor(
+                component, response);
+        drilldownProcessor.processOptions(options, context);
+
+        GlobalProcessor globalProcessor = new GlobalProcessor(
+                response);
+        globalProcessor.processOptions(options, context);
+
+        includeChartJavascript(response, options, renderer, id);
+    }
 
 }
