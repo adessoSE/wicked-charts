@@ -31,11 +31,11 @@ public class FunnelOptions extends ShowcaseOptions {
         addSeries(new CustomCoordinatesSeries<String, Integer>()
                 .setName("Unique users")
                 .setData(
-                        new Coordinate<String, Integer>("Website visits", 15654).setXLiteral(Boolean.TRUE),
-                        new Coordinate<String, Integer>("Downloads", 4064).setXLiteral(Boolean.TRUE),
-                        new Coordinate<String, Integer>("Requested price list", 1987).setXLiteral(Boolean.TRUE),
-                        new Coordinate<String, Integer>("Invoice sent", 976).setXLiteral(Boolean.TRUE),
-                        new Coordinate<String, Integer>("Finalized", 846).setXLiteral(Boolean.TRUE)));
+                        new Coordinate<String, Integer>("Website visits", 15654).setXQuoted(Boolean.TRUE),
+                        new Coordinate<String, Integer>("Downloads", 4064).setXQuoted(Boolean.TRUE),
+                        new Coordinate<String, Integer>("Requested price list", 1987).setXQuoted(Boolean.TRUE),
+                        new Coordinate<String, Integer>("Invoice sent", 976).setXQuoted(Boolean.TRUE),
+                        new Coordinate<String, Integer>("Finalized", 846).setXQuoted(Boolean.TRUE)));
     }
 
     @Override

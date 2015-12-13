@@ -142,6 +142,8 @@ public class Homepage extends WebPage {
                 new FunnelOptions()));
         this.add(new UpdateChartLink("pyramid", chart, codeContainer,
                 new PyramidOptions()));
+        this.add(new UpdateChartLink("heatmap", chart, codeContainer,
+                new HeatmapOptions()));
     }
 
     private Label addCodeContainer() {

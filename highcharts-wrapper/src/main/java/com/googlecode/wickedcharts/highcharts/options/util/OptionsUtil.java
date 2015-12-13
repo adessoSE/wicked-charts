@@ -102,6 +102,22 @@ public class OptionsUtil {
 
     /**
      * Checks if the specified Options object needs the javascript file
+     * "heatmap.js" to work properly. This method can be called by GUI
+     * components to determine whether the javascript file has to be included in
+     * the page or not.
+     *
+     * @param options the {@link Options} object to analyze
+     * @return true, if "funnel.js" is needed to render the options,
+     * false if not
+     */
+    public static boolean needsHeatmapJs(final Options options) {
+        return
+                options.getChart() != null &&
+                        (options.getChart().getType() == SeriesType.HEATMAP);
+    }
+
+    /**
+     * Checks if the specified Options object needs the javascript file
      * "exporting.js" to work properly. This method can be called by GUI
      * components to determine whether the javascript file has to be included in
      * the page or not.

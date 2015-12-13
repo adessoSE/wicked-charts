@@ -17,68 +17,66 @@ package com.googlecode.wickedcharts.highcharts.options.series;
 import java.io.Serializable;
 
 /**
- * @param <T> Type of x coordinate
- * @param <U> Type of y coordinate
+ * @param <X> Type of x coordinate
+ * @param <Y> Type of y coordinate
  * @author Matthias Balke (matthias.balke@gmail.com)
  */
-public class Coordinate<T, U> implements Serializable {
+public class Coordinate<X, Y> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Boolean xLiteral = Boolean.FALSE;
+    private Boolean isXQuoted = Boolean.FALSE;
 
-    private Boolean yLiteral = Boolean.FALSE;
+    private Boolean isYQuoted = Boolean.FALSE;
 
-    private T x;
+    private X x;
 
-    private U y;
+    private Y y;
 
-    public Coordinate(final T x, final U y) {
+    public Coordinate(final X x, final Y y) {
         this.x = x;
         this.y = y;
     }
 
-    public T getX() {
+    public X getX() {
         return this.x;
     }
 
-    public U getY() {
+    public Y getY() {
         return this.y;
     }
 
-    public Coordinate<T, U> setX(final T x) {
+    public Coordinate<X, Y> setX(final X x) {
         this.x = x;
         return this;
     }
 
-    public Coordinate<T, U> setY(final U y) {
+    public Coordinate<X, Y> setY(final Y y) {
         this.y = y;
         return this;
     }
 
-    public Boolean isXLiteral() {
-        return xLiteral;
+    public Boolean isXQuoted() {
+        return isXQuoted;
     }
 
     /**
-     * Defines it the x value is a javascript literal.
      * If true, the x value will be put into quotes when serialized into javascript.
      */
-    public Coordinate setXLiteral(Boolean xLiteral) {
-        this.xLiteral = xLiteral;
+    public Coordinate setXQuoted(Boolean isXQuoted) {
+        this.isXQuoted = isXQuoted;
         return this;
     }
 
-    public Boolean isYLiteral() {
-        return yLiteral;
+    public Boolean isYQuoted() {
+        return isYQuoted;
     }
 
     /**
-     * Defines it the y value is a javascript literal.
      * If true, the y value will be put into quotes when serialized into javascript.
      */
-    public Coordinate setYLiteral(Boolean yLiteral) {
-        this.yLiteral = yLiteral;
+    public Coordinate setYQuoted(Boolean isYQuoted) {
+        this.isYQuoted = isYQuoted;
         return this;
     }
 }

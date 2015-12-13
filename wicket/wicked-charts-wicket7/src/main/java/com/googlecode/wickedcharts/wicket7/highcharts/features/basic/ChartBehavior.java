@@ -113,6 +113,9 @@ public class ChartBehavior extends Behavior {
         if (OptionsUtil.needsFunnelJs(options)) {
             resourceRegistry.getFunnelEntry().addToHeaderResponse(response);
         }
+        if (OptionsUtil.needsHeatmapJs(options)) {
+            resourceRegistry.getHeatmapEntry().addToHeaderResponse(response);
+        }
     }
 
     @Override

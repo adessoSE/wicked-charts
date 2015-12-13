@@ -14,45 +14,45 @@
  */
 package com.googlecode.wickedcharts.highcharts.jackson;
 
-import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
+import com.googlecode.wickedcharts.highcharts.options.series.ThreeDCoordinate;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author Matthias Balke (matthias.balke@gmail.com)
  */
-public class CoordinateSerializerTest {
+public class ThreeDCoordinateSerializerTest {
 
     @Test
     public void testStringFloatCoordinate() {
         // given
         String dateString = "Date.UTC(1970, 9, 27)";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
-                dateString, 0f);
+        ThreeDCoordinate<String, Float, Float> coordinateStringFloat = new ThreeDCoordinate<String, Float, Float>(
+                dateString, 0f, 1.5f);
         JsonRenderer renderer = new JsonRenderer();
 
         // when
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("[" + dateString + ", 0.0]", json);
+        Assert.assertEquals("[" + dateString + ", 0.0, 1.5]", json);
     }
 
     @Test
     public void testLiteralStringFloatCoordinate() {
         // given
-        String anyString = "foo";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
-                anyString, 0f);
+        ThreeDCoordinate<String, Float, String> coordinateStringFloat = new ThreeDCoordinate<String, Float, String>(
+                "foo", 0f, "bar");
         coordinateStringFloat.setXQuoted(Boolean.TRUE);
         coordinateStringFloat.setYQuoted(Boolean.TRUE);
+        coordinateStringFloat.setZQuoted(Boolean.TRUE);
         JsonRenderer renderer = new JsonRenderer();
 
         // when
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("['" + anyString + "', '0.0']", json);
+        Assert.assertEquals("['foo', '0.0', 'bar']", json);
     }
 
 }

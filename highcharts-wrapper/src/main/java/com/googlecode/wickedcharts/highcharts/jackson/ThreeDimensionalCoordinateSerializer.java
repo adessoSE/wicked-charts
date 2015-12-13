@@ -18,19 +18,20 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
+import com.googlecode.wickedcharts.highcharts.options.series.ThreeDCoordinate;
 
 import java.io.IOException;
 
 /**
- * @param <T> Type of x coordinate
- * @param <U> Type of y coordinate
+ * @param <X> Type of x coordinate
+ * @param <Y> Type of y coordinate
+ * @param <Z> Type of z coordinate
  * @author Matthias Balke (matthias.balke@gmail.com)
  */
-public class CoordinateSerializer<T, U> extends JsonSerializer<Coordinate<T, U>> {
+public class ThreeDimensionalCoordinateSerializer<X, Y, Z> extends JsonSerializer<ThreeDCoordinate<X, Y, Z>> {
 
     @Override
-    public void serialize(final Coordinate<T, U> value, final JsonGenerator jgen, final SerializerProvider provider)
+    public void serialize(final ThreeDCoordinate<X, Y, Z> value, final JsonGenerator jgen, final SerializerProvider provider)
             throws IOException, JsonProcessingException {
 
         String xString = String.valueOf(value.getX());
@@ -43,6 +44,11 @@ public class CoordinateSerializer<T, U> extends JsonSerializer<Coordinate<T, U>>
             yString = "'" + yString + "'";
         }
 
-        jgen.writeRawValue("[" + xString + ", " + yString + "]");
+        String zString = String.valueOf(value.getZ());
+        if (value.isZQuoted()) {
+            zString = "'" + zString + "'";
+        }
+
+        jgen.writeRawValue("[" + xString + ", " + yString + ", " + zString + "]");
     }
 }

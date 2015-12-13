@@ -59,6 +59,8 @@ public class JavaScriptResourceRegistry {
 
     public static final String DEFAULT_FUNNEL_URL = "http://code.highcharts.com/4.1.10/modules/funnel.js";
 
+    public static final String DEFAULT_HEATMAP_URL = "http://code.highcharts.com/4.1.10/modules/heatmap.js";
+
     public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/4.1.10/highcharts-more.js";
 
     public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/4.1.10/modules/exporting.js";
@@ -75,6 +77,8 @@ public class JavaScriptResourceRegistry {
     private RegistryEntry highchartsEntry = new RegistryEntry(DEFAULT_HIGHCHARTS_URL);
 
     private RegistryEntry funnelEntry = new RegistryEntry(DEFAULT_FUNNEL_URL);
+
+    private RegistryEntry heatmapEntry = new RegistryEntry(DEFAULT_HEATMAP_URL);
 
     private RegistryEntry highchartsExportingEntry = new RegistryEntry(DEFAULT_HIGHCHARTS_EXPORTING_URL);
 
@@ -106,6 +110,10 @@ public class JavaScriptResourceRegistry {
         return this.funnelEntry;
     }
 
+    public RegistryEntry getHeatmapEntry() {
+        return this.heatmapEntry;
+    }
+
     /**
      * Sets the {@link ResourceReference} to use to load the Highcharts exporting
      * javascript library (exporting.js). Use this method if you want to include
@@ -130,6 +138,14 @@ public class JavaScriptResourceRegistry {
      */
     public void setFunnelReference(final ResourceReference reference) {
         this.funnelEntry = new RegistryEntry(reference);
+    }
+
+    /**
+     * Sets the {@link ResourceReference} to use to load the Highcharts module "heatmap.js".
+     * Use this method if you want to include the javascript file in your web application.
+     */
+    public void setHeatmapReference(final ResourceReference reference) {
+        this.heatmapEntry = new RegistryEntry(reference);
     }
 
     /**
