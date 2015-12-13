@@ -14,16 +14,15 @@
  */
 package com.googlecode.wickedcharts.highcharts.options.series;
 
-import java.awt.Color;
+import com.googlecode.wickedcharts.highcharts.options.*;
+import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
+import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
+
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.googlecode.wickedcharts.highcharts.options.*;
-import com.googlecode.wickedcharts.highcharts.options.PlotOptionsStateChoice;
-import com.googlecode.wickedcharts.highcharts.options.color.ColorReference;
-import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 
 /**
  * Defines the configuration of the "series" option.
@@ -37,6 +36,8 @@ import com.googlecode.wickedcharts.highcharts.options.color.SimpleColor;
 public abstract class Series<D> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+    private Float pointPadding;
 
 	private String name;
 
@@ -110,8 +111,12 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
-	public Center getCenter() {
-		return this.center;
+    public Float getPointPadding() {
+        return pointPadding;
+    }
+
+    public Center getCenter() {
+        return this.center;
 	}
 
 	public ColorReference getColor() {
@@ -177,6 +182,11 @@ public abstract class Series<D> implements Serializable {
 	public Integer getyAxis() {
 		return this.yAxis;
 	}
+
+    public Series<D> setPointPadding(final Float pointPadding) {
+        this.pointPadding = pointPadding;
+        return this;
+    }
 
 	public Series<D> setCenter(final Center center) {
 		this.center = center;
