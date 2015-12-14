@@ -36,13 +36,23 @@ Maven coordinates
 =================
 Depending on what web framework you use, add one of the following dependencies to your Maven build:
 
+Wicket 7.x
+---------
+```html
+<dependency>
+  <groupId>com.googlecode.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket7</artifactId>
+  <version>2.0.0</version>
+</dependency>
+```
+
 Wicket 6.x
 ---------
 ```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket6</artifactId>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 Wicket 1.5.x
@@ -51,7 +61,7 @@ Wicket 1.5.x
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket15</artifactId>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 Wicket 1.4.x
@@ -60,7 +70,7 @@ Wicket 1.4.x
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket14</artifactId>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 JSF 2.1
@@ -69,7 +79,7 @@ JSF 2.1
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-jsf21</artifactId>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
 
@@ -80,6 +90,6 @@ If you want to use the Java abstraction and JSON serializer of the Highcharts op
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
   <artifactId>wicked-charts-highcharts</artifactId>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
 </dependency>
 ```
