@@ -12,7 +12,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>wicked-charts-showcase-parent</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <name>Wicked Charts Showcase parent</name>
     <packaging>pom</packaging>
     <description>Parent POM for wicked-charts Showcases</description>
@@ -178,6 +178,7 @@
                     <configuration>
                         <reportOutputDirectory>${basedir}</reportOutputDirectory>
                         <destDir>apidocs</destDir>
+                        <failOnError>false</failOnError>
                     </configuration>
                 </plugin>
             </plugins>
