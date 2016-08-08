@@ -100,6 +100,8 @@ public class Axis implements Serializable {
 
     private Boolean reversed;
 
+    private Boolean reversedStacks;
+
     private Boolean showEmpty;
 
     private Boolean showFirstLabel;
@@ -270,6 +272,10 @@ public class Axis implements Serializable {
 
     public Boolean getReversed() {
         return this.reversed;
+    }
+
+    public Boolean getReversedStacks() {
+        return reversedStacks;
     }
 
     public Boolean getShowEmpty() {
@@ -520,6 +526,10 @@ public class Axis implements Serializable {
     public Axis setReversed(final Boolean reversed) {
         this.reversed = reversed;
         return this;
+    }
+
+    public void setReversedStacks(Boolean reversedStacks) {
+        this.reversedStacks = reversedStacks;
     }
 
     public Axis setShowEmpty(final Boolean showEmpty) {
