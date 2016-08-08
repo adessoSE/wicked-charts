@@ -1,18 +1,16 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
- *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   you may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
+ * Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
  */
 package com.googlecode.wickedcharts.highcharts.jackson;
+
+import java.util.Locale;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -25,8 +23,6 @@ import com.googlecode.wickedcharts.highcharts.options.series.Bubble;
 import com.googlecode.wickedcharts.highcharts.options.series.Coordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.RangeCoordinate;
 import com.googlecode.wickedcharts.highcharts.options.series.ThreeDCoordinate;
-
-import java.util.Locale;
 
 /**
  * A renderer for rendering Highcharts options into JSON objects based on the
@@ -103,11 +99,10 @@ public class JsonRenderer {
 
     public String toJson(final Object object) {
         try {
-            String result = this.jacksonMapper.writeValueAsString(object);
-            return convertTurkishChars(result);
+            return this.jacksonMapper.writeValueAsString(object);
         } catch (Exception e) {
             throw new RuntimeException("Error trying to serialize object of type " + object.getClass().getName()
-                    + " into JSON!", e);
+                                       + " into JSON!", e);
         }
     }
 
@@ -115,22 +110,10 @@ public class JsonRenderer {
         try {
             return this.jacksonMapper.readValue(json, targetClazz);
         } catch (Exception e) {
-            throw new RuntimeException("Error trying to deserialize object of type " + targetClazz.getName() + " into JSON!",
+            throw new RuntimeException(
+                    "Error trying to deserialize object of type " + targetClazz.getName() + " into JSON!",
                     e);
         }
     }
 
-    /**
-     * Converts special turkish characters to their latin-1 counterpart so that the JSON output will still be valid.
-     */
-    public String convertTurkishChars(String text) {
-        String[] olds = {"Ğ", "ğ", "Ü", "ü", "Ş", "ş", "İ", "ı", "Ö", "ö", "Ç", "ç"};
-        String[] news = {"G", "g", "U", "u", "S", "s", "I", "i", "O", "o", "C", "c"};
-
-        for (int i = 0; i < olds.length; i++) {
-            text = text.replace(olds[i], news[i]);
-        }
-
-        return text;
-    }
 }
