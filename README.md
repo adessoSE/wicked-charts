@@ -89,7 +89,7 @@ If you want to use the Java abstraction and JSON serializer of the Highcharts op
 ```html
 <dependency>
   <groupId>com.googlecode.wicked-charts</groupId>
-  <artifactId>wicked-charts-highcharts</artifactId>
+  <artifactId>highcharts-wrapper</artifactId>
   <version>2.0.0</version>
 </dependency>
 ```
