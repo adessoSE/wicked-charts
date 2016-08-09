@@ -15,13 +15,6 @@ com.googlecode.wickedcharts.highcharts.options.util
 com.googlecode.wickedcharts.highcharts.theme
 com.googlecode.wickedcharts.jsf21
 com.googlecode.wickedcharts.jsf21.highcharts
-com.googlecode.wickedcharts.showcase
-com.googlecode.wickedcharts.showcase.ie
-com.googlecode.wickedcharts.showcase.jsf.bean
-com.googlecode.wickedcharts.showcase.links
-com.googlecode.wickedcharts.showcase.modalwindow
-com.googlecode.wickedcharts.showcase.options
-com.googlecode.wickedcharts.showcase.options.base
 com.googlecode.wickedcharts.wicket14
 com.googlecode.wickedcharts.wicket14.highcharts
 com.googlecode.wickedcharts.wicket14.highcharts.features.basic
