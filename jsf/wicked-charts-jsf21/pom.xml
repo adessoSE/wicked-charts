@@ -101,6 +101,7 @@
                 </executions>
                 <configuration>
                     <failOnError>false</failOnError>
+                    <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
             </plugin>
             <plugin>
