@@ -74,6 +74,8 @@ public class PlotOptions implements Serializable {
 
     private Float pointPadding;
 
+    private Float maxPointWidth;
+
     private Long pointStart;
 
     private Integer pointWidth;
@@ -252,6 +254,10 @@ public class PlotOptions implements Serializable {
 
     public Float getPointPadding() {
         return this.pointPadding;
+    }
+
+    public Float getMaxPointWidth() {
+        return this.maxPointWidth;
     }
 
     public PointPlacement getPointPlacement() {
@@ -492,6 +498,11 @@ public class PlotOptions implements Serializable {
 
     public PlotOptions setPointPadding(final Float pointPadding) {
         this.pointPadding = pointPadding;
+        return this;
+    }
+
+    public PlotOptions setMaxPointWidth(final Float maxPointWidth){
+        this.maxPointWidth = maxPointWidth;
         return this;
     }
 
