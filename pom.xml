@@ -42,6 +42,7 @@
 
     <modules>
         <module>highcharts-wrapper</module>
+        <module>chartjs-wrapper</module>
         <module>wicket/wicked-charts-wicket14</module>
         <module>wicket/wicked-charts-wicket15</module>
         <module>wicket/wicked-charts-wicket6</module>
