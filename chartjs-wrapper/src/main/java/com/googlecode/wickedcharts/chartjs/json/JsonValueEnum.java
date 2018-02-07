@@ -12,40 +12,22 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.options.color;
-
-import java.awt.Color;
+package com.googlecode.wickedcharts.chartjs.json;
 
 /**
- * A simple {@link ColorReference} defined by a {@link Color} object.
+ * Marker for enums that are to be serialized into JSON with a certain string
+ * value.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SimpleColor extends ColorReference {
+public interface JsonValueEnum {
 
-	private Color color;
-
-	private static final long serialVersionUID = 1L;
-
-	public SimpleColor(final Color color) {
-		this.color = color;
-	}
-
-	@Override
-	protected ColorReference copy() {
-		ColorReference copy = new SimpleColor(this.color);
-		copy.setBrightness(getBrightness());
-		return copy;
-	}
-
-	public Color getColor() {
-		return this.color;
-	}
-
-	public SimpleColor setColor(final Color color) {
-		this.color = color;
-		return this;
-	}
+	/**
+	 * Returns the string representation of the enum in JSON.
+	 * 
+	 * @return the JSON value
+	 */
+	String getJsonValue();
 
 }

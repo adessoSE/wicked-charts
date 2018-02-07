@@ -12,40 +12,14 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wickedcharts.highcharts.options.color;
-
-import java.awt.Color;
+package com.googlecode.wickedcharts.chartjs.json;
 
 /**
- * A simple {@link ColorReference} defined by a {@link Color} object.
+ * Marker interface to mark enums that are serialized into lowercase JSON.
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class SimpleColor extends ColorReference {
-
-	private Color color;
-
-	private static final long serialVersionUID = 1L;
-
-	public SimpleColor(final Color color) {
-		this.color = color;
-	}
-
-	@Override
-	protected ColorReference copy() {
-		ColorReference copy = new SimpleColor(this.color);
-		copy.setBrightness(getBrightness());
-		return copy;
-	}
-
-	public Color getColor() {
-		return this.color;
-	}
-
-	public SimpleColor setColor(final Color color) {
-		this.color = color;
-		return this;
-	}
+public interface LowercaseEnum {
 
 }
