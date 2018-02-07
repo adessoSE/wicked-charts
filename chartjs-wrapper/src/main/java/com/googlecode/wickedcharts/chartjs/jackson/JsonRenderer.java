@@ -56,7 +56,7 @@ public class JsonRenderer {
 
 	private static ObjectMapper createDefaultObjectMapper() {
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.disable(SerializationFeature.INDENT_OUTPUT);
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		mapper.disable(SerializationFeature.WRITE_NULL_MAP_VALUES);
 		mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
 		mapper.setSerializationInclusion(Include.NON_NULL);

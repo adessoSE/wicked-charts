@@ -8,4 +8,7 @@ public class Options {
 	private Boolean responsive;
 	private Legend legend;
 	private Title title;
+	private Tooltips tooltips;
+	private Hover hover;
+	private Scales scales;
 }

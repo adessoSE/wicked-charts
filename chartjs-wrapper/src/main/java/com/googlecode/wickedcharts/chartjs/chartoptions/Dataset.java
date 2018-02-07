@@ -14,4 +14,5 @@ public class Dataset {
 	private Color borderColor;
 	private Integer borderWidth;
 	private List<? extends Number> data;
+	private Boolean fill;
 }
