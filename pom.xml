@@ -77,6 +77,11 @@
                 <artifactId>highcharts-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.googlecode.wicked-charts</groupId>
+                <artifactId>chartjs-wrapper</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
