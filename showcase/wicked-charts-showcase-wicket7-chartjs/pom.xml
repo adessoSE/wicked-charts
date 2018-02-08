@@ -89,8 +89,7 @@
 
     </dependencies>
     <build>
-        <finalName>wicked-charts-showcase</finalName>
-        <resources>
+        <finalName>wicked-charts-showcase</finalName>        <resources>
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
@@ -99,7 +98,7 @@
                 <directory>src/main/java</directory>
                 <includes>
                     <include>**/*.html</include>
-                    <include>**/*Options.java</include>
+                    <include>**/*Configuration.java</include>
                 </includes>
             </resource>
 

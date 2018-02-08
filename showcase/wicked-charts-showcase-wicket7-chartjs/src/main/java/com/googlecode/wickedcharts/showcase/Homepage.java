@@ -16,9 +16,12 @@ package com.googlecode.wickedcharts.showcase;
 
 
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import com.googlecode.wickedcharts.showcase.configurations.LineChartBasicConfiguration;
+import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.*;
+import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 
 public class Homepage extends WebPage {
@@ -26,9 +29,39 @@ public class Homepage extends WebPage {
     private static final long serialVersionUID = 1L;
 
     public Homepage(final PageParameters parameters) {
-
-    	Chart chart = new Chart("chart", new LineChartBasicConfiguration());
-		add(chart);
     	
+        ChartConfiguration config = this.getConfigurationToDisplay();
+        final Chart chart = new Chart("chart", config);
+        this.add(chart);
+        Label codeContainer = this.addCodeContainer();
+        this.addChartLinks(chart, codeContainer);
     }
+
+	private Label addCodeContainer() {
+        Label codeContainer = new Label("code", new StringFromResourceModel(
+        		LineChartBasicConfiguration.class, LineChartBasicConfiguration.class.getSimpleName()
+                + ".java"));
+        codeContainer.setOutputMarkupId(true);
+        this.add(codeContainer);
+        return codeContainer;
+	}
+
+	private void addChartLinks(Chart chart, Label codeContainer) {
+        this.add(new UpdateChartLink("LineChartBasic", chart, codeContainer,
+                new LineChartBasicConfiguration()));
+        this.add(new UpdateChartLink("BarChartVertical", chart, codeContainer,
+                new BarChartVerticalConfiguration()));
+        this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
+                new BarChartHorizontalConfiguration()));
+	}
+
+	private ChartConfiguration getConfigurationToDisplay() {
+        ChartConfiguration config = ((ShowcaseSession) this.getSession())
+                .getCurrentChartConfiguration();
+        if (config == null) {
+        	config = new LineChartBasicConfiguration();
+        }
+        return config;
+	}
+	
 }

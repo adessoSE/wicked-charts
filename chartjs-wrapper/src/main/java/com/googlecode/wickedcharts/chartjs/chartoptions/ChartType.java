@@ -1,7 +1,20 @@
 package com.googlecode.wickedcharts.chartjs.chartoptions;
 
-import com.googlecode.wickedcharts.chartjs.json.LowercaseEnum;
+import com.googlecode.wickedcharts.chartjs.json.JsonValueEnum;
 
-public enum ChartType implements LowercaseEnum {
-	LINE,BAR;
+public enum ChartType implements JsonValueEnum {
+	LINE("line"),
+	BAR("bar"),
+	HORIZONTAL_BAR("horizontalBar");
+	
+	private String jsonValue;
+
+	private ChartType(String jsonValue) {
+		this.jsonValue = jsonValue;
+	}
+
+	@Override
+	public String getJsonValue() {
+		return jsonValue;
+	}
 }

@@ -15,7 +15,10 @@ package com.googlecode.wickedcharts.showcase;
  */
 
 
+import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 
 /**
  * Application object for your web application. If you want to run this
@@ -39,6 +42,11 @@ public class ShowcaseApplication extends WebApplication {
 	public void init() {
 		super.init();
 		mountPage("/start", Homepage.class);
+	}
+	
+	@Override
+	public Session newSession(final Request request, final Response response) {
+		return new ShowcaseSession(request);
 	}
 
 }

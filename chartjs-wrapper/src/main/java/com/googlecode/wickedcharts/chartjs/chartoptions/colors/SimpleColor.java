@@ -6,7 +6,7 @@ public class SimpleColor extends Color {
 	
 	private Class<? extends Color> colorClass;
 	
-	private SimpleColor(RgbColor rgbColor, Class<? extends Color> clazz) {
+	private SimpleColor(Color rgbColor, Class<? extends Color> clazz) {
 		this.color = rgbColor;
 		this.colorClass = clazz;
 	}

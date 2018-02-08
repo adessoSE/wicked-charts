@@ -11,4 +11,5 @@ public class Options {
 	private Tooltips tooltips;
 	private Hover hover;
 	private Scales scales;
+	private Element elements;
 }
