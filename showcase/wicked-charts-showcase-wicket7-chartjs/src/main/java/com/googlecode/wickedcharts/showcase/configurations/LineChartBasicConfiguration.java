@@ -17,6 +17,7 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+@SuppressWarnings("serial")
 public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 	public LineChartBasicConfiguration() {
     	setType(ChartType.LINE);
