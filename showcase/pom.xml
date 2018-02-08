@@ -54,6 +54,7 @@
         <module>wicked-charts-showcase-wicket6</module>
         <module>wicked-charts-showcase-wicket7</module>
         <module>wicked-charts-showcase-jsf21</module>
+        <module>wicked-charts-showcase-wicket7-chartjs</module>
     </modules>
 
     <dependencyManagement>
@@ -111,6 +112,11 @@
             <dependency>
                 <groupId>com.googlecode.wicked-charts</groupId>
                 <artifactId>highcharts-wrapper</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.googlecode.wicked-charts</groupId>
+                <artifactId>chartsjs-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
