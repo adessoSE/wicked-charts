@@ -12,6 +12,7 @@ import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfigur
 @SuppressWarnings("serial")
 public class PieChartConfiguration extends ShowcaseConfiguration {
 	public PieChartConfiguration() {
+		super();
 		setType(ChartType.PIE);
 
 		Data data = new Data();

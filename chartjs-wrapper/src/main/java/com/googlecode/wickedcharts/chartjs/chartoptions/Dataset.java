@@ -13,6 +13,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @lombok.Data
 public class Dataset {
+	private ChartType type;
 	private String label;
 
 	@JsonSerialize(using = SingleElementListSerializer.class)
@@ -21,6 +22,7 @@ public class Dataset {
 	private Integer borderWidth;
 	private List<? extends Number> data;
 	private Boolean fill;
+	
 	
 	public Dataset setBackgroundColor(Color color) {
 		this.backgroundColor = Arrays.asList(color);

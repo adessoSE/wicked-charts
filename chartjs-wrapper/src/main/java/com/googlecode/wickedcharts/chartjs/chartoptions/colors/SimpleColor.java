@@ -37,6 +37,7 @@ public class SimpleColor extends Color {
 	public static final SimpleColor YELLOW = new SimpleColor(new RgbColor(255, 205, 86), RgbColor.class);
 	public static final SimpleColor PURPLE = new SimpleColor(new RgbColor(153, 102, 255), RgbColor.class);
 	public static final SimpleColor GREY = new SimpleColor(new RgbColor(201, 203, 207), RgbColor.class);
+	public static final SimpleColor WHITE = new SimpleColor(new RgbColor(255, 255, 255), RgbColor.class);
 
 	public static final SimpleColor RED_TRANSPARENT = new SimpleColor(new RgbaColor(255,99,132,0.5f), RgbaColor.class);
 	public static final SimpleColor GREEN_TRANSPARENT = new SimpleColor(new RgbaColor(75,192,192,0.5f), RgbaColor.class);
@@ -45,4 +46,5 @@ public class SimpleColor extends Color {
 	public static final SimpleColor YELLOW_TRANSPARENT = new SimpleColor(new RgbaColor(255, 205, 86, 0.5f), RgbaColor.class);
 	public static final SimpleColor PURPLE_TRANSPARENT = new SimpleColor(new RgbaColor(153, 102, 255, 0.5f), RgbaColor.class);
 	public static final SimpleColor GREY_TRANSPARENT = new SimpleColor(new RgbaColor(201, 203, 207, 0.5f), RgbaColor.class);
+	public static final SimpleColor WHITE_TRANSPARENT = new SimpleColor(new RgbaColor(255, 255, 255, 0.5f), RgbaColor.class);
 }

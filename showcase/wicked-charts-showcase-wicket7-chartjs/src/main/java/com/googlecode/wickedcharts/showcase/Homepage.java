@@ -21,6 +21,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.*;
+import com.googlecode.wickedcharts.showcase.configurations.legendposition.*;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 
@@ -45,7 +46,7 @@ public class Homepage extends WebPage {
         this.add(codeContainer);
         return codeContainer;
 	}
-
+	
 	private void addChartLinks(Chart chart, Label codeContainer) {
         this.add(new UpdateChartLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
@@ -54,7 +55,17 @@ public class Homepage extends WebPage {
         this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
         this.add(new UpdateChartLink("PieChart", chart, codeContainer,
-                new PieChartConfiguration()));
+                new PieChartConfiguration())); 
+        this.add(new UpdateChartLink("ComboBarLineChart", chart, codeContainer,
+                new ComboBarLineChartConfiguration())); 
+        this.add(new UpdateChartLink("LegendPositionTop", chart, codeContainer,
+                new LegendPositionTopConfiguration())); 
+        this.add(new UpdateChartLink("LegendPositionRight", chart, codeContainer,
+                new LegendPositionRightConfiguration())); 
+        this.add(new UpdateChartLink("LegendPositionBottom", chart, codeContainer,
+                new LegendPositionBottomConfiguration())); 
+        this.add(new UpdateChartLink("LegendPositionLeft", chart, codeContainer,
+                new LegendPositionLeftConfiguration())); 
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
