@@ -54,7 +54,6 @@
         <module>wicked-charts-showcase-wicket6</module>
         <module>wicked-charts-showcase-wicket7</module>
         <module>wicked-charts-showcase-jsf21</module>
-        <module>wicked-charts-showcase-wicket7-chartjs</module>
     </modules>
 
     <dependencyManagement>
