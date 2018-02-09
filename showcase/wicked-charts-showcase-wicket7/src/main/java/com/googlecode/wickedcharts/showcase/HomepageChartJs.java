@@ -66,6 +66,8 @@ public class HomepageChartJs extends WebPage {
                 new BarChartHorizontalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartStacked", chart, codeContainer,
                 new BarChartStackedConfiguration()));
+        this.add(new UpdateChartJsLink("BarChartMultiAxis", chart, codeContainer,
+                new BarChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,

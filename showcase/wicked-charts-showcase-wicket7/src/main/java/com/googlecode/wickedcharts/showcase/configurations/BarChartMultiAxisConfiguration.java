@@ -21,9 +21,9 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
-public class LineChartMultiAxisConfiguration extends ShowcaseConfiguration{
-	public LineChartMultiAxisConfiguration() {
-		setType(ChartType.LINE);
+public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
+	public BarChartMultiAxisConfiguration() {
+		setType(ChartType.BAR);
 		Data data = new Data()
 				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
@@ -51,7 +51,7 @@ public class LineChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart - Multi Axis"))
+						.setText("Chart.js Bar Chart - Multi Axis"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))
