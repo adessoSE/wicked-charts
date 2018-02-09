@@ -89,7 +89,8 @@
 
     </dependencies>
     <build>
-        <finalName>wicked-charts-showcase</finalName>        <resources>
+        <finalName>wicked-charts-showcase</finalName>
+        <resources>
             <resource>
                 <directory>src/main/resources</directory>
             </resource>

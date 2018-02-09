@@ -22,6 +22,8 @@ public class Dataset {
 	private Integer borderWidth;
 	private List<? extends Number> data;
 	private Boolean fill;
+	private Integer stack;
+	private String yAxisID;
 	
 	
 	public Dataset setBackgroundColor(Color color) {

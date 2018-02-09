@@ -18,6 +18,7 @@ import com.googlecode.wickedcharts.showcase.ie.SimplePage;
 import com.googlecode.wickedcharts.showcase.modalwindow.ModalWindowPage;
 import com.googlecode.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
@@ -34,8 +35,8 @@ public class ShowcaseApplication extends WebApplication {
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<Homepage> getHomePage() {
-		return Homepage.class;
+	public Class<? extends WebPage> getHomePage() {
+		return HomepageChartJs.class;
 	}
 
 	/**
@@ -48,8 +49,9 @@ public class ShowcaseApplication extends WebApplication {
 				new JavaScriptResourceReference(ShowcaseApplication.class,
 						"jquery-1.8.3.min-IEfix.js"));
 
-		mountPage("/start", Homepage.class);
-		mountPage("/start/${theme}", Homepage.class);
+		mountPage("/start/chartjs", HomepageChartJs.class);
+		mountPage("/start/highcharts", HomepageHighcharts.class);
+		mountPage("/start/highcharts/${theme}", HomepageHighcharts.class);
 		mountPage("/simple", SimplePage.class);
 		mountPage("/modal", ModalWindowPage.class);
 

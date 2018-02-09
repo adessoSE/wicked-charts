@@ -22,18 +22,21 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.*;
 import com.googlecode.wickedcharts.showcase.configurations.legendposition.*;
-import com.googlecode.wickedcharts.showcase.links.UpdateChartLink;
+import com.googlecode.wickedcharts.showcase.links.ChartjsShowcaseLink;
+import com.googlecode.wickedcharts.showcase.links.HighchartsShowcaseLink;
+import com.googlecode.wickedcharts.showcase.links.UpdateChartJsLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 
-public class Homepage extends WebPage {
+public class HomepageChartJs extends WebPage {
 
     private static final long serialVersionUID = 1L;
 
-    public Homepage(final PageParameters parameters) {
+    public HomepageChartJs(final PageParameters parameters) {
     	
         ChartConfiguration config = this.getConfigurationToDisplay();
         final Chart chart = new Chart("chart", config);
         this.add(chart);
+        addNavigationLinks();
         Label codeContainer = this.addCodeContainer();
         this.addChartLinks(chart, codeContainer);
     }
@@ -47,34 +50,41 @@ public class Homepage extends WebPage {
         return codeContainer;
 	}
 	
+	private void addNavigationLinks() {
+		this.add(new HighchartsShowcaseLink());
+		this.add(new ChartjsShowcaseLink());
+	}
+	
 	private void addChartLinks(Chart chart, Label codeContainer) {
-        this.add(new UpdateChartLink("LineChartBasic", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
-        this.add(new UpdateChartLink("LineChartMultiAxis", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
-        this.add(new UpdateChartLink("BarChartVertical", chart, codeContainer,
+        this.add(new UpdateChartJsLink("BarChartVertical", chart, codeContainer,
                 new BarChartVerticalConfiguration()));
-        this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
+        this.add(new UpdateChartJsLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
-        this.add(new UpdateChartLink("BarChartStacked", chart, codeContainer,
+        this.add(new UpdateChartJsLink("BarChartStacked", chart, codeContainer,
                 new BarChartStackedConfiguration()));
-        this.add(new UpdateChartLink("PieChart", chart, codeContainer,
+        this.add(new UpdateChartJsLink("BarChartMultiAxis", chart, codeContainer,
+                new BarChartMultiAxisConfiguration()));
+        this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
-        this.add(new UpdateChartLink("ComboBarLineChart", chart, codeContainer,
+        this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
-        this.add(new UpdateChartLink("LegendPositionTop", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,
                 new LegendPositionTopConfiguration())); 
-        this.add(new UpdateChartLink("LegendPositionRight", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LegendPositionRight", chart, codeContainer,
                 new LegendPositionRightConfiguration())); 
-        this.add(new UpdateChartLink("LegendPositionBottom", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LegendPositionBottom", chart, codeContainer,
                 new LegendPositionBottomConfiguration())); 
-        this.add(new UpdateChartLink("LegendPositionLeft", chart, codeContainer,
+        this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())
-                .getCurrentChartConfiguration();
+                .getCurrentChartjsConfiguration();
         if (config == null) {
         	config = new LineChartBasicConfiguration();
         }

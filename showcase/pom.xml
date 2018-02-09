@@ -7,12 +7,11 @@
         <groupId>com.googlecode.wicked-charts</groupId>
         <artifactId>wicked-charts-parent</artifactId>
         <relativePath>../</relativePath>
-        <version>2.0.0</version>
+        <version>2.0.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>wicked-charts-showcase-parent</artifactId>
-    <version>2.0.1</version>
     <name>Wicked Charts Showcase parent</name>
     <packaging>pom</packaging>
     <description>Parent POM for wicked-charts Showcases</description>
@@ -54,7 +53,6 @@
         <module>wicked-charts-showcase-wicket6</module>
         <module>wicked-charts-showcase-wicket7</module>
         <module>wicked-charts-showcase-jsf21</module>
-        <module>wicked-charts-showcase-wicket7-chartjs</module>
     </modules>
 
     <dependencyManagement>
@@ -116,7 +114,7 @@
             </dependency>
             <dependency>
                 <groupId>com.googlecode.wicked-charts</groupId>
-                <artifactId>chartsjs-wrapper</artifactId>
+                <artifactId>chartjs-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
@@ -129,8 +127,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
