@@ -5,7 +5,9 @@ import com.googlecode.wickedcharts.chartjs.json.JsonValueEnum;
 public enum ChartType implements JsonValueEnum {
 	LINE("line"),
 	BAR("bar"),
-	HORIZONTAL_BAR("horizontalBar");
+	HORIZONTAL_BAR("horizontalBar"),
+	STACKED_BAR("bar");
+	
 	
 	private String jsonValue;
 
