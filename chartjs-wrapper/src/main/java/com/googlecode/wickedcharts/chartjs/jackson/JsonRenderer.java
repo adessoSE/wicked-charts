@@ -50,6 +50,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
 		
 		ObjectMapper mapper = createDefaultObjectMapper();
+		SingleElementListObjectMapper.getInstance().registerModule(jacksonModule);
 		mapper.setLocale(Locale.ENGLISH);
 		mapper.registerModule(this.jacksonModule);
 		return mapper;
@@ -63,7 +64,7 @@ public class JsonRenderer {
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		return mapper;
 	}
-
+	
 	public String toJson(final Object object) {
 		try {
 			return this.jacksonMapper.writeValueAsString(object);

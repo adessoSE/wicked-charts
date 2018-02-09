@@ -2,13 +2,16 @@ package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
+import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
 import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
 import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
 import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
@@ -17,10 +20,8 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-@SuppressWarnings("serial")
-public class LineChartBasicConfiguration extends ShowcaseConfiguration {
-	public LineChartBasicConfiguration() {
-		super();
+public class LineChartMultiAxis extends ShowcaseConfiguration {
+	public LineChartMultiAxis() {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
@@ -28,17 +29,19 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("My First dataset")
-				.setBackgroundColor(SimpleColor.RED)
+				.setLabel("Dataset 1")
+				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
+				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
 				.setFill(false);
 		
 		
 		Dataset dataset2 = new Dataset()
-				.setLabel("My Second dataset")
-				.setBackgroundColor(SimpleColor.BLUE)
+				.setLabel("Dataset 2")
+				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
+				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
 				.setFill(false);
 		
@@ -46,26 +49,11 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 		
 		Options options = new Options()
 				.setResponsive(true)
+				.setLegend(new Legend()
+						.setPosition(Position.TOP))
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart"))
-				.setTooltips(new Tooltips()
-						.setMode(TooltipMode.INDEX)
-						.setIntersect(false))
-				.setHover(new Hover()
-						.setMode(HoverMode.NEAREST)
-						.setIntersect(true))
-				.setScales(new Scales()
-						.setXAxes(new AxesScale()
-								.setDisplay(true)
-								.setScaleLabel(new ScaleLabel()
-										.setDisplay(true)
-										.setLabelString("Month")))
-						.setYAxes(new AxesScale()
-								.setDisplay(true)
-								.setScaleLabel(new ScaleLabel()
-										.setDisplay(true)
-										.setLabelString("Value"))))
+						.setText("Chart.js Bar Chart"))
 				;
 		setOptions(options);
 	}

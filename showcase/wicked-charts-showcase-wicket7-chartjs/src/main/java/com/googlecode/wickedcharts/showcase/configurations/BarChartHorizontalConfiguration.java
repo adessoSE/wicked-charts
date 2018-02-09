@@ -16,6 +16,7 @@ import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfigur
 @SuppressWarnings("serial")
 public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 	public BarChartHorizontalConfiguration() {
+		super();
     	setType(ChartType.HORIZONTAL_BAR);
 		
 		Data data = new Data()

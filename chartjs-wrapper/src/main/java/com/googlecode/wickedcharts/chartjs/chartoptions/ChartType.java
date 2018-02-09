@@ -7,7 +7,8 @@ public enum ChartType implements JsonValueEnum {
 	TIME_SCALE_LINE("line"),
 	BAR("bar"),
 	HORIZONTAL_BAR("horizontalBar"),
-	STACKED_BAR("bar");
+	STACKED_BAR("bar"),
+	PIE("pie");
 	
 	private String jsonValue;
 
