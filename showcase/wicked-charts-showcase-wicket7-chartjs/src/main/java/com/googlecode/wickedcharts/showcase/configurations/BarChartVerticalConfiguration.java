@@ -12,8 +12,10 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+@SuppressWarnings("serial")
 public class BarChartVerticalConfiguration extends ShowcaseConfiguration {
 	public BarChartVerticalConfiguration() {
+		super();
     	setType(ChartType.BAR);
 		
 		Data data = new Data()
