@@ -12,5 +12,4 @@ public class Options {
 	private Hover hover;
 	private Scales scales;
 	private Element elements;
-	private ScalesMultiAxis scalesMultiAxis;
 }
