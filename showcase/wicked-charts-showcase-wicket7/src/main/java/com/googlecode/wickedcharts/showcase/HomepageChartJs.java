@@ -78,7 +78,9 @@ public class HomepageChartJs extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
-	}
+        this.add(new UpdateChartJsLink("StackedGroupChart", chart, codeContainer,
+                new StackedGroupChartConfiguration())); 
+	} 
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())
