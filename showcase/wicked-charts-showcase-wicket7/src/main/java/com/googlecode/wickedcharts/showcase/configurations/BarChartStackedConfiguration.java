@@ -15,6 +15,7 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+@SuppressWarnings("serial")
 public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 	public BarChartStackedConfiguration() {
     	setType(ChartType.STACKED_BAR);
