@@ -58,6 +58,8 @@ public class HomepageChartJs extends WebPage {
 	private void addChartLinks(Chart chart, Label codeContainer) {
         this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
+        this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
+                new LineChartMultiAxisConfiguration())); 
         this.add(new UpdateChartJsLink("BarChartVertical", chart, codeContainer,
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartHorizontal", chart, codeContainer,
