@@ -50,6 +50,8 @@ public class Homepage extends WebPage {
 	private void addChartLinks(Chart chart, Label codeContainer) {
         this.add(new UpdateChartLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
+        this.add(new UpdateChartLink("LineChartMultiAxis", chart, codeContainer,
+                new LineChartMultiAxisConfiguration())); 
         this.add(new UpdateChartLink("BarChartVertical", chart, codeContainer,
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
@@ -68,6 +70,7 @@ public class Homepage extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
+        
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {

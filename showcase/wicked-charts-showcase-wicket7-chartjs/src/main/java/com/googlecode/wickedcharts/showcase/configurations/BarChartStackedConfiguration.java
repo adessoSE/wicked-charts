@@ -62,18 +62,18 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 						.setDisplay(true)
 						.setText("Chart.js Bar Chart - Stacked"))
 				.setScales(new Scales()
-						.setXAxes(new AxesScale()
+						.setXAxes(Arrays.asList(new AxesScale()
 								.setDisplay(true)
 								.setStacked(true)
 								.setScaleLabel(new ScaleLabel()
 										.setDisplay(true)
-										.setLabelString("Month")))
-						.setYAxes(new AxesScale()
+										.setLabelString("Month"))))
+						.setYAxes(Arrays.asList(new AxesScale()
 								.setDisplay(true)
 								.setStacked(true)
 								.setScaleLabel(new ScaleLabel()
 										.setDisplay(true)
-										.setLabelString("Value"))))
+										.setLabelString("Value")))))
 				;
 		setOptions(options);
 	}

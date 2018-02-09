@@ -23,6 +23,7 @@ public class Dataset {
 	private List<? extends Number> data;
 	private Boolean fill;
 	private Integer stack;
+	private String yAxisID;
 
 	
 	
