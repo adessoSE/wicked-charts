@@ -7,4 +7,5 @@ import lombok.experimental.Accessors;
 public class AxesScale {
 	private Boolean display;
 	private ScaleLabel scaleLabel;
+	private Boolean stacked;
 }

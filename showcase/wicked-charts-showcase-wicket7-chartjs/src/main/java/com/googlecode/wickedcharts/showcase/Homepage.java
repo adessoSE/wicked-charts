@@ -54,6 +54,8 @@ public class Homepage extends WebPage {
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
+        this.add(new UpdateChartLink("BarChartStacked", chart, codeContainer,
+                new BarChartStackedConfiguration()));
         this.add(new UpdateChartLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
         this.add(new UpdateChartLink("ComboBarLineChart", chart, codeContainer,
