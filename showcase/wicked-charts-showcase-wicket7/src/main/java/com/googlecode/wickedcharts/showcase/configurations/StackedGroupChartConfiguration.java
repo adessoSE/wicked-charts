@@ -58,6 +58,6 @@ public class StackedGroupChartConfiguration extends ShowcaseConfiguration {
 								.setStacked(true))
 						.setYAxes(new AxesScale()
 								.setStacked(true)));
-		setOptions(options);
+		setOptions(options); 
 	}
 }
