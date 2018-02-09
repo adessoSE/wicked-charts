@@ -53,7 +53,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "13"))
 				.setPointHoverRadius("15")
-				.setFill(false);
+				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		

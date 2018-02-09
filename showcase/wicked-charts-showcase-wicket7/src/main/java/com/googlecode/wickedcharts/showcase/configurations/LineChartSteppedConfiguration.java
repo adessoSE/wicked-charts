@@ -32,7 +32,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setSteppedLine("true");
 		
 		
@@ -41,7 +41,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setSteppedLine("before");
 		
 		Dataset dataset3 = new Dataset()
@@ -49,7 +49,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setSteppedLine("after");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));

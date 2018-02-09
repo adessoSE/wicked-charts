@@ -22,7 +22,7 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 		dataset1.setType(ChartType.LINE)
 		.setBorderColor(SimpleColor.BLUE)
 		.setBorderWidth(2)
-		.setFill(false)
+		.setFill("false")
 		.setData(this.randomIntegerList(7))
 		.setLabel("Dataset 1");
 		

@@ -28,11 +28,17 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
+				.setLabel("Filled")
+				.setBackgroundColor(SimpleColor.GREEN)
+				.setBorderColor(SimpleColor.GREEN)
+				.setData(randomIntegerList(7));
+		
+		Dataset dataset3 = new Dataset()
 				.setLabel("Unfilled")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill(false);
+				.setFill("false");
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -41,14 +47,8 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderDash(Arrays.asList("5", "5"))
 				.setData(randomIntegerList(7))
-				.setFill(false);
+				.setFill("false");
 		
-		Dataset dataset3 = new Dataset()
-				.setLabel("Filled")
-				.setBackgroundColor(SimpleColor.BLUE)
-				.setBorderColor(SimpleColor.BLUE)
-				.setData(randomIntegerList(7))
-				.setFill(true);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3));
 		

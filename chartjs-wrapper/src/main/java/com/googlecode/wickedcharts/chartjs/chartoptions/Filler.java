@@ -4,9 +4,6 @@ import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @lombok.Data
-public class Ticks {
-	private Integer suggestedMin;
-	private Integer suggestedMax;
-	private Boolean autoSkip;
-	private Integer maxRotation;
+public class Filler {
+	private boolean propagate;
 }

@@ -12,4 +12,5 @@ public class AxesScale {
 	private String position;
 	private String type;
 	private GridLines gridLines;
+	private Ticks ticks;
 }

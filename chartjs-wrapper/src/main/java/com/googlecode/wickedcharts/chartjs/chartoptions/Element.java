@@ -6,4 +6,5 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class Element {
 	private Point point;
+	private Line line;
 }

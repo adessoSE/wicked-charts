@@ -82,6 +82,8 @@ public class HomepageChartJs extends WebPage {
                 new BarChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", chart, codeContainer,
+                new AreaLineBoundariesChartConfiguration())); 
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,

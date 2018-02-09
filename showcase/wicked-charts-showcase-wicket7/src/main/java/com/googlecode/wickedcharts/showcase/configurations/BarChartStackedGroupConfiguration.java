@@ -30,7 +30,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setStack(0);
 		
 		Dataset dataset2 = new Dataset()
@@ -39,7 +39,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setStack(0);
 		
 		Dataset dataset3 = new Dataset()
@@ -48,7 +48,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setStack(1);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));

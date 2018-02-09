@@ -35,7 +35,7 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(datasetsData)
-				.setFill(false)
+				.setFill("false")
 				.setCubicInterpolationMode("monotone");
 		
 		Dataset dataset2 = new Dataset()
@@ -43,14 +43,14 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(datasetsData)
-				.setFill(false);
+				.setFill("false");
 				
 		Dataset dataset3 = new Dataset()
 				.setLabel("Linear interpolation")
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(datasetsData)
-				.setFill(false)
+				.setFill("false")
 				.setLineTension("0");
 				
 		

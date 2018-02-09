@@ -6,20 +6,33 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
 import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Element;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Filler;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
 import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Line;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Plugins;
 import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Ticks;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+//Valid fill Parameters:
+/*
+	'false'
+	'origin'
+	'start'
+	'end'
+ Change the fill setting in the configuration to see changes*/ 
+
 @SuppressWarnings("serial")
-public class LineChartBasicConfiguration extends ShowcaseConfiguration {
-	public LineChartBasicConfiguration() {
+public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration {
+	public AreaLineBoundariesChartConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -28,27 +41,27 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("My First dataset")
+				.setLabel("Dataset")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill("false");
+					.setFill("end");
 		
-		
-		Dataset dataset2 = new Dataset()
-				.setLabel("My Second dataset")
-				.setBackgroundColor(SimpleColor.BLUE)
-				.setBorderColor(SimpleColor.BLUE)
-				.setData(randomIntegerList(7))
-				.setFill("false");
-		
-		data.setDatasets(Arrays.asList(dataset1,dataset2));
+		data.setDatasets(Arrays.asList(dataset1));
 		
 		Options options = new Options()
+				.setMaintainAspectRatio(false)
+				.setSpanGaps(false)
+				.setElements(new Element()
+						.setLine(new Line()
+								.setTension(0.01)))
+				.setPlugins(new Plugins().
+						setFiller(new Filler().
+								setPropagate(false)))
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart"))
+						.setText("Chart.js Boundaries Chart"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))
@@ -60,12 +73,10 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 								.setDisplay(true)
 								.setScaleLabel(new ScaleLabel()
 										.setDisplay(true)
-										.setLabelString("Month")))
-						.setYAxes(new AxesScale()
-								.setDisplay(true)
-								.setScaleLabel(new ScaleLabel()
-										.setDisplay(true)
-										.setLabelString("Value"))))
+										.setLabelString("Month"))
+								.setTicks(new Ticks()
+										.setAutoSkip(false)
+										.setMaxRotation(0))))
 				;
 		setOptions(options);
 	}

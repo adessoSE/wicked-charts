@@ -3,6 +3,7 @@ package com.googlecode.wickedcharts.chartjs.chartoptions;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.Color;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
@@ -16,12 +17,17 @@ public class Dataset {
 	private ChartType type;
 	private String label;
 
+
 	@JsonSerialize(using = SingleElementListSerializer.class)
 	private List<? extends Color> backgroundColor;
 	private Color borderColor;
 	private Integer borderWidth;
 	private List<? extends Number> data;
-	private Boolean fill;
+	
+	private String fill;
+	//fill is now a String because in some charts attributes other than true/false are expected
+	//when configuring a chart, not setting this attribute = "fill: true"
+	
 	private Integer stack;
 	private String yAxisID;
 	private String steppedLine;
@@ -32,6 +38,8 @@ public class Dataset {
 	private String pointHitRadius;
 	private String pointHoverRadius;
 	private boolean showLine = true;
+	
+	
 	
 	
 	public Dataset setBackgroundColor(Color color) {

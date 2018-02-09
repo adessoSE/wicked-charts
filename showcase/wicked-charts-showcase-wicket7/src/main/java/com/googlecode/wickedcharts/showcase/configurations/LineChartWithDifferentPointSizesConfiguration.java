@@ -35,7 +35,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setData(randomIntegerList(7))
 				.setPointRadius(Collections.nCopies(7, "15"))
 				.setPointHoverRadius("10")
-				.setFill(false);
+				.setFill("false");
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -45,7 +45,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBorderDash(Arrays.asList("5", "5"))
 				.setPointRadius(Arrays.asList("2", "4", "6", "18", "0", "12", "20"))
 				.setData(randomIntegerList(7))
-				.setFill(false);
+				.setFill("false");
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("dataset - large pointHoverRadius")
@@ -53,7 +53,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(randomIntegerList(7))
 				.setPointHoverRadius("30")
-				.setFill(false);
+				.setFill("false");
 		
 		
 		Dataset dataset4 = new Dataset()
@@ -62,7 +62,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 			.setBorderColor(SimpleColor.YELLOW)
 			.setData(randomIntegerList(7))
 			.setPointHitRadius("20")
-			.setFill(false);
+			.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3, dataset4));
 		
