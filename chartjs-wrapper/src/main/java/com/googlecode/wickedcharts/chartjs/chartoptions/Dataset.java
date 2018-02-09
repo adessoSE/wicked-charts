@@ -15,4 +15,5 @@ public class Dataset {
 	private Integer borderWidth;
 	private List<? extends Number> data;
 	private Boolean fill;
+	private Integer stack; //for the stacked bar chart
 }

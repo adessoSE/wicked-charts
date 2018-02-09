@@ -53,6 +53,11 @@ public class Homepage extends WebPage {
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
+        this.add(new UpdateChartLink("BarChartStacked", chart, codeContainer,
+                new BarChartStackedConfiguration()));
+        this.add(new UpdateChartLink("TimeScaleLine", chart, codeContainer,
+                new TimeScaleLineChartConfiguration()));
+        
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
