@@ -92,6 +92,8 @@ public class HomepageChartJs extends WebPage {
                 new RadarChartConfiguration()));
         this.add(new UpdateChartJsLink("DoughnutChart", chart, codeContainer,
                 new DoughnutChartConfiguration()));
+        this.add(new UpdateChartJsLink("PolarAreaChart", chart, codeContainer,
+                new PolarAreaChartConfiguration()));
         this.add(new UpdateChartJsLink("ScatterChart", chart, codeContainer,
                 new ScatterChartConfiguration()));
         this.add(new UpdateChartJsLink("ScatterChartMultiAxis", chart, codeContainer,

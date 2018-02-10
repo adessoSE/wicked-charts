@@ -13,6 +13,7 @@ public class Options {
 	private Tooltips tooltips;
 	private Hover hover;
 	private Scales scales;
+	private Scale scale;
 	private Element elements;
 	private Plugins plugins;
 	private Animation animation;
