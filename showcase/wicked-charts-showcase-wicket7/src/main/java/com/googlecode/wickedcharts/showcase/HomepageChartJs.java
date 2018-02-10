@@ -92,6 +92,8 @@ public class HomepageChartJs extends WebPage {
                 new RadarChartConfiguration()));
         this.add(new UpdateChartJsLink("ScatterChart", chart, codeContainer,
                 new ScatterChartConfiguration()));
+        this.add(new UpdateChartJsLink("ScatterChartMultiAxis", chart, codeContainer,
+                new ScatterChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,

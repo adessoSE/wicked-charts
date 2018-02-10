@@ -29,7 +29,10 @@ public class Dataset {
 	//when configuring a chart. Not setting this attribute = "fill: true"
 	
 	private Integer stack;
+	
+	@JsonProperty("yAxisID")
 	private String yAxisID;
+	
 	private String steppedLine;
 	private String lineTension;
 	private String cubicInterpolationMode;

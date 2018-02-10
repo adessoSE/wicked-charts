@@ -8,6 +8,7 @@ public class AxesScale {
 	private Boolean stacked;
 	private Boolean display;
 	private ScaleLabel scaleLabel;
+	private Boolean reverse;
 	private String id;
 	private String position;
 	private String type;
