@@ -33,6 +33,7 @@ public class Dataset {
 	@JsonProperty("yAxisID")
 	private String yAxisID;
 	
+	private String pointStyle;
 	private String steppedLine;
 	private String lineTension;
 	private String cubicInterpolationMode;
@@ -40,8 +41,10 @@ public class Dataset {
 	private List<String> pointRadius;
 	private String pointHitRadius;
 	private String pointHoverRadius;
+	private Double pointBorderWidth;
 	private Boolean showLine;
 	private Boolean hidden;
+	
 	
 	
 	

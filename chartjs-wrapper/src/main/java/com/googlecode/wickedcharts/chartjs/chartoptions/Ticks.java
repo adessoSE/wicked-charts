@@ -10,4 +10,6 @@ public class Ticks {
 	private Boolean autoSkip;
 	private Integer maxRotation;
 	private Boolean beginAtZero;
+	private Integer min;
+	private Integer max;
 }

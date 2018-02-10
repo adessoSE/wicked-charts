@@ -10,6 +10,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @lombok.Data
 public class Scales {
+	
+	@JsonProperty("xAxes")
 	private List<AxesScale> xAxes;
 	
 	@JsonProperty("yAxes")
