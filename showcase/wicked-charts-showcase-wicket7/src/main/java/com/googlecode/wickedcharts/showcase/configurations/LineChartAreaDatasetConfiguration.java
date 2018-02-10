@@ -112,7 +112,6 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setElements(new Element()
 						.setLine(new Line()
 								.setTension(0.000001)))
-				
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)

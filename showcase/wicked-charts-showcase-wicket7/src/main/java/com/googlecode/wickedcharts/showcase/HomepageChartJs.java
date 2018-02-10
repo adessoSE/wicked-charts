@@ -88,6 +88,8 @@ public class HomepageChartJs extends WebPage {
                 new LineChartStackedConfiguration()));
         this.add(new UpdateChartJsLink("LineChartDataset", chart, codeContainer,
                 new LineChartAreaDatasetConfiguration()));
+        this.add(new UpdateChartJsLink("RadarChart", chart, codeContainer,
+                new RadarChartConfiguration()));
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,
