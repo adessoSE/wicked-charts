@@ -9,7 +9,8 @@ public enum ChartType implements JsonValueEnum {
 	STACKED_BAR("bar"),
 	PIE("pie"),
 	RADAR("radar"),
-	SCATTER("scatter");
+	SCATTER("scatter"),
+	DOUGHNUT("doughnut");
 	
 	private String jsonValue;
 
