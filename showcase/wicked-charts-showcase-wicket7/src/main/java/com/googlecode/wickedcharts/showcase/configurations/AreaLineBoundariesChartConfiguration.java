@@ -42,7 +42,7 @@ public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration 
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("Dataset")
-				.setBackgroundColor(SimpleColor.RED)
+				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
 					.setFill("end");
@@ -50,11 +50,11 @@ public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration 
 		data.setDatasets(Arrays.asList(dataset1));
 		
 		Options options = new Options()
-				.setMaintainAspectRatio(false)
+				.setMaintainAspectRatio(true)
 				.setSpanGaps(false)
 				.setElements(new Element()
 						.setLine(new Line()
-								.setTension(0.01)))
+								.setTension(0.000001)))
 				.setPlugins(new Plugins().
 						setFiller(new Filler().
 								setPropagate(false)))
@@ -62,12 +62,6 @@ public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration 
 				.setTitle(new Title()
 						.setDisplay(true)
 						.setText("Chart.js Boundaries Chart"))
-				.setTooltips(new Tooltips()
-						.setMode(TooltipMode.INDEX)
-						.setIntersect(false))
-				.setHover(new Hover()
-						.setMode(HoverMode.NEAREST)
-						.setIntersect(true))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setDisplay(true)

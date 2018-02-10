@@ -40,7 +40,13 @@ public class LineChartStackedConfiguration extends ShowcaseConfiguration{
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7));
 		
-		data.setDatasets(Arrays.asList(dataset1,dataset2));
+		Dataset dataset3 = new Dataset()
+				.setLabel("My Third dataset")
+				.setBackgroundColor(SimpleColor.GREEN)
+				.setBorderColor(SimpleColor.GREEN)
+				.setData(randomIntegerList(7));
+		
+		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));
 		
 		Options options = new Options()
 				.setResponsive(true)

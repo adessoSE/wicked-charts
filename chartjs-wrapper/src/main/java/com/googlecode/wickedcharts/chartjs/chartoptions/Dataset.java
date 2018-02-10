@@ -26,7 +26,7 @@ public class Dataset {
 	
 	private String fill;
 	//fill is now a String because in some charts attributes other than true/false are expected
-	//when configuring a chart, not setting this attribute = "fill: true"
+	//when configuring a chart. Not setting this attribute = "fill: true"
 	
 	private Integer stack;
 	private String yAxisID;
@@ -37,7 +37,8 @@ public class Dataset {
 	private List<String> pointRadius;
 	private String pointHitRadius;
 	private String pointHoverRadius;
-	private boolean showLine = true;
+	private Boolean showLine;
+	private Boolean hidden;
 	
 	
 	
