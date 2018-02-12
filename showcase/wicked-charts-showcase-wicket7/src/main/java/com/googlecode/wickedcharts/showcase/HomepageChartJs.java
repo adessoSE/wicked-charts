@@ -135,6 +135,12 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new GridLineStylesConfiguration())); 
         this.add(new UpdateChartJsLink("MultilineLabels", chart, codeContainer,
                 new MultilineLabelsConfiguration()));
+        this.add(new UpdateChartJsLink("LogarithmicLineChart", chart, codeContainer,
+                new LogarithmicLineChartConfiguration()));
+        this.add(new UpdateChartJsLink("LogarithmicScatterChart", chart, codeContainer,
+                new LogarithmicScatterChartConfiguration()));
+        this.add(new UpdateChartJsLink("BubbleChart", chart, codeContainer,
+                new BubbleChartConfiguration()));
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {

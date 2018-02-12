@@ -44,7 +44,9 @@ public class Dataset {
 	private Double pointBorderWidth;
 	private Boolean showLine;
 	private Boolean hidden;
-	
+	private Color hoverBackgroundColor;
+	private Color hoverBorderColor;
+	private Double hoverBorderWidth;
 	
 	public Dataset setBackgroundColor(Color color) {
 		this.backgroundColor = Arrays.asList(color);
