@@ -12,12 +12,12 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 public class RgbaColorSerializer extends JsonSerializer<RgbaColor> {
 
 	
-	private static final String RGBA = "rgba(%d,%d,%d,%.2f)";
+	private static final String RGBA = "'rgba(%d,%d,%d,%.2f)'";
 	
 	@Override
 	public void serialize(RgbaColor color, JsonGenerator jgen, SerializerProvider provider)
 			throws IOException, JsonProcessingException {
-		jgen.writeString(String.format(Locale.ENGLISH, RGBA, color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha()));
+		jgen.writeRawValue(String.format(Locale.ENGLISH, RGBA, color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha()));
 	}
 
 }

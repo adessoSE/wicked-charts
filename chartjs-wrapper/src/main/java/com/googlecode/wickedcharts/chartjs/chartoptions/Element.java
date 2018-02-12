@@ -1,5 +1,10 @@
 package com.googlecode.wickedcharts.chartjs.chartoptions;
 
-public class Element {
+import lombok.experimental.Accessors;
 
+@Accessors(chain = true)
+@lombok.Data
+public class Element {
+	private Point point;
+	private Line line;
 }

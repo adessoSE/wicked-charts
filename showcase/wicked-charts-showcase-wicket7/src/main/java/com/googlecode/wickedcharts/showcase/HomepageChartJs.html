@@ -1,5 +1,7 @@
-<!DOCTYPE HTML>
-<html lang="en">
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="https://raw.githubusercontent.com/adessoAG/wicked-forms/master/config/wicket-1.5.xsd">
 <head>
     <meta charset="utf-8">
     <title>Wicked Charts :: Showcase :: Wicket 6.x</title>
@@ -100,39 +102,76 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
 
-                    <li class="nav-header">Line and scatter charts</li>
-                    <!-- basic line is not included in highcharts.com demos -->
-                    <li><a href="#" wicket:id="LineChartBasic">Basic Line Chart</a></li>
-                    <li><a href="#" wicket:id="LineChartMultiAxis">Line Chart - Multi Axis</a></li>
-
-                    <li class="nav-header">Area charts</li>
-                    <li><a href="#" wicket:id="PieChart">Pie Chart</a></li>
-
-
-                    <li class="nav-header">Column and bar charts</li>
+                    <li class="nav-header">Bar charts</li>
                     <li><a href="#" wicket:id="BarChartVertical">Vertical</a></li>
                     <li><a href="#" wicket:id="BarChartHorizontal">Horizontal</a></li>
+					<li><a href="#" wicket:id="BarChartMultiAxis">Multi Axis</a></li>
                     <li><a href="#" wicket:id="BarChartStacked">Stacked</a></li>
-                    <li><a href="#" wicket:id="StackedGroupChart">Stacked Group</a></li>
-          					<li><a href="#" wicket:id="BarChartMultiAxis">Multi Axis</a></li>
-                    <li class="nav-header">Scatter and bubble charts</li>
+                    <li><a href="#" wicket:id="BarChartStackedGroup">Stacked Group</a></li>
+					
+                    <li class="nav-header">Line charts</li>
+                    <li><a href="#" wicket:id="LineChartBasic">Basic</a></li>
+                    <li><a href="#" wicket:id="LineChartMultiAxis">Multi Axis</a></li>
+					<li><a href="#" wicket:id="LineChartStepped">Stepped</a></li>
+					<li><a href="#" wicket:id="LineChartInterpolated">Interpolation</a></li>
+					<li><a href="#" wicket:id="LineStyles">Line Styles</a></li>
+					<li><a href="#" wicket:id="PointStyles">Point Styles</a></li>
+					<li><a href="#" wicket:id="PointSizes">	Point Sizes</a></li>
+					
+                    <li class="nav-header">Area charts</li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChart">Boundaries (line)</a></li>
+					<li><a href="#" wicket:id="LineChartDataset">Datasets (line)</a></li>
+					<li><a href="#" wicket:id="LineChartStacked">Stacked (line)</a></li>
+					<li><a href="#" wicket:id="RadarChart">Radar Chart</a></li>
+					
+                    <li class="nav-header">Other</li>
+					<li><a href="#" wicket:id="ScatterChart">Scatter</a></li>
+					<li><a href="#" wicket:id="ScatterChartMultiAxis">Scatter - Multi Axis</a></li>
+					<li><a href="#" wicket:id="DoughnutChart">Doughnut</a></li>
+                    <li><a href="#" wicket:id="PieChart">Pie</a></li>
+					<li><a href="#" wicket:id="PolarAreaChart">Polar Area</a></li>
+                    <li><a href="#" wicket:id="ComboBarLineChart">Combo bar/line</a></li>
+					
+	
+                    <li class="nav-header">Linear scale</li>
+                    <li><a href="#" wicket:id="StepSize">Step size</a></li>
+                    <li><a href="#" wicket:id="MinMax">Min & Max</a></li>
+                    <li><a href="#" wicket:id="MinMaxSuggested">Min & Max (Suggested)</a></li>
 
 
-                    <li class="nav-header">Legend Positions</li>
+                    <li class="nav-header">Legend</li>
                     <li><a href="#" wicket:id="LegendPositionTop">Top</a></li>
                     <li><a href="#" wicket:id="LegendPositionRight">Right</a></li>
                     <li><a href="#" wicket:id="LegendPositionBottom">Bottom</a></li>
                     <li><a href="#" wicket:id="LegendPositionLeft">Left</a></li>
 
+                    <li class="nav-header">Logarithmic scale</li>
+					<li><a href="#" wicket:id="LogarithmicLineChart">Logarithmic Line Chart</a></li>
+					<li><a href="#" wicket:id="LogarithmicScatterChart">Logarithmic Scatter Chart</a></li>
+                    
+                    
+                    <li class="nav-header">Time scale</li>
+                    
+                    
+                    <li class="nav-header">Scale options</li>
+                    <li><a href="#" wicket:id="GridLinesBasic">Grid lines display</a></li>
+                    <li><a href="#" wicket:id="GridLinesDisplayFalse">Grid lines display - false</a></li>
+                    <li><a href="#" wicket:id="GridLinesDisplayFalseNoBorder">Grid lines display - false, no border</a></li>
+                    <li><a href="#" wicket:id="GridLinesChartArea">Grid lines display - no chart area lines</a></li>
+                    <li><a href="#" wicket:id="GridLinesTicks">Grid lines display - no ticks</a></li>
+                    <li><a href="#" wicket:id="GridLinesStyle">Grid lines style</a></li>
+                    <li><a href="#" wicket:id="MultilineLabels">Multiline Labels</a></li>
+                    <li><a href="#" wicket:id="FilteringLabels">Filtering Labels</a></li>
+					
 
-                    <li class="nav-header">Dynamic charts</li>
+                    <li class="nav-header">Tooltip</li>
 
 
-                    <li class="nav-header">Combinations</li>
-                    <li><a href="#" wicket:id="ComboBarLineChart">Bar-Line Chart</a></li>
+                    <li class="nav-header">Scriptable</li>
+					<li><a href="#" wicket:id="BubbleChart">Bubble Chart</a></li>
 
 
-                    <li class="nav-header">More chart types</li>
+                    <li class="nav-header">Advanced</li>
 
                 </ul>
             </div>

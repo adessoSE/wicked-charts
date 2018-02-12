@@ -15,19 +15,26 @@ package com.googlecode.wickedcharts.showcase;
  */
 
 
+import java.io.Serializable;
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.*;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesBasicConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesChartAreaConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesDisplayFalseConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesDisplayFalseNoBorderConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesTicksConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.legendposition.*;
 import com.googlecode.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartJsLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 
-public class HomepageChartJs extends WebPage {
+public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -55,21 +62,49 @@ public class HomepageChartJs extends WebPage {
 		this.add(new ChartjsShowcaseLink());
 	}
 	
-	private void addChartLinks(Chart chart, Label codeContainer) {
+	private void addChartLinks(Chart chart, Label codeContainer) { 
         this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartStepped", chart, codeContainer,
+                new LineChartSteppedConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartInterpolated", chart, codeContainer,
+                new LineChartInterpolatedConfiguration())); 
+        this.add(new UpdateChartJsLink("LineStyles", chart, codeContainer,
+                new LineStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("PointStyles", chart, codeContainer,
+                new PointStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("PointSizes", chart, codeContainer,
+                new LineChartWithDifferentPointSizesConfiguration())); 
         this.add(new UpdateChartJsLink("BarChartVertical", chart, codeContainer,
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartStacked", chart, codeContainer,
                 new BarChartStackedConfiguration()));
+        this.add(new UpdateChartJsLink("BarChartStackedGroup", chart, codeContainer,
+                new BarChartStackedGroupConfiguration()));
         this.add(new UpdateChartJsLink("BarChartMultiAxis", chart, codeContainer,
                 new BarChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", chart, codeContainer,
+                new AreaLineBoundariesChartConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartStacked", chart, codeContainer,
+                new LineChartStackedConfiguration()));
+        this.add(new UpdateChartJsLink("LineChartDataset", chart, codeContainer,
+                new LineChartAreaDatasetConfiguration()));
+        this.add(new UpdateChartJsLink("RadarChart", chart, codeContainer,
+                new RadarChartConfiguration()));
+        this.add(new UpdateChartJsLink("DoughnutChart", chart, codeContainer,
+                new DoughnutChartConfiguration()));
+        this.add(new UpdateChartJsLink("PolarAreaChart", chart, codeContainer,
+                new PolarAreaChartConfiguration()));
+        this.add(new UpdateChartJsLink("ScatterChart", chart, codeContainer,
+                new ScatterChartConfiguration()));
+        this.add(new UpdateChartJsLink("ScatterChartMultiAxis", chart, codeContainer,
+                new ScatterChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,
@@ -80,9 +115,35 @@ public class HomepageChartJs extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
-        this.add(new UpdateChartJsLink("StackedGroupChart", chart, codeContainer,
-                new StackedGroupChartConfiguration())); 
-	} 
+        this.add(new UpdateChartJsLink("StepSize", chart, codeContainer,
+                new LinearStepSizeConfiguration())); 
+        this.add(new UpdateChartJsLink("MinMax", chart, codeContainer,
+                new MinMaxConfiguration())); 
+        this.add(new UpdateChartJsLink("MinMaxSuggested", chart, codeContainer,
+                new MinMaxSuggestedConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesBasic", chart, codeContainer,
+                new GridLinesBasicConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesDisplayFalse", chart, codeContainer,
+                new GridLinesDisplayFalseConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesDisplayFalseNoBorder", chart, codeContainer,
+                new GridLinesDisplayFalseNoBorderConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesChartArea", chart, codeContainer,
+                new GridLinesChartAreaConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesTicks", chart, codeContainer,
+                new GridLinesTicksConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesStyle", chart, codeContainer,
+                new GridLineStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("MultilineLabels", chart, codeContainer,
+                new MultilineLabelsConfiguration()));
+        this.add(new UpdateChartJsLink("LogarithmicLineChart", chart, codeContainer,
+                new LogarithmicLineChartConfiguration()));
+        this.add(new UpdateChartJsLink("LogarithmicScatterChart", chart, codeContainer,
+                new LogarithmicScatterChartConfiguration()));
+        this.add(new UpdateChartJsLink("BubbleChart", chart, codeContainer,
+                new BubbleChartConfiguration()));
+        this.add(new UpdateChartJsLink("FilteringLabels", chart, codeContainer,
+                new FilteringLabelsConfiguration()));
+	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())

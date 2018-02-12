@@ -32,7 +32,7 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill(false);
+				.setFill("false");
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -40,7 +40,7 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7))
-				.setFill(false);
+				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		

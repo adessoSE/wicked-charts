@@ -6,12 +6,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.RgbColor;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
-import com.googlecode.wickedcharts.chartjs.jackson.serializer.JsonValueEnumSerializer;
-import com.googlecode.wickedcharts.chartjs.jackson.serializer.LowercaseEnumSerializer;
-import com.googlecode.wickedcharts.chartjs.jackson.serializer.RgbColorSerializer;
-import com.googlecode.wickedcharts.chartjs.jackson.serializer.SimpleColorSerializer;
+import com.googlecode.wickedcharts.chartjs.chartoptions.CallbackFunction;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Label;
+import com.googlecode.wickedcharts.chartjs.chartoptions.colors.*;
+import com.googlecode.wickedcharts.chartjs.jackson.serializer.*;
 import com.googlecode.wickedcharts.chartjs.json.JsonValueEnum;
 import com.googlecode.wickedcharts.chartjs.json.LowercaseEnum;
 
@@ -45,9 +43,14 @@ public class JsonRenderer {
 	private ObjectMapper createJacksonMapper() {
 		this.jacksonModule.addSerializer(SimpleColor.class, new SimpleColorSerializer());
 		this.jacksonModule.addSerializer(RgbColor.class, new RgbColorSerializer());
+		this.jacksonModule.addSerializer(RgbaColor.class, new RgbaColorSerializer());
 		this.jacksonModule.addSerializer(JsonValueEnum.class, new JsonValueEnumSerializer());
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
+		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
+		this.jacksonModule.addSerializer(Label.class, new LabelSerializer());
+		this.jacksonModule.addSerializer(CallbackFunction.class, new CallbackFunctionSerializer());
 
+		
 		ObjectMapper mapper = createDefaultObjectMapper();
 		SingleElementListObjectMapper.getInstance().registerModule(jacksonModule);
 		mapper.setLocale(Locale.ENGLISH);

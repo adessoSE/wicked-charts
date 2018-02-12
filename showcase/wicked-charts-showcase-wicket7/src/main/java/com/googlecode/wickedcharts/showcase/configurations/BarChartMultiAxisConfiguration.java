@@ -7,12 +7,9 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
 import com.googlecode.wickedcharts.chartjs.chartoptions.GridLines;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
-import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
@@ -33,7 +30,7 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setYAxisID("y-axis-1");
 		
 		
@@ -42,7 +39,7 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setYAxisID("y-axis-2");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
