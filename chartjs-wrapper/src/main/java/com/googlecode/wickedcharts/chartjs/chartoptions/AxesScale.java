@@ -14,4 +14,5 @@ public class AxesScale {
 	private String type;
 	private GridLines gridLines;
 	private Ticks ticks;
+	private Boolean beginAtZero;
 }

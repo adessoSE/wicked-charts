@@ -13,4 +13,5 @@ public class Ticks {
 	private Boolean beginAtZero;
 	private Integer min;
 	private Integer max;
+	private Callback callback;
 }

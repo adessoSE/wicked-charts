@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.googlecode.wickedcharts.chartjs.chartoptions.CallbackFunction;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Label;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.*;
 import com.googlecode.wickedcharts.chartjs.jackson.serializer.*;
@@ -47,7 +48,9 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
 		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
 		this.jacksonModule.addSerializer(Label.class, new LabelSerializer());
+		this.jacksonModule.addSerializer(CallbackFunction.class, new CallbackFunctionSerializer());
 
+		
 		ObjectMapper mapper = createDefaultObjectMapper();
 		SingleElementListObjectMapper.getInstance().registerModule(jacksonModule);
 		mapper.setLocale(Locale.ENGLISH);

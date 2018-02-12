@@ -33,7 +33,6 @@ public class DataTest {
 	public void testSetLabelList() {
 		testData.setLabels(labelList);
 		assertEquals(testData.getLabels(),labelList);
-		
 	}
 
 }
