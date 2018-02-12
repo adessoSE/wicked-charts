@@ -2,19 +2,7 @@ package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
-import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.PointData2D;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
+import com.googlecode.wickedcharts.chartjs.chartoptions.*;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
