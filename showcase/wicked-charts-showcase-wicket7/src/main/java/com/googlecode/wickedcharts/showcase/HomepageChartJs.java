@@ -133,6 +133,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new GridLinesTicksConfiguration())); 
         this.add(new UpdateChartJsLink("GridLinesStyle", chart, codeContainer,
                 new GridLineStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("MultilineLabels", chart, codeContainer,
+                new MultilineLabelsConfiguration()));
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
