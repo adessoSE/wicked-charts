@@ -55,7 +55,7 @@ public class HomepageChartJs extends WebPage {
 		this.add(new ChartjsShowcaseLink());
 	}
 	
-	private void addChartLinks(Chart chart, Label codeContainer) {
+	private void addChartLinks(Chart chart, Label codeContainer) { 
         this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
@@ -108,6 +108,12 @@ public class HomepageChartJs extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
+        this.add(new UpdateChartJsLink("StepSize", chart, codeContainer,
+                new LinearStepSizeConfiguration())); 
+        this.add(new UpdateChartJsLink("MinMax", chart, codeContainer,
+                new MinMaxConfiguration())); 
+        this.add(new UpdateChartJsLink("MinMaxSuggested", chart, codeContainer,
+                new MinMaxSuggestedConfiguration())); 
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {

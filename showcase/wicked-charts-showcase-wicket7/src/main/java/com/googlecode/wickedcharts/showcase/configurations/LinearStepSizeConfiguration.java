@@ -6,11 +6,12 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
 import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.GridLines;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
+import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
+import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Ticks;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -18,29 +19,29 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
-public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
-	public BarChartMultiAxisConfiguration() {
-		setType(ChartType.BAR);
+public class LinearStepSizeConfiguration extends ShowcaseConfiguration {
+	public LinearStepSizeConfiguration() {
+		super();
+    	setType(ChartType.LINE);
+		
 		Data data = new Data()
 				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("Dataset 1")
+				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill("false")
-				.setYAxisID("y-axis-1");
+				.setFill("false");
 		
 		
 		Dataset dataset2 = new Dataset()
-				.setLabel("Dataset 2")
+				.setLabel("My Second dataset")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7))
-				.setFill("false")
-				.setYAxisID("y-axis-2");
+				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		
@@ -48,29 +49,29 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Bar Chart - Multi Axis"))
+						.setText("Chart.js Line Chart"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))
-				.setLegend(new Legend()
-						.setPosition(Position.TOP))
+				.setHover(new Hover()
+						.setMode(HoverMode.NEAREST)
+						.setIntersect(true))
 				.setScales(new Scales()
-						.setYAxes(Arrays.asList(new AxesScale()
-								.setType("linear")
+						.setXAxes(new AxesScale()
 								.setDisplay(true)
-								.setPosition("left")
-								.setId("y-axis-1"),
-								new AxesScale()
-								.setType("linear")
+								.setScaleLabel(new ScaleLabel()
+										.setDisplay(true)
+										.setLabelString("Month")))
+						.setYAxes(new AxesScale()
 								.setDisplay(true)
-								.setPosition("right")
-								.setId("y-axis-2")
-								.setGridLines(new GridLines()
-										.setDrawOnChartArea(false)))))
-								
+								.setScaleLabel(new ScaleLabel()
+										.setDisplay(true)
+										.setLabelString("Value"))
+								.setTicks(new Ticks()
+										.setMin(0)
+										.setMax(100)
+										.setStepSize(5))))
 				;
 		setOptions(options);
-		
 	}
-
 }
