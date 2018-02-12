@@ -15,19 +15,26 @@ package com.googlecode.wickedcharts.showcase;
  */
 
 
+import java.io.Serializable;
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.*;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesBasicConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesChartAreaConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesDisplayFalseConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesDisplayFalseNoBorderConfiguration;
+import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesTicksConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.legendposition.*;
 import com.googlecode.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartJsLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 
-public class HomepageChartJs extends WebPage {
+public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -114,6 +121,16 @@ public class HomepageChartJs extends WebPage {
                 new MinMaxConfiguration())); 
         this.add(new UpdateChartJsLink("MinMaxSuggested", chart, codeContainer,
                 new MinMaxSuggestedConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesBasic", chart, codeContainer,
+                new GridLinesBasicConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesDisplayFalse", chart, codeContainer,
+                new GridLinesDisplayFalseConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesDisplayFalseNoBorder", chart, codeContainer,
+                new GridLinesDisplayFalseNoBorderConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesChartArea", chart, codeContainer,
+                new GridLinesChartAreaConfiguration())); 
+        this.add(new UpdateChartJsLink("GridLinesTicks", chart, codeContainer,
+                new GridLinesTicksConfiguration())); 
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
