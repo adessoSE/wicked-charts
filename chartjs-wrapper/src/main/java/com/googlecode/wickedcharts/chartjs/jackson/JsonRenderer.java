@@ -44,6 +44,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(RgbaColor.class, new RgbaColorSerializer());
 		this.jacksonModule.addSerializer(JsonValueEnum.class, new JsonValueEnumSerializer());
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
+		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
 
 		ObjectMapper mapper = createDefaultObjectMapper();
 		SingleElementListObjectMapper.getInstance().registerModule(jacksonModule);

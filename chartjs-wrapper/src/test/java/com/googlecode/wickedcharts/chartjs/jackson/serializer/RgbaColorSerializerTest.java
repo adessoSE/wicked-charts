@@ -22,7 +22,6 @@ public class RgbaColorSerializerTest {
 	@Test
 	public void testRgbaSerializer() {
 		String json = renderer.toJson(testColor);
-		
 		assertTrue(json.contains("rgba(123,234,56,0.70)"));
 	}
 
