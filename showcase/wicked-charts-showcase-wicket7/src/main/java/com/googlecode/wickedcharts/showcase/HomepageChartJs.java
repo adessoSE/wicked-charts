@@ -108,6 +108,10 @@ public class HomepageChartJs extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
+        this.add(new UpdateChartJsLink("LogarithmicLineChart", chart, codeContainer,
+                new LogarithmicLineChartConfiguration())); 
+        this.add(new UpdateChartJsLink("LogarithmicScatterChart", chart, codeContainer,
+                new LogarithmicScatterChartConfiguration()));
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {

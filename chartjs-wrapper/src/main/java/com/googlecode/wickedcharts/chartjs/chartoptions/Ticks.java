@@ -11,5 +11,8 @@ public class Ticks {
 	private Integer maxRotation;
 	private Boolean beginAtZero;
 	private Integer min;
-	private Integer max;
+	private Integer max;	
 }
+
+
+
