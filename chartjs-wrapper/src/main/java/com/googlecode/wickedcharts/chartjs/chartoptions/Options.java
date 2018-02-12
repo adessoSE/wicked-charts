@@ -18,4 +18,5 @@ public class Options {
 	private Plugins plugins;
 	private Animation animation;
 	private Filler filler;
+	private Double aspectRatio;
 }
