@@ -56,9 +56,8 @@ public class FilteringLabelsConfiguration extends ShowcaseConfiguration {
 								.setTicks(new Ticks()
 										.setCallback(
 												new CallbackFunction("function(dataLabel, index) {\r\n" + 
-												"                                // Hide the label of every 2nd dataset. return null to hide the grid line too\r\n" + 
-												"                                return index % 2 === 0 ? dataLabel : '';\r\n" + 
-												"                            }"))))
+												" // Hide the label of every 2nd dataset. return null to hide the grid line too\r\n" + 
+												" return index % 2 === 0 ? dataLabel : '';}"))))
 						.setYAxes(new AxesScale()
 								.setDisplay(true)
 								.setBeginAtZero(true)))
