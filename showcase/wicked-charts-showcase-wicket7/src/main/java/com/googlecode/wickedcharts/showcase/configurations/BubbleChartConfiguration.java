@@ -26,6 +26,9 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.YELLOW)
+				.setHoverBackgroundColor(SimpleColor.WHITE)
+				.setHoverBorderColor(SimpleColor.RED)
+				.setHoverBorderWidth(10.0)
 				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
@@ -39,6 +42,9 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("My Second dataset")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
+				.setHoverBackgroundColor(SimpleColor.WHITE)
+				.setHoverBorderColor(SimpleColor.RED)
+				.setHoverBorderWidth(10.0)
 				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
@@ -52,6 +58,9 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("My Third dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.YELLOW)
+				.setHoverBackgroundColor(SimpleColor.WHITE)
+				.setHoverBorderColor(SimpleColor.RED)
+				.setHoverBorderWidth(10.0)
 				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
 						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
