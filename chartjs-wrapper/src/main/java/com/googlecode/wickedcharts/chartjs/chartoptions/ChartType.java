@@ -11,8 +11,7 @@ public enum ChartType implements JsonValueEnum {
 	RADAR("radar"),
 	SCATTER("scatter"),
 	DOUGHNUT("doughnut"),
-	POLAR_AREA("polarArea")
-	;
+	POLAR_AREA("polarArea");
 	
 	private String jsonValue;
 

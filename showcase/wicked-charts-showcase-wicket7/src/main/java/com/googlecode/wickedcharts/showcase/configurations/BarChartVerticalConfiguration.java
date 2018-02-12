@@ -30,7 +30,6 @@ public class BarChartVerticalConfiguration extends ShowcaseConfiguration {
 				.setData(randomIntegerList(7))
 				.setFill("false");
 		
-		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Dataset 2")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)

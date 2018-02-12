@@ -1,3 +1,4 @@
+
 package com.googlecode.wickedcharts.showcase.links;
 
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -11,3 +12,4 @@ public class HighchartsShowcaseLink extends BookmarkablePageLink<Void> {
 		super("highchartShowcaseLink", HomepageHighcharts.class);
 	}
 }
+

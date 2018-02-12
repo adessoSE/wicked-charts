@@ -30,6 +30,8 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
 				.setFill("false");
+
+
 		
 		
 		Dataset dataset2 = new Dataset()

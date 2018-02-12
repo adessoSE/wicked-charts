@@ -7,6 +7,8 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
 import com.googlecode.wickedcharts.chartjs.chartoptions.GridLines;
+import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
+import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
