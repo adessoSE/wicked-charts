@@ -6,11 +6,17 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class Options {
 	private Boolean responsive;
+	private Boolean maintainAspectRatio;
+	private Boolean spanGaps;
 	private Legend legend;
 	private Title title;
 	private Tooltips tooltips;
 	private Hover hover;
 	private Scales scales;
+	private Scale scale;
 	private Element elements;
 	private ScalesMultiAxis scalesMultiAxis;
+	private Plugins plugins;
+	private Animation animation;
+	private Filler filler;
 }

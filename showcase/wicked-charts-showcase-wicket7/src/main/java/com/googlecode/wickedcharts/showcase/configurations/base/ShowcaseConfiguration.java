@@ -14,7 +14,7 @@ public abstract class ShowcaseConfiguration extends ChartConfiguration implement
 		List<Integer> dataList = new ArrayList<Integer>();
 		Random rng = new Random();
 		for (int i = 0; i < size; i++) {
-			dataList.add(rng.nextInt(19)+1);
+			dataList.add(rng.nextInt(60)+1);
 		}
 		return dataList;
 	}

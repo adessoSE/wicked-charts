@@ -60,14 +60,44 @@ public class HomepageChartJs extends WebPage {
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartStepped", chart, codeContainer,
+                new LineChartSteppedConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartInterpolated", chart, codeContainer,
+                new LineChartInterpolatedConfiguration())); 
+        this.add(new UpdateChartJsLink("LineStyles", chart, codeContainer,
+                new LineStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("PointStyles", chart, codeContainer,
+                new PointStylesConfiguration())); 
+        this.add(new UpdateChartJsLink("PointSizes", chart, codeContainer,
+                new LineChartWithDifferentPointSizesConfiguration())); 
         this.add(new UpdateChartJsLink("BarChartVertical", chart, codeContainer,
                 new BarChartVerticalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartHorizontal", chart, codeContainer,
                 new BarChartHorizontalConfiguration()));
         this.add(new UpdateChartJsLink("BarChartStacked", chart, codeContainer,
                 new BarChartStackedConfiguration()));
+        this.add(new UpdateChartJsLink("BarChartStackedGroup", chart, codeContainer,
+                new BarChartStackedGroupConfiguration()));
+        this.add(new UpdateChartJsLink("BarChartMultiAxis", chart, codeContainer,
+                new BarChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", chart, codeContainer,
+                new AreaLineBoundariesChartConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartStacked", chart, codeContainer,
+                new LineChartStackedConfiguration()));
+        this.add(new UpdateChartJsLink("LineChartDataset", chart, codeContainer,
+                new LineChartAreaDatasetConfiguration()));
+        this.add(new UpdateChartJsLink("RadarChart", chart, codeContainer,
+                new RadarChartConfiguration()));
+        this.add(new UpdateChartJsLink("DoughnutChart", chart, codeContainer,
+                new DoughnutChartConfiguration()));
+        this.add(new UpdateChartJsLink("PolarAreaChart", chart, codeContainer,
+                new PolarAreaChartConfiguration()));
+        this.add(new UpdateChartJsLink("ScatterChart", chart, codeContainer,
+                new ScatterChartConfiguration()));
+        this.add(new UpdateChartJsLink("ScatterChartMultiAxis", chart, codeContainer,
+                new ScatterChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("ComboBarLineChart", chart, codeContainer,
                 new ComboBarLineChartConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionTop", chart, codeContainer,
@@ -78,9 +108,7 @@ public class HomepageChartJs extends WebPage {
                 new LegendPositionBottomConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPositionLeft", chart, codeContainer,
                 new LegendPositionLeftConfiguration())); 
-        this.add(new UpdateChartJsLink("StackedGroupChart", chart, codeContainer,
-                new StackedGroupChartConfiguration())); 
-	} 
+	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())

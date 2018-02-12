@@ -30,7 +30,7 @@ public class LineChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setYAxisID("y-axis-1");
 		
 		
@@ -39,7 +39,7 @@ public class LineChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(randomIntegerList(7))
-				.setFill(false)
+				.setFill("false")
 				.setYAxisID("y-axis-2");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));

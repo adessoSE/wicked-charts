@@ -78,4 +78,4 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 		setOptions(options);
 	}
 
-}
+}>>>>>>>refs/remotes/MaksimGithub/master

@@ -46,8 +46,7 @@ public class ShowcaseApplication extends WebApplication {
 	public void init() {
 		super.init();
 		JavaScriptResourceRegistry.getInstance().setJQueryReference(
-				new JavaScriptResourceReference(ShowcaseApplication.class,
-						"jquery-1.8.3.min-IEfix.js"));
+				new JavaScriptResourceReference(ShowcaseApplication.class, "jquery-1.8.3.min-IEfix.js"));
 
 		mountPage("/start/chartjs", HomepageChartJs.class);
 		mountPage("/start/highcharts", HomepageHighcharts.class);
@@ -56,8 +55,7 @@ public class ShowcaseApplication extends WebApplication {
 		mountPage("/modal", ModalWindowPage.class);
 
 		getJavaScriptLibrarySettings().setJQueryReference(
-				new JavaScriptResourceReference(ShowcaseApplication.class,
-						"jquery-1.8.3.min-IEfix.js"));
+				new JavaScriptResourceReference(ShowcaseApplication.class, "jquery-1.8.3.min-IEfix.js"));
 	}
 
 	@Override

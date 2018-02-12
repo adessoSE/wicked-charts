@@ -16,38 +16,24 @@ import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfigur
 public class LegendPositionChartBasicConfiguration extends ShowcaseConfiguration {
 	public LegendPositionChartBasicConfiguration() {
 		super();
-		
+
 		setType(ChartType.LINE);
-		
-		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
-		
-		Dataset dataset1 = new Dataset()
-				.setLabel("My First dataset")
-				.setData(randomIntegerList(7))
-				.setBorderWidth(1);
-		
+
+		Data data = new Data().setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+
+		Dataset dataset1 = new Dataset().setLabel("My First dataset").setData(randomIntegerList(7)).setBorderWidth(1);
+
 		data.setDatasets(Arrays.asList(dataset1));
 		setData(data);
-		
-		Options options = new Options()
-				.setResponsive(true)
+
+		Options options = new Options().setResponsive(true)
 				.setScales(new Scales()
-						.setXAxes(new AxesScale()
-								.setDisplay(true)
-								.setScaleLabel(new ScaleLabel()
-										.setDisplay(true)
-										.setLabelString("Month")))
-						.setXAxes(new AxesScale()
-								.setDisplay(true)
-								.setScaleLabel(new ScaleLabel()
-										.setDisplay(true)
-										.setLabelString("Value")))
-						)
-				.setTitle(new Title()
-						.setDisplay(true))
-				;
+						.setXAxes(new AxesScale().setDisplay(true)
+								.setScaleLabel(new ScaleLabel().setDisplay(true).setLabelString("Month")))
+						.setXAxes(new AxesScale().setDisplay(true)
+								.setScaleLabel(new ScaleLabel().setDisplay(true).setLabelString("Value"))))
+				.setTitle(new Title().setDisplay(true));
 		setOptions(options);
-		
+
 	}
 }

@@ -5,11 +5,13 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @lombok.Data
 public class AxesScale {
+	private Boolean stacked;
 	private Boolean display;
 	private ScaleLabel scaleLabel;
-	private Boolean stacked;
 	private String id;
 	private String position;
 	private String type;
 	private GridLines gridLines;
+	private Boolean reverse;
+	private Ticks ticks;
 }
