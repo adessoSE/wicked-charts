@@ -15,7 +15,6 @@ public class Options {
 	private Scales scales;
 	private Scale scale;
 	private Element elements;
-	private ScalesMultiAxis scalesMultiAxis;
 	private Plugins plugins;
 	private Animation animation;
 	private Filler filler;
