@@ -1,4 +1,3 @@
-
 /**
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
@@ -37,5 +36,4 @@ public class SplineUpdatingChartLink extends UpdateHighchartLink {
     public Options getOptions() {
         return new WicketSplineUpdatingOptions();
     }
-
 }

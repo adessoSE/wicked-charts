@@ -42,6 +42,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
 				.setFill("false")
+				.setData(randomIntegerList(7))
 				.setStack(1);
 		
 		Dataset dataset3 = new Dataset()

@@ -8,8 +8,6 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Element;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Filler;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
-import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Line;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Plugins;
@@ -17,8 +15,6 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Ticks;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 

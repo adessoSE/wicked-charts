@@ -33,8 +33,7 @@ public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(randomIntegerList(7))
 				.setFill("false");
-		
-		
+
 		Dataset dataset2 = new Dataset()
 				.setLabel("My Second dataset")
 				.setBackgroundColor(SimpleColor.BLUE)

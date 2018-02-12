@@ -1,5 +1,6 @@
 package com.googlecode.wickedcharts.chartjs.chartoptions;
 
+@SuppressWarnings("serial")
 public class PointData2D extends Number{
 	
 	private Double x;

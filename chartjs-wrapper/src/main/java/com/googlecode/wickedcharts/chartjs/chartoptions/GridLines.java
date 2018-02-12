@@ -1,6 +1,9 @@
 package com.googlecode.wickedcharts.chartjs.chartoptions;
 
+
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
+
+import com.googlecode.wickedcharts.chartjs.chartoptions.colors.Color;
 
 import lombok.experimental.Accessors;
 
@@ -8,5 +11,5 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class GridLines {
 	private boolean drawOnChartArea;
-	private RgbaColor zeroLineColor;
+	private Color zeroLineColor; // TODO: check if change from rgbaColor to Color affects output
 }

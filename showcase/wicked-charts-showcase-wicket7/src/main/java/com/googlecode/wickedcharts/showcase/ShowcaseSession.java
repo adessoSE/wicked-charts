@@ -20,39 +20,32 @@ import org.apache.wicket.request.Request;
 import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.highcharts.options.Options;
 
-
-import org.apache.wicket.protocol.http.WebSession;
-import org.apache.wicket.request.Request;
-
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
-import com.googlecode.wickedcharts.highcharts.options.Options;
-
 public class ShowcaseSession extends WebSession {
 
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  private Options currentHighchartOptions;
-  
-  private ChartConfiguration currentChartjsConfiguration;
+	private Options currentHighchartOptions;
 
-  public ShowcaseSession(final Request request) {
-    super(request);
-  }
+	private ChartConfiguration currentChartjsConfiguration;
 
-  public Options getCurrentChartOptions() {
-    return this.currentHighchartOptions;
-  }
+	public ShowcaseSession(final Request request) {
+		super(request);
+	}
 
-  public void setCurrentHighchartOptions(final Options currentHighchartOptions) {
-    this.currentHighchartOptions = currentHighchartOptions;
-  }
-  
-  public void setCurrentChartjsConfiguration(final ChartConfiguration currentChartjsConfiguration) {
-	  this.currentChartjsConfiguration = currentChartjsConfiguration;
-  }
-  
-  public ChartConfiguration getCurrentChartjsConfiguration() {
-	  return currentChartjsConfiguration;
-  }
+	public Options getCurrentChartOptions() {
+		return this.currentHighchartOptions;
+	}
 
+	public void setCurrentHighchartOptions(final Options currentHighchartOptions) {
+		this.currentHighchartOptions = currentHighchartOptions;
+	}
+
+	public void setCurrentChartjsConfiguration(final ChartConfiguration currentChartjsConfiguration) {
+		this.currentChartjsConfiguration = currentChartjsConfiguration;
+	}
+
+	public ChartConfiguration getCurrentChartjsConfiguration() {
+		return currentChartjsConfiguration;
+	}
 }
+
