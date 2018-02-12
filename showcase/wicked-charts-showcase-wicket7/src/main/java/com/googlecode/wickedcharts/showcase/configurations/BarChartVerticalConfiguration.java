@@ -28,8 +28,7 @@ public class BarChartVerticalConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
 				.setData(randomIntegerList(7))
-				.setFill("false");
-		
+				.setFill("false");		
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Dataset 2")

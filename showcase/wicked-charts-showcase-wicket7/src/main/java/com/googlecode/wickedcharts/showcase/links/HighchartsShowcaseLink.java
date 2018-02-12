@@ -11,3 +11,4 @@ public class HighchartsShowcaseLink extends BookmarkablePageLink<Void> {
 		super("highchartShowcaseLink", HomepageHighcharts.class);
 	}
 }
+

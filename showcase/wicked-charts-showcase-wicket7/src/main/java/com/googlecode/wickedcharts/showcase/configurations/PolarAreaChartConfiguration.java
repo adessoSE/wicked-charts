@@ -10,7 +10,6 @@ import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Scale;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Ticks;
 import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
 import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;

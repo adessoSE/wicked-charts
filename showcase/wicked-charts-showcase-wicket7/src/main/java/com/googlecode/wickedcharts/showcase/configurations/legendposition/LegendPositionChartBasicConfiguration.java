@@ -1,3 +1,4 @@
+
 package com.googlecode.wickedcharts.showcase.configurations.legendposition;
 
 import java.util.Arrays;
@@ -51,3 +52,4 @@ public class LegendPositionChartBasicConfiguration extends ShowcaseConfiguration
 		
 	}
 }
+

@@ -1,3 +1,4 @@
+
 package com.googlecode.wickedcharts.showcase.configurations.legendposition;
 
 import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
@@ -18,3 +19,4 @@ public class LegendPositionRightConfiguration extends LegendPositionChartBasicCo
 		getOptions().getTitle().setText("Legend Position: Right");
 	}
 }
+

@@ -30,6 +30,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
  * 
  * @see com.googlecode.wickedcharts.showcase.Start#main(String[])
  */
+
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

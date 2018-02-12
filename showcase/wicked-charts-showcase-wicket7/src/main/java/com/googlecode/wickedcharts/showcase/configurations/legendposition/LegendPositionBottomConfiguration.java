@@ -1,3 +1,4 @@
+
 package com.googlecode.wickedcharts.showcase.configurations.legendposition;
 
 import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;

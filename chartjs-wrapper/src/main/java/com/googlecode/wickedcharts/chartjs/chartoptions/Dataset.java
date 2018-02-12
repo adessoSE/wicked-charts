@@ -46,9 +46,6 @@ public class Dataset {
 	private Boolean hidden;
 	
 	
-	
-	
-	
 	public Dataset setBackgroundColor(Color color) {
 		this.backgroundColor = Arrays.asList(color);
 		return this;
