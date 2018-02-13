@@ -2,16 +2,17 @@ package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Rectangle;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
+import de.adesso.wickedcharts.chartjs.chartoptions.Data;
+import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.Position;
+import de.adesso.wickedcharts.chartjs.chartoptions.Rectangle;
+import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {

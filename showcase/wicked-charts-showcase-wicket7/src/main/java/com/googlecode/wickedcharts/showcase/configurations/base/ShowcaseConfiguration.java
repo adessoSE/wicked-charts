@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 @SuppressWarnings("serial")
 public abstract class ShowcaseConfiguration extends ChartConfiguration implements Serializable {

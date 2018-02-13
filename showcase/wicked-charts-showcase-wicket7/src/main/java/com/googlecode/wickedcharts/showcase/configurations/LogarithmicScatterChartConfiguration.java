@@ -2,9 +2,10 @@ package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.*;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class LogarithmicScatterChartConfiguration extends ShowcaseConfiguration {

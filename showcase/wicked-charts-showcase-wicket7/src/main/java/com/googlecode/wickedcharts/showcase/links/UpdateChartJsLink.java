@@ -14,10 +14,11 @@
  */
 package com.googlecode.wickedcharts.showcase.links;
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.ShowcaseSession;
 import com.googlecode.wickedcharts.showcase.StringFromResourceModel;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
+
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;

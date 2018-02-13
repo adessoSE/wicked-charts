@@ -17,8 +17,9 @@ package com.googlecode.wickedcharts.showcase;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.highcharts.options.Options;
+
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 public class ShowcaseSession extends WebSession {
 

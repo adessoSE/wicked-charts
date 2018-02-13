@@ -1,9 +1,9 @@
 
 package com.googlecode.wickedcharts.showcase.configurations.legendposition;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.Legend;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Position;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.Position;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class LegendPositionLeftConfiguration extends LegendPositionChartBasicConfiguration {

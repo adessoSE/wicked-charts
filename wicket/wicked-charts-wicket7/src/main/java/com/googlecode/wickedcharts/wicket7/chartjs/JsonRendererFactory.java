@@ -14,7 +14,7 @@
  */
 package com.googlecode.wickedcharts.wicket7.chartjs;
 
-import com.googlecode.wickedcharts.chartjs.jackson.JsonRenderer;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 /**
  * Factory class responsible for creating a {@link JsonRenderer} instance that

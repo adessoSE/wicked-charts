@@ -1,18 +1,20 @@
 package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Element;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Filler;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Line;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Plugins;
-import com.googlecode.wickedcharts.chartjs.chartoptions.SamplesFillerAnalyzer;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
+import de.adesso.wickedcharts.chartjs.chartoptions.Data;
+import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.Element;
+import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
+import de.adesso.wickedcharts.chartjs.chartoptions.Line;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
+import de.adesso.wickedcharts.chartjs.chartoptions.SamplesFillerAnalyzer;
+import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class RadarChartConfiguration extends ShowcaseConfiguration {

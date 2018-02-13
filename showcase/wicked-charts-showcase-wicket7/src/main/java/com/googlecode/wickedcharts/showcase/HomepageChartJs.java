@@ -21,7 +21,6 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.*;
 import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesBasicConfiguration;
 import com.googlecode.wickedcharts.showcase.configurations.gridlines.GridLinesChartAreaConfiguration;
@@ -33,6 +32,8 @@ import com.googlecode.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import com.googlecode.wickedcharts.showcase.links.UpdateChartJsLink;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
+
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 public class HomepageChartJs extends WebPage implements Serializable {
 

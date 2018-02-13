@@ -17,8 +17,9 @@ package com.googlecode.wickedcharts.wicket7.chartjs;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
 import com.googlecode.wickedcharts.wicket7.chartjs.features.basic.ChartBehavior;
+
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 /**
  * A simple markup container to display a chart. A chart can be provided with

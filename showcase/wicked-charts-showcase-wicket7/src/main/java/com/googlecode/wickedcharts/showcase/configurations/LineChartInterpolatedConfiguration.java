@@ -3,20 +3,21 @@ package com.googlecode.wickedcharts.showcase.configurations;
 import java.util.Arrays;
 import java.util.List;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Hover;
-import com.googlecode.wickedcharts.chartjs.chartoptions.HoverMode;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.TooltipMode;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Tooltips;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
+import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
+import de.adesso.wickedcharts.chartjs.chartoptions.Data;
+import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
+import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {

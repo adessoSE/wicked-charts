@@ -15,11 +15,12 @@
 package com.googlecode.wickedcharts.wicket7.chartjs.features.basic;
 
 
-import com.googlecode.wickedcharts.chartjs.ChartConfiguration;
-import com.googlecode.wickedcharts.chartjs.jackson.JsonRenderer;
 import com.googlecode.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import com.googlecode.wickedcharts.wicket7.chartjs.Chart;
 import com.googlecode.wickedcharts.wicket7.chartjs.JsonRendererFactory;
+
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;

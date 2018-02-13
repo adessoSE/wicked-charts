@@ -2,19 +2,20 @@ package com.googlecode.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
-import com.googlecode.wickedcharts.chartjs.chartoptions.AxesScale;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ChartType;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Data;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Dataset;
-import com.googlecode.wickedcharts.chartjs.chartoptions.GridLines;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Options;
-import com.googlecode.wickedcharts.chartjs.chartoptions.PointData2D;
-import com.googlecode.wickedcharts.chartjs.chartoptions.ScaleLabel;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Scales;
-import com.googlecode.wickedcharts.chartjs.chartoptions.Title;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
-import com.googlecode.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import com.googlecode.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
+import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
+import de.adesso.wickedcharts.chartjs.chartoptions.Data;
+import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.PointData2D;
+import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 @SuppressWarnings("serial")
 public class ScatterChartMultiAxisConfiguration extends ShowcaseConfiguration {
