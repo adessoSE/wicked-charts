@@ -9,7 +9,7 @@
     <description>Showcase for wicked-charts with JSF 2.1</description>
 
     <parent>
-        <groupId>com.googlecode.wicked-charts</groupId>
+        <groupId>de.adesso.wicked-charts</groupId>
         <artifactId>wicked-charts-showcase-parent</artifactId>
         <relativePath>..</relativePath>
         <version>2.0.1</version>
@@ -34,11 +34,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.wicked-charts</groupId>
+            <groupId>de.adesso.wicked-charts</groupId>
             <artifactId>wicked-charts-jsf21</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.wicked-charts</groupId>
+            <groupId>de.adesso.wicked-charts</groupId>
             <artifactId>wicked-charts-showcase-options</artifactId>
         </dependency>
 

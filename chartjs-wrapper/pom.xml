@@ -11,7 +11,7 @@
     </description>
 
 	<parent>
-		<groupId>com.googlecode.wicked-charts</groupId>
+		<groupId>de.adesso.wicked-charts</groupId>
 		<artifactId>wicked-charts-parent</artifactId>
 		<relativePath>..</relativePath>
 		<version>2.0.1</version>
