@@ -1,3 +1,4 @@
+
 /**
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
@@ -19,7 +20,7 @@ import com.googlecode.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 import com.googlecode.wickedcharts.wicket7.highcharts.Chart;
 import org.apache.wicket.markup.html.basic.Label;
 
-public class SplineUpdatingChartLink extends UpdateChartLink {
+public class SplineUpdatingChartLink extends UpdateHighchartLink {
 
     public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
                                    Options options) {

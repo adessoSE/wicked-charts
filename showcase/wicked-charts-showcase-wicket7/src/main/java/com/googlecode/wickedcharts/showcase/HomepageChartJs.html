@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="https://raw.githubusercontent.com/adessoAG/wicked-forms/master/config/wicket-1.5.xsd">
+<head>
+    <meta charset="utf-8">
+    <title>Wicked Charts :: Showcase :: Wicket 6.x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="wicked charts">
+    <meta name="keywords" content="wicked charts,wicket,highcharts">
+    <meta name="author" content="Matthias Balke, Tom Hombergs">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        .modal {
+            width: 800px;
+            left: 44%;
+            top: 36%;
+        }
+
+        .modal-body {
+            max-height: 560px;
+        }
+
+        .modal.fade.in {
+            top: 36%;
+        }
+
+
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/wickedcharts.css" rel="stylesheet">
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+    <link href="css/syntaxhighlighter/shCoreEclipse.css" rel="stylesheet" type="text/css">
+    <link href="css/syntaxhighlighter/shThemeEclipse.css" rel="stylesheet" type="text/css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="">WickedCharts</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a wicket:id="chartJsShowcaseLink">Chart.js Showcase</a></li>
+                    <li><a wicket:id="highchartShowcaseLink">Highcharts Showcase</a></li>
+                    <li><a href="http://code.google.com/p/wicked-charts/">GoogleCode</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div id="bannerContainer" class="gradient">
+    <div class="row-fluid">
+        <div class="span12 grid">
+            <div id="banner">
+                <h1>Wicked Charts</h1>
+
+                <p>version ${project.version} :: Wicket ${wicket.version}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <br>
+
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+
+                    <li class="nav-header">Bar charts</li>
+                    <li><a href="#" wicket:id="BarChartVertical">Vertical</a></li>
+                    <li><a href="#" wicket:id="BarChartHorizontal">Horizontal</a></li>
+					<li><a href="#" wicket:id="BarChartMultiAxis">Multi Axis</a></li>
+                    <li><a href="#" wicket:id="BarChartStacked">Stacked</a></li>
+                    <li><a href="#" wicket:id="BarChartStackedGroup">Stacked Group</a></li>
+					
+                    <li class="nav-header">Line charts</li>
+                    <li><a href="#" wicket:id="LineChartBasic">Basic</a></li>
+                    <li><a href="#" wicket:id="LineChartMultiAxis">Multi Axis</a></li>
+					<li><a href="#" wicket:id="LineChartStepped">Stepped</a></li>
+					<li><a href="#" wicket:id="LineChartInterpolated">Interpolation</a></li>
+					<li><a href="#" wicket:id="LineStyles">Line Styles</a></li>
+					<li><a href="#" wicket:id="PointStyles">Point Styles</a></li>
+					<li><a href="#" wicket:id="PointSizes">	Point Sizes</a></li>
+					
+                    <li class="nav-header">Area charts</li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChart">Boundaries (line)</a></li>
+					<li><a href="#" wicket:id="LineChartDataset">Datasets (line)</a></li>
+					<li><a href="#" wicket:id="LineChartStacked">Stacked (line)</a></li>
+					<li><a href="#" wicket:id="RadarChart">Radar Chart</a></li>
+					
+                    <li class="nav-header">Other</li>
+					<li><a href="#" wicket:id="ScatterChart">Scatter</a></li>
+					<li><a href="#" wicket:id="ScatterChartMultiAxis">Scatter - Multi Axis</a></li>
+					<li><a href="#" wicket:id="DoughnutChart">Doughnut</a></li>
+                    <li><a href="#" wicket:id="PieChart">Pie</a></li>
+					<li><a href="#" wicket:id="PolarAreaChart">Polar Area</a></li>
+                    <li><a href="#" wicket:id="ComboBarLineChart">Combo bar/line</a></li>
+					
+	
+                    <li class="nav-header">Linear scale</li>
+                    <li><a href="#" wicket:id="StepSize">Step size</a></li>
+                    <li><a href="#" wicket:id="MinMax">Min & Max</a></li>
+                    <li><a href="#" wicket:id="MinMaxSuggested">Min & Max (Suggested)</a></li>
+
+                    <li class="nav-header">Logarithmic scale</li>
+					<li><a href="#" wicket:id="LogarithmicLineChart">Line Chart</a></li>
+					<li><a href="#" wicket:id="LogarithmicScatterChart">Scatter Chart</a></li>
+
+                    
+                    <li class="nav-header">Time scale</li>
+                    
+                    
+                    <li class="nav-header">Scale options</li>
+                    <li><a href="#" wicket:id="GridLinesBasic">Grid lines display</a></li>
+                    <li><a href="#" wicket:id="GridLinesDisplayFalse">Grid lines display - false</a></li>
+                    <li><a href="#" wicket:id="GridLinesDisplayFalseNoBorder">Grid lines display - false, no border</a></li>
+                    <li><a href="#" wicket:id="GridLinesChartArea">Grid lines display - no chart area lines</a></li>
+                    <li><a href="#" wicket:id="GridLinesTicks">Grid lines display - no ticks</a></li>
+                    <li><a href="#" wicket:id="GridLinesStyle">Grid lines style</a></li>
+                    <li><a href="#" wicket:id="MultilineLabels">Multiline Labels</a></li>
+                    <li><a href="#" wicket:id="FilteringLabels">Filtering Labels</a></li>
+					
+
+                    <li class="nav-header">Legend</li>
+                    <li><a href="#" wicket:id="LegendPositionTop">Top</a></li>
+                    <li><a href="#" wicket:id="LegendPositionRight">Right</a></li>
+                    <li><a href="#" wicket:id="LegendPositionBottom">Bottom</a></li>
+                    <li><a href="#" wicket:id="LegendPositionLeft">Left</a></li>
+
+                    <li class="nav-header">Tooltip</li>
+
+
+                    <li class="nav-header">Scriptable</li>
+					<li><a href="#" wicket:id="BubbleChart">Bubble Chart</a></li>
+
+
+                    <li class="nav-header">Advanced</li>
+
+                </ul>
+            </div>
+            <!--/.well -->
+        </div>
+        <!--/span-->
+
+        <div class="span9 corner-chart">
+            <div style="width: 100%"><canvas wicket:id="chart">CHART</canvas></div>
+            <br>
+
+            <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#" data-toggle="modal"
+                  data-target="#codeDialog">Show Java code &raquo;</a></p>
+        </div>
+        <!--/span-->
+
+        <div class="span9 corner-usage">
+            <p>To add a chart to your Wicket page, include the following HTML
+                and Java fragments into your code:</p>
+
+            <h3>Markup:</h3>
+            <blockquote>
+<pre class="brush: xml">
+&lt;!-- HTML code --&gt;
+&lt;div wicket:id="chart"/&gt;
+</pre>
+            </blockquote>
+
+            <h3>Wicket Page:</h3>
+            <blockquote>
+<pre class="brush: java">
+// Java code
+Options options = new Options();
+options.setTitle(new Title("My Chart"));
+... // to see more options, select a chart below and click the button "Show Java code"
+add(new Chart("chart", options));
+</pre>
+            </blockquote>
+        </div>
+
+        <div class="span9">
+            <div id="codeDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="codeDialogHeader"
+                 aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 id="codeDialogHeader">Java code for this chart's configuration</h3>
+                </div>
+                <div class="modal-body">
+                    <pre wicket:id="code" class="brush: java">Here comes the code</pre>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>&copy; Wicked Charts 2012-2013</p>
+    </footer>
+
+</div>
+<!--/.fluid-container-->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-button.js"></script>
+<script src="js/bootstrap-tab.js"></script>
+<script src="js/syntaxhighlighter/shCore.js"></script>
+<script src="js/syntaxhighlighter/shBrushJava.js"></script>
+<script src="js/syntaxhighlighter/shBrushXml.js"></script>
+<script src="js/wickedcharts.js"></script>
+</body>
+</html>

@@ -171,6 +171,10 @@
             <groupId>com.googlecode.wicked-charts</groupId>
             <artifactId>highcharts-wrapper</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.wicked-charts</groupId>
+            <artifactId>chartjs-wrapper</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -42,6 +42,7 @@
 
     <modules>
         <module>highcharts-wrapper</module>
+        <module>chartjs-wrapper</module>
         <module>wicket/wicked-charts-wicket14</module>
         <module>wicket/wicked-charts-wicket15</module>
         <module>wicket/wicked-charts-wicket6</module>
@@ -74,6 +75,11 @@
             <dependency>
                 <groupId>com.googlecode.wicked-charts</groupId>
                 <artifactId>highcharts-wrapper</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.googlecode.wicked-charts</groupId>
+                <artifactId>chartjs-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

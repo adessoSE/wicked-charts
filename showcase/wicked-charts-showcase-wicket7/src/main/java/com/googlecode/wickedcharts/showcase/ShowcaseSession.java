@@ -19,22 +19,34 @@ import org.apache.wicket.request.Request;
 
 import com.googlecode.wickedcharts.highcharts.options.Options;
 
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+
 public class ShowcaseSession extends WebSession {
 
   private static final long serialVersionUID = 1L;
 
-  private Options currentChartOptions;
+  private Options currentHighchartOptions;
+  
+  private ChartConfiguration currentChartjsConfiguration;
 
   public ShowcaseSession(final Request request) {
     super(request);
   }
 
   public Options getCurrentChartOptions() {
-    return this.currentChartOptions;
+    return this.currentHighchartOptions;
   }
 
-  public void setCurrentChartOptions(final Options currentChartOptions) {
-    this.currentChartOptions = currentChartOptions;
+  public void setCurrentHighchartOptions(final Options currentHighchartOptions) {
+    this.currentHighchartOptions = currentHighchartOptions;
+  }
+  
+  public void setCurrentChartjsConfiguration(final ChartConfiguration currentChartjsConfiguration) {
+	  this.currentChartjsConfiguration = currentChartjsConfiguration;
+  }
+  
+  public ChartConfiguration getCurrentChartjsConfiguration() {
+	  return currentChartjsConfiguration;
   }
 
 }
