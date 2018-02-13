@@ -7,14 +7,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
 
-public class TextListLabelSerializer extends JsonSerializer<TextListLabel> {
+public class ConstLabelSerializer extends JsonSerializer<ConstLabel> {
 
+	private static final String FORMAT = "'%s'";
 	@Override
-	public void serialize(TextListLabel value, JsonGenerator gen, SerializerProvider serializers)
+	public void serialize(ConstLabel value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		gen.writeObject(value.getTextList());
+		gen.writeRawValue(String.format(FORMAT, value.getText()));
 	}
 
 }

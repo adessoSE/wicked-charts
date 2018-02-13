@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 
 public class TextLabelSerializer extends JsonSerializer<TextLabel> {
 

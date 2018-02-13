@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.FloatValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
 
 public class FloatValueSerializer extends JsonSerializer<FloatValue> {
 

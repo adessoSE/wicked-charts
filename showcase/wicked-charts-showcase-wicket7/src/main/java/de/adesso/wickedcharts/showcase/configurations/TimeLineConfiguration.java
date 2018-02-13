@@ -12,17 +12,17 @@ import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
-import de.adesso.wickedcharts.chartjs.chartoptions.DateTimeLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
-import de.adesso.wickedcharts.chartjs.chartoptions.PointValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
-import de.adesso.wickedcharts.chartjs.chartoptions.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.TimeFormat;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
-import de.adesso.wickedcharts.chartjs.chartoptions.ValueType;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")

@@ -10,7 +10,7 @@ public class AxesScale {
 	private ScaleLabel scaleLabel;
 	private Boolean reverse;
 	private String id;
-	private String position;
+	private Position position;
 	private String type;
 	private GridLines gridLines;
 	private Ticks ticks;

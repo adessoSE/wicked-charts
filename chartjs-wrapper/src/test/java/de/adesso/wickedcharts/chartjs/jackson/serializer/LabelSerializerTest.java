@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.Label;
-import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.TextListLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 public class LabelSerializerTest {

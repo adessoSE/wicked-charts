@@ -1,5 +1,6 @@
-package de.adesso.wickedcharts.chartjs.chartoptions;
+package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
