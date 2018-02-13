@@ -1,4 +1,3 @@
-
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import java.io.IOException;
@@ -8,15 +7,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.Label;
-import de.adesso.wickedcharts.chartjs.jackson.SingleElementListObjectMapper;
+import de.adesso.wickedcharts.chartjs.chartoptions.DateTimeLabel;
 
-public class LabelSerializer extends JsonSerializer<Label> {
+public class DateTimeLabelSerializer extends JsonSerializer<DateTimeLabel> {
 
 	@Override
-	public void serialize(Label value, JsonGenerator gen, SerializerProvider serializers)
+	public void serialize(DateTimeLabel value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		SingleElementListObjectMapper.getInstance().writeValue(gen, value.getTextList());
+		gen.writeObject(value.getDateAndFormat());
+		
 	}
 
 }

@@ -5,7 +5,9 @@ import java.util.Arrays;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -23,7 +25,7 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 		.setBorderColor(SimpleColor.BLUE)
 		.setBorderWidth(2)
 		.setFill("false")
-		.setData(this.randomIntegerList(7))
+		.setData(IntegerValue.of(randomIntegerList(7)))
 		.setLabel("Dataset 1");
 		
 		Dataset dataset2 = new Dataset()
@@ -31,17 +33,17 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.WHITE)
 				.setBorderWidth(2)
-				.setData(this.randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setLabel("Dataset 2");
 		
 		Dataset dataset3 = new Dataset()
 				.setType(ChartType.BAR)
 				.setBackgroundColor(SimpleColor.GREEN)
-				.setData(this.randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setLabel("Dataset 3");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3))
-		.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+		.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		
 		setData(data);
 		

@@ -66,8 +66,10 @@ public class JavaScriptResourceRegistry {
     public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/4.1.10/modules/exporting.js";
     
     public static final String DEFAULT_CHARTJS_BUNDLE_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js";
-    
+
     public static final String DEFAULT_CHARTJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js";
+
+    public static final String DEFAULT_MOMENTJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js";
 
     public static JavaScriptResourceRegistry getInstance() {
         if (INSTANCE == null) {
@@ -91,6 +93,8 @@ public class JavaScriptResourceRegistry {
     private RegistryEntry chartJsEntry = new RegistryEntry(DEFAULT_CHARTJS_URL);
 
     private RegistryEntry chartJsBundleEntry = new RegistryEntry(DEFAULT_CHARTJS_BUNDLE_URL);
+
+    private RegistryEntry momentJsEntry = new RegistryEntry(DEFAULT_MOMENTJS_URL);
 
     private static JavaScriptResourceRegistry INSTANCE;
 
@@ -128,6 +132,10 @@ public class JavaScriptResourceRegistry {
 
     public RegistryEntry getChartJsBundle() {
         return this.chartJsBundleEntry;
+    }
+
+    public RegistryEntry getMomentJsentry() {
+        return this.momentJsEntry;
     }
     
     
@@ -251,6 +259,23 @@ public class JavaScriptResourceRegistry {
      */
     public void setChartJsBundleReference(final String url) {
         this.chartJsBundleEntry= new RegistryEntry(url);
+    }
+
+    /**
+     * Sets the {@link ResourceReference} to use to load Chart.js bundled (chart.bundle.min.js).Use
+     * this method if you want to include the javascript file in your web
+     * application.
+     */
+    public void setMomentJsReference(final ResourceReference reference) {
+        this.momentJsEntry= new RegistryEntry(reference);
+    }
+
+    /**
+     * Sets the URL to use to load Chart.js bundled (chart.bundle.min.js). Use this method if you want
+     * to load the javascript file from an external URL.
+     */
+    public void setMomentJsReference(final String url) {
+        this.momentJsEntry= new RegistryEntry(url);
     }
 
 }

@@ -142,8 +142,12 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new LogarithmicScatterChartConfiguration()));
         this.add(new UpdateChartJsLink("BubbleChart", chart, codeContainer,
                 new BubbleChartConfiguration()));
-        this.add(new UpdateChartJsLink("FilteringLabels", chart, codeContainer,
-                new FilteringLabelsConfiguration()));
+                this.add(new UpdateChartJsLink("FilteringLabels", chart, codeContainer,
+                        new FilteringLabelsConfiguration()));
+                this.add(new UpdateChartJsLink("TimeLine", chart, codeContainer,
+                        new TimeLineConfiguration()));
+        
+        
 	}
 
 	private ChartConfiguration getConfigurationToDisplay() {

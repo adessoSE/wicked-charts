@@ -5,10 +5,12 @@ import java.util.Arrays;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Rectangle;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -20,7 +22,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.HORIZONTAL_BAR);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -28,7 +30,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 
 
@@ -39,7 +41,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderWidth(1)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));

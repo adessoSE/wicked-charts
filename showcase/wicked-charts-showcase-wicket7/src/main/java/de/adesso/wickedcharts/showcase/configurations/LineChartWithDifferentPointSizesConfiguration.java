@@ -9,9 +9,11 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
 import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -25,14 +27,14 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("dataset - big points")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setPointRadius(Collections.nCopies(7, "15"))
 				.setPointHoverRadius("10")
 				.setFill("false");
@@ -44,14 +46,14 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderDash(Arrays.asList("5", "5"))
 				.setPointRadius(Arrays.asList("2", "4", "6", "18", "0", "12", "20"))
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("dataset - large pointHoverRadius")
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setPointHoverRadius("30")
 				.setFill("false");
 		
@@ -60,7 +62,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 			.setLabel("dataset - large pointHitRadius")
 			.setBackgroundColor(SimpleColor.YELLOW)
 			.setBorderColor(SimpleColor.YELLOW)
-			.setData(randomIntegerList(7))
+			.setData(IntegerValue.of(randomIntegerList(7)))
 			.setPointHitRadius("20")
 			.setFill("false");
 		

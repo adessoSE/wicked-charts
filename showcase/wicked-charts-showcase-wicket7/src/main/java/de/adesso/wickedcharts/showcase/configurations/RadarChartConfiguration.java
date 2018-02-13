@@ -7,10 +7,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Element;
 import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Line;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
 import de.adesso.wickedcharts.chartjs.chartoptions.SamplesFillerAnalyzer;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -22,14 +24,14 @@ public class RadarChartConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.RADAR);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset0 = new Dataset()
 				.setLabel("D0")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(Arrays.asList(1, 2, 3, 1, 2, 1, 2))
+				.setData(IntegerValue.of(Arrays.asList(1, 2, 3, 1, 2, 1, 2)))
 				.setFill("undefined");
 		
 		
@@ -37,7 +39,7 @@ public class RadarChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("D1 (hidden) Fill: -1")
 				.setBackgroundColor(SimpleColor.ORANGE_TRANSPARENT)
 				.setBorderColor(SimpleColor.ORANGE)
-				.setData(Arrays.asList(5, 4, 3, 5, 4, 3, 5))
+				.setData(IntegerValue.of(Arrays.asList(5, 4, 3, 5, 4, 3, 5)))
 				.setHidden(true)
 				.setFill("-1");
 		
@@ -45,7 +47,7 @@ public class RadarChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("D2 Fill: 1")
 				.setBackgroundColor(SimpleColor.YELLOW)
 				.setBorderColor(SimpleColor.YELLOW_TRANSPARENT)
-				.setData(Arrays.asList(10, 8, 12, 6, 13, 10, 9))
+				.setData(IntegerValue.of(Arrays.asList(10, 8, 12, 6, 13, 10, 9)))
 				.setFill("1");
 		
 		
@@ -53,14 +55,14 @@ public class RadarChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("D3 Fill: False")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
-				.setData(Arrays.asList(20, 18, 22, 16, 23, 20, 19))
+				.setData(IntegerValue.of(Arrays.asList(20, 18, 22, 16, 23, 20, 19)))
 				.setFill("false");
 		
 		Dataset dataset4 = new Dataset()
 				.setLabel("D4 Fill: -1")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
-				.setData(Arrays.asList(30, 28, 32, 26, 33, 30, 29))
+				.setData(IntegerValue.of(Arrays.asList(30, 28, 32, 26, 33, 30, 29)))
 				.setFill("-1");
 		
 		
@@ -68,7 +70,7 @@ public class RadarChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("D5 Fill: -1")
 				.setBackgroundColor(SimpleColor.PURPLE_TRANSPARENT)
 				.setBorderColor(SimpleColor.PURPLE)
-				.setData(Arrays.asList(40, 38, 42, 36, 43, 40, 39))
+				.setData(IntegerValue.of(Arrays.asList(40, 38, 42, 36, 43, 40, 39)))
 				.setFill("-1");		
 		
 		data.setDatasets(Arrays.asList(dataset0, dataset1, dataset2, dataset3, dataset4, dataset5));

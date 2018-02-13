@@ -15,8 +15,6 @@
 package de.adesso.wickedcharts.wicket7.chartjs;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.request.resource.JavaScriptResourceReference;
-
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.wicket7.chartjs.features.basic.ChartBehavior;
 

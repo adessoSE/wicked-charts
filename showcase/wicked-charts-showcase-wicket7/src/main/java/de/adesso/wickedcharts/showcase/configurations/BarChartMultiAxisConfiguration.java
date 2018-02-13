@@ -7,10 +7,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -22,14 +24,14 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 	public BarChartMultiAxisConfiguration() {
 		setType(ChartType.BAR);
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("Dataset 1")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false")
 				.setYAxisID("y-axis-1");
 		
@@ -38,7 +40,7 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setLabel("Dataset 2")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false")
 				.setYAxisID("y-axis-2");
 		

@@ -29,6 +29,7 @@ import java.util.Map;
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */
+@SuppressWarnings("serial")
 public abstract class JavaScriptExpressionSendingAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
     private final Map<String, String> javascriptExpressions = new HashMap<>();
