@@ -1,4 +1,4 @@
-package de.adesso.wickedcharts.chartjs.chartoptions;
+package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
 import lombok.experimental.Accessors;
 

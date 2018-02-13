@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
-import de.adesso.wickedcharts.chartjs.chartoptions.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 
 
 public class DataTest {

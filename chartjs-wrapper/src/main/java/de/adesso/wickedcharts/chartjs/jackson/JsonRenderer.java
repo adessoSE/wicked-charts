@@ -9,6 +9,15 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.*;
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
@@ -56,6 +65,8 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(DoubleValue.class, new DoubleValueSerializer());
 		this.jacksonModule.addSerializer(FloatValue.class, new FloatValueSerializer());
 		this.jacksonModule.addSerializer(StringValue.class, new StringValueSerializer());
+		this.jacksonModule.addSerializer(ConstValue.class, new ConstValueSerializer());
+		this.jacksonModule.addSerializer(ConstLabel.class, new ConstLabelSerializer());
 
 		
 		ObjectMapper mapper = createDefaultObjectMapper();

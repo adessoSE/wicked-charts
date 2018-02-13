@@ -7,16 +7,16 @@ import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
-import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
-import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
@@ -60,12 +60,12 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 						.setYAxes(Arrays.asList(new AxesScale()
 								.setType("linear")
 								.setDisplay(true)
-								.setPosition("left")
+								.setPosition(Position.LEFT)
 								.setId("y-axis-1"),
 								new AxesScale()
 								.setType("linear")
 								.setDisplay(true)
-								.setPosition("right")
+								.setPosition(Position.RIGHT)
 								.setId("y-axis-2")
 								.setGridLines(new GridLines()
 										.setDrawOnChartArea(false)))))

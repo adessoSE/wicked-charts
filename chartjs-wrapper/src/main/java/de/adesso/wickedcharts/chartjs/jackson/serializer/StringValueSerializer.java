@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.StringValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 
 public class StringValueSerializer extends JsonSerializer<StringValue> {
 

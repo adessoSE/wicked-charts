@@ -8,13 +8,14 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
-import de.adesso.wickedcharts.chartjs.chartoptions.PointValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
-import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
@@ -66,7 +67,7 @@ public class ScatterChartMultiAxisConfiguration extends ShowcaseConfiguration {
 						.setXAxes(new AxesScale()
 								.setDisplay(true)
 								.setType("linear")
-								.setPosition("bottom")
+								.setPosition(Position.BOTTOM)
 								.setGridLines(new GridLines()
 										.setZeroLineColor(new RgbaColor(0, 0, 0, 1)))
 								.setScaleLabel(new ScaleLabel()
@@ -75,12 +76,12 @@ public class ScatterChartMultiAxisConfiguration extends ShowcaseConfiguration {
 						.setYAxes(Arrays.asList(new AxesScale()
 								.setType("linear")
 								.setDisplay(true)
-								.setPosition("left")
+								.setPosition(Position.LEFT)
 								.setId("y-axis-1"),
 								new AxesScale()
 								.setType("linear")
 								.setDisplay(true)
-								.setPosition("right")
+								.setPosition(Position.RIGHT)
 								.setReverse(true)
 								.setId("y-axis-2")
 								.setGridLines(new GridLines()

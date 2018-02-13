@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
@@ -59,7 +61,7 @@ public class ScatterChartConfiguration extends ShowcaseConfiguration {
 						.setXAxes(new AxesScale()
 								.setDisplay(true)
 								.setType("linear")
-								.setPosition("bottom")
+								.setPosition(Position.BOTTOM)
 								.setScaleLabel(new ScaleLabel()
 										.setDisplay(true)
 										.setLabelString("Month"))))
