@@ -15,4 +15,5 @@ public class AxesScale {
 	private GridLines gridLines;
 	private Ticks ticks;
 	private Boolean beginAtZero;
+	private TimeFormat time;
 }

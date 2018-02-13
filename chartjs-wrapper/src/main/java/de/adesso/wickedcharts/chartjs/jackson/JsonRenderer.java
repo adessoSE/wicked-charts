@@ -7,8 +7,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.CallbackFunction;
-import de.adesso.wickedcharts.chartjs.chartoptions.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.*;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.*;
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
@@ -48,8 +47,15 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(JsonValueEnum.class, new JsonValueEnumSerializer());
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
 		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
-		this.jacksonModule.addSerializer(Label.class, new LabelSerializer());
 		this.jacksonModule.addSerializer(CallbackFunction.class, new CallbackFunctionSerializer());
+		this.jacksonModule.addSerializer(DateAndFormat.class, new DateAndFormatSerializer());
+		this.jacksonModule.addSerializer(TextLabel.class, new TextLabelSerializer());
+		this.jacksonModule.addSerializer(TextListLabel.class, new TextListLabelSerializer());
+		this.jacksonModule.addSerializer(DateTimeLabel.class, new DateTimeLabelSerializer());
+		this.jacksonModule.addSerializer(IntegerValue.class, new IntegerValueSerializer());
+		this.jacksonModule.addSerializer(DoubleValue.class, new DoubleValueSerializer());
+		this.jacksonModule.addSerializer(FloatValue.class, new FloatValueSerializer());
+		this.jacksonModule.addSerializer(StringValue.class, new StringValueSerializer());
 
 		
 		ObjectMapper mapper = createDefaultObjectMapper();

@@ -32,7 +32,7 @@ public class Scales {
 		return this;
 	}
 	
-	public Scales setxAxes(List<AxesScale> scaleList) {
+	public Scales setXAxes(List<AxesScale> scaleList) {
 		this.xAxes = scaleList;
 		return this;
 	}

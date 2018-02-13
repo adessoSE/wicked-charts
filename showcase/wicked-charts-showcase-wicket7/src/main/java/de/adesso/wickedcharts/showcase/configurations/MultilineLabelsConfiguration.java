@@ -5,8 +5,10 @@ import java.util.Arrays;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
-import de.adesso.wickedcharts.chartjs.chartoptions.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextListLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -20,29 +22,29 @@ public class MultilineLabelsConfiguration extends ShowcaseConfiguration {
 		
 		Data data = new Data()
 				.setLabels(Arrays.asList(
-				new Label("June","2015"),
-				new Label("July"),
-				new Label("August"),
-				new Label("September"),
-				new Label("October"),
-				new Label("November"),
-				new Label("December"),
-				new Label("January","2016"),
-				new Label("February"),
-				new Label("March"),
-				new Label("April"),
-				new Label("May")
+				new TextListLabel("June","2015"),
+				new TextLabel("July"),
+				new TextLabel("August"),
+				new TextLabel("September"),
+				new TextLabel("October"),
+				new TextLabel("November"),
+				new TextLabel("December"),
+				new TextListLabel("January","2016"),
+				new TextLabel("February"),
+				new TextLabel("March"),
+				new TextLabel("April"),
+				new TextLabel("May")
 				));
 		
 		Dataset dataset1 = new Dataset()
-				.setData(randomIntegerList(12))
+				.setData(IntegerValue.of(randomIntegerList(12)))
 				.setLabel("My First dataset")
 				.setFill("false")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED);
 		
 		Dataset dataset2 = new Dataset()
-				.setData(randomIntegerList(12))
+				.setData(IntegerValue.of(randomIntegerList(12)))
 				.setLabel("My Second dataset")
 				.setFill("false")
 				.setBackgroundColor(SimpleColor.BLUE)

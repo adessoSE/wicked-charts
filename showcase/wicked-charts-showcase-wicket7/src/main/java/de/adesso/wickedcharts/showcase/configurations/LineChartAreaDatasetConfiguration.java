@@ -10,12 +10,14 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Element;
 import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
 import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
 import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Line;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
 import de.adesso.wickedcharts.chartjs.chartoptions.SamplesFillerAnalyzer;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -29,14 +31,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset0 = new Dataset()
 				.setLabel("D0 (hidden), Fill: undefined")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("undefined")
 				.setHidden(true);
 		
@@ -45,7 +47,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D1 Fill: -1")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("-1");
 		
 		
@@ -53,7 +55,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D2 (hidden) Fill: 1")
 				.setBackgroundColor(SimpleColor.ORANGE_TRANSPARENT)
 				.setBorderColor(SimpleColor.ORANGE)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setHidden(true)
 				.setFill("1");
 		
@@ -61,7 +63,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D3 Fill: -1")
 				.setBackgroundColor(SimpleColor.YELLOW_TRANSPARENT)
 				.setBorderColor(SimpleColor.YELLOW)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("-1");
 		
 		
@@ -69,14 +71,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D4 Fill: -1")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("-1");
 		
 		Dataset dataset5 = new Dataset()
 				.setLabel("D5 Fill: +2")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("+2");
 		
 		
@@ -84,14 +86,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D6 Fill: false")
 				.setBackgroundColor(SimpleColor.GREY_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREY)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 		
 		Dataset dataset7 = new Dataset()
 				.setLabel("D7 Fill: 8")
 				.setBackgroundColor(SimpleColor.PURPLE_TRANSPARENT)
 				.setBorderColor(SimpleColor.PURPLE)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("8");
 		
 		
@@ -99,7 +101,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setLabel("D8 (hidden) Fill: end")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setHidden(true)
 				.setFill("end");
 		

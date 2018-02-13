@@ -20,13 +20,13 @@ public class DataTest {
 	@Before
 	public void setUp() throws Exception {
 		testData = new Data();
-		labelList = Arrays.asList(new Label("foo"), new Label("bar"));
+		labelList = Arrays.asList(new TextLabel("foo"), new TextLabel("bar"));
 	}
 
 	@Test
 	public void testSetStringLabels() {
 		List<String> list = Arrays.asList("foo","bar");
-		testData.setLabels(list);
+		testData.setLabels(TextLabel.createListOf(list));
 		assertEquals(testData.getLabels(),labelList);
 		
 	}

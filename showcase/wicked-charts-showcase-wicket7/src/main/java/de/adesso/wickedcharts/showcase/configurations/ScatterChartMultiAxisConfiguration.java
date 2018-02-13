@@ -8,9 +8,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
-import de.adesso.wickedcharts.chartjs.chartoptions.PointData2D;
+import de.adesso.wickedcharts.chartjs.chartoptions.PointValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
@@ -23,35 +24,35 @@ public class ScatterChartMultiAxisConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.SCATTER);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("My First dataset")
 				.setYAxisID("y-axis-1")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
-				.setBorderColor(SimpleColor.RED)
-				.setData(Arrays.asList(new PointData2D().setX(10).setY(20),
-						new PointData2D().setX(4).setY(14),
-						new PointData2D().setX(40).setY(42),
-						new PointData2D().setX(23).setY(42),
-						new PointData2D().setX(40).setY(22),
-						new PointData2D().setX(80).setY(12),
-						new PointData2D().setX(30).setY(32)))
+				.setBorderColor(SimpleColor.RED) 
+				.setData(Arrays.asList(
+						new PointValue(4,14),
+						new PointValue(40,42),
+						new PointValue(23,42),
+						new PointValue(40,22),
+						new PointValue(80,12),
+						new PointValue(30,32)))
 				.setFill("false");
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("My Second dataset")
 				.setYAxisID("y-axis-2")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
-				.setBorderColor(SimpleColor.BLUE)
-				.setData(Arrays.asList(new PointData2D().setX(10).setY(20),
-						new PointData2D().setX(7).setY(56),
-						new PointData2D().setX(15).setY(54),
-						new PointData2D().setX(46).setY(34),
-						new PointData2D().setX(36).setY(42),
-						new PointData2D().setX(78).setY(64),
-						new PointData2D().setX(12).setY(48)))
+				.setBorderColor(SimpleColor.BLUE) 
+				.setData(Arrays.asList(
+						new PointValue(7,56),
+						new PointValue(15,54),
+						new PointValue(46,34),
+						new PointValue(36,42),
+						new PointValue(78,64),
+						new PointValue(12,48)))
 				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));

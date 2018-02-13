@@ -3,11 +3,12 @@ package de.adesso.wickedcharts.showcase.configurations;
 import java.util.Arrays;
 import java.util.Random;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.BubbleValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
-import de.adesso.wickedcharts.chartjs.chartoptions.PointData2D;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -19,7 +20,7 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 		setType(ChartType.BUBBLE);
 
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -28,14 +29,16 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.YELLOW)
 				.setHoverBackgroundColor(SimpleColor.WHITE)
 				.setHoverBorderColor(SimpleColor.RED)
-				.setHoverBorderWidth(10.0)
-				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100))))
+				.setHoverBorderWidth(10.0) 
+				.setData(Arrays.asList(
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
+						))
 				.setFill("false");
 		
 		Dataset dataset2 = new Dataset()
@@ -45,13 +48,15 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setHoverBackgroundColor(SimpleColor.WHITE)
 				.setHoverBorderColor(SimpleColor.RED)
 				.setHoverBorderWidth(10.0)
-				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100))))
+				.setData(Arrays.asList(
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
+						))
 				.setFill("false");
 		
 		Dataset dataset3 = new Dataset()
@@ -61,13 +66,15 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 				.setHoverBackgroundColor(SimpleColor.WHITE)
 				.setHoverBorderColor(SimpleColor.RED)
 				.setHoverBorderWidth(10.0)
-				.setData(Arrays.asList(new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100)),
-						new PointData2D().setX(randomDouble(100)).setY(randomDouble(100)).setR(randomDouble(100))))
+				.setData(Arrays.asList(
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
+						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
+						))
 				.setFill("false");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3));

@@ -22,7 +22,7 @@ public class Dataset {
 	private List<? extends Color> backgroundColor;
 	private Color borderColor;
 	private Integer borderWidth;
-	private List<? extends Number> data;
+	private List<? extends ValueType> data;
 	
 	private String fill;
 	//fill is now a String because in some charts attributes other than true/false are expected

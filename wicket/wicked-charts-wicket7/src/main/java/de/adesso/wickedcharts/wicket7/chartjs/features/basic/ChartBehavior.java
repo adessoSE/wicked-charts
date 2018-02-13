@@ -78,6 +78,7 @@ public class ChartBehavior extends Behavior {
         resourceRegistry.getJQueryEntry().addToHeaderResponse(response);
         resourceRegistry.getHighchartsEntry().addToHeaderResponse(response);
         resourceRegistry.getChartJsBundle().addToHeaderResponse(response);
+        resourceRegistry.getMomentJsentry().addToHeaderResponse(response);
     }
 
     @Override

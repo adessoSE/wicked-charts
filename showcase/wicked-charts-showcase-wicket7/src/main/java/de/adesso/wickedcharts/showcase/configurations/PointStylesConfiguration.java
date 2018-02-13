@@ -7,11 +7,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
@@ -39,14 +41,14 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("Dash")
 				.setBackgroundColor(SimpleColor.GREY)
 				.setBorderColor(SimpleColor.GREY)
-				.setData(Arrays.asList(1,1,1,1,1,1,1))
+				.setData(IntegerValue.of(Arrays.asList(1,1,1,1,1,1,1)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -57,7 +59,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Star")
 				.setBackgroundColor(SimpleColor.PURPLE)
 				.setBorderColor(SimpleColor.PURPLE)
-				.setData(Arrays.asList(2,2,2,2,2,2,2))
+				.setData(IntegerValue.of(Arrays.asList(2,2,2,2,2,2,2)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "20"))
 				.setPointHoverRadius("15")
@@ -68,7 +70,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Rectangle")
 				.setBackgroundColor(SimpleColor.YELLOW)
 				.setBorderColor(SimpleColor.YELLOW)
-				.setData(Arrays.asList(3,3,3,3,3,3,3))
+				.setData(IntegerValue.of(Arrays.asList(3,3,3,3,3,3,3)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -79,7 +81,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Triangle")
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
-				.setData(Arrays.asList(4,4,4,4,4,4,4))
+				.setData(IntegerValue.of(Arrays.asList(4,4,4,4,4,4,4)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -90,7 +92,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Circle")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
-				.setData(Arrays.asList(5,5,5,5,5,5,5))
+				.setData(IntegerValue.of(Arrays.asList(5,5,5,5,5,5,5)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -101,7 +103,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("CrossRot")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
-				.setData(Arrays.asList(6,6,6,6,6,6,6))
+				.setData(IntegerValue.of(Arrays.asList(6,6,6,6,6,6,6)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -112,7 +114,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Line")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED_TRANSPARENT)
-				.setData(Arrays.asList(7,7,7,7,7,7,7))
+				.setData(IntegerValue.of(Arrays.asList(7,7,7,7,7,7,7)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -123,7 +125,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Cross")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE_TRANSPARENT)
-				.setData(Arrays.asList(8,8,8,8,8,8,8))
+				.setData(IntegerValue.of(Arrays.asList(8,8,8,8,8,8,8)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -134,7 +136,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Rectangle Rounded")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
-				.setData(Arrays.asList(9,9,9,9,9,9,9))
+				.setData(IntegerValue.of(Arrays.asList(9,9,9,9,9,9,9)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")
@@ -145,7 +147,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setLabel("Rectangle Rotated")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN_TRANSPARENT)
-				.setData(Arrays.asList(11,11,11,11,11,11,11))
+				.setData(IntegerValue.of(Arrays.asList(11,11,11,11,11,11,11)))
 				.setShowLine(false)
 				.setPointRadius(Collections.nCopies(7, "10"))
 				.setPointHoverRadius("15")

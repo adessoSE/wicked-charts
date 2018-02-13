@@ -7,9 +7,11 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
@@ -21,11 +23,11 @@ public class LegendPositionChartBasicConfiguration extends ShowcaseConfiguration
 		setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(Arrays.asList("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("My First dataset")
-				.setData(randomIntegerList(7))
+				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setBorderWidth(1);
 		
 		data.setDatasets(Arrays.asList(dataset1));
