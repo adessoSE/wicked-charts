@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/wirz/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar;C:/Users/wirz/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.1/jackson-annotations-2.8.1.jar;C:/Users/wirz/git/wicked-charts/highcharts-wrapper/target/highcharts-wrapper-2.0.1.jar;C:/Users/wirz/.m2/repository/org/apache/wicket/wicket-util/6.21.0/wicket-util-6.21.0.jar;C:/Users/wirz/.m2/repository/org/apache/wicket/wicket-core/6.21.0/wicket-core-6.21.0.jar;C:/Users/wirz/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar;C:/Users/wirz/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.1/jackson-databind-2.8.1.jar;C:/Users/wirz/.m2/repository/org/apache/wicket/wicket-request/6.21.0/wicket-request-6.21.0.jar;C:/Users/wirz/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.1/jackson-core-2.8.1.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/Users/wirz/git/wicked-charts/wicket/wicked-charts-wicket6/src/main/java;C:/Users/wirz/git/wicked-charts/wicket/wicked-charts-wicket6/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2018. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/wirz/git/wicked-charts/wicket/wicked-charts-wicket6/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Wicked Charts for Wicket 6.x 2.0.1 API'
+-linkoffline
+'https://docs.oracle.com/javase/6/docs/api' 'C:/Users/wirz/git/wicked-charts/wicket/wicked-charts-wicket6/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Wicked Charts for Wicket 6.x 2.0.1 API'

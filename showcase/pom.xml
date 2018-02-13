@@ -4,7 +4,7 @@
 
 
     <parent>
-        <groupId>com.googlecode.wicked-charts</groupId>
+        <groupId>de.adesso.wicked-charts</groupId>
         <artifactId>wicked-charts-parent</artifactId>
         <relativePath>../</relativePath>
         <version>2.0.1</version>
@@ -58,62 +58,62 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-showcase-options</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-showcase-wicket14</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-showcase-wicket15</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-showcase-wicket6</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-showcase-jsf21</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-wicket14</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-wicket15</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-wicket6</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-wicket7</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>wicked-charts-jsf21</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>highcharts-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.googlecode.wicked-charts</groupId>
+                <groupId>de.adesso.wicked-charts</groupId>
                 <artifactId>chartjs-wrapper</artifactId>
                 <version>${project.version}</version>
             </dependency>
