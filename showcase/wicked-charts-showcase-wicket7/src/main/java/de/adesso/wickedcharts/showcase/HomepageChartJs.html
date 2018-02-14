@@ -206,7 +206,7 @@
                     <li><a href="#" wicket:id="TooltipBorder">Border</a></li>
                     <li><a href="#" wicket:id="TooltipHtmlLine">HTML tooltips (line)</a></li>
                     <li><a href="#" wicket:id="TooltipHtmlPie">HTML tooltips (pie)</a></li>
-                    <li><a href="#" wicket:id="TooltipHtmlPoints">HTML tooltips (points)</a></li>
+                    <li><a href="#" wicket:id="TooltipHtmlPoints" style="pointer-events: none; cursor: default;" >HTML tooltips (points)</a></li>
 
 
                     <li class="nav-header">Scriptable</li>
@@ -224,8 +224,6 @@
 			<div class="span9 corner-chart">
 				<div style="width: 100%">
 					<canvas wicket:id="chart">CHART</canvas>
-					<div class="chartjs-tooltip" id="tooltip-0"></div>
-					<div class="chartjs-tooltip" id="tooltip-1"></div>
 					<div id="chartjs-tooltip">
 						<table></table>
 					</div>
