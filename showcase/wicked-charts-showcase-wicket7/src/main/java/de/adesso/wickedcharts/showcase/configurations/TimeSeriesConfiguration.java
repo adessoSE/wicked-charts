@@ -82,8 +82,8 @@ public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 	private DoubleValue randomBar(double lastClose) {
 		double open = randomNumber(lastClose * .95, lastClose *1.05);
 		double close = randomNumber(open * .95, open *1.05);
-		double high = randomNumber(Math.max(open, close), Math.max(open, close) * 1.1);
-		double low = randomNumber(Math.min(open, close) * .9, Math.min(open, close));
+//		double high = randomNumber(Math.max(open, close), Math.max(open, close) * 1.1);
+//		double low = randomNumber(Math.min(open, close) * .9, Math.min(open, close));
 		return new DoubleValue(close);
 	}
 

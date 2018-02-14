@@ -58,7 +58,6 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
 		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
 		this.jacksonModule.addSerializer(CallbackFunction.class, new CallbackFunctionSerializer());
-		this.jacksonModule.addSerializer(DateAndFormat.class, new DateAndFormatSerializer());
 		this.jacksonModule.addSerializer(TextLabel.class, new TextLabelSerializer());
 		this.jacksonModule.addSerializer(TextListLabel.class, new TextListLabelSerializer());
 		this.jacksonModule.addSerializer(DateTimeLabel.class, new DateTimeLabelSerializer());
