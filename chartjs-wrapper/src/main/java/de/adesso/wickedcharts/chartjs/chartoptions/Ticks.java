@@ -15,4 +15,5 @@ public class Ticks {
 	private Integer max;
 	private Callback callback;
 	private Boolean reverse;
+	private TickStyle major;
 }
