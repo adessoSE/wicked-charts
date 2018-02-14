@@ -66,11 +66,20 @@ public class ChartBehavior extends Behavior {
         String contextVarname = markupId + "ctx";
         String jsonOptions = renderer.toJson(options);
         
-        response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
-                        "var {0} = {1};"
-                        + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
-                        + " window.{2} = new Chart({3},{0});",
-                        optionsVarname, jsonOptions,chartVarname,contextVarname,markupId)));
+        if(options.getOptionalJavascript() == null) {
+            response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
+                    "var {0} = {1};"
+                    + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
+                    + " window.{2} = new Chart({3},{0});",
+                    optionsVarname, jsonOptions,chartVarname,contextVarname,markupId)));
+        }
+        else {
+            response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
+                    "{5} var {0} = {1};"
+                    + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
+                    + " window.{2} = new Chart({3},{0});",
+                    optionsVarname, jsonOptions,chartVarname,contextVarname,markupId,options.getOptionalJavascript())));
+        }
     }
 
     private void includeJavascriptDependencies(final IHeaderResponse response, final ChartConfiguration options) {

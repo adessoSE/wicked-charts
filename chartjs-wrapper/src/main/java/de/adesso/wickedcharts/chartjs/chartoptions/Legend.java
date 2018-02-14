@@ -6,4 +6,5 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class Legend {
 	private Position position;
+	private Boolean display;
 }
