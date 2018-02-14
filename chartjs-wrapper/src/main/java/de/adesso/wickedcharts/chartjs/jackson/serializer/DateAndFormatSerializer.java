@@ -12,15 +12,16 @@ import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
 
 public class DateAndFormatSerializer extends JsonSerializer<DateAndFormat> {
 
-	private static final String MOMENT_FORMAT = "moment('%s','%s')";
+	private static final String MOMENT_FORMAT = "moment('%s',moment.ISO_8601)";
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+	
 	
 	
 	@Override
 	public void serialize(DateAndFormat value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(value.getFormat());
-		String dateOutput = formatter.format(value.getDate());
-		String output = String.format(MOMENT_FORMAT, dateOutput , value.getFormat());
+		String dateOutput = value.getDate().format(formatter);
+		String output = String.format(MOMENT_FORMAT, dateOutput);
 		gen.writeRawValue(output);
 	}
 

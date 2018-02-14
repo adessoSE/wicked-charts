@@ -11,13 +11,11 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
-import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.TickStyle;
 import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
-import de.adesso.wickedcharts.chartjs.chartoptions.TimeFormat;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
@@ -43,8 +41,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 
 		List<DateTimeLabel> dateList = new ArrayList<DateTimeLabel>();
 		for(int i = 0; i < 7; i++) {
-			DateAndFormat dateObject = new DateAndFormat(LocalDateTime.of(2018, 1,1, 8+i, 00),timeFormat);
-			dateList.add(new DateTimeLabel(dateObject));
+			dateList.add(new DateTimeLabel(LocalDateTime.of(2018, 1,1, 8+i, 00)));
 		}
 		data.setLabels(dateList);
 		
@@ -55,25 +52,25 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 				.setFill("false")
 				.setData(Arrays.asList(
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(0).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(0).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(1).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(1).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(2).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(2).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(3).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(3).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(4).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(4).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(5).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(5).getDate()))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new DateTimeValue(dateList.get(6).getDateAndFormat()))
+						.setX(new DateTimeValue(dateList.get(6).getDate()))
 						.setY(randomInteger())
 						));
 		
@@ -87,25 +84,25 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 				.setFill("false")
 				.setData(Arrays.asList(
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(0).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(0).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(1).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(1).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(2).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(2).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(3).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(3).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(4).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(4).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(5).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(5).getDate())))
 							.setY(randomInteger()),
 						new PointValue()
-							.setX(new StringValue(formatter.format(dateList.get(6).getDateAndFormat().getDate())))
+							.setX(new StringValue(formatter.format(dateList.get(6).getDate())))
 							.setY(randomInteger())
 						))
 				;

@@ -150,6 +150,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new NonNumericConfiguration())); 
         this.add(new UpdateChartJsLink("TimePoint", chart, codeContainer,
                 new TimePointConfiguration())); 
+        this.add(new UpdateChartJsLink("TimeSeries", chart, codeContainer,
+                new TimeSeriesConfiguration())); 
         
         
 	}

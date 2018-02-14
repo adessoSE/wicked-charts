@@ -1,20 +1,20 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @lombok.Data
 public class DateTimeValue extends ValueType implements Serializable {
 	
-	private DateAndFormat dateAndFormat;
+	private LocalDateTime value;
 	
 	public DateTimeValue() {
 	}
 
-	public DateTimeValue(DateAndFormat dateAndFormat) {
-		this.dateAndFormat = dateAndFormat;
+	public DateTimeValue(LocalDateTime value) {
+		this.value = value;
 	}
 }

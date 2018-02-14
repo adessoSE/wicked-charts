@@ -16,4 +16,5 @@ public class Ticks {
 	private Callback callback;
 	private Boolean reverse;
 	private TickStyle major;
+	private TickSource source;
 }

@@ -16,4 +16,5 @@ public class AxesScale {
 	private Ticks ticks;
 	private Boolean beginAtZero;
 	private TimeFormat time;
+	private DistributionType distribution;
 }
