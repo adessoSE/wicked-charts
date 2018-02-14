@@ -35,6 +35,38 @@
         .modal.fade.in {
             top: 36%;
         }
+		#chartjs-tooltip {
+			opacity: 1;
+			position: absolute;
+			background: rgba(0, 0, 0, .7);
+			color: white;
+			border-radius: 3px;
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+			pointer-events: none;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+		}
+		.chartjs-tooltip {
+			opacity: 1;
+			position: absolute;
+			background: rgba(0, 0, 0, .7);
+			color: white;
+			border-radius: 3px;
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+			pointer-events: none;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+			padding: 4px;
+		}
+
+		.chartjs-tooltip-key {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 10px;
+		}
 
 
     </style>
@@ -75,7 +107,7 @@
                 <ul class="nav">
                     <li class="active"><a wicket:id="chartJsShowcaseLink">Chart.js Showcase</a></li>
                     <li><a wicket:id="highchartShowcaseLink">Highcharts Showcase</a></li>
-                    <li><a href="http://code.google.com/p/wicked-charts/">GoogleCode</a></li>
+                    <li><a href="https://github.com/adessoAG/wicked-charts">GitHub</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -130,6 +162,7 @@
 					<li><a href="#" wicket:id="DoughnutChart">Doughnut</a></li>
                     <li><a href="#" wicket:id="PieChart">Pie</a></li>
 					<li><a href="#" wicket:id="PolarAreaChart">Polar Area</a></li>
+                    <li><a href="#" wicket:id="OtherRadar">Radar</a></li>
                     <li><a href="#" wicket:id="ComboBarLineChart">Combo bar/line</a></li>
 					
 	
@@ -145,6 +178,9 @@
                     
                     <li class="nav-header">Time scale</li>
 					<li><a href="#" wicket:id="TimeLine">Line</a></li>
+					<li><a href="#" wicket:id="TimePoint">Line (point data)</a></li>
+					<li><a href="#" wicket:id="TimeSeries">Time series</a></li>
+					<li><a href="#" wicket:id="TimeCombo">Combo</a></li>
                     
                     
                     <li class="nav-header">Scale options</li>
@@ -166,6 +202,11 @@
                     <li><a href="#" wicket:id="LegendPositionLeft">Left</a></li>
 
                     <li class="nav-header">Tooltip</li>
+                    <li><a href="#" wicket:id="TooltipCallbacks">Callbacks</a></li>
+                    <li><a href="#" wicket:id="TooltipBorder">Border</a></li>
+                    <li><a href="#" wicket:id="TooltipHtmlLine">HTML tooltips (line)</a></li>
+                    <li><a href="#" wicket:id="TooltipHtmlPie">HTML tooltips (pie)</a></li>
+                    <li><a href="#" wicket:id="TooltipHtmlPoints" style="pointer-events: none; cursor: default;" >HTML tooltips (points)</a></li>
 
 
                     <li class="nav-header">Scriptable</li>
@@ -180,14 +221,22 @@
         </div>
         <!--/span-->
 
-        <div class="span9 corner-chart">
-            <div style="width: 100%"><canvas wicket:id="chart">CHART</canvas></div>
-            <br>
+			<div class="span9 corner-chart">
+				<div style="width: 100%">
+					<canvas wicket:id="chart">CHART</canvas>
+					<div id="chartjs-tooltip">
+						<table></table>
+					</div>
+				</div>
+				<br>
 
-            <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#" data-toggle="modal"
-                  data-target="#codeDialog">Show Java code &raquo;</a></p>
-        </div>
-        <!--/span-->
+				<p>
+					<a id="showCodeButton" class="btn btn-primary pull-right" href="#"
+						data-toggle="modal" data-target="#codeDialog">Show Java code
+						&raquo;</a>
+				</p>
+			</div>
+			<!--/span-->
 
         <div class="span9 corner-usage">
             <p>To add a chart to your Wicket page, include the following HTML

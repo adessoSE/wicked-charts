@@ -7,4 +7,7 @@ import lombok.experimental.Accessors;
 public class Animation {
 	private Boolean animateScale;
 	private Boolean animateRotate;
+	private Integer duration;
+	private CallbackFunction onProgress;
+	private CallbackFunction onComplete;
 }

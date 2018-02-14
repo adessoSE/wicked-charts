@@ -19,4 +19,5 @@ public class Options {
 	private Animation animation;
 	private Filler filler;
 	private Double aspectRatio;
+	private Position position;
 }

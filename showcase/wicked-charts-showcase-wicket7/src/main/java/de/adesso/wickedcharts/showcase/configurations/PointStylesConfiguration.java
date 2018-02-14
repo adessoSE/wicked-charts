@@ -1,8 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
-import java.util.Collections;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
@@ -50,7 +48,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREY)
 				.setData(IntegerValue.of(Arrays.asList(1,1,1,1,1,1,1)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("dash")
 				.setFill("false");
@@ -61,7 +59,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.PURPLE)
 				.setData(IntegerValue.of(Arrays.asList(2,2,2,2,2,2,2)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "20"))
+				.setPointRadius(20)
 				.setPointHoverRadius("15")
 				.setPointStyle("star")
 				.setFill("false");
@@ -72,7 +70,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.YELLOW)
 				.setData(IntegerValue.of(Arrays.asList(3,3,3,3,3,3,3)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rect")
 				.setFill("false");
@@ -83,7 +81,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(Arrays.asList(4,4,4,4,4,4,4)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("triangle")
 				.setFill("false");
@@ -94,7 +92,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(Arrays.asList(5,5,5,5,5,5,5)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("circle")
 				.setFill("false");
@@ -105,7 +103,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(Arrays.asList(6,6,6,6,6,6,6)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("crossRot")
 				.setFill("false");
@@ -116,7 +114,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(7,7,7,7,7,7,7)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("line")
 				.setFill("false");
@@ -127,7 +125,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(8,8,8,8,8,8,8)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("cross")
 				.setFill("false");
@@ -138,7 +136,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(Arrays.asList(9,9,9,9,9,9,9)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRounded")
 				.setFill("false");
@@ -149,7 +147,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(11,11,11,11,11,11,11)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRot")
 				.setFill("false");

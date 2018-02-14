@@ -1,18 +1,20 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
+import de.adesso.wickedcharts.chartjs.chartoptions.CallbackFunction;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.FontStyle;
 import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
 import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipCallbacks;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
@@ -21,8 +23,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
-public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfiguration {
-	public LineChartWithDifferentPointSizesConfiguration() {
+public class TooltipCallbacksConfiguration extends ShowcaseConfiguration {
+	public TooltipCallbacksConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -31,53 +33,43 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("dataset - big points")
+				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setPointRadius(Collections.nCopies(7, 15))
-				.setPointHoverRadius("10")
 				.setFill("false");
 		
 		
 		Dataset dataset2 = new Dataset()
-				.setLabel("dataset - individual point sizes")
+				.setLabel("My Second dataset")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
-				.setBorderDash(Arrays.asList("5", "5"))
-				.setPointRadius(Arrays.asList(2, 4, 6, 18, 0, 12, 20))
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 		
-		Dataset dataset3 = new Dataset()
-				.setLabel("dataset - large pointHoverRadius")
-				.setBackgroundColor(SimpleColor.GREEN)
-				.setBorderColor(SimpleColor.GREEN)
-				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setPointHoverRadius("30")
-				.setFill("false");
+		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		
-		
-		Dataset dataset4 = new Dataset()
-			.setLabel("dataset - large pointHitRadius")
-			.setBackgroundColor(SimpleColor.YELLOW)
-			.setBorderColor(SimpleColor.YELLOW)
-			.setData(IntegerValue.of(randomIntegerList(7)))
-			.setPointHitRadius("20")
-			.setFill("false");
-		
-		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3, dataset4));
+		String footerFunction = "function(tooltipItems, data) {\r\n" + 
+				"                            var sum = 0;\r\n" + 
+				"\r\n" + 
+				"                            tooltipItems.forEach(function(tooltipItem) {\r\n" + 
+				"                                sum += data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];\r\n" + 
+				"                            });\r\n" + 
+				"                            return 'Sum: ' + sum;\r\n" + 
+				"                        }";
 		
 		Options options = new Options()
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart with Different Point Sizes"))
+						.setText("Chart.js Line Chart - Custom Information in Tooltip"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
-						.setIntersect(false))
+						.setCallbacks(new TooltipCallbacks()
+								.setFooter(new CallbackFunction(footerFunction)))
+						.setFooterFontStyle(FontStyle.NORMAL))
 				.setHover(new Hover()
-						.setMode(HoverMode.NEAREST)
+						.setMode(HoverMode.INDEX)
 						.setIntersect(true))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()

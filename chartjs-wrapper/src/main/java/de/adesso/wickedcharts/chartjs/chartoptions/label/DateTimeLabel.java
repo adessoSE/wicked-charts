@@ -1,19 +1,20 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
+import java.time.LocalDateTime;
+
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @lombok.Data
 public class DateTimeLabel extends Label {
 	
-	private DateAndFormat dateAndFormat;
+	private LocalDateTime date;
 
 	public DateTimeLabel() {
 		super();
 	}
 	
-	public DateTimeLabel(DateAndFormat dateAndFormat) {
-		this.dateAndFormat = dateAndFormat;
+	public DateTimeLabel(LocalDateTime date) {
+		this.date = date;
 	}
 }
