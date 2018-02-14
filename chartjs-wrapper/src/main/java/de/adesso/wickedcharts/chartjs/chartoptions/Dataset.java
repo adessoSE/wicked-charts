@@ -48,6 +48,7 @@ public class Dataset {
 	private Boolean hidden;
 	private Color hoverBackgroundColor;
 	private Color hoverBorderColor;
+	private Color pointBackgroundColor;
 	private Double hoverBorderWidth;
 	
 	public Dataset setBackgroundColor(Color color) {
