@@ -53,7 +53,7 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(datasetsData)
 				.setFill("false")
-				.setLineTension("0");
+				.setLineTension(0);
 				
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));

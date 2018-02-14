@@ -148,6 +148,12 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TimeLineConfiguration())); 
         this.add(new UpdateChartJsLink("NonNumeric", chart, codeContainer,
                 new NonNumericConfiguration())); 
+        this.add(new UpdateChartJsLink("TimePoint", chart, codeContainer,
+                new TimePointConfiguration())); 
+        this.add(new UpdateChartJsLink("TimeSeries", chart, codeContainer,
+                new TimeSeriesConfiguration())); 
+        this.add(new UpdateChartJsLink("TimeCombo", chart, codeContainer,
+                new TimeComboConfiguration())); 
         
         
 	}

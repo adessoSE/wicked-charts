@@ -36,10 +36,11 @@ public class Dataset {
 	
 	private String pointStyle;
 	private String steppedLine;
-	private String lineTension;
+	private Integer lineTension;
 	private String cubicInterpolationMode;
 	private List<String> borderDash;
-	private List<String> pointRadius;
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<Integer> pointRadius;
 	private String pointHitRadius;
 	private String pointHoverRadius;
 	private Double pointBorderWidth;
@@ -58,4 +59,16 @@ public class Dataset {
 		this.backgroundColor = asList;
 		return this;
 	}
+	
+	public Dataset setPointRadius(Integer value) {
+		this.pointRadius = Arrays.asList(value);
+		return this;
+	}
+	
+	public Dataset setPointRadius(List<Integer> list) {
+		this.pointRadius = list;
+		return this;
+	}
+	
+	
 }
