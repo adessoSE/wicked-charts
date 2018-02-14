@@ -35,7 +35,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setPointRadius(Collections.nCopies(7, "15"))
+				.setPointRadius(Collections.nCopies(7, 15))
 				.setPointHoverRadius("10")
 				.setFill("false");
 		
@@ -45,7 +45,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderDash(Arrays.asList("5", "5"))
-				.setPointRadius(Arrays.asList("2", "4", "6", "18", "0", "12", "20"))
+				.setPointRadius(Arrays.asList(2, 4, 6, 18, 0, 12, 20))
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false");
 		
