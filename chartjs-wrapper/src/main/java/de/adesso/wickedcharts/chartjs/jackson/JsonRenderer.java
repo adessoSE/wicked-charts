@@ -68,6 +68,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(ConstValue.class, new ConstValueSerializer());
 		this.jacksonModule.addSerializer(ConstLabel.class, new ConstLabelSerializer());
 		this.jacksonModule.addSerializer(DateTimeValue.class, new DateTimeValueSerializer());
+		this.jacksonModule.addSerializer(JavaScriptReference.class, new JavaScriptReferenceSerializer());
 
 		
 		ObjectMapper mapper = createDefaultObjectMapper();
