@@ -7,4 +7,6 @@ import lombok.experimental.Accessors;
 public class Tooltips {
 	private TooltipMode mode;
 	private Boolean intersect;
+	private TooltipCallbacks callbacks;
+	private FontStyle footerFontStyle;
 }

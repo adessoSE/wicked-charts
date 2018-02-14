@@ -155,10 +155,12 @@ public class HomepageChartJs extends WebPage implements Serializable {
         this.add(new UpdateChartJsLink("TimeCombo", chart, codeContainer,
                 new TimeComboConfiguration())); 
         this.add(new UpdateChartJsLink("OtherRadar", chart, codeContainer,
-                new OtherRadarChartConfiguration())); 
+                new OtherRadarChartConfiguration()));  
+        this.add(new UpdateChartJsLink("TooltipCallbacks", chart, codeContainer,
+                new TooltipCallbacksConfiguration())); 
         
         
-	}
+	} 
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())
