@@ -25,7 +25,7 @@ subprojects {
     }
 
     // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-    version = '3.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+    version = '3.0.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
     sourceCompatibility = 1.8
 
     ext {
@@ -68,7 +68,7 @@ subprojects {
         }
 
         scm {
-            url "https://github.com/thombergs/diffparser"
+            url "https://github.com/adessoag/wicked-charts"
         }
     }
 
@@ -82,64 +82,64 @@ subprojects {
                 artifact javadocJar {
                     classifier "javadoc"
                 }
-                groupId 'io.reflectoring.diffparser'
-                artifactId 'diffparser'
+                groupId 'de.adesso'
+                artifactId 'wicked-charts'
                 version project.version
                 pom.withXml {
                     def root = asNode()
-                    root.appendNode('description', 'Parse textual Diffs with Java')
-                    root.appendNode('name', 'DiffParser')
-                    root.appendNode('url', 'https://github.com/thombergs/diffparser')
+                    root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
+                    root.appendNode('name', 'Wicked Charts')
+                    root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
                     root.children().last() + pomConfig
                 }
             }
         }
     }
 
-//    artifactory {
-//        contextUrl = 'http://oss.jfrog.org'
-//        publish {
-//            repository {
-//                repoKey = 'oss-snapshot-local'
-//                username = bintrayUser
-//                password = bintrayKey
-//            }
-//            defaults {
-//                publications('mavenPublication')
-//                publishArtifacts = true
-//                publishPom = true
-//                properties = [
-//                        'build.number': buildNumber,
-//                        'build.name'  : 'diffparser'
-//                ]
-//            }
-//        }
-//        resolve {
-//            repoKey = 'jcenter'
-//        }
-//        clientConfig.info.setBuildNumber(buildNumber)
-//        clientConfig.info.setBuildName('diffparser')
-//    }
-//
-//    bintray {
-//        user = bintrayUser
-//        key = bintrayKey
-//        publications = ['mavenPublication']
-//
-//        pkg {
-//            repo = 'maven-releases'
-//            name = 'diffparser'
-//            userOrg = 'reflectoring'
-//            licenses = ['Apache-2.0']
-//            vcsUrl = 'https://github.com/thombergs/diffparser'
-//            version {
-//                name = project.version
-//                desc = "build ${buildNumber}"
-//                released = new Date()
-//            }
-//        }
-//
-//        publish = true
-//    }
+    artifactory {
+        contextUrl = 'http://oss.jfrog.org'
+        publish {
+            repository {
+                repoKey = 'oss-snapshot-local'
+                username = bintrayUser
+                password = bintrayKey
+            }
+            defaults {
+                publications('mavenPublication')
+                publishArtifacts = true
+                publishPom = true
+                properties = [
+                        'build.number': buildNumber,
+                        'build.name'  : 'wicked-charts'
+                ]
+            }
+        }
+        resolve {
+            repoKey = 'jcenter'
+        }
+        clientConfig.info.setBuildNumber(buildNumber)
+        clientConfig.info.setBuildName('wicked-charts')
+    }
+
+    bintray {
+        user = bintrayUser
+        key = bintrayKey
+        publications = ['mavenPublication']
+
+        pkg {
+            repo = 'wicked-charts'
+            name = 'wicked-charts'
+            userOrg = 'adessoag'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/adessoag/wicked-charts'
+            version {
+                name = project.version
+                desc = "build ${buildNumber}"
+                released = new Date()
+            }
+        }
+
+        publish = true
+    }
 }
 
