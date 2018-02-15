@@ -1,0 +1,4 @@
+dependencies {
+	compile project(':highcharts-wrapper')
+	compile 'com.sun.faces:jsf-api:2.1.16'
+}
