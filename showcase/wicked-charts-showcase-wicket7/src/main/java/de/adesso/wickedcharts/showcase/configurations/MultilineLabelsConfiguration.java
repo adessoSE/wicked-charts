@@ -39,14 +39,14 @@ public class MultilineLabelsConfiguration extends ShowcaseConfiguration {
 		Dataset dataset1 = new Dataset()
 				.setData(IntegerValue.of(randomIntegerList(12)))
 				.setLabel("My First dataset")
-				.setFill("false")
+				.setFill(false)
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED);
 		
 		Dataset dataset2 = new Dataset()
 				.setData(IntegerValue.of(randomIntegerList(12)))
 				.setLabel("My Second dataset")
-				.setFill("false")
+				.setFill(false)
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE);
 		

@@ -15,7 +15,6 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.TimeFormat;
-import de.adesso.wickedcharts.chartjs.chartoptions.TimeFormatRound;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -37,7 +36,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/uuuu HH:mm", Session.get().getLocale());
 		
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 7; i++) {
 			labels.add(new TextLabel(now.plus(i,ChronoUnit.DAYS).format(formatter)));
 		}
 
@@ -58,7 +57,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 		Dataset dataset3 = new Dataset()
 				.setType(ChartType.LINE)
 				.setLabel("Dataset 3")
-				.setFill("false")
+				.setFill(false)
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)));
@@ -81,7 +80,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 								.setDisplay(true)
 								.setTime(new TimeFormat()
 										.setFormat(timeFormat)
-										.setRound(TimeFormatRound.DAY))))
-				);
+//										.setRound(TimeFormatRound.DAY)
+										))));
 	}
 }

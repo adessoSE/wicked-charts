@@ -33,7 +33,7 @@ public class PolarAreaChartConfiguration extends ShowcaseConfiguration {
 								SimpleColor.BLUE_TRANSPARENT))
 				.setLabel("Dataset 1");
 
-		data.setDatasets(Arrays.asList(dataset)).setLabels(TextLabel.createListOf("Red", "Orange", "Yellow", "Green", "Blue"));
+		data.setDatasets(Arrays.asList(dataset)).setLabels(TextLabel.of("Red", "Orange", "Yellow", "Green", "Blue"));
 		
 		setData(data);
 		Options options = new Options()

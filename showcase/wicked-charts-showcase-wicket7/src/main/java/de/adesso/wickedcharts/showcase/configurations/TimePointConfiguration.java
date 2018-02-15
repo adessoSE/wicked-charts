@@ -49,7 +49,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 				.setLabel("Dataset with date object point data")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setFill("false")
+				.setFill(false)
 				.setData(Arrays.asList(
 						new PointValue()
 						.setX(new DateTimeValue(dateList.get(0).getDate()))
@@ -81,7 +81,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 				.setLabel("Dataset with string point data")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
-				.setFill("false")
+				.setFill(false)
 				.setData(Arrays.asList(
 						new PointValue()
 							.setX(new StringValue(formatter.format(dateList.get(0).getDate())))

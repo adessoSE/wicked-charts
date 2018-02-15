@@ -14,7 +14,12 @@ public class TextListLabelSerializer extends JsonSerializer<TextListLabel> {
 	@Override
 	public void serialize(TextListLabel value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		gen.writeObject(value.getTextList());
+		if(null != value && null != value.getTextList() && !value.getTextList().isEmpty() ) {
+			gen.writeObject(value.getTextList());
+		}
+		else {
+			gen.writeRawValue("");
+		}
 	}
 
 }

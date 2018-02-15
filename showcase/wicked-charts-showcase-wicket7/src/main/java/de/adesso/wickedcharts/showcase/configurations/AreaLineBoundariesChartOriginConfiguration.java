@@ -16,6 +16,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -35,7 +36,7 @@ public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfigur
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -43,7 +44,7 @@ public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfigur
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-					.setFill("end");
+					.setFill(BoundaryFillingMode.ORIGIN);
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		

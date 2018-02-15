@@ -26,19 +26,16 @@ public class LineChartSteppedBeforeConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
-		
-		
-		
+				
 		Dataset dataset1 = new Dataset()
 				.setLabel("Stepped Before")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setSteppedLine("before");
-		
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		

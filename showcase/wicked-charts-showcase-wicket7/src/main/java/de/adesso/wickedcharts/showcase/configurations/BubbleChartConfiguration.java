@@ -20,7 +20,7 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 		setType(ChartType.BUBBLE);
 
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -39,7 +39,7 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
 						))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("My Second dataset")
@@ -57,7 +57,7 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
 						))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("My Third dataset")
@@ -75,7 +75,7 @@ public class BubbleChartConfiguration extends ShowcaseConfiguration {
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100)),
 						new BubbleValue(randomDouble(100),randomDouble(100),randomDouble(100))
 						))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3));
 		
