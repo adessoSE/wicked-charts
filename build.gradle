@@ -1,0 +1,143 @@
+subprojects{
+	buildscript {
+		repositories {
+			maven {
+				url "http://plugins.gradle.org/m2/"
+			}
+		}
+		dependencies {
+			classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4"
+		}
+	}
+
+	apply plugin: 'java'
+	apply plugin: 'com.jfrog.artifactory'
+	apply plugin: 'com.jfrog.bintray'
+	apply plugin: 'maven-publish'
+
+	
+	repositories {
+	    mavenLocal()
+	    mavenCentral()
+	    jcenter()
+	}
+	
+	// run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
+	version = '3.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+	sourceCompatibility = 1.8
+	
+	ext{
+	    bintrayUser = System.getProperty("bintray.user")
+	    bintrayKey = System.getProperty("bintray.key")
+	    buildNumber = System.getProperty("build.number")
+	}
+	
+	
+	task sourcesJar(type: Jar, dependsOn: classes) {
+	    classifier = 'sources'
+	    from sourceSets.main.allSource
+	}
+	
+	javadoc.failOnError = false
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+	    classifier = 'javadoc'
+	    from javadoc.destinationDir
+	}
+	
+	artifacts {
+	    archives sourcesJar
+	    archives javadocJar
+	}
+	
+	def pomConfig = {
+	    licenses {
+	        license {
+	            name "The Apache Software License, Version 2.0"
+	            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+	            distribution "repo"
+	        }
+	    }
+	    developers {
+	        developer {
+	            id "thombergs"
+	            name "Tom Hombergs"
+	            email "tom.hombergs@gmail.com"
+	        }
+	    }
+	
+	    scm {
+	        url "https://github.com/thombergs/diffparser"
+	    }
+	}
+	
+	publishing {
+	    publications {
+	        mavenPublication(MavenPublication) {
+	            from components.java
+	            artifact sourcesJar {
+	                classifier "sources"
+	            }
+	            artifact javadocJar {
+	                classifier "javadoc"
+	            }
+	            groupId 'io.reflectoring.diffparser'
+	            artifactId 'diffparser'
+	            version project.version
+	            pom.withXml {
+	                def root = asNode()
+	                root.appendNode('description', 'Parse textual Diffs with Java')
+	                root.appendNode('name', 'DiffParser')
+	                root.appendNode('url', 'https://github.com/thombergs/diffparser')
+	                root.children().last() + pomConfig
+	            }
+	        }
+	    }
+	}
+	
+	artifactory {
+	    contextUrl = 'http://oss.jfrog.org'
+	    publish {
+	        repository {
+	            repoKey = 'oss-snapshot-local'
+	            username = bintrayUser
+	            password = bintrayKey
+	        }
+	        defaults {
+	            publications('mavenPublication')
+	            publishArtifacts = true
+	            publishPom = true
+	            properties = [
+	                    'build.number': buildNumber,
+	                    'build.name': 'diffparser'
+	            ]
+	        }
+	    }
+	    resolve {
+	        repoKey = 'jcenter'
+	    }
+	    clientConfig.info.setBuildNumber(buildNumber)
+	    clientConfig.info.setBuildName('diffparser')
+	}
+	
+	bintray {
+	    user = bintrayUser
+	    key = bintrayKey
+	    publications = ['mavenPublication']
+	
+	    pkg {
+	        repo = 'maven-releases'
+	        name = 'diffparser'
+	        userOrg = 'reflectoring'
+	        licenses = ['Apache-2.0']
+	        vcsUrl = 'https://github.com/thombergs/diffparser'
+	        version {
+	            name = project.version
+	            desc = "build ${buildNumber}"
+	            released  = new Date()
+	        }
+	    }
+	
+	    publish = true
+	}
+}
+
