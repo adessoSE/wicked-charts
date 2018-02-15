@@ -1,0 +1,7 @@
+dependencies {
+	compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.0.0-SNAPSHOT'
+	compile 'de.adesso.wicked-charts:wicked-charts-showcase-options:3.0.0-SNAPSHOT'
+	compile 'org.slf4j:slf4j-log4j12:1.6.2'
+	compile 'log4j:log4j:1.2.17'
+	compileOnly 'org.eclipse.jetty.aggregate:jetty-all-server:8.1.18.v20150929'
+}
