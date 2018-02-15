@@ -30,8 +30,8 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  Change the fill setting in the configuration to see changes*/ 
 
 @SuppressWarnings("serial")
-public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration {
-	public AreaLineBoundariesChartConfiguration() {
+public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfiguration {
+	public AreaLineBoundariesChartOriginConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -43,8 +43,8 @@ public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration 
 				.setLabel("Dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(IntegerValue.of(randomIntegerList(7)))
-					.setFill(BoundaryFillingMode.END);
+				.setData(IntegerValue.of(-40, 20, 30, -70, 12, 60, -30))
+					.setFill(BoundaryFillingMode.ORIGIN);
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		

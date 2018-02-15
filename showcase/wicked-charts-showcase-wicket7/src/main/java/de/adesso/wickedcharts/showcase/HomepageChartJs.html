@@ -36,7 +36,7 @@
             top: 36%;
         }
     </style>
-<!--     <style> -->
+<!--     <style> 
 /*     		#chartjs-tooltip { */
 /* 			opacity: 1; */
 /* 			position: absolute; */
@@ -69,7 +69,7 @@
 /* 			height: 10px; */
 /* 			margin-right: 10px; */
 /* 		} */
-<!--     </style> -->
+    </style> -->
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/wickedcharts.css" rel="stylesheet">
     <!--[if gte IE 9]>
@@ -144,14 +144,18 @@
                     <li class="nav-header">Line charts</li>
                     <li><a href="#" wicket:id="LineChartBasic">Basic</a></li>
                     <li><a href="#" wicket:id="LineChartMultiAxis">Multi Axis</a></li>
-					<li><a href="#" wicket:id="LineChartStepped">Stepped</a></li>
+					<li><a href="#" wicket:id="LineChartSteppedBefore">Stepped - Before</a></li>
+					<li><a href="#" wicket:id="LineChartSteppedAfter">Stepped - After</a></li>
 					<li><a href="#" wicket:id="LineChartInterpolated">Interpolation</a></li>
 					<li><a href="#" wicket:id="LineStyles">Line Styles</a></li>
 					<li><a href="#" wicket:id="PointStyles">Point Styles</a></li>
 					<li><a href="#" wicket:id="PointSizes">	Point Sizes</a></li>
 					
                     <li class="nav-header">Area charts</li>
-                    <li><a href="#" wicket:id="AreaLineBoundariesChart">Boundaries (line)</a></li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChartStart">Boundaries(start)</a></li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChartEnd">Boundaries(end)</a></li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChartOrigin">Boundaries(origin)</a></li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChartFalse">Boundaries(false)</a></li>
 					<li><a href="#" wicket:id="LineChartDataset">Datasets (line)</a></li>
 					<li><a href="#" wicket:id="LineChartStacked">Stacked (line)</a></li>
 					<li><a href="#" wicket:id="RadarChart">Radar Chart</a></li>
@@ -200,6 +204,7 @@
                     <li><a href="#" wicket:id="LegendPositionRight">Right</a></li>
                     <li><a href="#" wicket:id="LegendPositionBottom">Bottom</a></li>
                     <li><a href="#" wicket:id="LegendPositionLeft">Left</a></li>
+                    <li><a href="#" wicket:id="LegendPointStyle">Point Style</a></li>
 
                     <li class="nav-header">Tooltip</li>
                     <li><a href="#" wicket:id="TooltipCallbacks">Callbacks</a></li>
@@ -214,6 +219,7 @@
 
 
                     <li class="nav-header">Advanced</li>
+                    <li><a href="#" wicket:id="LineChartProgressBar">Progess Bar</a></li>
 
                 </ul>
             </div>

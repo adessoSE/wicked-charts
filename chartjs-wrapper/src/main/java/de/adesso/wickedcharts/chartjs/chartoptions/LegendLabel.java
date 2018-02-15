@@ -4,8 +4,7 @@ import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @lombok.Data
-public class Legend {
-	private Position position;
-	private Boolean display;
-	private LegendLabel labels;
+public class LegendLabel {
+	private boolean usePointStyle;
+
 }

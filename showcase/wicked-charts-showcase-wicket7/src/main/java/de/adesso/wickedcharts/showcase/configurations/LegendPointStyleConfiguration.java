@@ -8,6 +8,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
 import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.LegendLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
@@ -15,13 +17,14 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
-public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
-	public LineChartSteppedConfiguration() {
+public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
+	public LegendPointStyleConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -30,40 +33,28 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("Stepped")
-				.setBackgroundColor(SimpleColor.RED)
+				.setLabel("My First dataset")
+				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill(false)
-				.setSteppedLine("true");
+				.setPointStyle("rectRot")
+				.setPointRadius(10)
+				.setData(IntegerValue.of(-40, 20, 30, -70, 12, 60, -30))
+				.setFill(BoundaryFillingMode.ORIGIN);
 		
 		
-		Dataset dataset2 = new Dataset()
-				.setLabel("Stepped Before")
-				.setBackgroundColor(SimpleColor.BLUE)
-				.setBorderColor(SimpleColor.BLUE)
-				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill(false)
-				.setSteppedLine("before");
-		
-		Dataset dataset3 = new Dataset()
-				.setLabel("Stepped After")
-				.setBackgroundColor(SimpleColor.GREEN)
-				.setBorderColor(SimpleColor.GREEN)
-				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill(false)
-				.setSteppedLine("after");
-		
-		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));
+		data.setDatasets(Arrays.asList(dataset1));
 		
 		Options options = new Options()
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart Stepped"))
+						.setText("Chart.js Point Style Legend"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))
+				.setLegend(new Legend()
+						.setLabels(new LegendLabel()
+								.setUsePointStyle(true)))
 				.setHover(new Hover()
 						.setMode(HoverMode.NEAREST)
 						.setIntersect(true))
