@@ -19,6 +19,7 @@ import java.io.Serializable;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
@@ -38,15 +39,19 @@ import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
 public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
     public HomepageChartJs(final PageParameters parameters) {
+
+    	Fragment optionalMarkup = new Fragment("optionalMarkup","defaultTooltip",this);
+    	optionalMarkup.setOutputMarkupId(true);
+    	add(optionalMarkup);
     	
         ChartConfiguration config = this.getConfigurationToDisplay();
         final Chart chart = new Chart("chart", config);
         this.add(chart);
         addNavigationLinks();
         Label codeContainer = this.addCodeContainer();
-        this.addChartLinks(chart, codeContainer);
+        this.addChartLinks(chart, codeContainer, optionalMarkup);
     }
 
 	private Label addCodeContainer() {
@@ -63,7 +68,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
 		this.add(new ChartjsShowcaseLink());
 	}
 	
-	private void addChartLinks(Chart chart, Label codeContainer) { 
+	private void addChartLinks(Chart chart, Label codeContainer, Fragment optionalMarkup) { 
         this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
@@ -168,7 +173,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TooltipHtmlPointsConfiguration())); 
         
         
-	} 
+	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())

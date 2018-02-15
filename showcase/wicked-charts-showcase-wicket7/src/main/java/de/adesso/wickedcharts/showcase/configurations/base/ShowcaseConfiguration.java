@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import org.apache.wicket.markup.html.panel.Fragment;
+
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 @SuppressWarnings("serial")
@@ -45,5 +47,10 @@ public abstract class ShowcaseConfiguration extends ChartConfiguration implement
 
 		return result.toString();
 
+	}
+
+	public void modfiyIndividualMarkup(Fragment optionalMarkup) {	
+		Fragment frag = new Fragment("optionalMarkup","defaultTooltip",optionalMarkup.getParent());
+		optionalMarkup.replaceWith(frag);
 	}
 }
