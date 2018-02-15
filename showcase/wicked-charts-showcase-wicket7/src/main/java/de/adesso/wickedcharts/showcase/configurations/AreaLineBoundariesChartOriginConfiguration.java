@@ -29,8 +29,8 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  Change the fill setting in the configuration to see changes*/ 
 
 @SuppressWarnings("serial")
-public class AreaLineBoundariesChartConfiguration extends ShowcaseConfiguration {
-	public AreaLineBoundariesChartConfiguration() {
+public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfiguration {
+	public AreaLineBoundariesChartOriginConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		

@@ -68,8 +68,6 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
-        this.add(new UpdateChartJsLink("LineChartStepped", chart, codeContainer,
-                new LineChartSteppedConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartSteppedBefore", chart, codeContainer,
                 new LineChartSteppedBeforeConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartSteppedAfter", chart, codeContainer,
@@ -95,7 +93,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
         this.add(new UpdateChartJsLink("AreaLineBoundariesChart", chart, codeContainer,
-                new AreaLineBoundariesChartConfiguration())); 
+                new AreaLineBoundariesChartFalseConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartStacked", chart, codeContainer,
                 new LineChartStackedConfiguration()));
         this.add(new UpdateChartJsLink("LineChartDataset", chart, codeContainer,
