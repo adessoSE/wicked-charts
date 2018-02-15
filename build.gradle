@@ -96,50 +96,50 @@ subprojects {
         }
     }
 
-//    artifactory {
-//        contextUrl = 'http://oss.jfrog.org'
-//        publish {
-//            repository {
-//                repoKey = 'oss-snapshot-local'
-//                username = bintrayUser
-//                password = bintrayKey
-//            }
-//            defaults {
-//                publications('mavenPublication')
-//                publishArtifacts = true
-//                publishPom = true
-//                properties = [
-//                        'build.number': buildNumber,
-//                        'build.name'  : 'diffparser'
-//                ]
-//            }
-//        }
-//        resolve {
-//            repoKey = 'jcenter'
-//        }
-//        clientConfig.info.setBuildNumber(buildNumber)
-//        clientConfig.info.setBuildName('diffparser')
-//    }
-//
-//    bintray {
-//        user = bintrayUser
-//        key = bintrayKey
-//        publications = ['mavenPublication']
-//
-//        pkg {
-//            repo = 'maven-releases'
-//            name = 'diffparser'
-//            userOrg = 'reflectoring'
-//            licenses = ['Apache-2.0']
-//            vcsUrl = 'https://github.com/thombergs/diffparser'
-//            version {
-//                name = project.version
-//                desc = "build ${buildNumber}"
-//                released = new Date()
-//            }
-//        }
-//
-//        publish = true
-//    }
+    artifactory {
+        contextUrl = 'http://oss.jfrog.org'
+        publish {
+            repository {
+                repoKey = 'oss-snapshot-local'
+                username = bintrayUser
+                password = bintrayKey
+            }
+            defaults {
+                publications('mavenPublication')
+                publishArtifacts = true
+                publishPom = true
+                properties = [
+                        'build.number': buildNumber,
+                        'build.name'  : 'diffparser'
+                ]
+            }
+        }
+        resolve {
+            repoKey = 'jcenter'
+        }
+        clientConfig.info.setBuildNumber(buildNumber)
+        clientConfig.info.setBuildName('diffparser')
+    }
+
+    bintray {
+        user = bintrayUser
+        key = bintrayKey
+        publications = ['mavenPublication']
+
+        pkg {
+            repo = 'maven-releases'
+            name = 'diffparser'
+            userOrg = 'reflectoring'
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/thombergs/diffparser'
+            version {
+                name = project.version
+                desc = "build ${buildNumber}"
+                released = new Date()
+            }
+        }
+
+        publish = true
+    }
 }
 
