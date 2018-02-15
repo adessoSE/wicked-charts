@@ -27,9 +27,8 @@ public class DataTest {
 	@Test
 	public void testSetStringLabels() {
 		List<String> list = Arrays.asList("foo","bar");
-		testData.setLabels(TextLabel.createListOf(list));
+		testData.setLabels(TextLabel.of(list));
 		assertEquals(testData.getLabels(),labelList);
-		
 	}
 
 

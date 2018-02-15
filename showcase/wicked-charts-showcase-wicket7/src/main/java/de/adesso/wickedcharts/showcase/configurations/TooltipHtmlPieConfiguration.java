@@ -23,7 +23,7 @@ public class TooltipHtmlPieConfiguration extends ShowcaseConfiguration {
     	setOptionalJavascript(optionalJavascript);
     	
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("Red","Orange","Yellow","Green","Blue"));
+				.setLabels(TextLabel.of("Red","Orange","Yellow","Green","Blue"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()

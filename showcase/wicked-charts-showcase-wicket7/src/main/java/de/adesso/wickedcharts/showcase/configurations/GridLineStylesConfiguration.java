@@ -25,7 +25,7 @@ public class GridLineStylesConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()

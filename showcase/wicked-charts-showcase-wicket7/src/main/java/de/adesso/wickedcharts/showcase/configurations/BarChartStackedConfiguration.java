@@ -23,7 +23,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.STACKED_BAR);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()

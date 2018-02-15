@@ -43,7 +43,7 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 				.setLabel("Dataset 3");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3))
-		.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+		.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		
 		setData(data);
 		
