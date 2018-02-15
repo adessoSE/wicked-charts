@@ -70,6 +70,10 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new LineChartMultiAxisConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartStepped", chart, codeContainer,
                 new LineChartSteppedConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartSteppedBefore", chart, codeContainer,
+                new LineChartSteppedBeforeConfiguration())); 
+        this.add(new UpdateChartJsLink("LineChartSteppedAfter", chart, codeContainer,
+                new LineChartSteppedAfterConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartInterpolated", chart, codeContainer,
                 new LineChartInterpolatedConfiguration())); 
         this.add(new UpdateChartJsLink("LineStyles", chart, codeContainer,

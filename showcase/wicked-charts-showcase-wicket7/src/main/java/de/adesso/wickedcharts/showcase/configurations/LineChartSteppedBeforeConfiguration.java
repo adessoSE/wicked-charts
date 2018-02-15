@@ -20,8 +20,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 @SuppressWarnings("serial")
-public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
-	public LineChartSteppedConfiguration() {
+public class LineChartSteppedBeforeConfiguration extends ShowcaseConfiguration {
+	public LineChartSteppedBeforeConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -29,15 +29,16 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
+		
+		
 		Dataset dataset1 = new Dataset()
-				.setLabel("Stepped")
-				.setBackgroundColor(SimpleColor.RED)
-				.setBorderColor(SimpleColor.RED)
+				.setLabel("Stepped Before")
+				.setBackgroundColor(SimpleColor.BLUE)
+				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill("false")
-				.setSteppedLine("true");
+				.setSteppedLine("before");
 		
-
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		
