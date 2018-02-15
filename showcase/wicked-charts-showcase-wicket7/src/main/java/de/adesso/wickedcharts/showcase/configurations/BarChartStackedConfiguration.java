@@ -23,7 +23,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.STACKED_BAR);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -32,7 +32,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setStack(1);
 		
 		
@@ -43,7 +43,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setStack(1);
 		
 		Dataset dataset3 = new Dataset()
@@ -52,7 +52,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setStack(1);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));

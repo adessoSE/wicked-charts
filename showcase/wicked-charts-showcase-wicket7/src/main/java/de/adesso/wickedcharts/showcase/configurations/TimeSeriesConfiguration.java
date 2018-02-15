@@ -72,7 +72,7 @@ public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 						.setData(randomData)
 						.setType(ChartType.LINE)
 						.setPointRadius(0)
-						.setFill("false")
+						.setFill(false)
 						.setLineTension(0)
 						.setBorderWidth(2)
 						));

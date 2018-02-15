@@ -24,7 +24,7 @@ public class FilteringLabelsConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -32,7 +32,7 @@ public class FilteringLabelsConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -40,7 +40,7 @@ public class FilteringLabelsConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		

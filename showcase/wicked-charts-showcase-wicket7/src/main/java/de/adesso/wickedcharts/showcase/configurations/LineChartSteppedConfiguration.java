@@ -26,7 +26,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -34,7 +34,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setSteppedLine("true");
 		
 		
@@ -43,7 +43,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setSteppedLine("before");
 		
 		Dataset dataset3 = new Dataset()
@@ -51,7 +51,7 @@ public class LineChartSteppedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setSteppedLine("after");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));

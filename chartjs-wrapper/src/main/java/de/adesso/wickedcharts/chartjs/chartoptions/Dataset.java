@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BooleanFillingMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
@@ -21,14 +23,11 @@ public class Dataset {
 
 	@JsonSerialize(using = SingleElementListSerializer.class)
 	private List<? extends Color> backgroundColor;
+	
 	private Color borderColor;
 	private Integer borderWidth;
 	private List<? extends ValueType> data;
-	
-	private String fill;
-	//fill is now a String because in some charts attributes other than true/false are expected
-	//when configuring a chart. Not setting this attribute = "fill: true"
-	
+	private FillingMode fill;
 	private Integer stack;
 	
 	@JsonProperty("yAxisID")
@@ -39,8 +38,10 @@ public class Dataset {
 	private Integer lineTension;
 	private String cubicInterpolationMode;
 	private List<String> borderDash;
+	
 	@JsonSerialize(using = SingleElementListSerializer.class)
 	private List<Integer> pointRadius;
+	
 	private String pointHitRadius;
 	private String pointHoverRadius;
 	private Double pointBorderWidth;
@@ -68,6 +69,20 @@ public class Dataset {
 	
 	public Dataset setPointRadius(List<Integer> list) {
 		this.pointRadius = list;
+		return this;
+	}
+	
+	public Dataset setFill(Boolean value) {
+		if(value) {
+			this.fill = null;
+		} else {
+			this.fill = BooleanFillingMode.FALSE;
+		}
+		return this;
+	}
+	
+	public Dataset setFill(FillingMode fill) {
+		this.fill = fill;
 		return this;
 	}
 	
