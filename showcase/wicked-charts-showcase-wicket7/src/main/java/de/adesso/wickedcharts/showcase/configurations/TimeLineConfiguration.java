@@ -11,7 +11,6 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
-import de.adesso.wickedcharts.chartjs.chartoptions.DateAndFormat;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
@@ -38,8 +37,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 		
 		List<DateTimeLabel> dateList = new ArrayList<DateTimeLabel>();
 		for(int i = 0; i < 7; i++) {
-			DateAndFormat dateObject = new DateAndFormat(LocalDateTime.of(2018, 1,1, 8+i, 00),timeFormat);
-			dateList.add(new DateTimeLabel(dateObject));
+			dateList.add(new DateTimeLabel(LocalDateTime.of(2018, 1,1, 8+i, 00)));
 		}
 		data.setLabels(dateList);
 		
@@ -47,7 +45,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("My First Dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setFill("false")
+				.setFill(false)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				;
 		
@@ -55,7 +53,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("My Second Dataset")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
-				.setFill("false")
+				.setFill(false)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				;
 		
@@ -63,28 +61,28 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("Dataset with point data")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
-				.setFill("false")
+				.setFill(false)
 				.setData(Arrays.asList(
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(0).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(0).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(1).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(1).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(2).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(2).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(3).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(3).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(4).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(4).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(5).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(5).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(dateList.get(6).getDateAndFormat().getDate())))
+						.setX(new StringValue(formatter.format(dateList.get(6).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
 						.setX(new StringValue(formatter.format(LocalDateTime.of(2018, 1, 1, 15, 0))))

@@ -22,7 +22,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.HORIZONTAL_BAR);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -31,7 +31,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 
 
 		
@@ -42,7 +42,7 @@ public class BarChartHorizontalConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		

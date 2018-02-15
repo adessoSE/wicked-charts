@@ -148,9 +148,27 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TimeLineConfiguration())); 
         this.add(new UpdateChartJsLink("NonNumeric", chart, codeContainer,
                 new NonNumericConfiguration())); 
+        this.add(new UpdateChartJsLink("TimePoint", chart, codeContainer,
+                new TimePointConfiguration())); 
+        this.add(new UpdateChartJsLink("TimeSeries", chart, codeContainer,
+                new TimeSeriesConfiguration())); 
+        this.add(new UpdateChartJsLink("TimeCombo", chart, codeContainer,
+                new TimeComboConfiguration())); 
+        this.add(new UpdateChartJsLink("OtherRadar", chart, codeContainer,
+                new OtherRadarChartConfiguration()));  
+        this.add(new UpdateChartJsLink("TooltipCallbacks", chart, codeContainer,
+                new TooltipCallbacksConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipBorder", chart, codeContainer,
+                new TooltipBorderConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipHtmlLine", chart, codeContainer,
+                new TooltipHtmlLineConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipHtmlPie", chart, codeContainer,
+                new TooltipHtmlPieConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipHtmlPoints", chart, codeContainer,
+                new TooltipHtmlPointsConfiguration())); 
         
         
-	}
+	} 
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())

@@ -9,11 +9,13 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DateTimeValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
@@ -57,7 +59,6 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
 		this.jacksonModule.addSerializer(StringValueColor.class, new StringValueColorSerializer());
 		this.jacksonModule.addSerializer(CallbackFunction.class, new CallbackFunctionSerializer());
-		this.jacksonModule.addSerializer(DateAndFormat.class, new DateAndFormatSerializer());
 		this.jacksonModule.addSerializer(TextLabel.class, new TextLabelSerializer());
 		this.jacksonModule.addSerializer(TextListLabel.class, new TextListLabelSerializer());
 		this.jacksonModule.addSerializer(DateTimeLabel.class, new DateTimeLabelSerializer());
@@ -67,6 +68,9 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(StringValue.class, new StringValueSerializer());
 		this.jacksonModule.addSerializer(ConstValue.class, new ConstValueSerializer());
 		this.jacksonModule.addSerializer(ConstLabel.class, new ConstLabelSerializer());
+		this.jacksonModule.addSerializer(DateTimeValue.class, new DateTimeValueSerializer());
+		this.jacksonModule.addSerializer(JavaScriptReference.class, new JavaScriptReferenceSerializer());
+		this.jacksonModule.addSerializer(FillingMode.class, new FillingModeSerializer());
 
 		
 		ObjectMapper mapper = createDefaultObjectMapper();

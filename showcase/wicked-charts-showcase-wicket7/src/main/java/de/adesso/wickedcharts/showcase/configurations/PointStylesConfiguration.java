@@ -1,8 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
-import java.util.Collections;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
@@ -41,7 +39,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -50,10 +48,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREY)
 				.setData(IntegerValue.of(Arrays.asList(1,1,1,1,1,1,1)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("dash")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Star")
@@ -61,10 +59,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.PURPLE)
 				.setData(IntegerValue.of(Arrays.asList(2,2,2,2,2,2,2)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "20"))
+				.setPointRadius(20)
 				.setPointHoverRadius("15")
 				.setPointStyle("star")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("Rectangle")
@@ -72,10 +70,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.YELLOW)
 				.setData(IntegerValue.of(Arrays.asList(3,3,3,3,3,3,3)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rect")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset4 = new Dataset()
 				.setLabel("Triangle")
@@ -83,10 +81,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(Arrays.asList(4,4,4,4,4,4,4)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("triangle")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset5 = new Dataset()
 				.setLabel("Circle")
@@ -94,10 +92,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(Arrays.asList(5,5,5,5,5,5,5)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("circle")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset6 = new Dataset()
 				.setLabel("CrossRot")
@@ -105,10 +103,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(Arrays.asList(6,6,6,6,6,6,6)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("crossRot")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset7 = new Dataset()
 				.setLabel("Line")
@@ -116,10 +114,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(7,7,7,7,7,7,7)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("line")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset8 = new Dataset()
 				.setLabel("Cross")
@@ -127,10 +125,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(8,8,8,8,8,8,8)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("cross")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset9 = new Dataset()
 				.setLabel("Rectangle Rounded")
@@ -138,10 +136,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(Arrays.asList(9,9,9,9,9,9,9)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRounded")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset10 = new Dataset()
 				.setLabel("Rectangle Rotated")
@@ -149,10 +147,10 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN_TRANSPARENT)
 				.setData(IntegerValue.of(Arrays.asList(11,11,11,11,11,11,11)))
 				.setShowLine(false)
-				.setPointRadius(Collections.nCopies(7, "10"))
+				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRot")
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1, dataset2, dataset3, dataset4, dataset5, dataset6,
 				dataset7, dataset8, dataset9, dataset10));

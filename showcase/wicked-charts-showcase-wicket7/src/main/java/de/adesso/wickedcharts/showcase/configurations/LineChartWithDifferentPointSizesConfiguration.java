@@ -27,7 +27,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
@@ -35,9 +35,9 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setPointRadius(Collections.nCopies(7, "15"))
+				.setPointRadius(Collections.nCopies(7, 15))
 				.setPointHoverRadius("10")
-				.setFill("false");
+				.setFill(false);
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -45,9 +45,9 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderDash(Arrays.asList("5", "5"))
-				.setPointRadius(Arrays.asList("2", "4", "6", "18", "0", "12", "20"))
+				.setPointRadius(Arrays.asList(2, 4, 6, 18, 0, 12, 20))
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("dataset - large pointHoverRadius")
@@ -55,7 +55,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setPointHoverRadius("30")
-				.setFill("false");
+				.setFill(false);
 		
 		
 		Dataset dataset4 = new Dataset()
@@ -64,7 +64,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 			.setBorderColor(SimpleColor.YELLOW)
 			.setData(IntegerValue.of(randomIntegerList(7)))
 			.setPointHitRadius("20")
-			.setFill("false");
+			.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3, dataset4));
 		

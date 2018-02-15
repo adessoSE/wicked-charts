@@ -25,13 +25,13 @@ public class NonNumericConfiguration extends ShowcaseConfiguration {
 		setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setXLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"))
-				.setYLabels(ConstLabel.createListOf("", "Request Added", "Request Viewed", "Request Accepted", "Request Solved", "Solving Confirmed"))
+				.setXLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"))
+				.setYLabels(ConstLabel.of("", "Request Added", "Request Viewed", "Request Accepted", "Request Solved", "Solving Confirmed"))
 				;
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("My First Dataset")
-				.setFill("false")
+				.setFill(false)
 				.setBorderColor(SimpleColor.RED)
 				.setBackgroundColor(SimpleColor.RED)
 				.setData(ConstValue.of("", "Request Added", "Request Added", "Request Added", "Request Viewed", "Request Viewed", "Request Viewed"))

@@ -27,7 +27,7 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
 		
 		Data data = new Data()
-				.setLabels(TextLabel.createListOf("January", "February", "March", "April", "May", "June", "July"));
+				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
 		
 		List<IntegerValue> datasetsData = IntegerValue.of(randomIntegerList(7));
@@ -37,7 +37,7 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(datasetsData)
-				.setFill("false")
+				.setFill(false)
 				.setCubicInterpolationMode("monotone");
 		
 		Dataset dataset2 = new Dataset()
@@ -45,15 +45,15 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(datasetsData)
-				.setFill("false");
+				.setFill(false);
 				
 		Dataset dataset3 = new Dataset()
 				.setLabel("Linear interpolation")
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(datasetsData)
-				.setFill("false")
-				.setLineTension("0");
+				.setFill(false)
+				.setLineTension(0);
 				
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));
