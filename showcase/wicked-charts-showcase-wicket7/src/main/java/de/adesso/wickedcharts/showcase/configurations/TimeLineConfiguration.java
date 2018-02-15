@@ -45,7 +45,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("My First Dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setFill("false")
+				.setFill(false)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				;
 		
@@ -53,7 +53,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("My Second Dataset")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
-				.setFill("false")
+				.setFill(false)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				;
 		
@@ -61,7 +61,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 				.setLabel("Dataset with point data")
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
-				.setFill("false")
+				.setFill(false)
 				.setData(Arrays.asList(
 						new PointValue()
 						.setX(new StringValue(formatter.format(dateList.get(0).getDate())))

@@ -32,7 +32,7 @@ public class TooltipBorderConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(10, 30, 46, 2,8,50,0))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1));
 

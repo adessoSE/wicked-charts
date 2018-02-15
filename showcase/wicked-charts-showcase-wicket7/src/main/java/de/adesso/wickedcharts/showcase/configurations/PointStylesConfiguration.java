@@ -51,7 +51,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("dash")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Star")
@@ -62,7 +62,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(20)
 				.setPointHoverRadius("15")
 				.setPointStyle("star")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("Rectangle")
@@ -73,7 +73,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rect")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset4 = new Dataset()
 				.setLabel("Triangle")
@@ -84,7 +84,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("triangle")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset5 = new Dataset()
 				.setLabel("Circle")
@@ -95,7 +95,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("circle")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset6 = new Dataset()
 				.setLabel("CrossRot")
@@ -106,7 +106,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("crossRot")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset7 = new Dataset()
 				.setLabel("Line")
@@ -117,7 +117,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("line")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset8 = new Dataset()
 				.setLabel("Cross")
@@ -128,7 +128,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("cross")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset9 = new Dataset()
 				.setLabel("Rectangle Rounded")
@@ -139,7 +139,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRounded")
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset10 = new Dataset()
 				.setLabel("Rectangle Rotated")
@@ -150,7 +150,7 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setPointRadius(10)
 				.setPointHoverRadius("15")
 				.setPointStyle("rectRot")
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1, dataset2, dataset3, dataset4, dataset5, dataset6,
 				dataset7, dataset8, dataset9, dataset10));

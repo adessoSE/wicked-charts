@@ -20,6 +20,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.AbsoluteIndex;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.RelativeIndex;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -39,7 +42,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("undefined")
+				.setFill(BoundaryFillingMode.UNDEFINED)
 				.setHidden(true);
 		
 		
@@ -48,7 +51,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("-1");
+				.setFill(new RelativeIndex("-1"));
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -57,14 +60,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.ORANGE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setHidden(true)
-				.setFill("1");
+				.setFill(new AbsoluteIndex(1));
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("D3 Fill: -1")
 				.setBackgroundColor(SimpleColor.YELLOW_TRANSPARENT)
 				.setBorderColor(SimpleColor.YELLOW)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("-1");
+				.setFill(false);
 		
 		
 		Dataset dataset4 = new Dataset()
@@ -72,14 +75,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("-1");
+				.setFill(new RelativeIndex("-1"));
 		
 		Dataset dataset5 = new Dataset()
 				.setLabel("D5 Fill: +2")
 				.setBackgroundColor(SimpleColor.BLUE_TRANSPARENT)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("+2");
+				.setFill(new RelativeIndex("+2"));
 		
 		
 		Dataset dataset6 = new Dataset()
@@ -87,14 +90,14 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.GREY_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREY)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset7 = new Dataset()
 				.setLabel("D7 Fill: 8")
 				.setBackgroundColor(SimpleColor.PURPLE_TRANSPARENT)
 				.setBorderColor(SimpleColor.PURPLE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("8");
+				.setFill(new AbsoluteIndex(8));
 		
 		
 		Dataset dataset8 = new Dataset()
@@ -103,7 +106,7 @@ public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setHidden(true)
-				.setFill("end");
+				.setFill(BoundaryFillingMode.END);
 		
 		data.setDatasets(Arrays.asList(dataset0, dataset1, dataset2, dataset3, dataset4, 
 				dataset5, dataset6, dataset7, dataset8));

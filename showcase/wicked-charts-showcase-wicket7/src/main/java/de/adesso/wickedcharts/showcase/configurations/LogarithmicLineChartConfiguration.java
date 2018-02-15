@@ -34,14 +34,14 @@ public class LogarithmicLineChartConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 
 		Dataset dataset2 = new Dataset()
 				.setLabel("My Second dataset")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		

@@ -33,7 +33,7 @@ public class GridLineStylesConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(Arrays.asList(10, 30, 39, 20, 25, 34, -10)))
-				.setFill("false");
+				.setFill(false);
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -41,7 +41,7 @@ public class GridLineStylesConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(Arrays.asList(18, 33, 22, 19, 11, 39, 30)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 

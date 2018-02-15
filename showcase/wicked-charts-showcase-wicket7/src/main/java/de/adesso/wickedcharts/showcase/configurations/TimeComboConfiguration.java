@@ -57,7 +57,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 		Dataset dataset3 = new Dataset()
 				.setType(ChartType.LINE)
 				.setLabel("Dataset 3")
-				.setFill("false")
+				.setFill(false)
 				.setBackgroundColor(SimpleColor.GREEN_TRANSPARENT)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)));

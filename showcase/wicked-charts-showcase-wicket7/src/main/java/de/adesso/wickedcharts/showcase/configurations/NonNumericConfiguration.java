@@ -31,7 +31,7 @@ public class NonNumericConfiguration extends ShowcaseConfiguration {
 		
 		Dataset dataset1 = new Dataset()
 				.setLabel("My First Dataset")
-				.setFill("false")
+				.setFill(false)
 				.setBorderColor(SimpleColor.RED)
 				.setBackgroundColor(SimpleColor.RED)
 				.setData(ConstValue.of("", "Request Added", "Request Added", "Request Added", "Request Viewed", "Request Viewed", "Request Viewed"))

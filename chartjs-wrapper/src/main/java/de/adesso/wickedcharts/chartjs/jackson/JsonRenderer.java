@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -69,6 +70,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(ConstLabel.class, new ConstLabelSerializer());
 		this.jacksonModule.addSerializer(DateTimeValue.class, new DateTimeValueSerializer());
 		this.jacksonModule.addSerializer(JavaScriptReference.class, new JavaScriptReferenceSerializer());
+		this.jacksonModule.addSerializer(FillingMode.class, new FillingModeSerializer());
 
 		
 		ObjectMapper mapper = createDefaultObjectMapper();

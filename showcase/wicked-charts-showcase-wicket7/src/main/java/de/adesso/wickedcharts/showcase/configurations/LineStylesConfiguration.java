@@ -40,7 +40,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		
 		Dataset dataset2 = new Dataset()
@@ -49,7 +49,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderDash(Arrays.asList("5", "5"))
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3));

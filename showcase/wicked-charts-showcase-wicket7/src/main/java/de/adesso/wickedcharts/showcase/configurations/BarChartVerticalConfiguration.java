@@ -30,7 +30,7 @@ public class BarChartVerticalConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Dataset 2")
@@ -38,7 +38,7 @@ public class BarChartVerticalConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.BLUE)
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		

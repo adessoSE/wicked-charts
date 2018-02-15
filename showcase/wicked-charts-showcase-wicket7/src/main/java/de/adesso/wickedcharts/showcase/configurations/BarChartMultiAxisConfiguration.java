@@ -32,7 +32,7 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setYAxisID("y-axis-1");
 		
 		
@@ -41,7 +41,7 @@ public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setFill("false")
+				.setFill(false)
 				.setYAxisID("y-axis-2");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));

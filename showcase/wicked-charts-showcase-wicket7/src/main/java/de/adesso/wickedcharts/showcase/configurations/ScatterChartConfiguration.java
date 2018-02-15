@@ -29,7 +29,7 @@ public class ScatterChartConfiguration extends ShowcaseConfiguration {
 						new PointValue(40,22),
 						new PointValue(80,12),
 						new PointValue(30,32)))
-				.setFill("false");
+				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("My Second dataset")
@@ -42,7 +42,7 @@ public class ScatterChartConfiguration extends ShowcaseConfiguration {
 						new PointValue(36,42),
 						new PointValue(78,64),
 						new PointValue(12,48)))
-				.setFill("false");
+				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2));
 		
