@@ -92,8 +92,14 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new BarChartMultiAxisConfiguration()));
         this.add(new UpdateChartJsLink("PieChart", chart, codeContainer,
                 new PieChartConfiguration())); 
-        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", chart, codeContainer,
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChartFalse", chart, codeContainer,
                 new AreaLineBoundariesChartFalseConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChartStart", chart, codeContainer,
+                new AreaLineBoundariesChartStartConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChartEnd", chart, codeContainer,
+                new AreaLineBoundariesChartEndConfiguration())); 
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChartOrigin", chart, codeContainer,
+                new AreaLineBoundariesChartOriginConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartStacked", chart, codeContainer,
                 new LineChartStackedConfiguration()));
         this.add(new UpdateChartJsLink("LineChartDataset", chart, codeContainer,
@@ -168,7 +174,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TooltipHtmlPieConfiguration())); 
         this.add(new UpdateChartJsLink("TooltipHtmlPoints", chart, codeContainer,
                 new TooltipHtmlPointsConfiguration())); 
-        
+        this.add(new UpdateChartJsLink("LegendPointStyle", chart, codeContainer,
+                new LegendPointStyleConfiguration())); 
         
 	} 
 

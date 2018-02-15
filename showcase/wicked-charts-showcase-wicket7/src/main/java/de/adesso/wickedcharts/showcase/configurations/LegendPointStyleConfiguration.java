@@ -6,32 +6,25 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
-import de.adesso.wickedcharts.chartjs.chartoptions.Element;
-import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
-import de.adesso.wickedcharts.chartjs.chartoptions.Line;
+import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
+import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.LegendLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
-import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
-import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-//Valid fill Parameters:
-/*
-	'false'
-	'origin'
-	'start'
-	'end'
- Change the fill setting in the configuration to see changes*/ 
-
 @SuppressWarnings("serial")
-public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfiguration {
-	public AreaLineBoundariesChartOriginConfiguration() {
+public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
+	public LegendPointStyleConfiguration() {
 		super();
     	setType(ChartType.LINE);
 		
@@ -40,36 +33,42 @@ public class AreaLineBoundariesChartOriginConfiguration extends ShowcaseConfigur
 		setData(data);
 		
 		Dataset dataset1 = new Dataset()
-				.setLabel("Dataset")
+				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
+				.setPointStyle("rectRot")
+				.setPointRadius(10)
 				.setData(IntegerValue.of(-40, 20, 30, -70, 12, 60, -30))
-					.setFill(BoundaryFillingMode.ORIGIN);
+				.setFill(BoundaryFillingMode.ORIGIN);
+		
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		
 		Options options = new Options()
-				.setMaintainAspectRatio(true)
-				.setSpanGaps(false)
-				.setElements(new Element()
-						.setLine(new Line()
-								.setTension(0.000001)))
-				.setPlugins(new Plugins().
-						setFiller(new Filler().
-								setPropagate(false)))
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Boundaries Chart"))
+						.setText("Chart.js Point Style Legend"))
+				.setTooltips(new Tooltips()
+						.setMode(TooltipMode.INDEX)
+						.setIntersect(false))
+				.setLegend(new Legend()
+						.setLabels(new LegendLabel()
+								.setUsePointStyle(true)))
+				.setHover(new Hover()
+						.setMode(HoverMode.NEAREST)
+						.setIntersect(true))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setDisplay(true)
 								.setScaleLabel(new ScaleLabel()
 										.setDisplay(true)
-										.setLabelString("Month"))
-								.setTicks(new Ticks()
-										.setAutoSkip(false)
-										.setMaxRotation(0))))
+										.setLabelString("Month")))
+						.setYAxes(new AxesScale()
+								.setDisplay(true)
+								.setScaleLabel(new ScaleLabel()
+										.setDisplay(true)
+										.setLabelString("Value"))))
 				;
 		setOptions(options);
 	}

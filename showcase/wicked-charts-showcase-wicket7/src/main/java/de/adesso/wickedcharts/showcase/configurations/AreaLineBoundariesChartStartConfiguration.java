@@ -43,7 +43,7 @@ public class AreaLineBoundariesChartStartConfiguration extends ShowcaseConfigura
 				.setLabel("Dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setData(IntegerValue.of(randomIntegerList(7)))
+				.setData(IntegerValue.of(-40, 20, 30, -70, 12, 60, -30))
 					.setFill(BoundaryFillingMode.START);
 		
 		data.setDatasets(Arrays.asList(dataset1));
