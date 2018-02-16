@@ -99,7 +99,7 @@ public class ChartBehavior extends Behavior {
     public void renderHead(final Component component, final IHeaderResponse response) {
         component.setOutputMarkupId(true);
         final String id = component.getMarkupId();
-        ChartConfiguration options = this.chart.getOptions();
+        ChartConfiguration options = this.chart.getChartConfiguration();
 
         JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
         includeJavascriptDependencies(response, options);

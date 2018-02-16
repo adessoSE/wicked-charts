@@ -6,9 +6,14 @@ import lombok.experimental.Accessors;
  * Contains attributes for the 'Title' option of a chart
  */
 
+import java.io.Serializable;
+
+import lombok.experimental.Accessors;
+
 @Accessors(chain = true)
 @lombok.Data
-public class Title {
+public class Title implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private Boolean display;
 	private String text;
 }

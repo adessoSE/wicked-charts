@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import java.util.List;
@@ -9,6 +10,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines all x- and y-axes.
+ *
+ */
 @JsonAutoDetect(
 		  fieldVisibility = JsonAutoDetect.Visibility.ANY,
 		  getterVisibility = JsonAutoDetect.Visibility.NONE,
@@ -17,8 +22,10 @@ import lombok.experimental.Accessors;
 		)
 @Accessors(chain = true)
 @lombok.Data
-public class Scales {
+public class Scales implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty("xAxes")
 	private List<AxesScale> xAxes;
 	

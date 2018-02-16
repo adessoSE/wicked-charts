@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines all properties for the option attribute.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Options implements Serializable{

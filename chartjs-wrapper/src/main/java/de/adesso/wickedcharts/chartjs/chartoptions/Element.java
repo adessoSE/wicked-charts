@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines the properties of elements.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Element implements Serializable{

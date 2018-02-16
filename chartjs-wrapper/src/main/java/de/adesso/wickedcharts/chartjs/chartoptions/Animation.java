@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines options for Animations.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Animation implements Serializable {

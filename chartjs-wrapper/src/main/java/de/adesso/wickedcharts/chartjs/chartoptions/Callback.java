@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Base-class for Callback functions.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Callback implements Serializable {

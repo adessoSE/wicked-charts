@@ -182,6 +182,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TooltipAverageConfiguration())); 
         this.add(new UpdateChartJsLink("TooltipNearest", chart, codeContainer,
                 new TooltipNearestConfiguration())); 
+
 	} 
 
 	private ChartConfiguration getConfigurationToDisplay() {
