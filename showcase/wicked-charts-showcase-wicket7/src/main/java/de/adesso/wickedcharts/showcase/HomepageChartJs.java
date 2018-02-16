@@ -178,6 +178,10 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new LegendPointStyleConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartProgressBar", chart, codeContainer,
                 new LineChartProgressBarConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipAverage", chart, codeContainer,
+                new TooltipAverageConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipNearest", chart, codeContainer,
+                new TooltipNearestConfiguration())); 
         
 	} 
 
