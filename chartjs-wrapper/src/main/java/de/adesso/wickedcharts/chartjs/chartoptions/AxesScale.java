@@ -2,6 +2,10 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines properties for the Axis.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class AxesScale {

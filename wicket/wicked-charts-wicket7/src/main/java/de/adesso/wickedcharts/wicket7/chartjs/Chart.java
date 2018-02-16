@@ -55,12 +55,12 @@ public class Chart extends WebMarkupContainer {
 		add(createChartBehavior());
 	}
 
-	public ChartConfiguration getOptions() {
+	public ChartConfiguration getChartConfiguration() {
 		return this.options;
 	}
 
 
-	public void setOptions(final ChartConfiguration options) {
+	public void setChartConfiguration(final ChartConfiguration options) {
 		this.options = options;
 	}
 

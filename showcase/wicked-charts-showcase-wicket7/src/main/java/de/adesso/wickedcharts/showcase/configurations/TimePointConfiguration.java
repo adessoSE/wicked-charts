@@ -27,6 +27,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample which highlights the important points of the x-axis.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimePointConfiguration extends ShowcaseConfiguration {
 	

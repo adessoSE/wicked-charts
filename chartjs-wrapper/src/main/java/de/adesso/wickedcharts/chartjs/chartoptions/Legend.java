@@ -2,6 +2,10 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Defines different properties for legend.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Legend {

@@ -14,6 +14,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines all Dataset options.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Dataset {

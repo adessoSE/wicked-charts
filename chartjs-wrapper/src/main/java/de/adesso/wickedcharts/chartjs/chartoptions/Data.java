@@ -7,6 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
 import lombok.experimental.Accessors;
+
+/**
+ * Defines the properties of the data.
+ *
+ */
 @JsonAutoDetect(
 		  fieldVisibility = JsonAutoDetect.Visibility.ANY,
 		  getterVisibility = JsonAutoDetect.Visibility.NONE,

@@ -65,7 +65,7 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     @Override
     public void onClick(final AjaxRequestTarget target) {
         this.chart
-                .setOptions(this.getOptions());
+                .setChartConfiguration(this.getOptions());
         ((ShowcaseSession) getSession())
                 .setCurrentChartjsConfiguration(this.config);
 
