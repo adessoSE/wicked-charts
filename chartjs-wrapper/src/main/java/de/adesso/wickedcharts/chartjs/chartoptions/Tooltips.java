@@ -1,5 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+/**
+ * Defines the options for the chart tooltips
+ */
+
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.experimental.Accessors;
 

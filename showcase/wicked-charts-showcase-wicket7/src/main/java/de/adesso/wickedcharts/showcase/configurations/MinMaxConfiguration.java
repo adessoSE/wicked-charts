@@ -15,6 +15,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+
+/**
+ * 
+ * A sample that shows how to configure min and max Ticks in the chart options.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class MinMaxConfiguration extends ShowcaseConfiguration {
 	public MinMaxConfiguration() {

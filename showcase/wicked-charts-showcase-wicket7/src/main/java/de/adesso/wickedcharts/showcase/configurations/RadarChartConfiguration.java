@@ -3,6 +3,7 @@ package de.adesso.wickedcharts.showcase.configurations;
 import java.util.Arrays;
 
 
+
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;

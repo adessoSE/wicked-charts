@@ -22,6 +22,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * 
+ * A sample that shows how different point style configurations look.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
 	public LegendPointStyleConfiguration() {

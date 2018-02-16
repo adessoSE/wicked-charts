@@ -2,6 +2,12 @@ package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * A sample that shows how a horizontal bar chart configuration looks.
+ *
+ */
+
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;

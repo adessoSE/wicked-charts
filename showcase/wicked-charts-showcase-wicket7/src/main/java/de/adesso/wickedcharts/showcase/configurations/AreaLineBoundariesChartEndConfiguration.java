@@ -21,13 +21,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-//Valid fill Parameters:
-/*
-	'false'
-	'origin'
-	'start'
-	'end'
- Change the fill setting in the configuration to see changes*/ 
+
+/**
+ * 
+ * A sample that shows how the 'end' fill option works
+ *
+ */
 
 @SuppressWarnings("serial")
 public class AreaLineBoundariesChartEndConfiguration extends ShowcaseConfiguration {

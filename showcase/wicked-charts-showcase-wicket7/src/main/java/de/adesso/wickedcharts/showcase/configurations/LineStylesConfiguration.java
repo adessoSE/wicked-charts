@@ -19,6 +19,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * 
+ * A sample that shows how different line styles can be configured.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class LineStylesConfiguration extends ShowcaseConfiguration {
 	public LineStylesConfiguration() {
