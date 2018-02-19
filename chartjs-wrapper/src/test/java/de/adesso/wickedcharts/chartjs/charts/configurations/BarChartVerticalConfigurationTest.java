@@ -7,15 +7,25 @@ import java.util.List;
 import org.junit.Test;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.Element;
+import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.Line;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
+import de.adesso.wickedcharts.chartjs.chartoptions.Rectangle;
+import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
@@ -26,26 +36,28 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class LineChartBasicConfigurationTest {
+public class BarChartVerticalConfigurationTest {
 	
 	@Test
-	public void lineChartBasicConfigurationTest() {
+	public void barChartVerticalConfigurationTest() {
 		String result = "{\r\n" + 
-				"  \"type\" : \"line\",\r\n" + 
+				"  \"type\" : \"bar\",\r\n" + 
 				"  \"data\" : {\r\n" + 
 				"    \"labels\" : [ \"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\" ],\r\n" + 
 				"    \"datasets\" : [ {\r\n" + 
 				"      \"label\" : \"Dataset 1\",\r\n" + 
 				"      \"backgroundColor\" : 'rgba(255,99,132,0.50)',\r\n" + 
 				"      \"borderColor\" : 'rgb(255,99,132)',\r\n" + 
-				"      \"borderWidth\" : 2,\r\n" + 
-				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]\r\n" + 
+				"      \"borderWidth\" : 1,\r\n" + 
+				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],\r\n" + 
+				"      \"fill\" : false\r\n" + 
 				"    }, {\r\n" + 
 				"      \"label\" : \"Dataset 2\",\r\n" + 
 				"      \"backgroundColor\" : 'rgba(54,162,235,0.50)',\r\n" + 
 				"      \"borderColor\" : 'rgb(54,162,235)',\r\n" + 
-				"      \"borderWidth\" : 2,\r\n" + 
-				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]\r\n" + 
+				"      \"borderWidth\" : 1,\r\n" + 
+				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],\r\n" + 
+				"      \"fill\" : false\r\n" + 
 				"    } ]\r\n" + 
 				"  },\r\n" + 
 				"  \"options\" : {\r\n" + 
@@ -55,8 +67,8 @@ public class LineChartBasicConfigurationTest {
 				"    },\r\n" + 
 				"    \"title\" : {\r\n" + 
 				"      \"display\" : true,\r\n" + 
-				"      \"text\" : \"A Chart.js Bar Chart\"\r\n" + 
-			  "    }\r\n" + 
+				"      \"text\" : \"Chart.js Bar Chart\"\r\n" + 
+				"    }\r\n" + 
 				"  }\r\n" + 
 				"}";
 		System.out.println(test());
@@ -64,10 +76,16 @@ public class LineChartBasicConfigurationTest {
 	}
 	
 	public static String test() {
-		ChartConfiguration config = new ChartConfiguration().setType(ChartType.LINE).setData(exampleData());
-		Options options = new Options().setLegend(new Legend().setPosition(Position.TOP)).setResponsive(true)
-							.setTitle(new Title().setDisplay(true).setText("A Chart.js Bar Chart"));
-						config.setOptions(options);
+		ChartConfiguration config = new ChartConfiguration().setType(ChartType.BAR).setData(exampleData());
+		Options options = new Options()
+				.setResponsive(true)
+				.setLegend(new Legend()
+						.setPosition(Position.TOP))
+				.setTitle(new Title()
+						.setDisplay(true)
+						.setText("Chart.js Bar Chart"))
+				;
+		config.setOptions(options);
 				
 		JsonRenderer renderer = new JsonRenderer();
 				
@@ -91,11 +109,14 @@ public class LineChartBasicConfigurationTest {
 		for (int i = 0; i < size; i++) {
 			dataList.add(i);
 		}
-		Dataset dataset = new Dataset();
-		dataset.setData(IntegerValue.of(dataList))
-			.setBackgroundColor(backgroundColor).setBorderColor(borderColor)
-			.setBorderWidth(2)
-			.setLabel(label);
+		Dataset dataset = new Dataset()
+				.setLabel(label)
+				.setBackgroundColor(backgroundColor)
+				.setBorderColor(borderColor)
+				.setBorderWidth(1)
+				.setData(IntegerValue.of(dataList))
+				.setFill(false);
+			
 		return dataset;
 	}
 }

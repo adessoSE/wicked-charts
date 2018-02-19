@@ -7,15 +7,28 @@ import java.util.List;
 import org.junit.Test;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.chartoptions.Animation;
+import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.Element;
+import de.adesso.wickedcharts.chartjs.chartoptions.Filler;
+import de.adesso.wickedcharts.chartjs.chartoptions.GridLines;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
+import de.adesso.wickedcharts.chartjs.chartoptions.Line;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.Plugins;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
+import de.adesso.wickedcharts.chartjs.chartoptions.Rectangle;
+import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
+import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
@@ -26,10 +39,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class LineChartBasicConfigurationTest {
+public class GridLineStylesChartConfiguration {
 	
 	@Test
-	public void lineChartBasicConfigurationTest() {
+	public void gridLineStylesChartConfiguration() {
 		String result = "{\r\n" + 
 				"  \"type\" : \"line\",\r\n" + 
 				"  \"data\" : {\r\n" + 
@@ -38,25 +51,29 @@ public class LineChartBasicConfigurationTest {
 				"      \"label\" : \"Dataset 1\",\r\n" + 
 				"      \"backgroundColor\" : 'rgba(255,99,132,0.50)',\r\n" + 
 				"      \"borderColor\" : 'rgb(255,99,132)',\r\n" + 
-				"      \"borderWidth\" : 2,\r\n" + 
-				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]\r\n" + 
-				"    }, {\r\n" + 
-				"      \"label\" : \"Dataset 2\",\r\n" + 
-				"      \"backgroundColor\" : 'rgba(54,162,235,0.50)',\r\n" + 
-				"      \"borderColor\" : 'rgb(54,162,235)',\r\n" + 
-				"      \"borderWidth\" : 2,\r\n" + 
-				"      \"data\" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]\r\n" + 
+				"      \"data\" : [ 10, 30, 39, 20, 25, 34, -10 ],\r\n" + 
+				"      \"fill\" : false\r\n" + 
 				"    } ]\r\n" + 
 				"  },\r\n" + 
 				"  \"options\" : {\r\n" + 
 				"    \"responsive\" : true,\r\n" + 
-				"    \"legend\" : {\r\n" + 
-				"      \"position\" : \"top\"\r\n" + 
-				"    },\r\n" + 
 				"    \"title\" : {\r\n" + 
 				"      \"display\" : true,\r\n" + 
-				"      \"text\" : \"A Chart.js Bar Chart\"\r\n" + 
-			  "    }\r\n" + 
+				"      \"text\" : \"Grid Line Settings\"\r\n" + 
+				"    },\r\n" + 
+				"    \"scales\" : {\r\n" + 
+				"      \"yAxes\" : [ {\r\n" + 
+				"        \"gridLines\" : {\r\n" + 
+				"          \"drawBorder\" : true,\r\n" + 
+				"          \"color\" : [ 'pink', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple' ]\r\n" + 
+				"        },\r\n" + 
+				"        \"ticks\" : {\r\n" + 
+				"          \"stepSize\" : 10,\r\n" + 
+				"          \"min\" : 0,\r\n" + 
+				"          \"max\" : 100\r\n" + 
+				"        }\r\n" + 
+				"      } ]\r\n" + 
+				"    }\r\n" + 
 				"  }\r\n" + 
 				"}";
 		System.out.println(test());
@@ -65,9 +82,30 @@ public class LineChartBasicConfigurationTest {
 	
 	public static String test() {
 		ChartConfiguration config = new ChartConfiguration().setType(ChartType.LINE).setData(exampleData());
-		Options options = new Options().setLegend(new Legend().setPosition(Position.TOP)).setResponsive(true)
-							.setTitle(new Title().setDisplay(true).setText("A Chart.js Bar Chart"));
-						config.setOptions(options);
+		Options options = new Options()
+				.setResponsive(true)
+				.setTitle(new Title()
+						.setDisplay(true)
+						.setText("Grid Line Settings"))
+				.setScales(new Scales()
+						.setYAxes(new AxesScale()
+								.setGridLines(new GridLines()
+										.setDrawBorder(true)
+										.setColor(Arrays.asList(
+												new StringValueColor("pink"),
+												new StringValueColor("red"),
+												new StringValueColor("orange"),
+												new StringValueColor("yellow"),
+												new StringValueColor("green"),
+												new StringValueColor("blue"),
+												new StringValueColor("indigo"),
+												new StringValueColor("purple"))))
+								.setTicks(new Ticks()
+										.setMin(0)
+										.setMax(100)
+										.setStepSize(10))))
+				;
+		config.setOptions(options);
 				
 		JsonRenderer renderer = new JsonRenderer();
 				
@@ -82,7 +120,6 @@ public class LineChartBasicConfigurationTest {
 						"September", "October", "November", "December"));
 		
 		data.getDatasets().add(exampleDataSet(data.getLabels().size(),"Dataset 1",SimpleColor.RED_TRANSPARENT,SimpleColor.RED));
-		data.getDatasets().add(exampleDataSet(data.getLabels().size(),"Dataset 2",SimpleColor.BLUE_TRANSPARENT,SimpleColor.BLUE));
 		return data;
 	}
 	
@@ -91,11 +128,12 @@ public class LineChartBasicConfigurationTest {
 		for (int i = 0; i < size; i++) {
 			dataList.add(i);
 		}
-		Dataset dataset = new Dataset();
-		dataset.setData(IntegerValue.of(dataList))
-			.setBackgroundColor(backgroundColor).setBorderColor(borderColor)
-			.setBorderWidth(2)
-			.setLabel(label);
+		Dataset dataset = new Dataset()
+				.setLabel(label)
+				.setBackgroundColor(backgroundColor)
+				.setBorderColor(borderColor)
+				.setData(IntegerValue.of(Arrays.asList(10, 30, 39, 20, 25, 34, -10)))
+				.setFill(false);
 		return dataset;
 	}
 }

@@ -41,7 +41,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)));
 		
-		Dataset dataset3 = new Dataset()
+		Dataset dataset2 = new Dataset()
 				.setLabel("Unfilled")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
@@ -49,7 +49,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setFill(false);
 		
 		
-		Dataset dataset2 = new Dataset()
+		Dataset dataset3 = new Dataset()
 				.setLabel("Dashed")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)
