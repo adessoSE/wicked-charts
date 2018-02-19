@@ -31,7 +31,7 @@ import static org.junit.Assert.*;
 public class TooltipNearestConfigurationTest {
 	
 	@Test
-	public void TooltipConfigurationTest() {
+	public void tooltipNearestConfigurationTest() {
 		String result = "{\r\n" + 
 				"  \"type\" : \"line\",\r\n" + 
 				"  \"data\" : {\r\n" + 

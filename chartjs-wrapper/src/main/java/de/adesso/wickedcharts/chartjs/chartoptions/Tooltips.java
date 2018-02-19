@@ -16,8 +16,8 @@ public class Tooltips implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Position position;
 	private TooltipMode mode;
-	private Integer yPadding;
 	private Integer xPadding;
+	private Integer yPadding;
 	private Integer caretSize;
 	private Color backgroundColor;
 	private Color titleFontColor;
