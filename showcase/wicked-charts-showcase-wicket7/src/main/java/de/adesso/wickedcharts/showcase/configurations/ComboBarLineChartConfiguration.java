@@ -30,11 +30,11 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 		Data data = new Data();
 		Dataset dataset1 = new Dataset();
 		dataset1.setType(ChartType.LINE)
-		.setBorderColor(SimpleColor.BLUE)
-		.setBorderWidth(2)
-		.setFill(false)
-		.setData(IntegerValue.of(randomIntegerList(7)))
-		.setLabel("Dataset 1");
+				.setBorderColor(SimpleColor.BLUE)
+				.setBorderWidth(2)
+				.setFill(false)
+				.setData(IntegerValue.of(randomIntegerList(7)))
+				.setLabel("Dataset 1");
 		
 		Dataset dataset2 = new Dataset()
 				.setType(ChartType.BAR)
