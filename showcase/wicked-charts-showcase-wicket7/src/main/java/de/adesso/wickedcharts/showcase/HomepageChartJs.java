@@ -85,6 +85,12 @@ import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
 
+/**
+ * Binds all Chart configuration to the website.
+ * Adds Java-Code Container.
+ * Adds navigation-links to the website.
+ *
+ */
 public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
