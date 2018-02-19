@@ -31,7 +31,7 @@ public class TooltipBorderConfigurationTest {
 	
 	@Test
 	public void TooltipConfigurationTest() {
-		String result = "{\r\n" + 
+		String result1 = "{\r\n" + 
 				"  \"type\" : \"line\",\r\n" + 
 				"  \"data\" : {\r\n" + 
 				"    \"labels\" : [ \"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\" ],\r\n" + 
@@ -65,8 +65,44 @@ public class TooltipBorderConfigurationTest {
 				"    }\r\n" + 
 				"  }\r\n" + 
 				"}";
-		System.out.println(test());
-		assertTrue(test().compareTo(result) == 0);
+		String result2 = "{\r\n" + 
+				"  \"type\" : \"line\",\r\n" + 
+				"  \"data\" : {\r\n" + 
+				"    \"labels\" : [ \"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\" ],\r\n" + 
+				"    \"datasets\" : [ {\r\n" + 
+				"      \"label\" : \"Dataset 1\",\r\n" + 
+				"      \"backgroundColor\" : 'rgb(255,99,132)',\r\n" + 
+				"      \"borderColor\" : 'rgb(255,99,132)',\r\n" + 
+				"      \"borderWidth\" : 2,\r\n" + 
+				"      \"data\" : [ 10, 30, 46, 2, 8, 50, 0 ],\r\n" + 
+				"      \"fill\" : false\r\n" + 
+				"    } ]\r\n" + 
+				"  },\r\n" + 
+				"  \"options\" : {\r\n" + 
+				"    \"responsive\" : true,\r\n" + 
+				"    \"title\" : {\r\n" + 
+				"      \"display\" : true,\r\n" + 
+				"      \"text\" : \"Sample tooltip with border\"\r\n" + 
+				"    },\r\n" + 
+				"    \"tooltips\" : {\r\n" + 
+				"      \"position\" : \"nearest\",\r\n" + 
+				"      \"mode\" : \"index\",\r\n" + 
+				"      \"caretSize\" : 8,\r\n" + 
+				"      \"backgroundColor\" : 'rgba(72,241,12,1.00)',\r\n" + 
+				"      \"titleFontColor\" : 'rgb(0,0,0)',\r\n" + 
+				"      \"bodyFontColor\" : 'rgb(0,0,0)',\r\n" + 
+				"      \"borderColor\" : 'rgba(0,0,0,1.00)',\r\n" + 
+				"      \"borderWidth\" : 4,\r\n" + 
+				"      \"intersect\" : false,\r\n" + 
+				"      \"ypadding\" : 10,\r\n" + 
+				"      \"xpadding\" : 10\r\n" + 
+				"    }\r\n" + 
+				"  }\r\n" + 
+				"}";
+		
+		String output = test();
+		System.out.println(output);
+		assertTrue(output.compareTo(result1) == 0 || output.compareTo(result2) == 0);
 	}
 	
 	public static String test() {
