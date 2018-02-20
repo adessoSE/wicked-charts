@@ -1,0 +1,7 @@
+dependencies {
+	compile 'org.projectlombok:lombok:1.16.20'
+	testCompile 'junit:junit:4.12'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.1'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.8.1'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.8.1'
+}

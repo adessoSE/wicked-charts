@@ -20,6 +20,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that displays a progression of a dataset.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 

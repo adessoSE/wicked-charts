@@ -1,10 +1,18 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import java.io.Serializable;
+
 import lombok.experimental.Accessors;
+
+/**
+ * Defines attributes for the Tick option
+ *
+ */
 
 @Accessors(chain = true)
 @lombok.Data
-public class Ticks {
+public class Ticks implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private Integer suggestedMin;
 	private Integer suggestedMax;
 	private Boolean autoSkip;
@@ -17,4 +25,7 @@ public class Ticks {
 	private Boolean reverse;
 	private TickStyle major;
 	private TickSource source;
+	private String fontFamily;
+	private Number fontSize;
+	private FontStyle fontStyle;
 }

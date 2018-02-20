@@ -6,3 +6,7 @@
 target
 bin
 settings.xml
+.gradle
+build/
+apidocs/
+javadocs/

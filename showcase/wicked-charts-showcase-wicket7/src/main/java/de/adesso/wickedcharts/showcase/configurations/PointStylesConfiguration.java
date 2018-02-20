@@ -17,21 +17,20 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-
-/*Supported Point Styles:
- * 
- *  'circle',
-    'triangle',
-    'rect',
-    'rectRounded',
-    'rectRot',
-    'cross',
-    'crossRot',
-    'star',
-    'line',
-    'dash'
+/**
+ * Sample that supports different point styles:
+ * 'circle',
+ * 'triangle',
+ * 'rect',
+ * 'rectRounded',
+ * 'rectRot',
+ * 'cross',
+ * 'crossRot',
+ * 'star',
+ * 'line',
+ * 'dash'
+ *
  */
-
 @SuppressWarnings("serial")
 public class PointStylesConfiguration extends ShowcaseConfiguration {
 	public PointStylesConfiguration() {

@@ -8,6 +8,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * A sample that shows how a logarithmic scatter chart configuration looks.
+ */
+
 @SuppressWarnings("serial")
 public class LogarithmicScatterChartConfiguration extends ShowcaseConfiguration {
 	public LogarithmicScatterChartConfiguration() {

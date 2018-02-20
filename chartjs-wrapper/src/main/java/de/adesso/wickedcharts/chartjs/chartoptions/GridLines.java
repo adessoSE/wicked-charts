@@ -10,6 +10,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines the properties of gridlines.
+ *
+ */
 @SuppressWarnings("serial")
 @Accessors(chain = true)
 @lombok.Data

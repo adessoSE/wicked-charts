@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,9 +15,15 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines all Dataset options.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
-public class Dataset {
+public class Dataset implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private ChartType type;
 	private String label;
 

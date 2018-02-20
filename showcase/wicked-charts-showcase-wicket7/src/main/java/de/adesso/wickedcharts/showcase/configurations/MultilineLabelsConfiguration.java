@@ -13,6 +13,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+
+/**
+ * 
+ * A sample that shows how to configure multiline labels.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class MultilineLabelsConfiguration extends ShowcaseConfiguration {
 

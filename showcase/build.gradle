@@ -1,0 +1,26 @@
+subprojects{
+	buildscript {
+		repositories {
+			maven {
+				url "http://plugins.gradle.org/m2/"
+			}
+		}
+		dependencies {
+			classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4"
+		}
+	}
+
+	apply plugin: 'java'
+
+	
+	repositories {
+	    mavenLocal()
+	    mavenCentral()
+	    jcenter()
+	}
+	
+	// run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
+	version = '3.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+	sourceCompatibility = 1.8
+}
+

@@ -1,0 +1,7 @@
+include 'chartjs-wrapper'
+include 'highcharts-wrapper'
+include 'jsf:wicked-charts-jsf21'
+include 'wicket:wicked-charts-wicket14'
+include 'wicket:wicked-charts-wicket15'
+include 'wicket:wicked-charts-wicket6'
+include 'wicket:wicked-charts-wicket7'

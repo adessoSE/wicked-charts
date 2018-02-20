@@ -19,6 +19,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * 
+ * A sample that shows how different line styles can be configured.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class LineStylesConfiguration extends ShowcaseConfiguration {
 	public LineStylesConfiguration() {
@@ -35,7 +41,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)));
 		
-		Dataset dataset3 = new Dataset()
+		Dataset dataset2 = new Dataset()
 				.setLabel("Unfilled")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
@@ -43,7 +49,7 @@ public class LineStylesConfiguration extends ShowcaseConfiguration {
 				.setFill(false);
 		
 		
-		Dataset dataset2 = new Dataset()
+		Dataset dataset3 = new Dataset()
 				.setLabel("Dashed")
 				.setBackgroundColor(SimpleColor.BLUE)
 				.setBorderColor(SimpleColor.BLUE)

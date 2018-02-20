@@ -2,6 +2,10 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+/**
+ * Defines the type of a chart.
+ * 
+ */
 public enum ChartType implements JsonValueEnum {
 	LINE("line"),
 	BAR("bar"),
