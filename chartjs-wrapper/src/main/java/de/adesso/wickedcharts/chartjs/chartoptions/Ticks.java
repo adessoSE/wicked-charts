@@ -25,4 +25,7 @@ public class Ticks implements Serializable{
 	private Boolean reverse;
 	private TickStyle major;
 	private TickSource source;
+	private String fontFamily;
+	private Number fontSize;
+	private FontStyle fontStyle;
 }
