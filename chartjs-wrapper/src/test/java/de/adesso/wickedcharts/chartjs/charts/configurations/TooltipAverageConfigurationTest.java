@@ -31,7 +31,7 @@ import static org.junit.Assert.*;
 public class TooltipAverageConfigurationTest {
 	
 	@Test
-	public void TooltipConfigurationTest() {
+	public void tooltipAverageConfigurationTest() {
 		String result = "{\r\n" + 
 				"  \"type\" : \"line\",\r\n" + 
 				"  \"data\" : {\r\n" + 

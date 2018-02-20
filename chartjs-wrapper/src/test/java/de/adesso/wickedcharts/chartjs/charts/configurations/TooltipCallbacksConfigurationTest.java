@@ -36,7 +36,7 @@ import static org.junit.Assert.*;
 public class TooltipCallbacksConfigurationTest {
 	
 	@Test
-	public void TooltipConfigurationTest() {
+	public void tooltipCallbacksConfigurationTest() {
 		String result = "{\r\n" + 
 				"  \"type\" : \"line\",\r\n" + 
 				"  \"data\" : {\r\n" + 

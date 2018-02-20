@@ -14,8 +14,9 @@ public class IntegerValueSerializer extends JsonSerializer<IntegerValue> {
 	@Override
 	public void serialize(IntegerValue value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		if(value.getValue() != null)
+		if(value.getValue() != null) {
 			gen.writeNumber(value.getValue());
+		}
 	}
 
 }
