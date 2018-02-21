@@ -24,7 +24,6 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
-import de.adesso.wickedcharts.chartjs.charts.configurations.*;
 import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartEndConfiguration;
 import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartFalseConfiguration;
 import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartOriginConfiguration;

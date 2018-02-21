@@ -33,7 +33,7 @@ public class StringValueSerializerTest {
 		assertEquals("\"\"", json);
 	}
 	
-	//@Test
+	@Test
 	public void testNullValue() {
 		testVal = new StringValue();
 		String json = renderer.toJson(testVal);

@@ -5,15 +5,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
-public class DoubleValueSerializerTest {
+public class PointValueSerializerTest {
 	
 	private JsonRenderer renderer;
-	private DoubleValue testVal;
+	private PointValue testVal;
 	
 	@Before
 	public void setUp() throws Exception{
@@ -21,30 +20,32 @@ public class DoubleValueSerializerTest {
 	}
 	
 	@Test
-	public void testDoubleValue() {
-		testVal = new DoubleValue(100.0);
+	public void testIntegerValue() {
+		testVal = new PointValue(100, 100);
 		String json = renderer.toJson(testVal);
-		assertEquals("100.0", json);
+		assertEquals("100", json);
 	}
 	
 	@Test
-	public void testDoubleMaxValue() {
-		testVal = new DoubleValue(Double.MAX_VALUE);
+	public void testPointValueMaxValue() {
+		testVal = new PointValue(Integer.MAX_VALUE, Integer.MAX_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Double(Double.MAX_VALUE).toString(), json);
+		assertEquals(new Integer(Integer.MAX_VALUE).toString(), json);
 	}
 	
+	
 	@Test
-	public void testDoubleMinValue() {
-		testVal = new DoubleValue(Double.MIN_VALUE);
+	public void testPointValueValue() {
+		testVal = new PointValue(Integer.MIN_VALUE, Integer.MIN_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Double(Double.MIN_VALUE).toString(), json);
+		assertEquals(new Integer(Integer.MIN_VALUE).toString(), json);
 	}
 	
 	@Test
 	public void testNullValue() {
-		testVal = new DoubleValue();
+		testVal = new PointValue();
 		String json = renderer.toJson(testVal);
+		System.out.println(json);
 		assertEquals("", json);
 	}
 }

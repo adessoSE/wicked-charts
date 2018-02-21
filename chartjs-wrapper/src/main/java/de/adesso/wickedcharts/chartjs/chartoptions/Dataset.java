@@ -64,7 +64,7 @@ public class Dataset implements Serializable{
 		return this;
 	}
 
-	public Dataset setBackgroundColor(List<SimpleColor> asList) {
+	public Dataset setBackgroundColor(List<? extends Color> asList) {
 		this.backgroundColor = asList;
 		return this;
 	}

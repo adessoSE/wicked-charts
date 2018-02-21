@@ -40,7 +40,7 @@ public class FloatValueSerializerTest {
 		assertEquals(new Float(Float.MIN_VALUE).toString(), json);
 	}
 	
-	//@Test
+	@Test
 	public void testNullValue() {
 		testVal = new FloatValue();
 		String json = renderer.toJson(testVal);
