@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
+import org.apache.wicket.markup.html.panel.Fragment;
+
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
@@ -41,5 +43,11 @@ public class TooltipHtmlPieConfiguration extends ShowcaseConfiguration {
 //						.setCustom(new JavaScriptReference("customTooltips"))
 								);
 		setOptions(options);
+	}
+	
+	@Override
+	public void modfiyIndividualMarkup(Fragment optionalMarkup) {
+		Fragment frag = new Fragment("optionalMarkup","pieTooltip",optionalMarkup.getParent());
+		optionalMarkup.replaceWith(frag);
 	}
 }

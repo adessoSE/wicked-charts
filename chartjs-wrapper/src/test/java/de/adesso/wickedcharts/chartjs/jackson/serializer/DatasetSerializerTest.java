@@ -23,5 +23,5 @@ public class DatasetSerializerTest {
 		testData.setYAxisID("axis-1");
 		String json = renderer.toJson(testData);
 		assertTrue(json.contains("yAxisID"));
-	}
+	} 
 }

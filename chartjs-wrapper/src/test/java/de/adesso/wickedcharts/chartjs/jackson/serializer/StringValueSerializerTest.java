@@ -3,11 +3,9 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 import static org.junit.Assert.assertEquals;
 
 import static org.junit.Assert.*;
-
-
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-
 
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.AbsoluteIndex;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BooleanFillingMode;

@@ -18,4 +18,5 @@ public class IntegerValueSerializer extends JsonSerializer<IntegerValue> {
 			gen.writeNumber(value.getValue());
 		}
 	}
+
 }

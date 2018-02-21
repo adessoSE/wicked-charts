@@ -19,8 +19,7 @@ public class DateTimeValueSerializerTest {
 	private JsonRenderer renderer;
 	private DateTimeValue testVal;
 	
-	@Before
-
+	@Before 
 	public void setUp() throws Exception{
 		renderer = new JsonRenderer();
 	}

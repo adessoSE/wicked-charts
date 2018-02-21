@@ -19,61 +19,14 @@ import java.io.Serializable;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartEndConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartFalseConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartOriginConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.AreaLineBoundariesChartStartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BarChartHorizontalConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BarChartMultiAxisConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BarChartStackedConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BarChartStackedGroupConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BarChartVerticalConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.BubbleChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.ComboBarLineChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.DoughnutChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.FilteringLabelsConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.GridLineStylesConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LegendPointStyleConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartAreaDatasetConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartBasicConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartInterpolatedConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartMultiAxisConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartProgressBarConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartStackedConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartSteppedAfterConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartSteppedBeforeConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineChartWithDifferentPointSizesConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LineStylesConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LinearStepSizeConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LogarithmicLineChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.LogarithmicScatterChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.MinMaxConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.MinMaxSuggestedConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.MultilineLabelsConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.NonNumericConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.OtherRadarChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.PieChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.PointStylesConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.PolarAreaChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.RadarChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.ScatterChartConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.ScatterChartMultiAxisConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TimeComboConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TimeLineConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TimePointConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TimeSeriesConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipAverageConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipBorderConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipCallbacksConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipHtmlLineConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipHtmlPieConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipHtmlPointsConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.TooltipNearestConfiguration;
+
+import de.adesso.wickedcharts.showcase.configurations.*;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.GridLinesBasicConfiguration;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.GridLinesChartAreaConfiguration;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.GridLinesDisplayFalseConfiguration;
@@ -84,24 +37,22 @@ import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
 
-/**
- * Binds all Chart configuration to the website.
- * Adds Java-Code Container.
- * Adds navigation-links to the website.
- *
- */
 public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
     public HomepageChartJs(final PageParameters parameters) {
+
+    	Fragment optionalMarkup = new Fragment("optionalMarkup","defaultTooltip",this);
+    	optionalMarkup.setOutputMarkupId(true);
+    	add(optionalMarkup);
     	
         ChartConfiguration config = this.getConfigurationToDisplay();
         final Chart chart = new Chart("chart", config);
         this.add(chart);
         addNavigationLinks();
         Label codeContainer = this.addCodeContainer();
-        this.addChartLinks(chart, codeContainer);
+        this.addChartLinks(chart, codeContainer, optionalMarkup);
     }
 
 	private Label addCodeContainer() {
@@ -118,8 +69,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
 		this.add(new ChartjsShowcaseLink());
 	}
 	
-	private void addChartLinks(Chart chart, Label codeContainer) { 
-        this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
+	private void addChartLinks(Chart chart, Label codeContainer, Fragment optionalMarkup) { 
+		this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
@@ -230,15 +181,16 @@ public class HomepageChartJs extends WebPage implements Serializable {
         this.add(new UpdateChartJsLink("TooltipHtmlPoints", chart, codeContainer,
                 new TooltipHtmlPointsConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPointStyle", chart, codeContainer,
-                new LegendPointStyleConfiguration())); 
+               new LegendPointStyleConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartProgressBar", chart, codeContainer,
                 new LineChartProgressBarConfiguration())); 
         this.add(new UpdateChartJsLink("TooltipAverage", chart, codeContainer,
                 new TooltipAverageConfiguration())); 
         this.add(new UpdateChartJsLink("TooltipNearest", chart, codeContainer,
-                new TooltipNearestConfiguration())); 
+                new TooltipNearestConfiguration()));
 
-	} 
+         
+	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())
