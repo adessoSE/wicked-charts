@@ -2,15 +2,16 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.*;
+
+
 import org.junit.Before;
 import org.junit.Test;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 public class FloatValueSerializerTest {
-	
 	private JsonRenderer renderer;
 	private FloatValue testVal;
 	
@@ -18,7 +19,9 @@ public class FloatValueSerializerTest {
 	public void setUp() throws Exception{
 		renderer = new JsonRenderer();
 	}
-	
+
+
+
 	@Test
 	public void testFloatValue() {
 		testVal = new FloatValue(100.0f);

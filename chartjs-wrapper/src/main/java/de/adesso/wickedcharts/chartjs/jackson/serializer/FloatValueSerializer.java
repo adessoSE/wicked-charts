@@ -14,7 +14,7 @@ public class FloatValueSerializer extends JsonSerializer<FloatValue> {
 	@Override
 	public void serialize(FloatValue value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		if(value.getValue() != null){
+		if(value.getValue() != null) {
 			gen.writeNumber(value.getValue());
 		}
 	}

@@ -2,15 +2,25 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.*;
+
+
 import org.junit.Before;
 import org.junit.Test;
+
+
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.AbsoluteIndex;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BooleanFillingMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.RelativeIndex;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 public class StringValueSerializerTest {
-	
+
 	private JsonRenderer renderer;
 	private StringValue testVal;
 	
@@ -32,7 +42,7 @@ public class StringValueSerializerTest {
 		String json = renderer.toJson(testVal);
 		assertEquals("\"\"", json);
 	}
-	
+
 	@Test
 	public void testNullValue() {
 		testVal = new StringValue();

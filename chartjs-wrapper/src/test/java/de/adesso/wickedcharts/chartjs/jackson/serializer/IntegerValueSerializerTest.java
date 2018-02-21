@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -9,7 +10,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 public class IntegerValueSerializerTest {
-	
+
 	private JsonRenderer renderer;
 	private IntegerValue testVal;
 	
@@ -31,7 +32,6 @@ public class IntegerValueSerializerTest {
 		String json = renderer.toJson(testVal);
 		assertEquals(new Integer(Integer.MAX_VALUE).toString(), json);
 	}
-	
 	
 	@Test
 	public void testIntegerMinValue() {
