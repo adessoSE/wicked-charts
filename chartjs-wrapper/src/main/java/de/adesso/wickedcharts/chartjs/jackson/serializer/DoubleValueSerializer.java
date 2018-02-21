@@ -14,7 +14,9 @@ public class DoubleValueSerializer extends JsonSerializer<DoubleValue> {
 	@Override
 	public void serialize(DoubleValue value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		gen.writeNumber(value.getValue());
+		if(value.getValue() != null) {
+			gen.writeNumber(value.getValue());
+		}
 	}
 
 }

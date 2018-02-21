@@ -40,13 +40,13 @@ public class DoubleValueSerializerTest {
 	}
 	
 	@Test
-	public void testFloatMinValue() {
+	public void testDoubleMinValue() {
 		testVal = new DoubleValue(Double.MIN_VALUE);
 		String json = renderer.toJson(testVal);
 		assertEquals(new Double(Double.MIN_VALUE).toString(),json);
 	}
 	
-	//@Test
+	@Test
 	public void testNullValue() {
 		testVal = new DoubleValue();
 		String json = renderer.toJson(testVal);
