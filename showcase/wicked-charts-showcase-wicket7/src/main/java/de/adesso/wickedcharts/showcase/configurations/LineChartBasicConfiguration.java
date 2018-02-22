@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;

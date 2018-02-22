@@ -29,4 +29,27 @@ public class Tooltips implements Serializable{
 	private FontStyle footerFontStyle;
 	private Boolean enabled;
 	private JavaScriptReference custom;
+	private Callback itemSort;
+	private Callback filter;
+	private String titleFontFamily;
+	private Integer titleFontSize;
+	private FontStyle titleFontStyle;
+	private Integer titleSpacing;
+	private Integer titleMarginBottom;
+	private String bodyFontFamily;
+	private Integer bodyFontSize;
+	private FontStyle bodyFontStyle;
+	private Integer bodySpacing;
+	private String footerFontFamily;
+	private Integer footerFontSize;
+	private Color footerFontColor;
+	private Integer footerSpacing;
+	private Integer footerMarginTop;
+	private Integer caretPadding;
+	private Number cornerRadius;
+	private Color multiKeyBackground;
+	private Boolean displayColors;
+	
+	
+	
 }

@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
@@ -23,8 +24,9 @@ public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
     	
     	String optionalJavascript=  readFile("de/adesso/wickedcharts/showcase/customTooltip.js");
-    	
-    	setOptionalJavascript(optionalJavascript);
+
+		setOptionalJavascript(new ArrayList<String>());
+    	addOptionalJavascript(optionalJavascript);
     	
 		Data data = new Data()
 				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));

@@ -188,6 +188,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 new TooltipAverageConfiguration())); 
         this.add(new UpdateChartJsLink("TooltipNearest", chart, codeContainer,
                 new TooltipNearestConfiguration()));
+        this.add(new UpdateChartJsLink("DataLabellingChart", chart, codeContainer,
+                new DataLabellingChartConfiguration()));
 
          
 	}

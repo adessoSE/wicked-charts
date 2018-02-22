@@ -16,6 +16,9 @@ public class Point implements Serializable{
 	private String pointStyle;
 	private SimpleColor backgroundColor;
 	private SimpleColor borderColor;
-	private Double borderWidth;
-	private Double radius;
+	private Integer borderWidth;
+	private Number radius;
+	private Number hitRadius;
+	private Number hoverRadius;
+	private Integer hoverBorderWidth;
 }

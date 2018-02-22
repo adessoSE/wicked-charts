@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.apache.wicket.markup.html.panel.Fragment;
@@ -22,7 +23,8 @@ public class TooltipHtmlPieConfiguration extends ShowcaseConfiguration {
     	
     	String optionalJavascript=readFile("de/adesso/wickedcharts/showcase/customTooltip-Pie.js");
     	
-    	setOptionalJavascript(optionalJavascript);
+    	setOptionalJavascript(new ArrayList<String>());
+    	addOptionalJavascript(optionalJavascript);
     	
 		Data data = new Data()
 				.setLabels(TextLabel.of("Red","Orange","Yellow","Green","Blue"));
