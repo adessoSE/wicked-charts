@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class Tooltips implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private Position position;
+	private TooltipPosition position;
 	private TooltipMode mode;
 	private Integer xPadding;
 	private Integer yPadding;

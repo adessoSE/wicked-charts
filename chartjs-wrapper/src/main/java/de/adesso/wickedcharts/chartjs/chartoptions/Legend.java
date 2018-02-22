@@ -15,4 +15,8 @@ public class Legend implements Serializable{
 	private Position position;
 	private Boolean display;
 	private LegendLabel labels;
+	private Boolean fullWidth;
+	private Callback onClick;
+	private Callback onHover;
+	private Boolean reverse;
 }

@@ -12,6 +12,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipPosition;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -58,7 +59,7 @@ public class TooltipNearestConfiguration extends ShowcaseConfiguration {
 						.setText("Chart.js Tooltip Nearest Position"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
-						.setPosition(Position.NEAREST)
+						.setPosition(TooltipPosition.NEAREST)
 						.setIntersect(false))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()

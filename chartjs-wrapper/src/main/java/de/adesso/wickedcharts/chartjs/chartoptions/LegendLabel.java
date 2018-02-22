@@ -14,4 +14,8 @@ public class LegendLabel implements Serializable{
 	private String fontFamily;
 	private Integer fontSize;
 	private FontStyle fontStyle;
+	private Integer boxWidth;
+	private Padding padding;
+	private Callback generateLabels;
+	private Callback filter;
 }

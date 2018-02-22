@@ -21,6 +21,7 @@ public class Options implements Serializable{
 	
 	// event options
 	private List<EventType> events;
+	
 	private Boolean spanGaps;
 	private Legend legend;
 	private Title title;
@@ -34,5 +35,6 @@ public class Options implements Serializable{
 	private Filler filler;
 	private Double aspectRatio;
 	private Position position;
+	private Layout layout;
 }
 

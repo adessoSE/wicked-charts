@@ -10,6 +10,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipPosition;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -53,7 +54,7 @@ public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
 				.setTooltips(new Tooltips()
 						.setEnabled(false)
 						.setMode(TooltipMode.INDEX)
-						.setPosition(Position.NEAREST)
+						.setPosition(TooltipPosition.NEAREST)
 						.setCustom(new JavaScriptReference("customTooltips"))
 								);
 		setOptions(options);

@@ -7,6 +7,6 @@ import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
  *
  */
 
-public enum Position implements LowercaseEnum {
-	TOP, RIGHT, BOTTOM, LEFT;
+public enum TooltipPosition implements LowercaseEnum {
+	NEAREST, AVERAGE;
 }
