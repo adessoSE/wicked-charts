@@ -1,10 +1,9 @@
-.classpath
-.settings
-.project
-.idea
-*.iml
-target
-bin
-settings.xml
-.gradle
+**/.classpath
+**/.settings
+**/.project
+**/.idea
+**/*.iml
+**/target
+**/bin
+**/.gradle
 
