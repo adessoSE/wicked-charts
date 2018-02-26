@@ -20,7 +20,7 @@ public class DatasetTest {
 	private Dataset testDataset;
 	private List<? extends Color> testColorList;
 	private List<? extends ValueType> testDataList;
-	private List<Integer> testPointRadiusList;
+	private List<? extends Number> testPointRadiusList;
 	
 	@Before
 	public void setUp() throws Exception {

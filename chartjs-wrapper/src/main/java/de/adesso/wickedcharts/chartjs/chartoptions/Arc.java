@@ -5,9 +5,8 @@ import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
 @lombok.Data
-public class Rectangle extends Element {
+public class Arc extends Element {
 	private Number borderWidth;
 	private Color backgroundColor;
 	private Color borderColor;
-	private Position borderSkipped;
 }

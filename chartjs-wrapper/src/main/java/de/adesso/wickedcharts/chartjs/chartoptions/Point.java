@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 @lombok.Data
 public class Point implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String pointStyle;
+	private PointStyle pointStyle;
 	private SimpleColor backgroundColor;
 	private SimpleColor borderColor;
 	private Integer borderWidth;

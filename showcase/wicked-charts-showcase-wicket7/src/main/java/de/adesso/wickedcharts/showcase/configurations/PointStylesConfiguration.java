@@ -7,6 +7,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.PointStyle;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
@@ -48,8 +49,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(1,1,1,1,1,1,1)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("dash")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.DASH)
 				.setFill(false);
 		
 		Dataset dataset2 = new Dataset()
@@ -59,8 +60,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(2,2,2,2,2,2,2)))
 				.setShowLine(false)
 				.setPointRadius(20)
-				.setPointHoverRadius("15")
-				.setPointStyle("star")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.STAR)
 				.setFill(false);
 		
 		Dataset dataset3 = new Dataset()
@@ -70,8 +71,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(3,3,3,3,3,3,3)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("rect")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.RECT)
 				.setFill(false);
 		
 		Dataset dataset4 = new Dataset()
@@ -81,8 +82,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(4,4,4,4,4,4,4)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("triangle")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.TRIANGLE)
 				.setFill(false);
 		
 		Dataset dataset5 = new Dataset()
@@ -92,8 +93,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(5,5,5,5,5,5,5)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("circle")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.CIRCLE)
 				.setFill(false);
 		
 		Dataset dataset6 = new Dataset()
@@ -103,8 +104,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(6,6,6,6,6,6,6)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("crossRot")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.CROSS_ROT)
 				.setFill(false);
 		
 		Dataset dataset7 = new Dataset()
@@ -114,8 +115,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(7,7,7,7,7,7,7)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("line")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.LINE)
 				.setFill(false);
 		
 		Dataset dataset8 = new Dataset()
@@ -125,8 +126,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(8,8,8,8,8,8,8)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("cross")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.CROSS)
 				.setFill(false);
 		
 		Dataset dataset9 = new Dataset()
@@ -136,8 +137,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(9,9,9,9,9,9,9)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("rectRounded")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.RECT_ROUNDED)
 				.setFill(false);
 		
 		Dataset dataset10 = new Dataset()
@@ -147,8 +148,8 @@ public class PointStylesConfiguration extends ShowcaseConfiguration {
 				.setData(IntegerValue.of(Arrays.asList(11,11,11,11,11,11,11)))
 				.setShowLine(false)
 				.setPointRadius(10)
-				.setPointHoverRadius("15")
-				.setPointStyle("rectRot")
+				.setPointHoverRadius(15)
+				.setPointStyle(PointStyle.RECT_ROT)
 				.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1, dataset2, dataset3, dataset4, dataset5, dataset6,
