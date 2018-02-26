@@ -1,6 +1,9 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.apache.wicket.markup.html.panel.Fragment;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.Animation;
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
@@ -28,6 +31,11 @@ public class LineChartProgressBarConfiguration extends ShowcaseConfiguration {
 		super();
     	setType(ChartType.LINE);
 		
+    	String optionalJavascript=  readFile("de/adesso/wickedcharts/showcase/progressBar.js");
+
+		setOptionalJavascript(new ArrayList<String>());
+    	addOptionalJavascript(optionalJavascript);
+    	
 		Data data = new Data()
 				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
@@ -65,7 +73,8 @@ public class LineChartProgressBarConfiguration extends ShowcaseConfiguration {
 						.setOnComplete(new CallbackFunction("function(animation) {\r\n" + 
 								"                        window.setTimeout(function() {\r\n" + 
 								"                            progress.value = 0;\r\n" + 
-								"                        }, 2000);")))
+								"                        }, 2000);\r\n" + 
+								"                    }"))) 
 				.setHover(new Hover()
 						.setMode(HoverMode.NEAREST)
 						.setIntersect(true))
@@ -82,5 +91,11 @@ public class LineChartProgressBarConfiguration extends ShowcaseConfiguration {
 										.setLabelString("Value"))))
 				;
 		setOptions(options);
+	}
+	
+	@Override
+	public void modfiyIndividualMarkup(Fragment optionalMarkup) {
+		Fragment frag = new Fragment("optionalMarkup","progressBar",optionalMarkup.getParent());
+		optionalMarkup.replaceWith(frag);
 	}
 }
