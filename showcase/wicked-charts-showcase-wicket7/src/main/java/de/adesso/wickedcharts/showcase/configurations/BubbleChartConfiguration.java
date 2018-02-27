@@ -18,7 +18,6 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * A sample that shows how a bubble chart configuration looks.
  *
  */
-
 @SuppressWarnings("serial")
 public class BubbleChartConfiguration extends ShowcaseConfiguration {
 	public BubbleChartConfiguration() {

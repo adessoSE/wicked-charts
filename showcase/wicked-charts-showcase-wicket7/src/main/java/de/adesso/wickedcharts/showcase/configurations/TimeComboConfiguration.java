@@ -77,6 +77,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 		
 		setOptions( new Options()
 				.setTitle(new Title()
+						.setDisplay(true)
 						.setText("Chart.js Combo Time Scale"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()

@@ -35,7 +35,7 @@ public class Dataset implements Serializable{
 	private Integer borderWidth;
 	private List<? extends ValueType> data;
 	private FillingMode fill;
-	private Integer stack;
+	private String stack;
 	
 	@JsonProperty("yAxisID")
 	private String yAxisID;
@@ -65,8 +65,12 @@ public class Dataset implements Serializable{
 	private Boolean showLine;
 	private Boolean spanGaps;
 	private Boolean hidden;
-	private Color hoverBackgroundColor;
-	private Color hoverBorderColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> hoverBackgroundColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> hoverBorderColor;
 	
 	@JsonSerialize(using = SingleElementListSerializer.class)
 	private List<? extends Color> pointBackgroundColor;
@@ -83,6 +87,27 @@ public class Dataset implements Serializable{
 	private Double hoverBorderWidth;
 	private BorderCapStyle borderCapStyle;
 	private BorderJoinStyle borderJoinStyle;
+	private Position borderSkipped;
+	
+	public Dataset setHoverBorderColor(Color color) {
+		this.hoverBorderColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setHoverBorderColor(List<? extends Color> asList) {
+		this.hoverBorderColor = asList;
+		return this;
+	}
+	
+	public Dataset setHoverBackgroundColor(Color color) {
+		this.hoverBackgroundColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setHoverBackgroundColor(List<? extends Color> asList) {
+		this.hoverBackgroundColor = asList;
+		return this;
+	}
 	
 	public Dataset setPointHoverBorderColor(Color color) {
 		this.pointHoverBorderColor = Arrays.asList(color);

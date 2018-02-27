@@ -39,7 +39,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(1);
+				.setStack("1");
 		
 		
 		
@@ -50,7 +50,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(1);
+				.setStack("1");
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("Dataset 3")
@@ -59,7 +59,7 @@ public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(1);
+				.setStack("1");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));
 		

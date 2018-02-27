@@ -21,6 +21,7 @@ public class Title implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Boolean display;
 	private List<StringValue> text;
+	private StringValue labelString;
 	private Position position;
 	private Integer fontSize;
 	private String fontFamily;

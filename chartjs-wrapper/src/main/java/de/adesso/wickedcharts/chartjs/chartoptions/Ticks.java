@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import lombok.experimental.Accessors;
 
 /**
@@ -26,33 +30,20 @@ public class Ticks implements Serializable{
 	
 	// Category Axes
 	private Label labels;
-	private Integer min;
-	private Integer max;
+	private ValueType min;
+	private ValueType max;
 	
 	// Linear Axes
 	private Boolean beginAtZero;
-	//min
-	//max
 	private Number maxTicksLimit;
-	private Integer stepSize;
-	private Integer suggestedMax;
-	private Integer suggestedMin;
-	
-	// Logarithmic Axes
-	//min
-	//max
+	private Number stepSize;
+	private Number suggestedMax;
+	private Number suggestedMin;
 	
 	// Radial - Linear
 	private Color backdropColor;
 	private Number backdropPaddingX;
 	private Number backdropPaddingY;
-	// beginAtZero
-	// min
-	// max
-	// maxTicksLimit
-	// stepsize
-	// suggestedMax
-	// suggestedMin
 	private Boolean showLabelBackdrop;
 	
 	// styling
@@ -66,4 +57,34 @@ public class Ticks implements Serializable{
 	private TickStyle minor;
 	private TickStyle major;
 	private TickSource source;
+	
+	public Ticks setMin(Integer min) {
+		this.min = new IntegerValue(min);
+		return this;
+	}
+	
+	public Ticks setMin(Double min) {
+		this.min = new DoubleValue(min);
+		return this;
+	}
+	
+	public Ticks setMin(String min) {
+		this.min = new StringValue(min);
+		return this;
+	}
+	
+	public Ticks setMax(Integer max) {
+		this.max = new IntegerValue(max);
+		return this;
+	}
+	
+	public Ticks setMax(Double max) {
+		this.max = new DoubleValue(max);
+		return this;
+	}
+	
+	public Ticks setMax(String max) {
+		this.max = new StringValue(max);
+		return this;
+	}
 }

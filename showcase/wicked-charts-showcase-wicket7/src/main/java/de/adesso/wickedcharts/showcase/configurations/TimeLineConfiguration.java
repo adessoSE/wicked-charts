@@ -105,6 +105,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 		
 		Options options = new Options()
 				.setTitle(new Title()
+						.setDisplay(true)
 						.setText("Chart.js Time Scale"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
