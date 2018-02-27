@@ -71,7 +71,7 @@ public class JsonRenderer {
 		this.jacksonModule.addSerializer(DateTimeValue.class, new DateTimeValueSerializer());
 		this.jacksonModule.addSerializer(JavaScriptReference.class, new JavaScriptReferenceSerializer());
 		this.jacksonModule.addSerializer(FillingMode.class, new FillingModeSerializer());
-
+		this.jacksonModule.addSerializer(HexColor.class, new HexColorSerializer());
 		
 		ObjectMapper mapper = createDefaultObjectMapper();
 		SingleElementListObjectMapper.getInstance().registerModule(jacksonModule);
