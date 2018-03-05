@@ -1,12 +1,11 @@
 dependencies {
-	compile 'org.apache.wicket:wicket-core:7.1.0:' 
-	compile 'org.apache.wicket:wicket-extensions:7.1.0:'
-	compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.0.0-SNAPSHOT'
-	compile 'de.adesso.wicked-charts:wicked-charts-showcase-options:3.0.0-SNAPSHOT'
-	compile 'org.wicketstuff:wicketstuff-gae-initializer:7.1.0'
-	compile 'org.slf4j:slf4j-log4j12:1.7.12'
-	compile 'log4j:log4j:1.2.17'
+	compile 'org.apache.wicket:wicket-core:1.5.10' 
+	compile 'org.apache.wicket:wicket-extensions:1.5.10'
+	compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.0.0'
+	compile project(':wicked-charts-showcase-options')
+	compile 'org.slf4j:slf4j-log4j12:1.6.2'
+	compile 'log4j:log4j:1.2.16'
+	compile 'org.eclipse.jetty.aggregate:jetty-all-server:7.5.0.v20110901'
 	testCompile 'junit:junit:4.12'
-	compileOnly 'org.eclipse.jetty.aggregate:jetty-all-server:8.1.18.v20150929'
 	compile 'commons-io:commons-io:2.4'
 }

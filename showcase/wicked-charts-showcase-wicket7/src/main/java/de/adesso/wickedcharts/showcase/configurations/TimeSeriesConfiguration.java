@@ -76,7 +76,7 @@ public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 		Data data = new Data()
 				.setLabels(labels)
 				.setDatasets(Arrays.asList(new Dataset()
-						.setLabel("CHRT - Chart.js Corporation")
+						.setLabel("My Dataset")
 						.setData(randomData)
 						.setType(ChartType.LINE)
 						.setPointRadius(0)

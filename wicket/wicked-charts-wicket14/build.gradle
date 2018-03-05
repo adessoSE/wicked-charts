@@ -1,5 +1,5 @@
 dependencies {
 	compile project(':highcharts-wrapper')
 	compile 'org.apache.wicket:wicket:1.4.22'
-	testCompile 'junit:junit:4.12'
+	testCompile 'junit_junit:4.12'
 }

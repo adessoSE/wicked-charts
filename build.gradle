@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-    	mavenLocal()
+       mavenLocal()
         jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
@@ -75,7 +75,7 @@ subprojects {
 
     publishing {
         publications {
-            mavenPublication(MavenPublication) {
+            "$project.name"(MavenPublication) {
                 from components.java
                 artifact sourcesJar {
                     classifier "sources"
@@ -83,8 +83,8 @@ subprojects {
                 artifact javadocJar {
                     classifier "javadoc"
                 }
-                groupId 'de.adesso'
-                artifactId 'wicked-charts'
+                groupId 'de.adesso.wicked-charts'
+                artifactId project.name
                 version project.version
                 pom.withXml {
                     def root = asNode()
@@ -143,4 +143,5 @@ subprojects {
         publish = true
     }
 }
+
 

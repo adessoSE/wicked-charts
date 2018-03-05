@@ -1,26 +1,194 @@
-subprojects{
-	buildscript {
-		repositories {
-			maven {
-				url "http://plugins.gradle.org/m2/"
-			}
-		}
-		dependencies {
-			classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4"
-		}
-	}
-
-	apply plugin: 'java'
-
-	
-	repositories {
-	    mavenLocal()
-	    mavenCentral()
-	    jcenter()
-	}
-	
-	// run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-	version = '3.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
-	sourceCompatibility = 1.8
+buildscript {
+    repositories {
+    mavenLocal()
+        jcenter()
+       maven {
+         url "https://plugins.gradle.org/m2/"
+       }
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
+        classpath group: 'org.springframework', name: 'springloaded', version: "${springloaded_version}"
+    }
 }
+
+subprojects{
+
+apply plugin: 'java'
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+processResources {
+	from 'src/main/java'
+	from 'src/main/resources'
+}
+
+bootRun {
+    // default application configuration for running application via bootRun in development mode
+    // (in production, these properties are defined in application.properties)
+    main = 'de.adesso.wickedcharts.showcase.boot.ShowcaseBooter'
+    jvmArgs '-Xdebug',
+           // '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9009',
+            '-Dserver.port=8080',
+            '-Dwicket.configurationType=DEVELOPMENT',
+            '-Dspring.jpa.hibernate.ddl-auto=update'
+}
+    
+dependencies {
+	compile(
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+            [group: 'com.googlecode.wicked-charts', name: 'wicked-charts-wicket7', version: "${wicketcharts_version}"],
+    )
+
+    compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
+    )
+    providedCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: "${spring_boot_version}")
+
+	//compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4j_version}"
+	compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
+	testCompile 'junit:junit:4.12'
+}
+
+configurations.all {
+    exclude module: 'slf4j-log4j12'
+}
+
+// run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
+version = '3.0.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+sourceCompatibility = 1.8
+
+ext {
+    bintrayUser = System.getProperty("bintray.user")
+    bintrayKey = System.getProperty("bintray.key")
+    buildNumber = System.getProperty("build.number")
+}
+
+sourceSets.main.resources {
+ srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
+ }
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.output
+	from sourceSets.main.allSource
+}
+
+javadoc.failOnError = false
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "thombergs"
+            name "Tom Hombergs"
+            email "tom.hombergs@gmail.com"
+        }
+    }
+
+    scm {
+        url "https://github.com/adessoag/wicked-charts"
+    }
+}
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar {
+                classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+            groupId 'de.adesso.wicked-charts'
+            artifactId 'wicked-charts-showcase-options'
+            version '3.0.0'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
+                root.appendNode('name', 'Wicked Charts')
+                root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
+artifactory {
+    contextUrl = 'http://oss.jfrog.org'
+    publish {
+        repository {
+            repoKey = 'oss-snapshot-local'
+            username = bintrayUser
+            password = bintrayKey
+        }
+        defaults {
+            publications('mavenPublication')
+            publishArtifacts = true
+            publishPom = true
+            properties = [
+                    'build.number': buildNumber,
+                    'build.name'  : 'wicked-charts'
+            ]
+        }
+    }
+    resolve {
+        repoKey = 'jcenter'
+    }
+    clientConfig.info.setBuildNumber(buildNumber)
+    clientConfig.info.setBuildName('wicked-charts')
+}
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+    publications = ['mavenPublication']
+
+    pkg {
+        repo = 'wicked-charts'
+        name = 'wicked-charts'
+        userOrg = 'adessoag'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/adessoag/wicked-charts'
+        version {
+            name = project.version
+            desc = "build ${buildNumber}"
+            released = new Date()
+        }
+    }
+
+    publish = true
+}
+}
+
+
+
+
 

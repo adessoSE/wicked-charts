@@ -10,3 +10,4 @@ settings.xml
 build/
 apidocs/
 javadocs/
+/.metadata/

@@ -17,10 +17,12 @@ package de.adesso.wickedcharts.showcase;
 
 import java.io.Serializable;
 
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.springframework.stereotype.Component;
 
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 
@@ -36,6 +38,7 @@ import de.adesso.wickedcharts.showcase.configurations.legendposition.*;
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
+
 
 public class HomepageChartJs extends WebPage implements Serializable {
 
