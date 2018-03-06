@@ -6,7 +6,6 @@ dependencies {
 	compile 'org.slf4j:slf4j-log4j12:1.7.12'
 	compile 'log4j:log4j:1.2.17'
 	testCompile 'junit:junit:4.12'
-	compile 'org.eclipse.jetty.aggregate:jetty-all-server:8.1.18.v20150929'
 	compile 'commons-io:commons-io:2.4'
 	compile 'org.apache.wicket:wicket-extensions:7.1.0'
 }

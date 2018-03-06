@@ -61,6 +61,12 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 }
 
+processResources {
+    filter ReplaceTokens, tokens: [
+            "application.version": project.property("version")
+    ]
+}
+
 configurations.all {
     exclude module: 'slf4j-log4j12'
 }
