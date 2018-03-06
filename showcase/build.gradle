@@ -26,12 +26,12 @@ repositories {
 }
 
 processResources {
-	from 'src/main/java'
-	from 'src/main/resources'
+       from 'src/main/java'
+       from 'src/main/resources'
 }
     
 dependencies {
-	testCompile 'junit:junit:4.12'
+       testCompile 'junit:junit:4.12'
 }
 
 // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
@@ -45,13 +45,13 @@ ext {
 }
 
 sourceSets.main.resources {
- srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
- }
+srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
+}
 
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.output
-	from sourceSets.main.allSource
+       from sourceSets.main.allSource
 }
 
 javadoc.failOnError = false
@@ -156,6 +156,7 @@ bintray {
     publish = true
 }
 }
+
 
 
 
