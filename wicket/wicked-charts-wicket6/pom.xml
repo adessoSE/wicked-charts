@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>wicked-charts-wicket6</artifactId>
-    <name>Wicked Charts for Wicket 6.x</name>
+    <artifactId>wicked-charts-wicket15</artifactId>
+    <name>Wicked Charts for Wicket 1.5.x</name>
     <packaging>jar</packaging>
 
     <description>
-        Charting library for Wicket 6.x
+        Charting library for Wicket 1.5.x.
     </description>
 
     <parent>
@@ -152,13 +152,7 @@
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
-            <version>6.21.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <version>1.5.13</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
