@@ -9,7 +9,7 @@ Beautiful and interactive javascript charts for Java-based web applications.
  * Check out the [FAQ](https://github.com/thombergs/wicked-charts/wiki/FAQ)
  * [Subscribe](http://wicked-charts.2319560.n4.nabble.com/template/NamlServlet.jtp?macro=subscribe&node=1) to the [Mailing List](http://wicked-charts.2319560.n4.nabble.com/)
 
-[![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
+[![Build Status](https://travis-ci.org/adessoAG/wicked-charts.png?branch=master)](https://travis-ci.org/adessoAG/wicked-charts)
 
 What is Wicked Charts?
 ======================

@@ -89,7 +89,7 @@ subprojects {
                 pom.withXml {
                     def root = asNode()
                     root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
-                    root.appendNode('name', 'Wicked Charts')
+                    root.appendNode('name', project.name)
                     root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
                     root.children().last() + pomConfig
                 }
@@ -111,7 +111,7 @@ subprojects {
                 publishPom = true
                 properties = [
                         'build.number': buildNumber,
-                        'build.name'  : 'wicked-charts'
+                        'build.name'  : project.name
                 ]
             }
         }
@@ -119,7 +119,7 @@ subprojects {
             repoKey = 'jcenter'
         }
         clientConfig.info.setBuildNumber(buildNumber)
-        clientConfig.info.setBuildName('wicked-charts')
+        clientConfig.info.setBuildName(project.name)
     }
 
     bintray {
