@@ -24,7 +24,7 @@ public class GridLines implements Serializable {
 	private Boolean drawTicks;
 	@JsonSerialize(using = SingleElementListSerializer.class)
 	private List<Color> color;
-	private Color zeroLineColor; // TODO: check if change from rgbaColor to Color affects output
+	private Color zeroLineColor;
 	private Boolean offsetGridLines;
 	private List<String> borderDash;
 	private Number borderDashOffset;

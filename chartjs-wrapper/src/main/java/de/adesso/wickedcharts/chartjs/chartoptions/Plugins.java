@@ -9,5 +9,5 @@ import lombok.experimental.Accessors;
 public class Plugins implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Filler filler;
-	SamplesFillerAnalyzer samples_filler_analyzer;
+	private SamplesFillerAnalyzer samples_filler_analyzer;
 }
