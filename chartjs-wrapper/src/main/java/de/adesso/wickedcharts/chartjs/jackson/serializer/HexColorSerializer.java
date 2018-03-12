@@ -12,11 +12,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.HexColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbColor;
 
 public class HexColorSerializer extends JsonSerializer<HexColor> {
-	
+
+	private static final String HEX = "'#%02X%02X%02X'";
+
 	@Override
 	public void serialize(HexColor color, JsonGenerator jgen, SerializerProvider provider)
 			throws IOException, JsonProcessingException {
-		jgen.writeRawValue(color.getValue());
+		jgen.writeRawValue(String.format(HEX, color.getRed(), color.getGreen(), color.getBlue()));
 	}
 
 }
