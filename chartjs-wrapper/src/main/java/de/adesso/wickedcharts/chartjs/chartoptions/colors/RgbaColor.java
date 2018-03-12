@@ -9,6 +9,4 @@ public class RgbaColor extends RgbColor {
 		super(red, green, blue);
 		this.alpha = alpha;
 	}
-
-	
 }

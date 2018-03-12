@@ -8,5 +8,4 @@ public class RgbColor extends Color {
 	private int red;
 	private int green;
 	private int blue;
-
 }

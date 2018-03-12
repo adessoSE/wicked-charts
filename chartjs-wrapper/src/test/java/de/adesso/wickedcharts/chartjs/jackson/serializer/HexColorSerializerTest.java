@@ -1,7 +1,6 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.HexColor;
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,5 +31,5 @@ public class HexColorSerializerTest {
 		String json = renderer.toJson(testString);
 		assertTrue(json.contains("#7BEA38"));
 	}
-
 }
+
