@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 public class WickedChartsJacksonModule extends SimpleModule {
 
 	public WickedChartsJacksonModule() {
-		super("wicked-charts", new Version(1, 3, 0, null, "com.googlecode.wicked-charts", "wicked-charts"));
+		super("wicked-charts", new Version(1, 3, 0, null, "de.adesso.wicked-charts", "wicked-charts"));
 	}
 
 }

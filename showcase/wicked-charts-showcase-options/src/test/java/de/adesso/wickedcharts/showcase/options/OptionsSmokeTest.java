@@ -15,7 +15,7 @@ public class OptionsSmokeTest {
       IllegalAccessException, ClassNotFoundException, IOException {
     Set<Class<?>> classes = ClassFinder
         .getClasses(OptionsSmokeTest.class
-            .getClassLoader(), "com.googlecode.wickedcharts.showcase.options");
+            .getClassLoader(), "de.adesso.wickedcharts.showcase.options");
 
     JsonRenderer renderer = new JsonRenderer();
 

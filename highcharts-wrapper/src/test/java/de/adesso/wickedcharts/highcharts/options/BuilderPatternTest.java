@@ -19,11 +19,11 @@ public class BuilderPatternTest {
 
 	private final static String[] PACKAGES_TO_TEST = {
 
-	"com.googlecode.wicketcharts.highcharts.options",
+	"de.adesso.wicketcharts.highcharts.options",
 
-	"com.googlecode.wicketcharts.highcharts.options.color",
+	"de.adesso.wicketcharts.highcharts.options.color",
 
-	"com.googlecode.wicketcharts.highcharts.options.series" };
+	"de.adesso.wicketcharts.highcharts.options.series" };
 
 	/**
 	 * A class is only tested if it is dubbed relevant by this method.

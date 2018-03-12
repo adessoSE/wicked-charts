@@ -36,7 +36,7 @@ import de.adesso.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
  * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
-@FacesComponent("com.googlecode.wickedcharts.Chart")
+@FacesComponent("de.adesso.wickedcharts.Chart")
 public class UIChart extends UIOutput {
 
 	private String style;
