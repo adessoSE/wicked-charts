@@ -1,8 +1,0 @@
-{
-  	"stops": [
-	 [0, "#ff0000"],
-	 [0.5, Highcharts.getOptions().colors[1]],
-	 [1, "#ffffff"]
-  ],
-  "linearGradient": [0, 1, 0, 0]
-}

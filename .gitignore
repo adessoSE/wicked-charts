@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .classpath
 .settings
 .project
@@ -12,14 +11,4 @@ build/
 apidocs/
 javadocs/
 /.metadata/
-=======
-**/.classpath
-**/.settings
-**/.project
-**/.idea
-**/*.iml
-**/target
-**/bin
-**/.gradle
-
->>>>>>> b3813bf29adfd5dcc0c17877471e1b0650f64614
+.class
