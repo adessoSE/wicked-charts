@@ -1,6 +1,5 @@
-package de.adesso.wickedcharts.chartjs.colors;
+package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.HexColor;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -17,9 +16,24 @@ public class HexColorTest {
 
     @Test
     public void testHexColorString() {
-        HexColor color = new HexColor("#101010");
-        assertEquals(16,color.getRed());
+        HexColor color = new HexColor("#FF1010");
+        assertEquals(255,color.getRed());
         assertEquals(16,color.getGreen());
         assertEquals(16,color.getBlue());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testHexColorRGBException() {
+        HexColor color = new HexColor(256,45,67);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testHexColorRGBExceptionNegative() {
+        HexColor color = new HexColor(-1,45,67);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testHexColorException() {
+        HexColor color = new HexColor("#FG1010");
     }
 }
