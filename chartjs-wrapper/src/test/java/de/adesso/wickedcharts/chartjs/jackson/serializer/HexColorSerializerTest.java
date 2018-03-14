@@ -12,7 +12,7 @@ public class HexColorSerializerTest {
 	private JsonRenderer renderer;
 	private HexColor testColor;
 	private String testString;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		renderer = new JsonRenderer();
@@ -28,8 +28,8 @@ public class HexColorSerializerTest {
 
 	@Test
 	public void testHexStringSerializer() {
-		String json = renderer.toJson(testString);
+		testColor = new HexColor(testString);
+		String json = renderer.toJson(testColor);
 		assertTrue(json.contains("#7BEA38"));
 	}
 }
-
