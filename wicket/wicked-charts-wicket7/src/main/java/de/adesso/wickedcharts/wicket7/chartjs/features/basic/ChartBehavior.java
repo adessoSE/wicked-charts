@@ -74,11 +74,13 @@ public class ChartBehavior extends Behavior {
                     optionsVarname, jsonOptions,chartVarname,contextVarname,markupId)));
         }
         else {
+        	String optionalJavascript = options.getOptionalJavascript();
+        	String replacedVariablesInOptionalJavascript = optionalJavascript.replace("{0}", contextVarname);
             response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
                     "{5} var {0} = {1};"
                     + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
                     + " window.{2} = new Chart({3},{0});",
-                    optionsVarname, jsonOptions,chartVarname,contextVarname,markupId,options.getOptionalJavascript())));
+                    optionsVarname, jsonOptions,chartVarname,contextVarname,markupId,replacedVariablesInOptionalJavascript)));
         }
     }
 
@@ -99,7 +101,7 @@ public class ChartBehavior extends Behavior {
     public void renderHead(final Component component, final IHeaderResponse response) {
         component.setOutputMarkupId(true);
         final String id = component.getMarkupId();
-        ChartConfiguration options = this.chart.getOptions();
+        ChartConfiguration options = this.chart.getChartConfiguration();
 
         JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
         includeJavascriptDependencies(response, options);

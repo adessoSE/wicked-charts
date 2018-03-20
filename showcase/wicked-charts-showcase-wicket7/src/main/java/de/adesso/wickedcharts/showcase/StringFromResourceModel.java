@@ -21,6 +21,7 @@ import java.io.InputStreamReader;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.wicket.model.IModel;
+import org.springframework.stereotype.Component;
 
 public class StringFromResourceModel implements IModel<String> {
 

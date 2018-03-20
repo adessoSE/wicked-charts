@@ -17,6 +17,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that displays different datasets on a radar.
+ *
+ */
 @SuppressWarnings("serial")
 public class OtherRadarChartConfiguration extends ShowcaseConfiguration {
 	public OtherRadarChartConfiguration() {

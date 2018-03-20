@@ -1,8 +1,8 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
-public enum BooleanFillingMode implements FillingMode {
-	FALSE(false)
-//	,TRUE(true)
+public enum BooleanFillingMode implements FillingMode, FillingModeLine {
+	FALSE(false),
+	TRUE(true)
 	;
 
 	private Boolean value;

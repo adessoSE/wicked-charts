@@ -19,10 +19,12 @@ import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.showcase.ShowcaseSession;
 import de.adesso.wickedcharts.showcase.StringFromResourceModel;
+import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Fragment;
 
 public class UpdateChartJsLink extends AjaxLink<Void> {
 
@@ -33,6 +35,7 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     private final ChartConfiguration config;
 
     private final Label codeContainer;
+    
 
     /**
      * Constructs a new Link.
@@ -65,7 +68,7 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     @Override
     public void onClick(final AjaxRequestTarget target) {
         this.chart
-                .setOptions(this.getOptions());
+                .setChartConfiguration(this.getOptions());
         ((ShowcaseSession) getSession())
                 .setCurrentChartjsConfiguration(this.config);
 
@@ -74,10 +77,17 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
                         .getClass(), this.config
                         .getClass()
                         .getSimpleName() + ".java"));
-        target
-                .add(this.chart);
-        target
-                .add(this.codeContainer);
+
+        
+       
+        ((ShowcaseConfiguration)config).modfiyIndividualMarkup((Fragment) chart.getParent().get("optionalMarkup"));
+        ((Fragment) chart.getParent().get("optionalMarkup")).detach();
+        
+        target.add(this.chart);
+        target.add(this.codeContainer);
+        target.add((Fragment) chart.getParent().get("optionalMarkup"));
+
+        
 
 //         make syntaxhighlighter highlight the changed code
         target

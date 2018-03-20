@@ -5,6 +5,7 @@ import java.util.List;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
+import de.adesso.wickedcharts.chartjs.chartoptions.CubicInterpolationMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
 import de.adesso.wickedcharts.chartjs.chartoptions.Hover;
@@ -19,6 +20,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+/**
+ * 
+ * A sample that shows how configuring interpolation of lines in a line chart is configured.
+ *
+ */
 
 @SuppressWarnings("serial")
 public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
@@ -38,7 +45,7 @@ public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.RED)
 				.setData(datasetsData)
 				.setFill(false)
-				.setCubicInterpolationMode("monotone");
+				.setCubicInterpolationMode(CubicInterpolationMode.MONOTONE);
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Cubic interpolation (default)")

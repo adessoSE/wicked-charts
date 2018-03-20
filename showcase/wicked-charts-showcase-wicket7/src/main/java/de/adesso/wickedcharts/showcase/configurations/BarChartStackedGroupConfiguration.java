@@ -2,6 +2,12 @@ package de.adesso.wickedcharts.showcase.configurations;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * A sample that shows how a stacked group bar chart configuration looks.
+ *
+ */
+
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
@@ -33,7 +39,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(0);
+				.setStack("0");
 		
 		Dataset dataset2 = new Dataset()
 				.setLabel("Dataset 2")
@@ -42,7 +48,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(0);
+				.setStack("0");
 		
 		Dataset dataset3 = new Dataset()
 				.setLabel("Dataset 3")
@@ -51,7 +57,7 @@ public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {
 				.setBorderWidth(1)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setStack(1);
+				.setStack("1");
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2, dataset3));
 		

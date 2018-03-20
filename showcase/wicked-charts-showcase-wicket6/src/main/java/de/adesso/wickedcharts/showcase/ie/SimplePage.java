@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.IChoiceRenderer;
@@ -138,7 +139,7 @@ public class SimplePage extends WebPage {
 						"selectedOptions"), SimplePage.choices);
 		form.add(dropdown);
 
-		dropdown.setChoiceRenderer(new IChoiceRenderer<ShowcaseOptions>() {
+		dropdown.setChoiceRenderer(new ChoiceRenderer<ShowcaseOptions>() {
 
 			private static final long serialVersionUID = 1L;
 

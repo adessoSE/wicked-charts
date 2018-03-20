@@ -16,10 +16,15 @@ import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.TickSource;
 import de.adesso.wickedcharts.chartjs.chartoptions.Ticks;
+import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that displays a progression of a dataset.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 
@@ -27,6 +32,9 @@ public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 		
 		
 		Options options = new Options()
+				.setTitle(new Title()
+						.setDisplay(true)
+						.setText("ChartJs Time Series"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setType("time")
@@ -68,7 +76,7 @@ public class TimeSeriesConfiguration extends ShowcaseConfiguration {
 		Data data = new Data()
 				.setLabels(labels)
 				.setDatasets(Arrays.asList(new Dataset()
-						.setLabel("CHRT - Chart.js Corporation")
+						.setLabel("My Dataset")
 						.setData(randomData)
 						.setType(ChartType.LINE)
 						.setPointRadius(0)

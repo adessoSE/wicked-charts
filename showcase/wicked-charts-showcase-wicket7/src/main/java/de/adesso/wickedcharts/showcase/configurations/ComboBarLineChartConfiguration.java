@@ -14,6 +14,14 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+
+/**
+ * 
+ * A sample that shows how a combo bar-line chart configuration looks.
+ *
+ */
+		
+		
 @SuppressWarnings("serial")
 public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 	public ComboBarLineChartConfiguration() {
@@ -22,11 +30,11 @@ public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 		Data data = new Data();
 		Dataset dataset1 = new Dataset();
 		dataset1.setType(ChartType.LINE)
-		.setBorderColor(SimpleColor.BLUE)
-		.setBorderWidth(2)
-		.setFill(false)
-		.setData(IntegerValue.of(randomIntegerList(7)))
-		.setLabel("Dataset 1");
+				.setBorderColor(SimpleColor.BLUE)
+				.setBorderWidth(2)
+				.setFill(false)
+				.setData(IntegerValue.of(randomIntegerList(7)))
+				.setLabel("Dataset 1");
 		
 		Dataset dataset2 = new Dataset()
 				.setType(ChartType.BAR)

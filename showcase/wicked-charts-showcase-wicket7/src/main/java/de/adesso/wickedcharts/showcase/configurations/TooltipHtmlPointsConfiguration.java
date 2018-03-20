@@ -1,6 +1,9 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.apache.wicket.markup.html.panel.Fragment;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
@@ -22,7 +25,8 @@ public class TooltipHtmlPointsConfiguration extends ShowcaseConfiguration {
     	
     	String optionalJavascript=readFile("de/adesso/wickedcharts/showcase/customTooltip-Point.js");
     	
-    	setOptionalJavascript(optionalJavascript);
+    	setOptionalJavascript(new ArrayList<String>());
+    	addOptionalJavascript(optionalJavascript);
     	
 		Data data = new Data()
 				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
@@ -56,5 +60,11 @@ public class TooltipHtmlPointsConfiguration extends ShowcaseConfiguration {
 						.setCustom(new JavaScriptReference("customTooltips"))
 								);
 		setOptions(options);
+	}
+	
+	@Override
+	public void modfiyIndividualMarkup(Fragment optionalMarkup) {
+		Fragment frag = new Fragment("optionalMarkup","pointTooltip",optionalMarkup.getParent());
+		optionalMarkup.replaceWith(frag);
 	}
 }

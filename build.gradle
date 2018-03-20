@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+       mavenLocal()
         jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
@@ -74,7 +75,7 @@ subprojects {
 
     publishing {
         publications {
-            mavenPublication(MavenPublication) {
+            "$project.name"(MavenPublication) {
                 from components.java
                 artifact sourcesJar {
                     classifier "sources"
@@ -142,4 +143,5 @@ subprojects {
         publish = true
     }
 }
+
 

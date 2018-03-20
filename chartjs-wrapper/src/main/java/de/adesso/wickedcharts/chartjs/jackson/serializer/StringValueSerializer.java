@@ -14,7 +14,9 @@ public class StringValueSerializer extends JsonSerializer<StringValue> {
 	@Override
 	public void serialize(StringValue value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		gen.writeString(value.getValue());
+		if(value.getValue() != null) {
+			gen.writeString(value.getValue());
+		}
 		
 	}
 

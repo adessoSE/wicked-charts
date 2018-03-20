@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
@@ -10,6 +11,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipPosition;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -22,8 +24,9 @@ public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
     	setType(ChartType.LINE);
     	
     	String optionalJavascript=  readFile("de/adesso/wickedcharts/showcase/customTooltip.js");
-    	
-    	setOptionalJavascript(optionalJavascript);
+
+		setOptionalJavascript(new ArrayList<String>());
+    	addOptionalJavascript(optionalJavascript);
     	
 		Data data = new Data()
 				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
@@ -53,9 +56,11 @@ public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
 				.setTooltips(new Tooltips()
 						.setEnabled(false)
 						.setMode(TooltipMode.INDEX)
-						.setPosition(Position.NEAREST)
+						.setPosition(TooltipPosition.NEAREST)
 						.setCustom(new JavaScriptReference("customTooltips"))
 								);
 		setOptions(options);
 	}
+	
+	
 }

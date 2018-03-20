@@ -17,13 +17,17 @@ package de.adesso.wickedcharts.showcase;
 
 import java.io.Serializable;
 
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.panel.Fragment;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.springframework.stereotype.Component;
 
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+
 import de.adesso.wickedcharts.showcase.configurations.*;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.GridLinesBasicConfiguration;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.GridLinesChartAreaConfiguration;
@@ -35,18 +39,23 @@ import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
 
+
 public class HomepageChartJs extends WebPage implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
     public HomepageChartJs(final PageParameters parameters) {
+
+    	Fragment optionalMarkup = new Fragment("optionalMarkup","defaultTooltip",this);
+    	optionalMarkup.setOutputMarkupId(true);
+    	add(optionalMarkup);
     	
         ChartConfiguration config = this.getConfigurationToDisplay();
         final Chart chart = new Chart("chart", config);
         this.add(chart);
         addNavigationLinks();
         Label codeContainer = this.addCodeContainer();
-        this.addChartLinks(chart, codeContainer);
+        this.addChartLinks(chart, codeContainer, optionalMarkup);
     }
 
 	private Label addCodeContainer() {
@@ -63,8 +72,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
 		this.add(new ChartjsShowcaseLink());
 	}
 	
-	private void addChartLinks(Chart chart, Label codeContainer) { 
-        this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
+	private void addChartLinks(Chart chart, Label codeContainer, Fragment optionalMarkup) { 
+		this.add(new UpdateChartJsLink("LineChartBasic", chart, codeContainer,
                 new LineChartBasicConfiguration()));
         this.add(new UpdateChartJsLink("LineChartMultiAxis", chart, codeContainer,
                 new LineChartMultiAxisConfiguration())); 
@@ -175,11 +184,18 @@ public class HomepageChartJs extends WebPage implements Serializable {
         this.add(new UpdateChartJsLink("TooltipHtmlPoints", chart, codeContainer,
                 new TooltipHtmlPointsConfiguration())); 
         this.add(new UpdateChartJsLink("LegendPointStyle", chart, codeContainer,
-                new LegendPointStyleConfiguration())); 
+               new LegendPointStyleConfiguration())); 
         this.add(new UpdateChartJsLink("LineChartProgressBar", chart, codeContainer,
                 new LineChartProgressBarConfiguration())); 
-        
-	} 
+        this.add(new UpdateChartJsLink("TooltipAverage", chart, codeContainer,
+                new TooltipAverageConfiguration())); 
+        this.add(new UpdateChartJsLink("TooltipNearest", chart, codeContainer,
+                new TooltipNearestConfiguration()));
+        this.add(new UpdateChartJsLink("DataLabellingChart", chart, codeContainer,
+                new DataLabellingChartConfiguration()));
+
+         
+	}
 
 	private ChartConfiguration getConfigurationToDisplay() {
         ChartConfiguration config = ((ShowcaseSession) this.getSession())

@@ -11,6 +11,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
+import de.adesso.wickedcharts.chartjs.chartoptions.FontStyle;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
@@ -27,6 +28,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample which highlights the important points of the x-axis.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimePointConfiguration extends ShowcaseConfiguration {
 	
@@ -112,6 +117,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 		
 		Options options = new Options()
 				.setTitle(new Title()
+						.setDisplay(true)
 						.setText("Chart.js Time Scale"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
@@ -123,7 +129,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 								.setTicks(new Ticks()
 										.setMajor(new TickStyle()
 												.setFontColor(new StringValueColor("red"))
-												.setFontStyle("bold"))))
+												.setFontStyle(FontStyle.BOLD))))
 						.setYAxes(new AxesScale()
 								.setDisplay(true)
 								.setScaleLabel(new ScaleLabel()

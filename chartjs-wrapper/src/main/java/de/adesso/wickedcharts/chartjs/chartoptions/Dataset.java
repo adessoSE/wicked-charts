@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,9 +15,15 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines all Dataset options.
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
-public class Dataset {
+public class Dataset implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private ChartType type;
 	private String label;
 
@@ -28,46 +35,166 @@ public class Dataset {
 	private Integer borderWidth;
 	private List<? extends ValueType> data;
 	private FillingMode fill;
-	private Integer stack;
+	private String stack;
 	
 	@JsonProperty("yAxisID")
 	private String yAxisID;
 	
-	private String pointStyle;
-	private String steppedLine;
+	@JsonProperty("xAxisID")
+	private String xAxisID;
+	
+	private PointStyle pointStyle;
+	private SteppedLineValue steppedLine;
 	private Integer lineTension;
-	private String cubicInterpolationMode;
+	private CubicInterpolationMode cubicInterpolationMode;
 	private List<String> borderDash;
+	private Number borderDashOffset;
 	
 	@JsonSerialize(using = SingleElementListSerializer.class)
-	private List<Integer> pointRadius;
+	private List<? extends Number> pointRadius;
 	
-	private String pointHitRadius;
-	private String pointHoverRadius;
-	private Double pointBorderWidth;
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Number> pointHitRadius;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Number> pointHoverRadius;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Number> pointBorderWidth;
+	
 	private Boolean showLine;
+	private Boolean spanGaps;
 	private Boolean hidden;
-	private Color hoverBackgroundColor;
-	private Color hoverBorderColor;
-	private Color pointBackgroundColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> hoverBackgroundColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> hoverBorderColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> pointBackgroundColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> pointBorderColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> pointHoverBackgroundColor;
+	
+	@JsonSerialize(using = SingleElementListSerializer.class)
+	private List<? extends Color> pointHoverBorderColor;
+	
 	private Double hoverBorderWidth;
+	private BorderCapStyle borderCapStyle;
+	private BorderJoinStyle borderJoinStyle;
+	private Position borderSkipped;
+	
+	public Dataset setHoverBorderColor(Color color) {
+		this.hoverBorderColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setHoverBorderColor(List<? extends Color> asList) {
+		this.hoverBorderColor = asList;
+		return this;
+	}
+	
+	public Dataset setHoverBackgroundColor(Color color) {
+		this.hoverBackgroundColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setHoverBackgroundColor(List<? extends Color> asList) {
+		this.hoverBackgroundColor = asList;
+		return this;
+	}
+	
+	public Dataset setPointHoverBorderColor(Color color) {
+		this.pointHoverBorderColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setPointHoverBorderColor(List<? extends Color> asList) {
+		this.pointHoverBorderColor = asList;
+		return this;
+	}
+	
+	public Dataset setPointHoverBackgroundColor(Color color) {
+		this.pointHoverBackgroundColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setPointHoverBackgroundColor(List<? extends Color> asList) {
+		this.pointHoverBackgroundColor = asList;
+		return this;
+	}
+	
+	public Dataset setPointBorderColor(Color color) {
+		this.pointBorderColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setPointBorderColor(List<? extends Color> asList) {
+		this.pointBorderColor = asList;
+		return this;
+	}
+	
+	public Dataset setPointBackgroundColor(Color color) {
+		this.pointBackgroundColor = Arrays.asList(color);
+		return this;
+	}
+
+	public Dataset setPointBackgroundColor(List<? extends Color> asList) {
+		this.pointBackgroundColor = asList;
+		return this;
+	}
+	
+	public Dataset setPointBorderWidth(Number value) {
+		this.pointBorderWidth = Arrays.asList(value);
+		return this;
+	}
+	
+	public Dataset setPointBorderWidth(List<? extends Number> list) {
+		this.pointBorderWidth = list;
+		return this;
+	}
+	
+	public Dataset setPointHoverRadius(Number value) {
+		this.pointHoverRadius = Arrays.asList(value);
+		return this;
+	}
+	
+	public Dataset setPointHoverRadius(List<? extends Number> list) {
+		this.pointHoverRadius = list;
+		return this;
+	}
+	
+	public Dataset setPointHitRadius(Number value) {
+		this.pointHitRadius = Arrays.asList(value);
+		return this;
+	}
+	
+	public Dataset setPointHitRadius(List<? extends Number> list) {
+		this.pointHitRadius = list;
+		return this;
+	}
 	
 	public Dataset setBackgroundColor(Color color) {
 		this.backgroundColor = Arrays.asList(color);
 		return this;
 	}
 
-	public Dataset setBackgroundColor(List<SimpleColor> asList) {
+	public Dataset setBackgroundColor(List<? extends Color> asList) {
 		this.backgroundColor = asList;
 		return this;
 	}
 	
-	public Dataset setPointRadius(Integer value) {
+	public Dataset setPointRadius(Number value) {
 		this.pointRadius = Arrays.asList(value);
 		return this;
 	}
 	
-	public Dataset setPointRadius(List<Integer> list) {
+	public Dataset setPointRadius(List<? extends Number> list) {
 		this.pointRadius = list;
 		return this;
 	}

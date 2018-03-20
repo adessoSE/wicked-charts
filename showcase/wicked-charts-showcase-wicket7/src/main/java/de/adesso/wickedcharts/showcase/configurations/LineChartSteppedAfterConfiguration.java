@@ -11,6 +11,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
+import de.adesso.wickedcharts.chartjs.chartoptions.SteppedLineValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
@@ -18,6 +19,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+/**
+ * 
+ * A sample that shows how a stepped line chart configuration looks with stepped = after.
+ *
+ */
 
 @SuppressWarnings("serial")
 public class LineChartSteppedAfterConfiguration extends ShowcaseConfiguration {
@@ -37,7 +44,7 @@ public class LineChartSteppedAfterConfiguration extends ShowcaseConfiguration {
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setFill(false)
-				.setSteppedLine("after");
+				.setSteppedLine(SteppedLineValue.AFTER);
 		
 		data.setDatasets(Arrays.asList(dataset1));
 		

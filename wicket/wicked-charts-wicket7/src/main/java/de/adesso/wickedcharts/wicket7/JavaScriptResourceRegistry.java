@@ -35,22 +35,36 @@ public class JavaScriptResourceRegistry {
 
         private ResourceReference reference;
 
+        private boolean enabled;
+        
         public RegistryEntry(final ResourceReference reference) {
             this.reference = reference;
+            this.enabled = true;
         }
 
         public RegistryEntry(final String url) {
             this.url = url;
+            this.enabled = true;
+        }
+        
+        public boolean isEnabled() {
+        	return enabled;
+        }
+        
+        public void setEnabled(boolean enabled) {
+        	this.enabled = enabled;
         }
 
         public void addToHeaderResponse(final IHeaderResponse response) {
-            if (this.url != null) {
-                response.render(JavaScriptReferenceHeaderItem.forUrl(this.url));
-            } else if (this.reference != null) {
-                response.render(JavaScriptReferenceHeaderItem.forReference(this.reference));
-            } else {
-                throw new IllegalStateException("A RegistryEntry must have at least a non-null url or a non-null reference!");
-            }
+        	if(enabled) {
+	            if (this.url != null) {
+	                response.render(JavaScriptReferenceHeaderItem.forUrl(this.url));
+	            } else if (this.reference != null) {
+	                response.render(JavaScriptReferenceHeaderItem.forReference(this.reference));
+	            } else {
+	                throw new IllegalStateException("A RegistryEntry must have at least a non-null url or a non-null reference!");
+	            }
+        	}
         }
 
     }

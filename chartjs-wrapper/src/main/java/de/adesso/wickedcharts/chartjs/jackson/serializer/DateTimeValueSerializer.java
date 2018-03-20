@@ -18,9 +18,11 @@ public class DateTimeValueSerializer extends JsonSerializer<DateTimeValue> {
 	@Override
 	public void serialize(DateTimeValue value, JsonGenerator gen, SerializerProvider serializers)
 			throws IOException, JsonProcessingException {
-		String dateOutput = value.getValue().format(formatter);
-		String output = String.format(MOMENT_FORMAT, dateOutput);
-		gen.writeRawValue(output);
+		if(value.getValue() != null) {
+			String dateOutput = value.getValue().format(formatter);
+			String output = String.format(MOMENT_FORMAT, dateOutput);
+			gen.writeRawValue(output);
+		}
 	}
 	
 }

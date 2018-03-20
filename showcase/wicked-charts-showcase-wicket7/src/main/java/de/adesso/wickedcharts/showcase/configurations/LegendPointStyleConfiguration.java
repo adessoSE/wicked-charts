@@ -11,6 +11,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.HoverMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.LegendLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
+import de.adesso.wickedcharts.chartjs.chartoptions.PointStyle;
 import de.adesso.wickedcharts.chartjs.chartoptions.ScaleLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.Scales;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
@@ -21,6 +22,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingM
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
+
+/**
+ * 
+ * A sample that shows how different point style configurations look.
+ *
+ */
 
 @SuppressWarnings("serial")
 public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
@@ -36,7 +43,7 @@ public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
 				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.RED_TRANSPARENT)
 				.setBorderColor(SimpleColor.RED)
-				.setPointStyle("rectRot")
+				.setPointStyle(PointStyle.RECT_ROT)
 				.setPointRadius(10)
 				.setData(IntegerValue.of(-40, 20, 30, -70, 12, 60, -30))
 				.setFill(BoundaryFillingMode.ORIGIN);

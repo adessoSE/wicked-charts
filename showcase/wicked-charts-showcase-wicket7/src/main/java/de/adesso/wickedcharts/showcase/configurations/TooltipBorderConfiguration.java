@@ -9,6 +9,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.Title;
 import de.adesso.wickedcharts.chartjs.chartoptions.TooltipMode;
+import de.adesso.wickedcharts.chartjs.chartoptions.TooltipPosition;
 import de.adesso.wickedcharts.chartjs.chartoptions.Tooltips;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
@@ -17,6 +18,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample which adds a border to the tooltips.
+ *
+ */
 @SuppressWarnings("serial")
 public class TooltipBorderConfiguration extends ShowcaseConfiguration {
 	public TooltipBorderConfiguration() {
@@ -46,7 +51,7 @@ public class TooltipBorderConfiguration extends ShowcaseConfiguration {
 						.setText("Sample tooltip with border"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
-						.setPosition(Position.NEAREST)
+						.setPosition(TooltipPosition.NEAREST)
 						.setIntersect(false)
 						.setYPadding(10)
 						.setXPadding(10)

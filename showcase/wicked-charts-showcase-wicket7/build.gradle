@@ -1,12 +1,88 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
 dependencies {
-	compile 'org.apache.wicket:wicket-core:7.1.0:' 
-	compile 'org.apache.wicket:wicket-extensions:7.1.0:'
-	compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.0.0-SNAPSHOT'
-	compile 'de.adesso.wicked-charts:wicked-charts-showcase-options:3.0.0-SNAPSHOT'
-	compile 'org.wicketstuff:wicketstuff-gae-initializer:7.1.0'
-	compile 'org.slf4j:slf4j-log4j12:1.7.12'
-	compile 'log4j:log4j:1.2.17'
-	testCompile 'junit:junit:4.12'
-	compileOnly 'org.eclipse.jetty.aggregate:jetty-all-server:8.1.18.v20150929'
-	compile 'commons-io:commons-io:2.4'
+       compile 'org.apache.wicket:wicket-core:7.1.0' 
+       compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.0.0'
+       compile project(':wicked-charts-showcase-options')
+       compile 'org.wicketstuff:wicketstuff-gae-initializer:7.1.0'
+       compile 'log4j:log4j:1.2.17'
+       testCompile 'junit:junit:4.12'
+       compile 'commons-io:commons-io:2.4'
+       compile 'org.apache.wicket:wicket-extensions:7.1.0'
+       compile(
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+            [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket7', version: "${wicketcharts_version}"],
+    	)
+       compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
+    	)
+       compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
 }
+
+
+
+buildscript {
+    repositories {
+    mavenLocal()
+        jcenter()
+       maven {
+         url "https://plugins.gradle.org/m2/"
+       }
+    }
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
+        classpath group: 'org.springframework', name: 'springloaded', version: "${springloaded_version}"
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+
+processResources {
+       from 'src/main/java'
+       from 'src/main/resources'
+       filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
+       filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
+       //filter ReplaceTokens, tokens: [
+            //"application.version": project.property("version")
+   // ]
+   
+   //filter(ReplaceTokens, tokens: [version , "${wicketcharts_version}"])
+   //filter(ReplaceTokens, tokens: [${project.version} :  "200"])
+   //filter ReplaceTokens, tokens: [
+   //     "application.version": project.property("application.version")
+   // ]
+}
+
+bootRun {
+    // default application configuration for running application via bootRun in development mode
+    // (in production, these properties are defined in application.properties)
+    jvmArgs '-Xdebug',
+            '-Dserver.port=8080',
+            '-Dwicket.configurationType=DEVELOPMENT',
+            '-Dspring.jpa.hibernate.ddl-auto=update'
+}
+   
+configurations.all {
+    exclude module: 'slf4j-log4j12'
+}
+
+sourceSets.main.resources {
+srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

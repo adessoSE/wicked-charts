@@ -24,6 +24,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample which displays a time progression line for datasets.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimeLineConfiguration extends ShowcaseConfiguration {
 	
@@ -101,6 +105,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 		
 		Options options = new Options()
 				.setTitle(new Title()
+						.setDisplay(true)
 						.setText("Chart.js Time Scale"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()

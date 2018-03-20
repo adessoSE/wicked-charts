@@ -41,7 +41,7 @@ public class LanguageOptions implements Serializable {
 	 * Highcharts will then automatically fall back to english.
 	 * <p/>
 	 * To look up the locale-specific strings, the resource bundle
-	 * com/googlecode/wicketcharts/highcharts/options/LanguageOptions .properties
+	 * de/adesso/wicketcharts/highcharts/options/LanguageOptions .properties
 	 * is used. To add your own language, simply copy one of the existing resource
 	 * bundles, modify it and then add it in the classpath in the same package.
 	 * <p/>

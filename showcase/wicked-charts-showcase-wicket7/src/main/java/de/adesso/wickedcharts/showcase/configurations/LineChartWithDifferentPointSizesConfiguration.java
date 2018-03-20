@@ -20,6 +20,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * 
+ * A sample that shows how a line chart can be configured to have different point sizes.
+ *
+ */
+
 @SuppressWarnings("serial")
 public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfiguration {
 	public LineChartWithDifferentPointSizesConfiguration() {
@@ -36,7 +42,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBorderColor(SimpleColor.RED)
 				.setData(IntegerValue.of(randomIntegerList(7)))
 				.setPointRadius(Collections.nCopies(7, 15))
-				.setPointHoverRadius("10")
+				.setPointHoverRadius(10)
 				.setFill(false);
 		
 		
@@ -54,7 +60,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 				.setBackgroundColor(SimpleColor.GREEN)
 				.setBorderColor(SimpleColor.GREEN)
 				.setData(IntegerValue.of(randomIntegerList(7)))
-				.setPointHoverRadius("30")
+				.setPointHoverRadius(30)
 				.setFill(false);
 		
 		
@@ -63,7 +69,7 @@ public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfi
 			.setBackgroundColor(SimpleColor.YELLOW)
 			.setBorderColor(SimpleColor.YELLOW)
 			.setData(IntegerValue.of(randomIntegerList(7)))
-			.setPointHitRadius("20")
+			.setPointHitRadius(20)
 			.setFill(false);
 		
 		data.setDatasets(Arrays.asList(dataset1,dataset2,dataset3, dataset4));

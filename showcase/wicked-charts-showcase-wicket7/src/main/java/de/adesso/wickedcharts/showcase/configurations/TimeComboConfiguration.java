@@ -21,6 +21,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample which displays a bar chart for the data distribution and a line chart for the time progression of datasets.
+ *
+ */
 @SuppressWarnings("serial")
 public class TimeComboConfiguration extends ShowcaseConfiguration {
 
@@ -73,6 +77,7 @@ public class TimeComboConfiguration extends ShowcaseConfiguration {
 		
 		setOptions( new Options()
 				.setTitle(new Title()
+						.setDisplay(true)
 						.setText("Chart.js Combo Time Scale"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()

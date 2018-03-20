@@ -33,7 +33,7 @@ public class GridLinesBasicConfiguration extends ShowcaseConfiguration {
 				.setLabel("My First dataset")
 				.setBackgroundColor(SimpleColor.RED)
 				.setBorderColor(SimpleColor.RED)
-				.setData(IntegerValue.of(Arrays.asList(10, 30, 39, 20, 25, 34, -10)))
+				.setData(IntegerValue.of(10, 30, 39, 20, 25, 34, -10))
 				.setFill(false);
 		
 		

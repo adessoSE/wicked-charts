@@ -3,6 +3,7 @@ package de.adesso.wickedcharts.showcase.configurations;
 import java.util.Arrays;
 
 
+
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Dataset;
@@ -21,6 +22,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that displays different datasets on a radar.
+ *
+ */
 @SuppressWarnings("serial")
 public class RadarChartConfiguration extends ShowcaseConfiguration {
 	public RadarChartConfiguration() {
