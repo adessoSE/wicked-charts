@@ -13,13 +13,13 @@ before_install:
 stages:
   - name: build
 
-  # only publish snapshots from "master" branch
+  # only publish snapshots from "master" branch and not in pull requests
   - name: snapshot
-    if: branch = master
+    if: branch = master AND type IN (push)
 
-  # only publish release from "release" branch
+  # only publish release from "release" branch and not in pull requests
   - name: release
-    if: branch = release
+    if: branch = release AND type IN (push)
 
 jobs:
   include:
