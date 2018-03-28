@@ -75,7 +75,7 @@ subprojects {
 
     publishing {
         publications {
-            "$project.name"(MavenPublication) {
+            mavenPublication(MavenPublication) {
                 from components.java
                 artifact sourcesJar {
                     classifier "sources"
