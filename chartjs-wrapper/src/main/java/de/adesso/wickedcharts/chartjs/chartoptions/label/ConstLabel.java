@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Defines constant textlabels for the axes .
+ *
+ */
 public class ConstLabel extends Label {
 	private final String text;
 	

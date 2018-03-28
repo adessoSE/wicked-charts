@@ -3,6 +3,9 @@ package de.adesso.wickedcharts.chartjs.jackson;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+/**
+ * This class maps lists with only one element to a single object in JSON
+ */
 public class SingleElementListObjectMapper {
 	
 	

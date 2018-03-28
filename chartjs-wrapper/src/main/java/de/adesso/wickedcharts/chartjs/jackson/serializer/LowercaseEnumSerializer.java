@@ -23,6 +23,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
+/**
+ * Serializes a LowercaseEnum to JSON
+ */
 public class LowercaseEnumSerializer extends JsonSerializer<LowercaseEnum> {
 
     @Override

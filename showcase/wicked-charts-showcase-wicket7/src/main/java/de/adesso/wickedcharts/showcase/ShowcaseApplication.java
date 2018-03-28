@@ -54,10 +54,10 @@ public class ShowcaseApplication extends WebApplication {
 		JavaScriptResourceRegistry.getInstance().setJQueryReference(
 				new JavaScriptResourceReference(ShowcaseApplication.class,
 						"jquery-1.8.3.min-IEfix.js"));
-
-		mountPage("/start/chartjs", HomepageChartJs.class);
-		mountPage("/start/highcharts", HomepageHighcharts.class);
-		mountPage("/start/highcharts/${theme}", HomepageHighcharts.class);
+		
+		//mountPage("/start/chartjs", HomepageChartJs.class);
+		mountPage("/chartjs/", HomepageChartJs.class);
+		mountPage("/highcharts/", HomepageHighcharts.class);
 		mountPage("/simple", SimplePage.class);
 		mountPage("/modal", ModalWindowPage.class);
 

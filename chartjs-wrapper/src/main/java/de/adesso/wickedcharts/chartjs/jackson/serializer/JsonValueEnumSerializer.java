@@ -23,6 +23,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+/**
+ * Serializes a JsonValueEnum to JSON
+ */
 public class JsonValueEnumSerializer extends JsonSerializer<JsonValueEnum> {
 
 	@Override

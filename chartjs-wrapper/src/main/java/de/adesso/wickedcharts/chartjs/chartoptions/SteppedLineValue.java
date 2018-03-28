@@ -2,6 +2,10 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+/**
+ * An enum to define if a line is stepped or not
+ * @see <a href="http://www.chartjs.org/docs/latest/charts/line.html#stepped-line">http://www.chartjs.org/docs/latest/charts/line.html#stepped-line</a>
+ */
 public enum SteppedLineValue implements JsonValueEnum {
 	BEFORE("before"),
 	AFTER("after");

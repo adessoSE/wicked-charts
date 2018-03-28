@@ -18,6 +18,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that enables the use of custom html markup for tooltip points.
+ *
+ */
 @SuppressWarnings("serial")
 public class TooltipHtmlPointsConfiguration extends ShowcaseConfiguration {
 	public TooltipHtmlPointsConfiguration() {
@@ -52,7 +56,7 @@ public class TooltipHtmlPointsConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js - Custom Tooltips using Data Points"))
+						.setText("HTML Tooltip - Points"))
 				.setTooltips(new Tooltips()
 						.setEnabled(false)
 						.setIntersect(false)

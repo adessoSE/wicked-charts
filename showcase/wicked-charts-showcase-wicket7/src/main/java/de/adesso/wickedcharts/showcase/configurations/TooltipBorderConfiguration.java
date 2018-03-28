@@ -48,7 +48,7 @@ public class TooltipBorderConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Sample tooltip with border"))
+						.setText("Tooltip with border"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setPosition(TooltipPosition.NEAREST)

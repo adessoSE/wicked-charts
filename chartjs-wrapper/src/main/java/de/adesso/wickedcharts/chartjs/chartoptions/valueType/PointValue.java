@@ -1,9 +1,17 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+/**
+  * Defines the value type for use in the TimePoint chart
+  *
+  * @see <a
+  *      href="http://www.chartjs.org/docs/latest/axes/cartesian/time.html#input-data">http://www.chartjs.org/docs/latest/axes/cartesian/time.html#input-data</a>
+  */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper = false)
 public class PointValue extends ValueType {
 	
 	private ValueType x;

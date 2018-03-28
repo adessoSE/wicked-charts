@@ -87,7 +87,6 @@ public class ChartBehavior extends Behavior {
     private void includeJavascriptDependencies(final IHeaderResponse response, final ChartConfiguration options) {
         JavaScriptResourceRegistry resourceRegistry = JavaScriptResourceRegistry.getInstance();
         resourceRegistry.getJQueryEntry().addToHeaderResponse(response);
-        resourceRegistry.getHighchartsEntry().addToHeaderResponse(response);
         resourceRegistry.getChartJsBundle().addToHeaderResponse(response);
         resourceRegistry.getMomentJsentry().addToHeaderResponse(response);
     }

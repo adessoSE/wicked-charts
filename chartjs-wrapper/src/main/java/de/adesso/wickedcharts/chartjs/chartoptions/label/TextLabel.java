@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Defines simple textlabels for the axes .
+ *
+ */
 public class TextLabel extends Label {
 	private String text;
 	

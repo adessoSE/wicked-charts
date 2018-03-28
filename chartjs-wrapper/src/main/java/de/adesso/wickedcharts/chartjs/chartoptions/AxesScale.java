@@ -5,7 +5,10 @@ import java.io.Serializable;
 import lombok.experimental.Accessors;
 
 /**
- * Defines properties for the Axis.
+ * Defines options for the axes.
+ *
+ * @see <a
+ *      href="http://www.chartjs.org/docs/latest/axes/?h=axes">http://www.chartjs.org/docs/latest/axes/?h=axes</a>
  *
  */
 @Accessors(chain = true)

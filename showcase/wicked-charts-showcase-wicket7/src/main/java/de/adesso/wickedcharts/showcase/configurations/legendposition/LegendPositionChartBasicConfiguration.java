@@ -15,6 +15,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Base class for the other configurations for the legend position
+ */
 @SuppressWarnings("serial")
 public class LegendPositionChartBasicConfiguration extends ShowcaseConfiguration {
 	public LegendPositionChartBasicConfiguration() {

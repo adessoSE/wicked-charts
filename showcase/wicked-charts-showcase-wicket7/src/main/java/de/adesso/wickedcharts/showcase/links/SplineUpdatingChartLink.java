@@ -22,12 +22,12 @@ import de.adesso.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 
 import org.apache.wicket.markup.html.basic.Label;
 
-public class SplineUpdatingChartLink extends UpdateHighchartLink {
+public class SplineUpdatingChartLink {
 
-    public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
-                                   Options options) {
-        super(id, chart, codeContainer, options);
-    }
+    //public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
+      //                             Options options) {
+        //super(id, chart, codeContainer, options);
+    //}
 
     private static final long serialVersionUID = 1L;
 
@@ -35,9 +35,6 @@ public class SplineUpdatingChartLink extends UpdateHighchartLink {
      * Always return a fresh {@link Options} object, so that the date ticks are
      * current.
      */
-    @Override
-    public Options getOptions() {
-        return new WicketSplineUpdatingOptions();
-    }
+
 
 }

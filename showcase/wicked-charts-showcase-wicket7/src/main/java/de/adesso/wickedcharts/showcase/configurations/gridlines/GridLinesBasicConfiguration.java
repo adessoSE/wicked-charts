@@ -16,6 +16,11 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ *
+ * Chart configuration for the basic grid line layout.
+ *
+ */
 @SuppressWarnings("serial")
 public class GridLinesBasicConfiguration extends ShowcaseConfiguration {
 	
@@ -53,7 +58,7 @@ public class GridLinesBasicConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Min and Max Settings"))
+						.setText("Gridlines - Basic"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setGridLines(gridLines))

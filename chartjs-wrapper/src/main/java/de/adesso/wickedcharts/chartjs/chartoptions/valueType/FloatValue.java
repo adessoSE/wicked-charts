@@ -4,10 +4,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+/**
+  * Defines the value type for floats
+  *
+  */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper = false)
 public class FloatValue extends ValueType {
 	private Float value;
 

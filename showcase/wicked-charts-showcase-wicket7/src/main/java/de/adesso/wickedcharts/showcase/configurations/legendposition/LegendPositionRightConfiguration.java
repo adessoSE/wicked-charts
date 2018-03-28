@@ -5,6 +5,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
+/**
+ * Shows how to configure a chart with the legend position on the right
+ */
 @SuppressWarnings("serial")
 public class LegendPositionRightConfiguration extends LegendPositionChartBasicConfiguration {
 	

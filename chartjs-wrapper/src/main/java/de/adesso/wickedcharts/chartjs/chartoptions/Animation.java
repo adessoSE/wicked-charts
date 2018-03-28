@@ -5,7 +5,10 @@ import java.io.Serializable;
 import lombok.experimental.Accessors;
 
 /**
- * Defines options for Animations.
+ * Defines the animations.
+ *
+ * @see <a
+ *      href="http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation">http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation</a>
  *
  */
 @Accessors(chain = true)

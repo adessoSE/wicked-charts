@@ -11,7 +11,10 @@ import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerial
 import lombok.experimental.Accessors;
 
 /**
- * Defines the properties of gridlines.
+ * Defines options for the grid lines that run perpendicular to the axis.
+ *
+ * @see <a
+ *      href="http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration</a>
  *
  */
 @SuppressWarnings("serial")

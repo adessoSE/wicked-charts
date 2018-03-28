@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *   Copyright 2012-2018 Wicked Charts (http://wicked-charts.googlecode.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -14,84 +14,36 @@
  */
 package de.adesso.wickedcharts.showcase.links;
 
-import de.adesso.wickedcharts.wicket7.chartjs.Chart;
-
-import de.adesso.wickedcharts.chartjs.ChartConfiguration;
-import de.adesso.wickedcharts.showcase.ShowcaseSession;
-import de.adesso.wickedcharts.showcase.StringFromResourceModel;
-import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
-
+import de.adesso.wickedcharts.showcase.HomepageChartJs;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.panel.Fragment;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
+/**
+ * Adds a link to a chart in the showcase navigation sidebar.
+ * Clicking on the link calls the onClick() method, which sets page
+ * parameters accordingly.
+ */
 public class UpdateChartJsLink extends AjaxLink<Void> {
 
     private static final long serialVersionUID = 1L;
 
-    private final Chart chart;
-
-    private final ChartConfiguration config;
-
-    private final Label codeContainer;
-    
+    private final String chartVal;
 
     /**
      * Constructs a new Link.
      *
      * @param id            the wicket id of the link
-     * @param chart         the container containing the chart
-     * @param codeContainer the container containing the code display of the chart's options
-     * @param options       the options of the chart.
      */
-    public UpdateChartJsLink(final String id, final Chart chart,
-                           final Label codeContainer, final ChartConfiguration config) {
+    public UpdateChartJsLink(final String id, final String val) {
         super(id);
-        this.chart = chart;
-        this.codeContainer = codeContainer;
-        this.config = config;
-    }
-
-    public Chart getChartContainer() {
-        return this.chart;
-    }
-
-    public Label getCodeContainer() {
-        return this.codeContainer;
-    }
-
-    public ChartConfiguration getOptions() {
-        return this.config;
+        this.chartVal = val;
     }
 
     @Override
     public void onClick(final AjaxRequestTarget target) {
-        this.chart
-                .setChartConfiguration(this.getOptions());
-        ((ShowcaseSession) getSession())
-                .setCurrentChartjsConfiguration(this.config);
-
-        this.codeContainer
-                .setDefaultModel(new StringFromResourceModel(this.config
-                        .getClass(), this.config
-                        .getClass()
-                        .getSimpleName() + ".java"));
-
-        
-       
-        ((ShowcaseConfiguration)config).modfiyIndividualMarkup((Fragment) chart.getParent().get("optionalMarkup"));
-        ((Fragment) chart.getParent().get("optionalMarkup")).detach();
-        
-        target.add(this.chart);
-        target.add(this.codeContainer);
-        target.add((Fragment) chart.getParent().get("optionalMarkup"));
-
-        
-
-//         make syntaxhighlighter highlight the changed code
-        target
-                .appendJavaScript("SyntaxHighlighter.highlight();");
+        PageParameters params = new PageParameters();
+        params.add("chart", chartVal);
+        setResponsePage(HomepageChartJs.class, params);
     }
-
 }

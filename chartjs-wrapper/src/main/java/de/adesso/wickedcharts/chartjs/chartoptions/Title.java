@@ -15,6 +15,12 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines the Title attribute of the chart options.
+ *
+ * @see <a
+ *      href="http://www.chartjs.org/docs/latest/configuration/title.html">http://www.chartjs.org/docs/latest/configuration/title.html</a>
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Title implements Serializable{

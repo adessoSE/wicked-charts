@@ -1,4 +1,4 @@
-/**
+/*
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,169 +14,424 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+import de.adesso.wickedcharts.highcharts.options.ChartOptions;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.*;
+import de.adesso.wickedcharts.showcase.links.*;
 import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 
-import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
-import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
-import de.adesso.wickedcharts.showcase.links.SplineUpdatingChartLink;
-import de.adesso.wickedcharts.showcase.links.UpdateHighchartLink;
 import de.adesso.wickedcharts.showcase.options.*;
 
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.request.mapper.parameter.INamedParameters;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomepageHighcharts extends WebPage {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Constructs the page according to the current parameters
+     * This constructor is called each time a new chart or theme is
+     * selected.
+     * @param parameters the page parameters from the page URI
+     */
     public HomepageHighcharts(final PageParameters parameters) {
-        Theme theme = this.getThemeFromParams(parameters);
-        Options options = this.getOptionsToDisplay();
-        final Chart chart = new Chart("chart", options, theme);
-        this.add(chart);
+        Chart chart = getChartFromParams(parameters);
+        add(chart);
         addNavigationLinks();
-        Label codeContainer = this.addCodeContainer();
-        this.addChartLinks(chart, codeContainer);
+        addCodeContainer(chart);
+        addChartLinks(getThemeString(parameters));
+        addThemeLinks(parameters);
     }
-	
+
+    /**
+     * Adds links to the different themes
+     * @param parameters the page parameters from the page URI
+     */
+    private void addThemeLinks(PageParameters parameters){
+        List<INamedParameters.NamedPair> pairs = parameters.getAllNamed();
+        if (parameters.getAllNamed().size() < 2) {
+            add(new UpdateThemeLink("defaultTheme", "chart"));
+            add(new UpdateThemeLink("grid", "chart"));
+            add(new UpdateThemeLink("skies", "chart"));
+            add(new UpdateThemeLink("gray", "chart"));
+            add(new UpdateThemeLink("darkblue", "chart"));
+            add(new UpdateThemeLink("darkgreen", "chart"));
+        } else {
+            String chartString = parameters.getAllNamed().get(1).getValue();
+            add(new UpdateThemeLink("defaultTheme", chartString));
+            add(new UpdateThemeLink("grid", chartString));
+            add(new UpdateThemeLink("skies", chartString));
+            add(new UpdateThemeLink("gray", chartString));
+            add(new UpdateThemeLink("darkblue", chartString));
+            add(new UpdateThemeLink("darkgreen", chartString));
+        }
+    }
+
+    /**
+     * Returns the name of the current theme from the page parameters
+     * @param parameters the page parameters from the page URI
+     * @return The name of the current theme
+     */
+    private String getThemeString(PageParameters parameters){
+        String themeString = "default";
+        List<INamedParameters.NamedPair> pairs = parameters.getAllNamed();
+        if (parameters.getAllNamed().size() < 2) {
+            return themeString;
+        } else {
+            themeString= parameters.getAllNamed().get(0).getValue();
+        }
+        return themeString;
+    }
+
 	private void addNavigationLinks() {
-		this.add(new HighchartsShowcaseLink());
-		this.add(new ChartjsShowcaseLink());
+		add(new HighchartsShowcaseLink());
+		add(new ChartjsShowcaseLink());
 	}
 
-    private void addChartLinks(final Chart chart, final Label codeContainer) {
-        this.add(new UpdateHighchartLink("line", chart, codeContainer,
-                new BasicLineOptions()));
-        this.add(new UpdateHighchartLink("splineWithSymbols", chart, codeContainer,
-                new SplineWithSymbolsOptions()));
-        this.add(new UpdateHighchartLink("irregularIntervals", chart,
-                codeContainer, new TimeDataWithIrregularIntervalsOptions()));
-        this.add(new UpdateHighchartLink("logarithmicAxis", chart, codeContainer,
-                new LogarithmicAxisOptions()));
-        this.add(new UpdateHighchartLink("scatter", chart, codeContainer,
-                new ScatterPlotOptions()));
-
-        this.add(new UpdateHighchartLink("area", chart, codeContainer,
-                new BasicAreaOptions()));
-        this.add(new UpdateHighchartLink("areaWithNegativeValues", chart,
-                codeContainer, new AreaWithNegativeValuesOptions()));
-
-        this.add(new UpdateHighchartLink("stackedAndGroupedColumn", chart,
-                codeContainer, new StackedAndGroupedColumnOptions()));
-        this.add(new UpdateHighchartLink("combo", chart, codeContainer,
-                new ComboOptions()));
-        this.add(new UpdateHighchartLink("donut", chart, codeContainer,
-                new DonutOptions()));
-        this.add(new UpdateHighchartLink("withDataLabels", chart, codeContainer,
-                new LineWithDataLabelsOptions()));
-        this.add(new UpdateHighchartLink("zoomableTimeSeries", chart,
-                codeContainer, new ZoomableTimeSeriesOptions(true)));
-        this.add(new UpdateHighchartLink("splineInverted", chart, codeContainer,
-                new SplineWithInvertedAxisOptions()));
-        this.add(new UpdateHighchartLink("splineWithPlotBands", chart,
-                codeContainer, new SplineWithPlotBandsOptions()));
-        this.add(new UpdateHighchartLink("polar", chart, codeContainer,
-                new PolarOptions()));
-        this.add(new UpdateHighchartLink("stackedArea", chart, codeContainer,
-                new StackedAreaOptions()));
-        this.add(new UpdateHighchartLink("percentageArea", chart, codeContainer,
-                new PercentageAreaOptions()));
-        this.add(new UpdateHighchartLink("areaMissing", chart, codeContainer,
-                new AreaMissingOptions()));
-        this.add(new UpdateHighchartLink("areaInverted", chart, codeContainer,
-                new AreaInvertedAxisOptions()));
-
-        this.add(new UpdateHighchartLink("areaSpline", chart, codeContainer,
-                new AreaSplineOptions()));
-        this.add(new UpdateHighchartLink("areaSplineRange", chart, codeContainer,
-                new AreaSplineRangeOptions()));
-        this.add(new UpdateHighchartLink("basicBar", chart, codeContainer,
-                new BasicBarOptions()));
-        this.add(new UpdateHighchartLink("columnWithDrilldown", chart,
-                codeContainer, new ColumnWithDrilldownOptions()));
-        this.add(new UpdateHighchartLink("columnRotated", chart, codeContainer,
-                new ColumnWithRotatedLabelsOptions()));
-        this.add(new UpdateHighchartLink("stackedBar", chart, codeContainer,
-                new StackedBarOptions()));
-        this.add(new UpdateHighchartLink("barNegativeStack", chart, codeContainer,
-                new BarWithNegativeStackOptions()));
-        this.add(new UpdateHighchartLink("basicColumn", chart, codeContainer,
-                new BasicColumnOptions()));
-        this.add(new UpdateHighchartLink("columnWithNegativeValues", chart,
-                codeContainer, new ColumnWithNegativeValuesOptions()));
-        this.add(new UpdateHighchartLink("stackedColumn", chart, codeContainer,
-                new StackedColumnOptions()));
-        this.add(new UpdateHighchartLink("stackedPercentage", chart, codeContainer,
-                new StackedPercentageOptions()));
-        this.add(new UpdateHighchartLink("basicPie", chart, codeContainer,
-                new BasicPieOptions()));
-        this.add(new UpdateHighchartLink("pieWithGradient", chart, codeContainer,
-                new PieWithGradientOptions()));
-        this.add(new UpdateHighchartLink("pieWithLegend", chart, codeContainer,
-                new PieWithLegendOptions()));
-        this.add(new SplineUpdatingChartLink("splineUpdating", chart,
-                codeContainer, new WicketSplineUpdatingOptions()));
-        this.add(new UpdateHighchartLink("bubble", chart, codeContainer,
-                new BubbleChartOptions()));
-        this.add(new UpdateHighchartLink("3dbubble", chart, codeContainer,
-                new BubbleChart3DOptions()));
-        this.add(new UpdateHighchartLink("boxplot", chart, codeContainer, new BoxplotChartOptions()));
-        this.add(new UpdateHighchartLink("interactive", chart, codeContainer,
-                new InteractionOptions()));
-        this.add(new UpdateHighchartLink("angularGauge", chart, codeContainer,
-                new AngularGaugeOptions()));
-        this.add(new UpdateHighchartLink("spiderweb", chart, codeContainer,
-                new SpiderwebOptions()));
-        this.add(new UpdateHighchartLink("windrose", chart, codeContainer,
-                new WindroseOptions()));
-        this.add(new UpdateHighchartLink("columnrange", chart, codeContainer,
-                new ColumnRangeOptions()));
-        this.add(new UpdateHighchartLink("arearange", chart, codeContainer,
-                new AreaRangeOptions()));
-        this.add(new UpdateHighchartLink("clicktoadd", chart, codeContainer,
-                new ClickToAddAPointOptions()));
-        this.add(new UpdateHighchartLink("dualAxes", chart, codeContainer,
-                new DualAxesOptions()));
-        this.add(new UpdateHighchartLink("scatterWithRegression", chart,
-                codeContainer, new ScatterWithRegressionLineOptions()));
-        this.add(new UpdateHighchartLink("multipleAxes", chart, codeContainer,
-                new MultipleAxesOptions()));
-        this.add(new UpdateHighchartLink("errorBar", chart, codeContainer,
-                new ErrorBarOptions()));
-        this.add(new UpdateHighchartLink("funnel", chart, codeContainer,
-                new FunnelOptions()));
-        this.add(new UpdateHighchartLink("pyramid", chart, codeContainer,
-                new PyramidOptions()));
-        this.add(new UpdateHighchartLink("heatmap", chart, codeContainer,
-                new HeatmapOptions()));
+    /**
+     * Adds links to the charts in the navigation sidebar
+     */
+    private void addChartLinks(String theme) {
+        add(new UpdateHighchartLink("line", theme));
+        add(new UpdateHighchartLink("splineWithSymbols", theme));
+        add(new UpdateHighchartLink("irregularIntervals", theme));
+        add(new UpdateHighchartLink("logarithmicAxis", theme));
+        add(new UpdateHighchartLink("scatter", theme));
+        add(new UpdateHighchartLink("area", theme));
+        add(new UpdateHighchartLink("areaWithNegativeValues",theme));
+        add(new UpdateHighchartLink("stackedAndGroupedColumn", theme));
+        add(new UpdateHighchartLink("combo", theme));
+        add(new UpdateHighchartLink("donut", theme));
+        add(new UpdateHighchartLink("interactive", theme));
+        add(new UpdateHighchartLink("withDataLabels", theme));
+        add(new UpdateHighchartLink("zoomableTimeSeries", theme));
+        add(new UpdateHighchartLink("splineInverted", theme));
+        add(new UpdateHighchartLink("splineWithPlotBands", theme));
+        add(new UpdateHighchartLink("polar", theme));
+        add(new UpdateHighchartLink("percentageArea", theme));
+        add(new UpdateHighchartLink("areaMissing", theme));
+        add(new UpdateHighchartLink("areaInverted", theme));
+        add(new UpdateHighchartLink("areaSpline", theme));
+        add(new UpdateHighchartLink("areaSplineRange", theme));
+        add(new UpdateHighchartLink("basicBar", theme));
+        add(new UpdateHighchartLink("columnWithDrilldown", theme));
+        add(new UpdateHighchartLink("columnRotated", theme));
+        add(new UpdateHighchartLink("stackedBar", theme));
+        add(new UpdateHighchartLink("barNegativeStack", theme));
+        add(new UpdateHighchartLink("basicColumn", theme));
+        add(new UpdateHighchartLink("columnWithNegativeValues", theme));
+        add(new UpdateHighchartLink("stackedColumn", theme));
+        add(new UpdateHighchartLink("stackedArea", theme));
+        add(new UpdateHighchartLink("stackedPercentage", theme));
+        add(new UpdateHighchartLink("basicPie", theme));
+        add(new UpdateHighchartLink("pieWithGradient", theme));
+        add(new UpdateHighchartLink("pieWithLegend", theme));
+        add(new UpdateHighchartLink("splineUpdating", theme));
+        add(new UpdateHighchartLink("bubble", theme));
+        add(new UpdateHighchartLink("3dbubble", theme));
+        add(new UpdateHighchartLink("boxplot", theme));
+        add(new UpdateHighchartLink("angularGauge", theme));
+        add(new UpdateHighchartLink("spiderweb", theme));
+        add(new UpdateHighchartLink("windrose", theme));
+        add(new UpdateHighchartLink("columnrange", theme));
+        add(new UpdateHighchartLink("arearange", theme));
+        add(new UpdateHighchartLink("clicktoadd", theme));
+        add(new UpdateHighchartLink("dualAxes", theme));
+        add(new UpdateHighchartLink("scatterWithRegression", theme));
+        add(new UpdateHighchartLink("multipleAxes", theme));
+        add(new UpdateHighchartLink("errorBar", theme));
+        add(new UpdateHighchartLink("funnel", theme));
+        add(new UpdateHighchartLink("pyramid", theme));
+        add(new UpdateHighchartLink("heatmap", theme));
     }
 
-    private Label addCodeContainer() {
+
+    /**
+     * Adds a code container corresponding to the current chart
+     * @param chart The currently selected chart
+     */
+    private void addCodeContainer(Chart chart) {
         Label codeContainer = new Label("code", new StringFromResourceModel(
-                BasicLineOptions.class, BasicLineOptions.class.getSimpleName()
+                chart.getOptions().getClass(), chart.getOptions().getClass().getSimpleName()
                 + ".java"));
         codeContainer.setOutputMarkupId(true);
-        this.add(codeContainer);
-        return codeContainer;
+        add(codeContainer);
     }
 
-    private Options getOptionsToDisplay() {
-        Options options = ((ShowcaseSession) this.getSession())
-                .getCurrentChartOptions();
-        if (options == null) {
-            options = new BasicLineOptions();
+    /**
+     * Returns a Chart object from the current page parameters
+     * @param params the page parameters from the page URI
+     * @return a Chart
+     */
+    private Chart getChartFromParams(final PageParameters params) {
+        String chartString;
+        String themeString;
+        List<Chart> config = new ArrayList<>();
+
+        //Get the parameters of the page
+        List<INamedParameters.NamedPair> pairs = params.getAllNamed();
+
+        //If the showcase is started without any parameters
+        //set the parameters to lineBasic and give us a line Chart
+        if(params.getAllNamed().size() < 2){
+            PageParameters temp = new PageParameters();
+            temp.add("theme", "default");
+            temp.add("chart", "line");
+            setResponsePage(HomepageHighcharts.class, temp);
+            config.add(new Chart("chart", new BasicLineOptions(), null));
+            return config.get(0);
         }
-        return options;
+
+        themeString = params.getAllNamed().get(0).getValue();
+        Theme theme = getThemeFromParams(themeString);
+        chartString = params.getAllNamed().get(1).getValue();
+
+        if(chartString == null) {
+            config.add(new Chart("chart", new BasicLineOptions(), theme));
+            return config.get(0);
+        }
+
+        switch(chartString) {
+            case "basicBar":
+                config.add(new Chart("chart", new BasicBarOptions(), theme));
+                break;
+
+            case "splineWithSymbols":
+                config.add(new Chart("chart", new SplineWithSymbolsOptions(), theme));
+                break;
+
+            case "irregularIntervals":
+                config.add(new Chart("chart", new TimeDataWithIrregularIntervalsOptions(), theme));
+                break;
+
+            case "logarithmicAxis":
+                config.add(new Chart("chart", new LogarithmicAxisOptions(), theme));
+                break;
+
+            case "scatter":
+                config.add(new Chart("chart", new ScatterPlotOptions(), theme));
+                break;
+
+            case "area":
+                config.add(new Chart("chart", new BasicAreaOptions(), theme));
+                break;
+
+            case "areaWithNegativeValues":
+                config.add(new Chart("chart", new AreaWithNegativeValuesOptions(), theme));
+                break;
+
+            case "stackedAndGroupedColumn":
+                config.add(new Chart("chart", new StackedAndGroupedColumnOptions(), theme));
+                break;
+
+            case "combo":
+                config.add(new Chart("chart", new ComboOptions(), theme));
+                break;
+
+            case "donut":
+                config.add(new Chart("chart", new DonutOptions(), theme));
+                break;
+
+            case "withDataLabels":
+                config.add(new Chart("chart", new LineWithDataLabelsOptions(), theme));
+                break;
+
+            case "zoomableTimeSeries":
+                config.add(new Chart("chart", new ZoomableTimeSeriesOptions(), theme));
+                break;
+
+            case "splineInverted":
+                config.add(new Chart("chart", new SplineWithInvertedAxisOptions(), theme));
+                break;
+
+            case "splineWithPlotBands":
+                config.add(new Chart("chart", new SplineWithPlotBandsOptions(), theme));
+                break;
+
+            case "polar":
+                config.add(new Chart("chart", new PolarOptions(), theme));
+                break;
+
+            case "stackedArea":
+                config.add(new Chart("chart", new StackedAreaOptions(), theme));
+                break;
+
+            case "percentageArea":
+                config.add(new Chart("chart", new PercentageAreaOptions(), theme));
+                break;
+
+            case "areaMissing":
+                config.add(new Chart("chart", new AreaMissingOptions(), theme));
+                break;
+
+            case "areaInverted":
+                config.add(new Chart("chart", new AreaInvertedAxisOptions(), theme));
+                break;
+
+            case "areaSpline":
+                config.add(new Chart("chart", new AreaSplineOptions(), theme));
+                break;
+
+            case "areaSplineRange":
+                config.add(new Chart("chart", new AreaSplineRangeOptions(), theme));
+                break;
+
+            case "columnWithDrilldown":
+                config.add(new Chart("chart", new ColumnWithDrilldownOptions(), theme));
+                break;
+
+            case "columnRotated":
+                config.add(new Chart("chart", new ColumnWithRotatedLabelsOptions(), theme));
+                break;
+
+            case "stackedBar":
+                config.add(new Chart("chart", new StackedBarOptions(), theme));
+                break;
+
+            case "barNegativeStack":
+                config.add(new Chart("chart", new StackedBarOptions(), theme));
+                break;
+
+            case "basicColumn":
+                config.add(new Chart("chart", new BasicColumnOptions(), theme));
+                break;
+
+            case "columnWithNegativeValues":
+                config.add(new Chart("chart", new ColumnWithNegativeValuesOptions(), theme));
+                break;
+
+            case "stackedColumn":
+                config.add(new Chart("chart", new StackedColumnOptions(), theme));
+                break;
+
+            case "stackedPercentage":
+                config.add(new Chart("chart", new StackedPercentageOptions(), theme));
+                break;
+
+            case "basicPie":
+                config.add(new Chart("chart", new BasicPieOptions(), theme));
+                break;
+
+            case "pieWithGradient":
+                config.add(new Chart("chart", new PieWithGradientOptions(), theme));
+                break;
+
+            case "pieWithLegend":
+                config.add(new Chart("chart", new PieWithLegendOptions(), theme));
+                break;
+
+            case "splineUpdating":
+                config.add(new Chart("chart", new WicketSplineUpdatingOptions(), theme));
+                break;
+
+            case "bubble":
+                config.add(new Chart("chart", new BubbleChartOptions(), theme));
+                break;
+
+            case "3dbubble":
+                config.add(new Chart("chart", new BubbleChart3DOptions(), theme));
+                break;
+
+            case "boxplot":
+                config.add(new Chart("chart", new BoxplotChartOptions(), theme));
+                break;
+
+            case "interactive":
+                config.add(new Chart("chart", new InteractionOptions(), theme));
+                break;
+
+            case "angularGauge":
+                config.add(new Chart("chart", new AngularGaugeOptions(), theme));
+                break;
+
+            case "spiderweb":
+                config.add(new Chart("chart", new SpiderwebOptions(), theme));
+                break;
+
+            case "windrose":
+                config.add(new Chart("chart", new WindroseOptions(), theme));
+                break;
+
+            case "columnrange":
+                config.add(new Chart("chart", new ColumnRangeOptions(), theme));
+                break;
+
+            case "arearange":
+                config.add(new Chart("chart", new AreaRangeOptions(), theme));
+                break;
+
+            case "clicktoadd":
+                config.add(new Chart("chart", new ClickToAddAPointOptions(), theme));
+                break;
+
+            case "dualAxes":
+                config.add(new Chart("chart", new DualAxesOptions(), theme));
+                break;
+
+            case "scatterWithRegression":
+                config.add(new Chart("chart", new ScatterWithRegressionLineOptions(), theme));
+                break;
+
+            case "multipleAxes":
+                config.add(new Chart("chart", new MultipleAxesOptions(), theme));
+                break;
+
+            case "errorBar":
+                config.add(new Chart("chart", new ErrorBarOptions(), theme));
+                break;
+
+            case "funnel":
+                config.add(new Chart("chart", new FunnelOptions(), theme));
+                break;
+
+            case "pyramid":
+                config.add(new Chart("chart", new PyramidOptions(), theme));
+                break;
+
+            case "heatmap":
+                config.add(new Chart("chart", new HeatmapOptions(), theme));
+                break;
+
+            default:
+                config.add(new Chart("chart", new BasicLineOptions(), theme));
+                break;
+        }
+        return config.get(0);
     }
 
+    private Theme getThemeFromParams(String themeString) {
+        if ("grid".equals(themeString)) {
+            return new GridTheme();
+        } else if ("skies".equals(themeString)) {
+            return new SkiesTheme();
+        } else if ("gray".equals(themeString)) {
+            return new GrayTheme();
+        } else if ("darkblue".equals(themeString)) {
+            return new DarkBlueTheme();
+        } else {
+            // default theme
+            return null;
+        }
+    }
+
+    /**
+     * Used in the renderHead method to highlight the currently
+     * selected theme tab
+     * @return the index of the currently selected theme tab
+     */
     private int getSelectedTab() {
-        String theme = this.getPageParameters().get("theme").toString();
+        String theme = "default";
+        List<INamedParameters.NamedPair> pairs = getPageParameters().getAllNamed();
+        theme = pairs.get(0).getValue();
         if ("grid".equals(theme)) {
             return 1;
         } else if ("skies".equals(theme)) {
@@ -192,22 +447,10 @@ public class HomepageHighcharts extends WebPage {
         }
     }
 
-    private Theme getThemeFromParams(final PageParameters params) {
-        String themeString = params.get("theme").toString();
-        if ("grid".equals(themeString)) {
-            return new GridTheme();
-        } else if ("skies".equals(themeString)) {
-            return new SkiesTheme();
-        } else if ("gray".equals(themeString)) {
-            return new GrayTheme();
-        } else if ("darkblue".equals(themeString)) {
-            return new DarkBlueTheme();
-        } else {
-            // default theme
-            return null;
-        }
-    }
-
+    /**
+     * Highlights the currently selected theme tab
+     * @param response .
+     */
     @Override
     public void renderHead(final IHeaderResponse response) {
         // select bootstrap tab for current theme selected

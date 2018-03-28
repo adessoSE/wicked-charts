@@ -26,7 +26,6 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * A sample that shows how the 'end' fill option works
  *
  */
-
 @SuppressWarnings("serial")
 public class AreaLineBoundariesChartEndConfiguration extends ShowcaseConfiguration {
 	public AreaLineBoundariesChartEndConfiguration() {
@@ -58,7 +57,7 @@ public class AreaLineBoundariesChartEndConfiguration extends ShowcaseConfigurati
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Boundaries Chart"))
+						.setText("Chart.js Boundaries Chart - End"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setDisplay(true)

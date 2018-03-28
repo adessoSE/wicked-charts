@@ -24,7 +24,11 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-
+/**
+ *
+ * A sample that shows how a line chart with a progress bar is configured.
+ *
+ */
 @SuppressWarnings("serial")
 public class LineChartProgressBarConfiguration extends ShowcaseConfiguration {
 	public LineChartProgressBarConfiguration() {

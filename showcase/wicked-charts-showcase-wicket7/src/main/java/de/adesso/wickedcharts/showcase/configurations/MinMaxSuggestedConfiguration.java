@@ -53,7 +53,7 @@ public class MinMaxSuggestedConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Min and Max Settings"))
+						.setText("Min and Max - Suggested"))
 				.setScales(new Scales()
 						.setYAxes(new AxesScale()
 								.setTicks(new Ticks()

@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 
+/**
+ * Serializes a FillingMode object to JSON
+ */
 public class FillingModeSerializer extends JsonSerializer<FillingMode> {
 
 	private static final String STRING_FORMAT = "'%s'";

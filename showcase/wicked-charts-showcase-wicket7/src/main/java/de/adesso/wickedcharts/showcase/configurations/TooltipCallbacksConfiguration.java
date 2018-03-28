@@ -66,7 +66,7 @@ public class TooltipCallbacksConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart - Custom Information in Tooltip"))
+						.setText("Custom Information in Tooltip"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setCallbacks(new TooltipCallbacks()

@@ -8,9 +8,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"	
     }
 }
+
+
 
 subprojects {
 
@@ -89,7 +91,7 @@ subprojects {
                 pom.withXml {
                     def root = asNode()
                     root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
-                    root.appendNode('name', project.name)
+                    root.appendNode('name', 'Wicked Charts')
                     root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
                     root.children().last() + pomConfig
                 }
@@ -111,7 +113,7 @@ subprojects {
                 publishPom = true
                 properties = [
                         'build.number': buildNumber,
-                        'build.name'  : project.name
+                        'build.name'  : 'wicked-charts'
                 ]
             }
         }
@@ -119,7 +121,7 @@ subprojects {
             repoKey = 'jcenter'
         }
         clientConfig.info.setBuildNumber(buildNumber)
-        clientConfig.info.setBuildName(project.name)
+        clientConfig.info.setBuildName('wicked-charts')
     }
 
     bintray {

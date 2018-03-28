@@ -4,7 +4,7 @@
 	xmlns:wicket="https://raw.githubusercontent.com/adessoAG/wicked-forms/master/config/wicket-1.5.xsd">
 <head>
     <meta charset="utf-8">
-    <title>Wicked Charts :: Showcase :: Wicket 6.x</title>
+    <title>Wicked Charts :: Showcase :: Wicket 7.x</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="wicked charts">
     <meta name="keywords" content="wicked charts,wicket,highcharts">
@@ -134,7 +134,7 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
 
-                    <li class="nav-header">Bar charts</li>
+                   <li class="nav-header">Bar charts</li>
                     <li><a href="#" wicket:id="BarChartVertical">Vertical</a></li>
                     <li><a href="#" wicket:id="BarChartHorizontal">Horizontal</a></li>
 					<li><a href="#" wicket:id="BarChartMultiAxis">Multi Axis</a></li>
@@ -144,18 +144,14 @@
                     <li class="nav-header">Line charts</li>
                     <li><a href="#" wicket:id="LineChartBasic">Basic</a></li>
                     <li><a href="#" wicket:id="LineChartMultiAxis">Multi Axis</a></li>
-					<li><a href="#" wicket:id="LineChartSteppedBefore">Stepped - Before</a></li>
-					<li><a href="#" wicket:id="LineChartSteppedAfter">Stepped - After</a></li>
+					<li><a href="#" wicket:id="LineChartStepped">Stepped</a></li>
 					<li><a href="#" wicket:id="LineChartInterpolated">Interpolation</a></li>
 					<li><a href="#" wicket:id="LineStyles">Line Styles</a></li>
 					<li><a href="#" wicket:id="PointStyles">Point Styles</a></li>
-					<li><a href="#" wicket:id="PointSizes">	Point Sizes</a></li>
-					
+					<li><a href="#" wicket:id="PointSizes">Point Sizes</a></li>
+
                     <li class="nav-header">Area charts</li>
-                    <li><a href="#" wicket:id="AreaLineBoundariesChartStart">Boundaries(start)</a></li>
-                    <li><a href="#" wicket:id="AreaLineBoundariesChartEnd">Boundaries(end)</a></li>
-                    <li><a href="#" wicket:id="AreaLineBoundariesChartOrigin">Boundaries(origin)</a></li>
-                    <li><a href="#" wicket:id="AreaLineBoundariesChartFalse">Boundaries(false)</a></li>
+                    <li><a href="#" wicket:id="AreaLineBoundariesChart">Area Line Boundaries</a></li>
 					<li><a href="#" wicket:id="LineChartDataset">Datasets (line)</a></li>
 					<li><a href="#" wicket:id="LineChartStacked">Stacked (line)</a></li>
 					<li><a href="#" wicket:id="RadarChart">Radar Chart</a></li>
@@ -168,56 +164,38 @@
 					<li><a href="#" wicket:id="PolarAreaChart">Polar Area</a></li>
                     <li><a href="#" wicket:id="OtherRadar">Radar</a></li>
                     <li><a href="#" wicket:id="ComboBarLineChart">Combo bar/line</a></li>
-					
-	
+
                     <li class="nav-header">Linear scale</li>
                     <li><a href="#" wicket:id="StepSize">Step size</a></li>
                     <li><a href="#" wicket:id="MinMax">Min & Max</a></li>
-                    <li><a href="#" wicket:id="MinMaxSuggested">Min & Max (Suggested)</a></li>
 
                     <li class="nav-header">Logarithmic scale</li>
 					<li><a href="#" wicket:id="LogarithmicLineChart">Line Chart</a></li>
 					<li><a href="#" wicket:id="LogarithmicScatterChart">Scatter Chart</a></li>
 
-                    
                     <li class="nav-header">Time scale</li>
 					<li><a href="#" wicket:id="TimeLine">Line</a></li>
 					<li><a href="#" wicket:id="TimePoint">Line (point data)</a></li>
 					<li><a href="#" wicket:id="TimeSeries">Time series</a></li>
 					<li><a href="#" wicket:id="TimeCombo">Combo</a></li>
-                    
-                    
+
                     <li class="nav-header">Scale options</li>
-                    <li><a href="#" wicket:id="GridLinesBasic">Grid lines display</a></li>
-                    <li><a href="#" wicket:id="GridLinesDisplayFalse">Grid lines display - false</a></li>
-                    <li><a href="#" wicket:id="GridLinesDisplayFalseNoBorder">Grid lines display - false, no border</a></li>
-                    <li><a href="#" wicket:id="GridLinesChartArea">Grid lines display - no chart area lines</a></li>
-                    <li><a href="#" wicket:id="GridLinesTicks">Grid lines display - no ticks</a></li>
-                    <li><a href="#" wicket:id="GridLinesStyle">Grid lines style</a></li>
+                    <li><a href="#" wicket:id="GridLines">Grid lines</a></li>
                     <li><a href="#" wicket:id="MultilineLabels">Multiline Labels</a></li>
                     <li><a href="#" wicket:id="FilteringLabels">Filtering Labels</a></li>
                     <li><a href="#" wicket:id="NonNumeric">Non numeric Y Axis</a></li>
-					
 
                     <li class="nav-header">Legend</li>
-                    <li><a href="#" wicket:id="LegendPositionTop">Top</a></li>
-                    <li><a href="#" wicket:id="LegendPositionRight">Right</a></li>
-                    <li><a href="#" wicket:id="LegendPositionBottom">Bottom</a></li>
-                    <li><a href="#" wicket:id="LegendPositionLeft">Left</a></li>
+                    <li><a href="#" wicket:id="LegendPosition">Legend Position</a></li>
                     <li><a href="#" wicket:id="LegendPointStyle">Point Style</a></li>
 
                     <li class="nav-header">Tooltip</li>
-                    <li><a href="#" wicket:id="TooltipCallbacks">Callbacks</a></li>
-                    <li><a href="#" wicket:id="TooltipBorder">Border</a></li>
-                    <li><a href="#" wicket:id="TooltipAverage">Average Position</a></li>
-					<li><a href="#" wicket:id="TooltipNearest">Nearest Position</a></li>
-                    <li><a href="#" wicket:id="TooltipHtmlLine">HTML tooltips (line)</a></li>
-                    <li><a href="#" wicket:id="TooltipHtmlPie">HTML tooltips (pie)</a></li>
-                    <li><a href="#" wicket:id="TooltipHtmlPoints">HTML tooltips (points)</a></li>
+                    <li><a href="#" wicket:id="Tooltip">Tooltips</a></li>
+                    <li><a href="#" wicket:id="TooltipHtml">HTML tooltips</a></li>
+                    <li><a href="#" wicket:id="TooltipInteractions">Tooltip Interactions</a></li>
 					
                     <li class="nav-header">Scriptable</li>
 					<li><a href="#" wicket:id="BubbleChart">Bubble Chart</a></li>
-
 
                     <li class="nav-header">Advanced</li>
                     <li><a href="#" wicket:id="LineChartProgressBar">Progess Bar</a></li>
@@ -230,27 +208,12 @@
         <!--/span-->
 
 			<div class="span9 corner-chart">
-				<div style="width: 100%">
-					<canvas wicket:id="chart">CHART</canvas>
-					<div wicket:id="optionalMarkup"></div>
-					<wicket:fragment wicket:id="defaultTooltip">
-					</wicket:fragment>
-					<wicket:fragment wicket:id="pieTooltip">
-					<div id="chartjs-tooltip">
-						<table></table>
-					</div>
-					</wicket:fragment>
-					<wicket:fragment wicket:id="pointTooltip">
-					<div class="chartjs-tooltip" id="tooltip-0"></div>
-					<div class="chartjs-tooltip" id="tooltip-1"></div>
-					</wicket:fragment>
-					<wicket:fragment wicket:id="progressBar">
-					<progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
-					</wicket:fragment>
-				</div>
+                    <wicket:container wicket:id="components">
+                        <wicket:container wicket:id="chart"/>
+                    </wicket:container>
 				<br>
 
-				<p>
+                <p>
 					<a id="showCodeButton" class="btn btn-primary pull-right" href="#"
 						data-toggle="modal" data-target="#codeDialog">Show Java code
 						&raquo;</a>
@@ -290,7 +253,9 @@ add(new Chart("chart", options));
                     <h3 id="codeDialogHeader">Java code for this chart's configuration</h3>
                 </div>
                 <div class="modal-body">
-                    <pre wicket:id="code" class="brush: java">Here comes the code</pre>
+                    <wicket:container wicket:id="code_components">
+                        <wicket:container wicket:id="code"/>
+                    </wicket:container>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -300,13 +265,10 @@ add(new Chart("chart", options));
         <!--/span-->
     </div>
     <!--/row-->
-
     <hr>
-
     <footer>
         <p>&copy; Wicked Charts 2012-2013</p>
     </footer>
-
 </div>
 <!--/.fluid-container-->
 

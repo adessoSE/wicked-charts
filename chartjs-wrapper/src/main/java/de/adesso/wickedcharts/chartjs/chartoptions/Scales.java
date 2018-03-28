@@ -13,6 +13,7 @@ import lombok.experimental.Accessors;
 /**
  * Defines all x- and y-axes.
  *
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/">http://www.chartjs.org/docs/latest/axes/</a>
  */
 @JsonAutoDetect(
 		  fieldVisibility = JsonAutoDetect.Visibility.ANY,

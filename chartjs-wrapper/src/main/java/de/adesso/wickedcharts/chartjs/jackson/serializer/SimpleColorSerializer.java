@@ -11,6 +11,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
+/**
+ * Serializes a SimpleColor object to JSON.
+ */
 public class SimpleColorSerializer extends JsonSerializer<SimpleColor> {
 
 	// TODO: Would be nice if the serializer is chosen by the colorClass
@@ -27,5 +30,4 @@ public class SimpleColorSerializer extends JsonSerializer<SimpleColor> {
 			rgbaSerializer.serialize((RgbaColor)color.getColor(), jgen, provider);
 		}
 	}
-
 }

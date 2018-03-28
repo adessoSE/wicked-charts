@@ -6,7 +6,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.experimental.Accessors;
 
 /**
- * Defines attributes for the tickStyle option inside Ticks
+ * Defines the tick styles
+ *
+ * @see <a
+ *      http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration</a>
  */
 
 @Accessors(chain = true)

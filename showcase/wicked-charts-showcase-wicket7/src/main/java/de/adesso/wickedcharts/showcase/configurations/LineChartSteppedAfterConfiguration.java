@@ -52,7 +52,7 @@ public class LineChartSteppedAfterConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart Stepped"))
+						.setText("Chart.js Line Chart Stepped - After"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))

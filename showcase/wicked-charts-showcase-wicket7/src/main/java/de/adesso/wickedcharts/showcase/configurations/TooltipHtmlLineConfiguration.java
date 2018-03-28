@@ -18,6 +18,10 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ * Sample that enables the use of custom html markup for tooltips in a line chart.
+ *
+ */
 @SuppressWarnings("serial")
 public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
 	public TooltipHtmlLineConfiguration() {
@@ -52,7 +56,7 @@ public class TooltipHtmlLineConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart - Custom Tooltips"))
+						.setText("HTML Tooltip - Line"))
 				.setTooltips(new Tooltips()
 						.setEnabled(false)
 						.setMode(TooltipMode.INDEX)

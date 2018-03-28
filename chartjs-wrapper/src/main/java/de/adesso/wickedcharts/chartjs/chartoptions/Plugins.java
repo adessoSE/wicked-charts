@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+/**
+ * Efficient way to customize or change the default behavior of a chart.
+ *
+ * @see <a
+ *      href="http://www.chartjs.org/docs/latest/developers/plugins.html?h=plugin">http://www.chartjs.org/docs/latest/developers/plugins.html?h=plugin</a>
+ *
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Plugins implements Serializable{

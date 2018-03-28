@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 
+/**
+ * Serializes a StringValue object to JSON.
+ */
 public class StringValueSerializer extends JsonSerializer<StringValue> {
 
 	@Override

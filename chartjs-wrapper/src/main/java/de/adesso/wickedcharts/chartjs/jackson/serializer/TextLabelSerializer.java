@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 
+/**
+ * Serializes a TextLabel object to JSON.
+ */
 public class TextLabelSerializer extends JsonSerializer<TextLabel> {
 
 	@Override

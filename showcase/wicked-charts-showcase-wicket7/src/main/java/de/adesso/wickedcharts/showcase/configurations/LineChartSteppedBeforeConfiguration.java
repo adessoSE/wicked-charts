@@ -50,7 +50,7 @@ public class LineChartSteppedBeforeConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart Stepped"))
+						.setText("Chart.js Line Chart Stepped - Before"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))

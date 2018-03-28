@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
 
+/**
+ * Serializes a StringValueColor object to JSON.
+ */
 public class StringValueColorSerializer extends JsonSerializer<StringValueColor> {
 
 	private static final String FORMAT = "'%s'";

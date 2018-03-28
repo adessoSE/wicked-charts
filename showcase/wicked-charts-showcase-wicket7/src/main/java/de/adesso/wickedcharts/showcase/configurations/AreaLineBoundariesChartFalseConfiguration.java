@@ -58,7 +58,7 @@ public class AreaLineBoundariesChartFalseConfiguration extends ShowcaseConfigura
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Boundaries Chart"))
+						.setText("Chart.js Boundaries Chart - False"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setDisplay(true)

@@ -12,6 +12,9 @@ import org.apache.wicket.markup.html.panel.Fragment;
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
+/**
+ * The base class for all chart configurations for the showcase
+ */
 @SuppressWarnings("serial")
 public abstract class ShowcaseConfiguration extends ChartConfiguration implements Serializable {
 
@@ -49,8 +52,8 @@ public abstract class ShowcaseConfiguration extends ChartConfiguration implement
 
 	}
 
-	public void modfiyIndividualMarkup(Fragment optionalMarkup) {	
-		Fragment frag = new Fragment("optionalMarkup","defaultTooltip",optionalMarkup.getParent());
-		optionalMarkup.replaceWith(frag);
+	public void modfiyIndividualMarkup(Fragment optionalMarkup) {
+	    Fragment frag = new Fragment("optionalMarkup","defaultTooltip",optionalMarkup.getParent());
+	    optionalMarkup.replaceWith(frag);
 	}
 }

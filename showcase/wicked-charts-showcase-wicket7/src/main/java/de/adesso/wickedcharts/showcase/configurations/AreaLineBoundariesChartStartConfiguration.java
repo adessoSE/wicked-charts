@@ -58,7 +58,7 @@ public class AreaLineBoundariesChartStartConfiguration extends ShowcaseConfigura
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Boundaries Chart"))
+						.setText("Chart.js Boundaries Chart - Start"))
 				.setScales(new Scales()
 						.setXAxes(new AxesScale()
 								.setDisplay(true)

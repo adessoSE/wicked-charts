@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
 
+/**
+ * Serializes a FloatValue object to JSON
+ */
 public class FloatValueSerializer extends JsonSerializer<FloatValue> {
 
 	@Override

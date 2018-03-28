@@ -3,7 +3,7 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 import lombok.experimental.Accessors;
 
 /**
- * Declares a Callback function.
+ * Defines a callback function.
  *
  */
 @Accessors(chain = true)
