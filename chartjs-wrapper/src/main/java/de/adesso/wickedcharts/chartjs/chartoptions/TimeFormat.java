@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-class TimeFormat implements Serializable{
+public class TimeFormat implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String format;
 	private String timeFormat;
