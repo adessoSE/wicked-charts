@@ -60,13 +60,8 @@ public class OptionsUtil {
         options.getChartOptions().setRenderTo(renderTo);
     }
 
-    /**
+    /*
      * Null-safe setter for the chart.events.load configuration.
-     *
-     * @param options
-     *
-     * @param function 
-     *
      */
     public void setChartEventsLoad(final Options options, final Function function) {
         if (options.getChartOptions() == null) {

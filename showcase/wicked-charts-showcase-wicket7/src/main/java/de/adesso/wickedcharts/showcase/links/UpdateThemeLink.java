@@ -35,6 +35,7 @@ public class UpdateThemeLink extends AjaxLink<Void> {
      * Constructs a new Link.
      *
      * @param id            the wicket id of the link
+     * @param chart the name of the chart the link points to
      */
     public UpdateThemeLink(final String id, String chart) {
         super(id);

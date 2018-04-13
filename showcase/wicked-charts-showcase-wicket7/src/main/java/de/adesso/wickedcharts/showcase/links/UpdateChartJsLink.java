@@ -33,7 +33,8 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     /**
      * Constructs a new Link.
      *
-     * @param id            the wicket id of the link
+     * @param id the wicket id of the link
+     * @param val the name of the chart the link points to
      */
     public UpdateChartJsLink(final String id, final String val) {
         super(id);
