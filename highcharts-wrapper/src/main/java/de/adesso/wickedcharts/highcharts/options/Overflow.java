@@ -19,11 +19,7 @@ import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 /**
  * Defines the configuration of the "overflow" option.
  * 
- * @see <a href="http
- *      ://api.highcharts.com/highcharts#plotOptions.column.dataLabels
- *      .overflow">http
- *      ://api.highcharts.com/highcharts#plotOptions.column.dataLabels
- *      .overflow</a>
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.dataLabels.overflow">http://api.highcharts.com/highcharts#plotOptions.column.dataLabels.overflow</a>
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */

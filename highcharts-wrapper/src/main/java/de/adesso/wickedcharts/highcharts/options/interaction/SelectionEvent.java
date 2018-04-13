@@ -32,7 +32,7 @@ public class SelectionEvent extends BaseEvent {
 	protected List<Selection> yAxes = new ArrayList<Selection>();
 
 	/**
-	 * Returns information about which portions of which x-axes the user has
+	 * @return  information about which portions of which x-axes the user has
 	 * selected (zoomed).
 	 */
 	public List<Selection> getxAxes() {
@@ -40,7 +40,7 @@ public class SelectionEvent extends BaseEvent {
 	}
 
 	/**
-	 * Returns information about which portions of which y-axes the user has
+	 * @return  information about which portions of which y-axes the user has
 	 * selected (zoomed).
 	 */
 	public List<Selection> getyAxes() {

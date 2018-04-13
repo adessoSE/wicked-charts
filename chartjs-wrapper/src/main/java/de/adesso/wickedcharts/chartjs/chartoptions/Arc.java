@@ -1,6 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
@@ -13,6 +14,7 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper=false)
 public class Arc extends Element {
 	private Number borderWidth;
 	private Color backgroundColor;

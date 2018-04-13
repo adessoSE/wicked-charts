@@ -29,7 +29,7 @@ import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 /**
  * A context object that holds some context variables that may be needed by
  * {@link IOptionsProcessor}s.
- * <p/>
+ *
  * This class is not part of the public API!
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)

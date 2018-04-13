@@ -62,6 +62,8 @@ public class MinorTickInterval implements Serializable {
 	/**
 	 * Call this if you want to explicitly set the minorTickInterval to null to
 	 * override a Highcharts default.
+	 *
+	 * @return a MinorTicksInterval object
 	 */
 	public MinorTickInterval setNull() {
 		this.isNull = true;

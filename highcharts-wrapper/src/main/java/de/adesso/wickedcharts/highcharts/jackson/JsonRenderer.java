@@ -60,6 +60,7 @@ public class JsonRenderer {
      * @param clazz      the option class
      * @param serializer the serializer responsible for serializing objects of the option
      *                   class.
+     * @param <T> the class we need a serializer for
      */
     public <T> void addSerializer(final Class<T> clazz, final JsonSerializer<T> serializer) {
         this.jacksonModule.addSerializer(clazz, serializer);

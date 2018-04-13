@@ -108,11 +108,11 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	/**
 	 * This method is called for each update interval. It must return a point
 	 * which is then added to the series on the fly.
-	 * <p/>
+	 *
 	 * May return null. In that case, the chart is simply not updated.
 	 * 
 	 * @param event
-	 *          the {@link LiveDataUpdateEvent}
+	 *          the LiveDataUpdateEvent
 	 * 
 	 * @return the new point to add to the series. This point is added by calling
 	 *         Highcharts' addPoint() function. Please note that Highcharts does

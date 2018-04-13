@@ -27,15 +27,14 @@ import java.util.*;
  * This is the main class for configuring a chart. The structure of this class
  * is designed to be very close to the Highcharts options object. For
  * explanations of all options, please consult the Highcharts API reference.
- * <p/>
+ *
  * The options object will be serialized to a JSON object which is passed into
  * the Highcharts Javascript library. Options that are not set (i.e. that are
  * null), are not serialized into JSON, so that the default values of the
  * Highcharts library will be used.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts">http://api.highcharts.com/highcharts</a>
+ * @see <a href="http://api.highcharts.com/highcharts">http://api.highcharts.com/highcharts</a>
  */
 public class Options implements Serializable {
 

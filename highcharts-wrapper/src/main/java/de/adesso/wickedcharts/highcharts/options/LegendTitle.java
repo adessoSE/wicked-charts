@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  *
  * @see <a href="http://api.highcharts.com/highcharts#legend.title">http://api.highcharts.com/highcharts#legend.title</a>
- * @author Bartłomiej Łopatka <bartlomiej.lopatka@gmail.com>
+ * @author Bartlomiej Lopatka - bartlomiej.lopatka@gmail.com
  *
  */
 public class LegendTitle implements Serializable {
