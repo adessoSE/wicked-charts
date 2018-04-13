@@ -22,7 +22,7 @@ import de.adesso.wickedcharts.highcharts.options.Tooltip;
  * tooltip formatter, it displays the point name and the percentage of the
  * currently selected point. You can specify the number of decimal digits by
  * calling {@link Tooltip#setPercentageDecimals(Integer)}.
- * <p/>
+ *
  * Example: "PointName: 10.5%".
  * 
  * 

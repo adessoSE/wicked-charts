@@ -36,6 +36,9 @@ public class OptionsUtil {
     /**
      * Copies the renderTo configuration from one {@link Options} object to
      * another. Null-safe.
+     *
+     * @param from Object to copy from
+     * @param to Object to copy to
      */
     public void copyRenderTo(final Options from, final Options to) {
         if (to.getChartOptions() == null) {
@@ -46,6 +49,9 @@ public class OptionsUtil {
 
     /**
      * Null-safe setter for the renderTo configuration.
+     *
+     * @param options the Options object to set the renderTo of
+     * @param renderTo the render target
      */
     public void setRenderTo(final Options options, final String renderTo) {
         if (options.getChartOptions() == null) {

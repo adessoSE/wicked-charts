@@ -24,9 +24,9 @@ import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
  * Defines the configuration of the "dataLabels" option.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
+ *
  * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.dataLabels">http://api.highcharts.com/highcharts#plotOptions.column.dataLabels</a>
  *
- * and others
  */
 public class DataLabels implements Serializable {
 

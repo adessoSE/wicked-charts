@@ -21,7 +21,7 @@ import java.io.Serializable;
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * @see <a href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
- * and others
+ *
  */
 public class Labels implements Serializable {
 

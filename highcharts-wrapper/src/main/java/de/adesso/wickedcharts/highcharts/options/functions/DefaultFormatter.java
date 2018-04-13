@@ -21,7 +21,7 @@ import de.adesso.wickedcharts.highcharts.options.Tooltip;
  * A simple javascript function intended to use as tooltip formatter. If used as
  * tooltip formatter, the series name and the currently selected y value are
  * displayed as tooltip.
- * <p/>
+ *
  * Example: "Series: 4".
  * 
  * @see Tooltip#setFormatter(Function)

@@ -1,4 +1,4 @@
-/**
+/*
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes either a pixel value or a percentage value.
  * 
  * @see <a href="http://api.highcharts.com/highcharts#plotOptions.pie.innerSize">http://api.highcharts.com/highcharts#plotOptions.pie.innerSize</a>
- *      and others
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */

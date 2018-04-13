@@ -1,4 +1,4 @@
-/**
+/*
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,8 +19,8 @@ import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 /**
  * Defines the configuration of the "stacking" option.
  * 
- * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.stacking and">http://api.highcharts.com/highcharts#plotOptions.column.stacking and</a>
- *      others
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.stacking">http://api.highcharts.com/highcharts#plotOptions.column.stacking</a>
+ *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */
 public enum Stacking implements LowercaseEnum {

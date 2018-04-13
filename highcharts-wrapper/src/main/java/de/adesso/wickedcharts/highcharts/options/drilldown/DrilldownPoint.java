@@ -68,7 +68,7 @@ public class DrilldownPoint extends Point implements IProcessableOption {
     return drilldownOptionsIndex;
   }
 
-  /**
+  /*
    * All drilldown options are stored in a javascript array. This method sets
    * the index of the options a click on the {@link DrilldownPoint} should show.
    * This method is NOT part of the public API!
