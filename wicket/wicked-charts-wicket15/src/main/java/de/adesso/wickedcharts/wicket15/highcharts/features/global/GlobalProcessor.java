@@ -27,7 +27,7 @@ import de.adesso.wickedcharts.wicket15.highcharts.JsonRendererFactory;
  * This processor reads the global options from an {@link Options} object and
  * calls Highcharts' setOptions function to use the options globally for all
  * charts.
- * <p/>
+ *
  * If more than one chart with global options are on a single page, the global
  * options of the last chart override all others!
  * 
