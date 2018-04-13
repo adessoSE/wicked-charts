@@ -7,6 +7,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 
 /**
  * Shows how to configure a chart with the legend position at the bottom
+ * @see <a href="http://www.chartjs.org/samples/latest/legend/positioning.html">http://www.chartjs.org/samples/latest/legend/positioning.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class LegendPositionBottomConfiguration extends LegendPositionChartBasicConfiguration {

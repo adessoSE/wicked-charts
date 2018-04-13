@@ -8,9 +8,12 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
-  * Defines the value type for strings
-  *
-  */
+ * This class wraps Strings in a StringValue object.
+ * Wrapping Strings in this way is needed so that we can accept Lists of Strings
+ * or a single String when setting different attributes in the chart configuration.
+ *
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)

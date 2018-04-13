@@ -30,11 +30,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
+ * application without deploying, run `gradle bootRun` in wicked-charts-showcase-wicket7/
  */
-
 @Component
 public class ShowcaseApplication extends WebApplication {
 	/**

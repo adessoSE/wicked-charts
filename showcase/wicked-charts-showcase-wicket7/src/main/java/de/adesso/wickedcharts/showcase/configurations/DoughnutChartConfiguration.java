@@ -19,8 +19,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a doughnut configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/doughnut.html">http://www.chartjs.org/samples/latest/charts/doughnut.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class DoughnutChartConfiguration extends ShowcaseConfiguration {
 	public DoughnutChartConfiguration() {

@@ -23,8 +23,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how different line styles can be configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/line-styles.html">http://www.chartjs.org/samples/latest/charts/line/line-styles.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineStylesConfiguration extends ShowcaseConfiguration {
 	public LineStylesConfiguration() {

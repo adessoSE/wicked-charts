@@ -24,8 +24,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample of a basic line chart configuration.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/basic.html">http://www.chartjs.org/samples/latest/charts/line/basic.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 	public LineChartBasicConfiguration() {

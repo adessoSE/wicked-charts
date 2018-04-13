@@ -8,10 +8,12 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
-  * Defines the value type as a constant value
-  *
-  *
-  */
+ * This class defines a constant ValueType using a final String.
+ * Wrapping strings in this way is needed so that we can accept Lists of Strings
+ * or a single string when setting different attributes in the chart configuration.
+ *
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)

@@ -27,8 +27,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how different point style configurations look.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/legend/point-style.html">http://www.chartjs.org/samples/latest/legend/point-style.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LegendPointStyleConfiguration extends ShowcaseConfiguration {
 	public LegendPointStyleConfiguration() {

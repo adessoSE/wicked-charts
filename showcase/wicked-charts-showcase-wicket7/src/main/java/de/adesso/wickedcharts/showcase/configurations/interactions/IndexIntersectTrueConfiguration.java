@@ -21,6 +21,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 
 /**
  * If the intersect setting is true, the first intersecting item is used to determine the index in the data.
+ *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/interactions.html">http://www.chartjs.org/samples/latest/tooltips/interactions.html</a>
+ *
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class IndexIntersectTrueConfiguration extends ShowcaseConfiguration {

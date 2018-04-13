@@ -27,6 +27,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  *
  * A sample that shows how a stacked bar chart group configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/bar/stacked-group.html">http://www.chartjs.org/samples/latest/charts/bar/stacked-group.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class BarChartStackedGroupConfiguration extends ShowcaseConfiguration {

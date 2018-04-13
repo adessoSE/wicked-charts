@@ -7,6 +7,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Title;
  *
  * Chart configuration in order to not display grid lines.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/gridlines-display.html">http://www.chartjs.org/samples/latest/scales/gridlines-display.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class GridLinesDisplayFalseConfiguration extends GridLinesBasicConfiguration {

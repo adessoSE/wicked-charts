@@ -17,6 +17,8 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 
 /**
  * Base class for the other configurations for the legend position
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class LegendPositionChartBasicConfiguration extends ShowcaseConfiguration {

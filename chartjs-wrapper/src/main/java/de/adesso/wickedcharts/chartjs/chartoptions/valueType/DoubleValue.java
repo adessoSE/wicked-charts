@@ -8,9 +8,21 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
-  * Defines the value type for doubles
-  *
-  */
+ * This class wraps Doubles in a DoubleValue object.
+ * Wrapping Doubles in this way is needed so that we can accept Lists of Doubles
+ * or a single Double when setting different attributes in the chart configuration.
+ *
+ * Example:
+ * <pre>
+ *	Dataset dataset1 = new Dataset()
+ * 				.setData(DoubleValue.of(3.0));
+ *
+ * 	Dataset dataset2 = new Dataset()
+ *   			.setData(DoubleValue.of(Arrays.asList(1.0 , 2.0, 3.0 , 4.0 , 5.0));
+ * </pre>
+ *
+ *	@author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)

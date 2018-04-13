@@ -25,8 +25,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how configuring interpolation of lines in a line chart is configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/interpolation-modes.html">http://www.chartjs.org/samples/latest/charts/line/interpolation-modes.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartInterpolatedConfiguration extends ShowcaseConfiguration {
 	public LineChartInterpolatedConfiguration() {

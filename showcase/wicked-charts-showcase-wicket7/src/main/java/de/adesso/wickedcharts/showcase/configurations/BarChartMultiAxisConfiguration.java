@@ -29,6 +29,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  *
  * A sample that shows how a multi-axis bar chart configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/bar/multi-axis.html">http://www.chartjs.org/samples/latest/charts/bar/multi-axis.html</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class BarChartMultiAxisConfiguration extends ShowcaseConfiguration{

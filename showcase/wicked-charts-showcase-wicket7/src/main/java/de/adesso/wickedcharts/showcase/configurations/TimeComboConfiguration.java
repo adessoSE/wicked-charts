@@ -24,6 +24,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample which displays a bar chart for the data distribution and a line chart for the time progression of datasets.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/time/combo.html">http://www.chartjs.org/samples/latest/scales/time/combo.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TimeComboConfiguration extends ShowcaseConfiguration {

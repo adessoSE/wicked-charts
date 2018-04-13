@@ -11,6 +11,10 @@ import java.util.Arrays;
 
 /**
  * If intersect false the nearest item, in the x direction, is used to determine the index.
+ *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/interactions.html">http://www.chartjs.org/samples/latest/tooltips/interactions.html</a>
+ *
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class IndexIntersectFalseConfiguration extends ShowcaseConfiguration {

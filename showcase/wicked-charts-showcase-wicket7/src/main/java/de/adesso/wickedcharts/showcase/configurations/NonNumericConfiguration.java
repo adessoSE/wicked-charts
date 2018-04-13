@@ -23,8 +23,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how to configure non-numeric values in a chart.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/non-numeric-y.html">http://www.chartjs.org/samples/latest/scales/non-numeric-y.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class NonNumericConfiguration extends ShowcaseConfiguration {
 

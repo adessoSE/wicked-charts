@@ -20,9 +20,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a combo bar-line chart configuration with data labelling.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/advanced/data-labelling.html">http://www.chartjs.org/samples/latest/advanced/data-labelling.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-		
-		
 @SuppressWarnings("serial")
 public class DataLabellingChartConfiguration extends ShowcaseConfiguration {
 	public DataLabellingChartConfiguration() {

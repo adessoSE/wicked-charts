@@ -7,12 +7,12 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
-  * Defines the value type for use in time charts
-  *
-  * @see <a
-  *      http://www.chartjs.org/docs/latest/axes/cartesian/time.html">http://www.chartjs.org/docs/latest/axes/cartesian/time.html</a>
-  *
-  */
+ * This class defines a DateTimeValue object that can be used in charts that use different options related to time.
+ * It acts as a wrapper around the standard LocalDateTime in Java.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/cartesian/time.html">http://www.chartjs.org/docs/latest/axes/cartesian/time.html</a>
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)

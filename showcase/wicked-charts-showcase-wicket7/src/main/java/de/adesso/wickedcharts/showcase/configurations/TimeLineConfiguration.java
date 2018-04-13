@@ -27,6 +27,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample which displays a time progression line for datasets.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/time/line.html">http://www.chartjs.org/samples/latest/scales/time/line.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TimeLineConfiguration extends ShowcaseConfiguration {

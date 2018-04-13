@@ -11,6 +11,10 @@ import java.util.Arrays;
 
 /**
  * If intersect is true, this is only triggered when the mouse position intersects an item in the graph.
+ *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/interactions.html">http://www.chartjs.org/samples/latest/tooltips/interactions.html</a>
+ *
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class NearestIntersectTrueConfiguration extends ShowcaseConfiguration {

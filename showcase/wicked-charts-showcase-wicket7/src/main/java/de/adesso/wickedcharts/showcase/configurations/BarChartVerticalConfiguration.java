@@ -24,6 +24,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  *
  * A sample that shows how a vertical bar chart configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/bar/vertical.html">http://www.chartjs.org/samples/latest/charts/bar/vertical.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class BarChartVerticalConfiguration extends ShowcaseConfiguration {

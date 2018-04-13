@@ -21,6 +21,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that displays a scatter chart with two y-axes.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/scatter/multi-axis.html">http://www.chartjs.org/samples/latest/charts/scatter/multi-axis.html</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class ScatterChartMultiAxisConfiguration extends ShowcaseConfiguration {

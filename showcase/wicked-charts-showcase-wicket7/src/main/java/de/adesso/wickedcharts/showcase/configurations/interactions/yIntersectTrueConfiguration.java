@@ -11,6 +11,10 @@ import java.util.Arrays;
 
 /**
  * Returns all items that would intersect based on the Y coordinate of the position.
+ *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/interactions.html">http://www.chartjs.org/samples/latest/tooltips/interactions.html</a>
+ *
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 public class yIntersectTrueConfiguration extends ShowcaseConfiguration {

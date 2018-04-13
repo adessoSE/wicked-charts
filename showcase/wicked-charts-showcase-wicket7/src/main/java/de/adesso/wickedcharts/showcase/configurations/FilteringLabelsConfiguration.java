@@ -21,8 +21,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a chart with label filtering is configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/filtering-labels.html">http://www.chartjs.org/samples/latest/scales/filtering-labels.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class FilteringLabelsConfiguration extends ShowcaseConfiguration {
 	public FilteringLabelsConfiguration() {

@@ -22,6 +22,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  *
  * Chart configuration for different grid line styles.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/gridlines-style.html">http://www.chartjs.org/samples/latest/scales/gridlines-style.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class GridLineStylesConfiguration extends ShowcaseConfiguration {

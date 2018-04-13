@@ -23,8 +23,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how multiple axes in a line chart are configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/multi-axis.html">http://www.chartjs.org/samples/latest/charts/line/multi-axis.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartMultiAxisConfiguration extends ShowcaseConfiguration{
 	public LineChartMultiAxisConfiguration() {

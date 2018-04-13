@@ -8,10 +8,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.experimental.Accessors;
 
 /**
- * Defines the options for the chart tooltips
+ * This class represented the chart.js tooltips object.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/tooltip.html">http://www.chartjs.org/docs/latest/configuration/tooltip.html</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/tooltip.html">http://www.chartjs.org/docs/latest/configuration/tooltip.html</a>
  */
 @Accessors(chain = true)
 @lombok.Data
@@ -52,7 +51,4 @@ public class Tooltips implements Serializable{
 	private Number cornerRadius;
 	private Color multiKeyBackground;
 	private Boolean displayColors;
-	
-	
-	
 }

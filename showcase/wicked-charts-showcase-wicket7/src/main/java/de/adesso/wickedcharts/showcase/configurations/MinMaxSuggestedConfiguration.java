@@ -20,8 +20,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how to configure suggestedMin and suggestedMax Ticks in the chart options.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/linear/min-max-suggested.html">http://www.chartjs.org/samples/latest/scales/linear/min-max-suggested.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class MinMaxSuggestedConfiguration extends ShowcaseConfiguration {
 	public MinMaxSuggestedConfiguration() {

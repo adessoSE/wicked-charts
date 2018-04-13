@@ -33,6 +33,12 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This page takes care of the Highcharts showcase logic.
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 public class HomepageHighcharts extends WebPage {
 
     private static final long serialVersionUID = 1L;

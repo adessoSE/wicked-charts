@@ -14,6 +14,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that enables the use of custom html markup for tooltips in a pie chart.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/custom-pie.html">http://www.chartjs.org/samples/latest/tooltips/custom-pie.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TooltipHtmlPieConfiguration extends ShowcaseConfiguration {

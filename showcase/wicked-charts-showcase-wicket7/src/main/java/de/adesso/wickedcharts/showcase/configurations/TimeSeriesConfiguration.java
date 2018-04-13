@@ -24,6 +24,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that displays a progression of a dataset.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/time/financial.html">http://www.chartjs.org/samples/latest/scales/time/financial.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TimeSeriesConfiguration extends ShowcaseConfiguration {

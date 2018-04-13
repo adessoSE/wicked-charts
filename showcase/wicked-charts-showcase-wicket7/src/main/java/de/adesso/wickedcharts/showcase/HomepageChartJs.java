@@ -38,6 +38,9 @@ import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
 
 /**
  * This page takes care of the Chart.js showcase logic.
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 public class HomepageChartJs extends WebPage implements Serializable {
 

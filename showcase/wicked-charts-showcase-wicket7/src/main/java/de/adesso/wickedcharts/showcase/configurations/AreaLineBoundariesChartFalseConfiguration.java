@@ -25,8 +25,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how the 'false' fill option works
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/area/line-boundaries.html">http://www.chartjs.org/samples/latest/charts/area/line-boundaries.html</a>
+ * @author anedomansky
+ * @author maximAtanasov
  */
-
 @SuppressWarnings("serial")
 public class AreaLineBoundariesChartFalseConfiguration extends ShowcaseConfiguration {
 	public AreaLineBoundariesChartFalseConfiguration() {
