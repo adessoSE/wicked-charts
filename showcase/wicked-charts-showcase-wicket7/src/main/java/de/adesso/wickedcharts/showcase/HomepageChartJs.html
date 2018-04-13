@@ -237,10 +237,13 @@
             <blockquote>
 <pre class="brush: java">
 // Java code
-Options options = new Options();
-options.setTitle(new Title("My Chart"));
+ChartConfiguration chart = new ChartConfiguration();
+chart.setType(ChartType.LINE);
+chart.setOptions(new Options().setTitle(new Title().setText("My Chart")));
+chart.setData(new Data().setDatasets(Arrays.asList(new Dataset().setData(IntegerValue.of(1,2,3,4)))));
 ... // to see more options, select a chart below and click the button "Show Java code"
-add(new Chart("chart", options));
+
+add(new Chart("chart", chart));
 </pre>
             </blockquote>
         </div>
