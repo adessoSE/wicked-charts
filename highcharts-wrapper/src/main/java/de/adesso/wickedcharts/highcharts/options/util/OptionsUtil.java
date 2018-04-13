@@ -62,6 +62,11 @@ public class OptionsUtil {
 
     /**
      * Null-safe setter for the chart.events.load configuration.
+     *
+     * @param options
+     *
+     * @param function 
+     *
      */
     public void setChartEventsLoad(final Options options, final Function function) {
         if (options.getChartOptions() == null) {
@@ -163,6 +168,12 @@ public class OptionsUtil {
      * Retrieves the {@link Series} object with the given wickedChartsId from the
      * given {@link Options} object. Returns null if a Series with the given ID
      * does not exist.
+     *
+     * @param options Chartoptions
+     *
+     * @param wickedChartsId corresponding ID
+     *
+     * @return Series object
      */
     public static Series<?> getSeriesWithWickedChartsId(final Options options, final int wickedChartsId) {
         for (Series<?> series : options.getSeries()) {
@@ -177,6 +188,12 @@ public class OptionsUtil {
      * Retrieves the {@link Point} object with the given wickedChartsId from the
      * given {@link Options} object. Returns null if a Point with the given ID
      * does not exist.
+     *
+     * @param options Chartoptions
+     *
+     * @param wickedChartsId corresponding ID
+     *
+     * @return Point object
      */
     public static Point getPointWithWickedChartsId(final Options options, final int wickedChartsId) {
         for (Series<?> series : options.getSeries()) {

@@ -120,6 +120,8 @@ public class JavaScriptResourceRegistry {
     /**
      * Sets the {@link ResourceReference} to use to load the Highcharts module "funnel.js".
      * Use this method if you want to include the javascript file in your web application.
+     *
+     * @param reference reference a resource to be used
      */
     public void setFunnelReference(final ResourceReference reference) {
         this.funnelEntry = new RegistryEntry(reference);
@@ -128,6 +130,8 @@ public class JavaScriptResourceRegistry {
     /**
      * Sets the {@link ResourceReference} to use to load the Highcharts module "heatmap.js".
      * Use this method if you want to include the javascript file in your web application.
+     *
+     * @param reference reference a resource to be used
      */
     public void setHeatmapReference(final ResourceReference reference) {
         this.heatmapEntry = new RegistryEntry(reference);
@@ -137,6 +141,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the {@link ResourceReference} to use to load the Highcharts exporting
 	 * javascript library (exporting.js). Use this method if you want to include
 	 * the javascript file in your web application.
+     *
+     * @param reference reference a resource to be used
 	 */
 	public void setHighchartsExportingReference(final ResourceReference reference) {
 		this.highchartsExportingEntry = new RegistryEntry(reference);
@@ -146,6 +152,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the URL to use to load the Highcharts exporting javascript library
 	 * (exporting.js). Use this method if you want to load the javascript file
 	 * from an external URL.
+     *
+     * @param url String which specifies an url
 	 */
 	public void setHighchartsExportingReference(final String url) {
 		this.highchartsExportingEntry = new RegistryEntry(url);
@@ -155,6 +163,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the {@link ResourceReference} to use to load the Highcharts "more"
 	 * javascript library (highcharts-more.js). Use this method if you want to
 	 * include the javascript file in your web application.
+     *
+     * @param reference reference a resource to be used
 	 */
 	public void setHighchartsMoreReference(final ResourceReference reference) {
 		this.highchartsMoreEntry = new RegistryEntry(reference);
@@ -164,6 +174,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the URL to use to load the Highcharts "more" javascript library
 	 * (highcharts-more.js). Use this method if you want to load the javascript
 	 * file from an external URL.
+     *
+     * @param url String which specifies an url
 	 */
 	public void setHighchartsMoreReference(final String url) {
 		this.highchartsMoreEntry = new RegistryEntry(url);
@@ -173,6 +185,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the {@link ResourceReference} to use to load the Highcharts javascript
 	 * library (highcharts.js). Use this method if you want to include the
 	 * javascript file in your web application.
+     *
+     * @param reference reference a resource to be used
 	 */
 	public void setHighchartsReference(final ResourceReference reference) {
 		this.highchartsEntry = new RegistryEntry(reference);
@@ -182,6 +196,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the URL to use to load the Highcharts javascript library
 	 * (highcharts.js). Use this method if you want to load the javascript file
 	 * from an external URL.
+     *
+     * @param url String which specifies an url
 	 */
 	public void setHighchartsReference(final String url) {
 		this.highchartsEntry = new RegistryEntry(url);
@@ -191,6 +207,8 @@ public class JavaScriptResourceRegistry {
 	 * Sets the {@link ResourceReference} to use to load JQuery (jquery.js).Use
 	 * this method if you want to include the javascript file in your web
 	 * application.
+     *
+     * @param reference reference a resource to  be used
 	 */
 	public void setJQueryReference(final ResourceReference reference) {
 		this.jqueryEntry = new RegistryEntry(reference);
@@ -199,6 +217,8 @@ public class JavaScriptResourceRegistry {
 	/**
 	 * Sets the URL to use to load JQuery (jquery.js). Use this method if you want
 	 * to load the javascript file from an external URL.
+	 *
+	 * @param url String which specifies an url
 	 */
 	public void setJQueryReference(final String url) {
 		this.jqueryEntry = new RegistryEntry(url);

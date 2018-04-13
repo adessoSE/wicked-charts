@@ -86,9 +86,6 @@ public class Point implements Serializable {
 		this.y = y;
 	}
 
-	/**
-	 * Convencience constructor.
-	 */
 	public Point(final String name, final Number y, final Color color) {
 		this.name = name;
 		this.y = y;
