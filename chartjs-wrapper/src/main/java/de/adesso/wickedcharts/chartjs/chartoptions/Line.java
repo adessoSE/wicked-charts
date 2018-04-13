@@ -10,9 +10,11 @@ import lombok.experimental.Accessors;
 /**
  * Defines the line dataset properties.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/charts/line.html?h=line">http://www.chartjs.org/docs/latest/charts/line.html?h=line</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/charts/line.html?h=line">http://www.chartjs.org/docs/latest/charts/line.html?h=line</a>
  *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

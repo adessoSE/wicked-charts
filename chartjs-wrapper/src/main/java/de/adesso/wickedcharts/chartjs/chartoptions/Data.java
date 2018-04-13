@@ -13,9 +13,9 @@ import lombok.experimental.Accessors;
 /**
  * Defines the different data objects.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/?h=data">http://www.chartjs.org/docs/latest/?h=data</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/?h=data">http://www.chartjs.org/docs/latest/?h=data</a>
  *
+ * @author SvenWirz
  */
 @JsonAutoDetect(
 		  fieldVisibility = JsonAutoDetect.Visibility.ANY,

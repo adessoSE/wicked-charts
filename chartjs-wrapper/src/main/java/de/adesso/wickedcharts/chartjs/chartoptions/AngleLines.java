@@ -8,9 +8,9 @@ import lombok.experimental.Accessors;
 /**
  * Defines the options for angled lines.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/axes/radial/linear.html#angle-line-options">http://www.chartjs.org/docs/latest/axes/radial/linear.html#angle-line-options</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/radial/linear.html#angle-line-options">http://www.chartjs.org/docs/latest/axes/radial/linear.html#angle-line-options</a>
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

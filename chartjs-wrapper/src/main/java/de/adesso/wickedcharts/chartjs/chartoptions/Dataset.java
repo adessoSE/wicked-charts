@@ -18,9 +18,11 @@ import lombok.experimental.Accessors;
 /**
  * Defines the options for the dataset object.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/?h=dataset">http://www.chartjs.org/docs/latest/?h=dataset</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/?h=dataset">http://www.chartjs.org/docs/latest/?h=dataset</a>
  *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

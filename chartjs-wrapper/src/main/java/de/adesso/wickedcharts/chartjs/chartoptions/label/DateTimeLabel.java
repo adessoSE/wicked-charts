@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Defines datetime labels for the axes .
+ * Defines datetime labels for the axes.
  *
+ * @author SvenWirz
  */
 public class DateTimeLabel extends Label {
 	

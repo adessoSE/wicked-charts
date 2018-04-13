@@ -5,9 +5,11 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 /**
  * Defines the type of the chart.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/developers/charts.html?h=charttype">http://www.chartjs.org/docs/latest/developers/charts.html?h=charttype</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/developers/charts.html?h=charttype">http://www.chartjs.org/docs/latest/developers/charts.html?h=charttype</a>
  *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 public enum ChartType implements JsonValueEnum {
 	LINE("line"),

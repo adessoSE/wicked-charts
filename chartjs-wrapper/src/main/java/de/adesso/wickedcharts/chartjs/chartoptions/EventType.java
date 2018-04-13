@@ -5,9 +5,10 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 /**
  * Defines the different event types.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/general/interactions/events.html">http://www.chartjs.org/docs/latest/general/interactions/events.html</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/general/interactions/events.html">http://www.chartjs.org/docs/latest/general/interactions/events.html</a>
  *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 public enum EventType implements JsonValueEnum{
 	MOUSEMOVE("mousemove"),

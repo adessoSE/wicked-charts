@@ -6,9 +6,10 @@ import lombok.experimental.Accessors;
 /**
  * Defines the arc for polar area, doughnut and pie charts.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/elements.html#arc-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#arc-configuration</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html#arc-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#arc-configuration</a>
  *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

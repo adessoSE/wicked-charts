@@ -6,6 +6,9 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * An enum defining all point styles
  *
  * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html#point-styles">http://www.chartjs.org/docs/latest/configuration/elements.html#point-styles</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 public enum PointStyle implements JsonValueEnum {
 	CIRCLE("circle"),

@@ -7,9 +7,10 @@ import lombok.experimental.Accessors;
 /**
  * Defines the animations.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation">http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation">http://www.chartjs.org/docs/latest/configuration/animations.html?h=animation</a>
  *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

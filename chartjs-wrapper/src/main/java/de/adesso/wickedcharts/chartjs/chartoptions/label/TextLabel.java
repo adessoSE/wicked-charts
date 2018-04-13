@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 /**
  * Defines simple textlabels for the axes .
  *
+ *
+ * @author SvenWirz
  */
 public class TextLabel extends Label {
 	private String text;

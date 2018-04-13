@@ -13,9 +13,10 @@ import lombok.experimental.Accessors;
 /**
  * Defines options for the grid lines that run perpendicular to the axis.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#grid-line-configuration</a>
  *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @SuppressWarnings("serial")
 @Accessors(chain = true)
