@@ -16,6 +16,7 @@ package de.adesso.wickedcharts.wicket7.chartjs.features.basic;
 
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;

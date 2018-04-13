@@ -8,9 +8,11 @@ import lombok.experimental.Accessors;
 /**
  * Represents the points in a line chart or a bubble chart.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration</a>
  *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

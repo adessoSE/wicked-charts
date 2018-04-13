@@ -8,6 +8,8 @@ import lombok.experimental.Accessors;
  * Defines the rectangle element that is used in bar charts
  *
  * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html#rectangle-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#rectangle-configuration</a>
+ *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

@@ -19,28 +19,10 @@ import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.wicket7.chartjs.features.basic.ChartBehavior;
 
 /**
- * A simple markup container to display a chart. A chart can be provided with
- * the following data:
- * <ul>
- * <li><strong>options:</strong> the options define the content of the chart and
- * can also define the look and feel of the chart to a given extent. The
- * {@link Options} class is very similar in structure to the Highcharts API. See
- * <a href="http://api.highcharts.com/highcharts">http://api.highcharts.com/
- * highcharts</a> for more information of what all the options mean.</li>
- * <li><strong>theme:</strong> the theme defines the look and feel of a chart.
- * If no theme is provided, the default theme of Highcharts is used. A
- * {@link Theme} can contain any configuration an {@link Options} object, so it
- * acts as a template for creating charts. It should contain all the
- * configurations common to all the charts you want to display. Note that a
- * theme is set globally, so all charts on one page have the same theme!
- * </ul>
- * Please note that due to a bug in the Highcharts javascript library,
- * <strong>it is currently not possible to change the theme of a chart via
- * AJAX</strong>. If you do this, only the configuration options defined in the
- * new theme are overridden. Any configuration options defined in the old theme
- * and not in the new theme will stay active.
+ * A simple markup container to set up and display a chart.
  *
- * @author Tom Hombergs (tom.hombergs@gmail.com)
+ *
+ * @author SvenWirz
  */
 public class Chart extends WebMarkupContainer {
 
@@ -71,6 +53,8 @@ public class Chart extends WebMarkupContainer {
 	/**
 	 * Factory method for {@link ChartBehavior}s. May be overridden, if a custom
 	 * implementation of {@link ChartBehavior} is needed.
+	 *
+	 * @return ChartBehavior object
 	 */
 	protected ChartBehavior createChartBehavior() {
 		return new ChartBehavior(this);

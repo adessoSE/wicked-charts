@@ -7,9 +7,9 @@ import lombok.experimental.Accessors;
 /**
  * Defines which events trigger chart interactions.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/general/interactions/?h=hover">http://www.chartjs.org/docs/latest/general/interactions/?h=hover</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/general/interactions/?h=hover">http://www.chartjs.org/docs/latest/general/interactions/?h=hover</a>
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

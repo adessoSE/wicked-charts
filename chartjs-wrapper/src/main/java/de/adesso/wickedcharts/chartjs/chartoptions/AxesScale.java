@@ -7,9 +7,10 @@ import lombok.experimental.Accessors;
 /**
  * Defines options for the axes.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/axes/?h=axes">http://www.chartjs.org/docs/latest/axes/?h=axes</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/?h=axes">http://www.chartjs.org/docs/latest/axes/?h=axes</a>
  *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

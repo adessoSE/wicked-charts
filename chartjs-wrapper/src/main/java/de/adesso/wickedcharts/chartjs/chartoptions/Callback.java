@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 /**
  * Base-class for Callback functions.
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

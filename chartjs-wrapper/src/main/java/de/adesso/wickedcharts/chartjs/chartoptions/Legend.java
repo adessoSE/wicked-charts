@@ -7,9 +7,9 @@ import lombok.experimental.Accessors;
 /**
  * Displays data about the datasets.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/legend.html?h=legend">http://www.chartjs.org/docs/latest/configuration/legend.html?h=legend</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/legend.html?h=legend">http://www.chartjs.org/docs/latest/configuration/legend.html?h=legend</a>
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

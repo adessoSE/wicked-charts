@@ -5,9 +5,10 @@ import lombok.EqualsAndHashCode;
 /**
   * Defines the color as a hexadecimal encoded color.
   *
-  * @see <a
-  *      href="http://www.chartjs.org/docs/latest/general/colors.html">http://www.chartjs.org/docs/latest/general/colors.html</a>
+  * @see <a href="http://www.chartjs.org/docs/latest/general/colors.html">http://www.chartjs.org/docs/latest/general/colors.html</a>
   *
+  * @author anedomansky
+  * @author maximAtanasov
   */
 @lombok.Data
 @EqualsAndHashCode(callSuper=false)

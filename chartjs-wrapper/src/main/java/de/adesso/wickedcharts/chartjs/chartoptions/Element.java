@@ -5,11 +5,11 @@ import java.io.Serializable;
 import lombok.experimental.Accessors;
 
 /**
- * elements: arc, lines, points, and rectangles.
+ * Elements include: arc, lines, points, and rectangles.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/elements.html?h=element">http://www.chartjs.org/docs/latest/configuration/elements.html?h=element</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html?h=element">http://www.chartjs.org/docs/latest/configuration/elements.html?h=element</a>
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

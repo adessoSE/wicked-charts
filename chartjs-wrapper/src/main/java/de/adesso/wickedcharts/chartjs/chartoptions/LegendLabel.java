@@ -8,9 +8,9 @@ import lombok.experimental.Accessors;
 /**
  * Defines legend label configuration which is nested below the legend configuration.
  *
- * @see <a
- *      href="http://www.chartjs.org/docs/latest/configuration/legend.html#legend-label-configuration">http://www.chartjs.org/docs/latest/configuration/legend.html#legend-label-configuration</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/legend.html#legend-label-configuration">http://www.chartjs.org/docs/latest/configuration/legend.html#legend-label-configuration</a>
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data

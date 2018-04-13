@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Defines a list of textlabels for the axes .
  *
+ * @author SvenWirz
  */
 public class TextListLabel extends Label {
 	private List<String> textList;

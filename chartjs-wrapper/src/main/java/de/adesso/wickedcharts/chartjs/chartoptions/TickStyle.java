@@ -8,8 +8,9 @@ import lombok.experimental.Accessors;
 /**
  * Defines the tick styles
  *
- * @see <a
- *      http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration</a>
+ * @see <a http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration">http://www.chartjs.org/docs/latest/axes/styling.html#minor-tick-configuration</a>
+ *
+ * @author SvenWirz
  */
 
 @Accessors(chain = true)
