@@ -7,7 +7,7 @@ import lombok.experimental.Accessors;
 /**
  * Defines the time format options
  *
- * @see <a http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options">http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options</a>
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options">http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options</a>
  *
  * @author SvenWirz
  */
