@@ -5,8 +5,12 @@ import java.io.Serializable;
 import lombok.experimental.Accessors;
 
 /**
- * Defines properties for the Axis.
+ * Defines options for the axes.
  *
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/?h=axes">http://www.chartjs.org/docs/latest/axes/?h=axes</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

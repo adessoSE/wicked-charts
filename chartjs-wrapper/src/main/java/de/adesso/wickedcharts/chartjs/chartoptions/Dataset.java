@@ -16,8 +16,13 @@ import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerial
 import lombok.experimental.Accessors;
 
 /**
- * Defines all Dataset options.
+ * Defines the options for the dataset object.
  *
+ * @see <a href="http://www.chartjs.org/docs/latest/?h=dataset">http://www.chartjs.org/docs/latest/?h=dataset</a>
+ *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
 
+/**
+ * Serializes a ConstLabel object to JSON
+ */
 public class ConstLabelSerializer extends JsonSerializer<ConstLabel> {
 
 	private static final String FORMAT = "'%s'";

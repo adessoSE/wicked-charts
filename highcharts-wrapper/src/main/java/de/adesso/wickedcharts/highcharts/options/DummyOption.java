@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This class is used to mark Highcharts feature which are not (yet) supported
  * by wicked-charts. If you need this feature, please post a feature request at
  * http://code.google.com/p/wicked-charts/issues/list.
- * <p/>
+ *
  * Do not use this class, since it's uses in the API are subject to change!
  * 
  * @author Tom Hombergs (tom.hombergs@gmail.com)

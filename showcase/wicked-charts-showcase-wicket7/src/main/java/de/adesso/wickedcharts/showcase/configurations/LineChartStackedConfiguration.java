@@ -23,8 +23,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a stacked line chart is configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/area/line-stacked.html">http://www.chartjs.org/samples/latest/charts/area/line-stacked.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartStackedConfiguration extends ShowcaseConfiguration{
 	public LineChartStackedConfiguration() {

@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 
+/**
+ * Serializes a DoubleValue object to JSON
+ */
 public class DoubleValueSerializer extends JsonSerializer<DoubleValue> {
 
 	@Override

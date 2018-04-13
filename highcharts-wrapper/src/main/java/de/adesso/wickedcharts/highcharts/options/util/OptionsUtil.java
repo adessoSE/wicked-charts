@@ -36,6 +36,9 @@ public class OptionsUtil {
     /**
      * Copies the renderTo configuration from one {@link Options} object to
      * another. Null-safe.
+     *
+     * @param from Object to copy from
+     * @param to Object to copy to
      */
     public void copyRenderTo(final Options from, final Options to) {
         if (to.getChartOptions() == null) {
@@ -46,6 +49,9 @@ public class OptionsUtil {
 
     /**
      * Null-safe setter for the renderTo configuration.
+     *
+     * @param options the Options object to set the renderTo of
+     * @param renderTo the render target
      */
     public void setRenderTo(final Options options, final String renderTo) {
         if (options.getChartOptions() == null) {
@@ -54,7 +60,7 @@ public class OptionsUtil {
         options.getChartOptions().setRenderTo(renderTo);
     }
 
-    /**
+    /*
      * Null-safe setter for the chart.events.load configuration.
      */
     public void setChartEventsLoad(final Options options, final Function function) {
@@ -157,6 +163,12 @@ public class OptionsUtil {
      * Retrieves the {@link Series} object with the given wickedChartsId from the
      * given {@link Options} object. Returns null if a Series with the given ID
      * does not exist.
+     *
+     * @param options Chartoptions
+     *
+     * @param wickedChartsId corresponding ID
+     *
+     * @return Series object
      */
     public static Series<?> getSeriesWithWickedChartsId(final Options options, final int wickedChartsId) {
         for (Series<?> series : options.getSeries()) {
@@ -171,6 +183,12 @@ public class OptionsUtil {
      * Retrieves the {@link Point} object with the given wickedChartsId from the
      * given {@link Options} object. Returns null if a Point with the given ID
      * does not exist.
+     *
+     * @param options Chartoptions
+     *
+     * @param wickedChartsId corresponding ID
+     *
+     * @return Point object
      */
     public static Point getPointWithWickedChartsId(final Options options, final int wickedChartsId) {
         for (Series<?> series : options.getSeries()) {

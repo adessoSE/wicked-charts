@@ -143,5 +143,3 @@ subprojects {
         publish = true
     }
 }
-
-

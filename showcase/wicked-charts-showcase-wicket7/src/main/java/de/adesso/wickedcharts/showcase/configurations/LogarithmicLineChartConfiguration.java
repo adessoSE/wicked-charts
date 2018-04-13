@@ -23,8 +23,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a logarithmic line chart configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/logarithmic/line.html">http://www.chartjs.org/samples/latest/scales/logarithmic/line.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class LogarithmicLineChartConfiguration extends ShowcaseConfiguration {
 	public LogarithmicLineChartConfiguration() {

@@ -4,6 +4,16 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+
+
+/**
+ * Enum that defines different tooltip callbacks.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/tooltip.html#tooltip-callbacks">http://www.chartjs.org/docs/latest/configuration/tooltip.html#tooltip-callbacks</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class TooltipCallbacks implements Serializable{

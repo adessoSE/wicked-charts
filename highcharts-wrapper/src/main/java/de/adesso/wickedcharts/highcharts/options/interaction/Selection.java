@@ -32,7 +32,7 @@ public class Selection {
 	private Number max;
 
 	/**
-	 * Returns the {@link Axis} object of the axis this selection was made on.
+	 * @return the {@link Axis} object of the axis this selection was made on.
 	 */
 	public Axis getAxis() {
 		return this.axis;
@@ -43,7 +43,7 @@ public class Selection {
 	}
 
 	/**
-	 * Returns the current minimum value of the axis. The minimum value may change
+	 * @return  the current minimum value of the axis. The minimum value may change
 	 * during a selection / zooming event.
 	 */
 	public Number getMin() {
@@ -55,7 +55,7 @@ public class Selection {
 	}
 
 	/**
-	 * Returns the current maximum value of the axis. The maximum value may change
+	 * @return  the current maximum value of the axis. The maximum value may change
 	 * during a selection / zooming event.
 	 */
 	public Number getMax() {

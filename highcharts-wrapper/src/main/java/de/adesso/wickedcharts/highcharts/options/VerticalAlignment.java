@@ -19,8 +19,7 @@ import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 /**
  * Enumeration of possible vertical alignments.
  * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#title.verticalAlign and others">http://api.highcharts.com/highcharts#title.verticalAlign and others</a>
+ * @see <a href="http://api.highcharts.com/highcharts#title.verticalAlign">http://api.highcharts.com/highcharts#title.verticalAlign</a>
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */

@@ -3,6 +3,7 @@ package de.adesso.wickedcharts.showcase.configurations;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.chartjs.chartoptions.AxesScale;
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
@@ -24,11 +25,14 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample of a basic line chart configuration.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/basic.html">http://www.chartjs.org/samples/latest/charts/line/basic.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class LineChartBasicConfiguration extends ShowcaseConfiguration {
 	public LineChartBasicConfiguration() {
+
 		super();
     	setType(ChartType.LINE);
 		

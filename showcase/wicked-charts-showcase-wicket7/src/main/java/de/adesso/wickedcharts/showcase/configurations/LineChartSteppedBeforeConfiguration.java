@@ -24,8 +24,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a stepped line chart configuration looks with stepped = before.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/stepped.html">http://www.chartjs.org/samples/latest/charts/line/stepped.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartSteppedBeforeConfiguration extends ShowcaseConfiguration {
 	public LineChartSteppedBeforeConfiguration() {
@@ -50,7 +53,7 @@ public class LineChartSteppedBeforeConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart Stepped"))
+						.setText("Chart.js Line Chart Stepped - Before"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))

@@ -86,9 +86,6 @@ public class Point implements Serializable {
 		this.y = y;
 	}
 
-	/**
-	 * Convencience constructor.
-	 */
 	public Point(final String name, final Number y, final Color color) {
 		this.name = name;
 		this.y = y;
@@ -207,6 +204,9 @@ public class Point implements Serializable {
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
+	 *
+	 * @return a Point with the new ID set
+	 * @param wickedChartsId the ID to set
 	 */
 	public Point setWickedChartsId(Integer wickedChartsId) {
 		this.wickedChartsId = wickedChartsId;
@@ -215,6 +215,8 @@ public class Point implements Serializable {
 
 	/**
 	 * Retrieves the Wicked Charts specific ID for this Point.
+	 *
+	 * @return the ID of the Point
 	 */
 	public Integer getWickedChartsId() {
 		return wickedChartsId;

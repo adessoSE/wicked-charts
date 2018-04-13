@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import lombok.experimental.Accessors;
 
+//TODO: Write Javadoc
 @Accessors(chain = true)
 @lombok.Data
 public class SamplesFillerAnalyzer implements Serializable{

@@ -25,6 +25,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that displays different datasets on a radar.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/area/radar.html">http://www.chartjs.org/samples/latest/charts/area/radar.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class RadarChartConfiguration extends ShowcaseConfiguration {

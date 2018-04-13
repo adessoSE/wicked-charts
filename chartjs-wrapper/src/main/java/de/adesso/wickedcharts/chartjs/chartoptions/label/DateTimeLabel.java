@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Defines datetime labels for the axes.
+ *
+ * @author SvenWirz
+ */
 public class DateTimeLabel extends Label {
 	
 	private LocalDateTime date;

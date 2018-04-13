@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <title>Wicked Charts :: Showcase :: Wicket 6.x</title>
+    <title>Wicked Charts :: Showcase :: Wicket 7.x</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="wicked charts">
     <meta name="keywords" content="wicked charts,wicket,highcharts">
@@ -183,12 +183,12 @@
 
         <div id="themes" class="span9 corner-theme">
             <ul class="nav nav-pills">
-                <li class="active"><a href="/start/highcharts/default" data-target="#chart">Default</a></li>
-                <li><a href="/start/highcharts/grid" data-target="#chart">Grid</a></li>
-                <li><a href="/start/highcharts/skies" data-target="#chart">Skies</a></li>
-                <li><a href="/start/highcharts/gray" data-target="#chart">Gray</a></li>
-                <li><a href="/start/highcharts/darkblue" data-target="#chart">Dark Blue</a></li>
-                <li class="disabled"><a href="/start/highcharts/darkgreen" onclick="return false">Dark Green</a></li>
+                <li class="active"><a href="#" wicket:id="defaultTheme">Default</a></li>
+                <li><a href="#" wicket:id="grid" data-target="#chart">Grid</a></li>
+                <li><a href="#" wicket:id="skies" data-target="#chart">Skies</a></li>
+                <li><a href="#" wicket:id="gray" data-target="#chart">Gray</a></li>
+                <li><a href="#" wicket:id="darkblue" data-target="#chart">Dark Blue</a></li>
+                <li class="disabled"><a href="#" wicket:id="darkgreen" data-target="#chart">Dark Green</a></li>
             </ul>
         </div>
         <!--/span-->
@@ -248,7 +248,7 @@ add(new Chart("chart", options));
     <hr>
 
     <footer>
-        <p>&copy; Wicked Charts 2012-2013</p>
+        <p>&copy; Wicked Charts 2012-2018</p>
     </footer>
 
 </div>

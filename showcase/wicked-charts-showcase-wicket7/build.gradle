@@ -17,6 +17,7 @@ dependencies {
             [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
     	)
        compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
+       	
 }
 
 

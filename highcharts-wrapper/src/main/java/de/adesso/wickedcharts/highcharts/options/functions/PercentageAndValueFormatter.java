@@ -21,7 +21,7 @@ import de.adesso.wickedcharts.highcharts.options.Tooltip;
  * A javascript function intended to use as tooltip formatter. If used as
  * tooltip formatter, it displays the series name, the value and the percentage
  * of the currently selected point.
- * <p/>
+ *
  * Example: "SeriesName: 5 (10%)".
  * 
  * 

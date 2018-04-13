@@ -21,6 +21,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample which adds a border to the tooltips.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/border.html">http://www.chartjs.org/samples/latest/tooltips/border.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TooltipBorderConfiguration extends ShowcaseConfiguration {
@@ -48,7 +51,7 @@ public class TooltipBorderConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Sample tooltip with border"))
+						.setText("Tooltip with border"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setPosition(TooltipPosition.NEAREST)

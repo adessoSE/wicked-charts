@@ -9,7 +9,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import lombok.experimental.Accessors;
 
-
+/**
+ * This class describes the complete configuration of a chart.
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class ChartConfiguration {

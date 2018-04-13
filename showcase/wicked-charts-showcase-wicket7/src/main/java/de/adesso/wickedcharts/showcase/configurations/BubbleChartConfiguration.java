@@ -17,6 +17,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a bubble chart configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scriptable/bubble.html">http://www.chartjs.org/samples/latest/scriptable/bubble.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class BubbleChartConfiguration extends ShowcaseConfiguration {

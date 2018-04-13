@@ -30,11 +30,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
+ * application without deploying, run `gradle bootRun` in wicked-charts-showcase-wicket7/
  */
-
 @Component
 public class ShowcaseApplication extends WebApplication {
 	/**
@@ -54,10 +51,10 @@ public class ShowcaseApplication extends WebApplication {
 		JavaScriptResourceRegistry.getInstance().setJQueryReference(
 				new JavaScriptResourceReference(ShowcaseApplication.class,
 						"jquery-1.8.3.min-IEfix.js"));
-
-		mountPage("/start/chartjs", HomepageChartJs.class);
-		mountPage("/start/highcharts", HomepageHighcharts.class);
-		mountPage("/start/highcharts/${theme}", HomepageHighcharts.class);
+		
+		//mountPage("/start/chartjs", HomepageChartJs.class);
+		mountPage("/chartjs/", HomepageChartJs.class);
+		mountPage("/highcharts/", HomepageHighcharts.class);
 		mountPage("/simple", SimplePage.class);
 		mountPage("/modal", ModalWindowPage.class);
 

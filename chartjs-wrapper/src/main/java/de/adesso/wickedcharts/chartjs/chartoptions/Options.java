@@ -6,8 +6,13 @@ import java.util.List;
 import lombok.experimental.Accessors;
 
 /**
- * Defines all properties for the option attribute.
+ * Defines global options for the charts.
  *
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/?h=options">http://www.chartjs.org/docs/latest/configuration/?h=options</a>
+ *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

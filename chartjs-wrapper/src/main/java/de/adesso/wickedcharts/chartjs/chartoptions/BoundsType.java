@@ -2,6 +2,13 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+/**
+ * Defines the bounds property which controls the scale boundary strategy.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/cartesian/time.html#scale-bounds">http://www.chartjs.org/docs/latest/axes/cartesian/time.html#scale-bounds</a>
+ *
+ * @author SvenWirz
+ */
 public enum BoundsType implements JsonValueEnum{
 	DATA("data"),
 	TICKS("ticks");

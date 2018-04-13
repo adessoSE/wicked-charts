@@ -20,9 +20,8 @@ import java.io.Serializable;
  * Defines some label in a chart.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
- * @see <a
- * href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
- * and others
+ * @see <a href="http://api.highcharts.com/highcharts#Axis.plotLines.label">http://api.highcharts.com/highcharts#Axis.plotLines.label</a>
+ *
  */
 public class Labels implements Serializable {
 
@@ -201,6 +200,8 @@ public class Labels implements Serializable {
      *
      * @param format the new format string. Use "{value}" as a placeholder for the axis value.
      * @see <a href="http://api.highcharts.com/highstock#xAxis.labels.format">http://api.highcharts.com/highstock#xAxis.labels.format</a>
+     *
+     * @return a new Labels object
      */
     public Labels setFormat(String format) {
         this.format = format;

@@ -35,11 +35,11 @@ import java.text.MessageFormat;
 
 /**
  * This processor adds drilldown functionality to a chart. It searches the given
- * options for {@link Point.drilldownOptions}. If any drilldown options are
+ * options for {@link DrilldownPoint#drilldownOptions}. If any drilldown options are
  * found, they are serialized in a special global javascript variable. This
  * variable is referenced in a javascript function that is inserted at
- * {@link PlotOptions.point.events.click}.
- * <p/>
+ * {@link PlotOptions}.
+ *
  * This class is not part of the public API! Use {@link DrilldownPoint}s to
  * enable drilldown in your charts.
  *

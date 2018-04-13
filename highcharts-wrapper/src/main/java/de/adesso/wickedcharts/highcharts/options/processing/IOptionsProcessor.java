@@ -26,7 +26,7 @@ public interface IOptionsProcessor {
 
   /**
    * Processes the given {@link Options}. This method gives the opportunity to
-   * modify an {@link Options} object before it is rendered as JSON. </p> This
+   * modify an {@link Options} object before it is rendered as JSON. This
    * class is not part of the public API!
    * 
    * @param options

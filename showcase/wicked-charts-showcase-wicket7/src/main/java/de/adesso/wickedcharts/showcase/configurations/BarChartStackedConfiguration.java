@@ -23,6 +23,15 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
+/**
+ *
+ * A sample that shows how a stack bar chart configuration looks.
+ *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/bar/stacked.html">http://www.chartjs.org/samples/latest/charts/bar/stacked.html</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 @SuppressWarnings("serial")
 public class BarChartStackedConfiguration extends ShowcaseConfiguration {
 	public BarChartStackedConfiguration() {

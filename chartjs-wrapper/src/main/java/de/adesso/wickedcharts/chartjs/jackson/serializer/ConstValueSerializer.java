@@ -8,7 +8,9 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
-
+/**
+ * Serializes a ConstValue object to JSON
+ */
 public class ConstValueSerializer extends JsonSerializer<ConstValue> {
 
 	private static final String FORMAT = "'%s'";

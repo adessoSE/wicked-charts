@@ -31,8 +31,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a chart with different datasets can be configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/area/line-datasets.html">http://www.chartjs.org/samples/latest/charts/area/line-datasets.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartAreaDatasetConfiguration extends ShowcaseConfiguration {
 	public LineChartAreaDatasetConfiguration() {

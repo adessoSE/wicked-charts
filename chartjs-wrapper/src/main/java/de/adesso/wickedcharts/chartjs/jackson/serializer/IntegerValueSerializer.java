@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 
+/**
+ * Serializes an IntegerValue object to JSON
+ */
 public class IntegerValueSerializer extends JsonSerializer<IntegerValue> {
 
 	@Override

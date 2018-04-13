@@ -46,7 +46,7 @@ public class ThreeDCoordinate<X, Y, Z> extends Coordinate<X, Y> {
         return isZQuoted;
     }
 
-    /**
+    /*
      * If true, the z value will be put into quotes when serialized into javascript.
      */
     public ThreeDCoordinate setZQuoted(Boolean isZQuoted) {

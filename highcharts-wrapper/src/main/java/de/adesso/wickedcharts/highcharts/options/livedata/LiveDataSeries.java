@@ -73,14 +73,14 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 
 	/**
 	 * Adds a javascript parameter that will be passed into the
-	 * {@link #update(LiveDataUpdateEvent))} method.
+	 * {@link #update(LiveDataUpdateEvent)} method.
 	 * 
 	 * @param parameterName
 	 *          the name of the parameter
 	 * @param javascriptExpression
 	 *          a javascript expression. The value this expression evaluates to
 	 *          will be transmitted to the server via AJAX and will be passed into
-	 *          {@link #update(LiveDataUpdateEvent)}. The javascript expression
+	 *          update(LiveDataUpdateEvent). The javascript expression
 	 *          may be a function call or a literal. If it is a literal string,
 	 *          you have to surround the string with single quotes. Don't use
      *          double quotes in an expression since they are not escaped correctly.
@@ -108,11 +108,11 @@ public abstract class LiveDataSeries extends PointSeries implements IProcessable
 	/**
 	 * This method is called for each update interval. It must return a point
 	 * which is then added to the series on the fly.
-	 * <p/>
+	 *
 	 * May return null. In that case, the chart is simply not updated.
 	 * 
 	 * @param event
-	 *          the {@link LiveDataUpdateEvent}
+	 *          the LiveDataUpdateEvent
 	 * 
 	 * @return the new point to add to the series. This point is added by calling
 	 *         Highcharts' addPoint() function. Please note that Highcharts does

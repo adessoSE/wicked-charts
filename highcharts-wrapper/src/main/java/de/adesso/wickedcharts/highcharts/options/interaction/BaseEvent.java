@@ -38,7 +38,7 @@ public class BaseEvent {
 	 * 
 	 * @return the name of the javascript variable holding the Highcharts "chart"
 	 *         object.
-	 * @see http://api.highcharts.com/highcharts#Chart
+	 * @see <a href="http://api.highcharts.com/highcharts#Chart">http://api.highcharts.com/highcharts#Chart</a>
 	 */
 	public String getJavascriptChartName() {
 		return this.javascriptChartName;

@@ -11,6 +11,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample which displays data as scattered points in the coordinate system.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/scatter/basic.html">http://www.chartjs.org/samples/latest/charts/scatter/basic.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class ScatterChartConfiguration extends ShowcaseConfiguration {

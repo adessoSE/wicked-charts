@@ -7,6 +7,15 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingModeLine;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines the line dataset properties.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/charts/line.html?h=line">http://www.chartjs.org/docs/latest/charts/line.html?h=line</a>
+ *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 @Accessors(chain = true)
 @lombok.Data
 public class Line implements Serializable{

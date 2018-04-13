@@ -2,6 +2,14 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+/**
+ * Defines the type of easing for animations.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/animations.html#easing">http://www.chartjs.org/docs/latest/configuration/animations.html#easing</a>
+ *
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 public enum EasingType implements JsonValueEnum{
 	EASE_IN_QUAD("easeInQuad"),
 	EASE_OUT_QUAD("easeOutQuad"),

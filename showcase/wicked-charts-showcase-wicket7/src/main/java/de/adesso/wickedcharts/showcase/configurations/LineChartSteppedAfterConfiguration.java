@@ -21,21 +21,23 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 /**
- * 
+ *
  * A sample that shows how a stepped line chart configuration looks with stepped = after.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/stepped.html">http://www.chartjs.org/samples/latest/charts/line/stepped.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartSteppedAfterConfiguration extends ShowcaseConfiguration {
 	public LineChartSteppedAfterConfiguration() {
 		super();
     	setType(ChartType.LINE);
-		
 		Data data = new Data()
 				.setLabels(TextLabel.of("January", "February", "March", "April", "May", "June", "July"));
 		setData(data);
-		
+
 		
 		
 		Dataset dataset1 = new Dataset()
@@ -52,7 +54,7 @@ public class LineChartSteppedAfterConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart Stepped"))
+						.setText("Chart.js Line Chart Stepped - After"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setIntersect(false))

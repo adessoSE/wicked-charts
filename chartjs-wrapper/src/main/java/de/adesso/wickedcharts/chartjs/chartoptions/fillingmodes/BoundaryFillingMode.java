@@ -1,5 +1,13 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
+/**
+ * Defines the additional filling modes as Strings.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/charts/area.html">http://www.chartjs.org/docs/latest/charts/area.html</a>
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
+ */
 public enum BoundaryFillingMode implements FillingMode {
 	START("start"),
 	END("end"),

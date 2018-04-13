@@ -11,10 +11,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import lombok.experimental.Accessors;
 
 /**
- * Defines attributes for the Tick option
+ * Defines all of the different options for the Ticks object.
+ *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  *
  */
-
 @Accessors(chain = true)
 @lombok.Data
 public class Ticks implements Serializable{

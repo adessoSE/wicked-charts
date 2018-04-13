@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="de.adesso.wickedcharts.showcase.options.OptionsSmokeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-03-14T10:27:11" hostname="de-adn-821gzw1" time="0.546">
-  <properties/>
-  <testcase name="testOptionsRendered" classname="de.adesso.wickedcharts.showcase.options.OptionsSmokeTest" time="0.546"/>
-  <system-out><![CDATA[Successfully tested Serialization of 51 option classes.
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

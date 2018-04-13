@@ -25,6 +25,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that enables the use of callback functions for tooltips.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/callbacks.html">http://www.chartjs.org/samples/latest/tooltips/callbacks.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TooltipCallbacksConfiguration extends ShowcaseConfiguration {
@@ -66,7 +69,7 @@ public class TooltipCallbacksConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Line Chart - Custom Information in Tooltip"))
+						.setText("Custom Information in Tooltip"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setCallbacks(new TooltipCallbacks()

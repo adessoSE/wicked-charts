@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.jackson.SingleElementListObjectMapper;
 
+/**
+ * Serializes a SingleElementList object to JSON.
+ */
 public class SingleElementListSerializer extends JsonSerializer<List<?>> {
 
 	@Override

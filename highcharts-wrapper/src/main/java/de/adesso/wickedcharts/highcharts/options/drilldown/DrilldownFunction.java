@@ -19,7 +19,7 @@ import de.adesso.wickedcharts.highcharts.options.Function;
 /**
  * A javascript function that when triggered changes the options of the current
  * chart and rerenders the chart.
- * <p/>
+ *
  * This class is not part of the public API! Use {@link DrilldownPoint}s to
  * enable drilldown in your charts.
  * 

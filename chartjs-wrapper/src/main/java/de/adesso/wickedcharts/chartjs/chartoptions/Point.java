@@ -6,8 +6,13 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import lombok.experimental.Accessors;
 
 /**
- * Defines all properties for points.
+ * Represents the points in a line chart or a bubble chart.
  *
+ * @see <a href="http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration">http://www.chartjs.org/docs/latest/configuration/elements.html#point-configuration</a>
+ *
+ * @author SvenWirz
+ * @author anedomansky
+ * @author maximAtanasov
  */
 @Accessors(chain = true)
 @lombok.Data

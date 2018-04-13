@@ -4,10 +4,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+/**
+ * This class wraps Floats in a FloatValue object.
+ * Wrapping Floats in this way is needed so that we can accept Lists of Floats
+ * or a single Float when setting different attributes in the chart configuration.
+ *
+ * Example:
+ * <pre>
+ *	Dataset dataset1 = new Dataset()
+ * 				.setData(FloatValue.of(3.0f));
+ *
+ * 	Dataset dataset2 = new Dataset()
+ *   			.setData(FloatValue.of(Arrays.asList(1.0f ,2.0f ,3.0f ,4.0f ,5.0f ));
+ * </pre>
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper = false)
 public class FloatValue extends ValueType {
 	private Float value;
 
@@ -15,8 +32,8 @@ public class FloatValue extends ValueType {
 		
 	}
 	
-	public FloatValue(Float integer) {
-		this.value = integer;
+	public FloatValue(Float value) {
+		this.value = value;
 	}
 
 	public static List<FloatValue> of(List<Float> floatList) {

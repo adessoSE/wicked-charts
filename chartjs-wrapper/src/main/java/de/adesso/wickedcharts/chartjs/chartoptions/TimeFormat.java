@@ -5,9 +5,12 @@ import java.io.Serializable;
 import lombok.experimental.Accessors;
 
 /**
- * Contains attributes for the timeFormat option
+ * Defines the time format options
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options">http://www.chartjs.org/docs/latest/axes/cartesian/time.html#configuration-options</a>
+ *
+ * @author SvenWirz
  */
-
 @Accessors(chain = true)
 @lombok.Data
 public class TimeFormat implements Serializable{

@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.CallbackFunction;
 
+/**
+ * Serializes a CallbackFunction object to JSON
+ */
 public class CallbackFunctionSerializer extends JsonSerializer<CallbackFunction> {
 
 	@Override

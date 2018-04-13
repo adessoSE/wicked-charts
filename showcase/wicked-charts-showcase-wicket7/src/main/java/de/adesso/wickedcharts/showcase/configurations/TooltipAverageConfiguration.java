@@ -22,8 +22,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that enables tooltips to be at a average position to the data points.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/positioning.html">http://www.chartjs.org/samples/latest/tooltips/positioning.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class TooltipAverageConfiguration extends ShowcaseConfiguration {
 	public TooltipAverageConfiguration() {
@@ -55,7 +57,7 @@ public class TooltipAverageConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Tooltip Average Position"))
+						.setText("Tooltip Average Position"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setPosition(TooltipPosition.AVERAGE)

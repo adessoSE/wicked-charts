@@ -60,7 +60,7 @@ public class Coordinate<X, Y> implements Serializable {
         return isXQuoted;
     }
 
-    /**
+    /*
      * If true, the x value will be put into quotes when serialized into javascript.
      */
     public Coordinate setXQuoted(Boolean isXQuoted) {
@@ -72,7 +72,7 @@ public class Coordinate<X, Y> implements Serializable {
         return isYQuoted;
     }
 
-    /**
+    /*
      * If true, the y value will be put into quotes when serialized into javascript.
      */
     public Coordinate setYQuoted(Boolean isYQuoted) {

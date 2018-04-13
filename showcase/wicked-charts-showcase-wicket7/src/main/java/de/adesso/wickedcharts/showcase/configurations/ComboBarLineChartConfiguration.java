@@ -19,9 +19,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a combo bar-line chart configuration looks.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/combo-bar-line.html">http://www.chartjs.org/samples/latest/charts/combo-bar-line.html</a>
+ *
+ * @author SvenWirz
  */
-		
-		
 @SuppressWarnings("serial")
 public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
 	public ComboBarLineChartConfiguration() {

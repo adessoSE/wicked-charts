@@ -24,8 +24,11 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a line chart can be configured to have different point sizes.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/point-sizes.html">http://www.chartjs.org/samples/latest/charts/line/point-sizes.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
-
 @SuppressWarnings("serial")
 public class LineChartWithDifferentPointSizesConfiguration extends ShowcaseConfiguration {
 	public LineChartWithDifferentPointSizesConfiguration() {

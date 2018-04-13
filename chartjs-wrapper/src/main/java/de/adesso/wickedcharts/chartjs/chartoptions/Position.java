@@ -3,10 +3,10 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
 /**
- * Defines all possible positions for tooltips.
+ * An enum used for expressing position in different options.
  *
+ * @author SvenWirz
  */
-
 public enum Position implements LowercaseEnum {
 	TOP, RIGHT, BOTTOM, LEFT;
 }

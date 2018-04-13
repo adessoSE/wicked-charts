@@ -24,8 +24,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 
  * A sample that shows how a line chart with linear step size is configured.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/linear/step-size.html">http://www.chartjs.org/samples/latest/scales/linear/step-size.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class LinearStepSizeConfiguration extends ShowcaseConfiguration {
 	public LinearStepSizeConfiguration() {

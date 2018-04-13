@@ -4,10 +4,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+/**
+ * This class wraps Integers in a IntegerValue object.
+ * Wrapping Integers in this way is needed so that we can accept Lists of Integers
+ * or a single Integer when setting different attributes in the chart configuration.
+ *
+ * Example:
+ * <pre>
+ *	Dataset dataset1 = new Dataset()
+ * 				.setData(IntegerValue.of(3));
+ *
+ * 	Dataset dataset2 = new Dataset()
+ *   			.setData(IntegerValue.of(Arrays.asList(1 ,2 ,3 ,4 ,5 ));
+ * </pre>
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper = false)
 public class IntegerValue extends ValueType {
 	private Integer value;
 

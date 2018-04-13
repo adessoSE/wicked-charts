@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 
+/**
+ * Serializes a DateTimeLabel object to JSON
+ */
 public class DateTimeLabelSerializer extends JsonSerializer<DateTimeLabel> {
 
 	private static final String MOMENT_FORMAT = "moment('%s',moment.ISO_8601)";

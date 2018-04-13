@@ -14,6 +14,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that displays a dataset as a pie chart.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/pie.html">http://www.chartjs.org/samples/latest/charts/pie.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class PieChartConfiguration extends ShowcaseConfiguration {

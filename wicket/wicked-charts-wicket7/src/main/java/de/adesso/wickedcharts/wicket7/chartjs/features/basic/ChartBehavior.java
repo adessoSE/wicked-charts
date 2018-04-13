@@ -16,6 +16,7 @@ package de.adesso.wickedcharts.wicket7.chartjs.features.basic;
 
 
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
@@ -87,7 +88,6 @@ public class ChartBehavior extends Behavior {
     private void includeJavascriptDependencies(final IHeaderResponse response, final ChartConfiguration options) {
         JavaScriptResourceRegistry resourceRegistry = JavaScriptResourceRegistry.getInstance();
         resourceRegistry.getJQueryEntry().addToHeaderResponse(response);
-        resourceRegistry.getHighchartsEntry().addToHeaderResponse(response);
         resourceRegistry.getChartJsBundle().addToHeaderResponse(response);
         resourceRegistry.getMomentJsentry().addToHeaderResponse(response);
     }

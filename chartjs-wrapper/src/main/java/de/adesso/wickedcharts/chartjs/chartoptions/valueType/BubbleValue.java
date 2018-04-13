@@ -1,9 +1,18 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+/**
+ * Defines the value type for use in the bubble chart (x and y coordinates and a radius for the bubbles)
+ * Using this class you can create BubbleValues from any other ValueType or primitive types like Double and Integer.
+ *
+ * @see <a href="http://www.chartjs.org/docs/latest/charts/bubble.html#data-structure">http://www.chartjs.org/docs/latest/charts/bubble.html#data-structure</a>
+ * @author SvenWirz
+ */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper=false)
 public class BubbleValue extends ValueType {
 	
 	private ValueType x;

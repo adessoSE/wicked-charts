@@ -10,6 +10,9 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 
+/**
+ * Serializes a RgbaColor object to JSON.
+ */
 public class RgbaColorSerializer extends JsonSerializer<RgbaColor> {
 
 	

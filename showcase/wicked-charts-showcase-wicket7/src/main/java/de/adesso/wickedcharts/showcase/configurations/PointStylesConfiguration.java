@@ -31,6 +31,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
  * 'line',
  * 'dash'
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/line/point-styles.html">http://www.chartjs.org/samples/latest/charts/line/point-styles.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class PointStylesConfiguration extends ShowcaseConfiguration {

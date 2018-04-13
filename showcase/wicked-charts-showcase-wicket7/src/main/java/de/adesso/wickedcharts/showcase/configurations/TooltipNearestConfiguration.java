@@ -23,8 +23,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that enables tooltips to be at the nearest possible position to the data points.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/tooltips/positioning.html">http://www.chartjs.org/samples/latest/tooltips/positioning.html</a>
+ *
+ * @author SvenWirz
  */
-
 @SuppressWarnings("serial")
 public class TooltipNearestConfiguration extends ShowcaseConfiguration {
 	public TooltipNearestConfiguration() {
@@ -56,7 +58,7 @@ public class TooltipNearestConfiguration extends ShowcaseConfiguration {
 				.setResponsive(true)
 				.setTitle(new Title()
 						.setDisplay(true)
-						.setText("Chart.js Tooltip Nearest Position"))
+						.setText("Tooltip Nearest Position"))
 				.setTooltips(new Tooltips()
 						.setMode(TooltipMode.INDEX)
 						.setPosition(TooltipPosition.NEAREST)

@@ -31,6 +31,9 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample which highlights the important points of the x-axis.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/scales/time/line-point-data.html">http://www.chartjs.org/samples/latest/scales/time/line-point-data.html</a>
+ *
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
 public class TimePointConfiguration extends ShowcaseConfiguration {

@@ -1,13 +1,16 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * Declares a Callback function.
+ * Defines a callback function.
  *
+ * @author SvenWirz
  */
 @Accessors(chain = true)
 @lombok.Data
+@EqualsAndHashCode(callSuper=false)
 public class CallbackFunction extends Callback {
 
 	private static final long serialVersionUID = 1L;

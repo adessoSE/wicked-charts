@@ -20,6 +20,10 @@ import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration
 /**
  * Sample that distributes data in a polar area chart.
  *
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/polar-area.html">http://www.chartjs.org/samples/latest/charts/polar-area.html</a>
+ *
+ * @author maximAtanasov
+ * @author anedomansky
  */
 @SuppressWarnings("serial")
 public class PolarAreaChartConfiguration extends ShowcaseConfiguration {
