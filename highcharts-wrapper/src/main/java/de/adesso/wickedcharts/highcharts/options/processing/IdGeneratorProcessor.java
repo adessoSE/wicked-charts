@@ -23,7 +23,7 @@ import de.adesso.wickedcharts.highcharts.options.series.Series;
  * This {@link IOptionsProcessor} assigns a unique ID to all {@link Series},
  * {@link Axis} and {@link Point}s that are contained in an {@link Options}
  * object.
- * <p/>
+ *
  * After this processor has processed an {@link Options} object, you can
  * retrieve the assigned IDs by calling getWickedChartsId() on the
  * {@link Series} and {@link Point}s.

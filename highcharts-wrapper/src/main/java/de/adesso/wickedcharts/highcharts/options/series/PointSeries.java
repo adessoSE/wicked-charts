@@ -34,6 +34,8 @@ public class PointSeries extends Series<Point> {
 	 * 
 	 * @param y
 	 *          the number.
+	 *
+	 * @return a PointSeries object with the new Point added
 	 */
 	public PointSeries addNumberPoint(final Number y) {
 		Point point = new Point(y);
@@ -46,6 +48,8 @@ public class PointSeries extends Series<Point> {
 	 * 
 	 * @param values
 	 *          the number values to add.
+     *
+     * @return a PointSeries object with the new points added to it
 	 */
 	public PointSeries addNumbers(final List<Number> values) {
 		for (Number number : values) {

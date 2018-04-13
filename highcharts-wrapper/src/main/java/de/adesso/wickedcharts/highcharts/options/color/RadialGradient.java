@@ -101,7 +101,7 @@ public class RadialGradient extends Gradient {
 	/**
 	 * Sets the vertical coordinate of the center of the gradient.
 	 * 
-	 * @param cx
+	 * @param cy
 	 *          percentage of the heigth where to display the center of the
 	 *          gradient. Must be a value between 0 and 1. 0 = top. 1 = bottom.
 	 * @return this {@link RadialGradient} object for chaining.

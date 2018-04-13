@@ -19,8 +19,7 @@ import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 /**
  * Defines the configuration of the "stacking" option.
  * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#plotOptions.column.stacking and">http://api.highcharts.com/highcharts#plotOptions.column.stacking and</a>
+ * @see <a href="http://api.highcharts.com/highcharts#plotOptions.column.stacking and">http://api.highcharts.com/highcharts#plotOptions.column.stacking and</a>
  *      others
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */

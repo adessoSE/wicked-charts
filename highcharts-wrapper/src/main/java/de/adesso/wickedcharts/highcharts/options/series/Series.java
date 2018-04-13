@@ -85,6 +85,8 @@ public abstract class Series<D> implements Serializable {
 
 	/**
 	 * Sets the Wicked Charts specific ID for this Point.
+	 *
+	 * @param wickedChartsId the id
 	 */
 	public void setWickedChartsId(Integer wickedChartsId) {
 		this.wickedChartsId = wickedChartsId;
@@ -92,6 +94,8 @@ public abstract class Series<D> implements Serializable {
 
 	/**
 	 * Retrieves the Wicked Charts specific ID for this Point.
+     *
+     * @return the id of this series
 	 */
 	public Integer getWickedChartsId() {
 		return wickedChartsId;
@@ -102,6 +106,8 @@ public abstract class Series<D> implements Serializable {
 	 * 
 	 * @param point
 	 *          the point to add.
+     *
+     * @return a Series of points with the new point added to it
 	 */
 	public Series<D> addPoint(final D point) {
 		if (this.data == null) {
@@ -273,15 +279,16 @@ public abstract class Series<D> implements Serializable {
 		return this;
 	}
 
-	/**
+	/*
 	 * Zero-based index of the X-Axis this series should be connected to.
+     *
 	 */
 	public Series<D> setxAxis(final Integer xAxis) {
 		this.xAxis = xAxis;
 		return this;
 	}
 
-	/**
+	/*
 	 * Zero-based index of the Y-Axis this series should be connected to.
 	 */
 	public Series<D> setyAxis(final Integer yAxis) {

@@ -24,7 +24,7 @@ import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 /**
  * Enumeration of the Wicked Charts features that go beyond merely creating JSON
  * output for Highcharts to evaluate.
- * <p/>
+ *
  * Not all "interpreters" of the {@link Options} class may support each feature
  * listed here. If an interpreter does not support a certain feature, it should
  * throw an exception if the user tries to use it.

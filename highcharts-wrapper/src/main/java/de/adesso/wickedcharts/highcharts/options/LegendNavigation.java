@@ -21,7 +21,7 @@ import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 /**
  *
  * @see <a href="http://api.highcharts.com/highcharts#legend.navigation">http://api.highcharts.com/highcharts#legend.navigation</a>
- * @author Bartłomiej Łopatka <bartlomiej.lopatka@gmail.com>
+ * @author Bartlomiej Lopatka - bartlomiej.lopatka@gmail.com
  *
  */
 public class LegendNavigation implements Serializable {

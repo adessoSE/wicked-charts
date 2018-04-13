@@ -17,11 +17,10 @@ package de.adesso.wickedcharts.highcharts.options;
 /**
  * Defines an X-Axis for a Highcharts chart.
  * 
- * <p/>
+ *
  * DEPRECATED: use {@link Axis} instead.
  * 
- * @see <a
- *      href="http://api.highcharts.com/highcharts#Axis">http://api.highcharts.com/highcharts#Axis</a>
+ * @see <a href="http://api.highcharts.com/highcharts#Axis">http://api.highcharts.com/highcharts#Axis</a>
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
