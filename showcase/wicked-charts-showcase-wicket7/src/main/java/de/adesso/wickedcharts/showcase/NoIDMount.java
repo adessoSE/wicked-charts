@@ -1,13 +1,10 @@
 package de.adesso.wickedcharts.showcase;
 
-import org.apache.wicket.core.request.handler.ListenerInterfaceRequestHandler;
 import org.apache.wicket.core.request.mapper.MountedMapper;
-import org.apache.wicket.request.IRequestHandler;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.component.IRequestablePage;
 import org.apache.wicket.request.mapper.info.PageComponentInfo;
 import org.apache.wicket.request.mapper.parameter.PageParametersEncoder;
-import org.apache.wicket.util.lang.Args;
 import org.apache.wicket.util.string.Strings;
 
 public class NoIDMount extends MountedMapper {
