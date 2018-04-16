@@ -229,7 +229,9 @@
             <blockquote>
 <pre class="brush: xml">
 &lt;!-- HTML code --&gt;
-&lt;div wicket:id="chart"/&gt;
+&lt;div&gt;
+    &lt;canvas wicket:id="chart"&lt;/canvas&gt;
+&lt;/div&gt;
 </pre>
             </blockquote>
 
@@ -241,7 +243,7 @@ ChartConfiguration chart = new ChartConfiguration();
 chart.setType(ChartType.LINE);
 chart.setOptions(new Options().setTitle(new Title().setText("My Chart")));
 chart.setData(new Data().setDatasets(Arrays.asList(new Dataset().setData(IntegerValue.of(1,2,3,4)))));
-... // to see more options, select a chart below and click the button "Show Java code"
+//to see more options, select a chart below and click the button "Show Java code"
 
 add(new Chart("chart", chart));
 </pre>
