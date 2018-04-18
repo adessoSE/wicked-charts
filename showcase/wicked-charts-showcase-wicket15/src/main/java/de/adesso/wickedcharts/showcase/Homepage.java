@@ -17,7 +17,6 @@ package de.adesso.wickedcharts.showcase;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import de.adesso.wickedcharts.wicket15.highcharts.Chart;
 
@@ -61,6 +60,8 @@ import de.adesso.wickedcharts.showcase.options.StackedColumnOptions;
 import de.adesso.wickedcharts.showcase.options.StackedPercentageOptions;
 import de.adesso.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import de.adesso.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
+import org.springframework.stereotype.Component;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class Homepage extends WebPage {
 

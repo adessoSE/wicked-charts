@@ -9,26 +9,25 @@ dependencies {
        testCompile 'junit:junit:4.12'
        compile 'commons-io:commons-io:2.4'
        compile 'org.apache.wicket:wicket-extensions:7.1.0'
-       compile(
-            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
-            [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket7', version: "${wicketcharts_version}"],
-    	)
-       compile(
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
-    	)
-       compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
-       	
+        compile(
+                [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+                [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket7', version: "${wicketcharts_version}"],
+        )
+        compile(
+                [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
+        )
+        compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
 }
 
 
 
 buildscript {
     repositories {
-    mavenLocal()
+        mavenLocal()
         jcenter()
-       maven {
-         url "https://plugins.gradle.org/m2/"
-       }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"

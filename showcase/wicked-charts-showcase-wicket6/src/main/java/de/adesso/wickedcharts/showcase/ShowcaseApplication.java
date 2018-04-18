@@ -1,4 +1,4 @@
-/**
+/*
  *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,13 +24,9 @@ import de.adesso.wickedcharts.wicket6.JavaScriptResourceRegistry;
 
 import de.adesso.wickedcharts.showcase.ie.SimplePage;
 import de.adesso.wickedcharts.showcase.modalwindow.ModalWindowPage;
+import org.springframework.stereotype.Component;
 
-/**
- * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
- */
+@Component
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

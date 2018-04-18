@@ -20,13 +20,9 @@ import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 
 import de.adesso.wickedcharts.wicket15.JavaScriptResourceRegistry;
+import org.springframework.stereotype.Component;
 
-/**
- * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
- */
+@Component
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
