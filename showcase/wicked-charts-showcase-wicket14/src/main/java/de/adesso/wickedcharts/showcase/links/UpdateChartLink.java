@@ -79,5 +79,4 @@ public class UpdateChartLink extends AjaxLink<Void> {
 		// make syntaxhighlighter highlight the changed code
 		target.appendJavascript("SyntaxHighlighter.highlight();");
 	}
-
 }

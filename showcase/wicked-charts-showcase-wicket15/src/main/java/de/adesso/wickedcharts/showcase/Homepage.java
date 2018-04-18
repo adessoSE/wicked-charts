@@ -60,7 +60,6 @@ import de.adesso.wickedcharts.showcase.options.StackedColumnOptions;
 import de.adesso.wickedcharts.showcase.options.StackedPercentageOptions;
 import de.adesso.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import de.adesso.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
-import org.springframework.stereotype.Component;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class Homepage extends WebPage {

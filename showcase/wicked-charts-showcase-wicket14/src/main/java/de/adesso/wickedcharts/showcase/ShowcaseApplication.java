@@ -14,12 +14,15 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+
+import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import org.apache.wicket.Request;
 import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
-
-import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
+import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
+import org.apache.wicket.util.lang.PackageName;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -38,16 +41,13 @@ public class ShowcaseApplication extends WebApplication {
 	@Override
 	public void init() {
 		super
-		    .init();
+				.init();
 		JavaScriptResourceRegistry
-		    .getInstance()
-		    .setJQueryReference("js/jquery-1.8.1.min.js");
-
-		mountBookmarkablePage("/start", Homepage.class);
-		
+				.getInstance()
+				.setJQueryReference("js/jquery-1.8.1.min.js");
+		mount(new IndexedParamUrlCodingStrategy("/start", Homepage.class));
 	}
 
-	
 	@Override
 	public Session newSession(final Request request, final Response response) {
 		return new ShowcaseSession(request);
