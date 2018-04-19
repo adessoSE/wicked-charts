@@ -4,8 +4,7 @@ dependencies {
     compile 'org.apache.wicket:wicket-core:6.21.0'
     compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.0.0'
     compile project(':wicked-charts-showcase-options')
-    compile 'org.wicketstuff:wicketstuff-gae-initializer:6.21.0'
-    compile 'log4j:log4j:1.2.17'
+
     compile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'junit:junit:4.12'
     compile 'commons-io:commons-io:2.4'
@@ -17,8 +16,6 @@ dependencies {
     compile(
             [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
     )
-    compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
-
 }
 
 buildscript {
@@ -52,14 +49,6 @@ bootRun {
             '-Dserver.port=8080',
             '-Dwicket.configurationType=DEVELOPMENT',
             '-Dspring.jpa.hibernate.ddl-auto=update'
-}
-
-configurations.all {
-    exclude module: 'slf4j-log4j12'
-}
-
-sourceSets.main.resources {
-    srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
 }
 
 
