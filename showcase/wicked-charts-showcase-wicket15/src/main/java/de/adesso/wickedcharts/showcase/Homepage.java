@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package de.adesso.wickedcharts.showcase;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import de.adesso.wickedcharts.wicket15.highcharts.Chart;
 
@@ -61,6 +60,7 @@ import de.adesso.wickedcharts.showcase.options.StackedColumnOptions;
 import de.adesso.wickedcharts.showcase.options.StackedPercentageOptions;
 import de.adesso.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
 import de.adesso.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 public class Homepage extends WebPage {
 

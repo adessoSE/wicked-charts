@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@ public class Homepage extends WebPage {
 	private Label addCodeContainer() {
 		Label codeContainer = new Label("code", new StringFromResourceModel(
 				BasicLineOptions.class, BasicLineOptions.class.getSimpleName()
-						+ ".java"));
+				+ ".java"));
 		codeContainer.setOutputMarkupId(true);
 		this.add(codeContainer);
 		return codeContainer;
@@ -165,7 +165,7 @@ public class Homepage extends WebPage {
 		return options;
 	}
 
-	private int getSelectedTab() {
+/*	private int getSelectedTab() {
 		if (this.getPageParameters() == null) {
 			return 0;
 		}
@@ -188,7 +188,7 @@ public class Homepage extends WebPage {
 				return 0;
 			}
 		}
-	}
+	}*/
 
 	private Theme getThemeFromParams(final PageParameters params) {
 		Object themeObject = params.get("theme");
@@ -211,11 +211,11 @@ public class Homepage extends WebPage {
 		}
 	}
 
-	@Override
+	/*@Override
 	public void renderHead(HtmlHeaderContainer header) {
 		// select bootstrap tab for current theme selected
 		int selectedTab = this.getSelectedTab();
 		header.getHeaderResponse().renderOnDomReadyJavascript(
 				"$('#themes li:eq(" + selectedTab + ") a').tab('show');");
-	}
+	}*/
 }

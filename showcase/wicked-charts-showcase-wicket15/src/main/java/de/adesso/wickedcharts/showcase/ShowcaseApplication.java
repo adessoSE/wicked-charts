@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -20,13 +20,9 @@ import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 
 import de.adesso.wickedcharts.wicket15.JavaScriptResourceRegistry;
+import org.springframework.stereotype.Component;
 
-/**
- * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
- */
+@Component
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()

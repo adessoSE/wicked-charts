@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicked Charts (http://wicked-charts.googlecode.com)
+ *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -14,19 +14,18 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+
+import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import org.apache.wicket.Request;
 import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
+import org.apache.wicket.util.lang.PackageName;
+import org.springframework.stereotype.Component;
 
-import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
-
-/**
- * Application object for your web application. If you want to run this
- * application without deploying, run the Start class.
- * 
- * @see de.adesso.wickedcharts.showcase.Start#main(String[])
- */
+@Component
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
@@ -42,16 +41,13 @@ public class ShowcaseApplication extends WebApplication {
 	@Override
 	public void init() {
 		super
-		    .init();
+				.init();
 		JavaScriptResourceRegistry
-		    .getInstance()
-		    .setJQueryReference("js/jquery-1.8.1.min.js");
-
-		mountBookmarkablePage("/start", Homepage.class);
-		
+				.getInstance()
+				.setJQueryReference("js/jquery-1.8.1.min.js");
+		mount(new IndexedParamUrlCodingStrategy("/start", Homepage.class));
 	}
 
-	
 	@Override
 	public Session newSession(final Request request, final Response response) {
 		return new ShowcaseSession(request);

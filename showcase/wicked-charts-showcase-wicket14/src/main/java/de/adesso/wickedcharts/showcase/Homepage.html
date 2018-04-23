@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
-    <title>Wicked Charts :: Showcase :: Wicket 1.5.x</title>
+    <title>Wicked Charts :: Showcase :: Wicket 1.4.x</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="wicked charts">
     <meta name="keywords" content="wicked charts,wicket,highcharts">
@@ -64,11 +64,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="../../../../../../test/java/de/adesso/wickedcharts/showcase">WickedCharts</a>
+          <a class="brand" href="/start">WickedCharts</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="../../../../../../test/java/de/adesso/wickedcharts/showcase">Showcase</a></li>
-              <li><a href="http://code.google.com/p/wicked-charts/">GoogleCode</a></li>
+              <li class="active"><a href="/start">Showcase</a></li>
+              <li><a href="https://github.com/adessoAG/wicked-charts">GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -80,7 +80,7 @@
         <div class="span12 grid">
 		  <div id="banner">
             <h1>Wicked Charts</h1>
-            <p>version ${project.version} :: Wicket ${wicket.version}</p>
+            <p>version @projectVersion@ :: Wicket @wicketVersion@</p>
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@
           </div><!--/.well -->
         </div><!--/span-->
 
-		<div id="themes" class="span9 corner-theme">
+        <!--<div id="themes" class="span9 corner-theme">
           <ul class="nav nav-pills">
             <li class="active"><a href="/start/default" data-target="#chart">Default</a></li>
             <li><a href="/start/grid" data-target="#chart">Grid</a></li>
@@ -171,7 +171,7 @@
         </div><!--/span-->
 
         <div class="span9 corner-chart">
-          <div wicket:id="chart" id="chart" style="width: 100%">CHART</div>
+          <div wicket:id="chart" id="chart" style="width: 100%"></div>
           <br>
           <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#"  data-toggle="modal" data-target="#codeDialog">Show Java code &raquo;</a></p>
         </div><!--/span-->
@@ -219,7 +219,7 @@ add(new Chart("chart", options));
       <hr>
 
       <footer>
-        <p>&copy; Wicked Charts 2012-2013</p>
+        <p>&copy; Wicked Charts 2012-2018</p>
       </footer>
 
     </div><!--/.fluid-container-->
