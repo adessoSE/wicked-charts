@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.0.0'
 }
 ```
 
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.0.0'
 }
 ```
 
@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.0.0'
 }
 ```
 
@@ -82,7 +82,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket14:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket14:3.0.0'
 }
 ```
 
@@ -94,7 +94,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.0.0'
 }
 ```
 
@@ -107,7 +107,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:chartjs-wrapper:3.0.0-SNAPSHOT'
-  compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:chartjs-wrapper:3.0.0'
+  compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
 }
 ```
