@@ -130,7 +130,7 @@ subprojects {
         pkg {
             repo = 'wicked-charts'
             name = 'wicked-charts'
-            userOrg = 'adessoag'
+            userOrg = 'adesso'
             licenses = ['Apache-2.0']
             vcsUrl = 'https://github.com/adessoag/wicked-charts'
             version {
