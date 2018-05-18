@@ -42,7 +42,7 @@ Wicket 7.x
 ---------
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
@@ -54,7 +54,7 @@ Wicket 6.x
 ---------
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
@@ -66,7 +66,7 @@ Wicket 1.5.x
 ---------
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
@@ -78,7 +78,7 @@ Wicket 1.4.x
 ---------
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
@@ -90,7 +90,7 @@ JSF 2.1
 ---------
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
@@ -103,7 +103,7 @@ Java Wrappers
 If you want to use the Java abstraction and JSON serializer of the Chart.js or Highcharts options (for example to add them to an application built with a different web framework than Wicket ot JSF), add the following dependencies:
 ```html
 repositories {
-  maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    jcenter()
 }
 
 dependencies {
