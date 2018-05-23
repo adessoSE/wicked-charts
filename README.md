@@ -34,13 +34,14 @@ Want to contribute?
 ===================
 Feel free to clone this repository and submit pull request. We'll see to get them merged into the main project.
 
-Gradle coordinates
+Adding Wicked-Charts as a dependency
 =================
-Depending on what web framework you use, add one of the following dependencies to your Gradle build:
+Depending on what web framework you use, add one of the following dependencies to your Gradle/Maven build:
 
 Wicket 7.x
 ---------
-```html
+Gradle:
+```groovy
 repositories {
     jcenter()
 }
@@ -50,9 +51,20 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket7</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 Wicket 6.x
 ---------
-```html
+Gradle:
+```groovy
 repositories {
     jcenter()
 }
@@ -62,9 +74,20 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket6</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 Wicket 1.5.x
 ---------
-```html
+Gradle:
+```groovy
 repositories {
     jcenter()
 }
@@ -74,9 +97,20 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket15</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 Wicket 1.4.x
 ---------
-```html
+Gradle:
+```groovy
 repositories {
     jcenter()
 }
@@ -86,9 +120,20 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket14</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 JSF 2.1
 ---------
-```html
+Gradle:
+```groovy
 repositories {
     jcenter()
 }
@@ -98,10 +143,21 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-jsf21</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 Java Wrappers
 ------------
+Gradle:
 If you want to use the Java abstraction and JSON serializer of the Chart.js or Highcharts options (for example to add them to an application built with a different web framework than Wicket ot JSF), add the following dependencies:
-```html
+```groovy
 repositories {
     jcenter()
 }
@@ -110,4 +166,23 @@ dependencies {
   compile 'de.adesso.wicked-charts:chartjs-wrapper:3.0.0'
   compile 'de.adesso.wicked-charts:highcharts-wrapper:3.0.0'
 }
+```
+
+Maven:
+```xml
+<dependencies>
+    <dependency>
+      <groupId>de.adesso.wicked-charts</groupId>
+      <artifactId>chartjs-wrapper</artifactId>
+      <version>3.0.0</version>
+      <type>pom</type>
+    </dependency>
+    
+    <dependency>
+      <groupId>de.adesso.wicked-charts</groupId>
+      <artifactId>highcharts-wrapper</artifactId>
+      <version>3.0.0</version>
+      <type>pom</type>
+    </dependency>
+</dependencies>
 ```
