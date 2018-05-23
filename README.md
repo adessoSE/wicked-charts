@@ -155,8 +155,9 @@ Maven:
 
 Java Wrappers
 ------------
-Gradle:
 If you want to use the Java abstraction and JSON serializer of the Chart.js or Highcharts options (for example to add them to an application built with a different web framework than Wicket ot JSF), add the following dependencies:
+
+Gradle:
 ```groovy
 repositories {
     jcenter()
