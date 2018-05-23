@@ -8,10 +8,10 @@ Beautiful and interactive JavaScript charts for Java-based web applications.
  * Download and run the [Showcase](https://github.com/adessoAG/wicked-charts/wiki/Developer-Info:-Starting-the-Showcase-Application) application for your web framework
  * Check out the [FAQ](https://github.com/adessoAG/wicked-charts/wiki/FAQ)
 
-[![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/thombergs/wicked-charts)
+[![Build Status](https://travis-ci.org/thombergs/wicked-charts.png?branch=master)](https://travis-ci.org/adessoAG/wicked-charts)
 
 What is Wicked Charts?
-======================
+                      ======================
 Wicked Charts is a Java wrapper of the [Chart.js](www.chartjs.org) and [Highcharts](www.highcharts.com) JavaScript libraries.
 The Chart.js and Highcharts libraries provide eye-pleasing charts using HTML5 (see [Highcharts demo](http://www.highcharts.com/demo) and [Chart.js Samples](http://www.chartjs.org/samples/latest/)).
 With Wicked Charts, you can configure a chart in Java and display it in any web application based on Apache Wicket* or JSF. Or you can use the Chart.js or Highcharts Java wrappers to integrate it in web applications built with other java web frameworks.
