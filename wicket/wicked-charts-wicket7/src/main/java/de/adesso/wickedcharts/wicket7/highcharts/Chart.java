@@ -16,9 +16,7 @@ package de.adesso.wickedcharts.wicket7.highcharts;
 
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.Theme;
-
 import de.adesso.wickedcharts.wicket7.highcharts.features.basic.ChartBehavior;
-
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 

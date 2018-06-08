@@ -18,7 +18,6 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.highcharts.options.series.Box;
 import de.adesso.wickedcharts.highcharts.options.series.BoxSeries;
 

@@ -14,21 +14,19 @@
  */
 package de.adesso.wickedcharts.showcase;
 
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.*;
-import de.adesso.wickedcharts.showcase.links.*;
-import de.adesso.wickedcharts.wicket7.highcharts.Chart;
-
+import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
+import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
+import de.adesso.wickedcharts.showcase.links.UpdateHighchartLink;
+import de.adesso.wickedcharts.showcase.links.UpdateThemeLink;
 import de.adesso.wickedcharts.showcase.options.*;
-
+import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.INamedParameters;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;

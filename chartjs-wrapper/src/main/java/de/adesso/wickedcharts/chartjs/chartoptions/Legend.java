@@ -1,8 +1,8 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * Displays data about the datasets.

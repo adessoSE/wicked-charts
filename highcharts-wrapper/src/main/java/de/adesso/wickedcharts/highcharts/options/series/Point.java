@@ -14,16 +14,15 @@
  */
 package de.adesso.wickedcharts.highcharts.options.series;
 
-import java.awt.Color;
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import de.adesso.wickedcharts.highcharts.options.DataLabels;
 import de.adesso.wickedcharts.highcharts.options.Events;
 import de.adesso.wickedcharts.highcharts.options.Marker;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * A point in a chart that has a label (or a name) and a color.

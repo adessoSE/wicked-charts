@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Wicked Charts :: Showcase :: Wicket 7.x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="wicked charts">
+    <meta name="keywords" content="wicked charts,wicket,highcharts">
+    <meta name="author" content="Matthias Balke, Tom Hombergs">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        .modal {
+            width: 800px;
+            left: 44%;
+            top: 36%;
+        }
+
+        .modal-body {
+            max-height: 560px;
+        }
+
+        .modal.fade.in {
+            top: 36%;
+        }
+
+
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/wickedcharts.css" rel="stylesheet">
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+    <link href="css/syntaxhighlighter/shCoreEclipse.css" rel="stylesheet" type="text/css">
+    <link href="css/syntaxhighlighter/shThemeEclipse.css" rel="stylesheet" type="text/css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="">WickedCharts</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a wicket:id="chartJsShowcaseLink">Chart.js Showcase</a></li>
+                    <li class="active"><a wicket:id="highchartShowcaseLink">Highcharts Showcase</a></li>
+                    <li><a href="https://github.com/adessoAG/wicked-charts">GitHub</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div id="bannerContainer" class="gradient">
+    <div class="row-fluid">
+        <div class="span12 grid">
+            <div id="banner">
+                <h1>Wicked Charts</h1>
+
+                <p>version @projectVersion@ :: Wicket @wicketVersion@</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <br>
+
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+
+                    <li class="nav-header">Line and scatter charts</li>
+                    <!-- basic line is not included in highcharts.com demos -->
+                    <li><a href="#" wicket:id="line">Basic Line</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">Ajax loaded data, clickable points</a></li>
+                    <li><a href="#" wicket:id="withDataLabels">With data labels</a></li>
+                    <li><a href="#" wicket:id="zoomableTimeSeries">Time series, zoomable</a></li>
+                    <li><a href="#" wicket:id="splineInverted">Spline with inverted axes</a></li>
+                    <li><a href="#" wicket:id="splineWithSymbols">Spline with symbols</a></li>
+                    <li><a href="#" wicket:id="splineWithPlotBands">Spline with plot bands</a></li>
+                    <li><a href="#" wicket:id="irregularIntervals">Time data with irregular intervals</a></li>
+                    <li><a href="#" wicket:id="logarithmicAxis">Logarithmic axis</a></li>
+
+                    <li class="nav-header">Area charts</li>
+                    <li><a href="#" wicket:id="area">Basic Area</a></li>
+                    <li><a href="#" wicket:id="areaWithNegativeValues">Area with negative values</a></li>
+                    <li><a href="#" wicket:id="stackedArea">Stacked area</a></li>
+                    <li><a href="#" wicket:id="percentageArea">Percentage area</a></li>
+                    <li><a href="#" wicket:id="areaMissing">Area with missing points</a></li>
+                    <li><a href="#" wicket:id="areaInverted">Inverted axes</a></li>
+                    <li><a href="#" wicket:id="areaSpline">Area-spline</a></li>
+                    <li><a href="#" wicket:id="areaSplineRange">Area-spline Range</a></li>
+
+                    <li class="nav-header">Column and bar charts</li>
+                    <li><a href="#" wicket:id="basicBar">Basic bar</a></li>
+                    <li><a href="#" wicket:id="stackedBar">Stacked bar</a></li>
+                    <li><a href="#" wicket:id="barNegativeStack">Bar with negative stack</a></li>
+                    <li><a href="#" wicket:id="basicColumn">Basic column</a></li>
+                    <li><a href="#" wicket:id="columnWithNegativeValues">Column with negative values</a></li>
+                    <li><a href="#" wicket:id="stackedColumn">Stacked column</a></li>
+                    <li><a href="#" wicket:id="stackedAndGroupedColumn">Stacked and grouped column</a></li>
+                    <li><a href="#" wicket:id="stackedPercentage">Stacked percentage column</a></li>
+                    <li><a href="#" wicket:id="columnRotated">Column with rotated labels</a></li>
+                    <li><a href="#" wicket:id="columnWithDrilldown">Column with drilldown</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">Data defined in a HTML table</a></li>
+
+                    <li class="nav-header">Scatter and bubble charts</li>
+                    <li><a href="#" wicket:id="scatter">Scatter plot</a></li>
+                    <li><a href="#" wicket:id="bubble">Bubble chart</a></li>
+                    <li><a href="#" wicket:id="3dbubble">3D bubbles</a></li>
+                    <li><a href="#" wicket:id="boxplot">Boxplot chart</a></li>
+
+
+                    <li class="nav-header">Pie charts</li>
+                    <li><a href="#" wicket:id="basicPie">Pie chart</a></li>
+                    <li><a href="#" wicket:id="pieWithGradient">Pie with gradient fill</a></li>
+                    <li><a href="#" wicket:id="donut">Donut chart</a></li>
+                    <li><a href="#" wicket:id="pieWithLegend">Pie with legend</a></li>
+
+                    <li class="nav-header">Dynamic charts</li>
+                    <li><a href="#" wicket:id="splineUpdating">Spline updating each second</a></li>
+                    <li><a wicket:id="clicktoadd" href="#">Click to add a point</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">Master-detail chart</a></li>
+
+                    <li class="nav-header">Combinations</li>
+                    <li><a href="#" wicket:id="combo">Column, Line and Pie</a></li>
+                    <li><a wicket:id="dualAxes" href="#">Dual axes, line and column</a></li>
+                    <li><a href="#" wicket:id="multipleAxes">Multiple axes</a></li>
+                    <li><a wicket:id="scatterWithRegression" href="#">Scatter with regression line</a></li>
+
+                    <li class="nav-header">More chart types</li>
+                    <li><a href="#" wicket:id="angularGauge">Angular gauge</a></li>
+                    <li><a href="#" wicket:id="errorBar">Error bar</a></li>
+                    <li><a href="#" wicket:id="funnel">Funnel chart</a></li>
+                    <li><a href="#" wicket:id="pyramid">Pyramid chart</a></li>
+                    <li><a href="#" wicket:id="heatmap">Heat map</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">Clock</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">Gauge with dual axes</a></li>
+                    <li class="disabled"><a href="#" onclick="return false">VU meter</a></li>
+                    <li><a wicket:id="arearange" href="#">Area range</a></li>
+                    <li><a wicket:id="columnrange" href="#">Column range</a></li>
+                    <li><a href="#" wicket:id="polar">Polar chart</a></li>
+                    <li><a wicket:id="spiderweb" href="#">Spiderweb</a></li>
+                    <li><a wicket:id="windrose" href="#">Wind rose</a></li>
+                    <li><a href="#" wicket:id="interactive">Client/Server interaction chart</a></li>
+                </ul>
+            </div>
+            <!--/.well -->
+        </div>
+        <!--/span-->
+
+
+        <div id="themes" class="span9 corner-theme">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#" wicket:id="defaultTheme">Default</a></li>
+                <li><a href="#" wicket:id="grid" data-target="#chart">Grid</a></li>
+                <li><a href="#" wicket:id="skies" data-target="#chart">Skies</a></li>
+                <li><a href="#" wicket:id="gray" data-target="#chart">Gray</a></li>
+                <li><a href="#" wicket:id="darkblue" data-target="#chart">Dark Blue</a></li>
+                <li class="disabled"><a href="#" wicket:id="darkgreen" data-target="#chart">Dark Green</a></li>
+            </ul>
+        </div>
+        <!--/span-->
+
+        <div class="span9 corner-chart">
+            <div wicket:id="chart" id="chart" style="width: 100%">CHART</div>
+            <br>
+
+            <p><a id="showCodeButton" class="btn btn-primary pull-right" href="#" data-toggle="modal"
+                  data-target="#codeDialog">Show Java code &raquo;</a></p>
+        </div>
+        <!--/span-->
+
+        <div class="span9 corner-usage">
+            <p>To add a chart to your Wicket page, include the following HTML
+                and Java fragments into your code:</p>
+
+            <h3>Markup:</h3>
+            <blockquote>
+<pre class="brush: xml">
+&lt;!-- HTML code --&gt;
+&lt;div wicket:id="chart"/&gt;
+</pre>
+            </blockquote>
+
+            <h3>Wicket Page:</h3>
+            <blockquote>
+<pre class="brush: java">
+// Java code
+Options options = new Options();
+options.setTitle(new Title("My Chart"));
+... // to see more options, select a chart below and click the button "Show Java code"
+add(new Chart("chart", options));
+</pre>
+            </blockquote>
+        </div>
+
+        <div class="span9">
+            <div id="codeDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="codeDialogHeader"
+                 aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 id="codeDialogHeader">Java code for this chart's configuration</h3>
+                </div>
+                <div class="modal-body">
+                    <pre wicket:id="code" class="brush: java">Here comes the code</pre>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>&copy; Wicked Charts 2012-2018</p>
+    </footer>
+
+</div>
+<!--/.fluid-container-->
+
+<!-- Le javascript
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-button.js"></script>
+<script src="js/bootstrap-tab.js"></script>
+<script src="js/syntaxhighlighter/shCore.js"></script>
+<script src="js/syntaxhighlighter/shBrushJava.js"></script>
+<script src="js/syntaxhighlighter/shBrushXml.js"></script>
+<script src="js/wickedcharts.js"></script>
+</body>
+</html>

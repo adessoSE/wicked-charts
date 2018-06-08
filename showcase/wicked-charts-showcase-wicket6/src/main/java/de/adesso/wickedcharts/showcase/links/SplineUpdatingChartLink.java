@@ -1,3 +1,4 @@
+
 /**
  *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
@@ -14,29 +15,21 @@
  */
 package de.adesso.wickedcharts.showcase.links;
 
-import org.apache.wicket.markup.html.basic.Label;
-
-import de.adesso.wickedcharts.wicket6.highcharts.Chart;
-
 import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
 
-public class SplineUpdatingChartLink extends UpdateChartLink {
+public class SplineUpdatingChartLink {
 
-	public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
-			Options options) {
-		super(id, chart, codeContainer, options);
-	}
+    //public SplineUpdatingChartLink(String id, Chart chart, Label codeContainer,
+      //                             Options options) {
+        //super(id, chart, codeContainer, options);
+    //}
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * Always return a fresh {@link Options} object, so that the date ticks are
-	 * current.
-	 */
-	@Override
-	public Options getOptions() {
-		return new WicketSplineUpdatingOptions();
-	}
+    /**
+     * Always return a fresh {@link Options} object, so that the date ticks are
+     * current.
+     */
+
 
 }

@@ -14,13 +14,13 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.Symbol.PredefinedSymbol;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
 
 /**
  * Demo of the same basic area chart displayed in the Highcharts Demo at <a

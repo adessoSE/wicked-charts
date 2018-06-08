@@ -14,13 +14,10 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.highcharts.options.Options;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
-import org.springframework.stereotype.Component;
-
-import de.adesso.wickedcharts.highcharts.options.Options;
-
-import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 public class ShowcaseSession extends WebSession {
 

@@ -20,7 +20,6 @@ import de.adesso.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.wicket6.highcharts.Chart;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import java.io.Serializable;

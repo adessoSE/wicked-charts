@@ -14,9 +14,9 @@
  */
 package de.adesso.wickedcharts.wicket7.chartjs;
 
-import org.apache.wicket.markup.html.WebMarkupContainer;
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.wicket7.chartjs.features.basic.ChartBehavior;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 
 /**
  * A simple markup container to set up and display a chart.

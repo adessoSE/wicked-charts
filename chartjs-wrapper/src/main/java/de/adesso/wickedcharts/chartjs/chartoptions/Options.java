@@ -1,9 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 import java.util.List;
-
-import lombok.experimental.Accessors;
 
 /**
  * Defines global options for the charts.

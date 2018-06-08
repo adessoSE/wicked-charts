@@ -14,12 +14,11 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+import de.adesso.wickedcharts.wicket15.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
-
-import de.adesso.wickedcharts.wicket15.JavaScriptResourceRegistry;
 import org.springframework.stereotype.Component;
 
 @Component

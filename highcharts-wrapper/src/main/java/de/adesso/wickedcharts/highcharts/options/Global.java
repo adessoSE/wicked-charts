@@ -14,9 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.io.Serializable;
 
 /**
  * Defines the "globals" option.

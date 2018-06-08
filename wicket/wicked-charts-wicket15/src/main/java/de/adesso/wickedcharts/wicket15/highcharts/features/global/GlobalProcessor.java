@@ -14,14 +14,13 @@
  */
 package de.adesso.wickedcharts.wicket15.highcharts.features.global;
 
-import org.apache.wicket.markup.html.IHeaderResponse;
-
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Global;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.wicket15.highcharts.JsonRendererFactory;
+import org.apache.wicket.markup.html.IHeaderResponse;
 
 /**
  * This processor reads the global options from an {@link Options} object and

@@ -1,13 +1,12 @@
 package de.adesso.wickedcharts.chartjs;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.ChartType;
 import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import lombok.experimental.Accessors;
+
+import java.util.List;
 
 /**
  * This class describes the complete configuration of a chart.

@@ -18,7 +18,6 @@ import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.interaction.InteractionEvent;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**

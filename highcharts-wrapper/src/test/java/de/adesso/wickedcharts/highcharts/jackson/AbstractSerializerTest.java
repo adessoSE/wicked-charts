@@ -14,12 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
+import junit.framework.Assert;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import junit.framework.Assert;
 
 public class AbstractSerializerTest {
 

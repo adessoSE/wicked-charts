@@ -15,11 +15,9 @@
 package de.adesso.wickedcharts.showcase;
 
 
-import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
-
 import de.adesso.wickedcharts.showcase.ie.SimplePage;
 import de.adesso.wickedcharts.showcase.modalwindow.ModalWindowPage;
-
+import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;

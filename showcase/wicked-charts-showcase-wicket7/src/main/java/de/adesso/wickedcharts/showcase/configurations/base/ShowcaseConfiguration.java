@@ -1,5 +1,8 @@
 package de.adesso.wickedcharts.showcase.configurations.base;
 
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import org.apache.wicket.markup.html.panel.Fragment;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
@@ -7,10 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-
-import org.apache.wicket.markup.html.panel.Fragment;
-
-import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 
 /**
  * The base class for all chart configurations for the showcase

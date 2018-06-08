@@ -14,12 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Crosshair;
 import de.adesso.wickedcharts.highcharts.options.GridLineDashStyle;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CrosshairSerializerTest extends AbstractSerializerTest {
 

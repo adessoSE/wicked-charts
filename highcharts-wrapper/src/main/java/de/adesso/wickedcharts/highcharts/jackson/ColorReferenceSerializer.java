@@ -14,7 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.Locale;
 
 public abstract class ColorReferenceSerializer<T> extends NullableSerializer<T> {

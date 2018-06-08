@@ -14,24 +14,20 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.button.Button;
 import de.adesso.wickedcharts.highcharts.options.button.ButtonTheme;
 import de.adesso.wickedcharts.highcharts.options.button.Position;
-import de.adesso.wickedcharts.highcharts.options.color.Gradient;
-import de.adesso.wickedcharts.highcharts.options.color.HexColor;
-import de.adesso.wickedcharts.highcharts.options.color.HighchartsColor;
-import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
-import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
+import de.adesso.wickedcharts.highcharts.options.color.*;
 import de.adesso.wickedcharts.highcharts.options.color.LinearGradient.GradientDirection;
 import de.adesso.wickedcharts.highcharts.options.interaction.SelectionEvent;
 import de.adesso.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 public class ZoomableTimeSeriesOptions extends ShowcaseOptions {
 

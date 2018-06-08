@@ -14,22 +14,15 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
+import de.adesso.wickedcharts.highcharts.options.*;
+import de.adesso.wickedcharts.highcharts.options.series.Series;
+import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
+import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Stacking;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
-import de.adesso.wickedcharts.highcharts.options.series.Series;
-import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
-import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
 
 /**
  * Demo of the same stacked and grouped column chart displayed in the Highcharts

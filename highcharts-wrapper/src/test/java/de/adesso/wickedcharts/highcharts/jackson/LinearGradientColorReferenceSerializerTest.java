@@ -14,17 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.awt.Color;
-
+import de.adesso.wickedcharts.highcharts.options.color.*;
 import org.junit.Test;
 
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
-import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
-import de.adesso.wickedcharts.highcharts.options.color.Gradient;
-import de.adesso.wickedcharts.highcharts.options.color.HexColor;
-import de.adesso.wickedcharts.highcharts.options.color.HighchartsColor;
-import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
-import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+import java.awt.*;
 
 public class LinearGradientColorReferenceSerializerTest extends
     AbstractSerializerTest {

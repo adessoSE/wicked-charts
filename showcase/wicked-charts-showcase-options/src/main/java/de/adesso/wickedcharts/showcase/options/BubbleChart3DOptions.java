@@ -14,12 +14,7 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Marker;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.ZoomType;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.RadialGradient;
 import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
 import de.adesso.wickedcharts.highcharts.options.series.BubbleSeries;

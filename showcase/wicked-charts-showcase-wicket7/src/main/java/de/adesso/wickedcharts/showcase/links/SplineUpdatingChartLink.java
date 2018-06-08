@@ -16,11 +16,6 @@
 package de.adesso.wickedcharts.showcase.links;
 
 import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.wicket7.highcharts.Chart;
-
-import de.adesso.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
-
-import org.apache.wicket.markup.html.basic.Label;
 
 public class SplineUpdatingChartLink {
 

@@ -14,15 +14,15 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
 import de.adesso.wickedcharts.highcharts.options.series.Coordinate;
 import de.adesso.wickedcharts.highcharts.options.series.CoordinatesSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Demo of the same basic scatter plot chart displayed in the Highcharts Demo at

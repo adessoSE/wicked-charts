@@ -14,14 +14,6 @@
  */
 package de.adesso.wickedcharts.jsf21;
 
-import java.io.IOException;
-import java.text.MessageFormat;
-
-import javax.faces.component.FacesComponent;
-import javax.faces.component.UIOutput;
-import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseWriter;
-
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.processing.Feature;
@@ -30,6 +22,13 @@ import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.highcharts.theme.Theme;
 import de.adesso.wickedcharts.jsf21.highcharts.JSF21JsonRendererFactory;
+
+import javax.faces.component.FacesComponent;
+import javax.faces.component.UIOutput;
+import javax.faces.context.FacesContext;
+import javax.faces.context.ResponseWriter;
+import java.io.IOException;
+import java.text.MessageFormat;
 
 /**
  * 

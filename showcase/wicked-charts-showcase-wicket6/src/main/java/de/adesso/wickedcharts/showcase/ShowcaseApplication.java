@@ -1,4 +1,4 @@
-/*
+/**
  *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,26 +14,30 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+
+import de.adesso.wickedcharts.showcase.ie.SimplePage;
+import de.adesso.wickedcharts.showcase.modalwindow.ModalWindowPage;
+import de.adesso.wickedcharts.wicket6.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-
-import de.adesso.wickedcharts.wicket6.JavaScriptResourceRegistry;
-
-import de.adesso.wickedcharts.showcase.ie.SimplePage;
-import de.adesso.wickedcharts.showcase.modalwindow.ModalWindowPage;
 import org.springframework.stereotype.Component;
 
+/**
+ * Application object for your web application. If you want to run this
+ * application without deploying, run `gradle bootRun` in wicked-charts-showcase-wicket7/
+ */
 @Component
 public class ShowcaseApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<Homepage> getHomePage() {
-		return Homepage.class;
+	public Class<? extends WebPage> getHomePage() {
+		return HomepageChartJs.class;
 	}
 
 	/**
@@ -46,10 +50,10 @@ public class ShowcaseApplication extends WebApplication {
 				new JavaScriptResourceReference(ShowcaseApplication.class,
 						"jquery-1.8.3.min-IEfix.js"));
 
-		mountPage("/start", Homepage.class);
-		mountPage("/start/${theme}", Homepage.class);
-		mountPage("/simple", SimplePage.class);
-		mountPage("/modal", ModalWindowPage.class);
+		mount(new NoIDMount("/chartjs/", HomepageChartJs.class));
+		mount(new NoIDMount("/highcharts/", HomepageHighcharts.class));
+		mount(new NoIDMount("/simple", SimplePage.class));
+		mount(new NoIDMount("/modal", ModalWindowPage.class));
 
 		getJavaScriptLibrarySettings().setJQueryReference(
 				new JavaScriptResourceReference(ShowcaseApplication.class,

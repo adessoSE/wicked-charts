@@ -1,28 +1,23 @@
 package de.adesso.wickedcharts.chartjs.jackson;
 
-import java.util.Locale;
-
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.CallbackFunction;
+import de.adesso.wickedcharts.chartjs.chartoptions.JavaScriptReference;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DateTimeValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.*;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.*;
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
+
+import java.util.Locale;
 
 public class JsonRenderer {
 	private final ObjectMapper jacksonMapper;

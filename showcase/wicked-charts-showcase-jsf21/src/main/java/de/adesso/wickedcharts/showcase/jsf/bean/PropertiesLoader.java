@@ -14,12 +14,11 @@
  */
 package de.adesso.wickedcharts.showcase.jsf.bean;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
 
 /**
  * Load maven properties from filtered maven resources file.

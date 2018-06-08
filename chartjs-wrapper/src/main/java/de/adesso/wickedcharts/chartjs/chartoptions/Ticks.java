@@ -1,7 +1,5 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
@@ -9,6 +7,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * Defines all of the different options for the Ticks object.

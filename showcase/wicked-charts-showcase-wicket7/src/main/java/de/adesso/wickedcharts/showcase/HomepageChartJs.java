@@ -15,26 +15,26 @@ package de.adesso.wickedcharts.showcase;
  */
 
 
-import java.awt.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
+import de.adesso.wickedcharts.showcase.configurations.*;
 import de.adesso.wickedcharts.showcase.configurations.gridlines.*;
 import de.adesso.wickedcharts.showcase.configurations.interactions.*;
-import de.adesso.wickedcharts.showcase.links.UpdateThemeLink;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.request.mapper.parameter.INamedParameters;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-import de.adesso.wickedcharts.wicket7.chartjs.Chart;
-import de.adesso.wickedcharts.showcase.configurations.*;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.*;
+import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionBottomConfiguration;
+import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionLeftConfiguration;
+import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionRightConfiguration;
+import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionTopConfiguration;
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
+import de.adesso.wickedcharts.wicket7.chartjs.Chart;
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.request.mapper.parameter.INamedParameters;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This page takes care of the Chart.js showcase logic.

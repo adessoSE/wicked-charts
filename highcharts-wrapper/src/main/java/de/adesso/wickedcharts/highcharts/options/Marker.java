@@ -14,11 +14,11 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.awt.Color;
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * Defines the configuration of the "marker" option.

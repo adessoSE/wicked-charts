@@ -1,11 +1,10 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
 
-import java.io.Serializable;
-
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * This class represented the chart.js tooltips object.

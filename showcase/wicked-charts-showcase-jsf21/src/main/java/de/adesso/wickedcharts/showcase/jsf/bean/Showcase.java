@@ -14,16 +14,12 @@
  */
 package de.adesso.wickedcharts.showcase.jsf.bean;
 
+import de.adesso.wickedcharts.highcharts.options.Options;
+import de.adesso.wickedcharts.highcharts.theme.*;
+import de.adesso.wickedcharts.showcase.options.*;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
-import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.highcharts.theme.DarkBlueTheme;
-import de.adesso.wickedcharts.highcharts.theme.GrayTheme;
-import de.adesso.wickedcharts.highcharts.theme.GridTheme;
-import de.adesso.wickedcharts.highcharts.theme.SkiesTheme;
-import de.adesso.wickedcharts.highcharts.theme.Theme;
-import de.adesso.wickedcharts.showcase.options.*;
 
 /**
  *

@@ -14,14 +14,11 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.ChartOptions;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.SeriesType;
+import junit.framework.Assert;
+import org.junit.Test;
 
 public class NullSerializerTest {
 

@@ -14,15 +14,13 @@
  */
 package de.adesso.wickedcharts.showcase.links;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.basic.Label;
-
-import de.adesso.wickedcharts.wicket15.highcharts.Chart;
-
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.showcase.ShowcaseSession;
 import de.adesso.wickedcharts.showcase.StringFromResourceModel;
+import de.adesso.wickedcharts.wicket15.highcharts.Chart;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.markup.html.basic.Label;
 
 public class UpdateChartLink extends AjaxLink<Void> {
 

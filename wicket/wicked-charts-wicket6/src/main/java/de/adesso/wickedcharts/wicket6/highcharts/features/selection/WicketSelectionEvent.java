@@ -14,9 +14,8 @@
  */
 package de.adesso.wickedcharts.wicket6.highcharts.features.selection;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import de.adesso.wickedcharts.highcharts.options.interaction.SelectionEvent;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * Wicket-specific extension of {@link SelectionEvent}.
