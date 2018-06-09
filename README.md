@@ -49,6 +49,16 @@ dependencies {
 }
 ```
 
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket8</artifactId>
+  <version>3.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+
 Wicket 7.x
 ---------
 Gradle:
