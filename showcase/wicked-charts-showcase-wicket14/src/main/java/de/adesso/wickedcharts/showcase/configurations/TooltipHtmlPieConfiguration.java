@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
@@ -8,7 +9,6 @@ import org.apache.wicket.markup.html.panel.Fragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Sample that enables the use of custom html markup for tooltips in a pie chart.
  *

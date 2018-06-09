@@ -1,12 +1,12 @@
 
 package de.adesso.wickedcharts.showcase.configurations.legendposition;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 import java.util.Arrays;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Base class for the other configurations for the legend position
  *

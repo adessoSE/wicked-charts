@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
@@ -7,7 +8,6 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 import java.util.Arrays;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Sample that displays a scatter chart with two y-axes.
  *

@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.AbsoluteIndex;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
@@ -9,7 +10,6 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 import java.util.Arrays;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Sample that displays different datasets on a radar.
  *

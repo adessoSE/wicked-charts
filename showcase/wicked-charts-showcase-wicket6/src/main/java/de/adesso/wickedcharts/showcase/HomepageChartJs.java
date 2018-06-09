@@ -29,7 +29,6 @@ import de.adesso.wickedcharts.wicket6.chartjs.Chart;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.request.mapper.parameter.INamedParameters;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import java.io.Serializable;
@@ -168,8 +167,6 @@ public class HomepageChartJs extends WebPage implements Serializable {
         String chartString;
         List<Chart> config = new ArrayList<>();
 
-        //Get the parameters of the page
-        List<INamedParameters.NamedPair> pairs = params.getAllNamed();
 
         //If the showcase is started without any parameters
         //set the parameters to lineBasic and give us a line Chart

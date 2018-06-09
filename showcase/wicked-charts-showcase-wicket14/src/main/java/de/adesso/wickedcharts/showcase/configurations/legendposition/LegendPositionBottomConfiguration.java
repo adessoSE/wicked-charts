@@ -4,7 +4,6 @@ package de.adesso.wickedcharts.showcase.configurations.legendposition;
 import de.adesso.wickedcharts.chartjs.chartoptions.Legend;
 import de.adesso.wickedcharts.chartjs.chartoptions.Position;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Shows how to configure a chart with the legend position at the bottom
  * @see <a href="http://www.chartjs.org/samples/latest/legend/positioning.html">http://www.chartjs.org/samples/latest/legend/positioning.html</a>

@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
@@ -9,7 +10,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Sample that displays a progression of a dataset.
  *

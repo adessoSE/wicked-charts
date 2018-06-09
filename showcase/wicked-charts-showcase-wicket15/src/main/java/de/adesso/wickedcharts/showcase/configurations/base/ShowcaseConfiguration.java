@@ -1,6 +1,5 @@
 package de.adesso.wickedcharts.showcase.configurations.base;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import org.apache.wicket.markup.html.panel.Fragment;
 

@@ -1,12 +1,12 @@
 package de.adesso.wickedcharts.showcase.configurations.interactions;
 
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
 import java.util.Arrays;
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 /**
  * Returns all items that would intersect based on the X coordinate of the position only.
  *

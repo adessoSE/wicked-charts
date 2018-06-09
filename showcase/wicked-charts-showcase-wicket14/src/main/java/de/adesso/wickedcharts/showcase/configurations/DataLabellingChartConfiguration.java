@@ -24,7 +24,7 @@ public class DataLabellingChartConfiguration extends ShowcaseConfiguration {
 	public DataLabellingChartConfiguration() {
 		super();
 		setType(ChartType.BAR);
-		String optionalJavascript=readFile("de/adesso/wickedcharts/showcase/resources/dataLabellingPlugin.js");
+		String optionalJavascript=readFile("de/adesso/wickedcharts/showcase/dataLabellingPlugin.js");
     	
     	setOptionalJavascript(new ArrayList<String>());
     	addOptionalJavascript(optionalJavascript);
