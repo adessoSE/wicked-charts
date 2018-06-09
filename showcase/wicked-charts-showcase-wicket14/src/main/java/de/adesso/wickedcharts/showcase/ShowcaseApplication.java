@@ -20,6 +20,7 @@ import org.apache.wicket.Request;
 import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
 import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
 import org.springframework.stereotype.Component;
 
@@ -29,8 +30,8 @@ public class ShowcaseApplication extends WebApplication {
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<Homepage> getHomePage() {
-		return Homepage.class;
+	public Class<HomepageChartJs> getHomePage() {
+		return HomepageChartJs.class;
 	}
 
 	/**
@@ -43,7 +44,9 @@ public class ShowcaseApplication extends WebApplication {
 		JavaScriptResourceRegistry
 				.getInstance()
 				.setJQueryReference("js/jquery-1.8.1.min.js");
-		mount(new IndexedParamUrlCodingStrategy("/start", Homepage.class));
+
+        mount(new HybridUrlCodingStrategy("/chartjs", HomepageChartJs.class));
+		mount(new HybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class));
 	}
 
 	@Override

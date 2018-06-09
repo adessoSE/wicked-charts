@@ -1,34 +1,26 @@
 package de.adesso.wickedcharts.showcase.configurations;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.*;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.showcase.configurations.base.ShowcaseConfiguration;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-
+import de.adesso.wickedcharts.chartjs.chartoptions.*;
 
 /**
  * 
- * A sample that shows how a combo bar-line chart configuration with data labelling.
+ * A sample that shows how a combo bar-line chart configuration looks.
  *
- * @see <a href="http://www.chartjs.org/samples/latest/advanced/data-labelling.html">http://www.chartjs.org/samples/latest/advanced/data-labelling.html</a>
+ * @see <a href="http://www.chartjs.org/samples/latest/charts/combo-bar-line.html">http://www.chartjs.org/samples/latest/charts/combo-bar-line.html</a>
  *
- * @author maximAtanasov
- * @author anedomansky
+ * @author SvenWirz
  */
 @SuppressWarnings("serial")
-public class DataLabellingChartConfiguration extends ShowcaseConfiguration {
-	public DataLabellingChartConfiguration() {
+public class ComboBarLineChartConfiguration extends ShowcaseConfiguration {
+	public ComboBarLineChartConfiguration() {
 		super();
 		setType(ChartType.BAR);
-		String optionalJavascript=readFile("de/adesso/wickedcharts/showcase/dataLabellingPlugin.js");
-    	
-    	setOptionalJavascript(new ArrayList<>());
-    	addOptionalJavascript(optionalJavascript);
-    	
 		Data data = new Data();
 		Dataset dataset1 = new Dataset();
 		dataset1.setType(ChartType.LINE)
