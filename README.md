@@ -36,6 +36,19 @@ Adding Wicked-Charts as a dependency
 =================
 Depending on what web framework you use, add one of the following dependencies to your Gradle/Maven build:
 
+Wicket 8.x
+---------
+Gradle:
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.0.0'
+}
+```
+
 Wicket 7.x
 ---------
 Gradle:
