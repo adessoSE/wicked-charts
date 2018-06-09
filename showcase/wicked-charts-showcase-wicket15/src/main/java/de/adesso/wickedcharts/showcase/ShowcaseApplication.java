@@ -19,6 +19,7 @@ import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,8 +28,8 @@ public class ShowcaseApplication extends WebApplication {
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<Homepage> getHomePage() {
-		return Homepage.class;
+	public Class<HomepageChartJs> getHomePage() {
+		return HomepageChartJs.class;
 	}
 
 	/**
@@ -40,10 +41,11 @@ public class ShowcaseApplication extends WebApplication {
 		    .init();
 		JavaScriptResourceRegistry
 		    .getInstance()
-		    .setJQueryReference("js/jquery-1.8.1.min.js");
+		    .setJQueryReference("js/jquery-1.8.3.min-IEfix.js");
 
-		mountPage("/start", Homepage.class);
-		mountPage("/start/${theme}", Homepage.class);
+		mount(new NoIDMount("/chartjs/", HomepageChartJs.class));
+		mount(new NoIDMount("/highcharts/", HomepageHighcharts.class));
+
 	}
 
 	@Override
