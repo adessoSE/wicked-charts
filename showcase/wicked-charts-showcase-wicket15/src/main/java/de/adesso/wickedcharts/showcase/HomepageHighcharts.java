@@ -26,7 +26,6 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -172,10 +171,7 @@ public class HomepageHighcharts extends WebPage {
     private Chart getChartFromParams(final PageParameters params) {
         String chartString;
         String themeString;
-        List<Chart> config = new ArrayList<>();
-
-        //Get the parameters of the page
-        List<PageParameters.NamedPair> pairs = params.getAllNamed();
+        Chart config;
 
         //If the showcase is started without any parameters
         //set the parameters to lineBasic and give us a line Chart
@@ -184,8 +180,8 @@ public class HomepageHighcharts extends WebPage {
             temp.add("theme", "default");
             temp.add("chart", "line");
             setResponsePage(HomepageHighcharts.class, temp);
-            config.add(new Chart("chart", new BasicLineOptions(), null));
-            return config.get(0);
+            config = new Chart("chart", new BasicLineOptions(), null);
+            return config;
         }
 
         themeString = params.getAllNamed().get(0).getValue();
@@ -193,208 +189,204 @@ public class HomepageHighcharts extends WebPage {
         chartString = params.getAllNamed().get(1).getValue();
 
         if(chartString == null) {
-            config.add(new Chart("chart", new BasicLineOptions(), theme));
-            return config.get(0);
+            config = new Chart("chart", new BasicLineOptions(), theme);
+            return config;
         }
 
         switch(chartString) {
             case "basicBar":
-                config.add(new Chart("chart", new BasicBarOptions(), theme));
+                config = new Chart("chart", new BasicBarOptions(), theme);
                 break;
 
             case "splineWithSymbols":
-                config.add(new Chart("chart", new SplineWithSymbolsOptions(), theme));
+                config = new Chart("chart", new SplineWithSymbolsOptions(), theme);
                 break;
 
             case "irregularIntervals":
-                config.add(new Chart("chart", new TimeDataWithIrregularIntervalsOptions(), theme));
+                config = new Chart("chart", new TimeDataWithIrregularIntervalsOptions(), theme);
                 break;
 
             case "logarithmicAxis":
-                config.add(new Chart("chart", new LogarithmicAxisOptions(), theme));
+                config = new Chart("chart", new LogarithmicAxisOptions(), theme);
                 break;
 
             case "scatter":
-                config.add(new Chart("chart", new ScatterPlotOptions(), theme));
+                config = new Chart("chart", new ScatterPlotOptions(), theme);
                 break;
 
             case "area":
-                config.add(new Chart("chart", new BasicAreaOptions(), theme));
+                config = new Chart("chart", new BasicAreaOptions(), theme);
                 break;
 
             case "areaWithNegativeValues":
-                config.add(new Chart("chart", new AreaWithNegativeValuesOptions(), theme));
+                config = new Chart("chart", new AreaWithNegativeValuesOptions(), theme);
                 break;
 
             case "stackedAndGroupedColumn":
-                config.add(new Chart("chart", new StackedAndGroupedColumnOptions(), theme));
+                config = new Chart("chart", new StackedAndGroupedColumnOptions(), theme);
                 break;
 
             case "combo":
-                config.add(new Chart("chart", new ComboOptions(), theme));
+                config = new Chart("chart", new ComboOptions(), theme);
                 break;
 
             case "donut":
-                config.add(new Chart("chart", new DonutOptions(), theme));
+                config = new Chart("chart", new DonutOptions(), theme);
                 break;
 
             case "withDataLabels":
-                config.add(new Chart("chart", new LineWithDataLabelsOptions(), theme));
+                config = new Chart("chart", new LineWithDataLabelsOptions(), theme);
                 break;
 
-            /*case "zoomableTimeSeries":
-                config.add(new Chart("chart", new ZoomableTimeSeriesOptions(), theme));
-                break;*/
-
             case "splineInverted":
-                config.add(new Chart("chart", new SplineWithInvertedAxisOptions(), theme));
+                config = new Chart("chart", new SplineWithInvertedAxisOptions(), theme);
                 break;
 
             case "splineWithPlotBands":
-                config.add(new Chart("chart", new SplineWithPlotBandsOptions(), theme));
+                config = new Chart("chart", new SplineWithPlotBandsOptions(), theme);
                 break;
 
             case "polar":
-                config.add(new Chart("chart", new PolarOptions(), theme));
+                config = new Chart("chart", new PolarOptions(), theme);
                 break;
 
             case "stackedArea":
-                config.add(new Chart("chart", new StackedAreaOptions(), theme));
+                config = new Chart("chart", new StackedAreaOptions(), theme);
                 break;
 
             case "percentageArea":
-                config.add(new Chart("chart", new PercentageAreaOptions(), theme));
+                config = new Chart("chart", new PercentageAreaOptions(), theme);
                 break;
 
             case "areaMissing":
-                config.add(new Chart("chart", new AreaMissingOptions(), theme));
+                config = new Chart("chart", new AreaMissingOptions(), theme);
                 break;
 
             case "areaInverted":
-                config.add(new Chart("chart", new AreaInvertedAxisOptions(), theme));
+                config = new Chart("chart", new AreaInvertedAxisOptions(), theme);
                 break;
 
             case "areaSpline":
-                config.add(new Chart("chart", new AreaSplineOptions(), theme));
+                config = new Chart("chart", new AreaSplineOptions(), theme);
                 break;
 
             case "areaSplineRange":
-                config.add(new Chart("chart", new AreaSplineRangeOptions(), theme));
+                config = new Chart("chart", new AreaSplineRangeOptions(), theme);
                 break;
 
             case "columnWithDrilldown":
-                config.add(new Chart("chart", new ColumnWithDrilldownOptions(), theme));
+                config = new Chart("chart", new ColumnWithDrilldownOptions(), theme);
                 break;
 
             case "columnRotated":
-                config.add(new Chart("chart", new ColumnWithRotatedLabelsOptions(), theme));
+                config = new Chart("chart", new ColumnWithRotatedLabelsOptions(), theme);
                 break;
 
             case "stackedBar":
-                config.add(new Chart("chart", new StackedBarOptions(), theme));
+                config = new Chart("chart", new StackedBarOptions(), theme);
                 break;
 
             case "barNegativeStack":
-                config.add(new Chart("chart", new StackedBarOptions(), theme));
+                config = new Chart("chart", new StackedBarOptions(), theme);
                 break;
 
             case "basicColumn":
-                config.add(new Chart("chart", new BasicColumnOptions(), theme));
+                config = new Chart("chart", new BasicColumnOptions(), theme);
                 break;
 
             case "columnWithNegativeValues":
-                config.add(new Chart("chart", new ColumnWithNegativeValuesOptions(), theme));
+                config = new Chart("chart", new ColumnWithNegativeValuesOptions(), theme);
                 break;
 
             case "stackedColumn":
-                config.add(new Chart("chart", new StackedColumnOptions(), theme));
+                config = new Chart("chart", new StackedColumnOptions(), theme);
                 break;
 
             case "stackedPercentage":
-                config.add(new Chart("chart", new StackedPercentageOptions(), theme));
+                config = new Chart("chart", new StackedPercentageOptions(), theme);
                 break;
 
             case "basicPie":
-                config.add(new Chart("chart", new BasicPieOptions(), theme));
+                config = new Chart("chart", new BasicPieOptions(), theme);
                 break;
 
             case "pieWithGradient":
-                config.add(new Chart("chart", new PieWithGradientOptions(), theme));
+                config = new Chart("chart", new PieWithGradientOptions(), theme);
                 break;
 
             case "pieWithLegend":
-                config.add(new Chart("chart", new PieWithLegendOptions(), theme));
+                config = new Chart("chart", new PieWithLegendOptions(), theme);
                 break;
 
             case "bubble":
-                config.add(new Chart("chart", new BubbleChartOptions(), theme));
+                config = new Chart("chart", new BubbleChartOptions(), theme);
                 break;
 
             case "3dbubble":
-                config.add(new Chart("chart", new BubbleChart3DOptions(), theme));
+                config = new Chart("chart", new BubbleChart3DOptions(), theme);
                 break;
 
             case "boxplot":
-                config.add(new Chart("chart", new BoxplotChartOptions(), theme));
+                config = new Chart("chart", new BoxplotChartOptions(), theme);
                 break;
 
             case "angularGauge":
-                config.add(new Chart("chart", new AngularGaugeOptions(), theme));
+                config = new Chart("chart", new AngularGaugeOptions(), theme);
                 break;
 
             case "spiderweb":
-                config.add(new Chart("chart", new SpiderwebOptions(), theme));
+                config = new Chart("chart", new SpiderwebOptions(), theme);
                 break;
 
             case "windrose":
-                config.add(new Chart("chart", new WindroseOptions(), theme));
+                config = new Chart("chart", new WindroseOptions(), theme);
                 break;
 
             case "columnrange":
-                config.add(new Chart("chart", new ColumnRangeOptions(), theme));
+                config = new Chart("chart", new ColumnRangeOptions(), theme);
                 break;
 
             case "arearange":
-                config.add(new Chart("chart", new AreaRangeOptions(), theme));
+                config = new Chart("chart", new AreaRangeOptions(), theme);
                 break;
 
             case "clicktoadd":
-                config.add(new Chart("chart", new ClickToAddAPointOptions(), theme));
+                config = new Chart("chart", new ClickToAddAPointOptions(), theme);
                 break;
 
             case "dualAxes":
-                config.add(new Chart("chart", new DualAxesOptions(), theme));
+                config = new Chart("chart", new DualAxesOptions(), theme);
                 break;
 
             case "scatterWithRegression":
-                config.add(new Chart("chart", new ScatterWithRegressionLineOptions(), theme));
+                config = new Chart("chart", new ScatterWithRegressionLineOptions(), theme);
                 break;
 
             case "multipleAxes":
-                config.add(new Chart("chart", new MultipleAxesOptions(), theme));
+                config = new Chart("chart", new MultipleAxesOptions(), theme);
                 break;
 
             case "errorBar":
-                config.add(new Chart("chart", new ErrorBarOptions(), theme));
+                config = new Chart("chart", new ErrorBarOptions(), theme);
                 break;
 
             case "funnel":
-                config.add(new Chart("chart", new FunnelOptions(), theme));
+                config = new Chart("chart", new FunnelOptions(), theme);
                 break;
 
             case "pyramid":
-                config.add(new Chart("chart", new PyramidOptions(), theme));
+                config = new Chart("chart", new PyramidOptions(), theme);
                 break;
 
             case "heatmap":
-                config.add(new Chart("chart", new HeatmapOptions(), theme));
+                config = new Chart("chart", new HeatmapOptions(), theme);
                 break;
 
             default:
-                config.add(new Chart("chart", new BasicLineOptions(), theme));
+                config = new Chart("chart", new BasicLineOptions(), theme);
                 break;
         }
-        return config.get(0);
+        return config;
     }
 
     private Theme getThemeFromParams(String themeString) {

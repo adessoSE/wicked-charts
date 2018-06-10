@@ -14,68 +14,37 @@
  */
 package de.adesso.wickedcharts.showcase.links;
 
-import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.showcase.ShowcaseSession;
-import de.adesso.wickedcharts.showcase.StringFromResourceModel;
-import de.adesso.wickedcharts.wicket14.highcharts.Chart;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.basic.Label;
+import de.adesso.wickedcharts.showcase.HomepageHighcharts;
+import org.apache.wicket.PageParameters;
+import org.apache.wicket.markup.html.link.Link;
 
-public class UpdateHighchartLink extends AjaxLink<Void> {
+/**
+ * Adds a link to a chart in the showcase navigation sidebar.
+ * Clicking on the link calls the onClick() method, which sets page
+ * parameters accordingly.
+ */
+public class UpdateHighchartLink extends Link<Void> {
 
     private static final long serialVersionUID = 1L;
 
-    private final Chart chart;
-
-    private final Options options;
-
-    private final Label codeContainer;
+    private String chartVal;
 
     /**
      * Constructs a new Link.
      *
-     * @param id
-     *            the wicket id of the link
-     * @param chart
-     *            the container containing the chart
-     * @param codeContainer
-     *            the container containing the code display of the chart's
-     *            options
-     * @param options
-     *            the options of the chart.
+     * @param id            the wicket id of the link
      */
-    public UpdateHighchartLink(final String id, final Chart chart,
-                           final Label codeContainer, final Options options) {
+    public UpdateHighchartLink(final String id) {
         super(id);
-        this.chart = chart;
-        this.codeContainer = codeContainer;
-        this.options = options;
+        this.chartVal = id;
     }
 
-    public Chart getChartContainer() {
-        return this.chart;
-    }
-
-    public Label getCodeContainer() {
-        return this.codeContainer;
-    }
-
-    public Options getOptions() {
-        return this.options;
-    }
 
     @Override
-    public void onClick(final AjaxRequestTarget target) {
-        this.chart.setOptions(this.options);
-        ((ShowcaseSession) getSession()).setCurrentChartOptions(this.options);
-        this.codeContainer.setDefaultModel(new StringFromResourceModel(
-                this.options.getClass(), this.options.getClass()
-                .getSimpleName() + ".java"));
-        target.addComponent(this.chart);
-        target.addComponent(this.codeContainer);
-
-        // make syntaxhighlighter highlight the changed code
-        target.appendJavascript("SyntaxHighlighter.highlight();");
+    public void onClick() {
+        PageParameters params = new PageParameters();
+        params.add("chart", chartVal);
+        setResponsePage(HomepageHighcharts.class, params);
     }
+
 }

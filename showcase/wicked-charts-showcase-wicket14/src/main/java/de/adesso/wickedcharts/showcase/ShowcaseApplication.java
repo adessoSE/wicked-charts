@@ -38,14 +38,9 @@ public class ShowcaseApplication extends WebApplication {
 	 */
 	@Override
 	public void init() {
-		super
-				.init();
-		JavaScriptResourceRegistry
-				.getInstance()
-				.setJQueryReference("js/jquery-1.8.1.min.js");
-
-        mount(new HybridUrlCodingStrategy("/chartjs", HomepageChartJs.class));
-		mount(new HybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class));
+		super.init();
+        mount(new HybridUrlCodingStrategy("/chartjs", HomepageChartJs.class, false));
+		mount(new HybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class, false));
 	}
 
 	@Override

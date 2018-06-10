@@ -25,6 +25,7 @@ import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPosit
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
+import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket14.chartjs.Chart;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
