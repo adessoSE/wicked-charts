@@ -66,7 +66,6 @@ public class HomepageHighcharts extends WebPage {
             add(new UpdateThemeLink("skies", "chart"));
             add(new UpdateThemeLink("gray", "chart"));
             add(new UpdateThemeLink("darkblue", "chart"));
-            add(new UpdateThemeLink("darkgreen", "chart"));
         } else {
             String chartString = parameters.getAllNamed().get(1).getValue();
             add(new UpdateThemeLink("defaultTheme", chartString));
@@ -74,7 +73,6 @@ public class HomepageHighcharts extends WebPage {
             add(new UpdateThemeLink("skies", chartString));
             add(new UpdateThemeLink("gray", chartString));
             add(new UpdateThemeLink("darkblue", chartString));
-            add(new UpdateThemeLink("darkgreen", chartString));
         }
     }
 

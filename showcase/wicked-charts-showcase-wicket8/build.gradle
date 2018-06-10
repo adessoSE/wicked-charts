@@ -1,19 +1,20 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
+import org.apache.tools.ant.filters.ReplaceTokens
+
 dependencies {
-       compile 'org.apache.wicket:wicket-core:8.0.0'
-       compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.0.0'
-       compile 'org.apache.wicket:wicket-extensions:8.0.0'
-       compile project(':wicked-charts-showcase-options')
-       testCompile 'junit:junit:4.12'
-       compile 'commons-io:commons-io:2.4'
-       compile(
-               [group: 'org.apache.wicket', name: 'wicket-spring', version: "8.0.0"],
-               [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket8', version: "${wicketcharts_version}"],
-       )
-       compile(
-               [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
-       )
+    compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
+    compile project(':wicked-charts-showcase-options')
+    testCompile 'junit:junit:4.12'
+    compile 'commons-io:commons-io:2.4'
+    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
+    compile(
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+            [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket8', version: "${wicketcharts_version}"],
+    )
+    compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
+    )
 }
 
 buildscript {
@@ -34,10 +35,10 @@ apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 
 processResources {
-       from 'src/main/java'
-       from 'src/main/resources'
-       filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
-       filter(ReplaceTokens, tokens: [wicketVersion : "8.0.0"])
+    from 'src/main/java'
+    from 'src/main/resources'
+    filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
+    filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
 }
 
 bootRun {

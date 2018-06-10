@@ -19,6 +19,7 @@ import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
+import org.apache.wicket.request.mapper.MountedMapper;
 import org.springframework.stereotype.Component;
 
 @Component
