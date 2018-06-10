@@ -21,7 +21,13 @@ import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.IndexedHybridUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.MixedParamHybridUrlCodingStrategy;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 @Component
 public class ShowcaseApplication extends WebApplication {
@@ -39,8 +45,9 @@ public class ShowcaseApplication extends WebApplication {
 	@Override
 	public void init() {
 		super.init();
-        mount(new HybridUrlCodingStrategy("/chartjs", HomepageChartJs.class, false));
-		mount(new HybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class, false));
+		String[] params = {"chart"};
+        mount(new MixedParamHybridUrlCodingStrategy("/chartjs", HomepageChartJs.class,false, params));
+        mount(new MixedParamHybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class,false, params));
 	}
 
 	@Override

@@ -17,7 +17,7 @@ public class ChartComponent extends Panel {
         Fragment optionalMarkup = new Fragment("optionalMarkup","defaultTooltip",this);
         chart.getParent().add(optionalMarkup);
         ((ShowcaseConfiguration)chart.getChartConfiguration()).modfiyIndividualMarkup((Fragment)chart.getParent().get("optionalMarkup"));
-        ((Fragment) chart.getParent().get("optionalMarkup")).detach();
+        (chart.getParent().get("optionalMarkup")).detach();
         optionalMarkup = (Fragment) chart.getParent().get("optionalMarkup");
         this.add(optionalMarkup);
         optionalMarkup.setOutputMarkupId(true);
