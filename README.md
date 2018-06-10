@@ -57,6 +57,7 @@ Maven:
   <version>3.0.0</version>
   <type>pom</type>
 </dependency>
+
 ```
 
 Wicket 7.x

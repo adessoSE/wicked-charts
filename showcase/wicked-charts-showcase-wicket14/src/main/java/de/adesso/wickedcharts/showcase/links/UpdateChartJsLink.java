@@ -16,15 +16,14 @@ package de.adesso.wickedcharts.showcase.links;
 
 import de.adesso.wickedcharts.showcase.HomepageChartJs;
 import org.apache.wicket.PageParameters;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.markup.html.link.Link;
 
 /**
  * Adds a link to a chart in the showcase navigation sidebar.
  * Clicking on the link calls the onClick() method, which sets page
  * parameters accordingly.
  */
-public class UpdateChartJsLink extends AjaxLink<Void> {
+public class UpdateChartJsLink extends Link<Void> {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,9 +41,9 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     }
 
     @Override
-    public void onClick(final AjaxRequestTarget target) {
+    public void onClick() {
         PageParameters params = new PageParameters();
         params.add("chart", chartVal);
-        setResponsePage(new HomepageChartJs(params));
+        setResponsePage(HomepageChartJs.class, params);
     }
 }

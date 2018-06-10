@@ -15,8 +15,7 @@
 package de.adesso.wickedcharts.showcase.links;
 
 import de.adesso.wickedcharts.showcase.HomepageChartJs;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 /**
@@ -24,7 +23,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  * Clicking on the link calls the onClick() method, which sets page
  * parameters accordingly.
  */
-public class UpdateChartJsLink extends AjaxLink<Void> {
+public class UpdateChartJsLink extends Link<Void> {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,7 +41,7 @@ public class UpdateChartJsLink extends AjaxLink<Void> {
     }
 
     @Override
-    public void onClick(final AjaxRequestTarget target) {
+    public void onClick() {
         PageParameters params = new PageParameters();
         params.add("chart", chartVal);
         setResponsePage(HomepageChartJs.class, params);
