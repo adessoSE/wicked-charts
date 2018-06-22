@@ -1,7 +1,5 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
-import org.apache.tools.ant.filters.ReplaceTokens
-
 dependencies {
     compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
     compile project(':wicked-charts-showcase-options')
