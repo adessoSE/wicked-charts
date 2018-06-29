@@ -1,11 +1,11 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * This class wraps Floats in a FloatValue object.

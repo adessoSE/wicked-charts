@@ -26,7 +26,6 @@ import de.adesso.wickedcharts.wicket14.highcharts.Chart;
 import de.adesso.wickedcharts.wicket14.highcharts.JsonRendererFactory;
 import de.adesso.wickedcharts.wicket14.highcharts.features.drilldown.DrilldownProcessor;
 import de.adesso.wickedcharts.wicket14.highcharts.features.global.GlobalProcessor;
-
 import org.apache.wicket.behavior.AbstractBehavior;
 import org.apache.wicket.markup.html.IHeaderResponse;
 

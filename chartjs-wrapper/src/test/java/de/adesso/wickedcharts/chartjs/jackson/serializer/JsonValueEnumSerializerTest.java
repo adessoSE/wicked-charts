@@ -1,13 +1,12 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class JsonValueEnumSerializerTest {
 	

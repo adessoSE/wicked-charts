@@ -14,14 +14,13 @@
  */
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import java.io.IOException;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
+
+import java.io.IOException;
+import java.util.Locale;
 
 /**
  * Serializes a LowercaseEnum to JSON

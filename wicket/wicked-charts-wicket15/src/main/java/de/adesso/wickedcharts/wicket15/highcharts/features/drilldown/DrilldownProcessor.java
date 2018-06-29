@@ -14,26 +14,19 @@
  */
 package de.adesso.wickedcharts.wicket15.highcharts.features.drilldown;
 
-import java.text.MessageFormat;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.IHeaderResponse;
-import org.apache.wicket.request.resource.JavaScriptResourceReference;
-
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
-import de.adesso.wickedcharts.highcharts.options.Events;
-import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.PointOptions;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownFunction;
 import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
-import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
 import de.adesso.wickedcharts.wicket15.highcharts.JsonRendererFactory;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+
+import java.text.MessageFormat;
 
 /**
  * This processor adds drilldown functionality to a chart. It searches the given

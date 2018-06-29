@@ -14,10 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.options.button;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
 import de.adesso.wickedcharts.highcharts.options.VerticalAlignment;
+
+import java.io.Serializable;
 
 public class Position implements Serializable {
 

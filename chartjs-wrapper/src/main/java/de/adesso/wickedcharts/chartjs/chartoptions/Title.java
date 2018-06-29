@@ -1,19 +1,16 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import lombok.experimental.Accessors;
-
-/**
- * Contains attributes for the 'Title' option of a chart
- */
-
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * Contains attributes for the 'Title' option of a chart
+ */
 
 /**
  * Defines the Title attribute of the chart options.

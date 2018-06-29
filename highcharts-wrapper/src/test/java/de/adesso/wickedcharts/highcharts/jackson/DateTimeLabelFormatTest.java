@@ -14,12 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.DateTimeLabelFormat;
 import de.adesso.wickedcharts.highcharts.options.DateTimeLabelFormat.DateTimeProperties;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * 

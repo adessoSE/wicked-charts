@@ -1,9 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * Represents the points in a line chart or a bubble chart.

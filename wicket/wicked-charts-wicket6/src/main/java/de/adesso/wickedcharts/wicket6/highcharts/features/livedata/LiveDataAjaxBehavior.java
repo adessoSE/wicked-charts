@@ -23,7 +23,6 @@ import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
 import de.adesso.wickedcharts.wicket6.JavaScriptExpressionSendingAjaxBehavior;
 import de.adesso.wickedcharts.wicket6.highcharts.Chart;
 import de.adesso.wickedcharts.wicket6.highcharts.JsonRendererFactory;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.head.HeaderItem;

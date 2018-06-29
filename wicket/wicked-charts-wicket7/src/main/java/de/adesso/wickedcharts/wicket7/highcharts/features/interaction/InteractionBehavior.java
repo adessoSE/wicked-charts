@@ -19,11 +19,9 @@ import de.adesso.wickedcharts.highcharts.options.interaction.InteractionEvent;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
-
 import de.adesso.wickedcharts.wicket7.JavaScriptExpressionSendingAjaxBehavior;
 import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 import de.adesso.wickedcharts.wicket7.highcharts.features.livedata.LiveDataAjaxBehavior;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.head.IHeaderResponse;

@@ -14,24 +14,18 @@
  */
 package de.adesso.wickedcharts.wicket14.highcharts.features.drilldown;
 
-import java.text.MessageFormat;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.markup.html.IHeaderResponse;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
-import de.adesso.wickedcharts.highcharts.options.Events;
-import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.PointOptions;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownFunction;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
 import de.adesso.wickedcharts.wicket14.highcharts.JsonRendererFactory;
+import org.apache.wicket.Component;
+import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+
+import java.text.MessageFormat;
 
 public class DrilldownProcessor implements IOptionsProcessor {
 

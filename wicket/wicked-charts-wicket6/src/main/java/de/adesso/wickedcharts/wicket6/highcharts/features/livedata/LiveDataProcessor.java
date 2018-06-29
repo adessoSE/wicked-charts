@@ -20,7 +20,6 @@ import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
-
 import org.apache.wicket.Component;
 
 import java.util.List;

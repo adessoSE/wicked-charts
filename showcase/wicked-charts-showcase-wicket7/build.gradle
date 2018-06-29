@@ -1,12 +1,11 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 dependencies {
-       compile 'org.apache.wicket:wicket-core:7.1.0' 
-       compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.0.0'
+       compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
        compile project(':wicked-charts-showcase-options')
        testCompile 'junit:junit:4.12'
        compile 'commons-io:commons-io:2.4'
-       compile 'org.apache.wicket:wicket-extensions:7.1.0'
+    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
        compile(
                [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
                [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket7', version: "${wicketcharts_version}"],

@@ -1,18 +1,15 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import static org.junit.Assert.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import de.adesso.wickedcharts.chartjs.ChartConfiguration;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import de.adesso.wickedcharts.chartjs.ChartConfiguration;
-import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
+import static org.junit.Assert.assertTrue;
 
 public class SingleElementListSerializerTest {
 

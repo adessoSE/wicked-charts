@@ -18,7 +18,6 @@ import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.processing.*;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
-
 import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 import de.adesso.wickedcharts.wicket7.highcharts.JsonRendererFactory;
@@ -27,7 +26,6 @@ import de.adesso.wickedcharts.wicket7.highcharts.features.global.GlobalProcessor
 import de.adesso.wickedcharts.wicket7.highcharts.features.interaction.InteractionProcessor;
 import de.adesso.wickedcharts.wicket7.highcharts.features.livedata.LiveDataProcessor;
 import de.adesso.wickedcharts.wicket7.highcharts.features.selection.SelectionProcessor;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.IHeaderResponse;

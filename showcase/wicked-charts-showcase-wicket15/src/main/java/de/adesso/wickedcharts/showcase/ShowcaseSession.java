@@ -14,10 +14,9 @@
  */
 package de.adesso.wickedcharts.showcase;
 
+import de.adesso.wickedcharts.highcharts.options.Options;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
-
-import de.adesso.wickedcharts.highcharts.options.Options;
 
 public class ShowcaseSession extends WebSession {
 

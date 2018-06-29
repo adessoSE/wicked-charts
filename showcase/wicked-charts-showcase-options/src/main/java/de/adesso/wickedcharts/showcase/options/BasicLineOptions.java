@@ -14,22 +14,14 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.LegendLayout;
-import de.adesso.wickedcharts.highcharts.options.PlotLine;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.VerticalAlignment;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Demo of the same basic line chart displayed in the Highcharts Demo at <a

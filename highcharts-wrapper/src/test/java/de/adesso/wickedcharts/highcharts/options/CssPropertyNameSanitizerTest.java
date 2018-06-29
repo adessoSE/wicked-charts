@@ -1,10 +1,7 @@
 package de.adesso.wickedcharts.highcharts.options;
 
 import junit.framework.Assert;
-
 import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.options.CssStyle;
 
 public class CssPropertyNameSanitizerTest {
 

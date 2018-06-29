@@ -1,15 +1,11 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import static org.junit.Assert.*;
-
+import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
-
-import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ConstValue;
-import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
+import static org.junit.Assert.assertEquals;
 
 public class ConstValueSerializerTest {
 

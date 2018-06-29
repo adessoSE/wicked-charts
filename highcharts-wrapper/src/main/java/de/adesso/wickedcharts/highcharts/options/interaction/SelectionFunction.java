@@ -14,11 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.options.interaction;
 
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Events;
-import de.adesso.wickedcharts.highcharts.options.Function;
-import de.adesso.wickedcharts.highcharts.options.IProcessableOption;
-import de.adesso.wickedcharts.highcharts.options.Options;
+import de.adesso.wickedcharts.highcharts.options.*;
 
 /**
  * This function may be added to a {@link ChartOptions} object via
