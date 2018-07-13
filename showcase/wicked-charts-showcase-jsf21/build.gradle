@@ -1,5 +1,5 @@
 dependencies {
-	compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.0.0'
+	compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.1.0'
 	compile project(':wicked-charts-showcase-options')
 	compile 'org.slf4j:slf4j-log4j12:1.6.2'
 	compile 'log4j:log4j:1.2.17'
