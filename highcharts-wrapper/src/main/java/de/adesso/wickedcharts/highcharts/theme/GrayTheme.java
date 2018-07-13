@@ -14,23 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.theme;
 
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ButtonOptions;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.CssStyle;
-import de.adesso.wickedcharts.highcharts.options.DataLabels;
-import de.adesso.wickedcharts.highcharts.options.DummyOption;
-import de.adesso.wickedcharts.highcharts.options.ExportingButtons;
-import de.adesso.wickedcharts.highcharts.options.ExportingOptions;
-import de.adesso.wickedcharts.highcharts.options.Labels;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.Marker;
-import de.adesso.wickedcharts.highcharts.options.MinorTickInterval;
-import de.adesso.wickedcharts.highcharts.options.Navigation;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
 import de.adesso.wickedcharts.highcharts.options.color.NullColor;

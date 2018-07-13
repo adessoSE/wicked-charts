@@ -14,10 +14,8 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.series.RangeCoordinate;
+import org.junit.Test;
 
 public class RangeCoordinateSerializerTest extends AbstractSerializerTest {
 

@@ -21,7 +21,6 @@ import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 import de.adesso.wickedcharts.wicket7.chartjs.JsonRendererFactory;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.IHeaderResponse;

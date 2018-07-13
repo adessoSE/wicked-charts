@@ -1,8 +1,6 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
-
 import org.junit.Test;
 
 public class NullPointSerializerTest extends AbstractSerializerTest {

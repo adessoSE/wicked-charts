@@ -14,7 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.options.color;
 
-import java.awt.Color;
+import java.awt.*;
 
 /**
  * A simple {@link ColorReference} defined by a {@link Color} object.

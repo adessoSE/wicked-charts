@@ -1,16 +1,14 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 dependencies {
-    compile 'org.apache.wicket:wicket-core:6.21.0'
-    compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.0.0'
+    compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
     compile project(':wicked-charts-showcase-options')
-
-    compile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'junit:junit:4.12'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
     compile 'commons-io:commons-io:2.4'
-    compile 'org.apache.wicket:wicket-extensions:6.21.0'
+    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
     compile(
-            [group: 'org.apache.wicket', name: 'wicket-spring', version: "6.21.0"],
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
             [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket6', version: "${wicketcharts_version}"],
     )
     compile(
@@ -39,7 +37,7 @@ processResources {
     from 'src/main/java'
     from 'src/main/resources'
     filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
-    filter(ReplaceTokens, tokens: [wicketVersion : "6.21.0"])
+    filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
 }
 
 bootRun {
@@ -50,6 +48,7 @@ bootRun {
             '-Dwicket.configurationType=DEVELOPMENT',
             '-Dspring.jpa.hibernate.ddl-auto=update'
 }
+
 
 
 

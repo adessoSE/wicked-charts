@@ -14,25 +14,15 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.Center;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.CssStyle;
-import de.adesso.wickedcharts.highcharts.options.DataLabels;
-import de.adesso.wickedcharts.highcharts.options.Labels;
-import de.adesso.wickedcharts.highcharts.options.Marker;
-import de.adesso.wickedcharts.highcharts.options.PixelOrPercent;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.PointSeries;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
 
 /**
  * Demo of the same combo chart as in the Highcharts demo at <a

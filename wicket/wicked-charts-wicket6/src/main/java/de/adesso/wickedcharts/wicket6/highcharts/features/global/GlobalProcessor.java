@@ -20,7 +20,6 @@ import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
 import de.adesso.wickedcharts.wicket6.highcharts.JsonRendererFactory;
-
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 

@@ -14,12 +14,11 @@
  */
 package de.adesso.wickedcharts.wicket15.highcharts;
 
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.request.resource.JavaScriptResourceReference;
-
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.Theme;
 import de.adesso.wickedcharts.wicket15.highcharts.features.basic.ChartBehavior;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * A simple markup container to display a chart. A chart can be provided with

@@ -14,17 +14,17 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.PlotOptionsStateChoice.StateType;
 import de.adesso.wickedcharts.highcharts.options.color.NullColor;
 import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Demo of the same chart displayed in the Highcharts Demo at <a href=

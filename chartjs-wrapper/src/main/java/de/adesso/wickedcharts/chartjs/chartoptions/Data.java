@@ -1,14 +1,13 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
 
-import java.io.Serializable;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Defines the different data objects.

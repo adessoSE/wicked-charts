@@ -15,11 +15,7 @@
 package de.adesso.wickedcharts.highcharts.options;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Defines the configuration of the "lang" option. Use

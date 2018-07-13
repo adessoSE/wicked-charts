@@ -1,18 +1,14 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import static org.junit.Assert.*;
-
-import java.time.LocalDateTime;
-
+import de.adesso.wickedcharts.chartjs.chartoptions.label.*;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.adesso.wickedcharts.chartjs.chartoptions.label.ConstLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.TextListLabel;
-import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
+import java.time.LocalDateTime;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class LabelSerializerTest {
 

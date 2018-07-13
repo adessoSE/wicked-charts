@@ -14,14 +14,13 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.io.IOException;
-import java.util.Locale;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
+
+import java.io.IOException;
+import java.util.Locale;
 
 public class LowercaseEnumSerializer extends JsonSerializer<LowercaseEnum> {
 

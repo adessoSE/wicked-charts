@@ -20,10 +20,8 @@ import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownFunction;
 import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
-import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.util.OptionsUtil;
 import de.adesso.wickedcharts.wicket6.highcharts.JsonRendererFactory;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;

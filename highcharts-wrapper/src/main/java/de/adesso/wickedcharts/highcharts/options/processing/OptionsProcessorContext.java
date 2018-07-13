@@ -14,10 +14,6 @@
  */
 package de.adesso.wickedcharts.highcharts.options.processing;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 import de.adesso.wickedcharts.highcharts.options.Global;
 import de.adesso.wickedcharts.highcharts.options.IProcessableOption;
 import de.adesso.wickedcharts.highcharts.options.Options;
@@ -25,6 +21,10 @@ import de.adesso.wickedcharts.highcharts.options.drilldown.DrilldownPoint;
 import de.adesso.wickedcharts.highcharts.options.interaction.InteractionFunction;
 import de.adesso.wickedcharts.highcharts.options.interaction.SelectionFunction;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A context object that holds some context variables that may be needed by

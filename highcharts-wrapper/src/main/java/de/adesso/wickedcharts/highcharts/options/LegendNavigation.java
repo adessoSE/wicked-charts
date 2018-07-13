@@ -14,9 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
+
+import java.io.Serializable;
 
 /**
  *

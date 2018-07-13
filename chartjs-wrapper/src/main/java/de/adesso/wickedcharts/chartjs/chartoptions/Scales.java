@@ -1,14 +1,12 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-import java.util.Arrays;
-
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Defines all x- and y-axes.

@@ -1,9 +1,7 @@
 package de.adesso.wickedcharts.showcase.modalwindow;
 
-import de.adesso.wickedcharts.wicket7.highcharts.Chart;
-
 import de.adesso.wickedcharts.showcase.options.BasicBarOptions;
-
+import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 import org.apache.wicket.markup.html.panel.Panel;
 
 public class ChartPanel extends Panel {

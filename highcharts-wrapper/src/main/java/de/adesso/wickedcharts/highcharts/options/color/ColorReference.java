@@ -14,11 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.options.color;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import de.adesso.wickedcharts.highcharts.json.Nullable;
+
+import java.io.Serializable;
 
 /**
  * Reference to a color used in a chart.

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+    <wicket:panel>
+        <div style="width: 50%; float: left">
+            <canvas wicket:id="chart">panel</canvas>
+            <div wicket:id="optionalMarkup"></div>
+            <wicket:fragment wicket:id="defaultTooltip"></wicket:fragment>
+            <wicket:fragment wicket:id="pieTooltip">
+                <div id="chartjs-tooltip">
+                    <table></table>
+                </div>
+            </wicket:fragment>
+            <wicket:fragment wicket:id="pointTooltip">
+                <div class="chartjs-tooltip" id="tooltip-0"></div>
+                <div class="chartjs-tooltip" id="tooltip-1"></div>
+            </wicket:fragment>
+            <wicket:fragment wicket:id="progressBar">
+                <progress id="animationProgress" max="1" value="0" style="width: 100%"></progress>
+            </wicket:fragment>
+        </div>
+    </wicket:panel>
+</html>

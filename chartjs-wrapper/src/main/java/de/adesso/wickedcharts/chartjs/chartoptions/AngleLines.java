@@ -1,9 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * Defines the options for angled lines.

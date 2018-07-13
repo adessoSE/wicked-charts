@@ -26,7 +26,6 @@ import de.adesso.wickedcharts.wicket6.highcharts.features.global.GlobalProcessor
 import de.adesso.wickedcharts.wicket6.highcharts.features.interaction.InteractionProcessor;
 import de.adesso.wickedcharts.wicket6.highcharts.features.livedata.LiveDataProcessor;
 import de.adesso.wickedcharts.wicket6.highcharts.features.selection.SelectionProcessor;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.markup.head.IHeaderResponse;

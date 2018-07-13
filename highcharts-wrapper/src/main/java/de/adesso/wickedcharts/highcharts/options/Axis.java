@@ -14,14 +14,14 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.awt.Color;
+import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
+import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
-import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
 /**
  * Defines an Axis for a Highcharts chart.

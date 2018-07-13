@@ -1,15 +1,14 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import static org.junit.Assert.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+import static org.junit.Assert.assertEquals;
 
 public class GridLinesTest {
 	

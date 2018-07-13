@@ -14,10 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.options.processing;
 
+import de.adesso.wickedcharts.highcharts.options.Options;
+
 import java.util.Arrays;
 import java.util.List;
-
-import de.adesso.wickedcharts.highcharts.options.Options;
 
 /**
  * This {@link IOptionsProcessor} checks if the {@link Options} object contains

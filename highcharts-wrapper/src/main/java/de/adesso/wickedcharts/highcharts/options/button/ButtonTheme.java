@@ -14,10 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.options.button;
 
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.highcharts.options.PlotOptionsStateChoice;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
+
+import java.io.Serializable;
 
 /**
  * Theme for a button.

@@ -1,0 +1,63 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
+        classpath group: 'org.springframework', name: 'springloaded', version: "${springloaded_version}"
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'
+    }
+}
+
+dependencies {
+    compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
+    compile project(':wicked-charts-showcase-options')
+    testCompile 'junit:junit:4.12'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:+'
+    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
+    compile(
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+            [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket8', version: "${wicketcharts_version}"],
+    )
+    compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
+    )
+
+    testCompile 'com.google.appengine:appengine-testing:+'
+    testCompile 'com.google.appengine:appengine-api-stubs:+'
+    testCompile 'com.google.appengine:appengine-tools-sdk:+'
+}
+
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.google.cloud.tools.appengine'
+
+appengine {  // App Engine tasks configuration
+  deploy {   // deploy configuration
+
+  }
+}
+
+processResources {
+    from 'src/main/java'
+    from 'src/main/resources'
+    filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
+    filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
+}
+
+bootRun {
+    // default application configuration for running application via bootRun in development mode
+    // (in production, these properties are defined in application.properties)
+    jvmArgs '-Xdebug',
+            '-Dserver.port=8080',
+            '-Dwicket.configurationType=DEVELOPMENT',
+            '-Dspring.jpa.hibernate.ddl-auto=update',
+            '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9009'
+}

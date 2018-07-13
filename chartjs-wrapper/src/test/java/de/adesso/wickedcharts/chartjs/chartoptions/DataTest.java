@@ -1,16 +1,14 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import static org.junit.Assert.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
+import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.chartjs.chartoptions.Data;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
-import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
+import static org.junit.Assert.assertEquals;
 
 
 public class DataTest {

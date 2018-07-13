@@ -1,11 +1,11 @@
 package de.adesso.wickedcharts.showcase.options;
 
-import java.io.IOException;
-import java.util.Set;
-
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.util.Set;
 
 public class OptionsSmokeTest {
 

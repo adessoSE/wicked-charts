@@ -15,7 +15,6 @@
 package de.adesso.wickedcharts.highcharts.options.drilldown;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import de.adesso.wickedcharts.highcharts.options.IProcessableOption;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.series.Point;

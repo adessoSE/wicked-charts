@@ -14,12 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
+import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+
 import java.awt.*;
 import java.io.Serializable;
 import java.util.List;
-
-import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
-import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 
 /**
  * Defines the configuration of the "plotOptions" option.

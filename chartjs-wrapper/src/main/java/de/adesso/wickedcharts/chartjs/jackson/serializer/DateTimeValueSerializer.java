@@ -1,14 +1,13 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import java.io.IOException;
-import java.time.format.DateTimeFormatter;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DateTimeValue;
+
+import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Serializes a DateTimeValue object to JSON
