@@ -15,11 +15,9 @@
 package de.adesso.wickedcharts.showcase;
 
 
-import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
-
 import de.adesso.wickedcharts.showcase.ie.SimplePage;
 import de.adesso.wickedcharts.showcase.modalwindow.ModalWindowPage;
-
+import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
 import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
@@ -52,8 +50,8 @@ public class ShowcaseApplication extends WebApplication {
 				new JavaScriptResourceReference(ShowcaseApplication.class,
 						"jquery-1.8.3.min-IEfix.js"));
 
-		mount(new NoIDMount("/chartjs/", HomepageChartJs.class));
-		mount(new NoIDMount("/highcharts/", HomepageHighcharts.class));
+		mount(new NoIDMount("/chartjs/${chart}", HomepageChartJs.class));
+		mount(new NoIDMount("/highcharts/${theme}/${chart}", HomepageHighcharts.class));
 		mount(new NoIDMount("/simple", SimplePage.class));
 		mount(new NoIDMount("/modal", ModalWindowPage.class));
 

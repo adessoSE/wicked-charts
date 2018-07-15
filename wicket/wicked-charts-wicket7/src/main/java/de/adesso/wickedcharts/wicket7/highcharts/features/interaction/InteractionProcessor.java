@@ -19,9 +19,7 @@ import de.adesso.wickedcharts.highcharts.options.interaction.InteractionEvent;
 import de.adesso.wickedcharts.highcharts.options.interaction.InteractionFunction;
 import de.adesso.wickedcharts.highcharts.options.processing.IOptionsProcessor;
 import de.adesso.wickedcharts.highcharts.options.processing.OptionsProcessorContext;
-
 import de.adesso.wickedcharts.wicket7.highcharts.Chart;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import java.io.Serializable;

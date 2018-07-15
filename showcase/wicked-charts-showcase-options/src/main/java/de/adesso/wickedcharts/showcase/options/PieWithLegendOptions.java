@@ -14,14 +14,7 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Cursor;
-import de.adesso.wickedcharts.highcharts.options.DataLabels;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.NullColor;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.PointSeries;

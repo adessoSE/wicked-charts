@@ -14,12 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
+
+import java.io.IOException;
 
 /**
  * A serializer that produces null JSON output. This serializer is used for

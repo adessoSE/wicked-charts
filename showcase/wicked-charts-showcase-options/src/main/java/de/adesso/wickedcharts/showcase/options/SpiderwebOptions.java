@@ -1,19 +1,6 @@
 package de.adesso.wickedcharts.showcase.options;
 
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.GridlineInterpolation;
-import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.LegendLayout;
-import de.adesso.wickedcharts.highcharts.options.Pane;
-import de.adesso.wickedcharts.highcharts.options.PixelOrPercent;
-import de.adesso.wickedcharts.highcharts.options.PointPlacement;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.TickmarkPlacement;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
-import de.adesso.wickedcharts.highcharts.options.VerticalAlignment;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.PixelOrPercent.Unit;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;

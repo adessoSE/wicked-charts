@@ -1,19 +1,17 @@
 package de.adesso.wickedcharts.chartjs.chartoptions;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BooleanFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.FillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.chartjs.jackson.serializer.SingleElementListSerializer;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Defines the options for the dataset object.

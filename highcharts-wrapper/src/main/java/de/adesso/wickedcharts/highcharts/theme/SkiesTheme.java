@@ -14,12 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.theme;
 
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.CssStyle;
-import de.adesso.wickedcharts.highcharts.options.Labels;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.Title;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
 import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;

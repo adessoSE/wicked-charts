@@ -1,15 +1,14 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import static org.junit.Assert.*;
+import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
+import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
-import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
+import static org.junit.Assert.assertTrue;
 
 public class StringValueColorSerializerTest {
 

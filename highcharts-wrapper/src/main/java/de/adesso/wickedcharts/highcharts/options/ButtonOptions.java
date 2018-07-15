@@ -14,12 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.awt.Color;
-import java.io.Serializable;
-
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
 import de.adesso.wickedcharts.highcharts.options.theme.Theme;
+
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * Defined options for the buttons of a chart.

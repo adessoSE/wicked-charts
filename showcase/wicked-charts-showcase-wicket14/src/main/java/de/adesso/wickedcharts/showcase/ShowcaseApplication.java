@@ -21,9 +21,13 @@ import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
+import org.apache.wicket.request.target.coding.IndexedHybridUrlCodingStrategy;
 import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
-import org.apache.wicket.util.lang.PackageName;
+import org.apache.wicket.request.target.coding.MixedParamHybridUrlCodingStrategy;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 @Component
 public class ShowcaseApplication extends WebApplication {
@@ -31,8 +35,8 @@ public class ShowcaseApplication extends WebApplication {
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
 	@Override
-	public Class<Homepage> getHomePage() {
-		return Homepage.class;
+	public Class<HomepageChartJs> getHomePage() {
+		return HomepageChartJs.class;
 	}
 
 	/**
@@ -40,12 +44,10 @@ public class ShowcaseApplication extends WebApplication {
 	 */
 	@Override
 	public void init() {
-		super
-				.init();
-		JavaScriptResourceRegistry
-				.getInstance()
-				.setJQueryReference("js/jquery-1.8.1.min.js");
-		mount(new IndexedParamUrlCodingStrategy("/start", Homepage.class));
+		super.init();
+		String[] params = {"chart"};
+        mount(new MixedParamHybridUrlCodingStrategy("/chartjs", HomepageChartJs.class,false, params));
+        mount(new MixedParamHybridUrlCodingStrategy("/highcharts", HomepageHighcharts.class,false, params));
 	}
 
 	@Override

@@ -14,13 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.util.Locale;
-
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-
 import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.*;
@@ -28,6 +25,8 @@ import de.adesso.wickedcharts.highcharts.options.series.Bubble;
 import de.adesso.wickedcharts.highcharts.options.series.Coordinate;
 import de.adesso.wickedcharts.highcharts.options.series.RangeCoordinate;
 import de.adesso.wickedcharts.highcharts.options.series.ThreeDCoordinate;
+
+import java.util.Locale;
 
 /**
  * A renderer for rendering Highcharts options into JSON objects based on the

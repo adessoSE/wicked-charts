@@ -14,12 +14,10 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.HighchartsColor;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class HighchartsColorReferenceSerializerTest {
 

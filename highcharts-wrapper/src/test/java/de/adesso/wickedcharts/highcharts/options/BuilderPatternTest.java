@@ -1,11 +1,11 @@
 package de.adesso.wickedcharts.highcharts.options;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Set;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * This test ensures that all classes in the options package implement the

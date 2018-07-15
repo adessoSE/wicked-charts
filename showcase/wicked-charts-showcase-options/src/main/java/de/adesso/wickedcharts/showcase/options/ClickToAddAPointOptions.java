@@ -1,23 +1,13 @@
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Events;
-import de.adesso.wickedcharts.highcharts.options.ExportingOptions;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.PlotLine;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.PointOptions;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.functions.AddPointFunction;
 import de.adesso.wickedcharts.highcharts.options.functions.RemovePointFunction;
 import de.adesso.wickedcharts.highcharts.options.series.CoordinatesSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
 
 public class ClickToAddAPointOptions extends ShowcaseOptions {
 

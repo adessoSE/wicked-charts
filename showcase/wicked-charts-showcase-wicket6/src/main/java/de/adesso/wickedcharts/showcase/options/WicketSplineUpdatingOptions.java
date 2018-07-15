@@ -14,33 +14,21 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
-
-import de.adesso.wickedcharts.wicket6.highcharts.features.livedata.WicketLiveDataUpdateEvent;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.AxisType;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.ExportingOptions;
-import de.adesso.wickedcharts.highcharts.options.Function;
-import de.adesso.wickedcharts.highcharts.options.Legend;
-import de.adesso.wickedcharts.highcharts.options.Marker;
-import de.adesso.wickedcharts.highcharts.options.PlotLine;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+import de.adesso.wickedcharts.wicket6.highcharts.features.livedata.WicketLiveDataUpdateEvent;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 public class WicketSplineUpdatingOptions extends ShowcaseOptions {
 

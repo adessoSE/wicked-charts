@@ -14,12 +14,11 @@
  */
 package de.adesso.wickedcharts.wicket14.highcharts;
 
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.Theme;
 import de.adesso.wickedcharts.wicket14.highcharts.features.basic.ChartBehavior;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 public class Chart extends WebMarkupContainer {
 	private static final long serialVersionUID = 1L;

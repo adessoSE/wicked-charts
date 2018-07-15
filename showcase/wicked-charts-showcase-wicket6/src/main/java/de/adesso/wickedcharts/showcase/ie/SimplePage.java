@@ -1,62 +1,19 @@
 package de.adesso.wickedcharts.showcase.ie;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
+import de.adesso.wickedcharts.highcharts.options.Options;
+import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+import de.adesso.wickedcharts.wicket6.highcharts.Chart;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.IChoiceRenderer;
 import org.apache.wicket.model.PropertyModel;
 
-import de.adesso.wickedcharts.wicket6.highcharts.Chart;
-
-import de.adesso.wickedcharts.highcharts.options.Options;
-import de.adesso.wickedcharts.showcase.options.AngularGaugeOptions;
-import de.adesso.wickedcharts.showcase.options.AreaInvertedAxisOptions;
-import de.adesso.wickedcharts.showcase.options.AreaMissingOptions;
-import de.adesso.wickedcharts.showcase.options.AreaRangeOptions;
-import de.adesso.wickedcharts.showcase.options.AreaSplineOptions;
-import de.adesso.wickedcharts.showcase.options.AreaWithNegativeValuesOptions;
-import de.adesso.wickedcharts.showcase.options.BarWithNegativeStackOptions;
-import de.adesso.wickedcharts.showcase.options.BasicAreaOptions;
-import de.adesso.wickedcharts.showcase.options.BasicBarOptions;
-import de.adesso.wickedcharts.showcase.options.BasicColumnOptions;
-import de.adesso.wickedcharts.showcase.options.BasicLineOptions;
-import de.adesso.wickedcharts.showcase.options.BasicPieOptions;
-import de.adesso.wickedcharts.showcase.options.BubbleChartOptions;
-import de.adesso.wickedcharts.showcase.options.ClickToAddAPointOptions;
-import de.adesso.wickedcharts.showcase.options.ColumnRangeOptions;
-import de.adesso.wickedcharts.showcase.options.ColumnWithDrilldownOptions;
-import de.adesso.wickedcharts.showcase.options.ColumnWithNegativeValuesOptions;
-import de.adesso.wickedcharts.showcase.options.ColumnWithRotatedLabelsOptions;
-import de.adesso.wickedcharts.showcase.options.ComboOptions;
-import de.adesso.wickedcharts.showcase.options.DonutOptions;
-import de.adesso.wickedcharts.showcase.options.LineWithDataLabelsOptions;
-import de.adesso.wickedcharts.showcase.options.LogarithmicAxisOptions;
-import de.adesso.wickedcharts.showcase.options.PercentageAreaOptions;
-import de.adesso.wickedcharts.showcase.options.PieWithGradientOptions;
-import de.adesso.wickedcharts.showcase.options.PieWithLegendOptions;
-import de.adesso.wickedcharts.showcase.options.PolarOptions;
-import de.adesso.wickedcharts.showcase.options.ScatterPlotOptions;
-import de.adesso.wickedcharts.showcase.options.ScatterWithRegressionLineOptions;
-import de.adesso.wickedcharts.showcase.options.SpiderwebOptions;
-import de.adesso.wickedcharts.showcase.options.SplineWithInvertedAxisOptions;
-import de.adesso.wickedcharts.showcase.options.SplineWithPlotBandsOptions;
-import de.adesso.wickedcharts.showcase.options.SplineWithSymbolsOptions;
-import de.adesso.wickedcharts.showcase.options.StackedAndGroupedColumnOptions;
-import de.adesso.wickedcharts.showcase.options.StackedAreaOptions;
-import de.adesso.wickedcharts.showcase.options.StackedBarOptions;
-import de.adesso.wickedcharts.showcase.options.StackedColumnOptions;
-import de.adesso.wickedcharts.showcase.options.StackedPercentageOptions;
-import de.adesso.wickedcharts.showcase.options.TimeDataWithIrregularIntervalsOptions;
-import de.adesso.wickedcharts.showcase.options.WicketSplineUpdatingOptions;
-import de.adesso.wickedcharts.showcase.options.WindroseOptions;
-import de.adesso.wickedcharts.showcase.options.ZoomableTimeSeriesOptions;
-import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * This page has been build to show all Options in a basic design without jquery

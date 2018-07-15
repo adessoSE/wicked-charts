@@ -14,15 +14,14 @@
  */
 package de.adesso.wickedcharts.highcharts.options.livedata;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import de.adesso.wickedcharts.highcharts.options.IProcessableOption;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.PointSeries;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This Series class supports regular updating via AJAX.

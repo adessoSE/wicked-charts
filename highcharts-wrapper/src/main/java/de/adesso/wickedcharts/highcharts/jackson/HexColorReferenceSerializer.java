@@ -14,13 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
+
+import java.io.IOException;
 
 public class HexColorReferenceSerializer extends ColorReferenceSerializer<HexColor> {
 

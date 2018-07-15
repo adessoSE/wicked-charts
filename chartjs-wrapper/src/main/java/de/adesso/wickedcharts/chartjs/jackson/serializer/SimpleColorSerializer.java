@@ -1,15 +1,14 @@
 package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbaColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
+
+import java.io.IOException;
 
 /**
  * Serializes a SimpleColor object to JSON.

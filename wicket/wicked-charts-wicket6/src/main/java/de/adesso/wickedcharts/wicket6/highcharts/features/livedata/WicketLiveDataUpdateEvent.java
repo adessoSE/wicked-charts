@@ -14,10 +14,9 @@
  */
 package de.adesso.wickedcharts.wicket6.highcharts.features.livedata;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import de.adesso.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * Wicket-specific extension of {@link LiveDataUpdateEvent}.

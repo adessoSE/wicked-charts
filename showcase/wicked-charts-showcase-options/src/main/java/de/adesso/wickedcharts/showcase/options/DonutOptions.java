@@ -14,18 +14,7 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.DataLabels;
-import de.adesso.wickedcharts.highcharts.options.PixelOrPercent;
-import de.adesso.wickedcharts.highcharts.options.PlotOptions;
-import de.adesso.wickedcharts.highcharts.options.PlotOptionsChoice;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.PixelOrPercent.Unit;
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
@@ -33,6 +22,9 @@ import de.adesso.wickedcharts.highcharts.options.color.HighchartsColor;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
 import de.adesso.wickedcharts.highcharts.options.series.PointSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Demo of the same donut chart displayed in the Highcharts Demo at <a href=

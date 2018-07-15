@@ -14,9 +14,7 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.series.Coordinate;
-
 import org.junit.Assert;
 import org.junit.Test;
 

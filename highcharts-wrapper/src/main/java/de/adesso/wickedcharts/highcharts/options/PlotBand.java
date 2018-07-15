@@ -14,13 +14,12 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
-import java.awt.Color;
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
+
+import java.awt.*;
+import java.io.Serializable;
 
 /**
  * Defines a colored band across a grid chart.

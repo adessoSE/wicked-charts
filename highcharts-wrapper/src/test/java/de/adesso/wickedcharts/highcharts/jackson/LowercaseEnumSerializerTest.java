@@ -14,11 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
+import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
 import org.junit.Assert;
 import org.junit.Test;
-
-import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
-import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
 
 public class LowercaseEnumSerializerTest {
 

@@ -14,18 +14,12 @@
  */
 package de.adesso.wickedcharts.showcase.options;
 
-import java.util.Arrays;
-
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.CreditOptions;
-import de.adesso.wickedcharts.highcharts.options.Function;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.series.Series;
 import de.adesso.wickedcharts.highcharts.options.series.SimpleSeries;
 import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+
+import java.util.Arrays;
 
 /**
  * Demo of the same area chart with negative values displayed in the Highcharts

@@ -1,17 +1,6 @@
 package de.adesso.wickedcharts.showcase.options;
 
-import de.adesso.wickedcharts.highcharts.options.Axis;
-import de.adesso.wickedcharts.highcharts.options.Background;
-import de.adesso.wickedcharts.highcharts.options.ChartOptions;
-import de.adesso.wickedcharts.highcharts.options.Labels;
-import de.adesso.wickedcharts.highcharts.options.MinorTickInterval;
-import de.adesso.wickedcharts.highcharts.options.Pane;
-import de.adesso.wickedcharts.highcharts.options.PixelOrPercent;
-import de.adesso.wickedcharts.highcharts.options.PlotBand;
-import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import de.adesso.wickedcharts.highcharts.options.TickPosition;
-import de.adesso.wickedcharts.highcharts.options.Title;
-import de.adesso.wickedcharts.highcharts.options.Tooltip;
+import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.PixelOrPercent.Unit;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
 import de.adesso.wickedcharts.highcharts.options.color.LinearGradient;
