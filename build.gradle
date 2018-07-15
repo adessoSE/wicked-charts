@@ -73,29 +73,6 @@ subprojects {
         }
     }
 
-    publishing {
-        publications {
-            mavenPublication(MavenPublication) {
-                from components.java
-                artifact sourcesJar {
-                    classifier "sources"
-                }
-                artifact javadocJar {
-                    classifier "javadoc"
-                }
-                groupId 'de.adesso.wicked-charts'
-                artifactId project.name
-                version project.version
-                pom.withXml {
-                    def root = asNode()
-                    root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
-                    root.appendNode('name', project.name)
-                    root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
-                    root.children().last() + pomConfig
-                }
-            }
-        }
-    }
 
     artifactory {
         contextUrl = 'http://oss.jfrog.org'
@@ -141,5 +118,29 @@ subprojects {
         }
 
         publish = true
+    }
+
+    publishing {
+        publications {
+            mavenPublication(MavenPublication) {
+                from components.java
+                artifact sourcesJar {
+                    classifier "sources"
+                }
+                artifact javadocJar {
+                    classifier "javadoc"
+                }
+                groupId 'de.adesso.wicked-charts'
+                artifactId project.name
+                version project.version
+                pom.withXml {
+                    def root = asNode()
+                    root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
+                    root.appendNode('name', project.name)
+                    root.appendNode('url', 'https://github.com/adessoag/wicked-charts')
+                    root.children().last() + pomConfig
+                }
+            }
+        }
     }
 }
