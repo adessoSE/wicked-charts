@@ -35,7 +35,7 @@ dependencies {
 }
 
 // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-version = '3.0.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+version = '3.1.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
 sourceCompatibility = 1.8
 
 ext {
@@ -98,7 +98,7 @@ publishing {
             }
             groupId 'de.adesso.wicked-charts'
             artifactId 'wicked-charts-showcase-options'
-            version '3.0.0'
+            version '3.1.0'
             pom.withXml {
                 def root = asNode()
                 root.appendNode('description', 'Beautiful Charts for Java-based Web Applications')
