@@ -6,6 +6,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.Data;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  */
 @Accessors(chain = true)
 @lombok.Data
-public class ChartConfiguration {
+public class ChartConfiguration implements Serializable {
 	private ChartType type;
 	private Data data;
 	private Options options;
