@@ -15,7 +15,7 @@ import java.util.Scanner;
  * The base class for all chart configurations for the showcase
  */
 @SuppressWarnings("serial")
-public abstract class ShowcaseConfiguration extends ChartConfiguration implements Serializable {
+public abstract class ShowcaseConfiguration extends ChartConfiguration {
 
 	protected List<Integer> randomIntegerList(int size) {
 		List<Integer> dataList = new ArrayList<Integer>();
