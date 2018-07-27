@@ -209,3 +209,27 @@ Maven:
     </dependency>
 </dependencies>
 ```
+
+Latest snapshot release
+-----------------------
+Gradle:
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.2.0-SNAPSHOT'
+}
+```
+
+Maven:
+```xml
+<dependency>
+  <groupId>de.adesso.wicked-charts</groupId>
+  <artifactId>wicked-charts-wicket8</artifactId>
+  <version>3.2.0-SNAPSHOT</version>
+  <type>pom</type>
+</dependency>
+```
+

@@ -26,7 +26,7 @@ subprojects {
     }
 
     // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-    version = '3.1.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+    version = '3.2.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
     sourceCompatibility = 1.8
 
     ext {
