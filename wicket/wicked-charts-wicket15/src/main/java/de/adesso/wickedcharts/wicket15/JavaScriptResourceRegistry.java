@@ -53,15 +53,15 @@ public class JavaScriptResourceRegistry {
 
     }
 
-    public static final String DEFAULT_HIGHCHARTS_URL = "http://code.highcharts.com/4.1.10/highcharts.js";
+    public static final String DEFAULT_HIGHCHARTS_URL = "https://code.highcharts.com/4.1.10/highcharts.js";
 
-    public static final String DEFAULT_FUNNEL_URL = "http://code.highcharts.com/4.1.10/modules/funnel.js";
+    public static final String DEFAULT_FUNNEL_URL = "https://code.highcharts.com/4.1.10/modules/funnel.js";
 
-    public static final String DEFAULT_HEATMAP_URL = "http://code.highcharts.com/4.1.10/modules/heatmap.js";
+    public static final String DEFAULT_HEATMAP_URL = "https://code.highcharts.com/4.1.10/modules/heatmap.js";
 
-    public static final String DEFAULT_HIGHCHARTS_MORE_URL = "http://code.highcharts.com/4.1.10/highcharts-more.js";
+    public static final String DEFAULT_HIGHCHARTS_MORE_URL = "https://code.highcharts.com/4.1.10/highcharts-more.js";
 
-    public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "http://code.highcharts.com/4.1.10/modules/exporting.js";
+    public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "https://code.highcharts.com/4.1.10/modules/exporting.js";
 
     public static final String DEFAULT_CHARTJS_BUNDLE_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js";
 
