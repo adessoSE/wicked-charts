@@ -215,7 +215,7 @@ Latest snapshot release
 Gradle:
 ```groovy
 repositories {
-    jcenter()
+    maven { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local' }
 }
 
 dependencies {
