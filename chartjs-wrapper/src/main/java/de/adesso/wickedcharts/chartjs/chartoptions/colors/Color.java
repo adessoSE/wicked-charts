@@ -1,5 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
+import java.io.Serializable;
+
 /**
   * Defines the base class for colors.
   *
@@ -7,6 +9,6 @@ package de.adesso.wickedcharts.chartjs.chartoptions.colors;
   *
   * @author SvenWirz
   */
-public class Color {
+public class Color implements Serializable {
 
 }

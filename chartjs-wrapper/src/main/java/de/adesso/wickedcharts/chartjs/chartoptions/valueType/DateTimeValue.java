@@ -3,7 +3,6 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -16,7 +15,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)
-public class DateTimeValue extends ValueType implements Serializable {
+public class DateTimeValue extends ValueType{
 	
 	private LocalDateTime value;
 	

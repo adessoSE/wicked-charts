@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
+import java.io.Serializable;
+
 /**
  * Defines the different hover event types.
  *
@@ -10,6 +12,6 @@ import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum HoverMode implements LowercaseEnum {
+public enum HoverMode implements LowercaseEnum, Serializable {
 	INDEX,DATASET,POINT,X,Y,NEAREST;
 }

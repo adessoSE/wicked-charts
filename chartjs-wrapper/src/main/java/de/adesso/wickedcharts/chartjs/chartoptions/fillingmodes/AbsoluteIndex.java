@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines the filling mode as an absolute Integer.
  *
@@ -10,7 +12,7 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-public class AbsoluteIndex implements FillingMode {
+public class AbsoluteIndex implements FillingMode, Serializable {
 	private Integer index;
 
 	public AbsoluteIndex(Integer index) {

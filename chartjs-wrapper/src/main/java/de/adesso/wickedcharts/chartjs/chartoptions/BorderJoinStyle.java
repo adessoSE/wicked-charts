@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * Determines how two connecting segments (of lines, arcs or curves) with non-zero lengths in a shape are joined together.
  *
@@ -10,7 +12,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum BorderJoinStyle implements JsonValueEnum {
+public enum BorderJoinStyle implements JsonValueEnum, Serializable {
 	BEVEL("bevel"),
 	ROUND("round"),
 	MITER("miter");

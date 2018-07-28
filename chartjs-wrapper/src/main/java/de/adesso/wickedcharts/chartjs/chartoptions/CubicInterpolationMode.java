@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * 'default' : Uses a custom weighted cubic interpolation, which produces pleasant curves for all types of datasets.
  * 'monotone' : More suited to y = f(x) datasets : it preserves monotonicity (or piecewise monotonicity) of the dataset being interpolated, and ensures local extremums (if any) stay at input data points.
@@ -12,7 +14,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum CubicInterpolationMode implements JsonValueEnum {
+public enum CubicInterpolationMode implements JsonValueEnum, Serializable {
 	DEFAULT("default"),
 	MONOTONE("monotone");
 	

@@ -15,19 +15,12 @@
 package de.adesso.wickedcharts.showcase;
 
 
-import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import org.apache.wicket.Request;
 import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
-import org.apache.wicket.request.target.coding.IndexedHybridUrlCodingStrategy;
-import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
 import org.apache.wicket.request.target.coding.MixedParamHybridUrlCodingStrategy;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 @Component
 public class ShowcaseApplication extends WebApplication {

@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
+import java.io.Serializable;
+
 /**
  * Defines the different font styles.
  *
@@ -10,6 +12,6 @@ import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
  *
  * @author SvenWirz
  */
-public enum FontStyle implements LowercaseEnum {
+public enum FontStyle implements LowercaseEnum, Serializable {
  NORMAL,BOLD, ITALIC, OBLIQUE, INITIAL, INHERIT;
 }

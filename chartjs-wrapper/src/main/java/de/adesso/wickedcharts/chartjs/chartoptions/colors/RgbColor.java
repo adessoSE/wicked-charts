@@ -1,6 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -11,8 +12,8 @@ import lombok.EqualsAndHashCode;
  * @author SvenWirz
  */
 @AllArgsConstructor
-@lombok.Data
-@EqualsAndHashCode(callSuper=false)
+@Data
+@EqualsAndHashCode(callSuper=true)
 public class RgbColor extends Color {
 	private int red;
 	private int green;

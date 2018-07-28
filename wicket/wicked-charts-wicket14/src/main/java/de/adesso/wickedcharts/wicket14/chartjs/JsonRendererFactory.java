@@ -18,7 +18,7 @@ import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 
 /**
  * Factory class responsible for creating a {@link JsonRenderer} instance that
- * matches the needs of wicked-charts-wicket6.
+ * matches the needs of wicked-charts-wicket14.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  */
@@ -37,7 +37,7 @@ public class JsonRendererFactory {
 
     /**
      * Returns the singleton instance of the {@link JsonRenderer} that is
-     * configured for Wicket 6.x.
+     * configured for Wicket 1.4.x.
      *
      * @return the singleton {@link JsonRenderer}
      */

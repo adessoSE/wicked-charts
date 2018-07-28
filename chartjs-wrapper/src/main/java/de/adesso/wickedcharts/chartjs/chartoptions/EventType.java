@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * Defines the different event types.
  *
@@ -10,7 +12,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum EventType implements JsonValueEnum{
+public enum EventType implements JsonValueEnum, Serializable {
 	MOUSEMOVE("mousemove"),
 	MOUSEOUT("mouseout"),
 	CLICK("click"),
