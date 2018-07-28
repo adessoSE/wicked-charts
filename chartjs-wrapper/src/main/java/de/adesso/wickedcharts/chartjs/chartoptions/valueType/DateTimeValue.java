@@ -3,7 +3,6 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**

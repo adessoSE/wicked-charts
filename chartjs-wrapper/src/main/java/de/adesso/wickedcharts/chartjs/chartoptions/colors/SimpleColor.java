@@ -1,7 +1,5 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
-import java.io.Serializable;
-
 /**
  * Defines colors with predefined values.
  *
