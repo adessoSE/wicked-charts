@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines the padding for the layout.
  *
@@ -11,6 +13,6 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-public class Layout {
+public class Layout implements Serializable {
 	private Padding padding;
 }

@@ -11,8 +11,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
-        classpath group: 'org.springframework', name: 'springloaded', version: "${springloaded_version}"
-        classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.3.5'
     }
 }
 
@@ -24,6 +23,7 @@ dependencies {
     compile 'com.google.appengine:appengine-api-1.0-sdk:+'
     compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
     compile(
+            [group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'],
             [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
             [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket8', version: "${wicketcharts_version}"],
     )

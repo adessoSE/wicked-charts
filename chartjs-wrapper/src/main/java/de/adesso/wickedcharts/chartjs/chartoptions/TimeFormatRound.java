@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
+import java.io.Serializable;
+
 /**
  * Defines the time display formats.
  *
@@ -9,6 +11,6 @@ import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
  *
  * @author SvenWirz
  */
-public enum TimeFormatRound implements LowercaseEnum {
+public enum TimeFormatRound implements LowercaseEnum, Serializable {
 	DAY, MILLISECOND, SECOND, MINUTE, HOUR, WEEK, MONTH, QUARTER, YEAR;
 }

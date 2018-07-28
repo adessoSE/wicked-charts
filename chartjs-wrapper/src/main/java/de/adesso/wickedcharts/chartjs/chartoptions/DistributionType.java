@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
 
+import java.io.Serializable;
+
 /**
  * Controls the data distribution along the scale.
  *
@@ -9,7 +11,7 @@ import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
  *
  * @author SvenWirz
  */
-public enum DistributionType implements LowercaseEnum {
+public enum DistributionType implements LowercaseEnum, Serializable {
 	SERIES,
 	LINEAR;
 }

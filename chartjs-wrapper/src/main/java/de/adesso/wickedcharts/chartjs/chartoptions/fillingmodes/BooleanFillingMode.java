@@ -1,12 +1,14 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
+import java.io.Serializable;
+
 /**
  * Defines the filling mode as a Boolean.
  *
  * @see <a href="http://www.chartjs.org/docs/latest/charts/area.html">http://www.chartjs.org/docs/latest/charts/area.html</a>
  * @author SvenWirz
  */
-public enum BooleanFillingMode implements FillingMode, FillingModeLine {
+public enum BooleanFillingMode implements FillingMode, FillingModeLine, Serializable {
 	FALSE(false),
 	TRUE(true)
 	;

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)
-public class DateTimeValue extends ValueType implements Serializable {
+public class DateTimeValue extends ValueType{
 	
 	private LocalDateTime value;
 	

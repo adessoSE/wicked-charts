@@ -1,5 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
+import java.io.Serializable;
+
 /**
  * Defines the interface for the filling mode.
  *
