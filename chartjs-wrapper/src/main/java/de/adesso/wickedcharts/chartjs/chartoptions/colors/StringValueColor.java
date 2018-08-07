@@ -1,6 +1,8 @@
 
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
+import java.io.Serializable;
+
 /**
  * Defines the color as a string.
  *
@@ -8,7 +10,7 @@ package de.adesso.wickedcharts.chartjs.chartoptions.colors;
  *
  * @author SvenWirz
  */
-public class StringValueColor extends Color {
+public class StringValueColor extends Color implements Serializable {
 
 	private String colorname;
 	

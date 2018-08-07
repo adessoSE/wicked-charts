@@ -1,6 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +13,7 @@ import java.util.stream.Collectors;
  *
  * @author SvenWirz
  */
-public class TextLabel extends Label {
+public class TextLabel extends Label implements Serializable {
 	private String text;
 	
 	public TextLabel(String text) {
@@ -19,11 +22,11 @@ public class TextLabel extends Label {
 	}
 	
 	public static List<TextLabel> of(String... texts) {
-		return Arrays.stream(texts).map(textLabel -> new TextLabel(textLabel)).collect(Collectors.toList());
+		return Arrays.stream(texts).map(TextLabel::new).collect(Collectors.toList());
 	}
 	
 	public static List<TextLabel> of(List<String> textList) {
-		return textList.stream().map(textLabel -> new TextLabel(textLabel)).collect(Collectors.toList());
+		return textList.stream().map(TextLabel::new).collect(Collectors.toList());
 	}
 
 	public String getText() {
@@ -57,12 +60,7 @@ public class TextLabel extends Label {
 			return false;
 		TextLabel other = (TextLabel) obj;
 		if (text == null) {
-			if (other.text != null)
-				return false;
-		} else if (!text.equals(other.text))
-			return false;
-		return true;
+			return other.text == null;
+		} else return text.equals(other.text);
 	}
-	
-	
 }

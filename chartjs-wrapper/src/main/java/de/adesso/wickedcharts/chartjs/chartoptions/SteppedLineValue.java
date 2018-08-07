@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * An enum to define if a line is stepped or not.
  *
@@ -10,7 +12,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum SteppedLineValue implements JsonValueEnum {
+public enum SteppedLineValue implements JsonValueEnum, Serializable {
 	BEFORE("before"),
 	AFTER("after");
 	

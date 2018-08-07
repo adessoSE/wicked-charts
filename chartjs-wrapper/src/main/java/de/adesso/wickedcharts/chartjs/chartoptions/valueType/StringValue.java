@@ -3,6 +3,7 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)
-public class StringValue extends ValueType {
+public class StringValue extends ValueType implements Serializable {
 	private String value;
 	
 	public StringValue() {}

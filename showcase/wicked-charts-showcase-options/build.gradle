@@ -1,5 +1,5 @@
 dependencies {
-	compile group: 'de.adesso.wicked-charts', name: 'highcharts-wrapper', version: "${wicketcharts_version}"
+	compile group: 'de.adesso.wicked-charts', name: 'highcharts-wrapper', version: "${wickedcharts_version}"
 	testCompile 'junit:junit:4.12'
 	compile 'junit:junit:4.12'
 }

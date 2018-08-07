@@ -4,6 +4,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines the arc for polar area, doughnut and pie charts.
  *
@@ -14,8 +16,8 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-@EqualsAndHashCode(callSuper=false)
-public class Arc extends Element {
+@EqualsAndHashCode(callSuper=true)
+public class Arc extends Element implements Serializable {
 	private Number borderWidth;
 	private Color backgroundColor;
 	private Color borderColor;

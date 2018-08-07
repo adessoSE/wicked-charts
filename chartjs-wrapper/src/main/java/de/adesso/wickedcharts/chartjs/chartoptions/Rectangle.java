@@ -4,6 +4,8 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines the rectangle element that is used in bar charts
  *
@@ -14,7 +16,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)
-public class Rectangle extends Element {
+public class Rectangle extends Element implements Serializable {
 	private Number borderWidth;
 	private Color backgroundColor;
 	private Color borderColor;
