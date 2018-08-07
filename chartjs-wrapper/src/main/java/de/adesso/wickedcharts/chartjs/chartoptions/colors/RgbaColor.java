@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
  * Defines an RGBA encoded color
  * @see <a href="http://www.chartjs.org/docs/latest/general/colors.html">http://www.chartjs.org/docs/latest/general/colors.html</a>
@@ -9,8 +11,8 @@ import lombok.EqualsAndHashCode;
  * @author SvenWirz
  */
 @lombok.Data
-@EqualsAndHashCode(callSuper=false)
-public class RgbaColor extends RgbColor {
+@EqualsAndHashCode(callSuper=true)
+public class RgbaColor extends RgbColor implements Serializable {
 
 	private float alpha;
 	

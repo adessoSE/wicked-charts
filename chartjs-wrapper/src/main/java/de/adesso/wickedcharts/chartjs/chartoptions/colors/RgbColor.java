@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
  * Defines an RGB encoded color
  *
@@ -14,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper=true)
-public class RgbColor extends Color {
+public class RgbColor extends Color implements Serializable {
 	private int red;
 	private int green;
 	private int blue;

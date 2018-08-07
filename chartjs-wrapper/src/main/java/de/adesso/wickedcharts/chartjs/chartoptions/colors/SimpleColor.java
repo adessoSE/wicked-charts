@@ -1,5 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
+import java.io.Serializable;
+
 /**
  * Defines colors with predefined values.
  *
@@ -7,7 +9,7 @@ package de.adesso.wickedcharts.chartjs.chartoptions.colors;
  *
  * @author SvenWirz
  */
-public class SimpleColor extends Color {
+public class SimpleColor extends Color implements Serializable {
 	
 
 	private Color color;

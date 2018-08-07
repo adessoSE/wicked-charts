@@ -78,7 +78,7 @@ public class JavaScriptResourceRegistry {
         return INSTANCE;
     }
 
-    private RegistryEntry jqueryEntry = new RegistryEntry(JQueryResourceReference.get());
+    private RegistryEntry jqueryEntry = new RegistryEntry(JQueryResourceReference.getV2());
 
     private RegistryEntry highchartsEntry = new RegistryEntry(DEFAULT_HIGHCHARTS_URL);
 

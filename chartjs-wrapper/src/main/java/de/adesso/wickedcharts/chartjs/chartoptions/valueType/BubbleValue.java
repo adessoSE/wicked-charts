@@ -3,6 +3,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines the value type for use in the bubble chart (x and y coordinates and a radius for the bubbles)
  * Using this class you can create BubbleValues from any other ValueType or primitive types like Double and Integer.
@@ -12,8 +14,8 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-@EqualsAndHashCode(callSuper=false)
-public class BubbleValue extends ValueType {
+@EqualsAndHashCode(callSuper=true)
+public class BubbleValue extends ValueType implements Serializable {
 	
 	private ValueType x;
 	private ValueType y;

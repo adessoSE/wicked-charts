@@ -8,7 +8,7 @@ dependencies {
 	compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
 	compile(
 			[group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
-			[group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket15', version: "${wicketcharts_version}"],
+			[group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket15', version: "${wickedcharts_version}"],
 	)
 	compile(
 			[group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
@@ -35,7 +35,7 @@ apply plugin: 'org.springframework.boot'
 processResources {
 	from 'src/main/java'
 	from 'src/main/resources'
-	filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
+	filter(ReplaceTokens, tokens: [projectVersion : wickedcharts_version])
 	filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
 }
 
