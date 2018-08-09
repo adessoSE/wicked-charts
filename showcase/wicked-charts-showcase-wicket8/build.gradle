@@ -11,7 +11,6 @@ buildscript {
     }
     dependencies {
         classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
-        classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.3.5'
     }
 }
 
@@ -20,7 +19,6 @@ dependencies {
     compile project(':wicked-charts-showcase-options')
     testCompile 'junit:junit:4.12'
     compile 'commons-io:commons-io:2.4'
-    compile 'com.google.appengine:appengine-api-1.0-sdk:+'
     compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
     compile(
             [group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'],
@@ -31,18 +29,15 @@ dependencies {
             [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
     )
 
-    testCompile 'com.google.appengine:appengine-testing:+'
-    testCompile 'com.google.appengine:appengine-api-stubs:+'
-    testCompile 'com.google.appengine:appengine-tools-sdk:+'
+
 }
 
 apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'com.google.cloud.tools.appengine'
 
 appengine {  // App Engine tasks configuration
   deploy {   // deploy configuration
-      version = "staging" //replaces the previous version with the current one, so I don't have to remove instances manually
+      version = "staging-test" //replaces the previous version with the current one, so I don't have to remove instances manually
       stopPreviousVersion = true
       promote = true
   }
