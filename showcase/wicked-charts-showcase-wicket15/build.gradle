@@ -48,7 +48,13 @@ bootRun {
 			'-Dspring.jpa.hibernate.ddl-auto=update'
 }
 
-
+appengine {  // App Engine tasks configuration
+	deploy {   // deploy configuration
+		version = "staging" //replaces the previous version with the current one, so I don't have to remove instances manually
+		stopPreviousVersion = true
+		promote = true
+	}
+}
 
 
 
