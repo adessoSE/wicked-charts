@@ -71,5 +71,12 @@ jobs:
   - stage: showcase-deploy
     install: skip
     script:
-    - "cd showcase && openssl aes-256-cbc -K $encrypted_05eb42a9daa3_key -iv $encrypted_05eb42a9daa3_iv -in Wicked-Charts-Showcase-887cff2298d0.json.enc -out Wicked-Charts-Showcase-887cff2298d0.json -d && gcloud auth activate-service-account --key-file=Wicked-Charts-Showcase-887cff2298d0.json &&./gradlew appengineDeploy"
+    - "cd showcase &&
+    openssl aes-256-cbc -K $encrypted_05eb42a9daa3_key -iv $encrypted_05eb42a9daa3_iv -in Wicked-Charts-Showcase-887cff2298d0.json.enc -out Wicked-Charts-Showcase-887cff2298d0.json -d
+    && gcloud auth activate-service-account --key-file=Wicked-Charts-Showcase-887cff2298d0.json
+     &&./gradlew wicked-charts-showcase-wicket8:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket7:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket6:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket15:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket14:appengineDeploy"
 
