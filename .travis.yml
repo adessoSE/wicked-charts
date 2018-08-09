@@ -8,7 +8,7 @@ addons:
 before_install:
 - if [ "$TRAVIS_BRANCH" = "master"  ] || [ "$TRAVIS_BRANCH" = "release"  ]; then openssl aes-256-cbc -K $encrypted_05eb42a9daa3_key -iv $encrypted_05eb42a9daa3_iv
   -in ./showcase/Wicked-Charts-Showcase-887cff2298d0.json.enc -out ./showcase/Wicked-Charts-Showcase-887cff2298d0.json
-  -d
+  -d;
   fi
 - chmod +x ./showcase/gradlew
 - chmod +x gradlew
