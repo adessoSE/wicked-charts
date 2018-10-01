@@ -27,7 +27,7 @@ stages:
 jobs:
   include:
   - stage: build
-    script: "./gradlew build"
+    script: "./gradlew build publishToMavenLocal"
   - stage: snapshot
     script:
     - "./gradlew chartjs-wrapper:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER
