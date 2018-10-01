@@ -68,7 +68,7 @@ public class ChartBehavior extends Behavior {
         
         if(options.getOptionalJavascript() == null) {
             response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
-                    "var {0} = {1};"
+                    "varTEST {0} = {1};"
                     + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
                     + " window.{2} = new Chart({3},{0});",
                     optionsVarname, jsonOptions,chartVarname,contextVarname,markupId)));
