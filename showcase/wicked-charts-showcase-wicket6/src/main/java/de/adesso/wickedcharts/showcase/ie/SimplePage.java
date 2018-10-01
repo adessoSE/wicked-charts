@@ -2,7 +2,7 @@ package de.adesso.wickedcharts.showcase.ie;
 
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.showcase.options.*;
-import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 import de.adesso.wickedcharts.wicket6.highcharts.Chart;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;

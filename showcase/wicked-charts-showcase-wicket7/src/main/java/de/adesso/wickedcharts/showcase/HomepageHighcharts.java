@@ -20,6 +20,7 @@ import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateHighchartLink;
 import de.adesso.wickedcharts.showcase.links.UpdateThemeLink;
 import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 import de.adesso.wickedcharts.wicket7.highcharts.Chart;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
