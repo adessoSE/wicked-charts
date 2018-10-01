@@ -65,9 +65,9 @@ public class JavaScriptResourceRegistry {
 
     public static final String DEFAULT_HIGHCHARTS_EXPORTING_URL = "https://code.highcharts.com/4.1.10/modules/exporting.js";
     
-    public static final String DEFAULT_CHARTJS_BUNDLE_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js";
+    public static final String DEFAULT_CHARTJS_BUNDLE_URL = "https://cdnjs.cloudflare.com/ajax/libs/ChartTEST.js/2.7.1/ChartTEST.bundle.min.js";
 
-    public static final String DEFAULT_CHARTJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js";
+    public static final String DEFAULT_CHARTJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/ChartTEST.js/2.7.1/ChartTEST.min.js";
 
     public static final String DEFAULT_MOMENTJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js";
 
@@ -248,7 +248,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the {@link ResourceReference} to use to load Chart.js (chart.min.js).Use
+     * Sets the {@link ResourceReference} to use to load ChartTEST.js (chart.min.js).Use
      * this method if you want to include the javascript file in your web
      * application.
      *
@@ -259,7 +259,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the URL to use to load Chart.js (chart.min.js). Use this method if you want
+     * Sets the URL to use to load ChartTEST.js (chart.min.js). Use this method if you want
      * to load the javascript file from an external URL.
      *
      * @param url String which specifies an url
@@ -269,7 +269,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the {@link ResourceReference} to use to load Chart.js bundled (chart.bundle.min.js).Use
+     * Sets the {@link ResourceReference} to use to load ChartTEST.js bundled (chart.bundle.min.js).Use
      * this method if you want to include the javascript file in your web
      * application.
      *
@@ -280,7 +280,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the URL to use to load Chart.js bundled (chart.bundle.min.js). Use this method if you want
+     * Sets the URL to use to load ChartTEST.js bundled (chart.bundle.min.js). Use this method if you want
      * to load the javascript file from an external URL.
      *
      * @param url String which specifies an url
@@ -290,7 +290,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the {@link ResourceReference} to use to load Chart.js bundled (chart.bundle.min.js).Use
+     * Sets the {@link ResourceReference} to use to load ChartTEST.js bundled (chart.bundle.min.js).Use
      * this method if you want to include the javascript file in your web
      * application.
      *
@@ -301,7 +301,7 @@ public class JavaScriptResourceRegistry {
     }
 
     /**
-     * Sets the URL to use to load Chart.js bundled (chart.bundle.min.js). Use this method if you want
+     * Sets the URL to use to load ChartTEST.js bundled (chart.bundle.min.js). Use this method if you want
      * to load the javascript file from an external URL.
      *
      * @param url String which specifies an url
