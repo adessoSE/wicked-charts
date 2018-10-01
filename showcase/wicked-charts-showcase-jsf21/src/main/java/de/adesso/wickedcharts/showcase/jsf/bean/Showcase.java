@@ -16,7 +16,7 @@ package de.adesso.wickedcharts.showcase.jsf.bean;
 
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.*;
-import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

@@ -15,21 +15,20 @@ package de.adesso.wickedcharts.showcase;
  */
 
 
-import de.adesso.wickedcharts.showcase.configurations.*;
-import de.adesso.wickedcharts.showcase.configurations.gridlines.*;
-import de.adesso.wickedcharts.showcase.configurations.interactions.*;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionBottomConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionLeftConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionRightConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionTopConfiguration;
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
+import de.adesso.wickedcharts.showcase.options.chartjs.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.gridlines.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.interactions.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionBottomConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionLeftConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionRightConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionTopConfiguration;
 import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.request.mapper.parameter.INamedParameters;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import java.io.Serializable;
@@ -168,12 +167,9 @@ public class HomepageChartJs extends WebPage implements Serializable {
         String chartString;
         List<Chart> config = new ArrayList<>();
 
-        //Get the parameters of the page
-        List<INamedParameters.NamedPair> pairs = params.getAllNamed();
-
         //If the showcase is started without any parameters
         //set the parameters to lineBasic and give us a line Chart
-        if(params.getAllNamed().size() == 0){
+        if(params.getAllNamed().isEmpty()){
             PageParameters temp = new PageParameters();
             temp.add("chart", "lineBasic");
             setResponsePage(HomepageChartJs.class, temp);
@@ -315,7 +311,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 break;
 
             case "timeCombo":
-                config.add(new Chart("chart", new TimeComboConfiguration()));
+                config.add(new Chart("chart", new TimeComboConfigurationWicket7()));
                 break;
 
             case "gridLines":
@@ -359,8 +355,8 @@ public class HomepageChartJs extends WebPage implements Serializable {
 
             case "tooltipHtml":
                 config.add(new Chart("chart", new TooltipHtmlLineConfiguration()));
-                config.add(new Chart("chart", new TooltipHtmlPieConfiguration()));
-                config.add(new Chart("chart", new TooltipHtmlPointsConfiguration()));
+                config.add(new Chart("chart", new TooltipHtmlPieConfigurationWicket7()));
+                config.add(new Chart("chart", new TooltipHtmlPointsConfigurationWicket7()));
                 break;
 
             case "bubble":
@@ -368,7 +364,7 @@ public class HomepageChartJs extends WebPage implements Serializable {
                 break;
 
             case "lineProgressBar":
-                config.add(new Chart("chart", new LineChartProgressBarConfiguration()));
+                config.add(new Chart("chart", new LineChartProgressBarConfigurationWicket7()));
                 break;
 
             case "dataLabelling":
