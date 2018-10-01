@@ -24,13 +24,13 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
  *
  * @author SvenWirz
  */
-public class ChartTEST extends WebMarkupContainer {
+public class Chart extends WebMarkupContainer {
 
 	private static final long serialVersionUID = 1L;
 
 	private ChartConfiguration options;
 
-	public ChartTEST(final String id, final ChartConfiguration options) {
+	public Chart(final String id, final ChartConfiguration options) {
 		super(id);
 		this.options = options;
 		setOutputMarkupId(true);

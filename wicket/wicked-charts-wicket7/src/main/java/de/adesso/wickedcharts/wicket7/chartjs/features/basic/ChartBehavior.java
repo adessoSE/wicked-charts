@@ -19,7 +19,7 @@ import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.chartjs.chartoptions.Options;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.wicket7.JavaScriptResourceRegistry;
-import de.adesso.wickedcharts.wicket7.chartjs.ChartTEST;
+import de.adesso.wickedcharts.wicket7.chartjs.Chart;
 import de.adesso.wickedcharts.wicket7.chartjs.JsonRendererFactory;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
@@ -30,7 +30,7 @@ import java.text.MessageFormat;
 
 /**
  * This behavior takes in an {@link Options} object containing the configuration
- * of a chartTEST and calls the proper javascript to display the chartTEST in the
+ * of a chart and calls the proper javascript to display the chart in the
  * component to which this behavior is added.
  *
  * @author Tom Hombergs (tom.hombergs@gmail.com)
@@ -39,29 +39,29 @@ public class ChartBehavior extends Behavior {
 
     private static final long serialVersionUID = 1L;
 
-    private final ChartTEST chartTEST;
+    private final Chart chart;
 
     /**
      * Constructor.
      *
-     * @param container The chartTEST component
+     * @param container The chart component
      */
-    public ChartBehavior(final ChartTEST container) {
-        this.chartTEST = container;
+    public ChartBehavior(final Chart container) {
+        this.chart = container;
     }
 
     /**
      * Includes the javascript that calls the Highcharts library to visualize the
-     * chartTEST.
+     * chart.
      *
      * @param response the Wicket HeaderResponse
      * @param options  the options containing the data to display
      * @param renderer the JsonRenderer responsible for rendering the options
-     * @param markupId the DOM ID of the chartTEST component.
+     * @param markupId the DOM ID of the chart component.
      */
     protected void includeChartJavascript(final IHeaderResponse response, final ChartConfiguration options,
                                           final JsonRenderer renderer, final String markupId) {
-        String chartVarname = this.chartTEST.getJavaScriptVarName();
+        String chartVarname = this.chart.getJavaScriptVarName();
         String optionsVarname = markupId + "Options";
         String contextVarname = markupId + "ctx";
         String jsonOptions = renderer.toJson(options);
@@ -70,7 +70,7 @@ public class ChartBehavior extends Behavior {
             response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
                     "var {0} = {1};"
                     + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
-                    + " window.{2} = new ChartTEST({3},{0});",
+                    + " window.{2} = new Chart({3},{0});",
                     optionsVarname, jsonOptions,chartVarname,contextVarname,markupId)));
         }
         else {
@@ -79,7 +79,7 @@ public class ChartBehavior extends Behavior {
             response.render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
                     "{5} var {0} = {1};"
                     + "var {3} = document.getElementById(\"{4}\").getContext(\"2d\");"
-                    + " window.{2} = new ChartTEST({3},{0});",
+                    + " window.{2} = new Chart({3},{0});",
                     optionsVarname, jsonOptions,chartVarname,contextVarname,markupId,replacedVariablesInOptionalJavascript)));
         }
     }
@@ -100,7 +100,7 @@ public class ChartBehavior extends Behavior {
     public void renderHead(final Component component, final IHeaderResponse response) {
         component.setOutputMarkupId(true);
         final String id = component.getMarkupId();
-        ChartConfiguration options = this.chartTEST.getChartConfiguration();
+        ChartConfiguration options = this.chart.getChartConfiguration();
 
         JsonRenderer renderer = JsonRendererFactory.getInstance().getRenderer();
         includeJavascriptDependencies(response, options);

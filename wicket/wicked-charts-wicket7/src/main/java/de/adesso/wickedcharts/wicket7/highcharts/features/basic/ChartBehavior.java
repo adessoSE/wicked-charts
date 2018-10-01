@@ -96,7 +96,7 @@ public class ChartBehavior extends Behavior {
         String optionsVarname = markupId + "Options";
         response
                 .render(OnDomReadyHeaderItem.forScript(MessageFormat.format(
-                        "var {0} = {1};window.{2} = new Highcharts.ChartTEST({0});", optionsVarname, renderer.toJson(options),
+                        "var {0} = {1};window.{2} = new Highcharts.Chart({0});", optionsVarname, renderer.toJson(options),
                         chartVarname)));
     }
 
