@@ -15,6 +15,10 @@
 
 		The value might be either "development" (reloading when templates change) or 
 		"deployment". If no configuration is found, "development" is the default. -->
+	<context-param>
+		<param-name>configuration</param-name>
+		<param-value>deployment</param-value>
+	</context-param>
 
 	<filter>
 		<filter-name>wicked-charts-showcase</filter-name>

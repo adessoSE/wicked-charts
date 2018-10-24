@@ -52,14 +52,10 @@ ext {
     buildNumber = System.getProperty("build.number")
 }
 
-sourceSets.main.resources {
-srcDirs = ["src/main/java","src/main/resources","src/main/webapp","src/test/java"];
-}
-
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.output
-       from sourceSets.main.allSource
+    from sourceSets.main.allSource
 }
 
 javadoc.failOnError = false
