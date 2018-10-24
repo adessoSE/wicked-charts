@@ -24,7 +24,7 @@ public enum ChartType implements JsonValueEnum, Serializable {
 	DOUGHNUT("doughnut"),
 	POLAR_AREA("polarArea"),
 	BUBBLE("bubble");
-	
+
 	private String jsonValue;
 
 	private ChartType(String jsonValue) {
