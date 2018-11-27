@@ -32,12 +32,18 @@ public class ExportingButtons implements Serializable {
 
 	private ButtonOptions printButton;
 
+	private ButtonOptions contextButton;
+
 	public ButtonOptions getExportButton() {
 		return this.exportButton;
 	}
 
 	public ButtonOptions getPrintButton() {
 		return this.printButton;
+	}
+
+	public ButtonOptions getContextButton() {
+		return this.contextButton;
 	}
 
 	public ExportingButtons setExportButton(final ButtonOptions exportButton) {
@@ -47,6 +53,11 @@ public class ExportingButtons implements Serializable {
 
 	public ExportingButtons setPrintButton(final ButtonOptions printButton) {
 		this.printButton = printButton;
+		return this;
+	}
+
+	public ExportingButtons setContextButton(final ButtonOptions contextButton) {
+		this.contextButton = contextButton;
 		return this;
 	}
 
