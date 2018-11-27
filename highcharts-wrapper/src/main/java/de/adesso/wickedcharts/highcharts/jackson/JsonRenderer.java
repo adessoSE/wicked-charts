@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import de.adesso.wickedcharts.highcharts.json.JsonValueEnum;
 import de.adesso.wickedcharts.highcharts.json.LowercaseEnum;
 import de.adesso.wickedcharts.highcharts.options.*;
 import de.adesso.wickedcharts.highcharts.options.color.*;
@@ -73,6 +74,7 @@ public class JsonRenderer {
         this.jacksonModule.addSerializer(HighchartsColor.class, new HighchartsColorReferenceSerializer());
         this.jacksonModule.addSerializer(HexColor.class, new HexColorReferenceSerializer());
         this.jacksonModule.addSerializer(LowercaseEnum.class, new LowercaseEnumSerializer());
+        this.jacksonModule.addSerializer(JsonValueEnum.class, new JsonValueEnumSerializer());
         this.jacksonModule.addSerializer(PixelOrPercent.class, new PixelOrPercentSerializer());
         this.jacksonModule.addSerializer(Symbol.class, new SymbolSerializer());
         this.jacksonModule.addSerializer(RgbaColor.class, new RgbaColorReferenceSerializer());
