@@ -218,8 +218,9 @@ public class PlotOptionsChoice implements Serializable {
         return bubble;
     }
 
-    public void setBubble(PlotOptions bubble) {
+    public PlotOptionsChoice setBubble(PlotOptions bubble) {
         this.bubble = bubble;
+	    return this;
     }
 
     public PlotOptionsChoice setPlotOptions(PlotOptions plotOptions, SeriesType type) {
