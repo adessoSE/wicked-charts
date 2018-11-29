@@ -140,6 +140,10 @@ public class PlotOptions implements Serializable {
 
     private Integer stemWidth;
 
+    private PixelOrPercent minSize;
+
+    private PixelOrPercent maxSize;
+
     public PixelOrPercent getNeckWidth() {
         return neckWidth;
     }
@@ -643,6 +647,24 @@ public class PlotOptions implements Serializable {
 
     public PlotOptions setWhiskerLength(Integer whiskerLength) {
         this.whiskerLength = whiskerLength;
+        return this;
+    }
+
+    public PixelOrPercent getMinSize() {
+        return minSize;
+    }
+
+    public PlotOptions setMinSize(PixelOrPercent minSize) {
+        this.minSize = minSize;
+        return this;
+    }
+
+    public PixelOrPercent getMaxSize() {
+        return maxSize;
+    }
+
+    public PlotOptions setMaxSize(PixelOrPercent maxSize) {
+        this.maxSize = maxSize;
         return this;
     }
 
