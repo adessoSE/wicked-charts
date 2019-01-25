@@ -30,7 +30,7 @@ If your Java-based framework of choice is not supported by Wicked Charts, feel f
 
 Want to contribute?
 ===================
-Feel free to clone this repository and submit pull request. We'll see to get them merged into the main project.
+Feel free to clone this repository and submit pull requests. We'll see to get them merged into the main project.
 
 Adding Wicked-Charts as a dependency
 =================
