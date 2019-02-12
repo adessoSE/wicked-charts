@@ -50,9 +50,9 @@ class LabelSerializerTest {
 	
 	@Test
 	void testDateTimeLabel() {
-		testLabel = new DateTimeLabel(LocalDateTime.of(2018, 11, 12, 13, 14));
+		testLabel = new DateTimeLabel(LocalDateTime.of(2019, 11, 12, 13, 14));
 		String json = renderer.toJson(testLabel);
-		assertEquals("moment('2018-11-12T13:14:00',moment.ISO_8601)",json);
+		assertEquals("moment('2019-11-12T13:14:00',moment.ISO_8601)",json);
 	}
 	
 	

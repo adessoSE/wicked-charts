@@ -35,7 +35,7 @@ public class TimePointConfiguration extends ShowcaseConfiguration {
 
 		List<DateTimeLabel> dateList = new ArrayList<>();
 		for(int i = 0; i < 7; i++) {
-			dateList.add(new DateTimeLabel(LocalDateTime.of(2018, 1,1, 8+i, 00)));
+			dateList.add(new DateTimeLabel(LocalDateTime.of(2019, 1,1, 8+i, 00)));
 		}
 		data.setLabels(dateList);
 		

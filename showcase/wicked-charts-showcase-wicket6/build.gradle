@@ -3,7 +3,6 @@ import org.apache.tools.ant.filters.ReplaceTokens
 dependencies {
     compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_version}"
     compile project(':wicked-charts-showcase-options')
-    compile 'javax.servlet:javax.servlet-api:3.1.0'
     compile 'commons-io:commons-io:2.4'
     compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_version}"
     compile(
