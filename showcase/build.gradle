@@ -34,15 +34,11 @@ processResources {
 }
     
 dependencies {
-    compile 'com.google.appengine:appengine-api-1.0-sdk:+'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.53'
 
-    testCompile 'com.google.appengine:appengine-testing:+'
-    testCompile 'com.google.appengine:appengine-api-stubs:+'
-    testCompile 'com.google.appengine:appengine-tools-sdk:+'
-    
     //vintage module is needed because of WicketTester
     testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: junit_version
-    
+
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junit_version
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junit_version
 }
