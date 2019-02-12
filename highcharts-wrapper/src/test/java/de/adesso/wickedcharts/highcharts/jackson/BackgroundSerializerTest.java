@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,12 +16,13 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.Background;
 import de.adesso.wickedcharts.highcharts.options.color.HexColor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class BackgroundSerializerTest extends AbstractSerializerTest {
+
+class BackgroundSerializerTest extends AbstractSerializerTest {
 
   @Test
-  public void testDefaultBackground() {
+  void testDefaultBackground() {
     // given
     JsonRenderer renderer = new JsonRenderer();
 
@@ -33,7 +34,7 @@ public class BackgroundSerializerTest extends AbstractSerializerTest {
   }
 
   @Test
-  public void testBackground() {
+  void testBackground() {
     // given
     Background b = new Background().setBackgroundColor(HexColor.fromString("#FFFFFF"));
     JsonRenderer renderer = new JsonRenderer();

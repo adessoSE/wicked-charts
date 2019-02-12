@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,19 +15,20 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.series.Coordinate;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Matthias Balke (matthias.balke@gmail.com)
  */
-public class CoordinateSerializerTest {
+class CoordinateSerializerTest {
 
     @Test
-    public void testStringFloatCoordinate() {
+    void testStringFloatCoordinate() {
         // given
         String dateString = "Date.UTC(1970, 9, 27)";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
+        Coordinate<String, Float> coordinateStringFloat = new Coordinate<>(
                 dateString, 0f);
         JsonRenderer renderer = new JsonRenderer();
 
@@ -35,14 +36,14 @@ public class CoordinateSerializerTest {
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("[" + dateString + ", 0.0]", json);
+        assertEquals("[" + dateString + ", 0.0]", json);
     }
 
     @Test
-    public void testLiteralStringFloatCoordinate() {
+    void testLiteralStringFloatCoordinate() {
         // given
         String anyString = "foo";
-        Coordinate<String, Float> coordinateStringFloat = new Coordinate<String, Float>(
+        Coordinate<String, Float> coordinateStringFloat = new Coordinate<>(
                 anyString, 0f);
         coordinateStringFloat.setXQuoted(Boolean.TRUE);
         coordinateStringFloat.setYQuoted(Boolean.TRUE);
@@ -52,7 +53,7 @@ public class CoordinateSerializerTest {
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("['" + anyString + "', '0.0']", json);
+        assertEquals("['" + anyString + "', '0.0']", json);
     }
 
 }

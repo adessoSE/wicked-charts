@@ -1,16 +1,16 @@
-package de.adesso.wickedcharts.showcase.options;
+package de.adesso.wickedcharts.showcase.options.highcharts;
 
 import de.adesso.wickedcharts.highcharts.jackson.JsonRenderer;
 import de.adesso.wickedcharts.highcharts.options.Options;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.Set;
 
-public class OptionsSmokeTest {
+class OptionsSmokeTest {
 
   @Test
-  public void testOptionsRendered() throws InstantiationException,
+  void testOptionsRendered() throws InstantiationException,
       IllegalAccessException, ClassNotFoundException, IOException {
     Set<Class<?>> classes = ClassFinder
         .getClasses(OptionsSmokeTest.class

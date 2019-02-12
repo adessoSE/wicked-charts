@@ -3,392 +3,394 @@ package de.adesso.wickedcharts.showcase;
 import de.adesso.wickedcharts.showcase.options.chartjs.ChartjsConfigurations;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.tester.WicketTester;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HomepageChartsJsTest {
+class HomepageChartsJsTest {
+
+    private static final String PAGE_PARAMETER = "chart";
 
     @Test
-    public void renderBarVerticalTest(){
+    void renderBarVerticalTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BAR_VERTICAL);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BAR_VERTICAL);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderBarHorizontalTest(){
+    void renderBarHorizontalTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BAR_HORIZONTAL);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BAR_HORIZONTAL);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderBarMutliAxisTest(){
+    void renderBarMutliAxisTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BAR_MULTI_AXIS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BAR_MULTI_AXIS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderBarStackedTest(){
+    void renderBarStackedTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BAR_STACKED);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BAR_STACKED);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
     @Test
-    public void renderBarStackedGroupTest(){
+    void renderBarStackedGroupTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BAR_STACKED_GROUP);
-        tester.startPage(HomepageChartJs.class, pageParameters);
-        tester.assertRenderedPage(HomepageChartJs.class);
-    }
-
-    @Test
-    public void renderLineBasicTest(){
-        WicketTester tester = new WicketTester();
-        PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_BASIC);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BAR_STACKED_GROUP);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineMultiAxisTest(){
+    void renderLineBasicTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_MULTI_AXIS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_BASIC);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineSteppedTest(){
+    void renderLineMultiAxisTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_STEPPED);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_MULTI_AXIS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineInterpolatedTest(){
+    void renderLineSteppedTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_INTERPOLATED);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_STEPPED);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineStylesTest(){
+    void renderLineInterpolatedTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_STYLES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_INTERPOLATED);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderPointStylesTest(){
+    void renderLineStylesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.POINT_STYLES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_STYLES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderPointSizesTest(){
+    void renderPointStylesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.POINT_SIZES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.POINT_STYLES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderAreaLineBoundariesTest(){
+    void renderPointSizesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.AREA_LINE_BOUNDARIES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.POINT_SIZES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineDatasetTest(){
+    void renderAreaLineBoundariesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_DATASET);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.AREA_LINE_BOUNDARIES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineStackedTest(){
+    void renderLineDatasetTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_STACKED);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_DATASET);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderRadarTest(){
+    void renderLineStackedTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.RADAR);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_STACKED);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderScatterTest(){
+    void renderRadarTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.SCATTER);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.RADAR);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderScatterMultiAxisTest(){
+    void renderScatterTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.SCATTER_MULTI_AXIS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.SCATTER);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderDoughnutTest(){
+    void renderScatterMultiAxisTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.DOUGHNUT);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.SCATTER_MULTI_AXIS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderPieTest(){
+    void renderDoughnutTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.PIE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.DOUGHNUT);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderPolarAreaTest(){
+    void renderPieTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.POLAR_AREA);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.PIE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderRadar2Test(){
+    void renderPolarAreaTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.RADAR_2);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.POLAR_AREA);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderComboBarLineTest(){
+    void renderRadar2Test(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.COMBO_BAR_LINE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.RADAR_2);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderStepSizeTest(){
+    void renderComboBarLineTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.STEP_SIZE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.COMBO_BAR_LINE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderMinMaxTest(){
+    void renderStepSizeTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.MIN_MAX);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.STEP_SIZE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineLogarithmicTest(){
+    void renderMinMaxTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_LOGARITHMIC);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.MIN_MAX);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderScatterLogarithmicTest(){
+    void renderLineLogarithmicTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.SCATTER_LOGARITHMIC);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_LOGARITHMIC);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTimeLineTest(){
+    void renderScatterLogarithmicTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TIME_LINE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.SCATTER_LOGARITHMIC);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTimePointTest(){
+    void renderTimeLineTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TIME_POINT);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TIME_LINE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTimeSeriesTest(){
+    void renderTimePointTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TIME_SERIES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TIME_POINT);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTimeComboTest(){
+    void renderTimeSeriesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TIME_COMBO);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TIME_SERIES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderGridLinesTest(){
+    void renderTimeComboTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.GRID_LINES);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TIME_COMBO);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderMultilineLabelsTest(){
+    void renderGridLinesTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.MULTILINE_LABELS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.GRID_LINES);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderFilteringLabelsTest(){
+    void renderMultilineLabelsTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.FILTERING_LABELS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.MULTILINE_LABELS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderNonNumericTest(){
+    void renderFilteringLabelsTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.NON_NUMERIC);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.FILTERING_LABELS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLegendPositionTest(){
+    void renderNonNumericTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LEGEND_POSITION);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.NON_NUMERIC);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLegendPointStyleTest(){
+    void renderLegendPositionTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LEGEND_POINT_STYLE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LEGEND_POSITION);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTooltipTest(){
+    void renderLegendPointStyleTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TOOLTIP);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LEGEND_POINT_STYLE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTooltipHTMLTest(){
+    void renderTooltipTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TOOLTIP_HTML);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TOOLTIP);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderTooltipInteractionsTest(){
+    void renderTooltipHTMLTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.TOOLTIP_INTERACTIONS);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TOOLTIP_HTML);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderBubbleTest(){
+    void renderTooltipInteractionsTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.BUBBLE);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.TOOLTIP_INTERACTIONS);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderLineProgressBarTest(){
+    void renderBubbleTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.LINE_PROGRESS_BAR);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.BUBBLE);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }
 
     @Test
-    public void renderDataLabellingTest(){
+    void renderLineProgressBarTest(){
         WicketTester tester = new WicketTester();
         PageParameters pageParameters = new PageParameters();
-        pageParameters.add("chart", ChartjsConfigurations.DATA_LABELLING);
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.LINE_PROGRESS_BAR);
+        tester.startPage(HomepageChartJs.class, pageParameters);
+        tester.assertRenderedPage(HomepageChartJs.class);
+    }
+
+    @Test
+    void renderDataLabellingTest(){
+        WicketTester tester = new WicketTester();
+        PageParameters pageParameters = new PageParameters();
+        pageParameters.add(PAGE_PARAMETER, ChartjsConfigurations.DATA_LABELLING);
         tester.startPage(HomepageChartJs.class, pageParameters);
         tester.assertRenderedPage(HomepageChartJs.class);
     }

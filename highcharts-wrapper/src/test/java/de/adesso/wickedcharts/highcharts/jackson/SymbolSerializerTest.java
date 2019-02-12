@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,14 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.Symbol;
 import de.adesso.wickedcharts.highcharts.options.Symbol.PredefinedSymbol;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class SymbolSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SymbolSerializerTest {
 
 	@Test
-	public void testPredefined() {
+	void testPredefined() {
 		// given
 		Symbol symbol = new Symbol(PredefinedSymbol.TRIANGLEDOWN);
 		JsonRenderer renderer = new JsonRenderer();
@@ -31,11 +32,11 @@ public class SymbolSerializerTest {
 		String json = renderer.toJson(symbol);
 
 		// then
-		Assert.assertEquals("\"triangle-down\"", json);
+		assertEquals("\"triangle-down\"", json);
 	}
 	
 	@Test
-	public void testUrl() {
+	void testUrl() {
 		// given
 		Symbol symbol = new Symbol("mysymbol.gif");
 		JsonRenderer renderer = new JsonRenderer();
@@ -44,7 +45,7 @@ public class SymbolSerializerTest {
 		String json = renderer.toJson(symbol);
 
 		// then
-		Assert.assertEquals("\"url(mysymbol.gif)\"", json);
+		assertEquals("\"url(mysymbol.gif)\"", json);
 	}
 
 }

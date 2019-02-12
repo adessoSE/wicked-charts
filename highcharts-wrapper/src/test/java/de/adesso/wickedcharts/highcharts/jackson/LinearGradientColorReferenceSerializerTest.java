@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,15 +15,15 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.color.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-public class LinearGradientColorReferenceSerializerTest extends
+class LinearGradientColorReferenceSerializerTest extends
     AbstractSerializerTest {
 
   @Test
-  public void test() {
+  void test() {
     // given
     Gradient color = new LinearGradient(0, 1,
         0, 0);
@@ -45,7 +45,7 @@ public class LinearGradientColorReferenceSerializerTest extends
   }
 
   @Test
-  public void testWithBrightness() {
+  void testWithBrightness() {
     // given
     Gradient color = new LinearGradient(0, 1,
         0, 0);

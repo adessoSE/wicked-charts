@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,14 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.PixelOrPercent;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PixelOrPercentSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class PixelOrPercentSerializerTest {
 
 	@Test
-	public void testPercent() {
+	void testPercent() {
 		// given
 		PixelOrPercent percent = new PixelOrPercent(10,
 				PixelOrPercent.Unit.PERCENT);
@@ -31,11 +32,11 @@ public class PixelOrPercentSerializerTest {
 		String json = renderer.toJson(percent);
 
 		// then
-		Assert.assertEquals("\"10%\"", json);
+		assertEquals("\"10%\"", json);
 	}
 
 	@Test
-	public void testPixel() {
+	void testPixel() {
 		// given
 		PixelOrPercent pixel = new PixelOrPercent(55,
 				PixelOrPercent.Unit.PIXELS);
@@ -45,7 +46,7 @@ public class PixelOrPercentSerializerTest {
 		String json = renderer.toJson(pixel);
 
 		// then
-		Assert.assertEquals("55", json);
+		assertEquals("55", json);
 	}
 
 }

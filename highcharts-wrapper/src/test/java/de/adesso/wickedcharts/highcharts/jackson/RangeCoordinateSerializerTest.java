@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,12 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.series.RangeCoordinate;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RangeCoordinateSerializerTest extends AbstractSerializerTest {
+class RangeCoordinateSerializerTest extends AbstractSerializerTest {
 
 	@Test
-	public void test() {
+	void test() {
 
 		// given
 		RangeCoordinate<Number, Number, Number> coordinate = new RangeCoordinate<Number, Number, Number>(1, 2, 3);

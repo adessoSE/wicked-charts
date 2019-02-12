@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
@@ -10,7 +11,7 @@ import java.io.Serializable;
  *
  * @author SvenWirz
  */
-@lombok.Data
+@Data
 @EqualsAndHashCode(callSuper=true)
 public class RgbaColor extends RgbColor implements Serializable {
 

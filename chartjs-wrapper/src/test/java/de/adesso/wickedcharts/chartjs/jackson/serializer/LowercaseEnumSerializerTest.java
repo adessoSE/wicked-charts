@@ -3,12 +3,13 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.chartjs.json.LowercaseEnum;
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class LowercaseEnumSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class LowercaseEnumSerializerTest {
 
 	public enum TestEnum implements LowercaseEnum {
 		LOWERCASE,
@@ -24,7 +25,7 @@ public class LowercaseEnumSerializerTest {
 			return testEnum;
 		}
 
-		public void setTestEnum(TestEnum testEnum) {
+		void setTestEnum(TestEnum testEnum) {
 			this.testEnum = testEnum;
 		}
 	}
@@ -32,14 +33,14 @@ public class LowercaseEnumSerializerTest {
 	private TestChartConfiguration config;
 	private JsonRenderer renderer;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		config = new TestChartConfiguration();
 		renderer = new JsonRenderer();
 	}
 	
 	@Test
-	public void testLowercase() {
+	void testLowercase() {
 		config.setTestEnum(TestEnum.LOWERCASE);
 		
 		String json = renderer.toJson(config);

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,14 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.NullColor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class NullColorReferenceSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class NullColorReferenceSerializerTest {
 
 	@Test
-	public void test() {
+	void test() {
 		// given
 		ColorReference color = new NullColor();
 		JsonRenderer renderer = new JsonRenderer();
@@ -31,7 +32,7 @@ public class NullColorReferenceSerializerTest {
 		String json = renderer.toJson(color);
 
 		// then
-		Assert.assertEquals("null", json);
+		assertEquals("null", json);
 	}
 
 }

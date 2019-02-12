@@ -2,44 +2,44 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.FloatValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FloatValueSerializerTest {
+class FloatValueSerializerTest {
 	
 	private JsonRenderer renderer;
 	private FloatValue testVal;
 	
-	@Before
-	public void setUp() throws Exception{
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 	}
 
 	@Test
-	public void testFloatValue() {
+	void testFloatValue() {
 		testVal = new FloatValue(100.0f);
 		String json = renderer.toJson(testVal);
 		assertEquals("100.0", json);
 	}
 	
 	@Test
-	public void testFloatMaxValue() {
+	void testFloatMaxValue() {
 		testVal = new FloatValue(Float.MAX_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Float(Float.MAX_VALUE).toString(), json);
+		assertEquals(Float.toString(Float.MAX_VALUE), json);
 	}
 	
 	@Test
-	public void testFloatMinValue() {
+	void testFloatMinValue() {
 		testVal = new FloatValue(Float.MIN_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Float(Float.MIN_VALUE).toString(), json);
+		assertEquals(Float.toString(Float.MIN_VALUE), json);
 	}
 	  
 	@Test
-	public void testNullValue() {
+	void testNullValue() {
 		testVal = new FloatValue();
 		String json = renderer.toJson(testVal);
 		assertEquals("", json);

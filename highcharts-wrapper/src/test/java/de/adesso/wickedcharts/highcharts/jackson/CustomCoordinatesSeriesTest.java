@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,27 +16,27 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.series.Coordinate;
 import de.adesso.wickedcharts.highcharts.options.series.CustomCoordinatesSeries;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
  * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
-public class CustomCoordinatesSeriesTest extends AbstractSerializerTest {
+class CustomCoordinatesSeriesTest extends AbstractSerializerTest {
 
   @Test
-  public void testStringFloatCoordinates() {
+  void testStringFloatCoordinates() {
     // given
     String dateString1 = "Date.UTC(1970, 9, 27)";
     String dateString2 = "Date.UTC(1971, 1, 12)";
 
-    Coordinate<String, Float> coordinate1 = new Coordinate<String, Float>(
+    Coordinate<String, Float> coordinate1 = new Coordinate<>(
         dateString1, 0f);
-    Coordinate<String, Float> coordinate2 = new Coordinate<String, Float>(
+    Coordinate<String, Float> coordinate2 = new Coordinate<>(
         dateString2, 1.6f);
 
-    CustomCoordinatesSeries<String, Float> series = new CustomCoordinatesSeries<String, Float>();
+    CustomCoordinatesSeries<String, Float> series = new CustomCoordinatesSeries<>();
     series
         .addPoint(coordinate1);
     series

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +16,9 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.DateTimeLabelFormat;
 import de.adesso.wickedcharts.highcharts.options.DateTimeLabelFormat.DateTimeProperties;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * 
@@ -27,7 +28,7 @@ import org.junit.Test;
 public class DateTimeLabelFormatTest {
 
 	@Test
-	public void testOneProperty() {
+	void testOneProperty() {
 		// given
 		DateTimeLabelFormat dateTimeLabelFormat = new DateTimeLabelFormat();
 		dateTimeLabelFormat.setProperty(DateTimeProperties.SECOND, "%e. %b");
@@ -37,7 +38,7 @@ public class DateTimeLabelFormatTest {
 		String json = renderer.toJson(dateTimeLabelFormat);
 
 		// then
-		Assert.assertEquals("{ second: '%e. %b' }", json);
+		assertEquals("{ second: '%e. %b' }", json);
 	}
 
 //	@Test
@@ -58,7 +59,7 @@ public class DateTimeLabelFormatTest {
 		String json = renderer.toJson(dateTimeLabelFormat);
 
 		// then
-		Assert.assertEquals(
+		assertEquals(
 				"{ week: '%e. %b', hour: '%H:%M', minute: '%H:%M', year: '%Y', month: '%b \'%y', day: '%e. %b', second: '%H:%M:%S' }",
 				json);
 

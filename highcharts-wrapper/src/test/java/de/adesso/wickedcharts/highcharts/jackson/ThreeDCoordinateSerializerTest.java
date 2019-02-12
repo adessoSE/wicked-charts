@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +15,17 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.series.ThreeDCoordinate;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Matthias Balke (matthias.balke@gmail.com)
  */
-public class ThreeDCoordinateSerializerTest {
+class ThreeDCoordinateSerializerTest {
 
     @Test
-    public void testStringFloatCoordinate() {
+    void testStringFloatCoordinate() {
         // given
         String dateString = "Date.UTC(1970, 9, 27)";
         ThreeDCoordinate<String, Float, Float> coordinateStringFloat = new ThreeDCoordinate<String, Float, Float>(
@@ -35,11 +36,11 @@ public class ThreeDCoordinateSerializerTest {
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("[" + dateString + ", 0.0, 1.5]", json);
+        assertEquals("[" + dateString + ", 0.0, 1.5]", json);
     }
 
     @Test
-    public void testLiteralStringFloatCoordinate() {
+    void testLiteralStringFloatCoordinate() {
         // given
         ThreeDCoordinate<String, Float, String> coordinateStringFloat = new ThreeDCoordinate<String, Float, String>(
                 "foo", 0f, "bar");
@@ -52,7 +53,7 @@ public class ThreeDCoordinateSerializerTest {
         String json = renderer.toJson(coordinateStringFloat);
 
         // then
-        Assert.assertEquals("['foo', '0.0', 'bar']", json);
+        assertEquals("['foo', '0.0', 'bar']", json);
     }
 
 }

@@ -2,26 +2,24 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DateTimeValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class DateTimeValueSerializerTest {
+class DateTimeValueSerializerTest {
 
 
 	private JsonRenderer renderer;
-	private DateTimeValue testVal;
-	
-	@Before 
-	public void setUp() throws Exception{
+
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 	}
 	
 	@Test
-	public void testNullValue() {
-		testVal = new DateTimeValue();
+	void testNullValue() {
+		DateTimeValue testVal = new DateTimeValue();
 		String json = renderer.toJson(testVal);
 		assertEquals("", json);
 	}
