@@ -1,11 +1,12 @@
 package de.adesso.wickedcharts.highcharts.options;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * This test ensures that all classes in the options package implement the
@@ -15,9 +16,9 @@ import java.util.Set;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
-public class BuilderPatternTest {
+class BuilderPatternTest {
 
-	private final static String[] PACKAGES_TO_TEST = {
+	private static final String[] PACKAGES_TO_TEST = {
 
 	"de.adesso.wicketcharts.highcharts.options",
 
@@ -29,10 +30,7 @@ public class BuilderPatternTest {
 	 * A class is only tested if it is dubbed relevant by this method.
 	 */
 	private boolean isClassRelevant(final Class<?> clazz) {
-		if (clazz.isEnum()) {
-			return false;
-		}
-		return true;
+		return !clazz.isEnum();
 	}
 
 	/**
@@ -43,11 +41,11 @@ public class BuilderPatternTest {
 	}
 
 	@Test
-	public void testBuilderPattern() throws ClassNotFoundException, IOException {
-		Set<Class<? extends Object>> allClasses = ClassFinder
+	void testBuilderPattern() throws ClassNotFoundException, IOException {
+		Set<Class<?>> allClasses = ClassFinder
 		    .getClasses(this.getClass().getClassLoader(), PACKAGES_TO_TEST);
 
-		for (Class<? extends Object> clazz : allClasses) {
+		for (Class<?> clazz : allClasses) {
 			if (isClassRelevant(clazz)) {
 				Method[] methods = clazz.getMethods();
 				for (Method method : methods) {
@@ -66,8 +64,8 @@ public class BuilderPatternTest {
 		System.out.println("Testing method " + method + " for builder pattern...");
 		Class<?> returnType = method.getReturnType();
 		Class<?> declaringType = method.getDeclaringClass();
-		Assert.assertTrue("The method " + method + " does not implement builder pattern! Expected return value: "
-		    + declaringType + " (or a descendant)!", returnType.isAssignableFrom(declaringType));
+		assertTrue(returnType.isAssignableFrom(declaringType), "The method " + method + " does not implement builder pattern! Expected return value: "
+				+ declaringType + " (or a descendant)!");
 	}
 
 }

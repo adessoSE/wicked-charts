@@ -2,23 +2,24 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SimpleColorSerializerTest {
+
+class SimpleColorSerializerTest {
 
 	private SimpleColor testColor;
 	private JsonRenderer renderer;
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 	}
 
 	@Test
-	public void testRgbColor() {
+	void testRgbColor() {
 		testColor = SimpleColor.BLUE;
 
 		String json = renderer.toJson(testColor);
@@ -26,7 +27,7 @@ public class SimpleColorSerializerTest {
 	}
 
 	@Test
-	public void testRgbaColor() {
+	void testRgbaColor() {
 		testColor = SimpleColor.BLUE_TRANSPARENT;
 
 		String json = renderer.toJson(testColor);

@@ -20,5 +20,4 @@ public class RgbColor extends Color implements Serializable {
 	private int red;
 	private int green;
 	private int blue;
-
 }

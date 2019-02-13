@@ -3,44 +3,44 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DoubleValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DoubleValueSerializerTest {
+class DoubleValueSerializerTest {
 	
 	private JsonRenderer renderer;
 	private DoubleValue testVal;
 	
-	@Before
-	public void setUp() throws Exception{
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 	}
 	
 	@Test
-	public void testDoubleValue() {
+	void testDoubleValue() {
 		testVal = new DoubleValue(100.0);
 		String json = renderer.toJson(testVal);
 		assertEquals("100.0", json);
 	}
 	
 	@Test
-	public void testDoubleMaxValue() {
+	void testDoubleMaxValue() {
 		testVal = new DoubleValue(Double.MAX_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Double(Double.MAX_VALUE).toString(), json);
+		assertEquals(Double.toString(Double.MAX_VALUE), json);
 	}
 	
 	@Test
-	public void testDoubleMinValue() {
+	void testDoubleMinValue() {
 		testVal = new DoubleValue(Double.MIN_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Double(Double.MIN_VALUE).toString(), json);
+		assertEquals(Double.toString(Double.MIN_VALUE), json);
 }
 	
 	@Test
-	public void testNullValue() {
+	void testNullValue() {
 		testVal = new DoubleValue();
 		String json = renderer.toJson(testVal);
 		assertEquals("", json);

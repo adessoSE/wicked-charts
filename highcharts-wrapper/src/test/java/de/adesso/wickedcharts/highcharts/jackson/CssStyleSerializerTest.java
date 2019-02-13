@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -15,17 +15,17 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.CssStyle;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * 
  * @author Matthias Balke (matthias.balke@gmail.com)
  * 
  */
-public class CssStyleSerializerTest extends AbstractSerializerTest{
+class CssStyleSerializerTest extends AbstractSerializerTest{
 
 	@Test
-	public void testOneProperty() {
+	void testOneProperty() {
 		// given
 		CssStyle style = new CssStyle();
 		style.setProperty("fontSize", "1.3em");
@@ -39,7 +39,7 @@ public class CssStyleSerializerTest extends AbstractSerializerTest{
 	}
 
 	@Test
-	public void testTwoProperties() {
+	void testTwoProperties() {
 		// given
 		CssStyle style = new CssStyle();
 		style.setProperty("fontSize", "1.3em");

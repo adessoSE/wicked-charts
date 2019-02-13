@@ -1,14 +1,12 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 dependencies {
-    compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
+    compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_version}"
     compile project(':wicked-charts-showcase-options')
-    testCompile 'junit:junit:4.12'
     compile 'commons-io:commons-io:2.4'
-    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
+    compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_version}"
     compile(
-            [group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'],
-            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
+            [group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_version}"],
             [group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket7', version: "${wickedcharts_version}"],
     )
    compile(
@@ -37,7 +35,7 @@ processResources {
        from 'src/main/java'
        from 'src/main/resources'
        filter(ReplaceTokens, tokens: [projectVersion : wickedcharts_version])
-       filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
+       filter(ReplaceTokens, tokens: [wicketVersion : wicket_version])
 }
 
 bootRun {

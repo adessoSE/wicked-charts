@@ -1,4 +1,4 @@
-package de.adesso.wickedcharts.showcase.options;
+package de.adesso.wickedcharts.showcase.options.highcharts;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,9 +22,9 @@ import java.util.jar.JarInputStream;
  */
 public class ClassFinder {
 
-	public static Set<Class<?>> getClasses(final ClassLoader loader, final String packageName) throws IOException,
+	protected static Set<Class<?>> getClasses(final ClassLoader loader, final String packageName) throws IOException,
 	    ClassNotFoundException {
-		Set<Class<?>> classes = new HashSet<Class<?>>();
+		Set<Class<?>> classes = new HashSet<>();
 		String path = packageName.replace('.', '/');
 		Enumeration<URL> resources = loader.getResources(path);
 		if (resources != null) {
@@ -35,10 +35,10 @@ public class ClassFinder {
 					filePath = filePath.replaceAll("%20", " ");
 				}
 				if (filePath != null) {
-					if ((filePath.indexOf("!") > 0) && (filePath.indexOf(".jar") > 0)) {
-						String jarPath = filePath.substring(0, filePath.indexOf("!")).substring(filePath.indexOf(":") + 1);
+					if ((filePath.indexOf('!') > 0) && (filePath.indexOf(".jar") > 0)) {
+						String jarPath = filePath.substring(0, filePath.indexOf('!')).substring(filePath.indexOf(':') + 1);
 						// WINDOWS HACK
-						if (jarPath.indexOf(":") >= 0) {
+						if (jarPath.contains(":")) {
 							jarPath = jarPath.substring(1);
 						}
 						classes.addAll(getFromJARFile(jarPath, path));
@@ -60,7 +60,7 @@ public class ClassFinder {
 		return classes;
 	}
 
-	static Set<Class<?>> getFromDirectory(final File directory, final String packageName) throws ClassNotFoundException {
+	private static Set<Class<?>> getFromDirectory(final File directory, final String packageName) throws ClassNotFoundException {
 		Set<Class<?>> classes = new HashSet<Class<?>>();
 		if (directory.exists()) {
 			for (String file : directory.list()) {
@@ -74,28 +74,29 @@ public class ClassFinder {
 		return classes;
 	}
 
-	static Set<Class<?>> getFromJARFile(final String jar, final String packageName) throws FileNotFoundException,
-	    IOException, ClassNotFoundException {
-		Set<Class<?>> classes = new HashSet<Class<?>>();
-		JarInputStream jarFile = new JarInputStream(new FileInputStream(jar));
-		JarEntry jarEntry;
-		do {
-			jarEntry = jarFile.getNextJarEntry();
-			if (jarEntry != null) {
-				String className = jarEntry.getName();
-				if (className.endsWith(".class")) {
-					className = stripFilenameExtension(className);
-					if (className.startsWith(packageName)) {
-						classes.add(Class.forName(className.replace('/', '.')));
+	private static Set<Class<?>> getFromJARFile(final String jar, final String packageName) throws
+			IOException, ClassNotFoundException {
+		Set<Class<?>> classes = new HashSet<>();
+		try (JarInputStream jarFile = new JarInputStream(new FileInputStream(jar))){
+			JarEntry jarEntry;
+			do {
+				jarEntry = jarFile.getNextJarEntry();
+				if (jarEntry != null) {
+					String className = jarEntry.getName();
+					if (className.endsWith(".class")) {
+						className = stripFilenameExtension(className);
+						if (className.startsWith(packageName)) {
+							classes.add(Class.forName(className.replace('/', '.')));
+						}
 					}
 				}
-			}
-		} while (jarEntry != null);
+			} while (jarEntry != null);
+		}
 		return classes;
 	}
 
 	private static String stripFilenameExtension(final String file) {
-		int index = file.lastIndexOf(".");
+		int index = file.lastIndexOf('.');
 		return file.substring(0, index);
 	}
 

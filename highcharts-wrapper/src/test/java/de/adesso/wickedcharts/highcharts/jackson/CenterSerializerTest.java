@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.Center;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class CenterSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+class CenterSerializerTest {
 
 	@Test
-	public void testPercent() {
+	void testPercent() {
 		// given
 		Center center = new Center(10, 20, Center.Unit.PERCENT);
 		JsonRenderer renderer = new JsonRenderer();
@@ -30,11 +32,11 @@ public class CenterSerializerTest {
 		String json = renderer.toJson(center);
 
 		// then
-		Assert.assertEquals("[ \"10%\", \"20%\" ]", json);
+		assertEquals("[ \"10%\", \"20%\" ]", json);
 	}
 
 	@Test
-	public void testPixels() {
+	void testPixels() {
 		// given
 		Center center = new Center(5, -20, Center.Unit.PIXELS);
 		JsonRenderer renderer = new JsonRenderer();
@@ -43,7 +45,7 @@ public class CenterSerializerTest {
 		String json = renderer.toJson(center);
 
 		// then
-		Assert.assertEquals("[ 5, -20 ]", json);
+		assertEquals("[ 5, -20 ]", json);
 	}
 
 }

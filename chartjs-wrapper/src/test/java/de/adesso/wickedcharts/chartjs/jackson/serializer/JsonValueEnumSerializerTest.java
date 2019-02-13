@@ -3,12 +3,12 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 import de.adesso.wickedcharts.chartjs.ChartConfiguration;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class JsonValueEnumSerializerTest {
+class JsonValueEnumSerializerTest {
 	
 	public enum TestEnum implements JsonValueEnum {
 		LOWERCASE("lowercase"),
@@ -35,7 +35,7 @@ public class JsonValueEnumSerializerTest {
 			return testEnum;
 		}
 
-		public void setTestEnum(TestEnum testEnum) {
+		void setTestEnum(TestEnum testEnum) {
 			this.testEnum = testEnum;
 		}
 	}
@@ -43,8 +43,8 @@ public class JsonValueEnumSerializerTest {
 	private TestChartConfiguration config;
 	private JsonRenderer renderer;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		config = new TestChartConfiguration();
 		renderer = new JsonRenderer();
 	}
@@ -52,7 +52,7 @@ public class JsonValueEnumSerializerTest {
 	
 	
 	@Test
-	public void testLowercase() {
+	void testLowercase() {
 		config.setTestEnum(TestEnum.LOWERCASE);
 		
 		String json = renderer.toJson(config);
@@ -61,7 +61,7 @@ public class JsonValueEnumSerializerTest {
 	
 	
 	@Test
-	public void testMixed() {
+	void testMixed() {
 		config.setTestEnum(TestEnum.MIXED);
 		
 		String json = renderer.toJson(config);
@@ -70,7 +70,7 @@ public class JsonValueEnumSerializerTest {
 	
 	
 	@Test
-	public void testUppercase() {
+	void testUppercase() {
 		config.setTestEnum(TestEnum.UPPERCASE);
 		
 		String json = renderer.toJson(config);

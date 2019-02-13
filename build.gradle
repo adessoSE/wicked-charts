@@ -7,8 +7,8 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.9.1"
     }
 }
 
@@ -23,6 +23,14 @@ subprojects {
         mavenLocal()
         mavenCentral()
         jcenter()
+    }
+
+    dependencies{
+        testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junit_version
+        testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junit_version
+    }
+    test {
+        useJUnitPlatform()
     }
 
     // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version

@@ -36,7 +36,7 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 		
 		List<DateTimeLabel> dateList = new ArrayList<>();
 		for(int i = 0; i < 7; i++) {
-			dateList.add(new DateTimeLabel(LocalDateTime.of(2018, 1,1, 8+i, 00)));
+			dateList.add(new DateTimeLabel(LocalDateTime.of(2019, 1,1, 8+i, 00)));
 		}
 		data.setLabels(dateList);
 		
@@ -84,13 +84,13 @@ public class TimeLineConfiguration extends ShowcaseConfiguration {
 						.setX(new StringValue(formatter.format(dateList.get(6).getDate())))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(LocalDateTime.of(2018, 1, 1, 15, 0))))
+						.setX(new StringValue(formatter.format(LocalDateTime.of(2019, 1, 1, 15, 0))))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(LocalDateTime.of(2018, 1, 1, 16, 0))))
+						.setX(new StringValue(formatter.format(LocalDateTime.of(2019, 1, 1, 16, 0))))
 						.setY(randomInteger()),
 						new PointValue()
-						.setX(new StringValue(formatter.format(LocalDateTime.of(2018, 1, 1, 17, 0))))
+						.setX(new StringValue(formatter.format(LocalDateTime.of(2019, 1, 1, 17, 0))))
 						.setY(randomInteger())
 						))
 				;

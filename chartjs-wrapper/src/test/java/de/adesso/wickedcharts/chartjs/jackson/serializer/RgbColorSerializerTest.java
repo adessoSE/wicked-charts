@@ -2,24 +2,24 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.RgbColor;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class RgbColorSerializerTest {
+class RgbColorSerializerTest {
 
 	private JsonRenderer renderer;
 	private RgbColor testColor;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 		testColor = new RgbColor(234,56,7);
 	}
 	
 	@Test
-	public void testRgbaSerializer() {
+	void testRgbaSerializer() {
 		String json = renderer.toJson(testColor);
 		
 		assertTrue(json.contains("rgb(234,56,7)"));

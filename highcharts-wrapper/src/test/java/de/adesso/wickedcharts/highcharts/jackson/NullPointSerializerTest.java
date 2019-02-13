@@ -1,9 +1,9 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.series.Point;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class NullPointSerializerTest extends AbstractSerializerTest {
+class NullPointSerializerTest extends AbstractSerializerTest {
 
     /**
      * Tests that the y-value of a point is serialized even when it is null.
@@ -11,7 +11,7 @@ public class NullPointSerializerTest extends AbstractSerializerTest {
      * @see <a href="https://github.com/thombergs/wicked-charts/issues/31">https://github.com/thombergs/wicked-charts/issues/31</a>
      */
     @Test
-    public void test() {
+    void test() {
 
         // given
         Point point = new Point(null);

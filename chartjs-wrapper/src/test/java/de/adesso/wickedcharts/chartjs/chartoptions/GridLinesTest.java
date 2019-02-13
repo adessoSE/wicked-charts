@@ -2,36 +2,36 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.Color;
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.SimpleColor;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GridLinesTest {
+class GridLinesTest {
 	
 	private GridLines testData;
 	private List<Color> colorList;
-	
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		testData = new GridLines();
 	}
 	
 	@Test
-	public void testSetColorList() {
+	void testSetColorList() {
 		testData.setColor(Arrays.asList(SimpleColor.BLUE, SimpleColor.RED));
 		colorList = Arrays.asList(SimpleColor.BLUE, SimpleColor.RED);
 		assertEquals(testData.getColor(),colorList);
 	}
 	
 	@Test
-	public void testSetColor() {
+	void testSetColor() {
 		testData.setColor(SimpleColor.BLUE);
-		colorList = Arrays.asList(SimpleColor.BLUE);
+		colorList = Collections.singletonList(SimpleColor.BLUE);
 		assertEquals(testData.getColor(),colorList);
 	}
 

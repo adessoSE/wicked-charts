@@ -2,34 +2,33 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.colors.HexColor;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HexColorSerializerTest {
+class HexColorSerializerTest {
 
     private JsonRenderer renderer;
     private HexColor testColor;
-    private String testString;
+    private static final String TEST_VALUE = "#7BEA38";
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() {
         renderer = new JsonRenderer();
         testColor = new HexColor(123,234,56);
-        testString = "#7BEA38";
     }
 
     @Test
-    public void testHexSerializer() {
+    void testHexSerializer() {
         String json = renderer.toJson(testColor);
-        assertTrue(json.contains("#7BEA38"));
+        assertTrue(json.contains(TEST_VALUE));
     }
 
     @Test
-    public void testHexStringSerializer() {
-        testColor = new HexColor(testString);
+    void testHexStringSerializer() {
+        testColor = new HexColor(TEST_VALUE);
         String json = renderer.toJson(testColor);
-        assertTrue(json.contains("#7BEA38"));
+        assertTrue(json.contains(TEST_VALUE));
     }
 }

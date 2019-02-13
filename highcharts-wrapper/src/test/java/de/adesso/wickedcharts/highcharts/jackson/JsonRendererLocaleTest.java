@@ -1,18 +1,19 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
 
-public class JsonRendererLocaleTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class JsonRendererLocaleTest {
 
     /**
      * This test checks that the JsonRenderer can handle a turkish default Locale.
      */
     @Test
-    public void testTurkishLocale() {
+    void testTurkishLocale() {
         Locale.setDefault(new Locale("tr"));
 
         SeriesType type = SeriesType.SPLINE;
@@ -20,7 +21,7 @@ public class JsonRendererLocaleTest {
         String json = renderer.toJson(type);
 
         // would be "splıne" if the turkish locale was not considered
-        Assert.assertEquals("\"spline\"", json);
+        assertEquals("\"spline\"", json);
     }
 
 }

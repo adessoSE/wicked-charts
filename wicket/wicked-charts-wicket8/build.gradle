@@ -2,6 +2,5 @@ dependencies {
 	compile project(':highcharts-wrapper')
 	compile project(':chartjs-wrapper')
 	compile 'org.apache.wicket:wicket-core:8.1.0'
-	testCompile 'junit:junit:4.12'
 }
 

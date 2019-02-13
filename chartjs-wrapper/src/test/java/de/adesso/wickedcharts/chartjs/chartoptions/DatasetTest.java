@@ -6,22 +6,24 @@ import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BooleanFillingMo
 import de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes.BoundaryFillingMode;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class DatasetTest {
+class DatasetTest {
 	private Dataset testDataset;
 	private List<? extends Color> testColorList;
 	private List<? extends ValueType> testDataList;
 	private List<? extends Number> testPointRadiusList;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		testDataset = new Dataset();
 		testColorList = Arrays.asList(SimpleColor.RED, SimpleColor.BLUE);
 		testDataList = IntegerValue.of(1,2,3,4,5);
@@ -29,49 +31,49 @@ public class DatasetTest {
 	}
 	
 	@Test
-	public void testSetBackgroundColor() {
+	void testSetBackgroundColor() {
 		testDataset.setBackgroundColor(SimpleColor.RED);
-		assertEquals(testDataset.getBackgroundColor(), Arrays.asList(SimpleColor.RED));
+		assertEquals(testDataset.getBackgroundColor(), Collections.singletonList(SimpleColor.RED));
 	}
 	
 	@Test
-	public void testSetBackgroundColorList() {
+	void testSetBackgroundColorList() {
 		testDataset.setBackgroundColor(testColorList);
 		assertEquals(testDataset.getBackgroundColor(), testColorList);
 	}
 	
 	@Test
-	public void testSetDataList() {
+	void testSetDataList() {
 		testDataset.setData(testDataList);
 		assertEquals(testDataset.getData(), testDataList);
 	}
 	
 	@Test
-	public void testSetPointRadiusList() {
+	void testSetPointRadiusList() {
 		testDataset.setPointRadius(testPointRadiusList);
 		assertEquals(testDataset.getPointRadius(), testPointRadiusList);
 	}
 	
 	@Test
-	public void testSetPointRadius() {
+	void testSetPointRadius() {
 		testDataset.setPointRadius(5);
-		assertEquals(testDataset.getPointRadius(), Arrays.asList(5));
+		assertEquals(testDataset.getPointRadius(), Collections.singletonList(5));
 	}
 	
 	@Test
-	public void testSetFill() {
+	void testSetFill() {
 		testDataset.setFill(BoundaryFillingMode.START);
 		assertEquals(testDataset.getFill(), BoundaryFillingMode.START);
 	}
 	
 	@Test
-	public void testSetFillBoolFalse() {
+	void testSetFillBoolFalse() {
 		testDataset.setFill(true);
-		assertEquals(testDataset.getFill(), null);
+		assertNull(testDataset.getFill());
 	}
 	
 	@Test
-	public void testSetFillBoolTrue() {
+	void testSetFillBoolTrue() {
 		testDataset.setFill(false);
 		assertEquals(testDataset.getFill(), BooleanFillingMode.FALSE);
 	}
