@@ -1,4 +1,4 @@
-/**
+/*
  *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +14,9 @@
  */
 package de.adesso.wickedcharts.highcharts.options;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
@@ -24,6 +27,8 @@ import java.io.Serializable;
  * @author Tom Hombergs (tom.hombergs@gmail.com)
  * 
  */
+@Accessors(chain = true)
+@Data
 public class ExportingOptions implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -46,67 +51,5 @@ public class ExportingOptions implements Serializable {
 
 	private ExportingButtons buttons;
 
-	public ExportingButtons getButtons() {
-		return this.buttons;
-	}
-
-	public Boolean getEnabled() {
-		return this.enabled;
-	}
-
-	public Boolean getEnableImages() {
-		return this.enableImages;
-	}
-
-	public String getFilename() {
-		return this.filename;
-	}
-
-	public ExportingMimeType getType() {
-		return this.type;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public Integer getWidth() {
-		return this.width;
-	}
-
-	public ExportingOptions setButtons(final ExportingButtons buttons) {
-		this.buttons = buttons;
-		return this;
-	}
-
-	public ExportingOptions setEnabled(final Boolean enabled) {
-		this.enabled = enabled;
-		return this;
-	}
-
-	public ExportingOptions setEnableImages(final Boolean enableImages) {
-		this.enableImages = enableImages;
-		return this;
-	}
-
-	public ExportingOptions setFilename(final String filename) {
-		this.filename = filename;
-		return this;
-	}
-
-	public ExportingOptions setType(final ExportingMimeType type) {
-		this.type = type;
-		return this;
-	}
-
-	public ExportingOptions setUrl(final String url) {
-		this.url = url;
-		return this;
-	}
-
-	public ExportingOptions setWidth(final Integer width) {
-		this.width = width;
-		return this;
-	}
-
+	private CsvOptions csv;
 }
