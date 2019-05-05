@@ -3,6 +3,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Defines a ValueType to represent the x and y coordinates in, for example, a scatter chart.
  * X and y can be any other ValueType or primitive types (Integer, Double).
@@ -13,7 +15,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @lombok.Data
 @EqualsAndHashCode(callSuper = false)
-public class PointValue extends ValueType {
+public class PointValue extends ValueType implements Serializable {
 	
 	private ValueType x;
 	private ValueType y;

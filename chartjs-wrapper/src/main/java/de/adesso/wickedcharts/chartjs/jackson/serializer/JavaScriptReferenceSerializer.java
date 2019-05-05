@@ -15,7 +15,7 @@ public class JavaScriptReferenceSerializer extends JsonSerializer<JavaScriptRefe
 
 	@Override
 	public void serialize(JavaScriptReference value, JsonGenerator gen, SerializerProvider serializers)
-			throws IOException, JsonProcessingException {
+			throws IOException {
 		gen.writeRawValue(value.getRef());
 	}
 }

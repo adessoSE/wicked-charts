@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -15,19 +15,12 @@
 package de.adesso.wickedcharts.showcase;
 
 
-import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import org.apache.wicket.Request;
 import org.apache.wicket.Response;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.request.target.coding.HybridUrlCodingStrategy;
-import org.apache.wicket.request.target.coding.IndexedHybridUrlCodingStrategy;
-import org.apache.wicket.request.target.coding.IndexedParamUrlCodingStrategy;
 import org.apache.wicket.request.target.coding.MixedParamHybridUrlCodingStrategy;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 @Component
 public class ShowcaseApplication extends WebApplication {

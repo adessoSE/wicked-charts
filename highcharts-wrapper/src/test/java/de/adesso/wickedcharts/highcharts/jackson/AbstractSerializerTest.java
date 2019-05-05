@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  */
 package de.adesso.wickedcharts.highcharts.jackson;
 
-import junit.framework.Assert;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class AbstractSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class AbstractSerializerTest {
 
 	/**
 	 * Asserts if two strings are the same, ignoring any white space characters.
@@ -29,15 +29,15 @@ public class AbstractSerializerTest {
 	protected void assertIgnoreWhitespaces(String expected, String actual) {
 		expected = expected.replaceAll("\\s", "");
 		actual = actual.replaceAll("\\s", "");
-		Assert.assertEquals(expected, actual);
+		assertEquals(expected, actual);
 	}
 
 	protected String getStringFromResource(final String resourceName) {
 		try {
 			InputStream in = AbstractSerializerTest.class.getResourceAsStream(resourceName);
-			StringBuffer buffer = new StringBuffer();
+			StringBuilder buffer = new StringBuilder();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-			String line = null;
+			String line;
 			while ((line = reader.readLine()) != null) {
 				buffer.append(line);
 			}

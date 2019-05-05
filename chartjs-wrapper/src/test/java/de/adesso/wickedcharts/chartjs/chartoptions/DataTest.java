@@ -2,28 +2,28 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.TextLabel;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class DataTest {
+class DataTest {
 
-	Data testData;
-	List<Label> labelList;
+	private Data testData;
+	private List<Label> labelList;
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	void setUp() {
 		testData = new Data();
 		labelList = Arrays.asList(new TextLabel("foo"), new TextLabel("bar"));
 	}
 
 	@Test
-	public void testSetStringLabels() {
+	void testSetStringLabels() {
 		List<String> list = Arrays.asList("foo","bar");
 		testData.setLabels(TextLabel.of(list));
 		assertEquals(testData.getLabels(),labelList);
@@ -31,7 +31,7 @@ public class DataTest {
 
 
 	@Test
-	public void testSetLabelList() {
+	void testSetLabelList() {
 		testData.setLabels(labelList);
 		assertEquals(testData.getLabels(),labelList);
 	}

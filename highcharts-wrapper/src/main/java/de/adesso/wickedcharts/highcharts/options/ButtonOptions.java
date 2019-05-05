@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ import de.adesso.wickedcharts.highcharts.options.theme.Theme;
 
 import java.awt.*;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Defined options for the buttons of a chart.
@@ -60,6 +62,8 @@ public class ButtonOptions implements Serializable {
 	private ColorReference symbolStroke;
 
 	private Integer symbolStrokeWidth;
+
+	private List<MenuItems> menuItems;
 
 	private Float symbolX;
 
@@ -169,6 +173,15 @@ public class ButtonOptions implements Serializable {
 
 	public Theme getTheme() {
 		return this.theme;
+	}
+
+	public ButtonOptions setMenuItems(List<MenuItems> menuItems){
+		this.menuItems = menuItems;
+		return this;
+	}
+
+	public List<MenuItems> getMenuItems(){
+		return this.menuItems;
 	}
 
 	public ButtonOptions setAlign(final HorizontalAlignment align) {

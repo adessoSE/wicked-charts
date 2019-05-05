@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ package de.adesso.wickedcharts.showcase.jsf.bean;
 
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.theme.*;
-import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

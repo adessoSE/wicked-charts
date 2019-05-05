@@ -1,5 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
 
+import java.io.Serializable;
+
 /**
  * Defines the additional filling modes as Strings.
  *
@@ -8,7 +10,7 @@ package de.adesso.wickedcharts.chartjs.chartoptions.fillingmodes;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum BoundaryFillingMode implements FillingMode {
+public enum BoundaryFillingMode implements FillingMode, Serializable {
 	START("start"),
 	END("end"),
 	ORIGIN("origin"),

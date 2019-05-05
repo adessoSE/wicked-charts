@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -32,12 +32,18 @@ public class ExportingButtons implements Serializable {
 
 	private ButtonOptions printButton;
 
+	private ButtonOptions contextButton;
+
 	public ButtonOptions getExportButton() {
 		return this.exportButton;
 	}
 
 	public ButtonOptions getPrintButton() {
 		return this.printButton;
+	}
+
+	public ButtonOptions getContextButton() {
+		return this.contextButton;
 	}
 
 	public ExportingButtons setExportButton(final ButtonOptions exportButton) {
@@ -47,6 +53,11 @@ public class ExportingButtons implements Serializable {
 
 	public ExportingButtons setPrintButton(final ButtonOptions printButton) {
 		this.printButton = printButton;
+		return this;
+	}
+
+	public ExportingButtons setContextButton(final ButtonOptions contextButton) {
+		this.contextButton = contextButton;
 		return this;
 	}
 

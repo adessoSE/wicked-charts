@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,7 +10,7 @@ import java.util.stream.Collectors;
  *
  * @author SvenWirz
  */
-public class ConstLabel extends Label {
+public class ConstLabel extends Label implements Serializable {
 	private final String text;
 	
 	public ConstLabel(final String text) {

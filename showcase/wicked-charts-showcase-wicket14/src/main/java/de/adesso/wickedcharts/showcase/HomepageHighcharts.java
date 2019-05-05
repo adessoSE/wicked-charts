@@ -1,5 +1,5 @@
 /*
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package de.adesso.wickedcharts.showcase;
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateHighchartLink;
-import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 import de.adesso.wickedcharts.wicket14.highcharts.Chart;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;

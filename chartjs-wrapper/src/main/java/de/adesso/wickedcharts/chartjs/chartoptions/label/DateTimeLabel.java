@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
  *
  * @author SvenWirz
  */
-public class DateTimeLabel extends Label {
+public class DateTimeLabel extends Label implements Serializable {
 	
 	private LocalDateTime date;
 	

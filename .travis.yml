@@ -1,54 +1,82 @@
 language: java
 install: true
-
 sudo: false
 addons:
   apt:
     packages:
-      - oracle-java8-installer
-
+    - oracle-java8-installer
 before_install:
-  - chmod +x gradlew
+- chmod +x ./showcase/gradlew
+- chmod +x gradlew
+- gcloud version || true
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash > /dev/null; fi
+# Add gcloud to $PATH
+- source /home/travis/google-cloud-sdk/path.bash.inc
+- gcloud components install app-engine-java
+- gcloud config set project wicked-charts-showcase
 
 stages:
-  - name: build
-
-  # only publish snapshots from "master" branch and not in pull requests
-  - name: snapshot
-    if: branch = master AND type IN (push)
-
-  # only publish release from "release" branch and not in pull requests
-  - name: release
-    if: branch = release AND type IN (push)
-
+- name: build
+- name: snapshot
+  if: branch = master AND type IN (push)
+- name: release
+  if: branch = release AND type IN (push)
+- name: showcase-build
+- name: showcase-deploy
+  if: branch = release OR branch = master AND type IN (push)
 jobs:
   include:
+  - stage: build
+    script: "./gradlew build"
+  - stage: snapshot
+    script:
+    - "./gradlew chartjs-wrapper:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew highcharts-wrapper:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew jsf:wicked-charts-jsf21:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket14:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket15:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket6:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket7:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket8:artifactoryPublish -x test -Dsnapshot=true
+      -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+  - stage: release
+    script:
+    - "./gradlew chartjs-wrapper:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew highcharts-wrapper:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew jsf:wicked-charts-jsf21:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket14:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket15:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket6:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket7:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+    - "./gradlew wicket:wicked-charts-wicket8:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER
+      -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER"
+  - stage: showcase-build
+    install: skip
+    script:
+    - "./gradlew build publishToMavenLocal -Dsnapshot=true && cd showcase && ./gradlew build"
+  - stage: showcase-deploy
+    install: skip
+    script:
+    - "cd showcase &&
+    openssl aes-256-cbc -K $encrypted_05eb42a9daa3_key -iv $encrypted_05eb42a9daa3_iv -in Wicked-Charts-Showcase-887cff2298d0.json.enc -out Wicked-Charts-Showcase-887cff2298d0.json -d
+    && gcloud auth activate-service-account --key-file=Wicked-Charts-Showcase-887cff2298d0.json
+     &&./gradlew wicked-charts-showcase-wicket8:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket7:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket6:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket15:appengineDeploy
+     &&./gradlew wicked-charts-showcase-wicket14:appengineDeploy"
 
-    # run gradle build
-    - stage: build
-      script: ./gradlew build
-
-    # publish snapshot to oss.jfrog.org
-    - stage: snapshot
-      script:
-      - ./gradlew chartjs-wrapper:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew highcharts-wrapper:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew jsf:wicked-charts-jsf21:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket14:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket15:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket6:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket7:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket8:artifactoryPublish -x test -Dsnapshot=true -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-
-
-    # release a new stable version to bintray
-    - stage: release
-      script:
-      - ./gradlew chartjs-wrapper:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew highcharts-wrapper:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew jsf:wicked-charts-jsf21:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket14:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket15:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket6:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket7:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER
-      - ./gradlew wicket:wicked-charts-wicket8:bintrayUpload -x test -Dbintray.user=$BINTRAY_USER -Dbintray.key=$BINTRAY_KEY -Dbuild.number=$TRAVIS_BUILD_NUMBER

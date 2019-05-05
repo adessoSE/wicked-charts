@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -139,6 +139,10 @@ public class PlotOptions implements Serializable {
     private Integer whiskerLength;
 
     private Integer stemWidth;
+
+    private PixelOrPercent minSize;
+
+    private PixelOrPercent maxSize;
 
     public PixelOrPercent getNeckWidth() {
         return neckWidth;
@@ -643,6 +647,24 @@ public class PlotOptions implements Serializable {
 
     public PlotOptions setWhiskerLength(Integer whiskerLength) {
         this.whiskerLength = whiskerLength;
+        return this;
+    }
+
+    public PixelOrPercent getMinSize() {
+        return minSize;
+    }
+
+    public PlotOptions setMinSize(PixelOrPercent minSize) {
+        this.minSize = minSize;
+        return this;
+    }
+
+    public PixelOrPercent getMaxSize() {
+        return maxSize;
+    }
+
+    public PlotOptions setMaxSize(PixelOrPercent maxSize) {
+        this.maxSize = maxSize;
         return this;
     }
 

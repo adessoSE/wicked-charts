@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -18,10 +18,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.adesso.wickedcharts.highcharts.options.ChartOptions;
 import de.adesso.wickedcharts.highcharts.options.Options;
 import de.adesso.wickedcharts.highcharts.options.SeriesType;
-import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class JsonIgnoreTest {
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class JsonIgnoreTest {
 
   public class MyOptions extends Options {
 
@@ -51,7 +53,7 @@ public class JsonIgnoreTest {
   }
 
   @Test
-  public void test() {
+  void test() {
     // given
     Options options = new MyOptions();
     ChartOptions chartOptions = new ChartOptions();
@@ -63,8 +65,8 @@ public class JsonIgnoreTest {
     String json = renderer.toJson(options);
 
     // then
-    Assert.assertFalse(json.contains("myIgnoredField"));
-    Assert.assertTrue(json.contains("myIncludedField"));
+    assertFalse(json.contains("myIgnoredField"));
+    assertTrue(json.contains("myIncludedField"));
   }
 
 }

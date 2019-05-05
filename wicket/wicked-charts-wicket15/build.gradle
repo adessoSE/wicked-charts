@@ -1,6 +1,10 @@
 dependencies {
 	compile project(':highcharts-wrapper')
 	compile project(':chartjs-wrapper')
-	compile 'org.apache.wicket:wicket-core:1.5.13'
-	testCompile 'junit:junit:4.12'
+	compile 'org.apache.wicket:wicket-core:1.5.17'
+}
+
+compileJava {
+	sourceCompatibility = 1.6
+	targetCompatibility = 1.6
 }

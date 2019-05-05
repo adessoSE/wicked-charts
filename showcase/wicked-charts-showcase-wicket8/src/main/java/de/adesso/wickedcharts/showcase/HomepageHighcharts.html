@@ -82,12 +82,22 @@
 </div>
 
 <div id="bannerContainer" class="gradient">
-    <div class="row-fluid">
-        <div class="span12 grid">
+    <div class="grid">
+        <div class="row-fluid">
             <div id="banner">
                 <h1>Wicked Charts</h1>
-
-                <p>version @projectVersion@ :: Wicket @wicketVersion@</p>
+                <span style="display: inline-block"><p>version @projectVersion@ :: Wicket</p></span>
+                <span style="z-index: 4; display: inline-block" class="dropdown">
+                    <button style="font-size : 17px; width: 100%" class="btn dropdown-toggle" type="button" data-toggle="dropdown">@wicketVersion@
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://wicket7-dot-wicked-charts-showcase.appspot.com">7.x</a></li>
+                        <li><a href="https://wicket6-dot-wicked-charts-showcase.appspot.com">6.x</a></li>
+                        <li><a href="https://wicket15-dot-wicked-charts-showcase.appspot.com">1.5.x</a></li>
+                        <li><a href="https://wicket14-dot-wicked-charts-showcase.appspot.com">1.4.x</a></li>
+                    </ul>
+                </span>
             </div>
         </div>
     </div>
@@ -248,7 +258,7 @@ add(new Chart("chart", options));
     <hr>
 
     <footer>
-        <p>&copy; Wicked Charts 2012-2018</p>
+        <p>&copy; Wicked Charts 2012-2019</p>
     </footer>
 
 </div>

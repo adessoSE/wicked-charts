@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -218,8 +218,9 @@ public class PlotOptionsChoice implements Serializable {
         return bubble;
     }
 
-    public void setBubble(PlotOptions bubble) {
+    public PlotOptionsChoice setBubble(PlotOptions bubble) {
         this.bubble = bubble;
+	    return this;
     }
 
     public PlotOptionsChoice setPlotOptions(PlotOptions plotOptions, SeriesType type) {

@@ -1,7 +1,10 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * Defines an RGB encoded color
@@ -11,11 +14,10 @@ import lombok.EqualsAndHashCode;
  * @author SvenWirz
  */
 @AllArgsConstructor
-@lombok.Data
-@EqualsAndHashCode(callSuper=false)
-public class RgbColor extends Color {
+@Data
+@EqualsAndHashCode(callSuper=true)
+public class RgbColor extends Color implements Serializable {
 	private int red;
 	private int green;
 	private int blue;
-
 }

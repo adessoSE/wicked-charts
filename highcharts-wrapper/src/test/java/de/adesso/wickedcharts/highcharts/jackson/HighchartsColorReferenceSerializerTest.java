@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.HighchartsColor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HighchartsColorReferenceSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class HighchartsColorReferenceSerializerTest {
 
   @Test
-  public void testWithHighchartsIndex() {
+  void testWithHighchartsIndex() {
     // given
     ColorReference color = new HighchartsColor(3);
     JsonRenderer renderer = new JsonRenderer();
@@ -31,7 +32,7 @@ public class HighchartsColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("Highcharts.getOptions().colors[" + 3 + "]", json);
+    assertEquals("Highcharts.getOptions().colors[" + 3 + "]", json);
   }
 
   @Test
@@ -45,7 +46,7 @@ public class HighchartsColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("Highcharts.Color(Highcharts.getOptions().colors[" + 3
+    assertEquals("Highcharts.Color(Highcharts.getOptions().colors[" + 3
         + "]).brighten(0.20).get()", json);
   }
 

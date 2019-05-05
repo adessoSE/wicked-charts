@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,15 +16,16 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.SimpleColor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-public class SimpleColorReferenceSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SimpleColorReferenceSerializerTest {
 
   @Test
-  public void testWithColor() {
+  void testWithColor() {
     // given
     ColorReference color = new SimpleColor(Color.RED);
     JsonRenderer renderer = new JsonRenderer();
@@ -33,11 +34,11 @@ public class SimpleColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("\"#ff0000\"", json);
+    assertEquals("\"#ff0000\"", json);
   }
 
   @Test
-  public void testWithColorAndBrightness() {
+  void testWithColorAndBrightness() {
     // given
     ColorReference color = new SimpleColor(Color.RED);
     color = color.brighten(0.1f);
@@ -47,7 +48,7 @@ public class SimpleColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("Highcharts.Color(\"#ff0000\").brighten(0.10).get()",
+    assertEquals("Highcharts.Color(\"#ff0000\").brighten(0.10).get()",
         json);
   }
 

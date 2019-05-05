@@ -1,14 +1,13 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 dependencies {
-	compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_spring_version}"
+	compile group: 'org.apache.wicket', name: 'wicket-core', version: "${wicket_version}"
 	compile project(':wicked-charts-showcase-options')
-	testCompile 'junit:junit:4.12'
 	compile 'commons-io:commons-io:2.4'
-	compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_spring_version}"
+	compile group: 'org.apache.wicket', name: 'wicket-extensions', version: "${wicket_version}"
 	compile(
-			[group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_spring_version}"],
-			[group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket15', version: "${wicketcharts_version}"],
+			[group: 'org.apache.wicket', name: 'wicket-spring', version: "${wicket_version}"],
+			[group: 'de.adesso.wicked-charts', name: 'wicked-charts-wicket15', version: "${wickedcharts_version}"],
 	)
 	compile(
 			[group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${spring_boot_version}"],
@@ -18,14 +17,14 @@ dependencies {
 buildscript {
 	repositories {
 		mavenLocal()
-		jcenter()
+		mavenCentral()
 		maven {
 			url "https://plugins.gradle.org/m2/"
 		}
+		jcenter()
 	}
 	dependencies {
 		classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: "${spring_boot_version}"
-		classpath group: 'org.springframework', name: 'springloaded', version: "${springloaded_version}"
 	}
 }
 
@@ -35,8 +34,8 @@ apply plugin: 'org.springframework.boot'
 processResources {
 	from 'src/main/java'
 	from 'src/main/resources'
-	filter(ReplaceTokens, tokens: [projectVersion : wicketcharts_version])
-	filter(ReplaceTokens, tokens: [wicketVersion : wicket_spring_version])
+	filter(ReplaceTokens, tokens: [projectVersion : wickedcharts_version])
+	filter(ReplaceTokens, tokens: [wicketVersion : wicket_version])
 }
 
 bootRun {
@@ -48,7 +47,13 @@ bootRun {
 			'-Dspring.jpa.hibernate.ddl-auto=update'
 }
 
-
+appengine {  // App Engine tasks configuration
+	deploy {   // deploy configuration
+		version = "staging" //replaces the previous version with the current one, so I don't have to remove instances manually
+		stopPreviousVersion = true
+		promote = true
+	}
+}
 
 
 

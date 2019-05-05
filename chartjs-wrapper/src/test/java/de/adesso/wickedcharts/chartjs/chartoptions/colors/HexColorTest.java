@@ -1,13 +1,14 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HexColorTest {
+class HexColorTest {
 
     @Test
-    public void testHexColor() {
+    void testHexColor() {
         HexColor color = new HexColor(123,45,67);
         assertEquals(123,color.getRed());
         assertEquals(45,color.getGreen());
@@ -15,25 +16,25 @@ public class HexColorTest {
     }
 
     @Test
-    public void testHexColorString() {
+    void testHexColorString() {
         HexColor color = new HexColor("#FF1010");
         assertEquals(255,color.getRed());
         assertEquals(16,color.getGreen());
         assertEquals(16,color.getBlue());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testHexColorRGBException() {
-        HexColor color = new HexColor(256,45,67);
+    @Test
+    void testHexColorRGBException() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new HexColor(256,45,67));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testHexColorRGBExceptionNegative() {
-        HexColor color = new HexColor(-1,45,67);
+    @Test
+    void testHexColorRGBExceptionNegative() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new HexColor(-1,45,67));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testHexColorException() {
-        HexColor color = new HexColor("#FG1010");
+    @Test
+    void testHexColorException() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new HexColor("#FG1010"));
     }
 }

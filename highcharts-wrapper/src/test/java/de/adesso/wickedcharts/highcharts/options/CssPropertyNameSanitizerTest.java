@@ -1,30 +1,30 @@
 package de.adesso.wickedcharts.highcharts.options;
 
-import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class CssPropertyNameSanitizerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CssPropertyNameSanitizerTest {
 
   @Test
-  public void testNoHyphen() {
+  void testNoHyphen() {
     CssStyle style = new CssStyle();
     style.setProperty("font", "blubb");
-    Assert.assertEquals("blubb", style.getProperty("font"));
+    assertEquals("blubb", style.getProperty("font"));
   }
 
   @Test
-  public void testOneHyphen() {
+  void testOneHyphen() {
     CssStyle style = new CssStyle();
     style.setProperty("font-weight", "blubb");
-    Assert.assertEquals("blubb", style.getProperty("fontWeight"));
+    assertEquals("blubb", style.getProperty("fontWeight"));
   }
 
   @Test
-  public void testTwoHyphens() {
+  void testTwoHyphens() {
     CssStyle style = new CssStyle();
     style.setProperty("border-top-width", "blubb");
-    Assert.assertEquals("blubb", style.getProperty("borderTopWidth"));
-
+    assertEquals("blubb", style.getProperty("borderTopWidth"));
   }
 
 }

@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,13 +16,15 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.Crosshair;
 import de.adesso.wickedcharts.highcharts.options.GridLineDashStyle;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class CrosshairSerializerTest extends AbstractSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+class CrosshairSerializerTest extends AbstractSerializerTest {
 
 	@Test
-	public void testEmpty() {
+	void testEmpty() {
 		// given
 		Crosshair crosshair = new Crosshair();
 		JsonRenderer renderer = new JsonRenderer();
@@ -31,11 +33,11 @@ public class CrosshairSerializerTest extends AbstractSerializerTest {
 		String json = renderer.toJson(crosshair);
 
 		// then
-		Assert.assertEquals("true", json);
+		assertEquals("true", json);
 	}
 
 	@Test
-	public void testFull() {
+	void testFull() {
 		// given
 		Crosshair crosshair = new Crosshair().setWidth(10).setDashStyle(GridLineDashStyle.DOT);
 		JsonRenderer renderer = new JsonRenderer();

@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * Generate space around a chart.
  *
@@ -12,7 +14,7 @@ import lombok.experimental.Accessors;
  */
 @Accessors(chain = true)
 @lombok.Data
-public class Padding {
+public class Padding implements Serializable {
 	private Integer left;
 	private Integer right;
 	private Integer top;

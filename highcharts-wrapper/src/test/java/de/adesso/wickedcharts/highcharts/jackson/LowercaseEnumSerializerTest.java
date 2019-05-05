@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -15,13 +15,14 @@
 package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.HorizontalAlignment;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class LowercaseEnumSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class LowercaseEnumSerializerTest {
 
 	@Test
-	public void test() {
+	void test() {
 		// given
 		HorizontalAlignment align = HorizontalAlignment.CENTER;
 		JsonRenderer renderer = new JsonRenderer();
@@ -30,6 +31,6 @@ public class LowercaseEnumSerializerTest {
 		String json = renderer.toJson(align);
 
 		// then
-		Assert.assertEquals("\"center\"", json);
+		assertEquals("\"center\"", json);
 	}
 }

@@ -1,6 +1,6 @@
 package de.adesso.wickedcharts.showcase;
 /*
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -15,17 +15,20 @@ package de.adesso.wickedcharts.showcase;
  */
 
 
-import de.adesso.wickedcharts.showcase.configurations.*;
-import de.adesso.wickedcharts.showcase.configurations.gridlines.*;
-import de.adesso.wickedcharts.showcase.configurations.interactions.*;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionBottomConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionLeftConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionRightConfiguration;
-import de.adesso.wickedcharts.showcase.configurations.legendposition.LegendPositionTopConfiguration;
+import de.adesso.wickedcharts.showcase.chartjs.LineChartProgressBarConfigurationWicket14;
+import de.adesso.wickedcharts.showcase.chartjs.TimeComboConfigurationWicket14;
+import de.adesso.wickedcharts.showcase.chartjs.TooltipHtmlPieConfigurationWicket14;
+import de.adesso.wickedcharts.showcase.chartjs.TooltipHtmlPointsConfigurationWicket14;
+import de.adesso.wickedcharts.showcase.options.chartjs.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.gridlines.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.interactions.*;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionBottomConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionLeftConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionRightConfiguration;
+import de.adesso.wickedcharts.showcase.options.chartjs.legendposition.LegendPositionTopConfiguration;
 import de.adesso.wickedcharts.showcase.links.ChartjsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateChartJsLink;
-import de.adesso.wickedcharts.wicket14.JavaScriptResourceRegistry;
 import de.adesso.wickedcharts.wicket14.chartjs.Chart;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
@@ -113,51 +116,51 @@ public class HomepageChartJs extends WebPage implements Serializable {
     /**
      * Adds links to the charts in the navigation sidebar
      */
-	private void addChartLinks() {
-        this.add(new UpdateChartJsLink("LineChartBasic", "lineBasic"));
-		this.add(new UpdateChartJsLink("BarChartVertical" , "barVertical"));
-        this.add(new UpdateChartJsLink("LineChartMultiAxis", "lineMultiAxis"));
-        this.add(new UpdateChartJsLink("LineChartStepped", "lineStepped"));
-        this.add(new UpdateChartJsLink("LineChartInterpolated", "lineInterpolated"));
-        this.add(new UpdateChartJsLink("LineStyles", "lineStyles"));
-        this.add(new UpdateChartJsLink("PointStyles", "pointStyles"));
-        this.add(new UpdateChartJsLink("PointSizes", "pointSizes"));
-        this.add(new UpdateChartJsLink("BarChartHorizontal", "barHorizontal"));
-        this.add(new UpdateChartJsLink("BarChartStacked", "barStacked"));
-        this.add(new UpdateChartJsLink("BarChartStackedGroup", "barStackedGroup"));
-        this.add(new UpdateChartJsLink("BarChartMultiAxis", "barMultiAxis"));
-        this.add(new UpdateChartJsLink("PieChart", "pie"));
-        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", "areaLineBoundaries"));
-        this.add(new UpdateChartJsLink("LineChartStacked", "lineStacked"));
-        this.add(new UpdateChartJsLink("LineChartDataset", "lineDataset"));
-        this.add(new UpdateChartJsLink("RadarChart", "radar"));
-        this.add(new UpdateChartJsLink("DoughnutChart", "doughnut"));
-        this.add(new UpdateChartJsLink("PolarAreaChart", "polarArea"));
-        this.add(new UpdateChartJsLink("ScatterChart", "scatter"));
-        this.add(new UpdateChartJsLink("ScatterChartMultiAxis", "scatterMultiAxis"));
-        this.add(new UpdateChartJsLink("ComboBarLineChart", "comboBarLine"));
-        this.add(new UpdateChartJsLink("LegendPosition", "legendPosition"));
-        this.add(new UpdateChartJsLink("StepSize", "stepSize"));
-        this.add(new UpdateChartJsLink("MinMax", "minMax"));
-        this.add(new UpdateChartJsLink("GridLines", "gridLines"));
-        this.add(new UpdateChartJsLink("MultilineLabels", "multiLineLabels"));
-        this.add(new UpdateChartJsLink("LogarithmicLineChart", "lineLogarithmic"));
-        this.add(new UpdateChartJsLink("LogarithmicScatterChart", "scatterLogarithmic"));
-        this.add(new UpdateChartJsLink("BubbleChart", "bubble"));
-        this.add(new UpdateChartJsLink("FilteringLabels", "filteringLabels"));
-        this.add(new UpdateChartJsLink("TimeLine", "timeLine"));
-        this.add(new UpdateChartJsLink("NonNumeric", "nonNumeric"));
-        this.add(new UpdateChartJsLink("TimePoint", "timePoint"));
-        this.add(new UpdateChartJsLink("TimeSeries", "timeSeries"));
-        this.add(new UpdateChartJsLink("TimeCombo", "timeCombo"));
-        this.add(new UpdateChartJsLink("OtherRadar", "radar2"));
-        this.add(new UpdateChartJsLink("Tooltip", "tooltip"));
-        this.add(new UpdateChartJsLink("TooltipHtml", "tooltipHtml"));
-        this.add(new UpdateChartJsLink("LegendPointStyle", "legendPointStyle"));
-        this.add(new UpdateChartJsLink("LineChartProgressBar", "lineProgressBar"));
-        this.add(new UpdateChartJsLink("DataLabellingChart", "dataLabelling"));
-        this.add(new UpdateChartJsLink("TooltipInteractions", "tooltipInteractions"));
-	}
+    private void addChartLinks() {
+        this.add(new UpdateChartJsLink("LineChartBasic", ChartjsConfigurations.LINE_BASIC.toString()));
+        this.add(new UpdateChartJsLink("BarChartVertical" , ChartjsConfigurations.BAR_VERTICAL.toString()));
+        this.add(new UpdateChartJsLink("LineChartMultiAxis", ChartjsConfigurations.LINE_MULTI_AXIS.toString()));
+        this.add(new UpdateChartJsLink("LineChartStepped", ChartjsConfigurations.LINE_STEPPED.toString()));
+        this.add(new UpdateChartJsLink("LineChartInterpolated", ChartjsConfigurations.LINE_INTERPOLATED.toString()));
+        this.add(new UpdateChartJsLink("LineStyles", ChartjsConfigurations.LINE_STYLES.toString()));
+        this.add(new UpdateChartJsLink("PointStyles", ChartjsConfigurations.POINT_STYLES.toString()));
+        this.add(new UpdateChartJsLink("PointSizes", ChartjsConfigurations.POINT_SIZES.toString()));
+        this.add(new UpdateChartJsLink("BarChartHorizontal", ChartjsConfigurations.BAR_HORIZONTAL.toString()));
+        this.add(new UpdateChartJsLink("BarChartStacked", ChartjsConfigurations.BAR_STACKED.toString()));
+        this.add(new UpdateChartJsLink("BarChartStackedGroup", ChartjsConfigurations.BAR_STACKED_GROUP.toString()));
+        this.add(new UpdateChartJsLink("BarChartMultiAxis", ChartjsConfigurations.BAR_MULTI_AXIS.toString()));
+        this.add(new UpdateChartJsLink("PieChart", ChartjsConfigurations.PIE.toString()));
+        this.add(new UpdateChartJsLink("AreaLineBoundariesChart", ChartjsConfigurations.AREA_LINE_BOUNDARIES.toString()));
+        this.add(new UpdateChartJsLink("LineChartStacked", ChartjsConfigurations.LINE_STACKED.toString()));
+        this.add(new UpdateChartJsLink("LineChartDataset", ChartjsConfigurations.LINE_DATASET.toString()));
+        this.add(new UpdateChartJsLink("RadarChart", ChartjsConfigurations.RADAR.toString()));
+        this.add(new UpdateChartJsLink("DoughnutChart", ChartjsConfigurations.DOUGHNUT.toString()));
+        this.add(new UpdateChartJsLink("PolarAreaChart", ChartjsConfigurations.POLAR_AREA.toString()));
+        this.add(new UpdateChartJsLink("ScatterChart", ChartjsConfigurations.SCATTER.toString()));
+        this.add(new UpdateChartJsLink("ScatterChartMultiAxis", ChartjsConfigurations.SCATTER_MULTI_AXIS.toString()));
+        this.add(new UpdateChartJsLink("ComboBarLineChart", ChartjsConfigurations.COMBO_BAR_LINE.toString()));
+        this.add(new UpdateChartJsLink("LegendPosition", ChartjsConfigurations.LEGEND_POSITION.toString()));
+        this.add(new UpdateChartJsLink("StepSize", ChartjsConfigurations.STEP_SIZE.toString()));
+        this.add(new UpdateChartJsLink("MinMax", ChartjsConfigurations.MIN_MAX.toString()));
+        this.add(new UpdateChartJsLink("GridLines", ChartjsConfigurations.GRID_LINES.toString()));
+        this.add(new UpdateChartJsLink("MultilineLabels", ChartjsConfigurations.MULTILINE_LABELS.toString()));
+        this.add(new UpdateChartJsLink("LogarithmicLineChart", ChartjsConfigurations.LINE_LOGARITHMIC.toString()));
+        this.add(new UpdateChartJsLink("LogarithmicScatterChart", ChartjsConfigurations.SCATTER_LOGARITHMIC.toString()));
+        this.add(new UpdateChartJsLink("BubbleChart", ChartjsConfigurations.BUBBLE.toString()));
+        this.add(new UpdateChartJsLink("FilteringLabels", ChartjsConfigurations.FILTERING_LABELS.toString()));
+        this.add(new UpdateChartJsLink("TimeLine", ChartjsConfigurations.TIME_LINE.toString()));
+        this.add(new UpdateChartJsLink("NonNumeric", ChartjsConfigurations.NON_NUMERIC.toString()));
+        this.add(new UpdateChartJsLink("TimePoint", ChartjsConfigurations.TIME_POINT.toString()));
+        this.add(new UpdateChartJsLink("TimeSeries", ChartjsConfigurations.TIME_SERIES.toString()));
+        this.add(new UpdateChartJsLink("TimeCombo", ChartjsConfigurations.TIME_COMBO.toString()));
+        this.add(new UpdateChartJsLink("OtherRadar", ChartjsConfigurations.RADAR_2.toString()));
+        this.add(new UpdateChartJsLink("Tooltip", ChartjsConfigurations.TOOLTIP.toString()));
+        this.add(new UpdateChartJsLink("TooltipHtml", ChartjsConfigurations.TOOLTIP_HTML.toString()));
+        this.add(new UpdateChartJsLink("LegendPointStyle", ChartjsConfigurations.LEGEND_POINT_STYLE.toString()));
+        this.add(new UpdateChartJsLink("LineChartProgressBar", ChartjsConfigurations.LINE_PROGRESS_BAR.toString()));
+        this.add(new UpdateChartJsLink("DataLabellingChart", ChartjsConfigurations.DATA_LABELLING.toString()));
+        this.add(new UpdateChartJsLink("TooltipInteractions", ChartjsConfigurations.TOOLTIP_INTERACTIONS.toString()));
+    }
 
     /**
      * Returns a List of Chart objects from the current page parameters.
@@ -168,230 +171,228 @@ public class HomepageChartJs extends WebPage implements Serializable {
         String chartString;
         List<Chart> config = new ArrayList<>();
 
-        //Get the parameters of the page
-        //Set<PageParameters.SimpleEntry> pairs = params.entrySet();
-
         //If the showcase is started without any parameters
         //set the parameters to lineBasic and give us a line Chart
-        if(params.keySet().size() == 0){
+        final String chartComponentID = "chart";
+        if(params.keySet().isEmpty()){
             PageParameters temp = new PageParameters();
             temp.add("chart", "lineBasic");
             setResponsePage(HomepageChartJs.class, temp);
-            config.add(new Chart("chart", new LineChartBasicConfiguration()));
+            config.add(new Chart(chartComponentID, new LineChartBasicConfiguration()));
             return config;
         }
 
-        chartString = params.get("chart").toString();
+        chartString = params.get(chartComponentID).toString();
         if(chartString == null) {
-    		config.add(new Chart("chart", new LineChartBasicConfiguration()));
+    		config.add(new Chart(chartComponentID, new LineChartBasicConfiguration()));
     		return config;
     	}
 
         switch(chartString) {
 
             case "barVertical":
-                config.add(new Chart("chart", new BarChartVerticalConfiguration()));
+                config.add(new Chart(chartComponentID, new BarChartVerticalConfiguration()));
                 break;
 
             case "barHorizontal":
-                config.add(new Chart("chart", new BarChartHorizontalConfiguration()));
+                config.add(new Chart(chartComponentID, new BarChartHorizontalConfiguration()));
                 break;
 
             case "barMultiAxis":
-                config.add(new Chart("chart", new BarChartMultiAxisConfiguration()));
+                config.add(new Chart(chartComponentID, new BarChartMultiAxisConfiguration()));
                 break;
 
             case "barStacked":
-                config.add(new Chart("chart", new BarChartStackedConfiguration()));
+                config.add(new Chart(chartComponentID, new BarChartStackedConfiguration()));
                 break;
 
             case "barStackedGroup":
-                config.add(new Chart("chart", new BarChartStackedGroupConfiguration()));
+                config.add(new Chart(chartComponentID, new BarChartStackedGroupConfiguration()));
                 break;
 
             case "lineBasic":
-                config.add(new Chart("chart", new LineChartBasicConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartBasicConfiguration()));
                 break;
 
             case "lineMultiAxis":
-                config.add(new Chart("chart", new LineChartMultiAxisConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartMultiAxisConfiguration()));
                 break;
 
             case "lineStepped":
-                config.add(new Chart("chart", new LineChartSteppedBeforeConfiguration()));
-                config.add(new Chart("chart", new LineChartSteppedAfterConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartSteppedBeforeConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartSteppedAfterConfiguration()));
                 break;
 
             case "lineInterpolated":
-                config.add(new Chart("chart", new LineChartInterpolatedConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartInterpolatedConfiguration()));
                 break;
 
             case "lineStyles":
-                config.add(new Chart("chart", new LineStylesConfiguration()));
+                config.add(new Chart(chartComponentID, new LineStylesConfiguration()));
                 break;
 
             case "pointStyles":
-                config.add(new Chart("chart", new PointStylesConfiguration()));
+                config.add(new Chart(chartComponentID, new PointStylesConfiguration()));
                 break;
 
             case "pointSizes":
-                config.add(new Chart("chart", new LineChartWithDifferentPointSizesConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartWithDifferentPointSizesConfiguration()));
                 break;
 
             case "areaLineBoundaries":
-                config.add(new Chart("chart", new AreaLineBoundariesChartStartConfiguration()));
-                config.add(new Chart("chart", new AreaLineBoundariesChartEndConfiguration()));
-                config.add(new Chart("chart", new AreaLineBoundariesChartOriginConfiguration()));
-                config.add(new Chart("chart", new AreaLineBoundariesChartFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new AreaLineBoundariesChartStartConfiguration()));
+                config.add(new Chart(chartComponentID, new AreaLineBoundariesChartEndConfiguration()));
+                config.add(new Chart(chartComponentID, new AreaLineBoundariesChartOriginConfiguration()));
+                config.add(new Chart(chartComponentID, new AreaLineBoundariesChartFalseConfiguration()));
                 break;
 
             case "lineDataset":
-                config.add(new Chart("chart", new LineChartAreaDatasetConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartAreaDatasetConfiguration()));
                 break;
 
             case "lineStacked":
-                config.add(new Chart("chart", new LineChartStackedConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartStackedConfiguration()));
                 break;
 
             case "radar":
-                config.add(new Chart("chart", new RadarChartConfiguration()));
+                config.add(new Chart(chartComponentID, new RadarChartConfiguration()));
                 break;
 
             case "scatter":
-                config.add(new Chart("chart", new ScatterChartConfiguration()));
+                config.add(new Chart(chartComponentID, new ScatterChartConfiguration()));
                 break;
 
             case "scatterMultiAxis":
-                config.add(new Chart("chart", new ScatterChartMultiAxisConfiguration()));
+                config.add(new Chart(chartComponentID, new ScatterChartMultiAxisConfiguration()));
                 break;
 
             case "doughnut":
-                config.add(new Chart("chart", new DoughnutChartConfiguration()));
+                config.add(new Chart(chartComponentID, new DoughnutChartConfiguration()));
                 break;
 
             case "pie":
-                config.add(new Chart("chart", new PieChartConfiguration()));
+                config.add(new Chart(chartComponentID, new PieChartConfiguration()));
                 break;
 
             case "polarArea":
-                config.add(new Chart("chart", new PolarAreaChartConfiguration()));
+                config.add(new Chart(chartComponentID, new PolarAreaChartConfiguration()));
                 break;
 
             case "radar2":
-                config.add(new Chart("chart", new OtherRadarChartConfiguration()));
+                config.add(new Chart(chartComponentID, new OtherRadarChartConfiguration()));
                 break;
 
             case "comboBarLine":
-                config.add(new Chart("chart", new ComboBarLineChartConfiguration()));
+                config.add(new Chart(chartComponentID, new ComboBarLineChartConfiguration()));
                 break;
 
             case "stepSize":
-                config.add(new Chart("chart", new LinearStepSizeConfiguration()));
+                config.add(new Chart(chartComponentID, new LinearStepSizeConfiguration()));
                 break;
 
             case "minMax":
-                config.add(new Chart("chart", new MinMaxConfiguration()));
-                config.add(new Chart("chart", new MinMaxSuggestedConfiguration()));
+                config.add(new Chart(chartComponentID, new MinMaxConfiguration()));
+                config.add(new Chart(chartComponentID, new MinMaxSuggestedConfiguration()));
                 break;
 
             case "lineLogarithmic":
-                config.add(new Chart("chart", new LogarithmicLineChartConfiguration()));
+                config.add(new Chart(chartComponentID, new LogarithmicLineChartConfiguration()));
                 break;
 
             case "scatterLogarithmic":
-                config.add(new Chart("chart", new LogarithmicScatterChartConfiguration()));
+                config.add(new Chart(chartComponentID, new LogarithmicScatterChartConfiguration()));
                 break;
 
             case "timeLine":
-                config.add(new Chart("chart", new TimeLineConfiguration()));
+                config.add(new Chart(chartComponentID, new TimeLineConfiguration()));
                 break;
 
             case "timePoint":
-                config.add(new Chart("chart", new TimePointConfiguration()));
+                config.add(new Chart(chartComponentID, new TimePointConfiguration()));
                 break;
 
             case "timeSeries":
-                config.add(new Chart("chart", new TimeSeriesConfiguration()));
+                config.add(new Chart(chartComponentID, new TimeSeriesConfiguration()));
                 break;
 
             case "timeCombo":
-                config.add(new Chart("chart", new TimeComboConfiguration()));
+                config.add(new Chart(chartComponentID, new TimeComboConfigurationWicket14()));
                 break;
 
             case "gridLines":
-                config.add(new Chart("chart", new GridLinesBasicConfiguration()));
-                config.add(new Chart("chart", new GridLinesDisplayFalseConfiguration()));
-                config.add(new Chart("chart", new GridLinesDisplayFalseNoBorderConfiguration()));
-                config.add(new Chart("chart", new GridLinesChartAreaConfiguration()));
-                config.add(new Chart("chart", new GridLinesTicksConfiguration()));
-                config.add(new Chart("chart", new GridLineStylesConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLinesBasicConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLinesDisplayFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLinesDisplayFalseNoBorderConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLinesChartAreaConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLinesTicksConfiguration()));
+                config.add(new Chart(chartComponentID, new GridLineStylesConfiguration()));
                 break;
 
             case "multiLineLabels":
-                config.add(new Chart("chart", new MultilineLabelsConfiguration()));
+                config.add(new Chart(chartComponentID, new MultilineLabelsConfiguration()));
                 break;
 
             case "filteringLabels":
-                config.add(new Chart("chart", new FilteringLabelsConfiguration()));
+                config.add(new Chart(chartComponentID, new FilteringLabelsConfiguration()));
                 break;
 
             case "nonNumeric":
-                config.add(new Chart("chart", new NonNumericConfiguration()));
+                config.add(new Chart(chartComponentID, new NonNumericConfiguration()));
                 break;
 
             case "legendPosition":
-                config.add(new Chart("chart", new LegendPositionTopConfiguration()));
-                config.add(new Chart("chart", new LegendPositionRightConfiguration()));
-                config.add(new Chart("chart", new LegendPositionBottomConfiguration()));
-                config.add(new Chart("chart", new LegendPositionLeftConfiguration()));
+                config.add(new Chart(chartComponentID, new LegendPositionTopConfiguration()));
+                config.add(new Chart(chartComponentID, new LegendPositionRightConfiguration()));
+                config.add(new Chart(chartComponentID, new LegendPositionBottomConfiguration()));
+                config.add(new Chart(chartComponentID, new LegendPositionLeftConfiguration()));
                 break;
 
             case "legendPointStyle":
-                config.add(new Chart("chart", new LegendPointStyleConfiguration()));
+                config.add(new Chart(chartComponentID, new LegendPointStyleConfiguration()));
                 break;
 
             case "tooltip":
-                config.add(new Chart("chart", new TooltipBorderConfiguration()));
-                config.add(new Chart("chart", new TooltipCallbacksConfiguration()));
-                config.add(new Chart("chart", new TooltipAverageConfiguration()));
-                config.add(new Chart("chart", new TooltipNearestConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipBorderConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipCallbacksConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipAverageConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipNearestConfiguration()));
                 break;
 
             case "tooltipHtml":
-                config.add(new Chart("chart", new TooltipHtmlLineConfiguration()));
-                config.add(new Chart("chart", new TooltipHtmlPieConfiguration()));
-                config.add(new Chart("chart", new TooltipHtmlPointsConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipHtmlLineConfiguration()));
+                config.add(new Chart(chartComponentID, new TooltipHtmlPieConfigurationWicket14()));
+                config.add(new Chart(chartComponentID, new TooltipHtmlPointsConfigurationWicket14()));
                 break;
 
             case "bubble":
-                config.add(new Chart("chart", new BubbleChartConfiguration()));
+                config.add(new Chart(chartComponentID, new BubbleChartConfiguration()));
                 break;
 
             case "lineProgressBar":
-                config.add(new Chart("chart", new LineChartProgressBarConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartProgressBarConfigurationWicket14()));
                 break;
 
             case "dataLabelling":
-                config.add(new Chart("chart", new DataLabellingChartConfiguration()));
+                config.add(new Chart(chartComponentID, new DataLabellingChartConfiguration()));
                 break;
 
             case "tooltipInteractions":
-                config.add(new Chart("chart", new DatasetIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new DatasetIntersectTrueConfiguration()));
-                config.add(new Chart("chart", new IndexIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new IndexIntersectTrueConfiguration()));
-                config.add(new Chart("chart", new NearestIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new NearestIntersectTrueConfiguration()));
-                config.add(new Chart("chart", new PointIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new PointIntersectTrueConfiguration()));
-                config.add(new Chart("chart", new xIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new xIntersectTrueConfiguration()));
-                config.add(new Chart("chart", new yIntersectFalseConfiguration()));
-                config.add(new Chart("chart", new yIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new DatasetIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new DatasetIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new IndexIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new IndexIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new NearestIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new NearestIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new PointIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new PointIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new xIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new xIntersectTrueConfiguration()));
+                config.add(new Chart(chartComponentID, new yIntersectFalseConfiguration()));
+                config.add(new Chart(chartComponentID, new yIntersectTrueConfiguration()));
                 break;
 
             default:
-                config.add(new Chart("chart", new LineChartBasicConfiguration()));
+                config.add(new Chart(chartComponentID, new LineChartBasicConfiguration()));
                 break;
         }
         return config;

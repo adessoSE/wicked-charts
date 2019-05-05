@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions.colors;
 
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
   * Defines the color as a hexadecimal encoded color.
   * @see <a href="http://www.chartjs.org/docs/latest/general/colors.html">http://www.chartjs.org/docs/latest/general/colors.html</a>
@@ -10,8 +12,8 @@ import lombok.EqualsAndHashCode;
   * @author maximAtanasov
   */
 @lombok.Data
-@EqualsAndHashCode(callSuper=false)
-public class HexColor extends Color {
+@EqualsAndHashCode(callSuper=true)
+public class HexColor extends Color implements Serializable {
 
     private int red;
     private int green;

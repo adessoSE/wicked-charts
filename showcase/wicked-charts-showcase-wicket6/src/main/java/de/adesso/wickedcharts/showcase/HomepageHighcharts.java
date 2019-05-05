@@ -1,5 +1,5 @@
 /*
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import de.adesso.wickedcharts.showcase.links.HighchartsShowcaseLink;
 import de.adesso.wickedcharts.showcase.links.UpdateHighchartLink;
 import de.adesso.wickedcharts.showcase.links.UpdateThemeLink;
 import de.adesso.wickedcharts.showcase.options.*;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.*;
 import de.adesso.wickedcharts.wicket6.highcharts.Chart;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;
@@ -28,7 +29,6 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.request.mapper.parameter.INamedParameters;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

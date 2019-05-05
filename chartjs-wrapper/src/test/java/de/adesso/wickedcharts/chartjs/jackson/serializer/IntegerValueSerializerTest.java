@@ -2,46 +2,46 @@ package de.adesso.wickedcharts.chartjs.jackson.serializer;
 
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.IntegerValue;
 import de.adesso.wickedcharts.chartjs.jackson.JsonRenderer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IntegerValueSerializerTest {
+class IntegerValueSerializerTest {
 
 	
 	private JsonRenderer renderer;
 	private IntegerValue testVal;
 	
-	@Before
-	public void setUp() throws Exception{
+	@BeforeEach
+	void setUp() {
 		renderer = new JsonRenderer();
 	}
 	
 	@Test
-	public void testIntegerValue() {
+	void testIntegerValue() {
 		testVal = new IntegerValue(100);
 		String json = renderer.toJson(testVal);
 		assertEquals("100", json);
 	}
 	
 	@Test
-	public void testIntegerMaxValue() {
+	void testIntegerMaxValue() {
 		testVal = new IntegerValue(Integer.MAX_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Integer(Integer.MAX_VALUE).toString(), json);
+		assertEquals(Integer.toString(Integer.MAX_VALUE), json);
 	}
 	
 	@Test
-	public void testIntegerMinValue() {
+	void testIntegerMinValue() {
 		testVal = new IntegerValue(Integer.MIN_VALUE);
 		String json = renderer.toJson(testVal);
-		assertEquals(new Integer(Integer.MIN_VALUE).toString(), json);
+		assertEquals(Integer.toString(Integer.MIN_VALUE), json);
 	}
 	
 	
 	@Test
-	public void testNullValue() {
+	void testNullValue() {
 		testVal = new IntegerValue();
 		String json = renderer.toJson(testVal);
 		assertEquals("", json);

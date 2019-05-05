@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2018 Wicked Charts (http://github.com/adessoAG/wicked-charts)
+ *   Copyright 2012-2019 Wicked Charts (http://github.com/adessoAG/wicked-charts)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import de.adesso.wickedcharts.highcharts.options.livedata.JavaScriptParameters;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataSeries;
 import de.adesso.wickedcharts.highcharts.options.livedata.LiveDataUpdateEvent;
 import de.adesso.wickedcharts.highcharts.options.series.Point;
-import de.adesso.wickedcharts.showcase.options.base.ShowcaseOptions;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.ShowcaseOptions;
 import de.adesso.wickedcharts.wicket7.highcharts.features.livedata.WicketLiveDataUpdateEvent;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.head.OnDomReadyHeaderItem;

@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * Defines the type of the chart.
  *
@@ -11,7 +13,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum ChartType implements JsonValueEnum {
+public enum ChartType implements JsonValueEnum, Serializable {
 	LINE("line"),
 	BAR("bar"),
 	HORIZONTAL_BAR("horizontalBar"),
@@ -22,7 +24,7 @@ public enum ChartType implements JsonValueEnum {
 	DOUGHNUT("doughnut"),
 	POLAR_AREA("polarArea"),
 	BUBBLE("bubble");
-	
+
 	private String jsonValue;
 
 	private ChartType(String jsonValue) {

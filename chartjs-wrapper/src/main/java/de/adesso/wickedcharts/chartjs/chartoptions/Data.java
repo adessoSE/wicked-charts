@@ -7,6 +7,7 @@ import de.adesso.wickedcharts.chartjs.chartoptions.label.Label;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,7 +27,6 @@ import java.util.List;
 @lombok.Data
 public class Data implements Serializable{
 
-	private static final long serialVersionUID = 1L;
 	@JsonProperty("labels")
 	private List<? extends Label> labels;
 	@JsonProperty("datasets")

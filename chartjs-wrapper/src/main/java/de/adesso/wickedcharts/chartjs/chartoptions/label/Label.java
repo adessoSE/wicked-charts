@@ -1,5 +1,7 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
 
-public abstract class Label {
+import java.io.Serializable;
+
+public abstract class Label implements Serializable {
 }

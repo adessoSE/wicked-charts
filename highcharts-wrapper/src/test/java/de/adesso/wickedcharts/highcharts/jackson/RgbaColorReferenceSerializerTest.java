@@ -1,5 +1,5 @@
-/**
- * Copyright 2012-2018 Wicked Charts (tom.hombergs@gmail.com)
+/*
+ * Copyright 2012-2019 Wicked Charts (tom.hombergs@gmail.com)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@ package de.adesso.wickedcharts.highcharts.jackson;
 
 import de.adesso.wickedcharts.highcharts.options.color.ColorReference;
 import de.adesso.wickedcharts.highcharts.options.color.RgbaColor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RgbaColorReferenceSerializerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class RgbaColorReferenceSerializerTest {
 
   @Test
-  public void test() {
+  void test() {
     // given
     ColorReference color = new RgbaColor(1, 2, 3, 0.5f);
     JsonRenderer renderer = new JsonRenderer();
@@ -31,11 +32,11 @@ public class RgbaColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals("\"rgba(1,2,3,0.50)\"", json);
+    assertEquals("\"rgba(1,2,3,0.50)\"", json);
   }
 
   @Test
-  public void testWithBrightness() {
+  void testWithBrightness() {
     // given
     ColorReference color = new RgbaColor(1, 2, 3, 0.5f);
     color = color.brighten(0.1f);
@@ -45,7 +46,7 @@ public class RgbaColorReferenceSerializerTest {
     String json = renderer.toJson(color);
 
     // then
-    Assert.assertEquals(
+    assertEquals(
         "Highcharts.Color(\"rgba(1,2,3,0.50)\").brighten(0.10).get()", json);
   }
 }

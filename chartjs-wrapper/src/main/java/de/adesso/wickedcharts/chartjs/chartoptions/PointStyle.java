@@ -2,6 +2,8 @@ package de.adesso.wickedcharts.chartjs.chartoptions;
 
 import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
 
+import java.io.Serializable;
+
 /**
  * An enum defining all point styles
  *
@@ -10,7 +12,7 @@ import de.adesso.wickedcharts.chartjs.json.JsonValueEnum;
  * @author anedomansky
  * @author maximAtanasov
  */
-public enum PointStyle implements JsonValueEnum {
+public enum PointStyle implements JsonValueEnum, Serializable {
 	CIRCLE("circle"),
 	CROSS("cross"),
 	CROSS_ROT("crossRot"),

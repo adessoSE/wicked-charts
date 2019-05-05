@@ -1,5 +1,6 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  *
  * @author SvenWirz
  */
-public class TextListLabel extends Label {
+public class TextListLabel extends Label implements Serializable {
 	private List<String> textList;
 	
 	public TextListLabel(String...texts) {

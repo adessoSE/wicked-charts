@@ -1,6 +1,6 @@
 package de.adesso.wickedcharts.showcase.modalwindow;
 
-import de.adesso.wickedcharts.showcase.options.BasicBarOptions;
+import de.adesso.wickedcharts.showcase.options.highcharts.base.BasicBarOptions;
 import de.adesso.wickedcharts.wicket8.highcharts.Chart;
 import org.apache.wicket.markup.html.panel.Panel;
 
