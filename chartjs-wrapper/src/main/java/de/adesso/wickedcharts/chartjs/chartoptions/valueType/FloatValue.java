@@ -4,9 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This class wraps Floats in a FloatValue object.
@@ -38,10 +37,18 @@ public class FloatValue extends ValueType implements Serializable {
 	}
 
 	public static List<FloatValue> of(List<Float> floatList) {
-		return floatList.stream().map(floatVal -> new FloatValue(floatVal)).collect(Collectors.toList());
+		List<FloatValue> floatValues = new ArrayList<FloatValue>();
+		for(Float f : floatList){
+			floatValues.add(new FloatValue(f));
+		}
+		return floatValues;
 	}
 	
 	public static List<FloatValue> of(Float...floats) {
-		return Arrays.stream(floats).map(floatVal -> new FloatValue(floatVal)).collect(Collectors.toList());
+		List<FloatValue> floatValues = new ArrayList<FloatValue>();
+		for(Float f : floats){
+			floatValues.add(new FloatValue(f));
+		}
+		return floatValues;
 	}
 }

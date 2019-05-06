@@ -5,9 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This class wraps Strings in a StringValue object.
@@ -29,11 +28,19 @@ public class StringValue extends ValueType implements Serializable {
 	}
 
 	public static List<StringValue> of(List<String> stringList) {
-		return stringList.stream().map(StringValue::new).collect(Collectors.toList());
+		List<StringValue> resultList = new ArrayList<StringValue>();
+		for(String string : stringList){
+			resultList.add(new StringValue(string));
+		}
+		return resultList;
 	}
 	
 	public static List<StringValue> of(String...strings) {
-		return Arrays.stream(strings).map(StringValue::new).collect(Collectors.toList());
+		List<StringValue> resultList = new ArrayList<StringValue>();
+		for(String string : strings){
+			resultList.add(new StringValue(string));
+		}
+		return resultList;
 	}
 	
 }
