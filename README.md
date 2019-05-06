@@ -219,7 +219,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.3.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.2.1-SNAPSHOT'
 }
 ```
 
