@@ -8,9 +8,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.valueType.PointValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.StringValue;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.ValueType;
 import de.adesso.wickedcharts.showcase.options.chartjs.base.ShowcaseConfiguration;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
