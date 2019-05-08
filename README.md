@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.2.1'
 }
 ```
 
@@ -54,7 +54,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket8</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 
@@ -69,7 +69,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket7:3.2.1'
 }
 ```
 
@@ -78,7 +78,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket7</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -92,7 +92,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket6:3.2.1'
 }
 ```
 
@@ -101,7 +101,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket6</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -115,7 +115,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket15:3.2.1'
 }
 ```
 
@@ -124,7 +124,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket15</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -138,7 +138,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket14:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket14:3.2.1'
 }
 ```
 
@@ -147,7 +147,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket14</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -161,7 +161,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.2.0'
+  compile 'de.adesso.wicked-charts:wicked-charts-jsf21:3.2.1'
 }
 ```
 
@@ -170,7 +170,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-jsf21</artifactId>
-  <version>3.2.0</version>
+  <version>3.2.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -186,8 +186,8 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:chartjs-wrapper:3.2.0'
-  compile 'de.adesso.wicked-charts:highcharts-wrapper:3.2.0'
+  compile 'de.adesso.wicked-charts:chartjs-wrapper:3.2.1'
+  compile 'de.adesso.wicked-charts:highcharts-wrapper:3.2.1'
 }
 ```
 
@@ -197,14 +197,14 @@ Maven:
     <dependency>
       <groupId>de.adesso.wicked-charts</groupId>
       <artifactId>chartjs-wrapper</artifactId>
-      <version>3.2.0</version>
+      <version>3.2.1</version>
       <type>pom</type>
     </dependency>
     
     <dependency>
       <groupId>de.adesso.wicked-charts</groupId>
       <artifactId>highcharts-wrapper</artifactId>
-      <version>3.2.0</version>
+      <version>3.2.1</version>
       <type>pom</type>
     </dependency>
 </dependencies>
