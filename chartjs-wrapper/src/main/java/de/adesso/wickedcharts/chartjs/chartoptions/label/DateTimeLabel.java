@@ -1,10 +1,12 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
+import org.threeten.bp.LocalDateTime;
+
 import java.io.Serializable;
-import java.time.LocalDateTime;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Defines datetime labels for the axes.
@@ -20,11 +22,18 @@ public class DateTimeLabel extends Label implements Serializable {
 	}
 	
 	public static List<TextLabel> of(String... texts) {
-		return Arrays.stream(texts).map(textLabel -> new TextLabel(textLabel)).collect(Collectors.toList());
-	}
+		List<TextLabel> resultList = new ArrayList<TextLabel>();
+		for(String text : texts){
+			resultList.add(new TextLabel(text));
+		}
+		return resultList;	}
 	
 	public static List<TextLabel> of(List<String> textList) {
-		return textList.stream().map(textLabel -> new TextLabel(textLabel)).collect(Collectors.toList());
+		List<TextLabel> resultList = new ArrayList<TextLabel>();
+		for(String text : textList){
+			resultList.add(new TextLabel(text));
+		}
+		return resultList;
 	}
 
 	public LocalDateTime getDate() {

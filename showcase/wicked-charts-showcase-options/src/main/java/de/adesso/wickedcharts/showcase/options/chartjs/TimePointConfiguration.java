@@ -6,9 +6,9 @@ import de.adesso.wickedcharts.chartjs.chartoptions.colors.StringValueColor;
 import de.adesso.wickedcharts.chartjs.chartoptions.label.DateTimeLabel;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.*;
 import de.adesso.wickedcharts.showcase.options.chartjs.base.ShowcaseConfiguration;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -5,9 +5,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import de.adesso.wickedcharts.chartjs.chartoptions.valueType.DateTimeValue;
+import org.threeten.bp.format.DateTimeFormatter;
 
 import java.io.IOException;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Serializes a DateTimeValue object to JSON

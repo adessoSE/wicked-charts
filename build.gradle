@@ -34,7 +34,7 @@ subprojects {
     }
 
     // run gradle with "-Dsnapshot=true" to automatically append "-SNAPSHOT" to the version
-    version = '3.2.0' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
+    version = '3.2.1' + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
 
     ext {
         bintrayUser = System.getProperty("bintray.user")

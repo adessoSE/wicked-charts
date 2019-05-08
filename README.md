@@ -219,7 +219,7 @@ repositories {
 }
 
 dependencies {
-  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.3.0-SNAPSHOT'
+  compile 'de.adesso.wicked-charts:wicked-charts-wicket8:3.2.1-SNAPSHOT'
 }
 ```
 
@@ -228,7 +228,7 @@ Maven:
 <dependency>
   <groupId>de.adesso.wicked-charts</groupId>
   <artifactId>wicked-charts-wicket8</artifactId>
-  <version>3.3.0-SNAPSHOT</version>
+  <version>3.2.1-SNAPSHOT</version>
   <type>pom</type>
 </dependency>
 ```

@@ -1,9 +1,9 @@
 package de.adesso.wickedcharts.chartjs.chartoptions.label;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Defines constant textlabels for the axes .
@@ -19,12 +19,19 @@ public class ConstLabel extends Label implements Serializable {
 	}
 	
 	public static List<ConstLabel> of(String... texts) {
-		return Arrays.stream(texts).map(textLabel -> new ConstLabel(textLabel)).collect(Collectors.toList());
+		List<ConstLabel> resultList = new ArrayList<ConstLabel>();
+		for(String text : texts){
+			resultList.add(new ConstLabel(text));
+		}
+		return resultList;
 	}
 	
 	public static List<ConstLabel> of(List<String> textList) {
-		return textList.stream().map(textLabel -> new ConstLabel(textLabel)).collect(Collectors.toList());
-	}
+		List<ConstLabel> resultList = new ArrayList<ConstLabel>();
+		for(String text : textList){
+			resultList.add(new ConstLabel(text));
+		}
+		return resultList;	}
 
 	public String getText() {
 		return text;

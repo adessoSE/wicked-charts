@@ -4,9 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This class wraps Doubles in a DoubleValue object.
@@ -39,10 +38,18 @@ public class DoubleValue extends ValueType implements Serializable {
 	}
 	
 	public static List<DoubleValue> of(List<Double> doubleList) {
-		return doubleList.stream().map(doubleVal -> new DoubleValue(doubleVal)).collect(Collectors.toList());
+		List<DoubleValue> resultList = new ArrayList<DoubleValue>();
+		for(Double i : doubleList){
+			resultList.add(new DoubleValue(i));
+		}
+		return resultList;
 	}
 	
 	public static List<DoubleValue> of(Double...doubles) {
-		return Arrays.stream(doubles).map(doubleVal -> new DoubleValue(doubleVal)).collect(Collectors.toList());
+		List<DoubleValue> resultList = new ArrayList<DoubleValue>();
+		for(Double i : doubles){
+			resultList.add(new DoubleValue(i));
+		}
+		return resultList;
 	}
 }

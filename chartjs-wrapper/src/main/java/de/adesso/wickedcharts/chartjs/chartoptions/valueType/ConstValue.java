@@ -4,9 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This class defines a constant ValueType using a final String.
@@ -26,10 +25,17 @@ public class ConstValue extends ValueType implements Serializable {
 	}
 
 	public static List<ConstValue> of(final List<String> constList) {
-		return constList.stream().map(string -> new ConstValue(string)).collect(Collectors.toList());
+		List<ConstValue> resultList = new ArrayList<ConstValue>();
+		for(String s : constList){
+			resultList.add(new ConstValue(s));
+		}
+		return resultList;
 	}
 	
 	public static List<ConstValue> of(final String...consts) {
-		return Arrays.stream(consts).map(string -> new ConstValue(string)).collect(Collectors.toList());
-	}
+		List<ConstValue> resultList = new ArrayList<ConstValue>();
+		for(String s : consts){
+			resultList.add(new ConstValue(s));
+		}
+		return resultList;		}
 }

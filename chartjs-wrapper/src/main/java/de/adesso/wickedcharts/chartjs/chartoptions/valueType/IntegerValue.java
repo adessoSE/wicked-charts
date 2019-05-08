@@ -4,9 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This class wraps Integers in a IntegerValue object.
@@ -38,10 +37,18 @@ public class IntegerValue extends ValueType implements Serializable {
 	}
 
 	public static List<IntegerValue> of(List<Integer> integerList) {
-		return integerList.stream().map(integer -> new IntegerValue(integer)).collect(Collectors.toList());
+		List<IntegerValue> resultList = new ArrayList<IntegerValue>();
+		for(Integer i : integerList){
+			resultList.add(new IntegerValue(i));
+		}
+		return resultList;
 	}
 	
 	public static List<IntegerValue> of(Integer...integers) {
-		return Arrays.stream(integers).map(integer -> new IntegerValue(integer)).collect(Collectors.toList());
+		List<IntegerValue> resultList = new ArrayList<IntegerValue>();
+		for(Integer i : integers){
+			resultList.add(new IntegerValue(i));
+		}
+		return resultList;
 	}
 }

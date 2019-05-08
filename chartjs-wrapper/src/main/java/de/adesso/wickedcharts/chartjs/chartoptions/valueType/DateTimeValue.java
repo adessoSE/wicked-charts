@@ -2,9 +2,9 @@ package de.adesso.wickedcharts.chartjs.chartoptions.valueType;
 
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.threeten.bp.LocalDateTime;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * This class defines a DateTimeValue object that can be used in charts that use different options related to time.
