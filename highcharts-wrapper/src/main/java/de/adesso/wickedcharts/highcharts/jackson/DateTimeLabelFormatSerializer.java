@@ -34,7 +34,7 @@ public class DateTimeLabelFormatSerializer extends JsonSerializer<DateTimeLabelF
 		dateTimeFormatBuilder.append("{");
 
 		for (Entry<DateTimeProperties, String> property : value.getProperties().entrySet()) {
-			dateTimeFormatBuilder.append(" " + property.getKey().toCode() + ": '" + property.getValue() + "',");
+			dateTimeFormatBuilder.append("\"" + property.getKey().toCode() + "\": \"" + property.getValue() + "\",");
 		}
 
 		int lastCommaPosition = dateTimeFormatBuilder.lastIndexOf(",");
