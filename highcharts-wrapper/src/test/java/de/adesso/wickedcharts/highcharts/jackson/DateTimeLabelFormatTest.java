@@ -38,7 +38,7 @@ public class DateTimeLabelFormatTest {
 		String json = renderer.toJson(dateTimeLabelFormat);
 
 		// then
-		assertEquals("{ second: '%e. %b' }", json);
+		assertEquals("{\"second\": \"%e. %b\" }", json);
 	}
 
 //	@Test
@@ -50,7 +50,7 @@ public class DateTimeLabelFormatTest {
 		dateTimeLabelFormat.setProperty(DateTimeProperties.HOUR, "%H:%M");
 		dateTimeLabelFormat.setProperty(DateTimeProperties.DAY, "%e. %b");
 		dateTimeLabelFormat.setProperty(DateTimeProperties.WEEK, "%e. %b");
-		dateTimeLabelFormat.setProperty(DateTimeProperties.MONTH, "%b \'%y");
+		dateTimeLabelFormat.setProperty(DateTimeProperties.MONTH, "%b '%y");
 		dateTimeLabelFormat.setProperty(DateTimeProperties.YEAR, "%Y");
 
 		JsonRenderer renderer = new JsonRenderer();
@@ -60,7 +60,7 @@ public class DateTimeLabelFormatTest {
 
 		// then
 		assertEquals(
-				"{ week: '%e. %b', hour: '%H:%M', minute: '%H:%M', year: '%Y', month: '%b \'%y', day: '%e. %b', second: '%H:%M:%S' }",
+				"{ \"week\": \"%e. %b\", \"hour\": \"%H:%M\", \"minute\": \"%H:%M\", \"year\": \"%Y\", \"month\": \"%b \'%y\", \"day\": \"%e. %b\", \"second\": \"%H:%M:%S\" }",
 				json);
 
 	}
