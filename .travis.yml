@@ -1,10 +1,11 @@
 language: java
 install: true
-sudo: false
+sudo: true
 addons:
   apt:
-    packages:
-    - oracle-java8-installer
+    update: true
+jdk:
+  - openjdk8
 before_install:
 - chmod +x ./showcase/gradlew
 - chmod +x gradlew
