@@ -5,7 +5,7 @@ Beautiful and interactive JavaScript charts for Java-based web applications.
  * Check out the [Changelog](https://github.com/adessoAG/wicked-charts/wiki/Changelog)
  * Check out the [Feature Overview](https://github.com/adessoAG/wicked-charts/wiki/Feature-Overview) with coding examples
  * Browse the [Javadoc](http://adessoAG.github.io/wicked-charts/apidocs)
- * [Browse](https://wicked-charts-showcase.appspot.com/) or download and run the [Showcase](https://github.com/adessoAG/wicked-charts/wiki/Developer-Info:-Starting-the-Showcase-Application) application for your web framework
+ * [Browse](www.wicked-charts.appspot.com/) or download and run the [Showcase](https://github.com/adessoAG/wicked-charts/wiki/Developer-Info:-Starting-the-Showcase-Application) application for your web framework
  * Check out the [FAQ](https://github.com/adessoAG/wicked-charts/wiki/FAQ)
 
 [![Build Status](https://travis-ci.org/adessoAG/wicked-charts.png?branch=master)](https://travis-ci.org/adessoAG/wicked-charts)
